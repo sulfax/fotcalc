@@ -8,7 +8,6 @@
     padding-left:15px;
     margin-right:auto;
     margin-left:auto;
-    min-width:819px !important;
 }
         @media (min-width:256px) {
             .container {
@@ -121,6 +120,9 @@
     padding-top:.6rem;
     margin-top:-1.5rem;
     border-radius: 0.5rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    margin-bottom: -0.7rem;
     float: right;
 }
 .sessong{
@@ -136,6 +138,7 @@
     padding-bottom: .1%;
     padding-top: 1.5%;
     margin-left:-1.99%;
+    overflow-x:auto
 }
 .table-hover {
     background-color: rgb(255, 255, 255)
@@ -185,6 +188,7 @@
 .table.table-sm{
     width:98%;
     margin-left:1%;
+    margin-right:1%;
 }
 /*
 .btn-danger.focus,.btn-danger:focus{color:#fff;background-color:#c82333;border-color:#bd2130;box-shadow:0 0 0 .2rem rgba(225,83,97,.5)}
@@ -462,4 +466,9 @@ a {
     height:72px;
     margin-top: -13px;
     margin-bottom: 31px !important;
+}
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 }

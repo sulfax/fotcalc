@@ -4,7 +4,6 @@ body{
 }
 .navbar {
     background-color: #343a40;
-    min-width:819px;
 }
 #norsk {
     color: rgb(196, 217, 255);
@@ -28,7 +27,6 @@ body{
 footer div{
     height: 20rem;
     background-color: #343a40;
-    min-width:819px;
 }
 .laget_av {
    text-align: center;
