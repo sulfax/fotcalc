@@ -13,6 +13,9 @@
             .container {
                 max-width:600px
             }
+            .table-sm .resultat_celle_1, .tom_celle {
+                min-width:135px;
+            }
         }
         @media (min-width:768px) {
             .container {
@@ -217,7 +220,7 @@ tbody {
 .table-sm .resultat_celle_1, .tom_celle {
     text-align: right;
     padding-right:calc(2.5% - 15px);
-    min-width: 125px;
+    min-width:125px;
 }
 .mellomrom {
     width: 20px;
