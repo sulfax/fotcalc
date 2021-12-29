@@ -35,3 +35,9 @@ footer div{
 .tekst_1 {
     color: rgb(196, 217, 255);
 }
+.twitter_logo:hover{
+    color: rgb(196, 217, 255);
+}
+ion-icon {
+    pointer-events: none !important;
+   }
