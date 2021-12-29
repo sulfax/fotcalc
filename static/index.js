@@ -37,7 +37,7 @@ function language(clicked_id) {
       for (x=0;x<3;x++) {
         document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
       }
-      for (x=0;x<9;x++) {
+      for (x=0;x<6;x++) {
         document.getElementsByName(x + 4)[0].placeholder = 'Antall';
       }
       for (x=0;x<3;x++) {
@@ -83,7 +83,7 @@ function language(clicked_id) {
       for (x=0;x<3;x++) {
         document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
       }
-      for (x=0;x<9;x++) {
+      for (x=0;x<6;x++) {
         document.getElementsByName(x + 4)[0].placeholder = 'Amount';
       }
       for (x=0;x<3;x++) {
