@@ -21,6 +21,9 @@
             .container {
                 max-width:820px
             }
+            .table-sm .resultat_celle_1, .tom_celle {
+                min-width:155px !important;
+            }
         }
         @media (min-width:992px) {
             .container {
