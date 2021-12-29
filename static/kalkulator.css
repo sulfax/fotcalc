@@ -210,7 +210,7 @@ tbody {
     width: 29%;
     padding:0px !important;
     transition-duration:.0s;
-    height: 30px;
+    height: 33px;
 }
 .table .tom_celle, .table .resultat_celle_1, .table .resultat_celle, #total_inntjening, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening  {
     vertical-align:middle;

@@ -50,7 +50,7 @@ const english = [
     'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on johanneskaste@gmail.com',
     'UEFA prize money calculator',
     'Reset',
-    '<br> Clubs<br>progression? <br> &#129147',
+    '<br> Clubs<br>progression? <br> &#8595',
     'Domestic champion:',
     'Preliminary round:',
     'Q1:',
