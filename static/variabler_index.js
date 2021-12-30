@@ -69,7 +69,7 @@ const english = [
     '<abbr data_title="Number of drawn games in all the groups combined">Total draws</abbr>:',
     '<abbr data_title="Redistributed amounts remaining from the mathes ending with a draw">Undistributed amounts</abbr>:',
     'Group-placement:',
-    'Knockoutround-playoff:',
+    'Knockout round play-off:',
     'Round of 16:',
     'Quarterfinal:',
     'Semifinal:',
