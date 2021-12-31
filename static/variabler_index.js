@@ -62,7 +62,7 @@ const english = [
     'Q3 League Path:',
     'Playoff:',
     'Eliminated in playoff:',
-    'Groupstage:',
+    'Group stage:',
     '<abbr data_title="Ten-year coefficient ranking among teams within the tournament (1-32)">Ten-year coeff</abbr>:<a href="https://www.football-coefficient.eu/money/" title="football-coefficient.eu/money" target="_blank">1</a><a href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" title="uefa.com/nationalassociations/uefarankings/tenyears" target="_blank">2</a>',
     'Wins:',
     'Draws:',
