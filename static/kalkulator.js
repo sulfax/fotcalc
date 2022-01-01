@@ -242,7 +242,7 @@ function paa_av(clicked_id){
                 summer();
             }
         }
-        if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b14") {
+        if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
             if ((document.getElementById("b13")) && (document.getElementById("b16")) && (document.getElementById("b18")) && (document.getElementById("b19"))) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 summer();
@@ -260,6 +260,7 @@ function paa_av(clicked_id){
                 document.getElementById("b9_").innerText = "";
                 if (clicked_id == "b19") {
                     document.getElementById("b14_").innerText = "";
+                    document.getElementById("b10_").innerText = "";
                 }
             }
             if (clicked_id == "b18" || clicked_id == "b19" || clicked_id == "b20") {
@@ -285,7 +286,7 @@ function paa_av(clicked_id){
             oppdater_b2_b3_b6_b9();
         }
         if ((clicked_id == "b-19")) {
-            oppdater_b14();
+            oppdater_b10_b14();
         }
         document.getElementById(clicked_id).innerText = nei_språk;
         document.getElementById(clicked_id).id = "b" + tall;
@@ -318,7 +319,11 @@ function oppdater_b2_b3_b6_b9() {
         document.getElementById("b9_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 };
-function oppdater_b14() {
+function oppdater_b10_b14() {
+    if (document.getElementById("b-10")) {
+        var aktuell_sum = (knapp_summer[9][aarstall]);
+        document.getElementById("b10_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
     if (document.getElementById("b-14")) {
         var aktuell_sum = (knapp_summer[13][aarstall]);
         document.getElementById("b14_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
