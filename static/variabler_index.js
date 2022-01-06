@@ -1,5 +1,5 @@
 const norsk = [
-    'UEFA premiepenger kalkulator UCL, UEL, UECL',
+    'UEFA premiepenger-kalkulator UCL, UEL, UECL',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     'Hjem',
     'Logg ut',
