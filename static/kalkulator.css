@@ -137,6 +137,9 @@
 #beskrivelse, th, #overskrift {
     color: #343a40
 }
+#overskrift, #beskrivelse {
+    text-align: center;
+}
 .tabell_div{
     width:104%;
     background-color:white;
