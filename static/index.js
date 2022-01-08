@@ -106,6 +106,7 @@ function language(clicked_id) {
 
 
 const sprak_id = [
+  'title',
   'beskrivelse',
   'home',
   'logout',
