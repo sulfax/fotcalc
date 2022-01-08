@@ -18,6 +18,9 @@ function language(clicked_id) {
     }
     ja_språk = ja_nei[0][0];
     nei_språk = ja_nei[0][1];
+    seier_språk = ja_nei[0][2];
+    uavgjort_språk = ja_nei[0][3];
+    tap_språk = ja_nei[0][4];
     for (x=0;x<39;x++) {
       var knapp_id_nei = document.getElementById("b" + (x + 1));
       var knapp_id_ja = document.getElementById("b" + (-(x + 1)));
@@ -64,6 +67,9 @@ function language(clicked_id) {
     }
     ja_språk = ja_nei[1][0];
     nei_språk = ja_nei[1][1];
+    seier_språk = ja_nei[1][2];
+    uavgjort_språk = ja_nei[1][3];
+    tap_språk = ja_nei[1][4];
     for (x=0;x<39;x++) {
       var knapp_id_nei = document.getElementById('b' + (x + 1));
       var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
@@ -100,7 +106,6 @@ function language(clicked_id) {
 
 
 const sprak_id = [
-  'title',
   'beskrivelse',
   'home',
   'logout',

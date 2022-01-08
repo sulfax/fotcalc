@@ -1,5 +1,4 @@
 const norsk = [
-    'UEFA premiepenger-kalkulator UCL, UEL, UECL',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     'Hjem',
     'Logg ut',
@@ -41,7 +40,6 @@ const norsk = [
   
 
 const english = [
-    'UEFA prize money calculator UCL, UEL, UECL',
     'Calculate your clubs income in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
     'Home',
     'Log out',
@@ -84,10 +82,16 @@ const english = [
 const ja_nei = [
     [
     'Ja',
-    'Nei'
+    'Nei',
+    'Seier',
+    'Uavgjort',
+    'Tap'
     ],
     [
     'Yes',
-    'No'
-    ],
+    'No',
+    "Victory",
+    "Draw",
+    "Loss"
+    ]
 ]
