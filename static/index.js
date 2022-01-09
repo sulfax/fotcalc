@@ -69,7 +69,15 @@ function language_standard(clicked_id) {
     try {
       var path = window.location.pathname;
       var page = path.split("/").pop();
-      if (page == "index.html" || page == "") {
+      if (page == "koeffisient.html") {
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Antall';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 7)[0].placeholder = 'Plassering';
+        }
+      }
+      else {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
         }
@@ -78,14 +86,6 @@ function language_standard(clicked_id) {
         }
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
-        }
-      }
-      else if (page == "koeffisient.html") {
-        for (x=0;x<6;x++) {
-          document.getElementsByName(x + 1)[0].placeholder = 'Antall';
-        }
-        for (x=0;x<3;x++) {
-          document.getElementsByName(x + 7)[0].placeholder = 'Plassering';
         }
       }
     }
@@ -159,7 +159,15 @@ function language_standard(clicked_id) {
     try {
       var path = window.location.pathname;
       var page = path.split("/").pop();
-      if (page == "index.html") {
+      if (page == "koeffisient.html") {
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Amount';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 7)[0].placeholder = 'Placement';
+        }
+      }
+      else {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
         }
@@ -168,14 +176,6 @@ function language_standard(clicked_id) {
         }
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 13)[0].placeholder = 'Placement';
-        }
-      }
-      else if (page == "koeffisient.html") {
-        for (x=0;x<6;x++) {
-          document.getElementsByName(x + 1)[0].placeholder = 'Amount';
-        }
-        for (x=0;x<3;x++) {
-          document.getElementsByName(x + 7)[0].placeholder = 'Placement';
         }
       }
     }
