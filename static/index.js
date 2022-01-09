@@ -69,7 +69,7 @@ function language_standard(clicked_id) {
     try {
       var path = window.location.pathname;
       var page = path.split("/").pop();
-      if (page == "index.html") {
+      if (page == "index.html" || page == "") {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
         }
