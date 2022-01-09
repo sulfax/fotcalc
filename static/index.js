@@ -69,15 +69,7 @@ function language_standard(clicked_id) {
     try {
       var path = window.location.pathname;
       var page = path.split("/").pop();
-      if (page == "koeffisient.html") {
-        for (x=0;x<6;x++) {
-          document.getElementsByName(x + 1)[0].placeholder = 'Antall';
-        }
-        for (x=0;x<3;x++) {
-          document.getElementsByName(x + 7)[0].placeholder = 'Plassering';
-        }
-      }
-      else {
+      if (page == "index.html") {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
         }
@@ -86,6 +78,14 @@ function language_standard(clicked_id) {
         }
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
+        }
+      }
+      else if (page == "koeffisient.html") {
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Antall';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 7)[0].placeholder = 'Plassering';
         }
       }
     }
@@ -159,15 +159,7 @@ function language_standard(clicked_id) {
     try {
       var path = window.location.pathname;
       var page = path.split("/").pop();
-      if (page == "koeffisient.html") {
-        for (x=0;x<6;x++) {
-          document.getElementsByName(x + 1)[0].placeholder = 'Amount';
-        }
-        for (x=0;x<3;x++) {
-          document.getElementsByName(x + 7)[0].placeholder = 'Placement';
-        }
-      }
-      else {
+      if (page == "index.html") {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
         }
@@ -176,6 +168,14 @@ function language_standard(clicked_id) {
         }
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 13)[0].placeholder = 'Placement';
+        }
+      }
+      else if (page == "koeffisient.html") {
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Amount';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 7)[0].placeholder = 'Placement';
         }
       }
     }
@@ -295,7 +295,7 @@ function language_koeffisient(clicked_id) {
       }
     }
   }
-  if (page == 'index.html') {
+  else {
     var kalkulator_antall_oversett = sprak_id_kalkulator.length;
     if (clicked_id == "norsk") {
       for (x=0;x<kalkulator_antall_oversett;x++) {
