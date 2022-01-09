@@ -1,16 +1,17 @@
-/*
-document.getElementById(sprak_id[1][0]).setAttribute("data_title", english[1][0]);   
-*/
-
 function language(clicked_id) {
+  language_koeffisient(clicked_id)
+  language_standard(clicked_id)
+}
+
+function language_standard(clicked_id) {
   var kolonne_lengde = sprak_id.length;
   var flint = "";
 
   if (clicked_id == "norsk") {
+    document.getElementById("ytre_tabell_div_id").style.width = "123px";
     for (x=0;x<kolonne_lengde;x++) {
       try {
         document.getElementById(sprak_id[x]).innerHTML = norsk[x];
-        document.getElementById("ytre_tabell_div_id").style.width = "123px";
       }
       catch {
         null;
@@ -21,6 +22,8 @@ function language(clicked_id) {
     seier_språk = ja_nei[0][2];
     uavgjort_språk = ja_nei[0][3];
     tap_språk = ja_nei[0][4];
+    eliminert_språk = ja_nei[0][5];
+    spilt_språk = ja_nei[0][6];
     for (x=0;x<39;x++) {
       var knapp_id_nei = document.getElementById("b" + (x + 1));
       var knapp_id_ja = document.getElementById("b" + (-(x + 1)));
@@ -37,14 +40,53 @@ function language(clicked_id) {
       }
     }
     try {
-      for (x=0;x<3;x++) {
-        document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
+      for (x=0;x<68;x++) {
+        var klasse = (document.getElementById("bt" + (x + 1)).className);
+        var id = document.getElementById("bt" + (x + 1))
+        if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UCL del" || klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
+          id.innerText = 'Nei';
+        }
+        if (klasse == "btn btn-danger r1") {
+          id.innerText = 'Seier';
+        }
+        if (klasse == "btn btn-danger r2") {
+          id.innerText = 'Uavgjort';
+        }
+        if (klasse == "btn btn-danger r3") {
+          id.innerText = 'Tap';
+        }
+        if (klasse == "btn btn-danger de1_UCL ele" || klasse == "btn btn-danger de1_UEL ele" || klasse == "btn btn-danger de1_UECL ele") {
+          id.innerText = 'Eliminert';
+        }
+        if (klasse == "btn btn-danger de1_UCL del" || klasse == "btn btn-danger de1_UEL del" || klasse == "btn btn-danger de1_UECL del") {
+          id.innerText = 'Spilt';
+        }
       }
-      for (x=0;x<6;x++) {
-        document.getElementsByName(x + 4)[0].placeholder = 'Antall';
+    }
+    catch {
+      null;
+    }
+    try {
+      var path = window.location.pathname;
+      var page = path.split("/").pop();
+      if (page == "index.html") {
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
+        }
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 4)[0].placeholder = 'Antall';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
+        }
       }
-      for (x=0;x<3;x++) {
-        document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
+      else if (page == "koeffisient.html") {
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Antall';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 7)[0].placeholder = 'Plassering';
+        }
       }
     }
     catch {
@@ -56,10 +98,10 @@ function language(clicked_id) {
 
   
   else {
+    document.getElementById("ytre_tabell_div_id").style.width = "90px";
     for (x=0;x<kolonne_lengde;x++) {
       try {
         document.getElementById(sprak_id[x]).innerHTML = english[x];
-        document.getElementById("ytre_tabell_div_id").style.width = "90px";
       }
       catch {
         null;
@@ -70,6 +112,8 @@ function language(clicked_id) {
     seier_språk = ja_nei[1][2];
     uavgjort_språk = ja_nei[1][3];
     tap_språk = ja_nei[1][4];
+    eliminert_språk = ja_nei[1][5];
+    spilt_språk = ja_nei[1][6];
     for (x=0;x<39;x++) {
       var knapp_id_nei = document.getElementById('b' + (x + 1));
       var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
@@ -86,14 +130,53 @@ function language(clicked_id) {
       }
     }
     try {
-      for (x=0;x<3;x++) {
-        document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
+      for (x=0;x<68;x++) {
+        var klasse = (document.getElementById("bt" + (x + 1)).className);
+        var id = document.getElementById("bt" + (x + 1))
+        if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UECL del") {
+          id.innerText = 'No';
+        }
+        if (klasse == "btn btn-danger r1") {
+          id.innerText = 'Victory';
+        }
+        if (klasse == "btn btn-danger r2") {
+          id.innerText = 'Draw';
+        }
+        if (klasse == "btn btn-danger r3") {
+          id.innerText = 'Loss';
+        }
+        if (klasse == "btn btn-danger de1_UCL ele" || klasse == "btn btn-danger de1_UEL ele" || klasse == "btn btn-danger de1_UECL ele") {
+          id.innerText = 'Eliminated';
+        }
+        if (klasse == "btn btn-danger de1_UCL del" || klasse == "btn btn-danger de1_UEL del" || klasse == "btn btn-danger de1_UECL del") {
+          id.innerText = 'Played';
+        }
       }
-      for (x=0;x<6;x++) {
-        document.getElementsByName(x + 4)[0].placeholder = 'Amount';
+    }
+    catch {
+      null;
+    }
+    try {
+      var path = window.location.pathname;
+      var page = path.split("/").pop();
+      if (page == "index.html") {
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
+        }
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 4)[0].placeholder = 'Amount';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 13)[0].placeholder = 'Placement';
+        }
       }
-      for (x=0;x<3;x++) {
-        document.getElementsByName(x + 13)[0].placeholder = 'Placement';
+      else if (page == "koeffisient.html") {
+        for (x=0;x<6;x++) {
+          document.getElementsByName(x + 1)[0].placeholder = 'Amount';
+        }
+        for (x=0;x<3;x++) {
+          document.getElementsByName(x + 7)[0].placeholder = 'Placement';
+        }
       }
     }
     catch {
@@ -106,16 +189,18 @@ function language(clicked_id) {
 
 
 const sprak_id = [
-  'title',
-  'beskrivelse',
-  'home',
-  'logout',
   'kalkulator',
-  'laget_av_Johannes',
-  'kontakt_meg',
-  'overskrift',
   'tilbakestill',
   'progresjon',
+  'laget_av_Johannes',
+  'kontakt_meg'
+];
+
+const sprak_id_kalkulator = [
+  'title',
+  'home',
+  'overskrift',
+  'beskrivelse',
   'hjemlig_seriemester', 
   'spilt_preliminary', 
   'spilt_q1', 
@@ -143,8 +228,99 @@ const sprak_id = [
   'spilt_scup',
   'vunnet_scup',
   'inntjening_turnering',
-  'inntjening'
-];
+  'inntjening',
+]
+
+const sprak_id_koeffisient = [
+  'title_koeffisient',
+  'koeffisient_kalkulator',
+  'overskrift_koeffisient',
+  'beskrivelse_koeffisient',
+  'prelim_semifinale',
+  'prelim_finale',
+  'q1_kamp1',
+  'q1_kamp2',
+  'q1_elim',
+  'q2_kamp1',
+  'q2_kamp2',
+  'q2_elim',
+  'q3_kamp1',
+  'q3_kamp2',
+  'q3_elim',
+  'po_kamp1',
+  'po_kamp2',
+  'po_elim',
+  'gruppespill_del',
+  'seiere_antall',
+  'uavgjort_antall',
+  'gruppeplassering',
+  'knock_po_kamp1',
+  'knock_po_kamp2',
+  'åtten',
+  'åtten_kamp1',
+  'åtten_kamp2',
+  'kvart',
+  'kvart_kamp1',
+  'kvart_kamp2',
+  'semi',
+  'semi_kamp1',
+  'semi_kamp2',
+  'finale',
+  'finale_kamp1'
+]
+
+function language_koeffisient(clicked_id) {
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  if (page == 'koeffisient.html') {
+    var koeffisient_antall_oversett = sprak_id_koeffisient.length;
+    if (clicked_id == "norsk") {
+      for (x=0;x<koeffisient_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_koeffisient[x]).innerHTML = norsk_koeffisient[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+    else {
+      for (x=0;x<koeffisient_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_koeffisient[x]).innerHTML = english_koeffisient[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+  }
+  if (page == 'index.html') {
+    var kalkulator_antall_oversett = sprak_id_kalkulator.length;
+    if (clicked_id == "norsk") {
+      for (x=0;x<kalkulator_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_kalkulator[x]).innerHTML = norsk_kalkulator[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+    else {
+      for (x=0;x<kalkulator_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_kalkulator[x]).innerHTML = english_kalkulator[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+  }
+}
+
 
 var flint_2 = localStorage.getItem("someVarKey");
-language(flint_2);
+language_koeffisient(flint_2);
+language_standard(flint_2);

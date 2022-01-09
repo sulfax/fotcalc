@@ -413,13 +413,13 @@ function forlat_input_felt_2(clicked_id) {
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id);
         }
-        else if (((input_felt_verdi + hjelp_2) > 6) || ((input_felt_verdi + hjelp_2) > 0)) {
+        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || (Number.isInteger(parseInt(input_felt_verdi))) === false) {
             utenfor_gyldig_input(clicked_id);
-            utenfor_gyldig_input("i" + (nummer_2 + 3));
             summer();
         }
         else {
             utenfor_gyldig_input(clicked_id);
+            utenfor_gyldig_input("i" + (nummer_2 + 3));
             summer();
         }
     }
@@ -438,13 +438,13 @@ function forlat_input_felt_2(clicked_id) {
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id); 
         }
-        else if (((input_felt_verdi + hjelp_2) > 6) || ((input_felt_verdi + hjelp_2) > 0)) {
+        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || (Number.isInteger(parseInt(input_felt_verdi))) === false) {
             utenfor_gyldig_input(clicked_id);
-            utenfor_gyldig_input("i" + (nummer_2 - 3));
             summer();
         }
         else {
             utenfor_gyldig_input(clicked_id);
+            utenfor_gyldig_input("i" + (nummer_2 - 3));
             summer();
         }
     }
@@ -829,6 +829,9 @@ function oppdater_ved_refresh() {
             var input_verdi_2 = motak_5.split(',');
             for (var ha=0;ha<input_id_2.length;ha++) {
                 document.getElementById('i' + (ha + 4)).value = input_verdi_2[ha];
+                forlat_input_felt_2('i4');
+                forlat_input_felt_2('i5');
+                forlat_input_felt_2('i6');
                 forlat_input_felt_2(input_id_2[ha]);
             }
         }
