@@ -1,14 +1,16 @@
 const norsk = [
-    'UEFA premiepenger-kalkulator UCL, UEL, UECL',
-    'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     'Hjem',
-    'Logg ut',
-    'Hjem',
-    'Utviklet av Johannes Kaste',
-    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på johanneskaste@gmail.com',
-    'UEFA premiepenger-kalkulator',
     'Tilbakestill',
     '<br> Klubbens<br>progresjon? <br> &#129147',
+    'Utviklet av Johannes Kaste',
+    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på johanneskaste@gmail.com'
+];
+
+const norsk_kalkulator = [
+    'UEFA premiepenger-kalkulator UCL, UEL, UECL',
+    'Hjem',
+    'UEFA premiepenger-kalkulator',
+    'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     'Hjemlig seriemester:',
     'Preliminary runde:',
     'Q1:',
@@ -36,21 +38,61 @@ const norsk = [
     'Super Cup:',
     'Vunnet Super Cup:',
     'Inntjening per turnering:',
-    'Total inntjening:'
+    'Total inntjening:',
+]
+
+const norsk_koeffisient = [
+    'UEFA koeffisient-kalkualtor UCL, UEL, UECL',
+    'Koeffisient-Kalkulator',
+    'UEFA koeffisient-kalkualtor',
+    'Kalkuler klubb- og assosiasjons-koeffisientpoeng for din klubb.',
+    'Preliminary runde | semifinale',
+    'Preliminary runde | finale',
+    'Q1 | kamp 1',
+    'Q1 | kamp 2',
+    'Q1 | eliminert',
+    'Q2 | kamp 1',
+    'Q2 | kamp 2',
+    'Q2 | eliminert',
+    'Q3 | kamp 1',
+    'Q3 | kamp 2',
+    'Q3 | eliminert',
+    'Playoff | kamp 1',
+    'Playoff | kamp 2',
+    'Playoff | eliminert',
+    'Gruppespill',
+    'Seiere',
+    'Uavgjort',
+    'Tabellplassering:',
+    'Utslagsrunde-playoff | kamp 1',
+    'Utslagsrunde-playoff | kamp 2',
+    'Åttendelsfinale',
+    'Åttendelsfinale | kamp 1',
+    'Åttendelsfinale | kamp 2',
+    'Kvartfinale',
+    'Kvartfinale | kamp 1',
+    'Kvartfinale | kamp 2',
+    'Semifinale',
+    'Semifinale | kamp 1',
+    'Semifinale | kamp 2',
+    'Finale',
+    'Finale | kamp 1'
 ];
   
 
 const english = [
-    'UEFA prize money calculator UCL, UEL, UECL',
-    'Calculate your clubs income in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
     'Home',
-    'Log out',
-    'Home',
-    'Developed by Johannes Kaste',
-    'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on johanneskaste@gmail.com',
-    'UEFA prize money calculator',
     'Reset',
     '<br> Clubs<br>progression? <br> &#129147',
+    'Developed by Johannes Kaste',
+    'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on johanneskaste@gmail.com'
+];
+
+const english_kalkulator = [
+    'UEFA prize money calculator UCL, UEL, UECL',
+    'Home',
+    'UEFA prize money calculator',
+    'Calculate your clubs income in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
     'Domestic champion:',
     'Preliminary round:',
     'Q1:',
@@ -78,7 +120,45 @@ const english = [
     'Super Cup:',
     'Won Super Cup',
     'Income per tounament:',
-    'Total income:'
+    'Total income:',
+]
+
+const english_koeffisient = [
+    'UEFA coefficient calculator UCL, UEL, UECL',
+    'Coefficient Calculator',
+    'UEFA coefficient points calculator',
+    'Calculate club- and association coefficient points for your club.',
+    'Preliminary round | Semi-final',
+    'Preliminary round | Final',
+    'Q1 | match 1',
+    'Q1 | match 2',
+    'Q1 | eliminated',
+    'Q2 | match 1',
+    'Q2 | match 2',
+    'Q2 | eliminated',
+    'Q3 | match 1',
+    'Q3 | match 2',
+    'Q3 | eliminated',
+    'Play-off | match 1',
+    'Play-off | match 2',
+    'Play-off | eliminated',
+    'Group stage',
+    'Wins',
+    'Draws',
+    'Group placement',
+    'Knockout round play-off | match 1',
+    'Knockout round play-off | match 2',
+    'Round of 16',
+    'Round of 16 | match 1',
+    'Round of 16 | match 2',
+    'Quarter-final',
+    'Quarter-final | match 1',
+    'Quarter-final | match 2',
+    'Semi-final',
+    'Semi-final | match 1',
+    'Semi-final | match 2',
+    'Final',
+    'Final | match 1'
 ];
 
 const ja_nei = [
