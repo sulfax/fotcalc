@@ -257,7 +257,9 @@ const sprak_id_koeffisient = [
   'semi_kamp1',
   'semi_kamp2',
   'finale',
-  'finale_kamp1'
+  'finale_kamp1',
+  'koeffisienter_turnering',
+  'koeffisienter',
 ]
 
 function language_koeffisient(clicked_id) {

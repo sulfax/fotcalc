@@ -41,6 +41,6 @@ footer div{
 ion-icon {
     pointer-events: none !important;
 }
-a {
+#mailto {
     padding-left: 1px !important;
 }
