@@ -3,7 +3,7 @@ const norsk = [
     'Tilbakestill',
     '<br> Klubbens<br>progresjon? <br> &#129147',
     'Utviklet av Johannes Kaste',
-    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på johanneskaste@gmail.com'
+    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>  '
 ];
 
 const norsk_kalkulator = [
@@ -85,7 +85,7 @@ const english = [
     'Reset',
     '<br> Clubs<br>progression? <br> &#129147',
     'Developed by Johannes Kaste',
-    'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on johanneskaste@gmail.com'
+    'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
 ];
 
 const english_kalkulator = [

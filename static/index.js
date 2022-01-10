@@ -160,7 +160,7 @@ function language_standard(clicked_id) {
     var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
     try {
       if (knapp_id_nei) {
-        knapp_id_nei.innerText = nei_språk;
+        knapp_id_nei.innerText = "" /*nei_språk*/;
       }
       else {
         y = (x + 1)

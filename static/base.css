@@ -40,4 +40,7 @@ footer div{
 }
 ion-icon {
     pointer-events: none !important;
-   }
+}
+a {
+    padding-left: 1px !important;
+}

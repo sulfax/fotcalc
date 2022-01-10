@@ -293,7 +293,7 @@ function paa_av(clicked_id){
         if ((clicked_id == "b-19")) {
             oppdater_b10_b14();
         }
-        document.getElementById(clicked_id).innerText = nei_språk;
+        document.getElementById(clicked_id).innerText = "" /*nei_språk*/;
         document.getElementById(clicked_id).id = "b" + tall;
         document.getElementById("b" + tall + "_").innerText = "";
         summer();
