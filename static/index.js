@@ -24,21 +24,6 @@ function language_standard(clicked_id) {
     tap_språk = ja_nei[0][4];
     eliminert_språk = ja_nei[0][5];
     spilt_språk = ja_nei[0][6];
-    for (x=0;x<39;x++) {
-      var knapp_id_nei = document.getElementById("b" + (x + 1));
-      var knapp_id_ja = document.getElementById("b" + (-(x + 1)));
-      try {
-        if (knapp_id_nei) {
-          knapp_id_nei.innerText = 'Nei';
-        }
-        else {
-          knapp_id_ja.innerText = 'Ja';
-        }
-      }
-      catch {
-        null;
-      }
-    }
     try {
       for (x=0;x<68;x++) {
         var klasse = (document.getElementById("bt" + (x + 1)).className);
@@ -114,21 +99,6 @@ function language_standard(clicked_id) {
     tap_språk = ja_nei[1][4];
     eliminert_språk = ja_nei[1][5];
     spilt_språk = ja_nei[1][6];
-    for (x=0;x<39;x++) {
-      var knapp_id_nei = document.getElementById('b' + (x + 1));
-      var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
-      try {
-        if (knapp_id_nei) {
-          knapp_id_nei.innerText = 'No';
-        }
-        else {
-          knapp_id_ja.innerText = 'Yes';
-        }        
-      }
-      catch {
-        null;
-      }
-    }
     try {
       for (x=0;x<68;x++) {
         var klasse = (document.getElementById("bt" + (x + 1)).className);
@@ -184,6 +154,27 @@ function language_standard(clicked_id) {
     }
     flint = "english";
     localStorage.setItem("someVarKey", flint);
+  }
+  for (x=0;x<39;x++) {
+    var knapp_id_nei = document.getElementById('b' + (x + 1));
+    var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
+    try {
+      if (knapp_id_nei) {
+        knapp_id_nei.innerText = nei_språk;
+      }
+      else {
+        y = (x + 1)
+        if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
+          knapp_id_ja.innerText = spilt_språk;
+        }
+        else {
+          knapp_id_ja.innerText = ja_språk;
+        }
+      }        
+    }
+    catch {
+      null;
+    }
   }
 };
 
