@@ -871,10 +871,10 @@ function oppdater_ved_refresh() {
                     }
                     if (aarstall == 0) {
                         document.getElementById('sessong_kontroller_1').disabled = true;
-                        /*document.getElementById('sessong_kontroller_2').disabled = false;*/
+                        document.getElementById('sessong_kontroller_2').disabled = false;
                     }
                     if (aarstall == 1) {
-                        /*document.getElementById('sessong_kontroller_1').disabled = false;*/
+                        document.getElementById('sessong_kontroller_1').disabled = false;
                         document.getElementById('sessong_kontroller_2').disabled = true;
                     oppdater_sessong(aarstall)
                     }
