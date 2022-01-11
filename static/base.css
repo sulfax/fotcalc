@@ -35,11 +35,15 @@ footer div{
 .tekst_1 {
     color: rgb(196, 217, 255);
 }
-.twitter_logo:hover{
-    color: rgb(196, 217, 255);
+.logo_twitter:hover{
+    filter: brightness(0) saturate(100%) invert(87%) sepia(4%) saturate(4998%) hue-rotate(187deg) brightness(101%) contrast(101%);
 }
-ion-icon {
-    pointer-events: none !important;
+a {
+    padding-left: 1rem;
+    color: #4a56ff;
+}
+a:hover {
+    color: rgb(196, 217, 255);
 }
 #mailto {
     padding-left: 1px !important;

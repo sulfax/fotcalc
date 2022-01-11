@@ -3,7 +3,7 @@ const norsk = [
     'Tilbakestill',
     '<br> Klubbens<br>progresjon? <br> <img src="../media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Utviklet av Johannes Kaste',
-    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>  '
+    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
 ];
 
 const norsk_kalkulator = [
@@ -23,7 +23,7 @@ const norsk_kalkulator = [
     'Playoff:',
     'Røk ut i playoff:',
     'Gruppespillet:',
-    '<abbr data_title="Ti års koeffisient-rangering blant lagene innad i turnering (1-32)">Ti års koeff</abbr>:<a href="https://www.football-coefficient.eu/money/" title="football-coefficient.eu/money" target="_blank">1</a><a href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" title="uefa.com/nationalassociations/uefarankings/tenyears" target="_blank">2</a>',
+    '<abbr data_title="Ti års koeffisient-rangering blant lagene innad i turnering (1-32)">Ti års koeff</abbr>:<a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank">1</a><a class="graa_hover_link" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank">2</a>',
     'Seiere:',
     'Uavgjort:',
     '<abbr data_title="Antall uavgjorte kamper i hele gruppespillet">Uavgjort totalt</abbr>:',
@@ -107,7 +107,7 @@ const english_kalkulator = [
     'Playoff:',
     'Eliminated in playoff:',
     'Group stage:',
-    '<abbr data_title="Ten-year coefficient ranking among teams within the tournament (1-32)">Ten-year coeff</abbr>:<a href="https://www.football-coefficient.eu/money/" title="football-coefficient.eu/money" target="_blank">1</a><a href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" title="uefa.com/nationalassociations/uefarankings/tenyears" target="_blank">2</a>',
+    '<abbr data_title="Ten-year coefficient ranking among teams within the tournament (1-32)">Ten-year coeff</abbr>:<a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank">1</a><a class="graa_hover_link" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank">2</a>',
     'Wins:',
     'Draws:',
     '<abbr data_title="Number of drawn games in all the groups combined">Total draws</abbr>:',

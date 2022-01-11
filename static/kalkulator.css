@@ -464,9 +464,6 @@ td .placeholder::placeholder {
 .Inntjening {
     text-decoration:  underline;
 }
-a {
-    padding-left: 1rem;
-}
 .head_tr {
     border-bottom: 0px !important;
 }
@@ -480,4 +477,7 @@ td {
     overflow: hidden; 
     text-overflow: ellipsis; 
     word-wrap: break-word;
+}
+.graa_hover_link:hover {
+    color: #929292;
 }
