@@ -85,7 +85,7 @@ const norsk_koeffisient = [
 const english = [
     'Home',
     'Reset',
-    '<br> Clubs<br>progression? <br> &#129147',
+    '<br> Clubs<br>progression? <br> <img src="../media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Developed by Johannes Kaste',
     'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
 ];
