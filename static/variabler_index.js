@@ -1,7 +1,7 @@
 const norsk = [
     'Hjem',
     'Tilbakestill',
-    '<br> Klubbens<br>progresjon? <br> &#129147',
+    '<br> Klubbens<br>progresjon? <br> <img src="../media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Utviklet av Johannes Kaste',
     'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>  '
 ];
