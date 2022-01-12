@@ -260,6 +260,8 @@ const sprak_id_koeffisient = [
   'finale_kamp1',
   'koeffisienter_turnering',
   'koeffisienter',
+  'asosiasjons_poeng',
+  'klubb_poeng'
 ]
 
 function language_koeffisient(clicked_id) {

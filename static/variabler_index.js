@@ -79,6 +79,8 @@ const norsk_koeffisient = [
     'Finale | kamp 1',
     'Koeffisientpoeng per turnering',
     'Totale koeffisientpoeng',
+    'Asosiasjons poeng',
+    'Klubb poeng'
 ];
   
 
@@ -163,6 +165,8 @@ const english_koeffisient = [
     'Final | match 1',
     'Coefficient points per tournament',
     'Total coefficient points',
+    'Association points',
+    'Club points'
 ];
 
 const ja_nei = [
