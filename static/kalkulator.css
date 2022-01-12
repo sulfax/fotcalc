@@ -437,20 +437,20 @@ td .placeholder::placeholder {
 .head_tr{
     border: 1px solid #b1b1b1;
 }
-.table .tom_celle, .table .resultat_celle_1, .table .resultat_celle {
+.table .resultat_celle_1, .table .resultat_celle {
     border: 1px solid #b1b1b1;
 }
 #tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester {
     border-top: 1px solid #b1b1b1;
 }
-#vunnet_scup, #b38_, #b39_, #tom_celle_ramme_uthevet, #ramme_under_uthevet {
-    border-bottom: 2px solid #b1b1b1;
+.Inntjening_pr_turnering {
+    border-top: 2px solid #b1b1b1;
 }
 .tom_celle {
     background-color: #343a40;
 }
 #tom_celle_ramme_bottom {
-    border-bottom-color: #343a40;
+    border-bottom: 1px solid #343a40;
 }
 #tom_celle_ramme_right {
     border-right-color: #343a40;
