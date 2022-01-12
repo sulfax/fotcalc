@@ -450,7 +450,7 @@ td .placeholder::placeholder {
     background-color: #343a40;
 }
 #tom_celle_ramme_bottom {
-    border-bottom: 1px solid #343a40;
+    border-bottom-color: #343a40;
 }
 #tom_celle_ramme_right {
     border-right-color: #343a40;
