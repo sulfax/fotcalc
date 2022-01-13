@@ -1,73 +1,56 @@
-/*
-.btn-primary{color:#fff;background-color:#ff002b;border-color:#ff002b}
-.btn-primary:hover{color:#fff;background-color:#d10023;border-color:#d10023}
-*/
-.container {
-    width:100%;
-    padding-right:15px;
-    padding-left:15px;
-    margin-right:auto;
-    margin-left:auto;
+@media (min-width:256px) {
+    .container {
+        max-width:600px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:128px !important;
+    }
 }
-        @media (min-width:256px) {
-            .container {
-                max-width:600px
-            }
-            .table-sm .resultat_celle_1, .tom_celle {
-                min-width:128px !important;
-            }
-        }
-        @media (min-width:768px) {
-            .container {
-                max-width:820px
-            }
-            .table-sm .resultat_celle_1, .tom_celle {
-                min-width:128px !important;
-            }
-        }
-        @media (min-width:992px) {
-            .container {
-                max-width:950px
-            }
-        }
-        @media (min-width:1200px) {
-            .container {
-                max-width:1140px
-            }
-        } 
-        @media (min-width:1308px) {
-            .container {
-                max-width:1220px
-            }
-        } 
-        .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-            width:100%;
-            padding-right:15px;
-            padding-left:15px;
-            margin-right:auto;
-            margin-left:auto }
-            @media (min-width:256px) {
-                .container,.container-sm {
-                    max-width:820px
-                }
-            }@media (min-width:768px) {
-                .container, .container-md, .container-sm {
-                    max-width:820px
-                }
-            }@media (min-width:992px) {
-                .container, .container-lg, .container-md, .container-sm {
-                    max-width:950px
-                }
-            }@media (min-width:1200px) {
-                .container, .container-lg, .container-md, .container-sm, .container-xl {
-                    max-width:1140px
-                }
-            }
-            @media (min-width:1308px) {
-                .container, .container-lg, .container-md, .container-sm, .container-xl {
-                    max-width:1220px
-                }
-            } 
+@media (min-width:768px) {
+    .container {
+        max-width:820px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:128px !important;
+    }
+}
+@media (min-width:992px) {
+    .container {
+        max-width:950px
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        max-width:1140px
+    }
+} 
+@media (min-width:1308px) {
+    .container {
+        max-width:1220px
+    }
+}
+@media (min-width:256px) {
+    .container,.container-sm {
+        max-width:820px
+    }
+}@media (min-width:768px) {
+    .container, .container-md, .container-sm {
+        max-width:820px
+    }
+}@media (min-width:992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width:950px
+    }
+}@media (min-width:1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1140px
+    }
+}
+@media (min-width:1308px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1220px
+    }
+} 
 
 @media screen and (min-width: 0px) {
     abbr[data_title] {
@@ -100,8 +83,6 @@
 }
 .knapp_celle {
     padding:1px !important;
-    height:25px;
-    width: 40%;
 }
 .resultat_celle {
     width:30%;
@@ -199,9 +180,6 @@
     margin-left:1%;
     margin-right:1%;
 }
-/*
-.btn-danger.focus,.btn-danger:focus{color:#fff;background-color:#c82333;border-color:#bd2130;box-shadow:0 0 0 .2rem rgba(225,83,97,.5)}
-*/
 tbody {
     border-top: 4px !important;
     border: 1px solid #b1b1b1;
@@ -257,20 +235,19 @@ tbody {
     padding: 0px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
-    background-color: white;
-    border-color: white;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
     color: rgb(196, 217, 255);
     transition: all 0s !important;
-
 }
 .btn-secondary:disabled {
-    background-color: white;
-    border-color: white;
-    color: white;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
 }
 .btn-secondary:hover:enabled {
-    background-color: white !important;
-    border-color: white !important;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
     color: rgb(154, 176, 218) !important;
 }
 .btn-secondary:active:enabled, .btn.btn-secondary:active:enabled {
@@ -443,7 +420,7 @@ td .placeholder::placeholder {
 #tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester {
     border-top: 1px solid #b1b1b1;
 }
-.Inntjening_pr_turnering {
+#inntjening_turnering, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening {
     border-top: 2px solid #b1b1b1;
 }
 .tom_celle {
@@ -472,11 +449,6 @@ td .placeholder::placeholder {
     height:72px;
     margin-top: -13px;
     margin-bottom: 31px !important;
-}
-td { 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    word-wrap: break-word;
 }
 .graa_hover_link:hover {
     color: #929292;
