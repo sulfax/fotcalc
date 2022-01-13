@@ -230,10 +230,10 @@ function paa_av(clicked_id){
     const tall = -nummer;
     if (nummer > 0)  {
         if (nummer == 2 || nummer == 3 || nummer == 4 || nummer == 6 || nummer == 7 || nummer == 9 || nummer == 10 || nummer == 11 || nummer == 13 || nummer == 14 || nummer == 15 || (nummer >= 21 && nummer <= 32) || (nummer >= 36 && nummer <= 37)) {
-            document.getElementById(clicked_id).innerText = spilt_språk;
+            document.getElementById(clicked_id).innerText = (spilt_språk || "");
         }
         else {
-            document.getElementById(clicked_id).innerText = ja_språk;
+            document.getElementById(clicked_id).innerText = (ja_språk || "");
         }
         document.getElementById(clicked_id).id = "b" + tall;
         var aktuell_sum = (knapp_summer[nummer - 1][aarstall]);
