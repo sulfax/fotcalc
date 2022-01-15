@@ -247,7 +247,7 @@ function paa_av(clicked_id){
                 summer();
             }
         }
-        if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
+        else if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
             if ((document.getElementById("b13")) && (document.getElementById("b16")) && (document.getElementById("b18")) && (document.getElementById("b19"))) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 summer();

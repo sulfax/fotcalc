@@ -84,10 +84,6 @@
 .knapp_celle {
     padding:1px !important;
 }
-.resultat_celle {
-    width:30%;
-    text-align: center;
-}
 .ytre_tabell_div{
     margin-left:-2%;
     background-color: white;
@@ -191,11 +187,14 @@ tbody {
     width: 29%;
     padding:0px !important;
     transition-duration:.0s;
-    height: 33px;
+    height: 29px;
 }
-.table .tom_celle, .table .resultat_celle_1, .table .resultat_celle, #total_inntjening, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening  {
+.table .tom_celle, .table .resultat_celle, .table .resultat_celle_1, #total_inntjening, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening  {
     vertical-align:middle;
     font-family: "Noto Sans Math", monospace;
+}
+.table .resultat_celle {
+    text-align: center;
 }
 #total_inntjening {
     border-left: 0px !important;
@@ -203,7 +202,7 @@ tbody {
 }
 .table-sm .resultat_celle_1, .tom_celle {
     text-align: right;
-    padding-right:calc(2.5% - 15px);
+    padding-right:calc(2.5% - 15px) !important;
     min-width:125px;
 }
 .mellomrom {
@@ -405,7 +404,7 @@ td .placeholder::placeholder {
 }
 .knapp_erstatning{
     width:29%;
-    height:20px;
+    height:29px;
     float:left;
 }
 .table td, .table th, .table .head_tr th{
@@ -414,14 +413,20 @@ td .placeholder::placeholder {
 .head_tr{
     border: 1px solid #b1b1b1;
 }
-.table .resultat_celle_1, .table .resultat_celle {
-    border: 1px solid #b1b1b1;
+.table .resultat_celle_1 {
+    border: 1px solid rgba(177, 177, 177, 0.4);
 }
-#tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester {
-    border-top: 1px solid #b1b1b1;
+#tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
+    border-top: 1px solid #b1b1b1 !important;
 }
 #inntjening_turnering, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening {
     border-top: 2px solid #b1b1b1;
+}
+.tydelig_ramme_under, .tydelig_ramme_hoyre_under_over {
+    border-bottom: 1px solid rgb(177, 177, 177) !important;
+}
+.tydelig_ramme_hoyre, .tydelig_ramme_hoyre_under_over {
+    border-right: 1px solid rgb(177, 177, 177) !important;
 }
 .tom_celle {
     background-color: #343a40;
@@ -452,4 +457,9 @@ td .placeholder::placeholder {
 }
 .graa_hover_link:hover {
     color: #929292;
+}
+th, td {
+    height: 20px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
 }
