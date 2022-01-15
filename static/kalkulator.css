@@ -461,5 +461,5 @@ td .placeholder::placeholder {
 th, td {
     height: 20px !important;
     padding-top: 3px !important;
-    padding-bottom: 3px !important;
+    padding-bottom: 2px !important;
 }
