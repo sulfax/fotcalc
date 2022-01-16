@@ -71,6 +71,7 @@
         bottom: -30px;
         width: auto;
         white-space: nowrap;
+        z-index: 1;
             
         /* style tooltip */
         background-color: #343a40;

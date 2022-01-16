@@ -155,6 +155,12 @@ function language_standard(clicked_id) {
     flint = "english";
     localStorage.setItem("someVarKey", flint);
   }
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  if (page == "koeffisient.html") {
+    null;
+  }
+  else {
   for (x=0;x<39;x++) {
     var knapp_id_nei = document.getElementById('b' + (x + 1));
     var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
@@ -175,6 +181,7 @@ function language_standard(clicked_id) {
     catch {
       null;
     }
+  }
   }
 };
 
@@ -319,3 +326,6 @@ function language_koeffisient(clicked_id) {
 var flint_2 = localStorage.getItem("someVarKey");
 language_koeffisient(flint_2);
 language_standard(flint_2);
+
+
+oppdater_ved_refresh_koeff()
