@@ -111,20 +111,8 @@
 .sessong{
     color: #4a56ff;
 }
-#beskrivelse, th, #overskrift {
-    color: #343a40
-}
 #overskrift, #beskrivelse {
     text-align: center;
-}
-.tabell_div{
-    width:104%;
-    background-color:white;
-    border-radius: .5rem;
-    padding-bottom: .1%;
-    padding-top: 1.5%;
-    margin-left:-1.99%;
-    overflow-x:auto
 }
 .table-hover {
     background-color: rgb(255, 255, 255)

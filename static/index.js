@@ -8,7 +8,12 @@ function language_standard(clicked_id) {
   var flint = "";
 
   if (clicked_id == "norsk") {
-    document.getElementById("ytre_tabell_div_id").style.width = "123px";
+    try {
+      document.getElementById("ytre_tabell_div_id").style.width = "123px";
+    }
+    catch {
+      null;
+    }
     for (x=0;x<kolonne_lengde;x++) {
       try {
         document.getElementById(sprak_id[x]).innerHTML = norsk[x];
@@ -83,7 +88,12 @@ function language_standard(clicked_id) {
 
   
   else {
-    document.getElementById("ytre_tabell_div_id").style.width = "90px";
+    try {
+      document.getElementById("ytre_tabell_div_id").style.width = "90px";
+    }
+    catch {
+      null;
+    }
     for (x=0;x<kolonne_lengde;x++) {
       try {
         document.getElementById(sprak_id[x]).innerHTML = english[x];
