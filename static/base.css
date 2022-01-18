@@ -39,7 +39,7 @@ footer div{
     filter: brightness(0) saturate(100%) invert(87%) sepia(4%) saturate(4998%) hue-rotate(187deg) brightness(101%) contrast(101%);
 }
 a {
-    margin-left: 1rem;
+    padding-left: 1rem;
     color: #4a56ff;
 }
 a:hover {

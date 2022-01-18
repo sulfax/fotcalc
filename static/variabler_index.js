@@ -109,7 +109,7 @@ const english_kalkulator = [
     'Playoff:',
     'Eliminated in playoff:',
     'Group stage:',
-    '<abbr data_title="Ten-year coefficient ranking among the clubs within the tournament (1-32). Follow link 1 to find your clubs ranking">Ten-year coeff</abbr>:<a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Find your clubs coefficient ranking">1</abbr></a><a class="graa_hover_link" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Find your clubs coefficient ranking (official website, less recommended site)">2</abbr></a>',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking among the clubs within the tournament (1-32). Follow link 1 to find your clubs ranking">Ten-year coeff</abbr>: </div> <a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Find your clubs coefficient ranking">1</abbr></a><a class="graa_hover_link_2" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Find your clubs coefficient ranking (official website, less recommended site)">2</abbr></a>',
     '<abbr data_title="Amount of wins in the group stage">Wins</abbr>:',
     '<abbr data_title="Amount of draws in the group stage">Draws</abbr>:',
     '<abbr data_title="Number of drawn games in all of the groups combined (0-96)">Total draws</abbr>:',

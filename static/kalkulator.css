@@ -58,8 +58,7 @@
             
         /* ensure consistent styling across browsers */
         text-decoration: underline !important;
-    }
-            
+    }        
     abbr[data_title]:hover::after,
     abbr[data_title]:focus::after {
         content: attr(data_title);
@@ -188,7 +187,7 @@ tbody {
     width: 29%;
     padding:0px !important;
     transition-duration:.0s;
-    height: 29px;
+    height: 100%;
 }
 .table .tom_celle, .table .resultat_celle, .table .resultat_celle_1, #total_inntjening, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening  {
     vertical-align:middle;
@@ -456,7 +455,18 @@ td .placeholder::placeholder {
     margin-top: -13px;
     margin-bottom: 31px !important;
 }
-.graa_hover_link:hover {
+.tekst_margin_hoyre {
+    margin-right: 1.2rem !important;
+    display:inline;
+}
+.graa_hover_link {
+    padding-left: 0px !important;
+}
+.graa_hover_link_2 {
+    margin-left: 1rem !important;
+    padding-left: 0px !important;
+}
+.graa_hover_link:hover, .graa_hover_link_2:hover {
     color: #929292;
 }
 th, td {
