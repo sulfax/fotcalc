@@ -23,7 +23,7 @@ const norsk_kalkulator = [
     'Playoff:',
     'Røk ut i playoff:',
     'Gruppespill:',
-    '<abbr data_title="Ti års koeffisient-rangering blant lagene innad i turneringen (1-32). Følg lenke 1 for å finne din klubbs rangering">Ti års koeff</abbr>:<a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering">1</abbr></a><a class="graa_hover_link" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering (offisiell side, mindre anbefalt side)">2</abbr></a>',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering blant lagene innad i turneringen (1-32). Følg lenke 1 for å finne din klubbs rangering">Ti års koeff</abbr>:</div><a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering">1</abbr></a><a class="graa_hover_link_2" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering (offisiell side, mindre anbefalt side)">2</abbr></a>',
     '<abbr data_title="Antall seiere i gruppespillet">Seiere</abbr>:',
     '<abbr data_title="Antall uavgjort i gruppespillet">Uavgjort</abbr>:',
     '<abbr data_title="Antall uavgjorte kamper i alle gruppene til sammen (0-96)">Uavgjort totalt</abbr>:',

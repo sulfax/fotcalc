@@ -404,7 +404,7 @@ td .placeholder::placeholder {
 }
 .knapp_erstatning{
     width:29%;
-    height:29px;
+    height:100%;
     float:left;
 }
 .table td, .table th, .table .head_tr th{
@@ -470,7 +470,7 @@ td .placeholder::placeholder {
     color: #929292;
 }
 th, td {
-    height: 20px !important;
+    height: 30px !important;
     padding-top: 3px !important;
     padding-bottom: 2px !important;
 }
