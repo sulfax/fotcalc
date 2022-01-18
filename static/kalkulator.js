@@ -874,7 +874,7 @@ function oppdater_ved_refresh() {
                         /*document.getElementById('sessong_kontroller_2').disabled = false;*/
                     }
                     if (aarstall == 1) {
-                        /*document.getElementById('sessong_kontroller_1').disabled = false;*/
+                        document.getElementById('sessong_kontroller_1').disabled = false;
                         document.getElementById('sessong_kontroller_2').disabled = true;
                     oppdater_sessong(aarstall)
                     }
