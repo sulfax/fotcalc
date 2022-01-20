@@ -8,12 +8,6 @@ function language_standard(clicked_id) {
   var flint = "";
 
   if (clicked_id == "norsk") {
-    try {
-      document.getElementById("ytre_tabell_div_id").style.width = "123px";
-    }
-    catch {
-      null;
-    }
     for (x=0;x<kolonne_lengde;x++) {
       try {
         document.getElementById(sprak_id[x]).innerHTML = norsk[x];
@@ -88,12 +82,6 @@ function language_standard(clicked_id) {
 
   
   else {
-    try {
-      document.getElementById("ytre_tabell_div_id").style.width = "90px";
-    }
-    catch {
-      null;
-    }
     for (x=0;x<kolonne_lengde;x++) {
       try {
         document.getElementById(sprak_id[x]).innerHTML = english[x];
@@ -277,9 +265,41 @@ const sprak_id_koeffisient = [
   'finale_kamp1',
   'koeffisienter_turnering',
   'koeffisienter',
-  'asosiasjons_poeng',
+  'assosiasjons_poeng_link',
   'klubb_poeng'
 ]
+
+const sprak_id_koeffisient_dokumentasjon = [
+  'title_koeffisient_dokumentasjon',
+  'overskrift_koeffisient_dokumentasjon',
+  'what_is_coeff',
+  'what_are_coeff_beskrivelse_1',
+  'what_are_association_coeff',
+  'what_are_association_coeff_beskrivelse_1',
+  'what_are_association_coeff_kopi',
+  'what_are_association_tabell_1',
+  'what_are_association_coeff_beskrivelse_2',
+  'what_are_association_coeff_beskrivelse_3',
+  'what_are_association_tabell_2',
+  'what_are_association_coeff_beskrivelse_4',
+  'what_are_association_tabell_3',
+  'what_are_association_coeff_beskrivelse_5',
+  'what_are_association_coeff_beskrivelse_6',
+  'what_are_association_tabell_4',
+  'what_are_club_coeff',
+  'what_are_club_coeff_beskrivelse_1',
+  'what_are_club_coeff_tabell_1',
+  'what_are_club_coeff_beskrivelse_2',
+  'what_are_club_coeff_beskrivelse_3',
+  'what_are_club_coeff_beskrivelse_4',
+  'what_are_club_coeff_tabell_2',
+  'what_are_club_coeff_beskrivelse_5',
+  'what_are_club_coeff_tabell_3',
+  'what_are_club_coeff_beskrivelse_6',
+  'what_are_club_coeff_beskrivelse_7',
+  'what_are_club_coeff_beskrivelse_8'
+]
+
 
 function language_koeffisient(clicked_id) {
   var path = window.location.pathname;
@@ -300,6 +320,29 @@ function language_koeffisient(clicked_id) {
       for (x=0;x<koeffisient_antall_oversett;x++) {
         try {
           document.getElementById(sprak_id_koeffisient[x]).innerHTML = english_koeffisient[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+  }
+  else if (page == 'koeffisient_dokumentasjon.html') {
+    var koeffisient_dokumentasjon_antall_oversett = sprak_id_koeffisient_dokumentasjon.length;
+    if (clicked_id == "norsk") {
+      for (x=0;x<koeffisient_dokumentasjon_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_koeffisient_dokumentasjon[x]).innerHTML = norsk_koeffisient_dokumentasjon[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+    else {
+      for (x=0;x<koeffisient_dokumentasjon_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_koeffisient_dokumentasjon[x]).innerHTML = english_koeffisient_dokumentasjon[x];
         }
         catch {
           null;

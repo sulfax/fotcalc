@@ -79,8 +79,39 @@ const norsk_koeffisient = [
     'Finale | kamp 1',
     'Koeffisientpoeng per turnering',
     'Totale koeffisientpoeng',
-    'Asosiasjonspoeng',
-    'Klubb-poeng'
+    'Assosiasjons-poeng',
+    'Klubb-poeng',
+];
+
+const norsk_koeffisient_dokumentasjon = [
+    'Definisjon på UEFA koeffisientpoeng',
+    'Definisjon på UEFA koeffisientpoeng',
+    'Hva er koeffisientpoeng?',
+    '<span class="bold">Koeffisientpoeng</span> er poeng som alle deltakende klubber i Europa er med på å samle inn hver sesong. Jo bedre en klubb gjør det i europa, jo flere koeffisientpoeng vil klubben tjene. Disse poengene har flere fordeler, både for klubben og assosiasjonen. Blant annet kan en høyere koeffisientpoengsum sørge for at veien til et gruppespill blir lettere for den aktuelle klubben og for andre klubber fra deres assosiasjonen. <br><br> Det finnes to typer koeffisientpoeng, assosiasjons-koeffisientpoeng og klubb-koeffisientpoeng.',
+    'Assosiasjons-koeffisientpoeng',
+    '<span class="bold">Assosiasjons-koeffisientpoeng</span> er en koeffisientpoengsum som klubber i europa hver sesong tjener inn til sin assosiasjon, eksempelvis:<br>',
+    'Assosiasjons-koeffisientpoeng',
+    '<tr><th scope="row"><span class="italic">Bodø/Glimt</span></th><td class="lengre_tall"><span class="italic">14,5</span></td></tr><tr><th scope="row"><span class="italic">Rosenborg</span></th><td class="kortere_tall"><span class="italic">4</span></td></tr><tr><th scope="row"><span class="italic">Molde</span></th><td class="kortere_tall"><span class="italic">2</span></td></tr><tr><th scope="row"><span class="italic">Vålerenga</span></th><td class="kortere_tall"><span class="italic">1</span></td></tr>',
+    '(Verdiene refererer til asosiasjons-poeng som regnes ut med kalkulatoren)',
+    'Gjennomsnittet av assosiasjons-koeffisientpoengene som hver klubb fra samme assosiasjon tjener inn på en sesong er den <span class="bold">"årlige landskoeffisienten"</span> til assosiasjonen:<br>',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Årlig landskoeffisient (21/22)</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Norge</span></th><td class="sentrert_tall"><span class="italic">5,375</span></td></tr></tbody>',
+    'Man har derimot også noe som heter <span class="bold">"landskoeffisient"</span>. Det er den årlige landskoeffisienten til assosiasjonen basert på de fem foregående sesongene til sammen.<br>',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Landskoeffisient (21/22)</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Norge</span></th><td class="sentrert_tall"><span class="italic">25,000</span></td></tr></tbody>',
+    '(Lands-koeffisientpoeng fra 17/18 - 21/22)',
+    'Landskoeffisienten er med på å danne en <span class="bold">rangering av assosiasjoner</span>. Denne rangeringen bestemmer hvor mange europaplasser hver assosiasjon får og hvor enkelt det er å komme inn i gruppespill for klubbene derfra, eksempelvis:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Landskoeffisient-rangering (21/22)</span></th><th scope="col"><span class="italic">Europaplasser to sesonger senere</span></th></tr></thead><tbody><tr><th scope="row" class="sentrert_vertikalt_tall"><span class="italic">Norge</span></th><td class="sentrert_tall sentrert_vertikalt_tall"><span class="italic">21</span></td><td><span class="italic">UCL kvalikk: 1 klubb<br> UECL kvalikk: 3 klubber</span></td></tr></tbody>',
+    'Klubb-koeffisientpoeng',
+    '<span class="bold">Klubb-koeffisientpoeng</span> er poeng deltakende klubber i europa samler inn til egen klubb. Disse poengene har innvirkning på blant klubbens seeding i kvalikken og ekstra premiepenger i gruppespill. En klubbs klubb-koeffisientpoeng kan for eksempel være slik:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Klubb-koeffisientpoeng</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Bodø/Glimt</span></th><td class="sentrert_tall"><span class="italic">10</span></td></tr></tbody>',
+    '(Verdien refererer til klubb-koeffisientpoeng som regnes ut med kalkulatoren)',
+    'Klubb-koeffisientpoeng fra en enkelt sesong brukes ikke direkte til noe. På den andre siden benyttes <span class="bold">klubbens klubb-koeffisientpoeng over de siste fem sesongene</span> til flere ting. For eksempel benyttes dette til å bestemme seeding i kvalikken til gruppespillene og fordelingen av lag på de ulike gruppene i gruppespillet.',
+    'Eksempel på en klubbs klubb-koeffisientpoeng over de fem siste sesongene:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">"Fem-års-klubb-koeffisientpoeng"</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Bodø/Glimt</span></th><td class="sentrert_tall"><span class="italic">12</span></td></tr></tbody>',
+    'Denne "fem-års-klubb-koeffisientpoengsummen" blir eksempelvis benyttet til å bestemme seeding i kvalikken til gruppespill:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"><span class="italic">Seedet</span></th><th scope="col"><span class="italic">Koeffpoeng</span></th><th scope="col"><span class="italic">Useedet</span></th><th scope="col"><span class="italic">Koeffpoeng</span></th></tr></thead><tbody class="litt_padding"><tr><td scope="row"><span class="italic">Slovan Bratislava</span></th><td class="sentrert_tall"><span class="italic">7.500</span></td><td scope="row"><span class="italic">Connah’s Quay</span></td><td class="sentrert_tall"><span class="italic">4.750</span></td></tr><tr class="litt_padding"><td scope="row"><span class="italic">Dinamo Tbilisi</span></td><td class="sentrert_tall"><span class="italic">6.500</span></td><td scope="row"><span class="italic">Valur Reykjavik</span></td><td class="sentrert_tall"><span class="italic">4.250</span></td></tr><tr><td scope="row"><span class="italic">Zalgiris Vilnius</span></td><td class="sentrert_tall"><span class="italic">6.500</span></td><td scope="row"><span class="italic">Bodø/Glimt</span></td><td class="sentrert_tall"><span class="italic">4.200</span></td></tr></tbody>',
+    '(Utsnitt fra første kvalikkrunde i Champions League 21/22)',
+    'Ovenfor blir altså den halvparten av klubber med den høyeste "fem-års-klubb-koeffisientpoengsummen" seedet, mens resten blir useedet. Det vil si at en seedet klubb altid vil møte en useedet klubb i den spesifikke kvalikkrunden.',
+    'Alle kvalikkrundene til gruppespillene fungerer på denne måten med seeding. Samme prinsippet tas også i bruk i ulik grad når det kommer til fordeling av klubber på de ulike gruppene i gruppespillene.'
 ];
   
 
@@ -167,6 +198,37 @@ const english_koeffisient = [
     'Total coefficient points',
     'Association points',
     'Club points'
+];
+
+const english_koeffisient_dokumentasjon = [
+    'Definition on UEFA coefficient points',
+    'Definition on UEFA coefficient points',
+    'What is coefficient points?',
+    '<span class="bold">Coefficient points</span> are points that all participating clubs in Europe earns each season. The better a club does in Europe, the more coefficient points the club will earn. These points carries multible advantages, both for the club og and the association. A higher coefficient point sum can among others make the road into the groupstages easier for the desired club and for other clubs from their association. <br><br> There are two kinds of coefficient points, association coefficient points og club coefficient points.',
+    'Association coefficient points',
+    '<span class="bold">Association coefficient points</span> are coefficient points that all clubs in Europe every season earns for their association, for example:<br>',
+    'Association coefficient points',
+    '<tr><th scope="row"><span class="italic">Rangers</span></th><td class="lengre_tall_english"><span class="italic">9.5</span></td></tr><tr><th scope="row"><span class="italic">Celtic</span></th><td class="lengre_tall_english"><span class="italic">9.5</span></td></tr><tr><th scope="row"><span class="italic">Aberdeen</span></th><td class="kortere_tall"><span class="italic">3</span></td></tr><tr><th scope="row"><span class="italic">Hibernian</span></th><td class="lengre_tall_english"><span class="italic">2.5</span></td></tr><th scope="row"><span class="italic">St. Johnstone</span></th><td class="kortere_tall"><span class="italic">1</span></td></tr>',
+    '(The values refer to association points that are calculated with the calculator)',
+    'The average association coefficient points as every club from the same association earns in one season is the <span class="bold">"yearly country coefficient"</span> for that association:<br>',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Yearly country coefficient (21/22)</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Scotland</span></th><td class="sentrert_tall"><span class="italic">5.100</span></td></tr></tbody>',
+    'However, there is also something called <span class="bold">"country coefficient"</span>. That is the yearly country coefficient for a association based on the five previous seasons combined.<br>',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Country coefficient (21/22)</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Scotland</span></th><td class="sentrert_tall"><span class="italic">34.100</span></td></tr></tbody>',
+    '(Country coefficient points from 17/18 - 21/22)',
+    'There is a <span class="bold">ranking of associations</span> based on the country coefficient. This ranking decides how many "europe-spots" each association gets og how easy it is for their clubs to qualify into the group stages, for example:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Country coefficient ranking (21/22)</span></th><th scope="col"><span class="italic">"Europe-spots" two seasons later</span></th></tr></thead><tbody><tr><th scope="row" class="sentrert_vertikalt_tall"><span class="italic">Scotland</span></th><td class="sentrert_tall sentrert_vertikalt_tall"><span class="italic">9</span></td><td><span class="italic">UCL qualifying: 2 clubs<br> UEL qualifying: 1 club<br> UECL qualifying: 2 clubs</span></td></tr></tbody>',
+    'Club coefficient points',
+    '<span class="bold">Club coefficient points</span> are points participating clubs in Europe earn for their own club. These points have an impact on among others the clubs seeding in the qualifying rounds and additional prize money in the group stage. A clubs club coefficient points can for example be like this:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Club coefficient points</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Rangers</span></th><td class="sentrert_tall"><span class="italic">8</span></td></tr></tbody>',
+    '(The value refer to club coefficient points as is calculated with the calculator)',
+    'Club coefficient points from a single season are not used for anything directly. On the other hand <span class="bold">the clubs’ club coefficient points over the last five seasons</span> are used for multible things. For example are those points used to decide seeding in the qualifying rounds for the group stages and the distribution of clubs on groups in the group stage.',
+    'Example on a clubs club coefficient points over the last five seasons:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">"Five year club coefficient points"</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Rangers</span></th><td class="sentrert_tall"><span class="italic">39.250</span></td></tr></tbody>',
+    'This "Five year club coefficient point sum" is for example used to decide seeding in the qualifying rounds for the group stages:',
+    '<thead class="thead-light"><tr class="head_tr"><th scope="col"><span class="italic">Seeded</span></th><th scope="col"><span class="italic">Coeff. points</span></th><th scope="col"><span class="italic">Unseeded</span></th><th scope="col"><span class="italic">Coeff. points</span></th></tr></thead><tbody class="litt_padding"><tr><td scope="row"><span class="italic">Young Boys</span></th><td class="sentrert_tall"><span class="italic">35.000</span></td><td scope="row"><span class="italic">Legia Warszawa</span></td><td class="sentrert_tall"><span class="italic">16.500</span></td></tr><tr class="litt_padding"><td scope="row"><span class="italic">Crvena Zvezda</span></td><td class="sentrert_tall"><span class="italic">32.500</span></td><td scope="row"><span class="italic">Sheriff Tiraspol</span></td><td class="sentrert_tall"><span class="italic">14.500</span></td></tr><tr><td scope="row"><span class="italic">Rangers</span></td><td class="sentrert_tall"><span class="italic">31.250</span></td><td scope="row"><span class="italic">Ferencváros</span></td><td class="sentrert_tall"><span class="italic">13.500</span></td></tr></tbody>',
+    '(Section from the third qualifying round for the Champions League 21/22)',
+    'Above, the clubs with the highest "five year club coefficient point sum" are seeded, while the rest are unseeded. That means that a seeded club always will face an unseeded club in the specific qualifying round.',
+    'All the qualifying rounds for for the group stages works in this way with seeding. The same principle is also used in different degrees when it comes to the distribution of clubs on the different groups in the group stages.'
 ];
 
 const ja_nei = [

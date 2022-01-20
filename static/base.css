@@ -27,6 +27,21 @@ body{
 #beskrivelse, th, #overskrift, #overskrift_koeffisient, #beskrivelse_koeffisient {
     color: #343a40;
 }
+.ytre_tabell_div{
+    margin-left:-2%;
+    background-color: white;
+    width:155px;
+    height:5rem;
+    padding-top:.6rem;
+    padding-bottom:5rem;
+    margin-bottom:-4rem;
+    border-radius: 0.5rem;
+    padding-left: 0.3rem;
+    display: flex;
+}
+.sesong{
+    color: #4a56ff;
+}
 .tabell_div{
     width:104%;
     background-color:white;
@@ -51,8 +66,10 @@ footer div{
     filter: brightness(0) saturate(100%) invert(87%) sepia(4%) saturate(4998%) hue-rotate(187deg) brightness(101%) contrast(101%);
 }
 a {
-    padding-left: 1rem;
     color: #4a56ff;
+}
+a:not(.poengtype_overskrift) {
+    padding-left: 1rem;
 }
 a:hover {
     color: rgb(196, 217, 255);
