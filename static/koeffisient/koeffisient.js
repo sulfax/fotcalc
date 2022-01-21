@@ -538,6 +538,7 @@ function slett() {
 function oppdater_ved_refresh_koeff() {
     const motatt_deltakelse_eliminasjon_status = localStorage.getItem('deltakelse_eliminasjon_status_local_s');
     let oppdelt_motak = motatt_deltakelse_eliminasjon_status.split(',');
+    alert("OK1")
     try {
         for (var u=0;u<oppdelt_motak.length;u++) {
             deltakelse_eliminasjon(oppdelt_motak[u]);
@@ -547,6 +548,7 @@ function oppdater_ved_refresh_koeff() {
         const motatt_resultat_status = localStorage.getItem('resultat_status_local_s');
         let resultat_status_oppdelt = motatt_resultat_status.split(',');
         let resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
+        alert("OK2")
         for (var c=0;c<resultat_status_oppdelt_lengde;c++) {
             if (resultat_status_oppdelt[c] == 3) {
                 resultat_status_oppdelt[c] = 1;
@@ -561,6 +563,7 @@ function oppdater_ved_refresh_koeff() {
         try {
             const motatt_oppdater_seier_tap_status = localStorage.getItem('oppdater_seier_tap_status_local_s');
             let oppdater_seier_tap_status_oppdelt = motatt_oppdater_seier_tap_status.split(',');
+            alert("OK3")
             for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
                 document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
                 if (d <= 6) {
