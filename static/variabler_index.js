@@ -45,7 +45,7 @@ const norsk_kalkulator = [
 const norsk_koeffisient = [
     'UEFA koeffisient-kalkulator UCL, UEL, UECL',
     'UEFA koeffisient-kalkulator',
-    'Kalkuler klubb- og assosiasjons-koeffisientpoeng for din klubb.',
+    'Kalkuler klubb- og assosiasjons-<a class="graa_hover_link_koeff_deffi" href="coefficient_definition">koeffisientpoeng</a> for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="Første kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
     '<abbr data_title="Andre kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | finale</abbr>:',
@@ -163,7 +163,7 @@ const english_kalkulator = [
 const english_koeffisient = [
     'UEFA coefficient calculator UCL, UEL, UECL',
     'UEFA coefficient points calculator',
-    'Calculate club- and association coefficient points for your club.',
+    'Calculate club- and association <a class="graa_hover_link_koeff_deffi" href="coefficient_definition">coefficient points</a> for your club.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="First qualifying match for the qualification itself">Preliminary round | semi-final</abbr>:',
     '<abbr data_title="Second qualifying match for the qualification itself">Preliminary round | final</abbr>:',

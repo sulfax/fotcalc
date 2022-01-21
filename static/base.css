@@ -74,6 +74,15 @@ a:not(.poengtype_overskrift) {
 a:hover {
     color: rgb(196, 217, 255);
 }
+.graa_hover_link, .graa_hover_link_koeff_deffi {
+    padding-left: 0px !important;
+}
+.graa_hover_link:hover, .graa_hover_link_2:hover {
+    color: #929292;
+}
+.graa_hover_link_koeff_deffi:hover {
+    color: #343a40;
+}
 #mailto {
     padding-left: 1px !important;
 }

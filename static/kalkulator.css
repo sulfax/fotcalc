@@ -434,15 +434,9 @@ td .placeholder::placeholder {
     margin-right: 1.2rem !important;
     display:inline;
 }
-.graa_hover_link {
-    padding-left: 0px !important;
-}
 .graa_hover_link_2 {
     margin-left: 1rem !important;
     padding-left: 0px !important;
-}
-.graa_hover_link:hover, .graa_hover_link_2:hover {
-    color: #929292;
 }
 th, td {
     height: 30px !important;
