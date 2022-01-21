@@ -544,35 +544,39 @@ function oppdater_ved_refresh_koeff() {
         }
     }
     finally {
-        const motatt_resultat_status = localStorage.getItem('resultat_status_local_s');
-        let resultat_status_oppdelt = motatt_resultat_status.split(',');
-        let resultat_status_oppdelt_lengde = resultat_status_oppdelt.length
-        for (var c=0;c<resultat_status_oppdelt_lengde;c++) {
-            if (resultat_status_oppdelt[c] == 3) {
-                resultat_status_oppdelt[c] = 1;
-            }
-            else if (resultat_status_oppdelt[c] == 1) {
-                resultat_status_oppdelt[c] = 3;
-            }
-            for (var d=0;d<resultat_status_oppdelt[c];d++) {
-                fordeling_resultat("b" + (c + 1))
-            }
-        }
         try {
-            const motatt_oppdater_seier_tap_status = localStorage.getItem('oppdater_seier_tap_status_local_s');
-            let oppdater_seier_tap_status_oppdelt = motatt_oppdater_seier_tap_status.split(',');
-            for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
-                document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
-                if (d <= 6) {
-                    gjennomfør_1_gang_per_knapp("i" + d)
+            const motatt_resultat_status = localStorage.getItem('resultat_status_local_s');
+            let resultat_status_oppdelt = motatt_resultat_status.split(',');
+            let resultat_status_oppdelt_lengde = resultat_status_oppdelt.length
+            for (var c=0;c<resultat_status_oppdelt_lengde;c++) {
+                if (resultat_status_oppdelt[c] == 3) {
+                    resultat_status_oppdelt[c] = 1;
                 }
-                else if (d >= 7) {
-                    oppdater_plassering("i" + d)
+                else if (resultat_status_oppdelt[c] == 1) {
+                    resultat_status_oppdelt[c] = 3;
+                }
+                for (var d=0;d<resultat_status_oppdelt[c];d++) {
+                    fordeling_resultat("b" + (c + 1))
                 }
             }
         }
         finally {
-            summer()
+            try {
+                const motatt_oppdater_seier_tap_status = localStorage.getItem('oppdater_seier_tap_status_local_s');
+                let oppdater_seier_tap_status_oppdelt = motatt_oppdater_seier_tap_status.split(',');
+                for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
+                    document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
+                    if (d <= 6) {
+                        gjennomfør_1_gang_per_knapp("i" + d)
+                    }
+                    else if (d >= 7) {
+                        oppdater_plassering("i" + d)
+                    }
+                }
+            }
+            finally {
+                summer()
+            }
         }
     }
 }
