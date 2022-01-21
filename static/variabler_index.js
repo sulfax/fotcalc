@@ -44,7 +44,7 @@ const norsk_kalkulator = [
 const norsk_koeffisient = [
     'UEFA koeffisient-kalkulator UCL, UEL, UECL',
     'Koeffisient-Kalkulator',
-    'UEFA koeffisient-kalkualtor',
+    'UEFA koeffisient-kalkulator',
     'Kalkuler klubb- og assosiasjons-koeffisientpoeng for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="Første kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
