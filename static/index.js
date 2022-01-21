@@ -181,7 +181,6 @@ function language_standard(clicked_id) {
 const sprak_id = [
   'kalkulator',
   'tilbakestill',
-  'progresjon',
   'laget_av_Johannes',
   'kontakt_meg'
 ];
@@ -191,6 +190,7 @@ const sprak_id_kalkulator = [
   'home',
   'overskrift',
   'beskrivelse',
+  'progresjon',
   'hjemlig_seriemester', 
   'spilt_preliminary', 
   'spilt_q1', 
@@ -226,6 +226,7 @@ const sprak_id_koeffisient = [
   'koeffisient_kalkulator',
   'overskrift_koeffisient',
   'beskrivelse_koeffisient',
+  'progresjon',
   'prelim_semifinale',
   'prelim_finale',
   'q1_kamp1',

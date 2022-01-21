@@ -1,7 +1,6 @@
 const norsk = [
     'Hjem',
     'Tilbakestill',
-    '<br> Klubbens<br>progresjon? <br> <img src="../media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Utviklet av Johannes Kaste',
     'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
 ];
@@ -11,6 +10,7 @@ const norsk_kalkulator = [
     'Hjem',
     'UEFA premiepenger-kalkulator',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
+    '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester:',
     '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Preliminary runde</abbr>:',
     '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr>:',
@@ -46,6 +46,7 @@ const norsk_koeffisient = [
     'Koeffisient-Kalkulator',
     'UEFA koeffisient-kalkualtor',
     'Kalkuler klubb- og assosiasjons-koeffisientpoeng for din klubb.',
+    '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="Første kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
     '<abbr data_title="Andre kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | finale</abbr>:',
     '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr> | kamp 1',
@@ -118,7 +119,6 @@ const norsk_koeffisient_dokumentasjon = [
 const english = [
     'Home',
     'Reset',
-    '<br> Clubs<br>progression? <br> <img src="../media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Developed by Johannes Kaste',
     'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
 ];
@@ -128,6 +128,7 @@ const english_kalkulator = [
     'Home',
     'UEFA prize money calculator',
     'Calculate your clubs income in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
+    '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Domestic champion:',
     '<abbr data_title="Qualification matches for the qualification itself">Preliminary round</abbr>:',
     '<abbr data_title="First qualifying round">Q1</abbr>:',
@@ -163,6 +164,7 @@ const english_koeffisient = [
     'Coefficient Calculator',
     'UEFA coefficient points calculator',
     'Calculate club- and association coefficient points for your club.',
+    '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="First qualifying match for the qualification itself">Preliminary round | semi-final</abbr>:',
     '<abbr data_title="Second qualifying match for the qualification itself">Preliminary round | final</abbr>:',
     '<abbr data_title="First qualifying round">Q1</abbr> | match 1:',
