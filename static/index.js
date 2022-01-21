@@ -304,7 +304,7 @@ const sprak_id_koeffisient_dokumentasjon = [
 function language_koeffisient(clicked_id) {
   var path = window.location.pathname;
   var page = path.split("/").pop();
-  if (page == 'koeffisient.html') {
+  if (document.getElementById('overskrift_koeffisient')) {
     var koeffisient_antall_oversett = sprak_id_koeffisient.length;
     if (clicked_id == "norsk") {
       for (x=0;x<koeffisient_antall_oversett;x++) {
@@ -327,7 +327,7 @@ function language_koeffisient(clicked_id) {
       }
     }
   }
-  else if (page == 'koeffisient_dokumentasjon.html') {
+  else if (document.getElementById('overskrift_koeffisient_dokumentasjon')) {
     var koeffisient_dokumentasjon_antall_oversett = sprak_id_koeffisient_dokumentasjon.length;
     if (clicked_id == "norsk") {
       for (x=0;x<koeffisient_dokumentasjon_antall_oversett;x++) {
