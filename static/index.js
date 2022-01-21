@@ -25,10 +25,10 @@ function language_standard(clicked_id) {
     spilt_språk = ja_nei[0][6];
     try {
       for (x=0;x<68;x++) {
-        var klasse = (document.getElementById("bt" + (x + 1)).className);
-        var id = document.getElementById("bt" + (x + 1))
+        var klasse = (document.getElementById("b" + (x + 1)).className);
+        var id = document.getElementById("b" + (x + 1))
         if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UCL del" || klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
-          id.innerText = 'Nei';
+          id.innerText = '';
         }
         if (klasse == "btn btn-danger r1") {
           id.innerText = 'Seier';
@@ -51,9 +51,7 @@ function language_standard(clicked_id) {
       null;
     }
     try {
-      var path = window.location.pathname;
-      var page = path.split("/").pop();
-      if (page == "koeffisient.html") {
+      if (document.getElementById('overskrift_koeffisient')) {
         for (x=0;x<6;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Antall';
         }
@@ -99,10 +97,10 @@ function language_standard(clicked_id) {
     spilt_språk = ja_nei[1][6];
     try {
       for (x=0;x<68;x++) {
-        var klasse = (document.getElementById("bt" + (x + 1)).className);
-        var id = document.getElementById("bt" + (x + 1))
+        var klasse = (document.getElementById("b" + (x + 1)).className);
+        var id = document.getElementById("b" + (x + 1))
         if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UECL del") {
-          id.innerText = 'No';
+          id.innerText = '';
         }
         if (klasse == "btn btn-danger r1") {
           id.innerText = 'Victory';
@@ -125,9 +123,7 @@ function language_standard(clicked_id) {
       null;
     }
     try {
-      var path = window.location.pathname;
-      var page = path.split("/").pop();
-      if (page == "koeffisient.html") {
+      if (document.getElementById('overskrift_koeffisient')) {
         for (x=0;x<6;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Amount';
         }
@@ -153,33 +149,31 @@ function language_standard(clicked_id) {
     flint = "english";
     localStorage.setItem("someVarKey", flint);
   }
-  var path = window.location.pathname;
-  var page = path.split("/").pop();
-  if (page == "koeffisient.html") {
-    null;
-  }
-  else {
-  for (x=0;x<39;x++) {
-    var knapp_id_nei = document.getElementById('b' + (x + 1));
-    var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
-    try {
-      if (knapp_id_nei) {
-        knapp_id_nei.innerText = "" /*nei_språk*/;
-      }
-      else {
-        y = (x + 1)
-        if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
-          knapp_id_ja.innerText = spilt_språk;
+
+
+
+  if (document.getElementById('overskrift')) {
+    for (x=0;x<39;x++) {
+      var knapp_id_nei = document.getElementById('b' + (x + 1));
+      var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
+      try {
+        if (knapp_id_nei) {
+          knapp_id_nei.innerText = "" /*nei_språk*/;
         }
         else {
-          knapp_id_ja.innerText = ja_språk;
-        }
-      }        
-    }
-    catch {
-      null;
-    }
-  }
+          y = (x + 1)
+          if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
+            knapp_id_ja.innerText = spilt_språk;
+          }
+          else {
+            knapp_id_ja.innerText = ja_språk;
+          }
+        }        
+      }
+      catch {
+        null;
+      }
+    } 
   }
 };
 
@@ -302,8 +296,6 @@ const sprak_id_koeffisient_dokumentasjon = [
 
 
 function language_koeffisient(clicked_id) {
-  var path = window.location.pathname;
-  var page = path.split("/").pop();
   if (document.getElementById('overskrift_koeffisient')) {
     var koeffisient_antall_oversett = sprak_id_koeffisient.length;
     if (clicked_id == "norsk") {
