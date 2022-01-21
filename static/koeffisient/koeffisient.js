@@ -449,8 +449,10 @@ function utenfor_gyldig_input(clicked_id) {
     document.getElementById(clicked_id).style.borderColor = 'red';
     document.getElementById(clicked_id).style.color = 'white';
     document.getElementById(clicked_id).className = "form-control placeholder";
-    document.getElementById(clicked_id + "_").innerText = "";
-    document.getElementById(clicked_id + "__").innerText = "";
+    if (clicked_id =! 'i7') {
+        document.getElementById(clicked_id + "_").innerText = "";
+        document.getElementById(clicked_id + "__").innerText = "";
+    }
 };
 
 function summer() {
