@@ -1,5 +1,6 @@
 const norsk = [
     'Hjem',
+    'Koeffisient kalkulator',
     'Tilbakestill',
     'Utviklet av Johannes Kaste',
     'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
@@ -43,7 +44,6 @@ const norsk_kalkulator = [
 
 const norsk_koeffisient = [
     'UEFA koeffisient-kalkulator UCL, UEL, UECL',
-    'Koeffisient-Kalkulator',
     'UEFA koeffisient-kalkulator',
     'Kalkuler klubb- og assosiasjons-koeffisientpoeng for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
@@ -118,6 +118,7 @@ const norsk_koeffisient_dokumentasjon = [
 
 const english = [
     'Home',
+    'Coefficient calculator',
     'Reset',
     'Developed by Johannes Kaste',
     'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
@@ -161,7 +162,6 @@ const english_kalkulator = [
 
 const english_koeffisient = [
     'UEFA coefficient calculator UCL, UEL, UECL',
-    'Coefficient Calculator',
     'UEFA coefficient points calculator',
     'Calculate club- and association coefficient points for your club.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',

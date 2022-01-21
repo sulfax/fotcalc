@@ -179,7 +179,8 @@ function language_standard(clicked_id) {
 
 
 const sprak_id = [
-  'kalkulator',
+  'hjem',
+  'koeffisient_kalkulator',
   'tilbakestill',
   'laget_av_Johannes',
   'kontakt_meg'
@@ -223,7 +224,6 @@ const sprak_id_kalkulator = [
 
 const sprak_id_koeffisient = [
   'title_koeffisient',
-  'koeffisient_kalkulator',
   'overskrift_koeffisient',
   'beskrivelse_koeffisient',
   'progresjon',
