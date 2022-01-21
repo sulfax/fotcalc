@@ -538,6 +538,8 @@ function slett() {
 function oppdater_ved_refresh_koeff() {
     const motatt_deltakelse_eliminasjon_status = localStorage.getItem('deltakelse_eliminasjon_status_local_s');
     let oppdelt_motak = motatt_deltakelse_eliminasjon_status.split(',');
+    alert(motatt_deltakelse_eliminasjon_status)
+    alert(oppdelt_motak)
     try {
         for (var u=0;u<oppdelt_motak.length;u++) {
             deltakelse_eliminasjon(oppdelt_motak[u]);
