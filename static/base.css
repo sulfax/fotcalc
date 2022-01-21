@@ -5,10 +5,8 @@ body{
 .navbar {
     background-color: #343a40;
 }
-#norsk {
+#norsk, #english {
     color: rgb(196, 217, 255);
-}
-#english {
     color: rgb(196, 217, 255);
 }
 .btn-link {
@@ -17,6 +15,9 @@ body{
 }
 #hjem {
     margin-right: 1rem !important;
+}
+#koeffisient_kalkulator {
+    margin-right: 2rem !important;
 }
 .navbar-dark .navbar-nav .nav-link {
     color:rgba(250, 250, 250, 0.5)

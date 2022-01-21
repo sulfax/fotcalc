@@ -188,7 +188,6 @@ const sprak_id = [
 
 const sprak_id_kalkulator = [
   'title',
-  'home',
   'overskrift',
   'beskrivelse',
   'progresjon',

@@ -1,6 +1,6 @@
 const norsk = [
-    'Hjem',
-    'Koeffisient kalkulator',
+    'Premiepenger-kalkulator',
+    'Koeffisient-kalkulator',
     'Tilbakestill',
     'Utviklet av Johannes Kaste',
     'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
@@ -8,7 +8,6 @@ const norsk = [
 
 const norsk_kalkulator = [
     'UEFA premiepenger-kalkulator UCL, UEL, UECL',
-    'Hjem',
     'UEFA premiepenger-kalkulator',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
@@ -117,7 +116,7 @@ const norsk_koeffisient_dokumentasjon = [
   
 
 const english = [
-    'Home',
+    'Prize money calculator',
     'Coefficient calculator',
     'Reset',
     'Developed by Johannes Kaste',
@@ -126,7 +125,6 @@ const english = [
 
 const english_kalkulator = [
     'UEFA prize money calculator UCL, UEL, UECL',
-    'Home',
     'UEFA prize money calculator',
     'Calculate your clubs income in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
