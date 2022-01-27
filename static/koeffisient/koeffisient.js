@@ -1,4 +1,3 @@
-/*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*21/22 knapper*/
 let Seier_kvalifisering_2122 = 1;
 let Uavgjort_kvalifisering_2122 = 0.5;
@@ -9,6 +8,9 @@ let Åttendels_Deltatt_2122 = 5;
 let Gruppespill_UCL_2122 = 4;
 let Gruppespill_UEL_minimum_2122 = 3;
 let Gruppespill_UECL_minimum_2122 = 2.5;
+let Eliminert_Q2_UECL_2122 = 1.5;
+let Eliminert_Q3_UECL_2122 = 2;
+let Eliminert_PO_UECL_2122 = 2.5;
 /*21/22 input felt*/
 var UCL_seier_2122 = 2;
 var UEL_seier_2122 = 2;
@@ -24,7 +26,6 @@ var UECL_andreplass_2122 = 1;
 
 
 
-/*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*22/23 knapper*/
 let Seier_kvalifisering_2223 = 1;
 let Uavgjort_kvalifisering_2223 = 0.5;
@@ -35,6 +36,9 @@ let Åttendels_Deltatt_2223 = 5;
 let Gruppespill_UCL_2223 = 4;
 let Gruppespill_UEL_minimum_2223 = 3;
 let Gruppespill_UECL_minimum_2223 = 2.5;
+let Eliminert_Q2_UECL_2223 = 1.5;
+let Eliminert_Q3_UECL_2223 = 2;
+let Eliminert_PO_UECL_2223 = 2.5;
 /*22/23 input felt*/
 var UCL_seier_2223 = 2;
 var UEL_seier_2223 = 2;
@@ -56,7 +60,10 @@ const knapp_summer = [
     [Åttendels_Deltatt_2122,            Åttendels_Deltatt_2223],
     [Gruppespill_UCL_2122,              Gruppespill_UCL_2223],
     [Gruppespill_UEL_minimum_2122,      Gruppespill_UEL_minimum_2223],
-    [Gruppespill_UECL_minimum_2122,     Gruppespill_UECL_minimum_2223]
+    [Gruppespill_UECL_minimum_2122,     Gruppespill_UECL_minimum_2223],
+    [Eliminert_Q2_UECL_2122,            Eliminert_Q2_UECL_2223],
+    [Eliminert_Q3_UECL_2122,            Eliminert_Q3_UECL_2223],
+    [Eliminert_PO_UECL_2122,            Eliminert_PO_UECL_2223]
 ];
 
 const input_summer = [
@@ -148,8 +155,20 @@ function deltakelse_eliminasjon(clicked_id) {
 
 
     if (klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele") {
-        var aktuell_sum = (knapp_summer[4][0]);
-        document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+        var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
+        if (felt_nummer == 16) {
+            document.getElementById(clicked_id + "__").innerText = (knapp_summer[9][0]);
+        }
+        else if (felt_nummer == 23) {
+            document.getElementById(clicked_id + "__").innerText = (knapp_summer[10][0]);
+        }
+        else if (felt_nummer == 30) {
+            document.getElementById(clicked_id + "__").innerText = (knapp_summer[11][0]);
+        }
+        else {
+            var aktuell_sum = (knapp_summer[4][0]);
+            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+        }
     }
     if (klasse == "btn btn-danger de1_UCL ele" || klasse == "btn btn-danger de1_UEL ele" || klasse == "btn btn-danger de1_UECL ele") {
         document.getElementById(clicked_id + "__").innerText = "";
