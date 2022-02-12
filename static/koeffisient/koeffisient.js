@@ -269,12 +269,16 @@ function resultat(clicked_id) {
         if (knapp_status == 1) {
             var aktuell_sum = (knapp_summer[2][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            if (felt_nummer != 34 && felt_nummer != 35 && felt_nummer != 36 && felt_nummer != 37) {
+                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            }
         }
         else if (knapp_status == 2) {
             var aktuell_sum = (knapp_summer[3][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            if (felt_nummer != 34 && felt_nummer != 35 && felt_nummer != 36 && felt_nummer != 37) {
+                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            }
         }
         else {
             document.getElementById(clicked_id + "_").innerText = "";
