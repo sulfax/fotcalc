@@ -7,7 +7,7 @@ const norsk = [
 ];
 
 const norsk_kalkulator = [
-    'UEFA premiepenger-kalkulator UCL, UEL, UECL',
+    'UEFA Premiepenger-Kalkulator UCL, UEL, UECL',
     'UEFA premiepenger-kalkulator',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
@@ -42,7 +42,7 @@ const norsk_kalkulator = [
 ]
 
 const norsk_koeffisient = [
-    'UEFA Koeffisient-kalkulator UCL, UEL, UECL',
+    'UEFA Koeffisient-Kalkulator UCL, UEL, UECL',
     'UEFA koeffisient-kalkulator',
     'Kalkuler klubb- og assosiasjons-<a class="graa_hover_link_koeff_deffi" href="coefficient_definition">koeffisientpoeng</a> for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
@@ -84,7 +84,7 @@ const norsk_koeffisient = [
 ];
 
 const norsk_koeffisient_dokumentasjon = [
-    'Definisjon på UEFA koeffisientpoeng',
+    'UEFA koeffisientpoeng, Forklaring',
     'Definisjon på Koeffisientpoeng',
     'Hva er koeffisientpoeng?',
     '<span class="bold">Koeffisientpoeng</span> er poeng som alle deltakende klubber i Europa er med på å samle inn hver sesong. Jo bedre en klubb gjør det i europa, jo flere koeffisientpoeng vil klubben tjene. Disse poengene har flere fordeler, både for klubben og assosiasjonen. Blant annet kan en høyere koeffisientpoengsum sørge for at veien til et gruppespill blir lettere for den aktuelle klubben og for andre klubber fra deres assosiasjonen. <br><br> Det finnes to typer koeffisientpoeng, assosiasjons-koeffisientpoeng og klubb-koeffisientpoeng.',
@@ -124,7 +124,7 @@ const english = [
 ];
 
 const english_kalkulator = [
-    'UEFA prize money calculator UCL, UEL, UECL',
+    'UEFA Prize money Calculator UCL, UEL, UECL',
     'UEFA prize money calculator',
     'Calculate your clubs income in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
@@ -201,8 +201,8 @@ const english_koeffisient = [
 ];
 
 const english_koeffisient_dokumentasjon = [
-    'Definition on UEFA coefficient points',
-    'Definition on Coefficient Points',
+    'UEFA coefficient points, Explanation',
+    'Explanation on Coefficient Points',
     'What is coefficient points?',
     '<span class="bold">Coefficient points</span> are points that all participating clubs in Europe earns each season. The better a club does in Europe, the more coefficient points the club will earn. These points carries multible advantages, both for the club og and the association. A higher coefficient point sum can among others make the road into the groupstages easier for the desired club and for other clubs from their association. <br><br> There are two kinds of coefficient points, association coefficient points og club coefficient points.',
     'Association coefficient points',
