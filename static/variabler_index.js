@@ -203,7 +203,7 @@ const english_koeffisient = [
 const english_koeffisient_dokumentasjon = [
     'UEFA coefficient points, Explanation',
     'Explanation on Coefficient Points',
-    'What is coefficient points?',
+    'What are coefficient points?',
     '<span class="bold">Coefficient points</span> are points that all participating clubs in Europe earns each season. The better a club does in Europe, the more coefficient points the club will earn. These points carries multible advantages, both for the club og and the association. A higher coefficient point sum can among others make the road into the groupstages easier for the desired club and for other clubs from their association. <br><br> There are two kinds of coefficient points, association coefficient points og club coefficient points.',
     'Association coefficient points',
     '<span class="bold">Association coefficient points</span> are coefficient points that all clubs in Europe every season earns for their association, for example:<br>',
