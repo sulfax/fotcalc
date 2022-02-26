@@ -8,7 +8,7 @@ const norsk = [
 
 const norsk_kalkulator = [
     'UEFA Premiepenger-Kalkulator UCL, UEL, UECL',
-    'UEFA premiepenger-kalkulator',
+    'UEFA Premiepenger-kalkulator',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester:',
@@ -43,7 +43,7 @@ const norsk_kalkulator = [
 
 const norsk_koeffisient = [
     'UEFA Koeffisient-Kalkulator UCL, UEL, UECL',
-    'UEFA koeffisient-kalkulator',
+    'UEFA Koeffisient-kalkulator',
     'Kalkuler klubb- og assosiasjons-<a class="graa_hover_link_koeff_deffi" href="coefficient_definition">koeffisientpoeng</a> for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="Første kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
@@ -125,7 +125,7 @@ const english = [
 
 const english_kalkulator = [
     'UEFA Prize money Calculator UCL, UEL, UECL',
-    'UEFA prize money calculator',
+    'UEFA Prize money Calculator',
     'Calculate your clubs income and revenue distribution in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Domestic champion:',
@@ -160,7 +160,7 @@ const english_kalkulator = [
 
 const english_koeffisient = [
     'UEFA Coefficient Calculator UCL, UEL, UECL',
-    'UEFA coefficient points calculator',
+    'UEFA Coefficient points Calculator',
     'Calculate club- and association <a class="graa_hover_link_koeff_deffi" href="coefficient_definition">coefficient points</a> for your club.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     '<abbr data_title="First qualifying match for the qualification itself">Preliminary round | semi-final</abbr>:',
