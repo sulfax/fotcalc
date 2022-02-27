@@ -84,7 +84,7 @@ let resultat_status = [];
 let deltakelse_eliminasjon_status = [];
 
 const UCL_assoskoeffisient_celler = ["b1_", "b2_", "b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
-const UEL_assoskoeffisient_celler = ["b4_", "b7_", "b11_", "b14_", "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
+const UEL_assoskoeffisient_celler = [/*"b4_", "b7_", "b11_", "b14_",*/ "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
 const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b42_", "b45_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
 
 const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
