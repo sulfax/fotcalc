@@ -226,7 +226,6 @@ oppdater_ved_refresh()
 
 
 function paa_av(clicked_id){
-    alert(clicked_id)
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     const tall = -nummer;
     if (nummer > 0)  {
