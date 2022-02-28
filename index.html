@@ -77,7 +77,7 @@
       <br><br>
       <h1 id="overskrift">UEFA Prize money Calculator</h1> <!--Ikke endre id-->
       <br>
-      <p id="beskrivelse">Calculate your clubs income and revenue distribution in UEFA tournaments.<br>Calculations include all prize money and undistributed amounts.</p>
+      <p id="beskrivelse">Calculate your clubs income and revenue distribution in UEFA competitions.<br>Calculations include all prize money and undistributed amounts.</p>
       <br>
       <div class="ytre_tabell_div">
         <button class="btn btn-secondary" id="sessong_kontroller_1" onclick="endre_sessong(this.id)" disabled>&#10094</button>
@@ -105,7 +105,7 @@
           </thead>
           <tbody>
             <tr class="Hjemlig_seriemester">
-              <th scope="row" id="hjemlig_seriemester"></th>
+              <th scope="row" id="hjemlig_seriemester">Domestic champion:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b1" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -114,7 +114,7 @@
               <td colspan="3" class="resultat_celle tydelig_ramme_hoyre_under_over" id="b1_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_preliminary"></th>
+              <th scope="row" id="spilt_preliminary">Preliminary round:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b2" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -125,7 +125,7 @@
               <td class="tom_celle tydelig_ramme_hoyre_under_over"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_q1"></th>
+              <th scope="row" id="spilt_q1">Q1:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b3" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -137,7 +137,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b4_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="røk_ut_q1"></th>
+              <th scope="row" id="røk_ut_q1">Eliminated in Q1:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b5" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -148,7 +148,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b5_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_q2"></th>
+              <th scope="row" id="spilt_q2">Q2:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b6" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -160,7 +160,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b7_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="røk_ut_q2"></th>
+              <th scope="row" id="røk_ut_q2">Eliminated in Q2:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b8" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -171,7 +171,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b8_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_q3"></th>
+              <th scope="row" id="spilt_q3">Q3:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b9" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -184,7 +184,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b11_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="røk_ut_q3"></th>
+              <th scope="row" id="røk_ut_q3">Eliminated in Q3:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b12" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -195,7 +195,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre tydelig_ramme_under" id="b12_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_q3_lp"></th>
+              <th scope="row" id="spilt_q3_lp">Q3 League Path:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b13" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -206,7 +206,7 @@
               <td class="tom_celle tydelig_ramme_under tydelig_ramme_hoyre"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_playoff"></th>
+              <th scope="row" id="spilt_playoff">Playoff:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
@@ -219,7 +219,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b15_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="røk_ut_playoff"></th>
+              <th scope="row" id="røk_ut_playoff">Eliminated in playoff:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b16" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -231,7 +231,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre tydelig_ramme_under" id="b17_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="gruppespill"></th>
+              <th scope="row" id="gruppespill">Group stage:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b18" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -244,7 +244,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b20_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="ti_års_koeff"></th>
+              <th scope="row" id="ti_års_koeff">Ten-year coeff:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Antall" onblur="forlat_input_felt_1(this.id)">
@@ -257,7 +257,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i3_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="seiere"></th>
+              <th scope="row" id="seiere">Wins:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" class="form-control ikke_placeholder" id="i4" name="4" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
@@ -270,7 +270,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i6_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="uavgjort"></th>
+              <th scope="row" id="uavgjort">Draws:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" class="form-control ikke_placeholder" id="i7" name="7" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
@@ -283,7 +283,7 @@
               <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="i9_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="uavgjort_hele"></th>
+              <th scope="row" id="uavgjort_hele">Total draws:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" class="form-control ikke_placeholder" id="i10" name="10" placeholder="18" onblur="forlat_input_felt_3(this.id)">
@@ -294,7 +294,7 @@
               <td colspan="3" class="tom_celle tydelig_ramme_under tydelig_ramme_hoyre"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="ufordelte_ressurser"></th>
+              <th scope="row" id="ufordelte_ressurser">Undistributed amounts:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
@@ -307,7 +307,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i12_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="tabellplassering"></th>
+              <th scope="row" id="tabellplassering">Group-placement:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" class="form-control ikke_placeholder" id="i13" name="13" placeholder="Antall" onblur="forlat_input_felt_4(this.id)">
@@ -320,7 +320,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i15_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="spilt_utslagsrunde_playoff"></th>
+              <th scope="row" id="spilt_utslagsrunde_playoff">Knockout round play-off:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
@@ -333,7 +333,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre tydelig_ramme_under" id="i15__"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="spilt_åttendelsfinale"></th>
+              <th scope="row" id="spilt_åttendelsfinale">Round of 16:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b21" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -346,7 +346,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b23_"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="spilt_kvartfinale"></th>
+              <th scope="row" id="spilt_kvartfinale">Quarter-final:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b24" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -359,7 +359,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b26_"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="spilt_semifinale"></th>
+              <th scope="row" id="spilt_semifinale">Semi-final:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b27" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -372,7 +372,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b29_"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="spilt_finale"></th>
+              <th scope="row" id="spilt_finale">Final:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b30" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -385,7 +385,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b32_"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="vunnet_finale"></th>
+              <th scope="row" id="vunnet_finale">Won final:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b33" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -398,7 +398,7 @@
               <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="b35_"></td>
             </tr>
             <tr class="SCUP">
-              <th scope="row" id="spilt_scup"></th>
+              <th scope="row" id="spilt_scup">Super Cup:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b36" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -410,7 +410,7 @@
               <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
             </tr>
             <tr class="SCUP_vinner">
-              <th scope="row" id="vunnet_scup"></th>
+              <th scope="row" id="vunnet_scup">Won Super Cup</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b38" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
@@ -422,7 +422,7 @@
               <td class="tom_celle tydelig_ramme_hoyre"></td>
             </tr>
             <tr class="Inntjening_pr_turnering">
-              <th scope="row" id="inntjening_turnering"></th>
+              <th scope="row" id="inntjening_turnering">Income per competition:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="inntjening_turnering">
                 <div class="knapp_erstatning"></div>
@@ -435,7 +435,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="UECL_inntjening"></td>
             </tr>
             <tr class="Inntjening">
-              <th scope="row" id="inntjening"></th>
+              <th scope="row" id="inntjening"><div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking among the clubs within the tournament (1-32). Follow link 1 to find your clubs ranking">Ten-year coeff</abbr>: </div> <a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Find your clubs coefficient ranking">1</abbr></a><a class="graa_hover_link_2" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Find your clubs coefficient ranking (official website, less recommended site)">2</abbr></a></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
