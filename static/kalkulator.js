@@ -524,7 +524,7 @@ function forlat_input_felt_3(clicked_id) {
 };
 function forlat_input_felt_4(clicked_id) {
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
-    var tabellplassering = parseInt(document.getElementById(clicked_id).value);
+    var tabellplassering = (parseInt(document.getElementById(clicked_id).value)) || 0;
     try {
         document.getElementById(clicked_id + "_").innerText = "";
     }
