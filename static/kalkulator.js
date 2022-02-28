@@ -226,6 +226,7 @@ oppdater_ved_refresh()
 
 
 function paa_av(clicked_id){
+    alert(clicked_id)
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     const tall = -nummer;
     if (nummer > 0)  {
@@ -523,7 +524,7 @@ function forlat_input_felt_3(clicked_id) {
 };
 function forlat_input_felt_4(clicked_id) {
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
-    var tabellplassering = (parseInt(document.getElementById(clicked_id).value)) || 0;
+    var tabellplassering = parseInt(document.getElementById(clicked_id).value);
     try {
         document.getElementById(clicked_id + "_").innerText = "";
     }
@@ -810,8 +811,10 @@ function oppdater_ved_refresh() {
         try {
             const motak = localStorage.getItem('Hallo');
             var oppdelt_motak = motak.split(',');
-            for (var u=0;u<oppdelt_motak.length;u++) {
-                paa_av(oppdelt_motak[u]);
+            if (oppdelt_motak != "null") {
+                for (var u=0;u<oppdelt_motak.length;u++) {
+                    paa_av(oppdelt_motak[u]);
+                }
             }
         }
         finally {
@@ -819,9 +822,11 @@ function oppdater_ved_refresh() {
             const motak_3 = localStorage.getItem('Hallo_input_verdi_1');
             var input_id_1 = motak_2.split(',');
             var input_verdi_1 = motak_3.split(',');
-            for (var r=0;r<input_id_1.length;r++) {
-                document.getElementById('i' + (r + 1)).value = input_verdi_1[r];
-                forlat_input_felt_1(input_id_1[r]);
+            if (input_id_1 != 0) {
+                for (var r=0;r<input_id_1.length;r++) {
+                    document.getElementById('i' + (r + 1)).value = input_verdi_1[r];
+                    forlat_input_felt_1(input_id_1[r]);
+                }
             }
         }
     }
@@ -845,9 +850,11 @@ function oppdater_ved_refresh() {
                 const motak_7 = localStorage.getItem('Hallo_input_verdi_3');
                 var input_id_3 = motak_6.split(',');
                 var input_verdi_3 = motak_7.split(',');
-                for (var he=0;he<input_id_3.length;he++) {
-                    document.getElementById('i' + (he + 10)).value = input_verdi_3[he];
-                    forlat_input_felt_3(input_id_3[he]);
+                if (input_id_3 != 0) {
+                    for (var he=0;he<input_id_3.length;he++) {
+                        document.getElementById('i' + (he + 10)).value = input_verdi_3[he];
+                        forlat_input_felt_3(input_id_3[he]);
+                    }
                 }
             }
             finally {
@@ -856,9 +863,11 @@ function oppdater_ved_refresh() {
                     const motak_9 = localStorage.getItem('Hallo_input_verdi_4');
                     var input_id_4 = motak_8.split(',');
                     var input_verdi_4 = motak_9.split(',');
-                    for (var ho=0;ho<input_id_4.length;ho++) {
-                        document.getElementById('i' + (ho + 13)).value = input_verdi_4[ho];
-                        forlat_input_felt_4(input_id_4[ho]);
+                    if (input_id_3 != 0) {
+                        for (var ho=0;ho<input_id_4.length;ho++) {
+                            document.getElementById('i' + (ho + 13)).value = input_verdi_4[ho];
+                            forlat_input_felt_4(input_id_4[ho]);
+                        }
                     }
                 }
                 finally {
