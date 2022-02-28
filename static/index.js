@@ -373,4 +373,6 @@ language_koeffisient(flint_2);
 language_standard(flint_2);
 
 
-oppdater_ved_refresh_koeff();
+if (document.getElementById('overskrift_koeffisient')) {
+  oppdater_ved_refresh_koeff();
+}
