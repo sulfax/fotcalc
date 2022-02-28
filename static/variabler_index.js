@@ -155,7 +155,7 @@ const english_kalkulator = [
     'Won final:',
     '<abbr data_title="Match between the Champions League champion and the Europa League champion">Super Cup</abbr>:',
     'Won Super Cup',
-    'Income per tounament:',
+    'Income per competition:',
     'Total income:',
 ]
 
@@ -195,7 +195,7 @@ const english_koeffisient = [
     'Semi-final | match 2',
     'Final',
     'Final | match 1',
-    'Coefficient points per tournament',
+    'Coefficient points per competition',
     'Total coefficient points',
     'Association points',
     'Club points'
