@@ -461,7 +461,6 @@ function forlat_input_felt_2(clicked_id) {
 };
 function forlat_input_felt_3(clicked_id) {
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
-    document.getElementById(clicked_id + "_").innerText = "";
     document.getElementById(clicked_id).style.borderColor = "";
     document.getElementById(clicked_id).style.backgroundColor = "";
     document.getElementById(clicked_id).style.color = "";
