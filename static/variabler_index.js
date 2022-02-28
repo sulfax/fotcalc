@@ -1,3 +1,4 @@
+
 const norsk = [
     'Premiepenger-kalkulator',
     'Koeffisient-kalkulator',
