@@ -40,7 +40,7 @@ const norsk_kalkulator = [
     'Vunnet Super Cup:',
     'Inntjening per turnering:',
     'Total inntjening:'
-]
+];
 
 const norsk_koeffisient = [
     'UEFA Koeffisient-Kalkulator UCL, UEL, UECL',
@@ -157,7 +157,7 @@ const english_kalkulator = [
     'Won Super Cup',
     'Income per competition:',
     'Total income:',
-]
+];
 
 const english_koeffisient = [
     'UEFA Coefficient Calculator UCL, UEL, UECL',
@@ -251,4 +251,4 @@ const ja_nei = [
     'Eliminated',
     'Played'
     ]
-]
+];

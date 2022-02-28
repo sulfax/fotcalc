@@ -1,6 +1,6 @@
 function language(clicked_id) {
-  language_koeffisient(clicked_id)
-  language_standard(clicked_id)
+  language_koeffisient(clicked_id);
+  language_standard(clicked_id);
 }
 
 function language_standard(clicked_id) {
@@ -26,7 +26,7 @@ function language_standard(clicked_id) {
     try {
       for (x=0;x<68;x++) {
         var klasse = (document.getElementById("b" + (x + 1)).className);
-        var id = document.getElementById("b" + (x + 1))
+        var id = document.getElementById("b" + (x + 1));
         if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UCL del" || klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
           id.innerText = '';
         }
@@ -97,8 +97,8 @@ function language_standard(clicked_id) {
     spilt_språk = ja_nei[1][6];
     try {
       for (x=0;x<68;x++) {
-        var klasse = (document.getElementById("b" + (x + 1)).className);
-        var id = document.getElementById("b" + (x + 1))
+        let klasse = (document.getElementById("b" + (x + 1)).className);
+        let id = document.getElementById("b" + (x + 1));
         if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UECL del") {
           id.innerText = '';
         }
@@ -161,7 +161,7 @@ function language_standard(clicked_id) {
           knapp_id_nei.innerText = "" /*nei_språk*/;
         }
         else {
-          y = (x + 1)
+          y = (x + 1);
           if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
             knapp_id_ja.innerText = spilt_språk;
           }
@@ -175,7 +175,7 @@ function language_standard(clicked_id) {
       }
     } 
   }
-};
+}
 
 
 const sprak_id = [
@@ -219,7 +219,7 @@ const sprak_id_kalkulator = [
   'vunnet_scup',
   'inntjening_turnering',
   'inntjening',
-]
+];
 
 const sprak_id_koeffisient = [
   'title_koeffisient',
@@ -261,7 +261,7 @@ const sprak_id_koeffisient = [
   'koeffisienter',
   'assosiasjons_poeng_link',
   'klubb_poeng'
-]
+];
 
 const sprak_id_koeffisient_dokumentasjon = [
   'title_koeffisient_dokumentasjon',
@@ -292,7 +292,7 @@ const sprak_id_koeffisient_dokumentasjon = [
   'what_are_club_coeff_beskrivelse_6',
   'what_are_club_coeff_beskrivelse_7',
   'what_are_club_coeff_beskrivelse_8'
-]
+];
 
 
 function language_koeffisient(clicked_id) {
@@ -373,4 +373,4 @@ language_koeffisient(flint_2);
 language_standard(flint_2);
 
 
-oppdater_ved_refresh_koeff()
+oppdater_ved_refresh_koeff();
