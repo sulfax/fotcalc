@@ -49,6 +49,7 @@
 
       gtag('config', 'G-X432MQE0BZ');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/googleapis_font.css">
     <link rel="stylesheet" type="text/css" href="static/base.css">
@@ -80,9 +81,33 @@
       <p id="beskrivelse">Calculate your clubs income and revenue distribution in UEFA competitions.<br>Calculations include all prize money and undistributed amounts.</p>
       <br>
       <div class="ytre_tabell_div">
-        <button class="btn btn-secondary" id="sessong_kontroller_1" onclick="endre_sessong(this.id)" disabled>&#10094</button>
+        <button class="btn btn-secondary" id="sessong_kontroller_1" disabled onclick="endre_sessong(this.id)">&#10094</button>
         <h2 class="sesong" id="sessong_id">21/22</h2>
-        <button class="btn btn-secondary" id="sessong_kontroller_2" onclick="endre_sessong(this.id)" disabled>&#10095</button>
+        <button class="btn btn-secondary" id="sessong_kontroller_2" disabled onclick="endre_sessong(this.id)">&#10095</button>
+
+        <!-- <div class="dropdown">
+          <button onclick="toggleMeny()" class="btn btn-primary litt_v_margin">Club <div class="opp_ned_pil">&#10094</div></button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <div class="dropdown_elementer" onclick="toggleMeny()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+            </div>
+          </div>
+        </div> -->
+        
       </div>
       <div class="ytre_tabell_div_2">
         <button class="btn btn-primary" id="tilbakestill" onclick="slett()">Tilbakestill</button>

@@ -216,13 +216,11 @@ var UECL_ikke_avrundet_ufordelte_ressurser = 0;
 
 
 
-
 for (let p = 1; p < 16; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
 var aarstall = 0;
 oppdater_ved_refresh()
-
 
 
 function paa_av(clicked_id){
@@ -334,7 +332,6 @@ function oppdater_b10_b14() {
         document.getElementById("b14_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 };
-
 function forlat_input_felt_1(clicked_id) {
     const antall_deltagere = [
         UCL_antall_deltagere_2122,
@@ -461,6 +458,7 @@ function forlat_input_felt_2(clicked_id) {
 };
 function forlat_input_felt_3(clicked_id) {
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
+    document.getElementById(clicked_id + "_").innerText = "";
     document.getElementById(clicked_id).style.borderColor = "";
     document.getElementById(clicked_id).style.backgroundColor = "";
     document.getElementById(clicked_id).style.color = "";
@@ -810,7 +808,7 @@ function oppdater_ved_refresh() {
         try {
             const motak = localStorage.getItem('Hallo');
             var oppdelt_motak = motak.split(',');
-            if (oppdelt_motak != "null") {
+            if (oppdelt_motak != 0) {
                 for (var u=0;u<oppdelt_motak.length;u++) {
                     paa_av(oppdelt_motak[u]);
                 }
@@ -870,24 +868,30 @@ function oppdater_ved_refresh() {
                     }
                 }
                 finally {
-                    if (parseInt(localStorage.getItem('sessong'))) {
-                        aarstall = parseInt(localStorage.getItem('sessong'));
+                    try {
+                        if (parseInt(localStorage.getItem('sessong'))) {
+                            aarstall = parseInt(localStorage.getItem('sessong'));
+                        }
+                        else {
+                            null;
+                        }
+                        if (aarstall == 0) {
+                            document.getElementById('sessong_kontroller_1').disabled = true;
+                            /*document.getElementById('sessong_kontroller_2').disabled = false;*/
+                        }
+                        if (aarstall == 1) {
+                            document.getElementById('sessong_kontroller_1').disabled = false;
+                            document.getElementById('sessong_kontroller_2').disabled = true;
+                        oppdater_sessong(aarstall)
+                        }
                     }
-                    else {
+                    finally {
                         null;
-                    }
-                    if (aarstall == 0) {
-                        document.getElementById('sessong_kontroller_1').disabled = true;
-                        /*document.getElementById('sessong_kontroller_2').disabled = false;*/
-                    }
-                    if (aarstall == 1) {
-                        document.getElementById('sessong_kontroller_1').disabled = false;
-                        document.getElementById('sessong_kontroller_2').disabled = true;
-                    oppdater_sessong(aarstall)
                     }
                 }
             }
         }
+    return
     }
 };
 
@@ -947,7 +951,6 @@ function oppdater_sessong(aarstall) {
     summer();
 
 
-
     for (var rt=0;rt<3;rt++) {
         forlat_input_felt_1('i' + (rt + 1));
     }
@@ -962,6 +965,47 @@ function oppdater_sessong(aarstall) {
     }
 
 };
+
+/*Dropdown meny start*/
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function toggleMeny() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } 
+        else {
+            a[i].style.display = "none";
+        }
+    }
+}
+
+
+/* Lukker menyen om musepeker klikker utenfor boksen */
+const $menu = $('.dropdown');
+
+$(document).mouseup(e => {
+   if (!$menu.is(e.target) // if the target of the click isn't the container...
+   && $menu.has(e.target).length === 0) // ... nor a descendant of the container
+   {
+     toggleMeny()
+  }
+});
+/*Dropdown meny slutt*/
+
+
+
+
 
 var ja_språk = "Ja";
 var nei_språk = "Nei";

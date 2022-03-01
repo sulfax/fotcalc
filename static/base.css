@@ -31,10 +31,11 @@ body{
 .ytre_tabell_div{
     margin-left:-2%;
     background-color: white;
-    width:155px;
+    width: fit-content;
     height:5rem;
     padding-top:.6rem;
     padding-bottom:5rem;
+    padding-right:.4rem;
     margin-bottom:-4rem;
     border-radius: 0.5rem;
     padding-left: 0.3rem;
