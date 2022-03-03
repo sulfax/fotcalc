@@ -837,15 +837,19 @@ function oppdater_ved_refresh_1() {
     else {
         for(var i=0;i<menyvalg.length;i++){
             if(menyvalg[i][0] == Klubbnavn){
-                const motak = menyvalg[i][1];
+                let p = 1;
+                if (localStorage.getItem('sessong') == 1) {
+                    p = 6;
+                }
+                const motak = menyvalg[i][p];
                 const motak_2 = "i1,i2,i3";
-                const motak_3 = menyvalg[i][2];
+                const motak_3 = menyvalg[i][p+1];
                 const motak_4 = "i4,i5,i6,i7,i8,i9";
-                const motak_5 = menyvalg[i][3];
+                const motak_5 = menyvalg[i][p+2];
                 const motak_6 = "i10,i11,i12";
-                const motak_7 = menyvalg[i][4];
+                const motak_7 = menyvalg[i][p+3];
                 const motak_8 = "i13,i14,i15";
-                const motak_9 = menyvalg[i][5];
+                const motak_9 = menyvalg[i][p+4];
                 oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
             }
         }
@@ -946,6 +950,8 @@ function endre_sessong(clicked_id) {
         document.getElementById('sessong_kontroller_1').disabled = false;
     }
     localStorage.setItem('sessong', aarstall);
+    slett("nei")
+    oppdater_ved_refresh_1()
     oppdater_sessong(aarstall)
 };
 
