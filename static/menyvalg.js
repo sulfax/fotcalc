@@ -7,7 +7,7 @@ const menyvalg = [
     ["Manchester United",   "b18,b21",                              "9,,",   "3,,,2,,",  "18,,",  "1,,"],
     ["Molde FK",            "b7,b11,b12"],
     ["Rosenborg",           "b7,b11,b15,b17"],
-    ["Tottenham Hotspur",   "b15,b20",                              ",,1",   ",,2,,,1",  ",,26",  ""],
+    ["Tottenham Hotspur",   "b15,b20",                              ",,1",   ",,2,,,1",  ",,26"],
     ["Vålerenga",           "b7,b8"],
     ["West Ham United",     "b19,b22",                              ",25,",  ",4,,,1,",  ",26,",  ",1,"]
 ];
