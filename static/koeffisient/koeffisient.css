@@ -86,17 +86,15 @@
     padding:1px !important;
 }
 .ytre_tabell_div_2 {
-    background-color: white;
-    margin-right:-2%;
     height:3.8rem;
-    padding-top:.6rem;
-    margin-top:-1.5rem;
-    border-radius: 0.5rem;
-    border-bottom-left-radius: 0rem;
-    border-bottom-right-radius: 0rem;
+    padding-top:9px;
+    border-top-right-radius: 0.5rem;
     margin-bottom: -0.7rem;
-    float: right;
+    margin-right: 3px;
     padding-left: 12px;
+    width: fit-content;
+    height: 4rem;
+    float: right;
 }
 .table-hover {
     background-color: rgb(255, 255, 255)

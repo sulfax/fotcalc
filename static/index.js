@@ -190,6 +190,8 @@ const sprak_id_kalkulator = [
   'title',
   'overskrift',
   'beskrivelse',
+  'søk',
+  'mer_kommer_snart',
   'progresjon',
   'hjemlig_seriemester', 
   'spilt_preliminary', 

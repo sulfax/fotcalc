@@ -28,18 +28,27 @@ body{
 #beskrivelse, th, #overskrift, #overskrift_koeffisient, #beskrivelse_koeffisient {
     color: #343a40;
 }
-.ytre_tabell_div{
-    margin-left:-2%;
+.ytterst_tabell_div {
+    display:flex;
+    flex-wrap:wrap;
+    height: fit-content;
+    margin-left: -2%;
     background-color: white;
+    width:fit-content;
+    margin-bottom: calc(-0.4% - 5px);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.ytre_tabell_div{
     width: fit-content;
-    height:5rem;
+    height:fit-content;
     padding-top:.6rem;
-    padding-bottom:5rem;
-    padding-right:.4rem;
-    margin-bottom:-4rem;
     border-radius: 0.5rem;
-    padding-left: 0.3rem;
-    display: flex;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display:inline-flex;
+    margin-right: -1.5%;
+    margin-left: 1.5%;
 }
 .sesong{
     color: #4a56ff;
@@ -48,8 +57,9 @@ body{
     width:104%;
     background-color:white;
     border-radius: .5rem;
+    border-top-left-radius: 0;
     padding-bottom: .1%;
-    padding-top: 1.5%;
+    padding-top: calc(0.7% + 5px);
     margin-left:-1.99%;
     overflow-x:auto
 }
