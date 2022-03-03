@@ -391,7 +391,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
         lagre_trykking_input_1()
     }
 };
@@ -458,7 +458,7 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
         lagre_trykking_input_2()
     }
 };
@@ -523,7 +523,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
         lagre_trykking_input_3()
     }
 };
@@ -628,7 +628,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
         lagre_trykking_input_4()
     }
 };
@@ -716,7 +716,12 @@ function rund_av_enkeltcelle_3(spilt_uslagsrunde_PO, nummer_2) {
 
 function videre_fordeling(clicked_id) {
     paa_av(clicked_id);
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n)) {
+
+    if(localStorage.getItem('Klubbnavn')){
+    }else{
+        lagre_trykking();
+    }
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "")) {
         lagre_trykking();
     }
 }
@@ -730,7 +735,6 @@ function lagre_trykking() {
     }
     localStorage.setItem('Hallo', lagrede_verdier);
 };
-
 function lagre_trykking_input_1() {
     var lagrede_verdier_input_id_1 = [];
     var lagrede_verdier_input_1 = [];
@@ -814,7 +818,7 @@ function slett(slett_lagring) {
 function oppdater_ved_refresh_1() {
     const Klubbnavn = localStorage.getItem('Klubbnavn');
     document.getElementById("dropDownMeny").innerHTML = Klubbnavn + " <div class='opp_ned_pil'>&#10094</div>"
-    if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n) {
+    if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null) {
         const motak = localStorage.getItem('Hallo');
         const motak_2 = localStorage.getItem('Hallo_input_id_1');
         const motak_3 = localStorage.getItem('Hallo_input_verdi_1');
