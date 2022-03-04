@@ -579,7 +579,9 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                 }
             }
             else if (tabellplassering == 3) {
-                spilt_uslagsrunde_PO = input_summer[nummer_2 + 4][aarstall];
+                if (clicked_id != 'i15') {
+                    spilt_uslagsrunde_PO = input_summer[nummer_2 + 4][aarstall];
+                }
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {
                     document.getElementById((clicked_id) + "_").innerText = "";
                 }
@@ -829,7 +831,7 @@ function oppdater_ved_refresh_1() {
         const motak_8 = localStorage.getItem('Hallo_input_id_4');
         const motak_9 = localStorage.getItem('Hallo_input_verdi_4');
 
-        // let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_7 + '",  "' + motak_9 + '"],';
+        // let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_9 + '"],';
         // alert(profildata)
 
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
@@ -839,17 +841,20 @@ function oppdater_ved_refresh_1() {
             if(menyvalg[i][0] == Klubbnavn){
                 let p = 1;
                 if (localStorage.getItem('sessong') == 1) {
-                    p = 6;
+                    p = 4;
                 }
                 const motak = menyvalg[i][p];
+                if (motak.includes("b18")) {var turnering = 0;}
+                else if (motak.includes("b19")) {var turnering = 1;}
+                else if (motak.includes("b20")) {var turnering = 2;}
                 const motak_2 = "i1,i2,i3";
                 const motak_3 = menyvalg[i][p+1];
                 const motak_4 = "i4,i5,i6,i7,i8,i9";
                 const motak_5 = menyvalg[i][p+2];
                 const motak_6 = "i10,i11,i12";
-                const motak_7 = menyvalg[i][p+3];
+                const motak_7 = (totale_uavgjorte_kamper[aarstall][turnering]) || ",,";
                 const motak_8 = "i13,i14,i15";
-                const motak_9 = menyvalg[i][p+4];
+                const motak_9 = menyvalg[i][p+3];
                 oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
             }
         }
@@ -993,6 +998,9 @@ function oppdater_sessong(aarstall) {
     if ((document.getElementById("b-18")) || (document.getElementById("b-19")) || (document.getElementById("b-20"))) {
         document.getElementById('b1_').innerText = "";
     }
+    document.getElementById('i10').placeholder = totale_uavgjorte_kamper[aarstall][0].replace(/,/g,'');
+    document.getElementById('i11').placeholder = totale_uavgjorte_kamper[aarstall][1].replace(/,/g,'');
+    document.getElementById('i12').placeholder = totale_uavgjorte_kamper[aarstall][2].replace(/,/g,'');
     summer();
 
 
