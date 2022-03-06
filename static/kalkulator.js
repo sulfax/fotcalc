@@ -831,8 +831,8 @@ function oppdater_ved_refresh_1() {
         const motak_8 = localStorage.getItem('Hallo_input_id_4');
         const motak_9 = localStorage.getItem('Hallo_input_verdi_4');
 
-        let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_9 + '"],';
-        alert(profildata)
+        // let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_9 + '"],';
+        // alert(profildata)
 
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
     } 
