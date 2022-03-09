@@ -1029,6 +1029,8 @@ function toggleMeny() {
     }
     else {
         document.getElementById("myDropdown").classList.add("show")
+        document.getElementById("myInput").focus()
+        document.getElementById("myInput").select()
         oppoverpil()
     }
 }
@@ -1047,7 +1049,7 @@ function filterFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
+    div = document.getElementById("dropdown_elementer");
     a = div.getElementsByTagName("button");
     for (i = 0; i < a.length; i++) {
         txtValue = a[i].innerText || a[i].innerText;
@@ -1058,6 +1060,12 @@ function filterFunction() {
             a[i].style.display = "none";
         }
     }
+}
+
+function fjernSøkeord() {
+    document.getElementById("myInput").value = "";
+    document.getElementById("myInput").focus()
+    filterFunction()
 }
 
 /* Lukker menyen om musepeker klikker utenfor boksen */
@@ -1080,10 +1088,6 @@ for (i = 0; i < menyvalg.length; i++) {
     btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
     document.getElementById("dropdown_elementer").appendChild(btn);
 }
-let p = document.createElement("p");
-p.id = "mer_kommer_snart";
-p.className = "mer_kommer"
-document.getElementById("dropdown_elementer").appendChild(p);
 
 function endreMenyTittel(Klubbnavn) {
     document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";

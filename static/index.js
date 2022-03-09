@@ -203,7 +203,6 @@ const sprak_id_kalkulator = [
   'dropDownMeny',
   'søk',
   'eksperimentell_profil_meny_element',
-  'mer_kommer_snart',
   'progresjon',
   'hjemlig_seriemester', 
   'spilt_preliminary', 
