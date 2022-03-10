@@ -215,7 +215,6 @@ var UCL_ikke_avrundet = [0,0,0]
 var UEL_ikke_avrundet = [0,0,0]
 var UECL_ikke_avrundet = [0,0,0]
 
-
 var ja_språk = "Ja";
 var nei_språk = "Nei";
 var spilt_språk = "Spilt"

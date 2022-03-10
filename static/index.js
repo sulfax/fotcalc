@@ -73,8 +73,11 @@ function language_standard(clicked_id) {
       flint = "norsk";
       localStorage.setItem("someVarKey", flint);
       let Klubbnavn = localStorage.getItem("Klubbnavn");
-      if (Klubbnavn == "null" || Klubbnavn == null || Klubbnavn == "Experimental Profile") {
+      if (Klubbnavn == "null" || Klubbnavn == "Experimental Profile") {
         Klubbnavn = "Eksperimentell Profil";
+      }
+      else if (Klubbnavn == null) {
+        Klubbnavn = "Velg klubb";
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
@@ -150,8 +153,11 @@ function language_standard(clicked_id) {
       flint = "english";
       localStorage.setItem("someVarKey", flint);
       let Klubbnavn = localStorage.getItem("Klubbnavn");
-      if (Klubbnavn == "null" || Klubbnavn == null || Klubbnavn == "Eksperimentell Profil") {
+      if (Klubbnavn == "null" || Klubbnavn == "Eksperimentell Profil") {
         Klubbnavn = "Experimental Profile";
+      }
+      else if (Klubbnavn == null) {
+        Klubbnavn = "Choose club";
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
