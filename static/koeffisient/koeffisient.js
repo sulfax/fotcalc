@@ -354,20 +354,23 @@ function oppdater_seier_tap(clicked_id) {
     document.getElementById(clicked_id).style.backgroundColor = "";
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
+    var innenfor_1_6 = (input_felt_verdi >= 0) && (input_felt_verdi <= 6)
     if (felt_nummer >= 1 && felt_nummer <= 3 && document.getElementById(clicked_id).value != "") {
-        var motsatt_input = (parseInt(document.getElementById("i" + (felt_nummer + 3)).value)) || 0;
+        let motsatt_input = (parseInt(document.getElementById("i" + (felt_nummer + 3)).value)) || 0;
+        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6));
+        let motsatt_input_ikke_avrundet = (document.getElementById("i" + (felt_nummer + 3)).value) || 0;
         if (motsatt_input < 0) {
             motsatt_input = 0
         }
         else if (motsatt_input > 6) {
             motsatt_input = 6
         }
-        if (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6) && (input_felt_verdi >= 0) && (input_felt_verdi <= 6)) {
+        if (((sammen_innenfor_1_6 || motsatt_input_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (motsatt_input_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
             var aktuell_sum = (input_felt_verdi * input_summer[0][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || (Number.isInteger(parseInt(input_felt_verdi))) === false) {
+        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
         }
         else {
@@ -376,19 +379,21 @@ function oppdater_seier_tap(clicked_id) {
         }
     }
     else if (felt_nummer >= 4 && felt_nummer <= 6 && document.getElementById(clicked_id).value != "") {
-        var motsatt_input = (parseInt(document.getElementById("i" + (felt_nummer - 3)).value)) || 0;
+        let motsatt_input = (parseInt(document.getElementById("i" + (felt_nummer - 3)).value)) || 0;
+        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6));
+        let motsatt_input_ikke_avrundet = (document.getElementById("i" + (felt_nummer - 3)).value) || 0;
         if (motsatt_input < 0) {
             motsatt_input = 0
         }
         else if (motsatt_input > 6) {
             motsatt_input = 6
         }
-        if (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6) && (input_felt_verdi >= 0) && (input_felt_verdi <= 6)) {
+        if (((sammen_innenfor_1_6 || motsatt_input_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (motsatt_input_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
             var aktuell_sum = (input_felt_verdi * input_summer[3][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || (Number.isInteger(parseInt(input_felt_verdi))) === false) {
+        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
         }
         else {
@@ -413,7 +418,7 @@ function oppdater_plassering(clicked_id) {
     document.getElementById(clicked_id).style.backgroundColor = "";
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
-    if (input_felt_verdi >= 1 && input_felt_verdi <= 4 && document.getElementById(clicked_id).value != "") {
+    if (input_felt_verdi >= 1 && input_felt_verdi <= 4 && document.getElementById(clicked_id).value != "" && input_felt_verdi % 1 == 0) {
         if (clicked_id == "i8") {
             if (input_felt_verdi == 1) {
                 var aktuell_sum = input_summer[6][0];
@@ -447,7 +452,7 @@ function oppdater_plassering(clicked_id) {
             }
         }
     }
-    else if (input_felt_verdi > 4 || (input_felt_verdi < 1 && input_felt_verdi != "") || ((Number.isInteger(parseInt(input_felt_verdi))) === false) && (input_felt_verdi != "")) {
+    else if ((input_felt_verdi > 4 || input_felt_verdi < 1 && input_felt_verdi != "") || (input_felt_verdi != "" && input_felt_verdi % 1 != 0)) {
         utenfor_gyldig_input(clicked_id);
     }
     else {
@@ -472,7 +477,7 @@ function utenfor_gyldig_input(clicked_id) {
     document.getElementById(clicked_id).style.borderColor = 'red';
     document.getElementById(clicked_id).style.color = 'white';
     document.getElementById(clicked_id).className = "form-control placeholder";
-    if (clicked_id =! 'i7') {
+    if (clicked_id != 'i7') {
         document.getElementById(clicked_id + "_").innerText = "";
         document.getElementById(clicked_id + "__").innerText = "";
     }
