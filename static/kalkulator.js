@@ -19,6 +19,7 @@ var UECL_antall_deler_2122 = 528;
 var Spilt_SCUP_total_2122 = 7000000;
 /*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*21/22 knapper*/
+
 var Hjemlig_seriemester_2122 = 260000;
 var Spilt_Pre_Q_eller_PO_2122 = 100000;
 var UECL_Slått_ut_Q1_2122 = 150000;
@@ -47,6 +48,8 @@ var UEL_vinner_2122 = 4000000;
 var UECL_vinner_2122 = 2000000;
 var Spilt_SCUP_2122 = Spilt_SCUP_total_2122 / 2;
 var Vunnet_SCUP_2122 = 1000000;
+
+
 /*21/22 input felt*/
 var UCL_ti_års_kr_2122 = UCL_ti_års_koeffisient_rangering_2122 / UCL_antall_deler_2122;
 var UEL_ti_års_kr_2122 = UEL_ti_års_koeffisient_rangering_2122 / UECL_antall_deler_2122;
@@ -201,20 +204,16 @@ const input_summer = [
 let eksperimentell_profil_e = "Experimental Profile";
 let eksperimentell_profil_n = "Eksperimentell Profil";
 
-const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b18_", "b21_", "b24_", "b27_", "b30_", "b33_", "b36_", "b38_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
-const UEL_inntjening_celler = ["b10_", "b14_", "b19_", "b22_", "b25_", "b28_", "b31_", "b34_", "b37_", "b39_", "i5_", "i8_", "i14_", "i14__"];
-const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b20_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__"];
+const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "b36_", "b38_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
+const UEL_inntjening_celler = ["b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "b37_", "b39_", "i5_", "i8_", "i14_", "i14__"];
+const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__"];
 const seriemester_inntjening_celler = ["b1_"];
 
 const UECL_fjerning_av_summer_ved_deltagelse = ["b1_", "b5_", "b8_", "b12_", "b17_"];
 
-var UCL_ikke_avrundet_ti_års_koeff = 0;
-var UEL_ikke_avrundet_ti_års_koeff = 0;
-var UECL_ikke_avrundet_ti_års_koeff = 0;
-
-var UCL_ikke_avrundet_ufordelte_ressurser = 0;
-var UEL_ikke_avrundet_ufordelte_ressurser = 0;
-var UECL_ikke_avrundet_ufordelte_ressurser = 0;
+var UCL_ikke_avrundet = [0,0,0]
+var UEL_ikke_avrundet = [0,0,0]
+var UECL_ikke_avrundet = [0,0,0]
 
 
 var ja_språk = "Ja";
@@ -271,6 +270,15 @@ function paa_av(clicked_id){
                 }
             }
             if (clicked_id == "b18" || clicked_id == "b19" || clicked_id == "b20") {
+                if (nummer == 18) {
+                    UCL_ikke_avrundet[0] = aktuell_sum;
+                }
+                if (nummer == 19) {
+                    UEL_ikke_avrundet[0] = aktuell_sum;
+                }
+                if (nummer == 20) {
+                    UECL_ikke_avrundet[0] = aktuell_sum;
+                }
                 document.getElementById("b1_").innerText = "";
             }
             if (clicked_id == "b13") {
@@ -292,6 +300,15 @@ function paa_av(clicked_id){
         }
         if ((clicked_id == "b-19")) {
             oppdater_b10_b14();
+        }
+        if (nummer == -18) {
+            UCL_ikke_avrundet[0] = 0;
+        }
+        if (nummer == -19) {
+            UEL_ikke_avrundet[0] = 0;
+        }
+        if (nummer == -20) {
+            UECL_ikke_avrundet[0] = 0;
         }
         document.getElementById(clicked_id).innerText = "" /*nei_språk*/;
         document.getElementById(clicked_id).id = "b" + tall;
@@ -353,26 +370,26 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
             var aktuell_sum = ((deltakere_i_turnering + 1 - input_felt_verdi) * input_summer[nummer_2 - 1][aarstall]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if (nummer_2 == 1) {
-                UCL_ikke_avrundet_ti_års_koeff = aktuell_sum;
+                UCL_ikke_avrundet[1] = aktuell_sum;
             }
             if (nummer_2 == 2) {
-                UEL_ikke_avrundet_ti_års_koeff = aktuell_sum;
+                UEL_ikke_avrundet[1] = aktuell_sum;
             }
             if (nummer_2 == 3) {
-                UECL_ikke_avrundet_ti_års_koeff = aktuell_sum;
+                UECL_ikke_avrundet[1] = aktuell_sum;
             }
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id);
         }
         else {
             if (nummer_2 == 1) {
-                UCL_ikke_avrundet_ti_års_koeff = 0;
+                UCL_ikke_avrundet[1] = 0;
             }
             if (nummer_2 == 2) {
-                UEL_ikke_avrundet_ti_års_koeff = 0;
+                UEL_ikke_avrundet[1] = 0;
             }
             if (nummer_2 == 3) {
-                UECL_ikke_avrundet_ti_års_koeff = 0;
+                UECL_ikke_avrundet[1] = 0;
             }
             utenfor_gyldig_input(clicked_id);
             summer();
@@ -380,13 +397,13 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
     }
     else {
         if (nummer_2 == 1) {
-            UCL_ikke_avrundet_ti_års_koeff = 0;
+            UCL_ikke_avrundet[1] = 0;
         }
         if (nummer_2 == 2) {
-            UEL_ikke_avrundet_ti_års_koeff = 0;
+            UEL_ikke_avrundet[1] = 0;
         }
         if (nummer_2 == 3) {
-            UECL_ikke_avrundet_ti_års_koeff = 0;
+            UECL_ikke_avrundet[1] = 0;
         }
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
@@ -490,13 +507,13 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
             if (antall_seiere_er_desimal && aktuell_sum > 0) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 if (nummer_2 == 10) {
-                    UCL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+                    UCL_ikke_avrundet[2] = aktuell_sum;
                 }
                 if (nummer_2 == 11) {
-                    UEL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+                    UEL_ikke_avrundet[2] = aktuell_sum;
                 }
                 if (nummer_2 == 12) {
-                    UECL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+                    UECL_ikke_avrundet[2] = aktuell_sum;
                 }
                 summer();
                 rund_av_enkeltcelle(aktuell_sum, clicked_id);
@@ -504,13 +521,13 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
         }
         else {
             if (nummer_2 == 10) {
-                UCL_ikke_avrundet_ufordelte_ressurser = 0;
+                UCL_ikke_avrundet[2] = 0;
             }
             if (nummer_2 == 11) {
-                UEL_ikke_avrundet_ufordelte_ressurser = 0;
+                UEL_ikke_avrundet[2] = 0;
             }
             if (nummer_2 == 12) {
-                UECL_ikke_avrundet_ufordelte_ressurser = 0;
+                UECL_ikke_avrundet[2] = 0;
             }
             utenfor_gyldig_input(clicked_id);
             summer();
@@ -518,13 +535,13 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
     }
     else {
         if (nummer_2 == 10) {
-            UCL_ikke_avrundet_ufordelte_ressurser = 0;
+            UCL_ikke_avrundet[2] = 0;
         }
         if (nummer_2 == 11) {
-            UEL_ikke_avrundet_ufordelte_ressurser = 0;
+            UEL_ikke_avrundet[2] = 0;
         }
         if (nummer_2 == 12) {
-            UECL_ikke_avrundet_ufordelte_ressurser = 0;
+            UECL_ikke_avrundet[2] = 0;
         }
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
@@ -689,9 +706,9 @@ function summer() {
         var UECL_enkeltsum = ((document.getElementById(seriemester_inntjening_celler[x]).innerText).substr(2, (document.getElementById(seriemester_inntjening_celler[x]).innerText).length));
         seriemester_total_sum += parseFloat(UECL_enkeltsum.split(' ').join('')) || 0;
     }
-    var UCL_faktisk_total_sum = parseFloat(UCL_total_sum) + parseFloat(UCL_ikke_avrundet_ti_års_koeff) + parseFloat(UCL_ikke_avrundet_ufordelte_ressurser);
-    var UEL_faktisk_total_sum = parseFloat(UEL_total_sum) + parseFloat(UEL_ikke_avrundet_ti_års_koeff) + parseFloat(UEL_ikke_avrundet_ufordelte_ressurser);
-    var UECL_faktisk_total_sum = parseFloat(UECL_total_sum) + parseFloat(UECL_ikke_avrundet_ti_års_koeff) + parseFloat(UECL_ikke_avrundet_ufordelte_ressurser);
+    var UCL_faktisk_total_sum = parseFloat(UCL_total_sum) + UCL_ikke_avrundet[0] + UCL_ikke_avrundet[1] + UCL_ikke_avrundet[2];
+    var UEL_faktisk_total_sum = parseFloat(UEL_total_sum) + UEL_ikke_avrundet[0] + UEL_ikke_avrundet[1] + UEL_ikke_avrundet[2];
+    var UECL_faktisk_total_sum = parseFloat(UECL_total_sum) + UECL_ikke_avrundet[0] + UECL_ikke_avrundet[1] + UECL_ikke_avrundet[2];
     var total_sum = (UCL_faktisk_total_sum + UEL_faktisk_total_sum + UECL_faktisk_total_sum + seriemester_total_sum);
 
     var avrundet_UCL_total = Number((UCL_faktisk_total_sum).toFixed(0));
