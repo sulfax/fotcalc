@@ -348,7 +348,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (document.getElementById(clicked_id).value != "") {
-        if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltagere[nummer_2 - 1]) {
+        if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltagere[nummer_2 - 1] && input_felt_verdi % 1 == 0) {
             var deltakere_i_turnering = antall_deltagere[nummer_2 - 1];
             var aktuell_sum = ((deltakere_i_turnering + 1 - input_felt_verdi) * input_summer[nummer_2 - 1][aarstall]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -399,27 +399,29 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
     var input_felt_verdi = document.getElementById(clicked_id).value;
+    var innenfor_1_6 = (input_felt_verdi >= 0) && (input_felt_verdi <= 6);
     document.getElementById(clicked_id + "_").innerText = "";
     document.getElementById(clicked_id).style.borderColor = "";
     document.getElementById(clicked_id).style.backgroundColor = "";
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (nummer >= 4 && nummer <= 6 && document.getElementById(clicked_id).value != "") {
-        var hjelp = (parseInt(document.getElementById("i" + (nummer_2 + 3)).value)) || 0;
-        var hjelp_2 = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value)) || 0;
+        let hjelp = (parseInt(document.getElementById("i" + (nummer_2 + 3)).value)) || 0;
+        let hjelp_ikke_avrundet = (document.getElementById("i" + (nummer_2 + 3)).value) || 0;
+        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6));
         if (hjelp < 0) {
             hjelp = 0
         }
         else if (hjelp > 6) {
             hjelp = 6
         }
-        if (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6) && (input_felt_verdi >= 0) && (input_felt_verdi <= 6)) {
+        if (((sammen_innenfor_1_6 || hjelp_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (hjelp_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
             var aktuell_sum = (input_felt_verdi * input_summer[nummer_2 - 1][aarstall]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id);
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || (Number.isInteger(parseInt(input_felt_verdi))) === false) {
+        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
             summer();
         }
@@ -430,21 +432,22 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
         }
     }
     else if (nummer >= 7 && nummer <= 9 && document.getElementById(clicked_id).value != ""){
-        var hjelp = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value)) || 0;
-        var hjelp_2 = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value)) || 0;
+        let hjelp = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value)) || 0;
+        let hjelp_ikke_avrundet = (document.getElementById("i" + (nummer_2 - 3)).value) || 0;
+        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6));
         if (hjelp < 0) {
             hjelp = 0
         }
         else if (hjelp > 6) {
             hjelp = 6
         }
-        if (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6) && (input_felt_verdi >= 0) && (input_felt_verdi <= 6)) {
+        if (((sammen_innenfor_1_6 || hjelp_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (hjelp_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
             var aktuell_sum = (input_felt_verdi * input_summer[nummer_2 - 1][aarstall]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id); 
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || (Number.isInteger(parseInt(input_felt_verdi))) === false) {
+        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
             summer();
         }
@@ -472,7 +475,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
     var totalt_antall_uavgjorte_kamper = document.getElementById(clicked_id).value;
     if (document.getElementById(clicked_id).value != "") {
         var antall_uavgjorte_kamper = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value) || 0);
-        if ((totalt_antall_uavgjorte_kamper >= (antall_uavgjorte_kamper)) && ((totalt_antall_uavgjorte_kamper <= (96 - (6 - (antall_uavgjorte_kamper)) || 96)))) {
+        if ((totalt_antall_uavgjorte_kamper >= (antall_uavgjorte_kamper)) && ((totalt_antall_uavgjorte_kamper <= (96 - (6 - (antall_uavgjorte_kamper)) || 96))) && totalt_antall_uavgjorte_kamper % 1 == 0) {
             var totale_ufordelte_ressurser = (totalt_antall_uavgjorte_kamper * input_summer[nummer_2 - 4][aarstall]);
             var totalt_antall_kamper_med_vinner = (96 - document.getElementById(clicked_id).value);
             var antall_seiere = (document.getElementById("i" + (nummer_2 - 6)).value);
@@ -483,18 +486,21 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
             else {
                 aktuell_sum = 0;
             }
-            document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            if (nummer_2 == 10) {
-                UCL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+            let antall_seiere_er_desimal = (document.getElementById("i" + (nummer_2 - 6)).value % 1 == 0) || 0;
+            if (antall_seiere_er_desimal && aktuell_sum > 0) {
+                document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                if (nummer_2 == 10) {
+                    UCL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+                }
+                if (nummer_2 == 11) {
+                    UEL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+                }
+                if (nummer_2 == 12) {
+                    UECL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
+                }
+                summer();
+                rund_av_enkeltcelle(aktuell_sum, clicked_id);
             }
-            if (nummer_2 == 11) {
-                UEL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
-            }
-            if (nummer_2 == 12) {
-                UECL_ikke_avrundet_ufordelte_ressurser = aktuell_sum;
-            }
-            summer();
-            rund_av_enkeltcelle(aktuell_sum, clicked_id);
         }
         else {
             if (nummer_2 == 10) {
@@ -529,7 +535,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
 };
 function forlat_input_felt_4(clicked_id, lagre_endring) {
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
-    var tabellplassering = parseInt(document.getElementById(clicked_id).value);
+    var tabellplassering = (document.getElementById(clicked_id).value);
     try {
         document.getElementById(clicked_id + "_").innerText = "";
     }
@@ -541,7 +547,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (document.getElementById(clicked_id).value != "") {
-        if ((tabellplassering >= 1) && (tabellplassering <= 4)) {
+        if ((tabellplassering >= 1) && (tabellplassering <= 4) && tabellplassering % 1 == 0) {
             if (tabellplassering == 1) {
                 var aktuell_sum = input_summer[nummer_2 - 1][aarstall];
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {

@@ -70,17 +70,17 @@ function language_standard(clicked_id) {
           document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
         }
       }
+      flint = "norsk";
+      localStorage.setItem("someVarKey", flint);
+      let Klubbnavn = localStorage.getItem("Klubbnavn");
+      if (Klubbnavn == "null" || Klubbnavn == null || Klubbnavn == "Experimental Profile") {
+        Klubbnavn = "Eksperimentell Profil";
+      }
+      document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
     catch {
       null;
     }
-    flint = "norsk";
-    localStorage.setItem("someVarKey", flint);
-    let Klubbnavn = localStorage.getItem("Klubbnavn");
-    if (Klubbnavn == "null" || Klubbnavn == null || Klubbnavn == "Experimental Profile") {
-      Klubbnavn = "Eksperimentell Profil";
-    }
-    document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
   }
 
   
@@ -147,17 +147,17 @@ function language_standard(clicked_id) {
           document.getElementsByName(x + 13)[0].placeholder = 'Placement';
         }
       }
+      flint = "english";
+      localStorage.setItem("someVarKey", flint);
+      let Klubbnavn = localStorage.getItem("Klubbnavn");
+      if (Klubbnavn == "null" || Klubbnavn == null || Klubbnavn == "Eksperimentell Profil") {
+        Klubbnavn = "Experimental Profile";
+      }
+      document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
     catch {
       null;
     }
-    flint = "english";
-    localStorage.setItem("someVarKey", flint);
-    let Klubbnavn = localStorage.getItem("Klubbnavn");
-    if (Klubbnavn == "null" || Klubbnavn == null || Klubbnavn == "Eksperimentell Profil") {
-      Klubbnavn = "Experimental Profile";
-    }
-    document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
   }
 
 
@@ -186,7 +186,6 @@ function language_standard(clicked_id) {
     } 
   }
 }
-
 
 const sprak_id = [
   'hjem',
@@ -379,7 +378,6 @@ function language_koeffisient(clicked_id) {
     }
   }
 }
-
 
 var flint_2 = localStorage.getItem("someVarKey");
 language_koeffisient(flint_2);
