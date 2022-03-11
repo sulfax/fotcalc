@@ -482,16 +482,10 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
         if ((totalt_antall_uavgjorte_kamper >= (antall_uavgjorte_kamper)) && ((totalt_antall_uavgjorte_kamper <= (96 - (6 - (antall_uavgjorte_kamper)) || 96))) && totalt_antall_uavgjorte_kamper % 1 == 0) {
             var totale_ufordelte_ressurser = (totalt_antall_uavgjorte_kamper * input_summer[nummer_2 - 4][aarstall]);
             var totalt_antall_kamper_med_vinner = (96 - document.getElementById(clicked_id).value);
-            var antall_seiere = (document.getElementById("i" + (nummer_2 - 6)).value);
+            var antall_seiere = (document.getElementById("i" + (nummer_2 - 6)).value) || 0;
             var aktuell_sum = ((antall_seiere/totalt_antall_kamper_med_vinner)*totale_ufordelte_ressurser);
-            if (aktuell_sum) {
-                null;
-            }
-            else {
-                aktuell_sum = 0;
-            }
             let antall_seiere_er_desimal = (document.getElementById("i" + (nummer_2 - 6)).value % 1 == 0) || 0;
-            if (antall_seiere_er_desimal && aktuell_sum > 0) {
+            if (antall_seiere_er_desimal && aktuell_sum >= 0) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 if (nummer_2 == 10) {UCL_ikke_avrundet[2] = aktuell_sum;}
                 if (nummer_2 == 11) {UEL_ikke_avrundet[2] = aktuell_sum;}
@@ -651,7 +645,6 @@ function gjennomfør_1_gang_per_knapp(clicked_id) {
 }
 
 function summer() {
-    fjern_koeff();
     var UCL_antall_summer = parseInt(UCL_inntjening_celler.length);
     var UEL_antall_summer = parseInt(UEL_inntjening_celler.length);
     var UECL_antall_summer = parseInt(UECL_inntjening_celler.length);
@@ -698,23 +691,7 @@ function summer() {
 function rund_av_enkeltcelle(aktuell_sum, clicked_id) {
     var avrundet = Number((aktuell_sum).toFixed(0));
     document.getElementById(clicked_id + "_").innerText = "€ " + avrundet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    fjern_koeff();
 };
-
-function fjern_koeff() {
-    if (document.getElementById("i4_").innerText == "") {
-        UCL_ikke_avrundet[2] = 0;
-        document.getElementById("i10_").innerText = "";
-    }
-    if (document.getElementById("i5_").innerText == "") {
-        UEL_ikke_avrundet[2] = 0;
-        document.getElementById("i11_").innerText = "";
-    }
-    if (document.getElementById("i6_").innerText == "") {
-        UECL_ikke_avrundet[2] = 0;
-        document.getElementById("i12_").innerText = "";
-    }
-}
 
 function rund_av_enkeltcelle_2(spilt_uslagsrunde_PO, clicked_id) {
     var avrundet_2 = Number((spilt_uslagsrunde_PO).toFixed(0));
