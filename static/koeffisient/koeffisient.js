@@ -91,6 +91,8 @@ const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "b38__", "b40__", 
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
+var aarstall = 0;
+
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
@@ -471,6 +473,30 @@ function oppdater_plassering(clicked_id) {
     summer()
 }
 
+function endre_sessong(clicked_id) {
+    if (clicked_id == 'sessong_kontroller_1') {
+        aarstall -= 1;
+        document.getElementById('sessong_kontroller_1').disabled = true;
+        document.getElementById('sessong_kontroller_2').disabled = false;
+    }
+    else {
+        aarstall += 1;
+        document.getElementById('sessong_kontroller_2').disabled = true;
+        document.getElementById('sessong_kontroller_1').disabled = false;
+    }
+    localStorage.setItem('sessong', aarstall);
+    oppdater_sessong(aarstall)
+};
+
+function oppdater_sessong(aarstall) {
+    if (aarstall == 0) {
+        document.getElementById("sessong_id").innerText = "21/22";
+    }
+    if (aarstall == 1) {
+        document.getElementById("sessong_id").innerText = "22/23";
+    }
+};
+
 
 function utenfor_gyldig_input(clicked_id) {
     document.getElementById(clicked_id).style.backgroundColor = 'red';
@@ -605,7 +631,21 @@ function oppdater_ved_refresh_koeff() {
                 }
             }
             finally {
-                summer()
+                if (parseInt(localStorage.getItem('sessong'))) {
+                    aarstall = parseInt(localStorage.getItem('sessong'));
+                }
+                else {
+                    null;
+                }
+                if (aarstall == 0) {
+                    document.getElementById('sessong_kontroller_1').disabled = true;
+                    /*document.getElementById('sessong_kontroller_2').disabled = false;*/
+                }
+                if (aarstall == 1) {
+                    document.getElementById('sessong_kontroller_1').disabled = false;
+                    document.getElementById('sessong_kontroller_2').disabled = true;
+                oppdater_sessong(aarstall)
+                }
             }
         }
     }

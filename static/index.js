@@ -23,8 +23,8 @@ function language_standard(clicked_id) {
     tap_språk = ja_nei[0][4];
     eliminert_språk = ja_nei[0][5];
     spilt_språk = ja_nei[0][6];
-    try {
-      for (x=0;x<68;x++) {
+    for (x=0;x<68;x++) {
+      try {
         var klasse = (document.getElementById("b" + (x + 1)).className);
         var id = document.getElementById("b" + (x + 1));
         if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UCL del" || klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
@@ -46,9 +46,9 @@ function language_standard(clicked_id) {
           id.innerText = 'Spilt';
         }
       }
-    }
-    catch {
-      null;
+      catch {
+        null;
+      }
     }
     try {
       if (document.getElementById('overskrift_koeffisient')) {
@@ -73,10 +73,10 @@ function language_standard(clicked_id) {
       flint = "norsk";
       localStorage.setItem("someVarKey", flint);
       let Klubbnavn = localStorage.getItem("Klubbnavn");
-      if (Klubbnavn == "null" || Klubbnavn == "Experimental Profile") {
+      if (Klubbnavn == "Experimental Profile") {
         Klubbnavn = "Eksperimentell Profil";
       }
-      else if (Klubbnavn == null) {
+      else if (Klubbnavn == null || Klubbnavn == "null") {
         Klubbnavn = "Velg klubb";
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
@@ -103,8 +103,8 @@ function language_standard(clicked_id) {
     tap_språk = ja_nei[1][4];
     eliminert_språk = ja_nei[1][5];
     spilt_språk = ja_nei[1][6];
-    try {
-      for (x=0;x<68;x++) {
+    for (x=0;x<68;x++) {
+      try {
         let klasse = (document.getElementById("b" + (x + 1)).className);
         let id = document.getElementById("b" + (x + 1));
         if (klasse == "btn btn-danger r0" || klasse == "btn btn-danger de0_UECL ele" || klasse == "btn btn-danger de0_UECL del") {
@@ -126,9 +126,9 @@ function language_standard(clicked_id) {
           id.innerText = 'Played';
         }
       }
-    }
-    catch {
-      null;
+      catch {
+        null;
+      }
     }
     try {
       if (document.getElementById('overskrift_koeffisient')) {
@@ -153,10 +153,10 @@ function language_standard(clicked_id) {
       flint = "english";
       localStorage.setItem("someVarKey", flint);
       let Klubbnavn = localStorage.getItem("Klubbnavn");
-      if (Klubbnavn == "null" || Klubbnavn == "Eksperimentell Profil") {
+      if (Klubbnavn == "Eksperimentell Profil") {
         Klubbnavn = "Experimental Profile";
       }
-      else if (Klubbnavn == null) {
+      else if (Klubbnavn == null || Klubbnavn == "null") {
         Klubbnavn = "Choose club";
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
@@ -165,7 +165,6 @@ function language_standard(clicked_id) {
       null;
     }
   }
-
 
 
   if (document.getElementById('overskrift')) {
