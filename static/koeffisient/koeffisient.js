@@ -107,7 +107,7 @@ function deltakelse_eliminasjon_pre(clicked_id) {
     }else{
         localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "")) {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "") || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") {
         localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
     }
 }
@@ -327,7 +327,7 @@ function post_resultat(clicked_id) {
     else {
         resultat_status[felt_nummer - 1] = "";
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null)) {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb")) {
         localStorage.setItem('resultat_status_local_s', resultat_status);
     }
 }
@@ -421,7 +421,7 @@ function oppdater_seier_tap(clicked_id, lagre_endring) {
         document.getElementById(clicked_id + "__").innerText = "";
     }
     oppdater_seier_tap_status[felt_nummer - 1] = input_felt_verdi
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") && lagre_endring != "nei") {
         localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
     }
 }
@@ -482,7 +482,7 @@ function oppdater_plassering(clicked_id, lagre_endring) {
         }
     }
     oppdater_seier_tap_status[felt_nummer - 1] = input_felt_verdi
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") && lagre_endring != "nei") {
         localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
     }
     oppdater_trostepoeng()

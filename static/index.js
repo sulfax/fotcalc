@@ -314,7 +314,6 @@ const sprak_id_koeffisient_dokumentasjon = [
   'what_are_club_coeff_beskrivelse_8'
 ];
 
-
 function language_koeffisient(clicked_id) {
   if (document.getElementById('overskrift_koeffisient')) {
     var koeffisient_antall_oversett = sprak_id_koeffisient.length;
@@ -386,7 +385,6 @@ function language_koeffisient(clicked_id) {
     }
   }
 }
-
 var flint_2 = localStorage.getItem("someVarKey");
 language_koeffisient(flint_2);
 language_standard(flint_2);
