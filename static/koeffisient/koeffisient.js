@@ -601,7 +601,7 @@ function slett(slett_lagring) {
         document.getElementById("i" + c).value = "";
         oppdater_plassering("i" + c, slett_lagring)
     }
-    if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n)) {
+    if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
         localStorage.setItem('resultat_status_local_s', "");
         localStorage.setItem('oppdater_seier_tap_status_local_s', "");
         localStorage.setItem('deltakelse_eliminasjon_status_local_s', "");

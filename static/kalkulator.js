@@ -791,7 +791,7 @@ function slett(slett_lagring) {
         document.getElementById('i' + (ce + 1)).value = "";
         forlat_input_felt_4('i' + (ce + 1), slett_lagring);
     }
-    if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n)) {
+    if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
         localStorage.setItem('Hallo', null);
         localStorage.setItem('Hallo_input_id_1', "");
         localStorage.setItem('Hallo_input_verdi_1', "");
