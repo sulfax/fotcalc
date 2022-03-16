@@ -2,6 +2,8 @@
 const norsk = [
     'Premiepenger-kalkulator',
     'Koeffisient-kalkulator',
+    'Eksperimentell Profil',
+    '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Tilbakestill',
     'Utviklet av Johannes Kaste',
     'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
@@ -11,9 +13,6 @@ const norsk_kalkulator = [
     'UEFA Premiepenger-Kalkulator UCL, UEL, UECL',
     'UEFA Premiepenger-kalkulator',
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
-    ' <div class="opp_ned_pil">&#10094</div>',
-    '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
-    'Eksperimentell Profil',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester:',
     '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Preliminary runde</abbr>:',
@@ -122,6 +121,8 @@ const norsk_koeffisient_dokumentasjon = [
 const english = [
     'Prize money calculator',
     'Coefficient calculator',
+    'Experimental Profile',
+    '<input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Reset',
     'Developed by Johannes Kaste',
     'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
@@ -131,9 +132,6 @@ const english_kalkulator = [
     'UEFA Prize money Calculator UCL, UEL, UECL',
     'UEFA Prize money Calculator',
     'Calculate your clubs income and revenue distribution in UEFA competitions.<br>Calculations include all prize money and undistributed amounts.',
-    '<div class="opp_ned_pil">&#10094</div>',
-    '<input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
-    'Experimental Profile',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Domestic champion:',
     '<abbr data_title="Qualification matches for the qualification itself">Preliminary round</abbr>:',

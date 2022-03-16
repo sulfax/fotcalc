@@ -836,7 +836,7 @@ function oppdater_ved_refresh_1() {
             if(menyvalg[i][0] == Klubbnavn){
                 let p = 1;
                 if (localStorage.getItem('sessong') == 1) {
-                    p = 4;
+                    p = 6;
                 }
                 const motak = menyvalg[i][p];
                 if (motak) {
@@ -945,7 +945,7 @@ function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
         aarstall -= 1;
         document.getElementById('sessong_kontroller_1').disabled = true;
-        document.getElementById('sessong_kontroller_2').disabled = false;
+        // document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else {
         aarstall += 1;

@@ -86,6 +86,18 @@
           <h2 class="sesong" id="sessong_id">21/22</h2>
           <button class="btn btn-secondary" id="sessong_kontroller_2" disabled onclick="endre_sessong(this.id)">&#10095</button>
         </div>
+        <div class="dropdown">
+          <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><div class="opp_ned_pil">&#10094</div></button>
+          <div id="myDropdown" class="dropdown-content">
+            <div class="søkeområde">
+              <span id="søk"><input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"></span>
+              <button class="knapp_clean"><img class="x_clean" src="media/x-svgrepo-com.svg" alt="x icon" onclick="fjernSøkeord()"></button>
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer" onclick="removeMeny()">
+              <button class="meny_element" id="eksperimentell_profil_meny_element" onclick="endreMenyTittel(innerHTML)"></button>
+            </div>
+          </div>
+        </div>
         <div class="ytre_tabell_div_2" id="ytre_tabell_div_id">
           <button class="btn btn-primary" id="tilbakestill" onclick="slett()">Tilbakestill</button>
         </div>
@@ -190,7 +202,7 @@
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
                 <div class="knapp_erstatning"></div>
-                <button id="b9" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b9" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
@@ -241,7 +253,7 @@
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
                 <div class="knapp_erstatning"></div>
-                <button id="b16" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b16" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
@@ -292,7 +304,7 @@
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
                 <div class="knapp_erstatning"></div>
-                <button id="b23" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b23" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
@@ -343,7 +355,7 @@
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
                 <div class="knapp_erstatning"></div>
-                <button id="b30" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b30" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
@@ -358,9 +370,9 @@
               <th scope="row" id="gruppespill_del">Group stage</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
-                <button id="b31" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b32" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b33" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b31" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b32" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b33" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b31_"></td>
@@ -460,8 +472,8 @@
               <th scope="row" id="åtten">Round of 16</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
-                <button id="b38" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b39" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b38" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b39" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="b38_"></td>
@@ -510,8 +522,8 @@
               <th scope="row" id="kvart">Quarter-final</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
-                <button id="b46" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b47" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b46" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b47" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="b46_"></td>
@@ -560,9 +572,9 @@
               <th scope="row" id="semi">Semi-final</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
-                <button id="b54" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b55" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b56" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b54" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b55" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b56" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="b54_"></td>
@@ -611,9 +623,9 @@
               <th scope="row" id="finale">Final</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
-                <button id="b63" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b64" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon(this.id)"></button>
-                <button id="b65" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon(this.id)"></button>
+                <button id="b63" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b64" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b65" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="b63_"></td>
@@ -697,6 +709,10 @@
         </div>
       </div>
     </footer>
+    <script
+    type="text/javascript" 
+    src="static/menyvalg.js"
+  ></script>
     <script
       type="text/javascript" 
       src="static/koeffisient/koeffisient.js"

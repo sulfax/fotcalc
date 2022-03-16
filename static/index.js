@@ -195,6 +195,8 @@ function language_standard(clicked_id) {
 const sprak_id = [
   'hjem',
   'koeffisient_kalkulator',
+  'eksperimentell_profil_meny_element',
+  'søk',
   'tilbakestill',
   'laget_av_Johannes',
   'kontakt_meg'
@@ -204,9 +206,6 @@ const sprak_id_kalkulator = [
   'title',
   'overskrift',
   'beskrivelse',
-  'dropDownMeny',
-  'søk',
-  'eksperimentell_profil_meny_element',
   'progresjon',
   'hjemlig_seriemester', 
   'spilt_preliminary', 
@@ -390,5 +389,5 @@ language_standard(flint_2);
 
 
 if (document.getElementById('overskrift_koeffisient')) {
-  oppdater_ved_refresh_koeff();
+  oppdater_ved_refresh_koeff_1();
 }

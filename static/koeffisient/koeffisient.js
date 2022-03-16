@@ -92,6 +92,8 @@ const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 var aarstall = 0;
+let eksperimentell_profil_e = "Experimental Profile";
+let eksperimentell_profil_n = "Eksperimentell Profil";
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
@@ -99,6 +101,16 @@ for (let p = 1; p < 10; p++) {
 
 let knapper_som_må_oppdateres = [];
 
+function deltakelse_eliminasjon_pre(clicked_id) {
+    deltakelse_eliminasjon(clicked_id)
+    if(localStorage.getItem('Klubbnavn')){
+    }else{
+        localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
+    }
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "")) {
+        localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
+    }
+}
 
 function deltakelse_eliminasjon(clicked_id) {
     var klasse = (document.getElementById(clicked_id).className);
@@ -222,8 +234,6 @@ function deltakelse_eliminasjon(clicked_id) {
         deltakelse_eliminasjon_status[felt_nummer - 1] = "";
         knapper_som_må_oppdateres.splice((knapper_som_må_oppdateres.indexOf(clicked_id)), 1);
     }
-    localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
-
 
     if (klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele") {
         document.getElementById(clicked_id).innerText = (eliminert_språk || "");
@@ -317,7 +327,9 @@ function post_resultat(clicked_id) {
     else {
         resultat_status[felt_nummer - 1] = "";
     }
-    localStorage.setItem('resultat_status_local_s', resultat_status);
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null)) {
+        localStorage.setItem('resultat_status_local_s', resultat_status);
+    }
 }
 
 
@@ -349,7 +361,7 @@ function gjennomfør_1_gang_per_knapp(clicked_id) {
 }
 
 
-function oppdater_seier_tap(clicked_id) {
+function oppdater_seier_tap(clicked_id, lagre_endring) {
     var input_felt_verdi = document.getElementById(clicked_id).value;
     var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     document.getElementById(clicked_id).style.borderColor = "";
@@ -409,11 +421,13 @@ function oppdater_seier_tap(clicked_id) {
         document.getElementById(clicked_id + "__").innerText = "";
     }
     oppdater_seier_tap_status[felt_nummer - 1] = input_felt_verdi
-    localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
+        localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
+    }
 }
 
 
-function oppdater_plassering(clicked_id) {
+function oppdater_plassering(clicked_id, lagre_endring) {
     var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     var input_felt_verdi = document.getElementById(clicked_id).value;
     document.getElementById(clicked_id).style.borderColor = "";
@@ -468,7 +482,9 @@ function oppdater_plassering(clicked_id) {
         }
     }
     oppdater_seier_tap_status[felt_nummer - 1] = input_felt_verdi
-    localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null) && lagre_endring != "nei") {
+        localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
+    }
     oppdater_trostepoeng()
     summer()
 }
@@ -477,7 +493,7 @@ function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
         aarstall -= 1;
         document.getElementById('sessong_kontroller_1').disabled = true;
-        document.getElementById('sessong_kontroller_2').disabled = false;
+        // document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else {
         aarstall += 1;
@@ -485,7 +501,9 @@ function endre_sessong(clicked_id) {
         document.getElementById('sessong_kontroller_1').disabled = false;
     }
     localStorage.setItem('sessong', aarstall);
+    slett("nei")
     oppdater_sessong(aarstall)
+    oppdater_ved_refresh_koeff_1()
 };
 
 function oppdater_sessong(aarstall) {
@@ -559,8 +577,7 @@ function summer() {
     document.getElementById("total_inntjening_klubb").innerText = total_sum_klubb;
 }
 
-
-function slett() {
+function slett(slett_lagring) {
     let resultat_status_lengde = resultat_status.length
     for (var c=0;c<resultat_status_lengde;c++) {
         for (var d=0;d<resultat_status[c];d++) {
@@ -576,33 +593,98 @@ function slett() {
         }
     }
     deltakelse_eliminasjon_status = []
-    localStorage.setItem('resultat_status_local_s', "");
-
     for (var c=1;c<=6;c++) {
         document.getElementById("i" + c).value = "";
-        gjennomfør_1_gang_per_knapp("i" + c)
+        oppdater_seier_tap("i" + c, slett_lagring)
     }
     for (var c=7;c<=9;c++) {
         document.getElementById("i" + c).value = "";
-        oppdater_plassering("i" + c)
+        oppdater_plassering("i" + c, slett_lagring)
     }
-    localStorage.setItem('oppdater_seier_tap_status_local_s', "");
+    if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n)) {
+        localStorage.setItem('resultat_status_local_s', "");
+        localStorage.setItem('oppdater_seier_tap_status_local_s', "");
+        localStorage.setItem('deltakelse_eliminasjon_status_local_s', "");
+    }
 };
 
 
 
-function oppdater_ved_refresh_koeff() {
+function oppdater_ved_refresh_koeff_1() {
+    var Klubbnavn = localStorage.getItem('Klubbnavn');
+    if (Klubbnavn == null || Klubbnavn == "null") {
+        if (document.getElementById("q1_kamp2").innerHTML == 'Q1 | match 2') {
+            Klubbnavn = "Choose club";
+        }
+        else {
+            Klubbnavn = "Velg klubb";
+        }
+    }
+    document.getElementById("dropDownMeny").innerHTML = Klubbnavn + " <div class='opp_ned_pil'>&#10094</div>";
+    if (parseInt(localStorage.getItem('sessong'))) {
+        aarstall = parseInt(localStorage.getItem('sessong'));
+    }
+    else {
+        null;
+    }
+    if (aarstall == 0 || aarstall) {
+        document.getElementById('sessong_kontroller_1').disabled = true;
+        // document.getElementById('sessong_kontroller_2').disabled = false;
+    }
+    if (aarstall == 1) {
+        document.getElementById('sessong_kontroller_1').disabled = false;
+        document.getElementById('sessong_kontroller_2').disabled = true;
+    oppdater_sessong(aarstall)
+    }
+    if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
+        const deltakelse_eliminasjon = localStorage.getItem('deltakelse_eliminasjon_status_local_s');
+        const resultat = localStorage.getItem('resultat_status_local_s');
+        const oppdater_seier_tap = localStorage.getItem('oppdater_seier_tap_status_local_s');
+        oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap)
+    }
+    else {
+        for(var i=0;i<menyvalg.length;i++){
+            if(menyvalg[i][0] == Klubbnavn){
+                let p = 1;
+                if (localStorage.getItem('sessong') == 1) {
+                    p = 6;
+                }
+                // const resultat = localStorage.getItem('resultat_status_local_s');
+                const knapper_fra_prem_kalk = menyvalg[i][p];
+                var deltakelse_eliminasjon = "";
+                const knapper_til_konvertering = ["b5","b8","b12","b17","b18","b19","b20","b21","b22","b24","b25","b27","b28","b29","b30","b31","b32"];
+                const knapper_fra_konvertering = ["b9","b16","b23","b30","b31","b32","b33","b38","b39","b46","b47","b54","b55","b56","b63","b64","b65"]
+                for (u=0;u<knapper_til_konvertering.length;u++) {
+                    if (knapper_fra_prem_kalk.includes(knapper_til_konvertering[u])) {
+                        deltakelse_eliminasjon = deltakelse_eliminasjon + ((knapper_fra_konvertering[u]) + ",");
+                    }
+                }
+                const resultat = menyvalg[i][p+4];
+                const oppdater_seier_tap = ((menyvalg[i][p+2] || ',,,,,') + ',' + (menyvalg[i][p+3] || ',,'));
+                oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap);
+            }
+        }
+    }
+}
+
+function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap) {
     try {
-        const motatt_deltakelse_eliminasjon_status = localStorage.getItem('deltakelse_eliminasjon_status_local_s');
-        let oppdelt_motak = motatt_deltakelse_eliminasjon_status.split(',');
+        let oppdelt_motak = deltakelse_eliminasjon.split(',');
         for (var u=0;u<oppdelt_motak.length;u++) {
-            deltakelse_eliminasjon(oppdelt_motak[u]);
+            deltakelse_eliminasjon_pre(oppdelt_motak[u]);
         }
     }
     finally {
         try {
-            const motatt_resultat_status = localStorage.getItem('resultat_status_local_s');
-            let resultat_status_oppdelt = motatt_resultat_status.split(',');
+            let posisjon = resultat.split(',', 3).join(',').length
+            let resultat2 = resultat.slice(0, posisjon) + "," + resultat.slice(posisjon)
+            let posisjon_2 = resultat2.split(',', 6).join(',').length
+            let resultat3 = resultat2.slice(0, posisjon_2) + "," + resultat2.slice(posisjon_2)
+            let posisjon_3 = resultat3.split(',', 10).join(',').length
+            let resultat4 = resultat3.slice(0, posisjon_3) + "," + resultat3.slice(posisjon_3)
+            let posisjon_4 = resultat4.split(',', 13).join(',').length
+            let resultat5 = resultat4.slice(0, posisjon_4) + "," + resultat4.slice(posisjon_4)
+            let resultat_status_oppdelt = (resultat5.split(','));
             let resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
             for (var c=0;c<resultat_status_oppdelt_lengde;c++) {
                 if (resultat_status_oppdelt[c] == 3) {
@@ -617,36 +699,95 @@ function oppdater_ved_refresh_koeff() {
             }
         }
         finally {
-            try {
-                const motatt_oppdater_seier_tap_status = localStorage.getItem('oppdater_seier_tap_status_local_s');
-                let oppdater_seier_tap_status_oppdelt = motatt_oppdater_seier_tap_status.split(',');
-                for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
-                    document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
-                    if (d <= 6) {
-                        gjennomfør_1_gang_per_knapp("i" + d)
-                    }
-                    else if (d >= 7) {
-                        oppdater_plassering("i" + d)
-                    }
+            let oppdater_seier_tap_status_oppdelt = oppdater_seier_tap.split(',');
+            for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
+                document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
+                if (d <= 6) {
+                    gjennomfør_1_gang_per_knapp("i" + d)
                 }
-            }
-            finally {
-                if (parseInt(localStorage.getItem('sessong'))) {
-                    aarstall = parseInt(localStorage.getItem('sessong'));
-                }
-                else {
-                    null;
-                }
-                if (aarstall == 0) {
-                    document.getElementById('sessong_kontroller_1').disabled = true;
-                    /*document.getElementById('sessong_kontroller_2').disabled = false;*/
-                }
-                if (aarstall == 1) {
-                    document.getElementById('sessong_kontroller_1').disabled = false;
-                    document.getElementById('sessong_kontroller_2').disabled = true;
-                oppdater_sessong(aarstall)
+                else if (d >= 7) {
+                    oppdater_plassering("i" + d)
                 }
             }
         }
     }
 }
+
+/*Dropdown meny start*/
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function toggleMeny() {
+    if (document.getElementById("myDropdown").classList.contains("show")) {
+        document.getElementById("myDropdown").classList.remove("show")
+        nedoverpil()
+    }
+    else {
+        document.getElementById("myDropdown").classList.add("show")
+        document.getElementById("myInput").focus()
+        document.getElementById("myInput").select()
+        oppoverpil()
+    }
+}
+
+function nedoverpil() {
+    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
+    document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10094</div>";
+}
+
+function oppoverpil() {
+    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
+    document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10095</div>";
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("dropdown_elementer");
+    a = div.getElementsByTagName("button");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].innerText || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } 
+        else {
+            a[i].style.display = "none";
+        }
+    }
+}
+
+function fjernSøkeord() {
+    document.getElementById("myInput").value = "";
+    document.getElementById("myInput").focus()
+    filterFunction()
+}
+
+/* Lukker menyen om musepeker klikker utenfor boksen */
+const $menu = $('.dropdown');
+
+$(document).mouseup(e => {
+    if (!$menu.is(e.target) // if the target of the click isn't the container...
+    && $menu.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        document.getElementById("myDropdown").classList.remove("show")
+        nedoverpil()
+    }
+});
+
+/* Lager knappene i menyen */
+for (i = 0; i < menyvalg.length; i++) {
+    let btn = document.createElement("button");
+    btn.innerHTML = menyvalg[i][0];
+    btn.className = "meny_element"
+    btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
+    document.getElementById("dropdown_elementer").appendChild(btn);
+}
+
+function endreMenyTittel(Klubbnavn) {
+    document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+    toggleMeny();
+    localStorage.setItem('Klubbnavn', Klubbnavn);
+    slett("nei")
+    oppdater_ved_refresh_koeff_1()
+}
+/* Dropdown meny slutt */
