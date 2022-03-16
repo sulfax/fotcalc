@@ -201,8 +201,8 @@ const input_summer = [
     [UEL_spilt_utslagsrunde_PO_2122,    UEL_spilt_utslagsrunde_PO_2223],
     [UECL_spilt_utslagsrunde_PO_2122,   UECL_spilt_utslagsrunde_PO_2223],
 ];
-let eksperimentell_profil_e = "Experimental Profile";
-let eksperimentell_profil_n = "Eksperimentell Profil";
+let eksperimentell_profil_e = "Calculate from scratch";
+let eksperimentell_profil_n = "Kalkuler fra bunnen";
 
 const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "b36_", "b38_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
 const UEL_inntjening_celler = ["b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "b37_", "b39_", "i5_", "i8_", "i14_", "i14__"];

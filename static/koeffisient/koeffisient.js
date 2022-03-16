@@ -92,8 +92,8 @@ const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 var aarstall = 0;
-let eksperimentell_profil_e = "Experimental Profile";
-let eksperimentell_profil_n = "Eksperimentell Profil";
+let eksperimentell_profil_e = "Calculate from scratch";
+let eksperimentell_profil_n = "Kalkuler fra bunnen";
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";

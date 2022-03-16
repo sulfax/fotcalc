@@ -2,7 +2,7 @@
 const norsk = [
     'Premiepenger-kalkulator',
     'Koeffisient-kalkulator',
-    'Eksperimentell Profil',
+    'Kalkuler fra bunnen',
     '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Tilbakestill',
     'Utviklet av Johannes Kaste',
@@ -121,7 +121,7 @@ const norsk_koeffisient_dokumentasjon = [
 const english = [
     'Prize money calculator',
     'Coefficient calculator',
-    'Experimental Profile',
+    'Calculate from scratch',
     '<input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Reset',
     'Developed by Johannes Kaste',
