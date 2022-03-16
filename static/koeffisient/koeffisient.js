@@ -661,13 +661,14 @@ function oppdater_ved_refresh_koeff_1() {
                 }
                 const resultat = menyvalg[i][p+4];
                 const oppdater_seier_tap = ((menyvalg[i][p+2] || ',,,,,') + ',' + (menyvalg[i][p+3] || ',,'));
-                oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap);
+                var forkort = "ja";
+                oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap, forkort);
             }
         }
     }
 }
 
-function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap) {
+function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap, forkort) {
     try {
         let oppdelt_motak = deltakelse_eliminasjon.split(',');
         for (var u=0;u<oppdelt_motak.length;u++) {
@@ -676,16 +677,22 @@ function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier
     }
     finally {
         try {
-            let posisjon = resultat.split(',', 3).join(',').length
-            let resultat2 = resultat.slice(0, posisjon) + "," + resultat.slice(posisjon)
-            let posisjon_2 = resultat2.split(',', 6).join(',').length
-            let resultat3 = resultat2.slice(0, posisjon_2) + "," + resultat2.slice(posisjon_2)
-            let posisjon_3 = resultat3.split(',', 10).join(',').length
-            let resultat4 = resultat3.slice(0, posisjon_3) + "," + resultat3.slice(posisjon_3)
-            let posisjon_4 = resultat4.split(',', 13).join(',').length
-            let resultat5 = resultat4.slice(0, posisjon_4) + "," + resultat4.slice(posisjon_4)
-            let resultat_status_oppdelt = (resultat5.split(','));
-            let resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
+            if (forkort == "ja") {
+                let posisjon = resultat.split(',', 3).join(',').length
+                let resultat2 = resultat.slice(0, posisjon) + "," + resultat.slice(posisjon)
+                let posisjon_2 = resultat2.split(',', 6).join(',').length
+                let resultat3 = resultat2.slice(0, posisjon_2) + "," + resultat2.slice(posisjon_2)
+                let posisjon_3 = resultat3.split(',', 10).join(',').length
+                let resultat4 = resultat3.slice(0, posisjon_3) + "," + resultat3.slice(posisjon_3)
+                let posisjon_4 = resultat4.split(',', 13).join(',').length
+                let resultat5 = resultat4.slice(0, posisjon_4) + "," + resultat4.slice(posisjon_4)
+                var resultat_status_oppdelt = (resultat5.split(','));
+                var resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
+            }
+            else {
+                var resultat_status_oppdelt = (resultat.split(','));
+                var resultat_status_oppdelt_lengde = resultat.length;
+            }
             for (var c=0;c<resultat_status_oppdelt_lengde;c++) {
                 if (resultat_status_oppdelt[c] == 3) {
                     resultat_status_oppdelt[c] = 1;
