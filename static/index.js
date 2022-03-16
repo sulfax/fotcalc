@@ -77,7 +77,7 @@ function language_standard(clicked_id) {
         Klubbnavn = "Kalkuler fra bunnen";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
-      else if (Klubbnavn == null || Klubbnavn == "null") {
+      else if (Klubbnavn == null || Klubbnavn == "null" || Klubbnavn == "Choose club") {
         Klubbnavn = "Velg klubb";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
@@ -159,7 +159,7 @@ function language_standard(clicked_id) {
         Klubbnavn = "Calculate from scratch";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
-      else if (Klubbnavn == null || Klubbnavn == "null") {
+      else if (Klubbnavn == null || Klubbnavn == "null" || Klubbnavn == "Velg klubb") {
         Klubbnavn = "Choose club";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
