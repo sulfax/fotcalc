@@ -395,7 +395,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_1()
     }
 };
@@ -465,7 +465,7 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_2()
     }
 };
@@ -509,7 +509,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_3()
     }
 };
@@ -616,7 +616,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") && lagre_endring != "nei") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_4()
     }
 };
@@ -705,12 +705,11 @@ function rund_av_enkeltcelle_3(spilt_uslagsrunde_PO, nummer_2) {
 
 function videre_fordeling(clicked_id) {
     paa_av(clicked_id);
-
     if(localStorage.getItem('Klubbnavn')){
     }else{
         lagre_trykking();
     }
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "") || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg Klubb") {
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "") || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") {
         lagre_trykking();
     }
 }
