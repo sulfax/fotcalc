@@ -509,9 +509,11 @@ function endre_sessong(clicked_id) {
 function oppdater_sessong(aarstall) {
     if (aarstall == 0) {
         document.getElementById("sessong_id").innerText = "21/22";
+        document.getElementById('uefa_distribution_link').setAttribute('href', '#https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online');
     }
     if (aarstall == 1) {
         document.getElementById("sessong_id").innerText = "22/23";
+        document.getElementById('uefa_distribution_link').setAttribute('href', '#');
     }
 };
 
