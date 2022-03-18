@@ -85,6 +85,9 @@ function language_standard(clicked_id) {
         Klubbnavn = "Velg klubb";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
+      if (Klubbnavn == "Velg klubb") {
+        document.getElementById("klubb_link").innerHTML = "din klubb’s";
+    }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
   }
@@ -166,6 +169,9 @@ function language_standard(clicked_id) {
         Klubbnavn = "Choose club";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
+      if (Klubbnavn == "Choose club") {
+        document.getElementById("klubb_link").innerHTML = "your club’s";
+    }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
   }
@@ -239,7 +245,8 @@ const sprak_id_kalkulator = [
   'vunnet_scup',
   'inntjening_turnering',
   'inntjening',
-  'marketPool_id'
+  'marketPool_id',
+  'koeff_reklame'
 ];
 
 const sprak_id_koeffisient = [

@@ -205,9 +205,9 @@ a:hover {
     font-size: 13px;
     color: rgba(52, 58, 64, 0.658);
 }
-#uefa_distribution_link {
+#uefa_distribution_link,#klubb_link {
     color: #4a56ffec;
 }
-#uefa_distribution_link:hover {
+#uefa_distribution_link:hover,#klubb_link:hover {
     color: rgba(52, 58, 64, 0.658);
 }

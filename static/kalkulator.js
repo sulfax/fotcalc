@@ -805,13 +805,17 @@ function slett(slett_lagring) {
 
 function oppdater_ved_refresh_1() {
     var Klubbnavn = localStorage.getItem('Klubbnavn');
-    if (Klubbnavn == null || Klubbnavn == "null") {
-        if (document.getElementById("hjemlig_seriemester").innerHTML == "Domestic champion:") {
-            Klubbnavn = "Choose club";
-        }
-        else {
-            Klubbnavn = "Velg klubb";
-        }
+    if (Klubbnavn.slice(-1) == "s") {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
+    }
+    else {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
+    }
+    if (Klubbnavn == "Choose club") {
+        document.getElementById("klubb_link").innerHTML = "your club’s";
+    }
+    else if (Klubbnavn == "Velg klubb") {
+        document.getElementById("klubb_link").innerHTML = "din klubb’s";
     }
     document.getElementById("dropDownMeny").innerHTML = Klubbnavn + " <div class='opp_ned_pil'>&#10094</div>"
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
