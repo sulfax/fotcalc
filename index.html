@@ -83,9 +83,9 @@
       <br>
       <div class="ytterst_tabell_div">
         <div class="ytre_tabell_div">
-          <button class="btn btn-secondary" id="sessong_kontroller_1" disabled onclick="endre_sessong(this.id)">&#10094</button>
+          <button class="btn btn-secondary" id="sessong_kontroller_1" onclick="endre_sessong(this.id)">&#10094</button>
           <h2 class="sesong" id="sessong_id">21/22</h2>
-          <button class="btn btn-secondary" id="sessong_kontroller_2" disabled onclick="endre_sessong(this.id)">&#10095</button>
+          <button class="btn btn-secondary" id="sessong_kontroller_2" onclick="endre_sessong(this.id)">&#10095</button>
         </div>
         <div class="dropdown">
           <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><div class="opp_ned_pil">&#10094</div></button>
@@ -465,10 +465,35 @@
           </tbody>
         </table>
       </div>
+      <br>
+      <br>
+      <div class="marketPool" id="marketPool_id">
+        <p>
+          <p>*The calculations does not include rescources from the market pool because those depends on these factors:
+            <br>
+            <br>
+            1. the actual final amount in the market pool:
+            <br>
+            2. the composition of the field of clubs participating;
+            <br>
+            3. the number of clubs from any given association competing;
+            <br>
+            4. the final position of each competing club in their previous season’s domestic championship;
+            <br>
+            5. the performance of each club.
+            <br>
+            <i>Source: UEFA</i>
+          </p>
+          It is therefore imposible to calculate.
+          <br>
+          <br><br>
+          *The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA's distribution plan</a>.
+        </p>
+      </div>
     </div>
 
 
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br>
     <footer>
       <div>
         <div class="laget_av">

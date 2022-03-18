@@ -961,9 +961,11 @@ function endre_sessong(clicked_id) {
 function oppdater_sessong(aarstall) {
     if (aarstall == 0) {
         document.getElementById("sessong_id").innerText = "21/22";
+        document.getElementById('uefa_distribution_link').setAttribute('href', '#https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
     }
     if (aarstall == 1) {
         document.getElementById("sessong_id").innerText = "22/23";
+        document.getElementById('uefa_distribution_link').setAttribute('href', '#');
     }
     for (var uu=0;uu<39;uu++) {
         if (document.getElementById("b-" + (uu + 1))) {

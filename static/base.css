@@ -201,3 +201,13 @@ a:hover {
 .sentrer {
     text-align: center;
 }
+.marketPool {
+    font-size: 13px;
+    color: rgba(52, 58, 64, 0.658);
+}
+#uefa_distribution_link {
+    color: #4a56ffec;
+}
+#uefa_distribution_link:hover {
+    color: rgba(52, 58, 64, 0.658);
+}

@@ -1,6 +1,8 @@
 function language(clicked_id) {
   language_koeffisient(clicked_id);
   language_standard(clicked_id);
+  aarstall = localStorage.getItem('sessong');
+  oppdater_sessong(aarstall)
 }
 
 function language_standard(clicked_id) {
@@ -70,6 +72,8 @@ function language_standard(clicked_id) {
           document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
         }
       }
+    }
+    finally {
       flint = "norsk";
       localStorage.setItem("someVarKey", flint);
       let Klubbnavn = localStorage.getItem("Klubbnavn");
@@ -82,9 +86,6 @@ function language_standard(clicked_id) {
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
-    }
-    catch {
-      null;
     }
   }
 
@@ -152,6 +153,8 @@ function language_standard(clicked_id) {
           document.getElementsByName(x + 13)[0].placeholder = 'Placement';
         }
       }
+    }
+    finally {
       flint = "english";
       localStorage.setItem("someVarKey", flint);
       let Klubbnavn = localStorage.getItem("Klubbnavn");
@@ -164,9 +167,6 @@ function language_standard(clicked_id) {
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
-    }
-    catch {
-      null;
     }
   }
 
@@ -239,6 +239,7 @@ const sprak_id_kalkulator = [
   'vunnet_scup',
   'inntjening_turnering',
   'inntjening',
+  'marketPool_id'
 ];
 
 const sprak_id_koeffisient = [
@@ -280,7 +281,8 @@ const sprak_id_koeffisient = [
   'koeffisienter_turnering',
   'koeffisienter',
   'assosiasjons_poeng_link',
-  'klubb_poeng'
+  'klubb_poeng',
+  'kilde_koeff_id'
 ];
 
 const sprak_id_koeffisient_dokumentasjon = [
