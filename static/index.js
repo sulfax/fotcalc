@@ -8,7 +8,6 @@ function language(clicked_id) {
 function language_standard(clicked_id) {
   var kolonne_lengde = sprak_id.length;
   var flint = "";
-
   if (clicked_id == "norsk") {
     for (x=0;x<kolonne_lengde;x++) {
       try {
@@ -85,9 +84,9 @@ function language_standard(clicked_id) {
         Klubbnavn = "Velg klubb";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
-      if (Klubbnavn == "Velg klubb") {
+      if (Klubbnavn == "Velg klubb" && document.getElementById('overskrift')) {
         document.getElementById("klubb_link").innerHTML = "din klubb’s";
-    }
+      }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
   }
@@ -169,13 +168,21 @@ function language_standard(clicked_id) {
         Klubbnavn = "Choose club";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
-      if (Klubbnavn == "Choose club") {
+      if (Klubbnavn == "Choose club" && document.getElementById('overskrift')) {
         document.getElementById("klubb_link").innerHTML = "your club’s";
-    }
+      }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
   }
+  
 
+  Klubbnavn = localStorage.getItem("Klubbnavn")
+  if (Klubbnavn.slice(-1) == "s" && document.getElementById('overskrift')) {
+    document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
+  }
+  else if (document.getElementById('overskrift')) {
+      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
+  }
 
   if (document.getElementById('overskrift')) {
     for (x=0;x<39;x++) {
