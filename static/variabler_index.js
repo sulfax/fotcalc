@@ -43,7 +43,7 @@ const norsk_kalkulator = [
     'Inntjening per turnering:',
     'Total inntjening:',
     '<p><p>*Kalkulasjonene inkluderer ikke TV-pengene, grunnet disse uvisse faktorene:<br><br>1. den faktiske endelige størrelsen på TV-pengene:<br>2. sammensetningen av deltakende klubber;<br>3. antallet klubber fra hver av de konkurrerende assosiasjonene;<br>4. den endelige plasseringen til hver konkurrerende klubb i hjemlige liga, forrige sesong;<br>5. prestasjonen til hver klubb i europa.<br><i>Kilde: UEFA</i></p>Det er derfor umulig å kalkulere.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA’s distribusjonsplan</a>.</p>',
-    '<span class="marketPool" id="koeff_reklame">Skjekk ut <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s</a> koeffisientpoeng.</span>'
+    '<span class="marketPool" id="koeff_reklame">Sjekk ut <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s</a> koeffisientpoeng.</span>'
 ];
 
 const norsk_koeffisient = [
@@ -87,7 +87,7 @@ const norsk_koeffisient = [
     'Assosiasjons-poeng',
     'Klubb-poeng',
     '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s koeffisient-rangeringssystem</a>.</p>',
-    '<span class="marketPool" id="koeff_reklame">Skjekk ut <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">your club’s</a> premiepenger.</span>'
+    '<span class="marketPool" id="koeff_reklame">Sjekk ut <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">your club’s</a> premiepenger.</span>'
 ];
 
 const norsk_koeffisient_dokumentasjon = [
