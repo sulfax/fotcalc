@@ -182,10 +182,10 @@ function language_standard(clicked_id) {
   else if (document.getElementById('overskrift')) {
       document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
   }
-  if (Klubbnavn == "Choose club") {
+  if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
       document.getElementById("klubb_link").innerHTML = "your club’s";
   }
-  else if (Klubbnavn == "Velg klubb") {
+  else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
       document.getElementById("klubb_link").innerHTML = "din klubb’s";
   }
 
