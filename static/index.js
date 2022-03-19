@@ -174,7 +174,6 @@ function language_standard(clicked_id) {
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
   }
-  
   // coefficient-definition fails after this
   Klubbnavn = localStorage.getItem("Klubbnavn")
   if (Klubbnavn.slice(-1) == "s") {

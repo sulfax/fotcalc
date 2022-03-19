@@ -166,7 +166,7 @@ const english_kalkulator = [
     'Income per competition:',
     'Total income:',
     '<p><p>*The calculations does not include resources from the market pool because those depends on these factors:<br><br>1. the actual final amount in the market pool:<br>2. the composition of the field of clubs participating;<br>3. the number of clubs from any given association competing;<br>4. the final position of each competing club in their previous season’s domestic championship;<br>5. the performance of each club in Europe.<br><i>Source: UEFA</i></p>It is therefore imposible to calculate.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
-    '<span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">your club’s</a> coefficient points.</span>'
+    '<span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s</a> coefficient points.</span>'
 ];
 
 const english_koeffisient = [
@@ -210,7 +210,7 @@ const english_koeffisient = [
     'Association points',
     'Club points',
     '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>',
-    '<span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s</a> prize money.</span>'
+    '<span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">your club’s</a> prize money.</span>'
 ];
 
 const english_koeffisient_dokumentasjon = [

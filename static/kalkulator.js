@@ -804,7 +804,7 @@ function slett(slett_lagring) {
 };
 
 function oppdater_ved_refresh_1() {
-    var Klubbnavn = localStorage.getItem('Klubbnavn');
+    var Klubbnavn = localStorage.getItem('Klubbnavn') || "Choose club";
     if (Klubbnavn.slice(-1) == "s") {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
     }
