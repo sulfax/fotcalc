@@ -614,6 +614,12 @@ function slett(slett_lagring) {
 
 function oppdater_ved_refresh_koeff_1() {
     var Klubbnavn = localStorage.getItem('Klubbnavn');
+    if (Klubbnavn.slice(-1) == "s") {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
+    }
+    else {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
+    }
     if (Klubbnavn == null || Klubbnavn == "null") {
         if (document.getElementById("q1_kamp2").innerHTML == 'Q1 | match 2') {
             Klubbnavn = "Choose club";

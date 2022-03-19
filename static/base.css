@@ -192,6 +192,9 @@ a:hover {
 .graa_hover_link_koeff_deffi:hover {
     color: #343a40;
 }
+#koeff_reklame {
+    font-weight: bold;
+}
 #mailto {
     padding-left: 1px !important;
 }

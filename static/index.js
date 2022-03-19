@@ -175,9 +175,9 @@ function language_standard(clicked_id) {
     }
   }
   
-
+  // coefficient-definition fails after this
   Klubbnavn = localStorage.getItem("Klubbnavn")
-  if (Klubbnavn.slice(-1) == "s" && document.getElementById('overskrift')) {
+  if (Klubbnavn.slice(-1) == "s") {
     document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
   }
   else if (document.getElementById('overskrift')) {
@@ -296,7 +296,8 @@ const sprak_id_koeffisient = [
   'koeffisienter',
   'assosiasjons_poeng_link',
   'klubb_poeng',
-  'kilde_koeff_id'
+  'kilde_koeff_id',
+  'koeff_reklame',
 ];
 
 const sprak_id_koeffisient_dokumentasjon = [
