@@ -86,7 +86,7 @@ const norsk_koeffisient = [
     'Totale koeffisientpoeng',
     'Assosiasjons-poeng',
     'Klubb-poeng',
-    '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s koeffisient-rangeringssystem</a>.</p>'
+    '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online">UEFA’s koeffisient-rangeringssystem</a>.</p>'
 ];
 
 const norsk_koeffisient_dokumentasjon = [
@@ -208,7 +208,7 @@ const english_koeffisient = [
     'Total coefficient points',
     'Association points',
     'Club points',
-    '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>'
+    '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online">UEFA’s coefficient ranking system</a>.</p>'
 ];
 
 const english_koeffisient_dokumentasjon = [
