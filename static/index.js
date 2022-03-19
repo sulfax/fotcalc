@@ -182,6 +182,12 @@ function language_standard(clicked_id) {
   else if (document.getElementById('overskrift')) {
       document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
   }
+  if (Klubbnavn == "Choose club") {
+      document.getElementById("klubb_link").innerHTML = "your club’s";
+  }
+  else if (Klubbnavn == "Velg klubb") {
+      document.getElementById("klubb_link").innerHTML = "din klubb’s";
+  }
 
   if (document.getElementById('overskrift')) {
     for (x=0;x<39;x++) {

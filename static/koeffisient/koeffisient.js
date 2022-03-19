@@ -620,6 +620,12 @@ function oppdater_ved_refresh_koeff_1() {
     else {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
     }
+    if (Klubbnavn == "Choose club") {
+        document.getElementById("klubb_link").innerHTML = "your club’s";
+    }
+    else if (Klubbnavn == "Velg klubb") {
+        document.getElementById("klubb_link").innerHTML = "din klubb’s";
+    }
     if (Klubbnavn == null || Klubbnavn == "null") {
         if (document.getElementById("q1_kamp2").innerHTML == 'Q1 | match 2') {
             Klubbnavn = "Choose club";
