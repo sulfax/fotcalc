@@ -1,3 +1,6 @@
+var overskrift_finnes = document.getElementById('overskrift');
+var overskrift_koeff_finnes = document.getElementById('overskrift_koeffisient');
+
 function language(clicked_id) {
   language_koeffisient(clicked_id);
   language_standard(clicked_id);
@@ -52,7 +55,7 @@ function language_standard(clicked_id) {
       }
     }
     try {
-      if (document.getElementById('overskrift_koeffisient')) {
+      if (overskrift_koeff_finnes) {
         for (x=0;x<6;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Antall';
         }
@@ -84,10 +87,22 @@ function language_standard(clicked_id) {
         Klubbnavn = "Velg klubb";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
-      if (Klubbnavn == "Velg klubb" && document.getElementById('overskrift')) {
+      if (Klubbnavn == "Velg klubb" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = "din klubb’s";
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+      if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ koeffisientpoeng";
+      }
+      else if (overskrift_finnes) {
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s koeffisientpoeng";
+      }
+      else if (Klubbnavn.slice(-1) == "s" && overskrift_koeff_finnes) {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ premiepenger";
+      }
+      else if (overskrift_koeff_finnes) {
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s premiepenger";
+      }
     }
   }
 
@@ -136,7 +151,7 @@ function language_standard(clicked_id) {
       }
     }
     try {
-      if (document.getElementById('overskrift_koeffisient')) {
+      if (overskrift_koeff_finnes) {
         for (x=0;x<6;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Amount';
         }
@@ -168,28 +183,34 @@ function language_standard(clicked_id) {
         Klubbnavn = "Choose club";
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
-      if (Klubbnavn == "Choose club" && document.getElementById('overskrift')) {
+      if (Klubbnavn == "Choose club" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = "your club’s";
       }
       document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+      if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ coefficient points";
+      }
+      else if (overskrift_finnes) {
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s coefficient points";
+      }
+      else if (Klubbnavn.slice(-1) == "s" && overskrift_koeff_finnes) {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ prize money";
+      }
+      else if (overskrift_koeff_finnes) {
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s prize money";
+      }
     }
   }
   // coefficient-definition fails after this
   Klubbnavn = localStorage.getItem("Klubbnavn")
-  if (Klubbnavn.slice(-1) == "s") {
-    document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
-  }
-  else if (document.getElementById('overskrift')) {
-      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
-  }
   if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
-      document.getElementById("klubb_link").innerHTML = "your club’s";
+      document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;
   }
   else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
-      document.getElementById("klubb_link").innerHTML = "din klubb’s";
+      document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
   }
 
-  if (document.getElementById('overskrift')) {
+  if (overskrift_finnes) {
     for (x=0;x<39;x++) {
       var knapp_id_nei = document.getElementById('b' + (x + 1));
       var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
@@ -337,7 +358,7 @@ const sprak_id_koeffisient_dokumentasjon = [
 ];
 
 function language_koeffisient(clicked_id) {
-  if (document.getElementById('overskrift_koeffisient')) {
+  if (overskrift_koeff_finnes) {
     var koeffisient_antall_oversett = sprak_id_koeffisient.length;
     if (clicked_id == "norsk") {
       for (x=0;x<koeffisient_antall_oversett;x++) {
@@ -412,6 +433,6 @@ language_koeffisient(flint_2);
 language_standard(flint_2);
 
 
-if (document.getElementById('overskrift_koeffisient')) {
+if (overskrift_koeff_finnes) {
   oppdater_ved_refresh_koeff_1();
 }

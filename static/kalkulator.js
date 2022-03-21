@@ -1,5 +1,7 @@
 /*Variabler som skal brukes i utregninger under*/
 /*21/22 variabler til utregning av noen summer*/
+
+
 var UCL_total_mengde_2122 = 2002000000;
 var UEL_total_mengde_2122 = 465000000; 
 var UECL_total_mengde_2122 = 235000000;
@@ -203,6 +205,8 @@ const input_summer = [
 ];
 let eksperimentell_profil_e = "Calculate from scratch";
 let eksperimentell_profil_n = "Kalkuler fra bunnen";
+var din_klubbs_premi_koef_e = "your club’s coefficient points";
+var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
 
 const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "b36_", "b38_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
 const UEL_inntjening_celler = ["b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "b37_", "b39_", "i5_", "i8_", "i14_", "i14__"];
@@ -804,18 +808,22 @@ function slett(slett_lagring) {
 };
 
 function oppdater_ved_refresh_1() {
+    let siste_ord_linktekst = JSON.stringify(document.getElementById("klubb_link").innerHTML.split(" ").splice(-1)).replace(',','').replace('[','').replace(']','').replace('"','').replace('"','').replace('"',' ');
+    if (siste_ord_linktekst == "points") {
+        siste_ord_linktekst = "coefficient points"
+    }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || "Choose club";
     if (Klubbnavn.slice(-1) == "s") {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
     }
     else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
-        document.getElementById("klubb_link").innerHTML = "your club’s";
+        document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;
     }
     else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
-        document.getElementById("klubb_link").innerHTML = "din klubb’s";
+        document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
     }
     document.getElementById("dropDownMeny").innerHTML = Klubbnavn + " <div class='opp_ned_pil'>&#10094</div>"
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {

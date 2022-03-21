@@ -94,6 +94,8 @@ const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__"
 var aarstall = 0;
 let eksperimentell_profil_e = "Calculate from scratch";
 let eksperimentell_profil_n = "Kalkuler fra bunnen";
+var din_klubbs_premi_koef_e = "your club’s prize money";
+var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
@@ -613,18 +615,22 @@ function slett(slett_lagring) {
 
 
 function oppdater_ved_refresh_koeff_1() {
+    let siste_ord_linktekst = JSON.stringify(document.getElementById("klubb_link").innerHTML.split(" ").splice(-1)).replace(',','').replace('[','').replace(']','').replace('"','').replace('"','');
+    if (siste_ord_linktekst == "money") {
+        siste_ord_linktekst = "prize money"
+    }
     var Klubbnavn = localStorage.getItem('Klubbnavn');
     if (Klubbnavn.slice(-1) == "s") {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
     }
     else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
-        document.getElementById("klubb_link").innerHTML = "your club’s";
+        document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;
     }
     else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
-        document.getElementById("klubb_link").innerHTML = "din klubb’s";
+        document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
     }
     if (Klubbnavn == null || Klubbnavn == "null") {
         if (document.getElementById("q1_kamp2").innerHTML == 'Q1 | match 2') {
