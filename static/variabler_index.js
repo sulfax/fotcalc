@@ -13,7 +13,11 @@ const norsk = [
 const norsk_forside = [
     'UEFA Premiepenge- og Koeffisient-oversikt UCL, UEL, UECL',
     'UEFA premiepenge- og koeffisient-oversikt',
-    'UEFA’s inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng alle klubbturneringer.'
+    'UEFA’s inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng alle klubbturneringer.',
+    'Klubb',
+    'Premipenger',
+    'Assosiasjons-koeffisientpoeng',
+    'Klubb-koeffisientpoeng',
 ];
 
 const norsk_kalkulator = [
@@ -143,7 +147,11 @@ const english = [
 const english_forside = [
     'UEFA Prize money and Coefficient overview UCL, UEL, UECL',
     'UEFA income and coefficient overview',
-    'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.'
+    'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.',
+    'Club',
+    'Prize money',
+    'Association coefficient points',
+    'Club coefficient points',
 ];
 
 const english_kalkulator = [

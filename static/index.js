@@ -249,7 +249,11 @@ const sprak_id = [
 const sprak_id_forside = [
   'title',
   'overskrift_forside',
-  'beskrivelse_forside'
+  'beskrivelse_forside',
+  'club',
+  'prize_money',
+  'ass_coeff',
+  'club_coeff'
 ];
 
 const sprak_id_kalkulator = [
