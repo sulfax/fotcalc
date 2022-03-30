@@ -250,10 +250,10 @@ const sprak_id_forside = [
   'title',
   'overskrift_forside',
   'beskrivelse_forside',
-  'club',
-  'prize_money',
-  'ass_coeff',
-  'club_coeff'
+  'klubb_navn',
+  'premiepenger_navn',
+  'ass_koeff_navn',
+  'klubb_koeff_navn'
 ];
 
 const sprak_id_kalkulator = [
@@ -443,6 +443,7 @@ function language_koeffisient(clicked_id) {
     if (clicked_id == "norsk") {
       for (x=0;x<forside_antall_oversett;x++) {
         try {
+          alert(document.getElementById(sprak_id_forside[x]).innerHTML)
           document.getElementById(sprak_id_forside[x]).innerHTML = norsk_forside[x];
         }
         catch {

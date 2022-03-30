@@ -14,10 +14,10 @@ const norsk_forside = [
     'UEFA Premiepenge- og Koeffisient-oversikt UCL, UEL, UECL',
     'UEFA premiepenge- og koeffisient-oversikt',
     'UEFA’s inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng alle klubbturneringer.',
-    'Klubb <img src="media/opp_ned_pil.svg" alt="Sorting arrows">',
-    'Premipenger <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>',
-    'Assosiasjons-koeffisientpoeng <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>',
-    'Klubb-koeffisientpoeng <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>',
+    'Klubb',
+    'Premiepenger',
+    'Assosiasjons-koeffisientpoeng',
+    'Klubb-koeffisientpoeng',
 ];
 
 const norsk_kalkulator = [
@@ -148,10 +148,10 @@ const english_forside = [
     'UEFA Prize money and Coefficient overview UCL, UEL, UECL',
     'UEFA income and coefficient overview',
     'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.',
-    'Club <img src="media/opp_ned_pil.svg" alt="Sorting arrows">',
-    'Prize money <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>',
-    'Association coefficient points <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>',
-    'Club coefficient points <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>',
+    'Club',
+    'Prize money',
+    'Association coefficient points',
+    'Club coefficient points',
 ];
 
 const english_kalkulator = [
