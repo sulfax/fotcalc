@@ -1,11 +1,21 @@
+var eksperimentell_profil_e = "Calculate from scratch";
+var eksperimentell_profil_n = "Kalkuler fra bunnen";
+var din_klubbs_premi_koef_e = "your club’s coefficient points";
+var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
+
+var overskrift_forside_finnes = document.getElementById('overskrift_forside');
 var overskrift_finnes = document.getElementById('overskrift_premiepenger');
 var overskrift_koeff_finnes = document.getElementById('overskrift_koeffisient');
+var overskrift_koeff_deff_finnes = document.getElementById('overskrift_koeffisient_dokumentasjon');
 
 function language(clicked_id) {
   language_koeffisient(clicked_id);
   language_standard(clicked_id);
   aarstall = localStorage.getItem('sessong');
-  oppdater_sessong(aarstall)
+  if (overskrift_koeff_deff_finnes) {}
+  else {
+    oppdater_sessong(aarstall)
+  }
 }
 
 function language_standard(clicked_id) {
@@ -63,7 +73,7 @@ function language_standard(clicked_id) {
           document.getElementsByName(x + 7)[0].placeholder = 'Plassering';
         }
       }
-      else {
+      else if (overskrift_finnes) {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Rangering';
         }
@@ -90,7 +100,10 @@ function language_standard(clicked_id) {
       if (Klubbnavn == "Velg klubb" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = "din klubb’s";
       }
-      document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+      if (overskrift_forside_finnes || overskrift_koeff_deff_finnes) {}
+      else {
+        document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+      }
       if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ koeffisientpoeng";
       }
@@ -159,7 +172,7 @@ function language_standard(clicked_id) {
           document.getElementsByName(x + 7)[0].placeholder = 'Placement';
         }
       }
-      else {
+      else if (overskrift_finnes) {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
         }
@@ -186,7 +199,10 @@ function language_standard(clicked_id) {
       if (Klubbnavn == "Choose club" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = "your club’s";
       }
-      document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+      if (overskrift_forside_finnes || overskrift_koeff_deff_finnes) {}
+      else {
+        document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+      }
       if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ coefficient points";
       }
@@ -201,37 +217,40 @@ function language_standard(clicked_id) {
       }
     }
   }
-  // coefficient-definition fails after this
-  Klubbnavn = localStorage.getItem("Klubbnavn")
-  if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
+  
+  if (overskrift_koeff_deff_finnes || overskrift_forside_finnes) {}
+  else {
+    Klubbnavn = localStorage.getItem("Klubbnavn")
+    if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
       document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;
-  }
-  else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
+    }
+    else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
       document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
-  }
-
-  if (overskrift_finnes) {
-    for (x=0;x<39;x++) {
-      var knapp_id_nei = document.getElementById('b' + (x + 1));
-      var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
-      try {
-        if (knapp_id_nei) {
-          knapp_id_nei.innerText = "" /*nei_språk*/;
-        }
-        else {
-          y = (x + 1);
-          if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
-            knapp_id_ja.innerText = spilt_språk;
+    }
+  
+    if (overskrift_finnes) {
+      for (x=0;x<39;x++) {
+        var knapp_id_nei = document.getElementById('b' + (x + 1));
+        var knapp_id_ja = document.getElementById('b' + (-(x + 1)));
+        try {
+          if (knapp_id_nei) {
+            knapp_id_nei.innerText = "" /*nei_språk*/;
           }
           else {
-            knapp_id_ja.innerText = ja_språk;
-          }
-        }        
-      }
-      catch {
-        null;
-      }
-    } 
+            y = (x + 1);
+            if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
+              knapp_id_ja.innerText = spilt_språk;
+            }
+            else {
+              knapp_id_ja.innerText = ja_språk;
+            }
+          }        
+        }
+        catch {
+          null;
+        }
+      } 
+    }
   }
 }
 

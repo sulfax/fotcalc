@@ -92,10 +92,6 @@ const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 var aarstall = 0;
-let eksperimentell_profil_e = "Calculate from scratch";
-let eksperimentell_profil_n = "Kalkuler fra bunnen";
-var din_klubbs_premi_koef_e = "your club’s prize money";
-var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
@@ -657,9 +653,9 @@ function oppdater_ved_refresh_koeff_1() {
     oppdater_sessong(aarstall)
     }
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
-        const deltakelse_eliminasjon = localStorage.getItem('deltakelse_eliminasjon_status_local_s');
-        const resultat = localStorage.getItem('resultat_status_local_s');
-        const oppdater_seier_tap = localStorage.getItem('oppdater_seier_tap_status_local_s');
+        const deltakelse_eliminasjon = localStorage.getItem('deltakelse_eliminasjon_status_local_s') || '';
+        const resultat = localStorage.getItem('resultat_status_local_s') || '';
+        var oppdater_seier_tap = localStorage.getItem('oppdater_seier_tap_status_local_s') || ',,';
         oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap)
     }
     else {
@@ -667,7 +663,7 @@ function oppdater_ved_refresh_koeff_1() {
             if(menyvalg[i][0] == Klubbnavn){
                 let p = 1 *8*aarstall + 1;
                 // const resultat = localStorage.getItem('resultat_status_local_s');
-                const knapper_fra_prem_kalk = menyvalg[i][p];
+                const knapper_fra_prem_kalk = menyvalg[i][p] || '';
                 var deltakelse_eliminasjon = "";
                 const knapper_til_konvertering = ["b5","b8","b12","b17","b18","b19","b20","b21","b22","b24","b25","b27","b28","b29","b30","b31","b32"];
                 const knapper_fra_konvertering = ["b9","b16","b23","b30","b31","b32","b33","b38","b39","b46","b47","b54","b55","b56","b63","b64","b65"]
@@ -687,24 +683,30 @@ function oppdater_ved_refresh_koeff_1() {
 
 function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap, forkort) {
     try {
-        let oppdelt_motak = deltakelse_eliminasjon.split(',');
-        for (var u=0;u<oppdelt_motak.length;u++) {
-            deltakelse_eliminasjon_pre(oppdelt_motak[u]);
+        if (deltakelse_eliminasjon.slice(-1) == ',')
+            deltakelse_eliminasjon = deltakelse_eliminasjon.slice(0, -1)
+        if (deltakelse_eliminasjon != '') {
+            let oppdelt_motak = deltakelse_eliminasjon.split(',');
+            for (var u=0;u<oppdelt_motak.length;u++) {
+                deltakelse_eliminasjon_pre(oppdelt_motak[u]);
+            }
         }
     }
     finally {
         try {
             if (forkort == "ja") {
-                let posisjon = resultat.split(',', 3).join(',').length
-                let resultat2 = resultat.slice(0, posisjon) + "," + resultat.slice(posisjon)
-                let posisjon_2 = resultat2.split(',', 6).join(',').length
-                let resultat3 = resultat2.slice(0, posisjon_2) + "," + resultat2.slice(posisjon_2)
-                let posisjon_3 = resultat3.split(',', 10).join(',').length
-                let resultat4 = resultat3.slice(0, posisjon_3) + "," + resultat3.slice(posisjon_3)
-                let posisjon_4 = resultat4.split(',', 13).join(',').length
-                let resultat5 = resultat4.slice(0, posisjon_4) + "," + resultat4.slice(posisjon_4)
-                var resultat_status_oppdelt = (resultat5.split(','));
-                var resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
+                if (resultat) {
+                    let posisjon = resultat.split(',', 3).join(',').length
+                    let resultat2 = resultat.slice(0, posisjon) + "," + resultat.slice(posisjon)
+                    let posisjon_2 = resultat2.split(',', 6).join(',').length
+                    let resultat3 = resultat2.slice(0, posisjon_2) + "," + resultat2.slice(posisjon_2)
+                    let posisjon_3 = resultat3.split(',', 10).join(',').length
+                    let resultat4 = resultat3.slice(0, posisjon_3) + "," + resultat3.slice(posisjon_3)
+                    let posisjon_4 = resultat4.split(',', 13).join(',').length
+                    let resultat5 = resultat4.slice(0, posisjon_4) + "," + resultat4.slice(posisjon_4)
+                    var resultat_status_oppdelt = (resultat5.split(','));
+                    var resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
+                }
             }
             else {
                 var resultat_status_oppdelt = (resultat.split(','));
@@ -723,7 +725,7 @@ function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier
             }
         }
         finally {
-            let oppdater_seier_tap_status_oppdelt = oppdater_seier_tap.split(',');
+            let oppdater_seier_tap_status_oppdelt = (oppdater_seier_tap.split(',')) || '';
             for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
                 document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
                 if (d <= 6) {

@@ -203,8 +203,8 @@ const input_summer = [
     [UEL_spilt_utslagsrunde_PO_2122,    UEL_spilt_utslagsrunde_PO_2223],
     [UECL_spilt_utslagsrunde_PO_2122,   UECL_spilt_utslagsrunde_PO_2223],
 ];
-let eksperimentell_profil_e = "Calculate from scratch";
-let eksperimentell_profil_n = "Kalkuler fra bunnen";
+var eksperimentell_profil_e = "Calculate from scratch";
+var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club’s coefficient points";
 var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
 
@@ -836,10 +836,8 @@ function oppdater_ved_refresh_1() {
         const motak_7 = localStorage.getItem('Hallo_input_verdi_3');
         const motak_8 = localStorage.getItem('Hallo_input_id_4');
         const motak_9 = localStorage.getItem('Hallo_input_verdi_4');
-
         // let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_9 + '"],';
         // alert(profildata)
-
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
     } 
     else {
@@ -949,6 +947,7 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
     }
 };
 
+
 function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
         aarstall -= 1;
@@ -1005,6 +1004,9 @@ function oppdater_sessong(aarstall) {
     }
     if ((document.getElementById("b-18")) || (document.getElementById("b-19")) || (document.getElementById("b-20"))) {
         document.getElementById('b1_').innerText = "";
+    }
+    if (aarstall == null) {
+        aarstall = 0;
     }
     document.getElementById('i10').placeholder = totale_uavgjorte_kamper[aarstall][0].replace(/,/g,'');
     document.getElementById('i11').placeholder = totale_uavgjorte_kamper[aarstall][1].replace(/,/g,'');

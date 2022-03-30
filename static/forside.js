@@ -186,7 +186,7 @@ function sorter(column, order, tekst, menyvalg_edit) {
   byggTabell_test(menyvalg_edit)
 }
 
-byggTabell_test(menyvalg_edit)
+
 function byggTabell_test(data) {
   var table = document.getElementById('myTable')
   table.innerHTML = '';

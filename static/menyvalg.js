@@ -238,6 +238,7 @@ const menyvalg = [
     ["ŠK Slovan Bratislava",      "b1,b3,b6,b10,b14,b20",     ",,18",  ",,2,,,2",  ",,3",     ",,3,,1,,,2,,1,,,,3,,,2,,,,1,,,2",                      5460428,    9.5,      6]
 ];
 
+
 // Info for neste sesong:
 
 // 1: Marker starten av hver linje med (/**/) der klubber som deltar i denne sesongen står.
