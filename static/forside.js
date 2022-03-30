@@ -95,7 +95,18 @@ function sorter_etter_sesong() {
   else {
     document.getElementById(column).dataset.order = 'desc';
   }
-  let tekst = document.getElementById(column).innerText
+  if (column == 'club') {
+    var tekst = '<span id="klubb_navn">' + document.getElementById(column).innerText + '</span>'
+  }
+  if (column == 'prize_money') {
+    var tekst = '<span id="premiepenger_navn">' + document.getElementById(column).innerText + '</span>'
+  }
+  if (column == 'ass_coeff') {
+    var tekst = '<span id="ass_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+  }
+  if (column == 'club_coeff') {
+    var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+  }
   sorter(column, order, tekst, menyvalg_edit)
 }
 
@@ -103,49 +114,49 @@ function sorter(column, order, tekst, menyvalg_edit) {
   if (column == 'club') {
     i = 0
     if (document.getElementById('prize_money').innerHTML.replace(document.getElementById('prize_money').innerText, '') != opp_ned_pil) {
-      document.getElementById('prize_money').innerHTML = document.getElementById('prize_money').innerText + opp_ned_pil
+      document.getElementById('prize_money').innerHTML = '<span id="premiepenger_navn">' + document.getElementById('prize_money').innerText + '</span>' + opp_ned_pil
     }
     if (document.getElementById('ass_coeff').innerHTML.replace(document.getElementById('ass_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('ass_coeff').innerHTML = document.getElementById('ass_coeff').innerText + opp_ned_pil
+      document.getElementById('ass_coeff').innerHTML = '<span id="ass_koeff_navn">' + document.getElementById('ass_coeff').innerText + '</span>' + opp_ned_pil
     }
     if (document.getElementById('club_coeff').innerHTML.replace(document.getElementById('club_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('club_coeff').innerHTML = document.getElementById('club_coeff').innerText + opp_ned_pil
+      document.getElementById('club_coeff').innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById('club_coeff').innerText + '</span>' + opp_ned_pil
     }
   }
   else if (column == 'prize_money') {
     i = 6
     if (document.getElementById('club').innerHTML.replace(document.getElementById('club').innerText, '') != opp_ned_pil_klubb) {
-      document.getElementById('club').innerHTML = document.getElementById('club').innerText + opp_ned_pil_klubb
+      document.getElementById('club').innerHTML = '<span id="klubb_navn">' + document.getElementById('club').innerText + '</span>' + opp_ned_pil_klubb
     }
     if (document.getElementById('ass_coeff').innerHTML.replace(document.getElementById('ass_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('ass_coeff').innerHTML = document.getElementById('ass_coeff').innerText + opp_ned_pil
+      document.getElementById('ass_coeff').innerHTML = '<span id="ass_koeff_navn">' + document.getElementById('ass_coeff').innerText + '</span>' + opp_ned_pil
     }
     if (document.getElementById('club_coeff').innerHTML.replace(document.getElementById('club_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('club_coeff').innerHTML = document.getElementById('club_coeff').innerText + opp_ned_pil
+      document.getElementById('club_coeff').innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById('club_coeff').innerText + '</span>' + opp_ned_pil
     }
   }
   else if (column == 'ass_coeff') {
     i = 7
     if (document.getElementById('prize_money').innerHTML.replace(document.getElementById('prize_money').innerText, '') != opp_ned_pil) {
-      document.getElementById('prize_money').innerHTML = document.getElementById('prize_money').innerText + opp_ned_pil
+      document.getElementById('prize_money').innerHTML = '<span id="premiepenger_navn">' + document.getElementById('prize_money').innerText + '</span>' + opp_ned_pil
     }
     if (document.getElementById('club').innerHTML.replace(document.getElementById('club').innerText, '') != opp_ned_pil_klubb) {
-      document.getElementById('club').innerHTML = document.getElementById('club').innerText + opp_ned_pil_klubb
+      document.getElementById('club').innerHTML = '<span id="klubb_navn">' + document.getElementById('club').innerText + '</span>' + opp_ned_pil_klubb
     }
     if (document.getElementById('club_coeff').innerHTML.replace(document.getElementById('club_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('club_coeff').innerHTML = document.getElementById('club_coeff').innerText + opp_ned_pil
+      document.getElementById('club_coeff').innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById('club_coeff').innerText + '</span>' + opp_ned_pil
     }
   }
   else if (column == 'club_coeff') {
     i = 8
     if (document.getElementById('prize_money').innerHTML.replace(document.getElementById('prize_money').innerText, '') != opp_ned_pil) {
-      document.getElementById('prize_money').innerHTML = document.getElementById('prize_money').innerText + opp_ned_pil
+      document.getElementById('prize_money').innerHTML = '<span id="premiepenger_navn">' + document.getElementById('prize_money').innerText + '</span>' + opp_ned_pil
     }
     if (document.getElementById('club').innerHTML.replace(document.getElementById('club').innerText, '') != opp_ned_pil_klubb) {
-      document.getElementById('club').innerHTML = document.getElementById('club').innerText + opp_ned_pil_klubb
+      document.getElementById('club').innerHTML = '<span id="klubb_navn">' + document.getElementById('club').innerText + '</span>' + opp_ned_pil_klubb
     }
     if (document.getElementById('ass_coeff').innerHTML.replace(document.getElementById('ass_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('ass_coeff').innerHTML = document.getElementById('ass_coeff').innerText + opp_ned_pil
+      document.getElementById('ass_coeff').innerHTML = '<span id="ass_koeff_navn">' + document.getElementById('ass_coeff').innerText + '</span>' + opp_ned_pil
     }
   }
   menyvalg_edit.sort(sortFunction_1_klubb);

@@ -443,7 +443,6 @@ function language_koeffisient(clicked_id) {
     if (clicked_id == "norsk") {
       for (x=0;x<forside_antall_oversett;x++) {
         try {
-          alert(document.getElementById(sprak_id_forside[x]).innerHTML)
           document.getElementById(sprak_id_forside[x]).innerHTML = norsk_forside[x];
         }
         catch {
