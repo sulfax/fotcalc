@@ -98,7 +98,7 @@ const norsk_koeffisient = [
     'Assosiasjons-poeng',
     'Klubb-poeng',
     '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s koeffisient-rangeringssystem</a>.</p>',
-    '<span class="marketPool" id="koeff_reklame">Sjekk ut <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">din klubb’s premiepenger</a>.</span>'
+    '<span class="marketPool" id="koeff_reklame">Sjekk ut <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">din klubb’s premiepenger</a>.</span>'
 ];
 
 const norsk_koeffisient_dokumentasjon = [
@@ -232,7 +232,7 @@ const english_koeffisient = [
     'Association points',
     'Club points',
     '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>',
-    '<span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">your club’s prize money</a>.</span>'
+    '<span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">your club’s prize money</a>.</span>'
 ];
 
 const english_koeffisient_dokumentasjon = [
