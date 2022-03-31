@@ -284,8 +284,7 @@ function sortFunction_1_klubb(a, b) {
 
 
 var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))[0][0]
-var premiepenger_2 = "2002"
-//var premiepenger_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))[0][6]
+var premiepenger_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))[0][6]
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
