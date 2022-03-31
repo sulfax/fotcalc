@@ -26,20 +26,24 @@
     <meta property="og:locale" content="en_US"/>
     <meta property="og:locale:alternate" content="nb_NO"/>
     <title id="title">Your club’s Prize money & Coefficient points | Overview</title>
-    <!---
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-    />
 
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    crossorigin="anonymous"
-    />
-    --->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "How much prize money has {{menyvalg[0][0]}} earned so far?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>{{menyvalg[0][6]}}</p>"
+          }
+        }]
+      }
+    </script>
+
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X432MQE0BZ"></script>
     <script>
