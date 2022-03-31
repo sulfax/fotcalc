@@ -11,7 +11,7 @@ const norsk = [
 ];
 
 const norsk_forside = [
-    'UEFA Premiepenge- og Koeffisient-oversikt UCL, UEL, UECL',
+    'Din klubbs premipenger & Koeffisient poeng | Oversikt',
     'UEFA premiepenge- og koeffisient-oversikt',
     'UEFA’s inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng alle klubbturneringer.',
     'Klubb',
@@ -23,7 +23,7 @@ const norsk_forside = [
 const norsk_kalkulator = [
     'UEFA Premiepenger-Kalkulator UCL, UEL, UECL',
     'UEFA Premiepenger-kalkulator',
-    'Kalkuler din klubb’s inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
+    'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester:',
     '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Preliminary runde</abbr>:',
@@ -37,7 +37,7 @@ const norsk_kalkulator = [
     'Playoff:',
     'Røk ut i playoff:',
     'Gruppespill:',
-    '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering blant lagene innad i turneringen (1-32). Følg lenke 1 for å finne din klubb’s rangering">Ti års koeff</abbr>:</div><a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering">1</abbr></a><a class="graa_hover_link_2" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering (offisiell side, mindre anbefalt side)">2</abbr></a>',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering blant lagene innad i turneringen (1-32). Følg lenke 1 for å finne din klubbs rangering">Ti års koeff</abbr>:</div><a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering">1</abbr></a><a class="graa_hover_link_2" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Finn klubbens koeffisient-rangering (offisiell side, mindre anbefalt side)">2</abbr></a>',
     '<abbr data_title="Antall seiere i gruppespillet">Seiere</abbr>:',
     '<abbr data_title="Antall uavgjort i gruppespillet">Uavgjort</abbr>:',
     '<abbr data_title="Antall uavgjorte kamper i alle gruppene til sammen (0-96)">Uavgjort totalt</abbr>:',
@@ -145,7 +145,7 @@ const english = [
 ];
 
 const english_forside = [
-    'UEFA Prize money and Coefficient overview UCL, UEL, UECL',
+    'Your club’s Prize money & Coefficient points | Overview',
     'UEFA income and coefficient overview',
     'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.',
     'Club',

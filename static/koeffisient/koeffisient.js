@@ -97,6 +97,7 @@ for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
 
+
 let knapper_som_må_oppdateres = [];
 
 function deltakelse_eliminasjon_pre(clicked_id) {

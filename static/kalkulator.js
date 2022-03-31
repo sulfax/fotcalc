@@ -813,7 +813,7 @@ function oppdater_ved_refresh_1() {
         siste_ord_linktekst = "coefficient points"
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || "Choose club";
-    if (Klubbnavn.slice(-1) == "s") {
+    if (Klubbnavn.slice(-1) == "s" || Klubbnavn.slice(-1) == "z" || Klubbnavn.slice(-1) == "x") {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
     }
     else {

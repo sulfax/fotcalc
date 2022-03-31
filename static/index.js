@@ -1,12 +1,19 @@
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
-var din_klubbs_premi_koef_e = "your club’s coefficient points";
-var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
 
 var overskrift_forside_finnes = document.getElementById('overskrift_forside');
 var overskrift_finnes = document.getElementById('overskrift_premiepenger');
 var overskrift_koeff_finnes = document.getElementById('overskrift_koeffisient');
 var overskrift_koeff_deff_finnes = document.getElementById('overskrift_koeffisient_dokumentasjon');
+
+if (overskrift_koeff_finnes) {
+  var din_klubbs_premi_koef_e = "your club’s prize money";
+  var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
+}
+else if (overskrift_finnes) {
+  var din_klubbs_premi_koef_e = "your club’s coefficient points";
+  var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
+}
 
 function language(clicked_id) {
   language_koeffisient(clicked_id);
@@ -105,16 +112,16 @@ function language_standard(clicked_id) {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
       }
       if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ koeffisientpoeng";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + " koeffisientpoeng";
       }
       else if (overskrift_finnes) {
-          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s koeffisientpoeng";
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "s koeffisientpoeng";
       }
       else if (Klubbnavn.slice(-1) == "s" && overskrift_koeff_finnes) {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ premiepenger";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + " premiepenger";
       }
       else if (overskrift_koeff_finnes) {
-          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s premiepenger";
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "s premiepenger";
       }
     }
   }
