@@ -285,40 +285,25 @@ function sortFunction_1_klubb(a, b) {
 const menyvalg_lengde = JSON.parse(localStorage.getItem('menyvalg_edit')).length
 var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
 var premiepenger_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
-// for (let i = 0; i < menyvalg_lengde; i++) {
 
-var Lag1 = {
-    "@type": "Question",
-    "name": "How much prize money has " + menyvalg_edit_2[0][0] + " earned so far?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "€ " + premiepenger_2[0][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
-    }
-}
-var Lag2 = {
-  "@type": "Question",
-  "name": "How much prize money has " + menyvalg_edit_2[1][0] + " earned so far?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "€ " + premiepenger_2[1][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
-  }
-}
-var Lag3 = {
-  "@type": "Question",
-  "name": "How much prize money has " + menyvalg_edit_2[2][0] + " earned so far?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "€ " + premiepenger_2[2][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
-  }
-}
+
+
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": []
 }
-schema.mainEntity.push(Lag1)
-schema.mainEntity.push(Lag2)
-schema.mainEntity.push(Lag3)
+for (let i = 0; i < menyvalg_lengde; i++) {
+  var Lag = {
+      "@type": "Question",
+      "name": "How much prize money has " + menyvalg_edit_2[0][0] + " earned so far?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "€ " + premiepenger_2[0][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+      }
+  }
+  schema.mainEntity.push(Lag)
+}
 const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
 script.textContent = JSON.stringify(schema);
