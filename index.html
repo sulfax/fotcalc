@@ -46,7 +46,7 @@
 
     <script>
       var menyvalg_edit = JSON.parse(localStorage.getItem('menyvalg_edit'))[0][0]
-      var premiepenger = ("€ " + JSON.parse(localStorage.getItem('menyvalg_edit'))[0][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "))
+      var premiepenger_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))[0][6]
       var schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -55,7 +55,7 @@
           "name": "How much prize money has" + menyvalg_edit + "earned so far?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": premiepenger,
+            "text": premiepenger_2,
           }
         }]
       }
