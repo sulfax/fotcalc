@@ -314,10 +314,8 @@ var Lag3 = {
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": []
+  "mainEntity": [Lag1,Lag2]
 }
-schema.mainEntity += (Lag1)
-schema.mainEntity += (',' + Lag2)
 schema.mainEntity += (',' + Lag3)
 const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
