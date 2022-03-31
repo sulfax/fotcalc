@@ -1,0 +1,498 @@
+@media (min-width:256px) {
+    .container {
+        max-width:600px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:43px !important;
+    }
+}
+@media (min-width:768px) {
+    .container {
+        max-width:820px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:43px !important;
+    }
+}
+@media (min-width:992px) {
+    .container {
+        max-width:950px
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        max-width:1140px
+    }
+} 
+@media (min-width:1308px) {
+    .container {
+        max-width:1220px
+    }
+} 
+@media (min-width:256px) {
+    .container,.container-sm {
+        max-width:820px
+    }
+}@media (min-width:768px) {
+    .container, .container-md, .container-sm {
+        max-width:820px
+    }
+}@media (min-width:992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width:950px
+    }
+}@media (min-width:1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1140px
+    }
+}
+@media (min-width:1308px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1220px
+    }
+}
+
+@media screen and (min-width: 0px) {
+    abbr[data_title] {
+        position: relative;
+            
+        /* ensure consistent styling across browsers */
+        text-decoration: underline !important;
+    }
+            
+    abbr[data_title]:hover::after,
+    abbr[data_title]:focus::after {
+        content: attr(data_title);
+        cursor: default !important;
+            
+        /* position tooltip like the native one */
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        width: auto;
+        white-space: nowrap;
+        z-index: 1;
+            
+        /* style tooltip */
+        background-color: #343a40;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+        padding: 3px 5px;
+    }
+}
+.knapp_celle {
+    padding:1px !important;
+}
+.ytre_tabell_div_2 {
+    height:3.8rem;
+    padding-top:9px;
+    border-top-right-radius: 0.5rem;
+    margin-bottom: -0.7rem;
+    margin-right: 3px;
+    padding-left: 12px;
+    width: fit-content;
+    height: 4rem;
+    float: right;
+}
+.table-hover {
+    background-color: rgb(255, 255, 255)
+}
+/*
+.table-hover tbody tr.Preliminary_round{
+    background-color:rgba(151, 151, 151, 0.075)
+}
+.table-hover tbody tr.Preliminary_round:hover{
+    background-color:rgba(151, 151, 151, 0.275);
+}
+.table-hover tbody tr.Q1{
+    background-color:rgba(151, 151, 151, 0.102);
+}
+.table-hover tbody tr.Q1:hover{
+    background-color:rgba(151, 151, 151, 0.302);
+}
+.table-hover tbody tr.Q2{
+    background-color:rgba(151, 151, 151, 0.130);
+}
+.table-hover tbody tr.Q2:hover{
+    background-color:rgba(151, 151, 151, 0.330);
+}
+.table-hover tbody tr.Q3{
+    background-color:rgba(151, 151, 151, 0.157);
+}
+.table-hover tbody tr.Q3:hover{
+    background-color:rgba(151, 151, 151, 0.357);
+}
+.table-hover tbody tr.PO{
+    background-color:rgba(151, 151, 151, 0.184);
+}
+.table-hover tbody tr.PO:hover{
+    background-color:rgba(151, 151, 151, 0.384);
+}
+.table-hover tbody tr.Gruppespill{
+    background-color:rgba(151, 151, 151, 0.211);
+}
+.table-hover tbody tr.Gruppespill:hover{
+    background-color:rgba(151, 151, 151, 0.411);
+}
+.table-hover tbody tr.KO_runde_PO{
+    background-color:rgba(151, 151, 151, 0.239);
+}
+.table-hover tbody tr.KO_runde_PO:hover{
+    background-color:rgba(151, 151, 151, 0.439);
+}
+.table-hover tbody tr.Åttendelsfinale{
+    background-color:rgba(151, 151, 151, 0.266);
+}
+.table-hover tbody tr.Åttendelsfinale:hover{
+    background-color:rgba(151, 151, 151, 0.466);
+}
+.table-hover tbody tr.Kvartfinale{
+    background-color:rgba(151, 151, 151, 0.293);
+}
+.table-hover tbody tr.Kvartfinale:hover{
+    background-color:rgba(151, 151, 151, 0.493);
+}
+.table-hover tbody tr.Semifinale{
+    background-color:rgba(151, 151, 151, 0.320);
+}
+.table-hover tbody tr.Semifinale:hover{
+    background-color:rgba(151, 151, 151, 0.520);
+}
+.table-hover tbody tr.Finale{
+    background-color:rgba(151, 151, 151, 0.348);
+}
+.table-hover tbody tr.Finale:hover{
+    background-color:rgba(151, 151, 151, 0.548);
+}
+.table-hover tbody tr.Koeffisient_pr_turnering{
+    background-color:rgba(151, 151, 151, 0.375);
+}
+.table-hover tbody tr.Koeffisient_pr_turnering:hover{
+    background-color:rgba(151, 151, 151, 0.575);
+}
+.table-hover tbody tr.Koeffisientpoeng{
+    background-color:rgba(151, 151, 151, 0.375);
+}
+.table-hover tbody tr.Koeffisientpoeng:hover{
+    background-color:rgba(151, 151, 151, 0.575);
+}
+*/
+.table-hover tbody tr.Kvalifisering{
+    background-color:rgba(151, 151, 151, 0.075)
+}
+.table-hover tbody tr.Kvalifisering:hover{
+    background-color:rgba(151, 151, 151, 0.275);
+}
+.table-hover tbody tr.Gruppespill{
+    background-color:rgba(151, 151, 151, 0.150);
+}
+.table-hover tbody tr.Gruppespill:hover{
+    background-color:rgba(151, 151, 151, 0.350);
+}
+.table-hover tbody tr.Utslagsrunde{
+    background-color:rgba(151, 151, 151, 0.225);
+}
+.table-hover tbody tr.Utslagsrunde:hover{
+    background-color:rgba(151, 151, 151, 0.425);
+}
+.table-hover tbody tr.Koeffisient_pr_turnering{
+    background-color:rgba(151, 151, 151, 0.300);
+}
+.table-hover tbody tr.Koeffisient_pr_turnering:hover{
+    background-color:rgba(151, 151, 151, 0.500);
+}
+.table-hover tbody tr.Koeffisientpoeng{
+    background-color:rgba(151, 151, 151, 0.375);
+}
+.table-hover tbody tr.Koeffisientpoeng:hover{
+    background-color:rgba(151, 151, 151, 0.575);
+}
+.table.table-sm{
+    width:98%;
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom: .9%;
+}
+tbody {
+    border-top: 4px !important;
+    border: 1px solid #b1b1b1;
+}
+.btn.btn-danger:focus, .btn.btn-danger:active, .btn-danger.dropdown-toggle:focus, .btn-danger.focus, .btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
+    box-shadow:none !important;
+}
+.btn.btn-danger, td .form-control { /*Knappen fyller hele cellen*/
+    width: 30%;
+    padding:0px !important;
+    transition-duration:.0s;
+    height: 100%;
+}
+.table .tom_celle, .table .resultat_celle_1, #total_inntjening_assos, #total_inntjening_klubb, #UCL_inntjening_assos, #UEL_inntjening_assos, #UECL_inntjening_assos, #UCL_inntjening_klubb, #UEL_inntjening_klubb, #UECL_inntjening_klubb  {
+    vertical-align:middle;
+    font-family: "Noto Sans Math", monospace;
+}
+#total_inntjening_assos, #total_inntjening_klubb {
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+.venstre {
+    border-left: 0px !important;
+}
+.table-sm .resultat_celle_1, .tom_celle {
+    text-align: center;
+    min-width:43px;
+}
+.mellomrom {
+    width: 20px;
+    border-right: 2px solid #b1b1b1 !important;
+    border-left: 2px solid #b1b1b1 !important;
+    background-color: #b1b1b1b7 !important;
+}
+.mellomrom_2 {
+    width: 0px;
+    padding:0px !important;
+    border-left: 2px solid #b1b1b1 !important;
+}
+.turnering {
+    text-align: center;
+    padding: 0px !important;
+    padding-top: 12px !important;
+    vertical-align: middle !important;
+}
+.turnering {
+    width: 14%;
+}
+.turnering_2_2 {
+    width: 15%;
+    padding:0px !important;
+}
+#assosiasjons_poeng_link {
+    text-align: center !important;
+}
+.Turnerings_oversikt {
+    width:100%;
+    display:flex;
+}
+.btn-secondary {
+    height:38px;
+    font-size: 20px;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    color: rgb(196, 217, 255);
+    transition: all 0s !important;
+}
+.btn-primary {
+    background-color: rgb(196, 217, 255);
+    border-color: rgb(154, 176, 218);
+    color: #4a56ff;
+}
+.btn-primary:hover {
+    background-color: rgb(154, 176, 218) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.btn-primary:active, .btn.btn-primary:active {
+    background-color: rgb(154, 176, 218) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn-primary:focus {
+    background-color: rgb(196, 217, 255) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+#tilbakestill {
+    float: right !important;
+    margin-right: 12px;
+}
+#b1, #b2, #b3, #b6, #b10, #b13, #b17, #b20, #b24, #b27, #b31, #b38, #b40, #b43, #b46, #b48, #b51, #b54, #b57, #b60, #b63, #b66 {
+    background-color:#929292;
+    border-color:#777777;
+    float:left;
+}
+#b4, #b7, #b11, #b14, #b18, #b21, #b25, #b28, #b32, #b34, #b36, #b39, #b41, #b44, #b47, #b49, #b52, #b55, #b58, #b61, #b64, #b67 {
+    margin-left: 5%;
+    background-color:#929292;
+    border-color:#777777;
+}
+#b5, #b8, #b9, #b12, #b15, #b16, #b19, #b22, #b23, #b26, #b29, #b30, #b33, #b35, #b37, #b42, #b45, #b50, #b53, #b56, #b59, #b62, #b65, #b68 {
+    float:right;
+    background-color:#929292;
+    border-color:#777777;
+}
+.r0:hover, .ele:hover, .del:hover {
+    background-color:#777777 !important;
+}
+td .form-control {
+    text-align:center;
+    display:inline;
+}
+td .placeholder::placeholder {
+    color: rgb(207, 207, 207);
+}
+#i1, #i4, #i7, #i10, #i13 {
+    color:#2769AE;
+    border-color:#2769AE;
+    transition: color .5s ease-in;
+    transition: none;
+    float:left;
+}
+#i2, #i5, #i8, #i11, #i14 {
+    color:#FF6900;
+    border-color:#FF6900;
+    transition: color .5s ease-in;
+    transition: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#i3, #i6, #i9, #i12, #i15 {
+    color:#00BF0C;
+    border-color:#00BF0C;
+    transition: color .5s ease-in;
+    transition: none;
+    float:right;
+}
+#UCL {
+    color:#2769AE;
+    margin-right: 9.3%;
+}
+#UEL {
+    color:#FF6900;
+}
+#UECL {
+    color:#00BF0C;
+    margin-left: 9%;
+}
+#UCL_2 {
+    color:#2769AE;
+    text-align:center;
+    width:33.3%;
+}
+#UEL_2 {
+    color:#FF6900;
+    text-align:center;
+    width:33.3%;
+}
+#UECL_2 {
+    color:#00BF0C;
+    text-align:center;
+    width:33.3%;
+}
+.knapp_erstatning{
+    width:30%;
+    height:100%;
+    float:left;
+}
+.table td, .table th, .table .head_tr th{
+    border: 0px;
+}
+.head_tr{
+    border: 1px solid #b1b1b1;
+}
+.head_tr {
+    border-bottom: 0px !important;
+}
+.table .resultat_celle_1 {
+    border: 1px solid rgba(177, 177, 177, 0.3);
+}
+#tabell_data_ramme, #prelim_semifinale, #gruppespill, #q1_kamp1, #q2_kamp1, #q3_kamp1, #po_kamp1, #gruppespill_del, #knock_po_kamp1, #åtten, #kvart, #semi, #finale {
+    border-top: 1px solid rgba(177, 177, 177, 0.3);
+}
+#prelim_semifinale, #gruppespill_del, #knock_po_kamp1, .tydelig_ramme, .tydelig_ramme_hoyre_under_over {
+    border-top: 1px solid rgb(177, 177, 177) !important;
+}
+.tydelig_ramme_under, #total_inntjening_assos, #total_inntjening_klubb, .tydelig_ramme_hoyre_under_over {
+    border-bottom: 1px solid rgb(177, 177, 177) !important;
+}
+.tydelig_ramme_hoyre, .tydelig_ramme_hoyre_under_over {
+    border-right: 1px solid rgb(177, 177, 177) !important;
+}
+#koeffisienter_turnering, #UCL_inntjening_assos, #UEL_inntjening_assos, #UECL_inntjening_assos, #UCL_inntjening_klubb, #UEL_inntjening_klubb, #UECL_inntjening_klubb {
+    border-top: 2px solid #b1b1b1;
+}
+.tom_celle {
+    background-color: #343a40;
+}
+#tom_celle_ramme_bottom, #tom_celle_ramme_hoyre_bunn {
+    border-bottom-color: #343a40;
+}
+/* .border_bunn {
+    border-bottom: 1px solid #b1b1b1;
+} */
+#tom_celle_ramme_right, #tom_celle_ramme_hoyre_bunn {
+    border-right-color: #343a40;
+}
+#tom_celle_ramme {
+    border-color: #343a40;
+}
+#tom_celle_ramme_utenom_oppe {
+    border-color: #343a40;
+    border-top: 1px solid #b1b1b1;
+}
+.Koeffisient_pr_turnering, .Koeffisientpoeng {
+    font-weight: bold;
+}
+.Koeffisientpoeng {
+    text-decoration: underline;
+}
+#progresjon {
+    width:calc(13rem - 30px);
+    height:72px;
+    margin-top: -13px;
+    margin-bottom: 31px !important;
+}
+.de1_UCL {
+    background-color:#2769AE !important;
+    border-color:#155599 !important;
+}
+.de1_UCL:hover {
+    background-color:#155599 !important;
+}
+.de1_UEL {
+    background-color:#FF6900 !important;
+    border-color:#df5d00 !important;
+}
+.de1_UEL:hover {
+    background-color:#df5d00 !important;
+}
+.de1_UECL {
+    background-color:#00BF0C !important;
+    border-color:#00a70b !important;
+}
+.de1_UECL:hover {
+    background-color:#00a70b !important;
+}
+.de1_UECL.ele {
+    border: 2px solid #343a40 !important;
+}
+
+.r1 {
+    background-color:#5ccc6e !important;
+    border-color:#4fb35f !important;
+}
+.r1:hover {
+    background-color:#4fb35f !important;
+}
+.r2 {
+    background-color:#e2d34f !important;
+    border-color:#cebf3d !important;
+}
+.r2:hover {
+    background-color:#cebf3d !important;
+}
+.r3 {
+    background-color:#cc5c5c !important;
+    border-color:#b34f4f !important;
+}
+.r3:hover {
+    background-color:#b34f4f !important;
+}
+th, td {
+    height: 31px !important;
+    padding-top: 3px !important;
+    padding-bottom: 2px !important;
+}
