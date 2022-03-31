@@ -26,22 +26,43 @@
     <meta property="og:locale" content="en_US"/>
     <meta property="og:locale:alternate" content="nb_NO"/>
     <title id="title">Your club’s Prize money & Coefficient points | Overview</title>
-
-
+<!-- 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
-          "name": "How much prize money has {{menyvalg[0][0]}} earned so far?",
+          "name": "How much prize money has Bayern München earned so far?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "<p>{{menyvalg[0][6]}}</p>"
+            "text": data[0][0]
           }
         }]
       }
+    </script> -->
+
+    <!-- var menyvalg_edit = "JSON.parse(localStorage.getItem('menyvalg_edit'))" -->
+
+    <script>
+      var schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "What is the return policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Most unopened items.</p>"
+          }
+        }]
+      }
+      const script = document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
     </script>
+
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
