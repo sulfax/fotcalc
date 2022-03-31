@@ -294,11 +294,19 @@ var Lag1 = {
       "@type": "Answer",
       "text": "€ " + premiepenger_2[0][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
     }
+}
+var Lag2 = {
+  "@type": "Question",
+  "name": "How much prize money has " + menyvalg_edit_2[1][0] + " earned so far?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "€ " + premiepenger_2[1][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
   }
+}
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [Lag1]
+  "mainEntity": [Lag1 + Lag2]
 }
   const script = document.createElement('script');
   script.setAttribute('type', 'application/ld+json');
