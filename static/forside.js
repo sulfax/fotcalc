@@ -316,7 +316,7 @@ var schema = {
   "@type": "FAQPage",
   "mainEntity": [Lag1,Lag2]
 }
-schema.mainEntity += ',' + Lag3
+schema.mainEntity += Lag3
   const script = document.createElement('script');
   script.setAttribute('type', 'application/ld+json');
   script.textContent = JSON.stringify(schema);
