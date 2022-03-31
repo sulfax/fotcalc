@@ -303,11 +303,20 @@ var Lag2 = {
     "text": "€ " + premiepenger_2[1][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
   }
 }
+var Lag3 = {
+  "@type": "Question",
+  "name": "How much prize money has " + menyvalg_edit_2[2][0] + " earned so far?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "€ " + premiepenger_2[2][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+  }
+}
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [Lag1,Lag2]
 }
+schema.mainEntity += ',' + Lag3
   const script = document.createElement('script');
   script.setAttribute('type', 'application/ld+json');
   script.textContent = JSON.stringify(schema);
