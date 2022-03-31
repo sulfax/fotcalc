@@ -296,10 +296,10 @@ var schema = {
 for (let i = 0; i < menyvalg_lengde; i++) {
   var Lag = {
       "@type": "Question",
-      "name": "How much prize money has " + menyvalg_edit_2[0][0] + " earned so far?",
+      "name": "How much prize money has " + menyvalg_edit_2[i][0] + " earned so far?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "€ " + premiepenger_2[0][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+        "text": "€ " + premiepenger_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
       }
   }
   schema.mainEntity.push(Lag)
