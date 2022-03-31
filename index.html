@@ -45,15 +45,17 @@
     <!-- var menyvalg_edit = "JSON.parse(localStorage.getItem('menyvalg_edit'))" -->
 
     <script>
+      var menyvalg_edit = JSON.parse(localStorage.getItem('menyvalg_edit'))[0][0]
+      var premiepenger = ("€ " + JSON.parse(localStorage.getItem('menyvalg_edit'))[0][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "))
       var schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
-          "name": "What is the return policy?",
+          "name": "How much prize money has" + menyvalg_edit + "earned so far?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "<p>Most unopened items.</p>"
+            "text": premiepenger
           }
         }]
       }
