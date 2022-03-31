@@ -1,6 +1,7 @@
+var antall_MV_elem = 8;
+
 /*Variabler som skal brukes i utregninger under*/
 /*21/22 variabler til utregning av noen summer*/
-
 
 var UCL_total_mengde_2122 = 2002000000;
 var UEL_total_mengde_2122 = 465000000; 
@@ -843,7 +844,7 @@ function oppdater_ved_refresh_1() {
     else {
         for(var i=0;i<menyvalg.length;i++){
             if(menyvalg[i][0] == Klubbnavn){
-                let p = 1 *8*(localStorage.getItem('sessong')) + 1;
+                let p = 1 *antall_MV_elem*(localStorage.getItem('sessong')) + 1;
                 const motak = menyvalg[i][p];
                 if (motak) {
                     if (motak.includes("b18")) {var turnering = 0;}

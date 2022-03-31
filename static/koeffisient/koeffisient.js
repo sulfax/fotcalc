@@ -1,3 +1,5 @@
+var antall_MV_elem = 8;
+
 /*21/22 knapper*/
 let Seier_kvalifisering_2122 = 1;
 let Uavgjort_kvalifisering_2122 = 0.5;
@@ -662,7 +664,7 @@ function oppdater_ved_refresh_koeff_1() {
     else {
         for(var i=0;i<menyvalg.length;i++){
             if(menyvalg[i][0] == Klubbnavn){
-                let p = 1 *8*aarstall + 1;
+                let p = 1 *antall_MV_elem*aarstall + 1;
                 // const resultat = localStorage.getItem('resultat_status_local_s');
                 const knapper_fra_prem_kalk = menyvalg[i][p] || '';
                 var deltakelse_eliminasjon = "";
