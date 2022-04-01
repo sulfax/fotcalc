@@ -292,6 +292,9 @@ var schema = {
   "@type": "FAQPage",
   "mainEntity": []
 }
+
+var poeng1 = "points"
+var poeng2 = "points"
 for (let i = 0; i < menyvalg_lengde; i++) {
   var Lag_premiepenger = {
       "@type": "Question",
@@ -301,13 +304,11 @@ for (let i = 0; i < menyvalg_lengde; i++) {
         "text": "€ " + menyvalg_edit_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
       }
   }
-  var poeng1 = "points"
-  var poeng2 = "points"
   alert(menyvalg_edit_2[i][7] <= 1)
-  if (menyvalg_edit_2[i][7] <= 1) {
+  if (menyvalg_edit_2[i][7] <= 1 && menyvalg_edit_2[i][7] != 0) {
     poeng1 = "point"
   }
-  if (menyvalg_edit_2[i][8] <= 1) {
+  if (menyvalg_edit_2[i][8] <= 1 && menyvalg_edit_2[i][8] != 0) {
     poeng2 = "point"
   }
   var Lag_koeff = {
