@@ -293,8 +293,7 @@ var schema = {
   "mainEntity": []
 }
 
-var poeng1 = "points"
-var poeng2 = "points"
+
 for (let i = 0; i < menyvalg_lengde; i++) {
   var Lag_premiepenger = {
       "@type": "Question",
@@ -304,7 +303,8 @@ for (let i = 0; i < menyvalg_lengde; i++) {
         "text": "€ " + menyvalg_edit_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
       }
   }
-  alert(menyvalg_edit_2[i][7] <= 1)
+  var poeng1 = "points"
+  var poeng2 = "points"
   if (menyvalg_edit_2[i][7] <= 1 && menyvalg_edit_2[i][7] != 0) {
     poeng1 = "point"
   }
