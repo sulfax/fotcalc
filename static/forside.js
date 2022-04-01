@@ -1,3 +1,14 @@
+// Endre meta-beskrivelsene
+var descval = document.getElementById('tabell_hoved').innerText;
+var paras = document.getElementsByTagName('meta');
+for (i = 0; i < paras.length; i++) {
+  var test = paras[i].getAttribute('name');
+  var test_2 = paras[i].getAttribute('property');
+  if(test == "description" || test_2 == "og:description") {
+    paras[i].content = descval;
+  }
+}
+
 let antall_MV_elem = 8;
 
 if (localStorage.getItem('sessong') == null) {
@@ -275,21 +286,6 @@ function sortFunction_1_klubb(a, b) {
   }
   else {
     return (a[0].toLowerCase() < b[0].toLowerCase()) ? -1 : 1;
-  }
-}
-
-
-// Endre meta-beskrivelsene
-var descval = document.getElementById('tabell_hoved').innerText;
-var paras = document.getElementsByTagName('meta');
-for (i = 0; i < paras.length; i++) {
-  var test = paras[i].getAttribute('name');
-  var test_2 = paras[i].getAttribute('property');
-  if(test == "description") {
-    paras[i].content = descval;
-  }
-  if(test_2 == "og:description") {
-    paras[i].content = descval;
   }
 }
 
