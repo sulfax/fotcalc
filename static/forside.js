@@ -333,12 +333,16 @@ var schema_2 = {
   "@type": "SportsOrganization",
   "url": "https://www.fotcalc.com/",
   "logo": "https://s10.gifyu.com/images/ok_4x_generellfa6faeac0235e0c9.png",
-  "sport": "Football",
-  "email": "johanneskaste@gmail.com",
-  'keywords': "Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22"
+  "keywords": "Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22"
 }
 const script_2 = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
 script.textContent = JSON.stringify(schema_2);
 console.log(script.textContent)
 document.head.appendChild(script);
+
+
+
+// "sport": "Football",
+// "email": "johanneskaste@gmail.com",
+// 'keywords': "Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22"
