@@ -271,8 +271,6 @@ function sortFunction_2_tall(a, b) {
 }
 
 
-
-
 function sortFunction_1_klubb(a, b) {
   if (a[0].toLowerCase() === b[0].toLowerCase()) {
     return 0;
@@ -282,17 +280,16 @@ function sortFunction_1_klubb(a, b) {
   }
 }
 
+
+
 const menyvalg_lengde = JSON.parse(localStorage.getItem('menyvalg_edit')).length
 var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
-
-
 
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": []
 }
-
 
 for (let i = 0; i < menyvalg_lengde; i++) {
   var Lag_premiepenger = {
@@ -305,10 +302,10 @@ for (let i = 0; i < menyvalg_lengde; i++) {
   }
   var poeng1 = "points"
   var poeng2 = "points"
-  if (menyvalg_edit_2[i][7] <= 1 && menyvalg_edit_2[i][7] != 0) {
+  if (menyvalg_edit_2[i][7] == 1) {
     poeng1 = "point"
   }
-  if (menyvalg_edit_2[i][8] <= 1 && menyvalg_edit_2[i][8] != 0) {
+  if (menyvalg_edit_2[i][8] == 1) {
     poeng2 = "point"
   }
   var Lag_koeff = {
@@ -325,5 +322,23 @@ for (let i = 0; i < menyvalg_lengde; i++) {
 const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
 script.textContent = JSON.stringify(schema);
+console.log(script.textContent)
 document.head.appendChild(script);
 // }
+
+
+
+var schema_2 = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "url": "https://www.fotcalc.com/",
+  "logo": "https://s10.gifyu.com/images/ok_4x_generellfa6faeac0235e0c9.png",
+  "sport": "Football",
+  "email": "johanneskaste@gmail.com",
+  'keywords': "Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22"
+}
+const script_2 = document.createElement('script');
+script.setAttribute('type', 'application/ld+json');
+script.textContent = JSON.stringify(schema_2);
+console.log(script.textContent)
+document.head.appendChild(script);
