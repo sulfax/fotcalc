@@ -305,10 +305,10 @@ for (let i = 0; i < menyvalg_lengde; i++) {
   var poeng2 = "points"
   alert(menyvalg_edit_2[i][7] <= 1)
   if (menyvalg_edit_2[i][7] <= 1) {
-    var poeng1 = "point"
+    poeng1 = "point"
   }
   if (menyvalg_edit_2[i][8] <= 1) {
-    var poeng2 = "point"
+    poeng2 = "point"
   }
   var Lag_koeff = {
     "@type": "Question",
