@@ -301,12 +301,21 @@ for (let i = 0; i < menyvalg_lengde; i++) {
         "text": "€ " + menyvalg_edit_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
       }
   }
+  var poeng1 = "points"
+  var poeng2 = "points"
+  alert(menyvalg_edit_2[i][7] <= 1)
+  if (menyvalg_edit_2[i][7] <= 1) {
+    var poeng1 = "point"
+  }
+  if (menyvalg_edit_2[i][8] <= 1) {
+    var poeng2 = "point"
+  }
   var Lag_koeff = {
     "@type": "Question",
     "name": "How many coefficient points has " + menyvalg_edit_2[i][0] + " earned in 21/22?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": menyvalg_edit_2[i][7] + " association coefficient points and " + menyvalg_edit_2[i][8] + " club coefficient points",
+      "text": menyvalg_edit_2[i][7] + " association coefficient " + poeng1 + " and " + menyvalg_edit_2[i][8] + " club coefficient " + poeng2,
     }
 }
   schema.mainEntity.push(Lag_premiepenger)
