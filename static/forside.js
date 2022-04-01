@@ -1,14 +1,3 @@
-// Endre meta-beskrivelsene
-var descval = document.getElementById('tabell_hoved').innerText;
-var paras = document.getElementsByTagName('meta');
-for (i = 0; i < paras.length; i++) {
-  var test = paras[i].getAttribute('name');
-  var test_2 = paras[i].getAttribute('property');
-  if(test == "description" || test_2 == "og:description") {
-    paras[i].content = descval;
-  }
-}
-
 let antall_MV_elem = 8;
 
 if (localStorage.getItem('sessong') == null) {
@@ -244,6 +233,17 @@ function endre_klubbnavn(i) {
   var cell = last.cells[1];
   var value = cell.innerText;
   localStorage.setItem('Klubbnavn', value)
+}
+
+// Endre meta-beskrivelsene
+var descval = document.getElementById('tabell_hoved').innerText;
+var paras = document.getElementsByTagName('meta');
+for (i = 0; i < paras.length; i++) {
+  var test = paras[i].getAttribute('name');
+  var test_2 = paras[i].getAttribute('property');
+  if(test == "description" || test_2 == "og:description") {
+    paras[i].content = descval;
+  }
 }
 
 function sortFunction_1(a, b) {
