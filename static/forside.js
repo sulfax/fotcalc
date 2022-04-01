@@ -284,7 +284,6 @@ function sortFunction_1_klubb(a, b) {
 
 const menyvalg_lengde = JSON.parse(localStorage.getItem('menyvalg_edit')).length
 var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
-var premiepenger_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
 
 
 
@@ -294,15 +293,24 @@ var schema = {
   "mainEntity": []
 }
 for (let i = 0; i < menyvalg_lengde; i++) {
-  var Lag = {
+  var Lag_premiepenger = {
       "@type": "Question",
       "name": "How much prize money has " + menyvalg_edit_2[i][0] + " earned so far?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "€ " + premiepenger_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+        "text": "€ " + menyvalg_edit_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
       }
   }
-  schema.mainEntity.push(Lag)
+  var Lag_koeff = {
+    "@type": "Question",
+    "name": "How many coefficient points has " + menyvalg_edit_2[i][0] + " earned in 21/22?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": menyvalg_edit_2[i][7] + " association coefficient points and " + menyvalg_edit_2[i][8] + " club coefficient points",
+    }
+}
+  schema.mainEntity.push(Lag_premiepenger)
+  schema.mainEntity.push(Lag_koeff)
 }
 const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
