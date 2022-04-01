@@ -227,7 +227,14 @@ function byggTabell_test(data) {
   }
 }
 
-
+var descval = document.getElementById('tabell_hoved').innerText;
+var paras = document.getElementsByTagName('meta');
+for (i = 0; i < paras.length; i++) {
+  var test = paras[i].getAttribute('name');
+  if(test == "description") {
+    paras[i].content = descval;
+  }
+}
 
 function endre_klubbnavn(i) {
   var rows = document.getElementsByTagName("table")[0].rows;
