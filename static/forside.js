@@ -235,16 +235,19 @@ function endre_klubbnavn(i) {
   localStorage.setItem('Klubbnavn', value)
 }
 
+
 // Endre meta-beskrivelsene
 var descval = document.getElementById('tabell_hoved').innerText;
-var paras = document.getElementsByTagName('meta');
-for (i = 0; i < paras.length; i++) {
-  var test = paras[i].getAttribute('name');
-  var test_2 = paras[i].getAttribute('property');
-  if(test == "description" || test_2 == "og:description") {
-    paras[i].content = descval;
-  }
-}
+var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+
+// var paras = document.getElementsByTagName('meta');
+// for (i = 0; i < paras.length; i++) {
+//   var test = paras[i].getAttribute('name');
+  // var test_2 = paras[i].getAttribute('property');
+  // if(test == "description" || test_2 == "og:description") {
+  //   paras[i].content = descval;
+  // }
+// }
 
 function sortFunction_1(a, b) {
   if (a[i].toLowerCase() === b[i].toLowerCase()) {
