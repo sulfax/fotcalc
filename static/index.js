@@ -539,6 +539,5 @@ if (overskrift_forside_finnes) {
   const script = document.createElement('script');
   script.setAttribute('type', 'application/ld+json');
   script.textContent = JSON.stringify(schema);
-  console.log(script.textContent)
   document.head.appendChild(script);
 }
