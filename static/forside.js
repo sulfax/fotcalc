@@ -80,8 +80,8 @@ function sorter_etter_sesong() {
       let Ny5 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
       let Ny6 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
       let Ny7 = parseInt(Ny.slice(6 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
-      let Ny8 = parseInt(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
-      let Ny9 = parseInt(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
+      let Ny8 = parseFloat(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
+      let Ny9 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
       Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9)
       menyvalg_edit[i] = Ny1
     }
