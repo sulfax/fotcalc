@@ -11,7 +11,7 @@ const norsk = [
 ];
 
 const norsk_forside = [
-    'Din klubbs premipenger & Koeffisient poeng | Oversikt',
+    'Din klubbs premipenger & UEFA Koeffisient poeng',
     'UEFA premiepenge- og koeffisient-oversikt',
     'UEFA’s inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng i alle klubbturneringer.',
     'Klubb',
@@ -145,7 +145,7 @@ const english = [
 ];
 
 const english_forside = [
-    'Your club’s Prize money & Coefficient points | Overview',
+    'Your club’s Prize money & UEFA Coefficient points',
     'UEFA income and coefficient overview',
     'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.',
     'Club',
