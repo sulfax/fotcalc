@@ -316,7 +316,8 @@ const sprak_id_kalkulator = [
   'inntjening_turnering',
   'inntjening',
   'marketPool_id',
-  'koeff_reklame'
+  'koeff_reklame',
+  'oversikt_reklame'
 ];
 
 const sprak_id_koeffisient = [
@@ -361,6 +362,7 @@ const sprak_id_koeffisient = [
   'klubb_poeng',
   'kilde_koeff_id',
   'koeff_reklame',
+  'oversikt_reklame'
 ];
 
 const sprak_id_koeffisient_dokumentasjon = [

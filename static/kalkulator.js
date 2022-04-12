@@ -844,7 +844,7 @@ function oppdater_ved_refresh_1() {
     else {
         for(var i=0;i<menyvalg.length;i++){
             if(menyvalg[i][0] == Klubbnavn){
-                let p = 1 *antall_MV_elem*(localStorage.getItem('sessong')) + 1;
+                let p = 1 *antall_MV_elem*(localStorage.getItem('sessong')) + 2;
                 const motak = menyvalg[i][p];
                 if (motak) {
                     if (motak.includes("b18")) {var turnering = 0;}
@@ -1105,3 +1105,11 @@ function endreMenyTittel(Klubbnavn) {
     oppdater_ved_refresh_1()
 }
 /* Dropdown meny slutt */
+
+
+function endre_sort_kolonne() {
+    if (localStorage.getItem('kolonne') != 'prize_money') {
+        localStorage.setItem('kolonne', 'prize_money')
+        localStorage.setItem('rekkefølge', 'desc')
+    }
+}

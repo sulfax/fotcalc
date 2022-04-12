@@ -664,7 +664,7 @@ function oppdater_ved_refresh_koeff_1() {
     else {
         for(var i=0;i<menyvalg.length;i++){
             if(menyvalg[i][0] == Klubbnavn){
-                let p = 1 *antall_MV_elem*aarstall + 1;
+                let p = 1 *antall_MV_elem*aarstall + 2;
                 // const resultat = localStorage.getItem('resultat_status_local_s');
                 const knapper_fra_prem_kalk = menyvalg[i][p] || '';
                 var deltakelse_eliminasjon = "";
@@ -820,3 +820,10 @@ function endreMenyTittel(Klubbnavn) {
     oppdater_ved_refresh_koeff_1()
 }
 /* Dropdown meny slutt */
+
+function endre_sort_kolonne() {
+    if (localStorage.getItem('kolonne') == 'prize_money') {
+        localStorage.setItem('kolonne', 'ass_coeff')
+        localStorage.setItem('rekkefølge', 'desc')
+    }
+}

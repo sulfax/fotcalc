@@ -18,7 +18,7 @@
     <meta name="twitter:image" content="https://s10.gifyu.com/images/ok_4xe31e765270758970.png" alt="fotcalc logo" />
     <meta property="og:title" content="Your club’s Prize money & Coefficient points | Overview" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.fotcalc.com" alt="fotcalc logo" />
+    <meta property="og:url" content="https://www.fotcalc.com/country-coefficients" alt="fotcalc logo" />
     <meta property="og:image" content="https://s10.gifyu.com/images/ok_4x_generellfa6faeac0235e0c9.png" alt="fotcalc logo" />
     <meta property="og:image:alt" content="fotcalc logo" />
     <meta property="og:description" content="UEFA Revenue distribution overview. Find any clubs Prize money/income and Coefficient points in the Champions League, Europa League and Conference League." />
@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/googleapis_font.css">
     <link rel="stylesheet" type="text/css" href="static/base.css">
-    <link rel="stylesheet" type="text/css" href="static/forside.css">
+    <link rel="stylesheet" type="text/css" href="static/country-coefficients.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -87,13 +87,17 @@
           <thead class="thead-light">
             <tr class="big-info">
               <th class="id_nr">#</th>
-              <th data-column="club" data-order="desc" id="club"><span id="klubb_navn">Club</span> <img src="media/opp_ned_pil.svg" alt="Sorting arrows"></th>
-              <th data-column="prize_money" data-order="desc" id="prize_money"><span id="premiepenger_navn">Prize money</span> <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
-              <th data-column="ass_coeff" data-order="desc" id="ass_coeff"><span id="ass_koeff_navn">Association coefficient points</span> <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
-              <th data-column="club_coeff" data-order="desc" id="club_coeff"><span id="klubb_koeff_navn">Club coefficient points</span> <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <!-- <th data-column="club" data-order="desc" id="club"><span id="klubb_navn">Club</span> <img src="media/opp_ned_pil.svg" alt="Sorting arrows"></th> -->
+              <th id="land"><img src="media/UEFA/GLOBE.svg" alt="Sorting arrows"></th>
+              <th data-column="poeng" data-order="desc" id="poeng">Points<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th data-column="sesong1" data-order="desc" id="sesong1">21/22 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th data-column="sesong2" data-order="desc" id="sesong2">20/21 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th data-column="sesong3" data-order="desc" id="sesong3">19/20 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th data-column="sesong4" data-order="desc" id="sesong4">18/19 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th data-column="sesong5" data-order="desc" id="sesong5">17/18 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
             </tr>
           </thead>
-          <tbody id="myTable">
+          <tbody id="minTest">
           </tbody>
         </table>
       </div>
@@ -123,7 +127,7 @@
     ></script>
     <script
       type="text/javascript" 
-      src="static/forside.js"
+      src="static/country-coefficients.js"
     ></script>
     <script
       type="text/javascript" 

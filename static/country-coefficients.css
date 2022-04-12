@@ -57,7 +57,7 @@
 #overskrift_forside, #beskrivelse_forside {
     text-align: center;
 }
-.btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
+/* .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking
     box-shadow:none !important;
 }
 .btn-secondary {
@@ -78,7 +78,7 @@
 }
 #sessong_kontroller_2 {
     margin-right: 6px !important;
-}
+} */
 table {
     border-top: 4px !important;
     border: 1px solid rgba(177, 177, 177, 0.8);
@@ -105,57 +105,38 @@ th, td {
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
 }
-#club, #prize_money, #ass_coeff, #club_coeff {
+#poeng, #sesong1, #sesong2, #sesong3, #sesong4, #sesong5 {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-align: right;
 }
-@media (min-width:1021px) {
-    #ass_coeff, #prize_money, #club_coeff {
+/* @media (min-width:1021px) {
+    #poeng, #sesong1, #sesong2, #sesong3, #sesong4, #sesong5 {
         text-align: right;
     }
-}
-#ass_coeff, #prize_money, #club_coeff {
-    min-width: calc(10vw + 60px) !important;
-}
-#club {
-    padding-left: 9px;
+} */
+#land {
+    padding-bottom: 1px !important;
+    width: 0px !important;
 }
 .marign_venstre {
     padding-left: 5px;
 }
-.premiepenger_span, .ass_coeff_span, .club_coeff_span {
-    text-align: right;
-    margin-right: 3px;
-}
 
-.premiepenger_span {
-    width:106px;
-    margin-right: 2px;
-}
-.ass_coeff_span {
-    width:70%;
-    margin-right: 2px;
-}
-.club_coeff_span {
-    width:70%;
-    margin-right: 5px;
-}
 .høyrestill {
     float: right;
     margin-left: 5px;
 }
-
 
 .premie_koeff {
     vertical-align:middle;
     font-family: "Noto Sans Math", monospace;
     text-align: right;
 }
-
 .id_nr {
     max-width: 60px;
     min-width: 42px;
@@ -163,25 +144,19 @@ th, td {
     text-align: center;
     border-right: 2px solid rgba(177, 177, 177, 1) !important;
 }
-.tabell_link {
-    color: rgb(86, 97, 255);
-    padding: 0px !important;
+.flagg {
+    height:19px;
+    margin-top: -8px;
 }
-.tabell_link:hover {
-    color:#343a40;
+.flagg_div {
+    margin-left: 2px;
+    height: 21px;
+    margin-top: -23px !important;
+    width: 21px;
+    border-radius: 50%;
+    border: 1px solid rgba(161, 161, 161, 0.5);
+    box-shadow: .7px .7px rgba(110, 110, 110, 0.5);
 }
-.ucl_gs {
-    background-color: rgba(190, 210, 231, 0.7) !important;
-}
-.ucl_gs_uel {
-    background: linear-gradient(to right, #bed2e7b3 50%, #ffd2b2b3 50%);
-}
-.uel_gs {
-    background-color: rgba(255, 210, 178, 0.7) !important;
-}
-.uel_gs_uecl {
-    background: linear-gradient(to right, #ffd2b2b3 50%, #b2ecb6b3 50%);
-}
-.uecl_gs {
-    background-color: rgba(178, 236, 182, 0.7) !important;
+#NIR {
+    border-radius: 50%;
 }

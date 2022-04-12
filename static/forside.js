@@ -74,14 +74,14 @@ function sorter_etter_sesong() {
       var Ny = Object.assign([], menyvalg_edit[i]);
       menyvalg_edit[i] = [];
       let Ny1 = Ny.slice(0,1)
-      let Ny2 = Ny.slice(1 + (aarstall*antall_MV_elem),2 + (aarstall*antall_MV_elem))
-      let Ny3 = Ny.slice(2 + (aarstall*antall_MV_elem),3 + (aarstall*antall_MV_elem))
-      let Ny4 = Ny.slice(3 + (aarstall*antall_MV_elem),4 + (aarstall*antall_MV_elem))
-      let Ny5 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
-      let Ny6 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
-      let Ny7 = parseInt(Ny.slice(6 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
-      let Ny8 = parseFloat(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
-      let Ny9 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
+      let Ny2 = Ny.slice(2 + (aarstall*antall_MV_elem),3 + (aarstall*antall_MV_elem))
+      let Ny3 = Ny.slice(3 + (aarstall*antall_MV_elem),4 + (aarstall*antall_MV_elem))
+      let Ny4 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
+      let Ny5 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
+      let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
+      let Ny7 = parseInt(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
+      let Ny8 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
+      let Ny9 = parseFloat(Ny.slice(9 + (aarstall*antall_MV_elem),10 + (aarstall*antall_MV_elem)))
       Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9)
       menyvalg_edit[i] = Ny1
     }
@@ -113,51 +113,27 @@ function sorter_etter_sesong() {
 function sorter(column, order, tekst, menyvalg_edit) {
   if (column == 'club') {
     i = 0
-    if (document.getElementById('prize_money').innerHTML.replace(document.getElementById('prize_money').innerText, '') != opp_ned_pil) {
-      document.getElementById('prize_money').innerHTML = '<span id="premiepenger_navn">' + document.getElementById('prize_money').innerText + '</span>' + opp_ned_pil
-    }
-    if (document.getElementById('ass_coeff').innerHTML.replace(document.getElementById('ass_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('ass_coeff').innerHTML = '<span id="ass_koeff_navn">' + document.getElementById('ass_coeff').innerText + '</span>' + opp_ned_pil
-    }
-    if (document.getElementById('club_coeff').innerHTML.replace(document.getElementById('club_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('club_coeff').innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById('club_coeff').innerText + '</span>' + opp_ned_pil
-    }
+    endre_kolonne_overskrift('prize_money', opp_ned_pil)
+    endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
+    endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'prize_money') {
     i = 6
-    if (document.getElementById('club').innerHTML.replace(document.getElementById('club').innerText, '') != opp_ned_pil_klubb) {
-      document.getElementById('club').innerHTML = '<span id="klubb_navn">' + document.getElementById('club').innerText + '</span>' + opp_ned_pil_klubb
-    }
-    if (document.getElementById('ass_coeff').innerHTML.replace(document.getElementById('ass_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('ass_coeff').innerHTML = '<span id="ass_koeff_navn">' + document.getElementById('ass_coeff').innerText + '</span>' + opp_ned_pil
-    }
-    if (document.getElementById('club_coeff').innerHTML.replace(document.getElementById('club_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('club_coeff').innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById('club_coeff').innerText + '</span>' + opp_ned_pil
-    }
+    endre_kolonne_overskrift('club', opp_ned_pil)
+    endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
+    endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'ass_coeff') {
     i = 7
-    if (document.getElementById('prize_money').innerHTML.replace(document.getElementById('prize_money').innerText, '') != opp_ned_pil) {
-      document.getElementById('prize_money').innerHTML = '<span id="premiepenger_navn">' + document.getElementById('prize_money').innerText + '</span>' + opp_ned_pil
-    }
-    if (document.getElementById('club').innerHTML.replace(document.getElementById('club').innerText, '') != opp_ned_pil_klubb) {
-      document.getElementById('club').innerHTML = '<span id="klubb_navn">' + document.getElementById('club').innerText + '</span>' + opp_ned_pil_klubb
-    }
-    if (document.getElementById('club_coeff').innerHTML.replace(document.getElementById('club_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('club_coeff').innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById('club_coeff').innerText + '</span>' + opp_ned_pil
-    }
+    endre_kolonne_overskrift('prize_money', opp_ned_pil)
+    endre_kolonne_overskrift('club', opp_ned_pil)
+    endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'club_coeff') {
     i = 8
-    if (document.getElementById('prize_money').innerHTML.replace(document.getElementById('prize_money').innerText, '') != opp_ned_pil) {
-      document.getElementById('prize_money').innerHTML = '<span id="premiepenger_navn">' + document.getElementById('prize_money').innerText + '</span>' + opp_ned_pil
-    }
-    if (document.getElementById('club').innerHTML.replace(document.getElementById('club').innerText, '') != opp_ned_pil_klubb) {
-      document.getElementById('club').innerHTML = '<span id="klubb_navn">' + document.getElementById('club').innerText + '</span>' + opp_ned_pil_klubb
-    }
-    if (document.getElementById('ass_coeff').innerHTML.replace(document.getElementById('ass_coeff').innerText, '') != opp_ned_pil) {
-      document.getElementById('ass_coeff').innerHTML = '<span id="ass_koeff_navn">' + document.getElementById('ass_coeff').innerText + '</span>' + opp_ned_pil
-    }
+    endre_kolonne_overskrift('prize_money', opp_ned_pil)
+    endre_kolonne_overskrift('club', opp_ned_pil)
+    endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
   }
   menyvalg_edit.sort(sortFunction_1_klubb);
   if(order == 'desc') {
@@ -185,7 +161,6 @@ function sorter(column, order, tekst, menyvalg_edit) {
   document.getElementById(column).innerHTML = tekst;
   byggTabell_test(menyvalg_edit)
 }
-
 
 function byggTabell_test(data) {
   var table = document.getElementById('myTable')
@@ -226,7 +201,6 @@ function byggTabell_test(data) {
     table.innerHTML += rad
   }
 }
-
 function endre_klubbnavn(i) {
   var rows = document.getElementsByTagName("table")[0].rows;
   var last = rows[i + 1];
@@ -249,6 +223,12 @@ var link = document.createElement('meta');  link.setAttribute('property', 'og:de
   //   paras[i].content = descval;
   // }
 // }
+
+function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
+  if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
+    document.getElementById(kolonne).innerHTML = '<span id="premiepenger_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
+  }
+}
 
 function sortFunction_1(a, b) {
   if (a[i].toLowerCase() === b[i].toLowerCase()) {
@@ -292,8 +272,6 @@ function sortFunction_1_klubb(a, b) {
     return (a[0].toLowerCase() < b[0].toLowerCase()) ? -1 : 1;
   }
 }
-
-
 
 
 // }
