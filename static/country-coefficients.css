@@ -120,7 +120,6 @@ th, td {
     }
 } */
 #land {
-    padding-bottom: 1px !important;
     width: 0px !important;
 }
 .marign_venstre {
@@ -146,7 +145,7 @@ th, td {
 }
 .flagg {
     height:19px;
-    margin-top: -8px;
+    margin-bottom: 8px;
 }
 .flagg_div {
     margin-left: 2px;
