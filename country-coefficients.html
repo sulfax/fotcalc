@@ -76,10 +76,12 @@
       <br>
       <br>
       <div class="ytterst_tabell_div">
-        <div class="ytre_tabell_div">
-          <button class="btn btn-secondary" id="sessong_kontroller_1" disabled onclick="endre_sessong(this.id)">&#10094</button>
-          <h2 class="sesong" id="sessong_id">21/22</h2>
-          <button class="btn btn-secondary" id="sessong_kontroller_2" disabled onclick="endre_sessong(this.id)">&#10095</button>
+        <div class="dropdown">
+          <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><div class="opp_ned_pil">&#10094</div></button>
+          <div id="myDropdown" class="dropdown-content">
+            <div class="dropdown_elementer" id="dropdown_elementer">
+            </div>
+          </div>
         </div>
       </div>
       <div class="tabell_div">
@@ -88,8 +90,8 @@
             <tr class="big-info">
               <th class="id_nr">#</th>
               <!-- <th data-column="club" data-order="desc" id="club"><span id="klubb_navn">Club</span> <img src="media/opp_ned_pil.svg" alt="Sorting arrows"></th> -->
-              <th id="land"><img src="media/UEFA/GLOBE.svg" alt="Sorting arrows"></th>
-              <th data-column="poeng" data-order="desc" id="poeng">Points<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th id="land"><img class="jordklode" src="media/UEFA/GLOBE.svg" alt="Sorting arrows"></th>
+              <th data-column="poeng" data-order="desc" id="poeng"><span id="poeng">Points</span><span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
               <th data-column="sesong1" data-order="desc" id="sesong1">21/22 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
               <th data-column="sesong2" data-order="desc" id="sesong2">20/21 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
               <th data-column="sesong3" data-order="desc" id="sesong3">19/20 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>

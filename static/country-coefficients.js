@@ -1,37 +1,94 @@
 let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
 
 
-
 let ranking_array = []
-testTabell = document.getElementById('minTest')
-
-var klubbers_assosiasjon = []
-for (i = 0; i < menyvalg.length; i++) {
-  klubbers_assosiasjon.push(menyvalg[i][1])
-}
-for (i = 0; i < landskoeffisienter.length; i++) {
-  let assos_ranking_array = []
-  let indeks = 0
-  let indeks_klubb = []
-  do {
-    indeks_klubb.push(klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks))
-    indeks = klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) + 1
+oppdater_ved_refresh()
+function oppdater_ved_refresh() {
+  ranking_array = []
+  testTabell = document.getElementById('minTest')
+  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong[0] - 4) + '/' + (nåværende_sesong[2] - 4) + ' - ' + nåværende_sesong[0] + '/' + nåværende_sesong[2]) + " <div class='opp_ned_pil'>&#10094</div>";
+  
+  var klubbers_assosiasjon = []
+  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
+  let p = 17;
+  let pilstatus = ''
+  for (i = 0; i < 5; i++) {
+    pilstatus = (document.getElementById('sesong' + (i + 1)).innerHTML).slice(5)
+    document.getElementById('sesong' + (5 - i)).innerHTML = (p + aar_etter_forste_periode) + '/' + ((p + 1) + aar_etter_forste_periode) + pilstatus
+    p += 1;
   }
-  while (klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) != -1)
-
-  let enkelt_sesong = 0
-  for (p = 0; p < indeks_klubb.length; p++) {
-    enkelt_sesong += (menyvalg[(indeks_klubb[p])][8]/indeks_klubb.length)
+  for (i = 0; i < menyvalg.length; i++) {
+    klubbers_assosiasjon.push(menyvalg[i][1])
   }
+  for (i = 0; i < landskoeffisienter.length; i++) {
+    let assos_ranking_array = []
+    let indeks = 0
+    let indeks_klubb = []
+    do {
+      indeks_klubb.push(klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks))
+      indeks = klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) + 1
+    }
+    while (klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) != -1)
+  
 
-  assos_ranking_array.push(landskoeffisienter[i][0])
-  assos_ranking_array.push((landskoeffisienter[i][1] + landskoeffisienter[i][2] + landskoeffisienter[i][3] + landskoeffisienter[i][4] + enkelt_sesong).toFixed(3))
-  assos_ranking_array.push(enkelt_sesong.toFixed(3))
-  assos_ranking_array.push(landskoeffisienter[i][4].toFixed(3))
-  assos_ranking_array.push(landskoeffisienter[i][3].toFixed(3))
-  assos_ranking_array.push(landskoeffisienter[i][2].toFixed(3))
-  assos_ranking_array.push(landskoeffisienter[i][1].toFixed(3))
-  ranking_array.push(assos_ranking_array)
+
+
+    let enkelt_sesong1 = 0
+    var koeff_sesong2 = 0;
+    var koeff_sesong3 = 0;
+    var koeff_sesong4 = 0;
+    var koeff_sesong5 = 0;
+    for (p = 0; p < indeks_klubb.length; p++) {
+      enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]/indeks_klubb.length) || 0
+    }
+
+    if (aar_etter_forste_periode <= 0) {
+      koeff_sesong2 = parseFloat(landskoeffisienter[i][4 + aar_etter_forste_periode])
+    }else {
+      for (p = 0; p < indeks_klubb.length; p++) {
+        koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]/indeks_klubb.length) || 0
+    }}
+    if (aar_etter_forste_periode <= 1) {
+      koeff_sesong3 = parseFloat(landskoeffisienter[i][3 + aar_etter_forste_periode])
+    }else {
+      for (p = 0; p < indeks_klubb.length; p++) {
+        koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]/indeks_klubb.length) || 0
+    }}
+    if (aar_etter_forste_periode <= 2) {
+      koeff_sesong4 = parseFloat(landskoeffisienter[i][2 + aar_etter_forste_periode])
+    }else {
+      for (p = 0; p < indeks_klubb.length; p++) {
+        koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]/indeks_klubb.length) || 0
+    }}
+    if (aar_etter_forste_periode <= 3) {
+      koeff_sesong5 = parseFloat(landskoeffisienter[i][1 + aar_etter_forste_periode])
+    }else {
+      for (p = 0; p < indeks_klubb.length; p++) {
+        koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]/indeks_klubb.length) || 0
+    }}
+
+    assos_ranking_array.push(landskoeffisienter[i][0])
+    assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
+    assos_ranking_array.push(enkelt_sesong1.toFixed(3))
+    assos_ranking_array.push(koeff_sesong2.toFixed(3))
+    assos_ranking_array.push(koeff_sesong3.toFixed(3))
+    assos_ranking_array.push(koeff_sesong4.toFixed(3))
+    assos_ranking_array.push(koeff_sesong5.toFixed(3))
+    // if (aar_etter_forste_periode <= 1) {
+    //   assos_ranking_array.push(landskoeffisienter[i][3 + aar_etter_forste_periode].toFixed(3))
+    // }
+    // else {assos_ranking_array.push(landskoeffisienter[i][4].toFixed(3))}
+    // if (aar_etter_forste_periode <= 2) {
+    //   assos_ranking_array.push(landskoeffisienter[i][2 + aar_etter_forste_periode].toFixed(3))
+    // }
+    // else {assos_ranking_array.push(landskoeffisienter[i][4].toFixed(3))}
+    // if (aar_etter_forste_periode <= 3) {
+    //   assos_ranking_array.push(landskoeffisienter[i][1 + aar_etter_forste_periode].toFixed(3)) 
+    // }
+    // else {assos_ranking_array.push(landskoeffisienter[i][4].toFixed(3))}
+    ranking_array.push(assos_ranking_array)
+  }
+  sorter_etter_sesong(ranking_array)
 }
 
 
@@ -56,7 +113,15 @@ sorter_etter_sesong()
 function sorter_etter_sesong() {
   let column = localStorage.getItem('kolonne_landskoeffisient') || 'poeng'
   let order = localStorage.getItem('rekkefølge_landskoeffisient') || 'desc'
-  let tekst = document.getElementById(column).innerText
+  if(order == 'desc') {
+    document.getElementById(column).dataset.order = 'asc';
+  }
+  else {
+    document.getElementById(column).dataset.order = 'desc';
+  }
+  if (column == 'poeng') {
+    var tekst =  '<span id="poeng">' + document.getElementById(column).innerText + '</span>'
+  } else {var tekst = document.getElementById(column).innerText}
   sorter(column, order, tekst, ranking_array)
 }
 
@@ -181,7 +246,6 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 
 
 // Mange fine flaggikoner: https://github.com/HatScripts/circle-flags
-byggTabell_test(ranking_array)
 function byggTabell_test(ranking_array) {
   testTabell.innerHTML = '';
   for (i = 0; i < ranking_array.length; i++) {
@@ -204,3 +268,58 @@ function byggTabell_test(ranking_array) {
                 testTabell.innerHTML += rad_test
     }
 }
+
+
+/*Dropdown meny start*/
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function toggleMeny() {
+  if (document.getElementById("myDropdown").classList.contains("show")) {
+      document.getElementById("myDropdown").classList.remove("show")
+      nedoverpil()
+  }
+  else {
+      document.getElementById("myDropdown").classList.add("show")
+      oppoverpil()
+  }
+}
+
+function nedoverpil() {
+  let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
+  document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10094</div>";
+}
+
+function oppoverpil() {
+  let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
+  document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10095</div>";
+}
+
+
+/* Lukker menyen om musepeker klikker utenfor boksen */
+const $menu = $('.dropdown');
+
+$(document).mouseup(e => {
+  if (!$menu.is(e.target) // if the target of the click isn't the container...
+  && $menu.has(e.target).length === 0) // ... nor a descendant of the container
+  {
+      document.getElementById("myDropdown").classList.remove("show")
+      nedoverpil()
+  }
+});
+
+/* Lager knappene i menyen */
+for (i = 0; i < nåværende_sesong[0] - 21 + 5; i++) {
+  let btn = document.createElement("button");
+  btn.innerHTML = (21 + i - 4) + '/' + (22 + i - 4) + ' - ' + (21 + i) + '/' + (22 + i);
+  btn.className = "meny_element"
+  btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
+  document.getElementById("dropdown_elementer").appendChild(btn);
+}
+
+function endreMenyTittel(innerHTML) {
+  document.getElementById("dropDownMeny").innerHTML = innerHTML + "<div class='opp_ned_pil'>&#10094</div>";
+  toggleMeny();
+  localStorage.setItem('dropdownmeny_valg_landskoeffisient', innerHTML)
+  oppdater_ved_refresh()
+}
+/* Dropdown meny slutt */

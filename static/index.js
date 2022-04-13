@@ -282,6 +282,10 @@ const sprak_id_forside = [
   'klubb_koeff_navn'
 ];
 
+const sprak_id_landskoeffisient = [
+  'title',
+];
+
 const sprak_id_kalkulator = [
   'title_premiepenger',
   'overskrift_premiepenger',

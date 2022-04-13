@@ -20,6 +20,10 @@ const norsk_forside = [
     'Klubb-koeffisientpoeng',
 ];
 
+const norsk_landskoeffisient = [
+    'Poeng',
+];
+
 const norsk_kalkulator = [
     'UEFA Premiepenger-Kalkulator UCL, UEL, UECL',
     'UEFA Premiepenger-kalkulator',
@@ -154,6 +158,10 @@ const english_forside = [
     'Prize money',
     'Association coefficient points',
     'Club coefficient points',
+];
+
+const english_landskoeffisient = [
+    'Points',
 ];
 
 const english_kalkulator = [

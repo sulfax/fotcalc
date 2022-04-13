@@ -250,6 +250,8 @@ const totale_uavgjorte_kamper = [
     [ "0,,", ",0,", ",,0"],
 ];
 
+const nåværende_sesong = [21, '/', 22]
+
 
 const landskoeffisienter = [
     //  17/18   18/19    19/20    20/21
