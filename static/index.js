@@ -2,6 +2,7 @@ var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
 
 var overskrift_forside_finnes = document.getElementById('overskrift_forside');
+var overskrift_landskoeffisient_finnes = document.getElementById('overskrift_landskoeffisient');
 var overskrift_finnes = document.getElementById('overskrift_premiepenger');
 var overskrift_koeff_finnes = document.getElementById('overskrift_koeffisient');
 var overskrift_koeff_deff_finnes = document.getElementById('overskrift_koeffisient_dokumentasjon');
@@ -107,7 +108,7 @@ function language_standard(clicked_id) {
       if (Klubbnavn == "Velg klubb" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = "din klubb’s";
       }
-      if (overskrift_forside_finnes || overskrift_koeff_deff_finnes) {}
+      if (overskrift_forside_finnes || overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes) {}
       else {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
       }
@@ -206,7 +207,7 @@ function language_standard(clicked_id) {
       if (Klubbnavn == "Choose club" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = "your club’s";
       }
-      if (overskrift_forside_finnes || overskrift_koeff_deff_finnes) {}
+      if (overskrift_forside_finnes || overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes) {}
       else {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
       }
@@ -283,7 +284,7 @@ const sprak_id_forside = [
 ];
 
 const sprak_id_landskoeffisient = [
-  'title',
+  'poeng_oversett',
 ];
 
 const sprak_id_kalkulator = [
@@ -486,6 +487,29 @@ function language_koeffisient(clicked_id) {
       for (x=0;x<forside_antall_oversett;x++) {
         try {
           document.getElementById(sprak_id_forside[x]).innerHTML = english_forside[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+  }
+  else {
+    var landskoeffisient_antall_oversett = sprak_id_landskoeffisient.length;
+    if (clicked_id == "norsk") {
+      for (x=0;x<landskoeffisient_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_landskoeffisient[x]).innerHTML = norsk_landskoeffisient[x];
+        }
+        catch {
+          null;
+        }
+      }
+    }
+    else {
+      for (x=0;x<landskoeffisient_antall_oversett;x++) {
+        try {
+          document.getElementById(sprak_id_landskoeffisient[x]).innerHTML = english_landskoeffisient[x];
         }
         catch {
           null;

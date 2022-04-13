@@ -54,7 +54,7 @@
 
 
 
-#overskrift_forside, #beskrivelse_forside {
+#overskrift_landskoeffisient, #beskrivelse_landskoeffisient {
     text-align: center;
 }
 /* .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking
@@ -79,11 +79,29 @@
 #sessong_kontroller_2 {
     margin-right: 6px !important;
 } */
+.over_tabellen_div {
+    display:inline-block;
+}
+.tabell_div_landskoeffisient{
+    width:104%;
+    background-color:white;
+    border-radius: .5rem;
+    border-top-left-radius: 0;
+    padding-bottom: .1%;
+    padding-top: calc(0.7% + 5px);
+    margin-left:-4px;
+    overflow-x:auto
+}
 .dropdown {
     margin-bottom: 8px;
 }
 .dropdown-content {
     border: 2px solid rgb(164, 164, 164);
+}
+.decisive_tekst {
+    font-style: italic;
+    color: rgba(52, 58, 64, 0.6);
+    font-size: 13px;
 }
 table {
     border-top: 4px !important;
@@ -195,4 +213,10 @@ th, td {
 }
 #NIR {
     border-radius: 50%;
+}
+.link {
+    padding: 0px !important;
+}
+.link:hover {
+    color: #343a40;
 }

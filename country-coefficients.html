@@ -24,7 +24,7 @@
     <meta property="og:description" content="UEFA Revenue distribution overview. Find any clubs Prize money/income and Coefficient points in the Champions League, Europa League and Conference League." />
     <meta property="og:locale" content="en_US"/>
     <meta property="og:locale:alternate" content="nb_NO"/>
-    <title id="title">Your club’s Prize money & Coefficient points | Overview</title>
+    <title id="title">Your club’s Prize money & UEFA Coefficient points</title>
 <!-- 
 
 
@@ -70,28 +70,31 @@
     </nav>
     <div class="container">
       <br><br><br>
-      <h1 id="overskrift_forside">UEFA income and coefficient overview</h1> <!--Ikke endre id-->
+      <h1 id="overskrift_landskoeffisient">Country coefficient ranking</h1> <!--Ikke endre id-->
       <br>
-      <p id="beskrivelse_forside">UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.</p>
+      <p id="beskrivelse_landskoeffisient">The ranking of a country decides how many european places they are going to get<br>and how far in the competitions their clubs will enter the competitions.<br><br><a class="link" href="coefficient-definition.html#association">Country coefficient</a> is also known as "association club coefficient"</p>
       <br>
       <br>
-      <div class="ytterst_tabell_div">
-        <div class="dropdown">
-          <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><div class="opp_ned_pil">&#10094</div></button>
-          <div id="myDropdown" class="dropdown-content">
-            <div class="dropdown_elementer" id="dropdown_elementer">
+      <div class="over_tabellen_div">
+        <div class="ytterst_tabell_div">
+          <div class="dropdown">
+            <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><div class="opp_ned_pil">&#10094</div></button>
+            <div id="myDropdown" class="dropdown-content">
+              <div class="dropdown_elementer" id="dropdown_elementer">
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="tabell_div">
+      <span class="decisive_tekst"><span id="decisive_oversett">Ranking decisive for club deployment in </span><span id="decisive_sesong"></span></span>
+      <div class="tabell_div_landskoeffisient">
         <table class="table table-striped table-sm table-hover" id="tabell_hoved">
           <thead class="thead-light">
             <tr class="big-info">
               <th class="id_nr">#</th>
               <!-- <th data-column="club" data-order="desc" id="club"><span id="klubb_navn">Club</span> <img src="media/opp_ned_pil.svg" alt="Sorting arrows"></th> -->
-              <th id="land"><img class="jordklode" src="media/UEFA/GLOBE.svg" alt="Sorting arrows"></th>
-              <th data-column="poeng" data-order="desc" id="poeng"><span id="poeng">Points</span><span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
+              <th id="land"><img class="jordklode" src="media/UEFA/GLOBE.svg" alt="Country"></th>
+              <th data-column="poeng" data-order="desc" id="poeng"><span id="poeng_oversett">Points</span><span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
               <th data-column="sesong1" data-order="desc" id="sesong1">21/22 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
               <th data-column="sesong2" data-order="desc" id="sesong2">20/21 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>
               <th data-column="sesong3" data-order="desc" id="sesong3">19/20 <span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span></th>

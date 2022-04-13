@@ -17,6 +17,7 @@ function oppdater_ved_refresh() {
     document.getElementById('sesong' + (5 - i)).innerHTML = (p + aar_etter_forste_periode) + '/' + ((p + 1) + aar_etter_forste_periode) + pilstatus
     p += 1;
   }
+  document.getElementById('decisive_sesong').innerText = (p + 1 + aar_etter_forste_periode) + '/' + ((p + 2) + aar_etter_forste_periode)
   for (i = 0; i < menyvalg.length; i++) {
     klubbers_assosiasjon.push(menyvalg[i][1])
   }
@@ -30,7 +31,6 @@ function oppdater_ved_refresh() {
     }
     while (klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) != -1)
   
-
 
 
     let enkelt_sesong1 = 0
@@ -74,6 +74,7 @@ function oppdater_ved_refresh() {
     assos_ranking_array.push(koeff_sesong3.toFixed(3))
     assos_ranking_array.push(koeff_sesong4.toFixed(3))
     assos_ranking_array.push(koeff_sesong5.toFixed(3))
+    assos_ranking_array.push(landskoeffisienter[i][5])
     // if (aar_etter_forste_periode <= 1) {
     //   assos_ranking_array.push(landskoeffisienter[i][3 + aar_etter_forste_periode].toFixed(3))
     // }
@@ -120,7 +121,7 @@ function sorter_etter_sesong() {
     document.getElementById(column).dataset.order = 'desc';
   }
   if (column == 'poeng') {
-    var tekst =  '<span id="poeng">' + document.getElementById(column).innerText + '</span>'
+    var tekst =  '<span id="poeng_oversett">' + document.getElementById(column).innerText + '</span>'
   } else {var tekst = document.getElementById(column).innerText}
   sorter(column, order, tekst, ranking_array)
 }
@@ -250,10 +251,10 @@ function byggTabell_test(ranking_array) {
   testTabell.innerHTML = '';
   for (i = 0; i < ranking_array.length; i++) {
     if (ranking_array[i][0] == 'NIR') {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="' + ranking_array[i][0] + ' flag"></div>'
+      flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="Northern Ireland"></div>'
     }
     else {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="' + ranking_array[i][0] + ' flag"></div>'
+      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="' + ranking_array[i][7] + '"></div>'
     }
     var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
