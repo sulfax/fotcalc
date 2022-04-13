@@ -119,20 +119,20 @@ function sorter(column, order, tekst, menyvalg_edit) {
   }
   else if (column == 'prize_money') {
     i = 6
-    endre_kolonne_overskrift('club', opp_ned_pil)
+    endre_kolonne_overskrift('club', opp_ned_pil_klubb)
     endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
     endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'ass_coeff') {
     i = 7
     endre_kolonne_overskrift('prize_money', opp_ned_pil)
-    endre_kolonne_overskrift('club', opp_ned_pil)
+    endre_kolonne_overskrift('club', opp_ned_pil_klubb)
     endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'club_coeff') {
     i = 8
     endre_kolonne_overskrift('prize_money', opp_ned_pil)
-    endre_kolonne_overskrift('club', opp_ned_pil)
+    endre_kolonne_overskrift('club', opp_ned_pil_klubb)
     endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
   }
   menyvalg_edit.sort(sortFunction_1_klubb);
@@ -226,17 +226,19 @@ var link = document.createElement('meta');  link.setAttribute('property', 'og:de
 
 function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
   if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
-    if (kolonne == 'club') {
-      document.getElementById(kolonne).innerHTML = '<span id="klubb_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
-    }
     if (kolonne == 'prize_money') {
       document.getElementById(kolonne).innerHTML = '<span id="premiepenger_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
     }
     if (kolonne == 'ass_coeff') {
       document.getElementById(kolonne).innerHTML = '<span id="ass_koeff_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
     }
-    if (kolonne == 'club_coeffs') {
+    if (kolonne == 'club_coeff') {
       document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
+    }
+  }
+  if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil_klubb) {
+    if (kolonne == 'club') {
+      document.getElementById(kolonne).innerHTML = '<span id="klubb_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil_klubb
     }
   }
 }

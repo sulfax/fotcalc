@@ -470,7 +470,7 @@ function language_koeffisient(clicked_id) {
       }
     }
   }
-  else {
+  else if (overskrift_forside_finnes) {
     var forside_antall_oversett = sprak_id_forside.length;
     if (clicked_id == "norsk") {
       for (x=0;x<forside_antall_oversett;x++) {
