@@ -22,7 +22,7 @@ const norsk_forside = [
 ];
 
 const norsk_landskoeffisient = [
-    'UEFA Landskoeffisient rangering',
+    'UEFA Landskoeffisient-rangering',
     'Landskoeffisient-rangering',
     'Rangeringen av et land bestemmer hvor mange<br>europaplasser dem vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><a class="link" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "Assosiasjons-klubbkoeffisient"',
     'Avgjørende for klubbutplassering i ',
