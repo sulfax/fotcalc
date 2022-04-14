@@ -12,7 +12,7 @@ const norsk = [
 ];
 
 const norsk_forside = [
-    'Din klubbs premipenger & UEFA Koeffisient poeng',
+    'Din klubbs premipenger & UEFA Koeffisientpoeng',
     'UEFA premiepenge- og koeffisient-oversikt',
     'UEFAs inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng alle klubbturneringer.<br><br><span class="reklame_landskoeff">Check out the country <a class="landskoeff_link" href="/country-coefficients">coefficient ranking</a> too</span>',
     'Klubb',
