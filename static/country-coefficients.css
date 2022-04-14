@@ -89,7 +89,7 @@
     border-top-left-radius: 0;
     padding-bottom: .1%;
     padding-top: calc(0.7% + 5px);
-    margin-left:-4px;
+    margin-left:-5px;
     overflow-x:auto
 }
 .dropdown {
@@ -102,7 +102,25 @@
     font-style: italic;
     color: rgba(52, 58, 64, 0.6);
     font-size: 13px;
-    margin-left: 5px;
+    background-color: white;
+    margin-left: -5px !important;
+    margin-bottom: -3px;
+    padding-left: 16px;
+    padding-right: 15px;
+    padding-top: 6px;
+    width:fit-content;
+    border-top-right-radius: .4rem;
+}
+.ytterst_tabell_div {
+    display:flex;
+    flex-wrap:wrap;
+    height: fit-content;
+    margin-left: -5px;
+    background-color: white;
+    width:fit-content;
+    margin-bottom: calc(-0.4% - 5px);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 table {
     border-top: 4px !important;
@@ -220,4 +238,10 @@ th, td {
 }
 .link:hover {
     color: #343a40;
+}
+.bold {
+    font-weight: bold;
+}
+.skjul {
+    display: none !important;
 }
