@@ -623,7 +623,12 @@ function oppdater_ved_refresh_koeff_1() {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
     }
     else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+        if (siste_ord_linktekst == "premiepenger") {
+            document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
+          }
+          else {
+            document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+          }
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
         document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;
@@ -823,6 +828,11 @@ function endreMenyTittel(Klubbnavn) {
 
 function endre_sort_kolonne() {
     if (localStorage.getItem('kolonne') == 'prize_money') {
+        localStorage.setItem('kolonne', 'ass_coeff')
+        localStorage.setItem('rekkefølge', 'desc')
+    }
+    if (localStorage.getItem('kolonne')) {}
+    else {
         localStorage.setItem('kolonne', 'ass_coeff')
         localStorage.setItem('rekkefølge', 'desc')
     }

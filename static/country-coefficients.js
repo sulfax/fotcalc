@@ -1,5 +1,8 @@
 let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
-
+var eksperimentell_profil_e = "Calculate from scratch";
+var eksperimentell_profil_n = "Kalkuler fra bunnen";
+var din_klubbs_premi_koef_e = "your club’s prize money";
+var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 
 let ranking_array = []
 oppdater_ved_refresh()
@@ -324,3 +327,16 @@ function endreMenyTittel(innerHTML) {
   oppdater_ved_refresh()
 }
 /* Dropdown meny slutt */
+
+
+function endre_sort_kolonne() {
+  if (localStorage.getItem('kolonne') == 'prize_money') {
+      localStorage.setItem('kolonne', 'ass_coeff')
+      localStorage.setItem('rekkefølge', 'desc')
+  }
+  if (localStorage.getItem('kolonne')) {}
+  else {
+      localStorage.setItem('kolonne', 'ass_coeff')
+      localStorage.setItem('rekkefølge', 'desc')
+  }
+}

@@ -26,7 +26,10 @@ body{
     color:rgba(250, 250, 250, 0.75)
 }
 #overskrift_landskoeffisient, #beskrivelse_landskoeffisient, #overskrift_forside, #beskrivelse_forside, #beskrivelse_premiepenger, th, #overskrift_premiepenger, #overskrift_koeffisient, #beskrivelse_koeffisient {
-    color: #343a40;
+    color: rgba(52, 58, 64, 1);
+}
+#beskrivelse_landskoeffisient, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient {
+    color: rgba(52, 58, 64, 0.9);
 }
 .ytterst_tabell_div {
     display:flex;
@@ -236,4 +239,7 @@ a:hover {
     background-color: white !important;
     border-color: white !important;
     color: rgb(196, 217, 255) !important;
+}
+.nav-link {
+    padding-left: 15px !important;
 }

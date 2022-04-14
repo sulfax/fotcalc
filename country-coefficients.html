@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22">
+    <meta name="keywords" content="Country, Coefficient, UEFA, points, association, clubs, Champions League, Europa League, Conference League, 21/22">
     <meta name="author" content="Johannes Kaste">
     <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
@@ -16,7 +16,7 @@
     <meta name="twitter:site" content="@fotcalc" />
     <meta name="twitter:creator" content="@fotcalc" />
     <meta name="twitter:image" content="https://s10.gifyu.com/images/ok_4xe31e765270758970.png" alt="fotcalc logo" />
-    <meta property="og:title" content="Your club’s Prize money & Coefficient points | Overview" />
+    <meta property="og:title" content="UEFA Country Coefficient ranking" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.fotcalc.com/country-coefficients" alt="fotcalc logo" />
     <meta property="og:image" content="https://s10.gifyu.com/images/ok_4x_generellfa6faeac0235e0c9.png" alt="fotcalc logo" />
@@ -24,7 +24,7 @@
     <meta property="og:description" content="UEFA Revenue distribution overview. Find any clubs Prize money/income and Coefficient points in the Champions League, Europa League and Conference League." />
     <meta property="og:locale" content="en_US"/>
     <meta property="og:locale:alternate" content="nb_NO"/>
-    <title id="title">Your club’s Prize money & UEFA Coefficient points</title>
+    <title id="title">UEFA Country Coefficient ranking</title>
 <!-- 
 
 
@@ -61,6 +61,7 @@
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
             <a class="nav-item nav-link" id="hjem" href="https://www.fotcalc.com">Home</a>
+            <a class="nav-item nav-link" id="landskoeff_rangering" href="country-coefficients">Country coefficient ranking</a>
             <a class="nav-item nav-link" id="premiepenger_kalkulator" href="prize-money-calculator">Prize money calculator</a>
             <a class="nav-item nav-link" id="koeffisient_kalkulator" href="coefficient-calculator">Coefficient calculator</a>
             <button type="button" class="btn btn-link" id="english" onclick="language(this.id)">English</button>
@@ -72,7 +73,7 @@
       <br><br><br>
       <h1 id="overskrift_landskoeffisient">Country coefficient ranking</h1> <!--Ikke endre id-->
       <br>
-      <p id="beskrivelse_landskoeffisient">The ranking of a country decides how many european places they are going to get<br>and how far in the competitions their clubs will enter the competitions.<br><br><a class="link" href="coefficient-definition.html#association">Country coefficient</a> is also known as "association club coefficient"</p>
+      <p id="beskrivelse_landskoeffisient">The ranking of a country decides how many european places they are going to get<br>and how far in the competitions their clubs will enter.<br><br><a class="link" href="coefficient-definition.html#association">Country coefficient</a> is also known as "association club coefficient"</p>
       <br>
       <br>
       <div class="over_tabellen_div">
@@ -86,7 +87,7 @@
           </div>
         </div>
       </div>
-      <span class="decisive_tekst"><span id="decisive_oversett">Ranking decisive for club deployment in </span><span id="decisive_sesong"></span></span>
+      <span class="decisive_tekst"><span id="decisive_oversett">Decisive for club deployment in </span><span id="decisive_sesong"></span></span>
       <div class="tabell_div_landskoeffisient">
         <table class="table table-striped table-sm table-hover" id="tabell_hoved">
           <thead class="thead-light">
@@ -106,8 +107,11 @@
           </tbody>
         </table>
       </div>
+      <br><br>
+      <span class="marketPool" id="koeff_reklame"><span id="premiepenger_reklame">Check out</span> <a class="graa_hover_link" id="klubb_link" href="/prize-money-calculator">your club’s prize money</a></span>
+      <br><br>
+      <span class="marketPool" id="oversikt_reklame"><b>Compare every club’s <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">prize money and coefficient points</a></b></span>
     </div>
-
     <br><br><br><br><br><br><br>
     <footer>
       <div>

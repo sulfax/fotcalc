@@ -1112,4 +1112,9 @@ function endre_sort_kolonne() {
         localStorage.setItem('kolonne', 'prize_money')
         localStorage.setItem('rekkefølge', 'desc')
     }
+    if (localStorage.getItem('kolonne')) {}
+    else {
+        localStorage.setItem('kolonne', 'prize_money')
+        localStorage.setItem('rekkefølge', 'desc')
+    }
 }

@@ -102,6 +102,7 @@
     font-style: italic;
     color: rgba(52, 58, 64, 0.6);
     font-size: 13px;
+    margin-left: 5px;
 }
 table {
     border-top: 4px !important;
