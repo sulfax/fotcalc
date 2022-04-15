@@ -183,11 +183,3 @@ th, td {
 .uecl_gs {
     background-color: rgba(178, 236, 182, 0.7) !important;
 }
-.landskoeff_link {
-    padding-left: 0px !important;
-    color: rgba(74, 86, 255, 0.6) !important;
-}
-.landskoeff_link:hover {
-    padding-left: 0px !important;
-    color: rgba(52, 58, 64, 0.6) !important;
-}

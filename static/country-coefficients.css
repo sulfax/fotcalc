@@ -245,3 +245,8 @@ th, td {
 .skjul {
     display: none !important;
 }
+.gjennomsiktighet {
+    color: rgba(52, 58, 64, 0.6);
+    font-size: 14px;
+    font-style: italic;
+}

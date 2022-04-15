@@ -251,3 +251,11 @@ a:hover {
     font-size: 14px;
     font-style: italic;
 }
+.landskoeff_link {
+    padding-left: 0px !important;
+    color: rgba(74, 86, 255, 0.6) !important;
+}
+.landskoeff_link:hover {
+    padding-left: 0px !important;
+    color: rgba(52, 58, 64, 0.6) !important;
+}

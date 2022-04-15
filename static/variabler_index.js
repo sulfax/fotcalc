@@ -24,7 +24,7 @@ const norsk_forside = [
 const norsk_landskoeffisient = [
     'UEFA Landskoeffisient-rangering',
     'Landskoeffisient-rangering',
-    'Rangeringen av et land bestemmer hvor mange<br>europaplasser dem vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><a class="link" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "Assosiasjons-klubbkoeffisient"',
+    'Rangeringen av et land bestemmer hvor mange<br>europaplasser dem vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><span class="gjennomsiktighet"><a class="link" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "Assosiasjons-klubbkoeffisient".</span>',
     'Avgjørende for klubbutplassering i ',
     'Poeng',
     'Sjekk ut',
@@ -118,7 +118,7 @@ const norsk_koeffisient = [
 const norsk_koeffisient_dokumentasjon = [
     'UEFA Koeffisientpoeng, Forklaring',
     'Definisjon på Koeffisientpoeng',
-    'Sjekk også ut din klubbs <a class="graa_hover_link_tabell_header" href="https://www.fotcalc.com/">premiepenger og koeffisientpoeng</a>.',
+    'Sjekk også ut din klubbs <a class="landskoeff_link" href="https://www.fotcalc.com/">premiepenger og koeffisientpoeng</a>.',
     'Hva er koeffisientpoeng?',
     '<span class="bold">Koeffisientpoeng</span> er poeng som alle deltakende klubber i Europa er med på å samle inn hver sesong. Jo bedre en klubb gjør det i europa, jo flere koeffisientpoeng vil klubben tjene. Disse poengene har flere fordeler, både for klubben og assosiasjonen. Blant annet kan en høyere koeffisientpoengsum sørge for at veien til et gruppespill blir lettere for den aktuelle klubben og for andre klubber fra deres assosiasjonen. <br><br> Det finnes to typer koeffisientpoeng, assosiasjons-koeffisientpoeng og klubb-koeffisientpoeng.',
     'Assosiasjons-koeffisientpoeng',
@@ -173,11 +173,11 @@ const english_forside = [
 const english_landskoeffisient = [
     'UEFA Country Coefficient ranking',
     'Country coefficient ranking',
-    'The ranking of a country decides how many european places they are going to get<br>and how far in the competitions their clubs will enter.<br><br><a class="link" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient"',
+    'The ranking of a country decides how many european places they are going to get<br>and how far in the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient".</span>',
     'Decisive for club deployment in ',
     'Points',
     'Check out',
-    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare club’s coefficient points</a>.</b></span>'
+    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
 ];
 
 const english_kalkulator = [
@@ -267,7 +267,7 @@ const english_koeffisient = [
 const english_koeffisient_dokumentasjon = [
     'UEFA Coefficient points, Explanation',
     'Explanation on Coefficient Points',
-    'Check out your clubs’s <a class="graa_hover_link_tabell_header" href="https://www.fotcalc.com/">prize money and coefficient points</a> too.',
+    'Check out your clubs’s <a class="landskoeff_link" href="https://www.fotcalc.com/">prize money and coefficient points</a> too.',
     'What are coefficient points?',
     '<span class="bold">Coefficient points</span> are points that all participating clubs in Europe earns each season. The better a club does in Europe, the more coefficient points the club will earn. These points carries multible advantages, both for the club og and the association. A higher coefficient point sum can among others make the road into the groupstages easier for the desired club and for other clubs from their association. <br><br> There are two kinds of coefficient points, association coefficient points og club coefficient points.',
     'Association coefficient points',
