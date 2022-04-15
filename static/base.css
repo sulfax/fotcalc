@@ -186,7 +186,7 @@ a:not(.poengtype_overskrift) {
 a:hover {
     color: rgb(196, 217, 255);
 }
-.graa_hover_link, .graa_hover_link_koeff_deffi {
+.graa_hover_link, .graa_hover_link_koeff_deffi, .graa_hover_link_tabell_header {
     padding-left: 0px !important;
 }
 .graa_hover_link:hover, .graa_hover_link_2:hover {
@@ -194,6 +194,9 @@ a:hover {
 }
 .graa_hover_link_koeff_deffi:hover {
     color: #343a40;
+}
+.graa_hover_link_tabell_header:hover {
+    color: rgb(73, 80, 87);
 }
 #koeff_reklame {
     font-weight: bold;
@@ -242,4 +245,9 @@ a:hover {
 }
 .nav-link {
     padding-right: 16px !important;
+}
+.reklame_landskoeff {
+    color: rgba(52, 58, 64, 0.6);
+    font-size: 14px;
+    font-style: italic;
 }

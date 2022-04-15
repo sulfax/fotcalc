@@ -376,12 +376,14 @@ const sprak_id_koeffisient = [
   'klubb_poeng',
   'kilde_koeff_id',
   'koeff_reklame',
-  'oversikt_reklame'
+  'oversikt_reklame',
+  'landskoeff_reklame'
 ];
 
 const sprak_id_koeffisient_dokumentasjon = [
   'title_koeffisient_dokumentasjon',
   'overskrift_koeffisient_dokumentasjon',
+  'beskrivelse_koeffisient_dokumentasjon',
   'what_is_coeff',
   'what_are_coeff_beskrivelse_1',
   'association',
