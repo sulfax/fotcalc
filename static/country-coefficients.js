@@ -43,38 +43,39 @@ function oppdater_ved_refresh() {
     var koeff_sesong4 = 0;
     var koeff_sesong5 = 0;
     for (p = 0; p < indeks_klubb.length; p++) {
-      enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]/indeks_klubb.length) || 0
+      enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]) || 0
     }
+    enkelt_sesong1 = Math.floor(enkelt_sesong1/indeks_klubb.length * 1000) / 1000
 
     if (aar_etter_forste_periode <= 0) {
       koeff_sesong2 = parseFloat(landskoeffisienter[i][4 + aar_etter_forste_periode])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]/indeks_klubb.length) || 0
-    }}
+        koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]) || 0
+      }
+      koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/indeks_klubb.length) / 1000}
     if (aar_etter_forste_periode <= 1) {
       koeff_sesong3 = parseFloat(landskoeffisienter[i][3 + aar_etter_forste_periode])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]/indeks_klubb.length) || 0
-    }}
+        koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]) || 0
+      }
+      koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/indeks_klubb.length) / 1000}
     if (aar_etter_forste_periode <= 2) {
       koeff_sesong4 = parseFloat(landskoeffisienter[i][2 + aar_etter_forste_periode])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]/indeks_klubb.length) || 0
-    }}
+        koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]) || 0
+      }
+      koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/indeks_klubb.length) / 1000}
     if (aar_etter_forste_periode <= 3) {
       koeff_sesong5 = parseFloat(landskoeffisienter[i][1 + aar_etter_forste_periode])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]/indeks_klubb.length) || 0
-    }}
-    enkelt_sesong1 = Math.floor(enkelt_sesong1 * 1000) / 1000
-    koeff_sesong2 = Math.floor(koeff_sesong2 * 1000) / 1000
-    koeff_sesong3 = Math.floor(koeff_sesong3 * 1000) / 1000
-    koeff_sesong4 = Math.floor(koeff_sesong4 * 1000) / 1000
-    koeff_sesong5 = Math.floor(koeff_sesong5 * 1000) / 1000
+        koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]) || 0
+      }
+      koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/indeks_klubb.length) / 1000}
+
 
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
