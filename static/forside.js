@@ -43,13 +43,24 @@ function oppdater_sessong(aarstall) {
 }
 
 
-let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
-let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows">'
+let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></img></span>'
+let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows"></img>'
 
 $('th').on('click', function(){
   var column = $(this).data('column')
   var order = $(this).data('order')
-  let tekst = $(this).text()
+  if (column == 'club') {
+    var tekst = '<span id="klubb_navn">' + document.getElementById(column).innerText + '</span>'
+  }
+  if (column == 'prize_money') {
+    var tekst = '<span id="premiepenger_navn">' + document.getElementById(column).innerText + '</span>'
+  }
+  if (column == 'ass_coeff') {
+    var tekst = '<span id="ass_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+  }
+  if (column == 'club_coeff') {
+    var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+  }
   if(order == 'desc') {
     $(this).data('order', "asc")
   }
@@ -139,21 +150,21 @@ function sorter(column, order, tekst, menyvalg_edit) {
   if(order == 'desc') {
     if (column == 'club') {
       menyvalg_edit.sort(sortFunction_1);
-      tekst += '<img src="media/opp_NEDpil.svg" alt="Sorting arrows">'
+      tekst += '<img src="media/opp_NEDpil.svg" alt="Sorting arrows"></img>'
     }
     else {
       menyvalg_edit.sort(sortFunction_1_tall);
-      tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
+      tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></img></span>'
     }
   }
   else {
     if (column == 'club') {
       menyvalg_edit.sort(sortFunction_2);
-      tekst += '<img src="media/OPPned_pil.svg" alt="Sorting arrows">'
+      tekst += '<img src="media/OPPned_pil.svg" alt="Sorting arrows"></img>'
     }
     else {
       menyvalg_edit.sort(sortFunction_2_tall);
-      tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
+      tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></img></span>'
     }
   }
   localStorage.setItem('kolonne', column)
