@@ -268,6 +268,8 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 function byggTabell_test(ranking_array) {
   testTabell.innerHTML = '';
   testTabell2.innerHTML = '';
+  var helTabellHTML = '';
+  var helTabellHTML2 = '';
   for (i = 0; i < ranking_array.length; i++) {
     if (ranking_array[i][0] == 'NIR') {
       flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="Northern Ireland"></div>'
@@ -285,7 +287,7 @@ function byggTabell_test(ranking_array) {
                     <td class='premie_koeff'>${ranking_array[i][5]}</td>
                     <td class='premie_koeff'>${ranking_array[i][6]}</td>
                 </tr>`
-                testTabell.innerHTML += rad_test
+                helTabellHTML += rad_test
     rad_test_meta = `<tr>
                 <td class="id_nr"> ${i + 1}</td>
                 <td><nobr class="marign_venstre">${ranking_array[i][7]}</nobr></td>
@@ -296,8 +298,10 @@ function byggTabell_test(ranking_array) {
                 <td class='premie_koeff'>${ranking_array[i][5]}</td>
                 <td class='premie_koeff'>${ranking_array[i][6]}</td>
                 </tr>`
-                testTabell2.innerHTML += rad_test_meta
+                helTabellHTML2 += rad_test_meta
   }
+  testTabell.innerHTML = helTabellHTML;
+  testTabell2.innerHTML = helTabellHTML2;
 }
 
 

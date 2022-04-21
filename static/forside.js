@@ -165,6 +165,7 @@ function sorter(column, order, tekst, menyvalg_edit) {
 function byggTabell_test(data) {
   var table = document.getElementById('myTable')
   table.innerHTML = '';
+  var helTabellHTML = '';
   for (var i = 0; i < data.length; i++) {
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
@@ -198,8 +199,9 @@ function byggTabell_test(data) {
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
                   <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${klubb_koeff}</a></span></td>
               </tr>`
-    table.innerHTML += rad
+    helTabellHTML += rad;
   }
+  table.innerHTML = helTabellHTML;
 }
 function endre_klubbnavn(i) {
   var rows = document.getElementsByTagName("table")[0].rows;
