@@ -1,4 +1,9 @@
 let antall_MV_elem = 8;
+let filter_land = []
+let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
+let innerHTML = ''
+
+
 
 if (localStorage.getItem('sessong') == null) {
   var aarstall = 0;
@@ -73,7 +78,6 @@ $('th').on('click', function(){
 
 
 
-sorter_etter_sesong()
 function sorter_etter_sesong() {
   var menyvalg_edit = menyvalg.slice(0);
   for (var i = 0; i < menyvalg_edit.length; i++) {
@@ -82,19 +86,25 @@ function sorter_etter_sesong() {
       i = i - 1
     }
     else {
-      var Ny = Object.assign([], menyvalg_edit[i]);
-      menyvalg_edit[i] = [];
-      let Ny1 = Ny.slice(0,1)
-      let Ny2 = Ny.slice(2 + (aarstall*antall_MV_elem),3 + (aarstall*antall_MV_elem))
-      let Ny3 = Ny.slice(3 + (aarstall*antall_MV_elem),4 + (aarstall*antall_MV_elem))
-      let Ny4 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
-      let Ny5 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
-      let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
-      let Ny7 = parseInt(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
-      let Ny8 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
-      let Ny9 = parseFloat(Ny.slice(9 + (aarstall*antall_MV_elem),10 + (aarstall*antall_MV_elem)))
-      Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9)
-      menyvalg_edit[i] = Ny1
+      if (filter_land.includes(menyvalg_edit[i][1]) || filter_land == '') {
+        var Ny = Object.assign([], menyvalg_edit[i]);
+        menyvalg_edit[i] = [];
+        let Ny1 = Ny.slice(0,1)
+        let Ny2 = Ny.slice(2 + (aarstall*antall_MV_elem),3 + (aarstall*antall_MV_elem))
+        let Ny3 = Ny.slice(3 + (aarstall*antall_MV_elem),4 + (aarstall*antall_MV_elem))
+        let Ny4 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
+        let Ny5 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
+        let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
+        let Ny7 = parseInt(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
+        let Ny8 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
+        let Ny9 = parseFloat(Ny.slice(9 + (aarstall*antall_MV_elem),10 + (aarstall*antall_MV_elem)))
+        Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9)
+        menyvalg_edit[i] = Ny1
+      }
+      else {
+        menyvalg_edit.splice(i, 1)
+        i = i - 1
+      }
     }
   }
   localStorage.setItem('menyvalg_edit', JSON.stringify(menyvalg_edit))
@@ -300,25 +310,236 @@ function sortFunction_1_klubb(a, b) {
 }
 
 
-// }
 
 
 
-// var schema_2 = {
-//   "@context": "https://schema.org",
-//   "@type": "SportsOrganization",
-//   "url": "https://www.fotcalc.com/",
-//   "logo": "https://s10.gifyu.com/images/ok_4x_generellfa6faeac0235e0c9.png",
-//   "keywords": "Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22"
-// }
-// const script_2 = document.createElement('script');
-// script.setAttribute('type', 'application/ld+json');
-// script.textContent = JSON.stringify(schema_2);
-// console.log(script.textContent)
-// document.head.appendChild(script);
+/*Dropdown meny start*/
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function toggleMeny() {
+  if (document.getElementById("myDropdown").classList.contains("show")) {
+    document.getElementById("myDropdown").classList.remove("show")
+    nedoverpil()
+  }
+  else {
+    document.getElementById("myDropdown").classList.add("show")
+    oppoverpil()
+  }
+}
+
+function nedoverpil() {
+  document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('❯','❮');
+}
+
+function oppoverpil() {
+  document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('❮','❯');
+}
 
 
 
-// "sport": "Football",
-// "email": "johanneskaste@gmail.com",
-// 'keywords': "Calculate, UEFA, prize money, coefficient points, revenue, clubs, Champions League, Europa League, Conference League, 21/22"
+/* Lukker menyen om musepeker klikker utenfor boksen */
+const $menu = $('.dropdown');
+
+$(document).mouseup(e => {
+  if (!$menu.is(e.target) // if the target of the click isn't the container...
+  && $menu.has(e.target).length === 0) // ... nor a descendant of the container
+  {
+      document.getElementById("myDropdown").classList.remove("show")
+      nedoverpil()
+  }
+});
+
+
+
+
+
+let aar_etter_forste_periode = nåværende_sesong[0] - 21
+var klubbers_assosiasjon = []
+let ranking_array = []
+for (i = 0; i < menyvalg.length; i++) {
+  klubbers_assosiasjon.push(menyvalg[i][1])
+}
+let assos_ranking_array = []
+for (i = 0; i < landskoeffisienter.length; i++) {
+  let indeks = 0
+  let indeks_klubb = []
+  assos_ranking_array = []
+  do {
+    indeks_klubb.push(klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks))
+    indeks = klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) + 1
+  }
+  while (klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) != -1)
+
+
+  let enkelt_sesong1 = 0
+  var koeff_sesong2 = 0;
+  var koeff_sesong3 = 0;
+  var koeff_sesong4 = 0;
+  var koeff_sesong5 = 0;
+  for (p = 0; p < indeks_klubb.length; p++) {
+    enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]) || 0
+  }
+  enkelt_sesong1 = Math.floor(enkelt_sesong1/indeks_klubb.length * 1000) / 1000
+  if (aar_etter_forste_periode <= 0) {
+    koeff_sesong2 = parseFloat(landskoeffisienter[i][4 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]) || 0
+    }
+    koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/indeks_klubb.length) / 1000}
+  if (aar_etter_forste_periode <= 1) {
+    koeff_sesong3 = parseFloat(landskoeffisienter[i][3 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]) || 0
+    }
+    koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/indeks_klubb.length) / 1000}
+  if (aar_etter_forste_periode <= 2) {
+    koeff_sesong4 = parseFloat(landskoeffisienter[i][2 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]) || 0
+    }
+    koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/indeks_klubb.length) / 1000}
+  if (aar_etter_forste_periode <= 3) {
+    koeff_sesong5 = parseFloat(landskoeffisienter[i][1 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]) || 0
+    }
+    koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/indeks_klubb.length) / 1000}
+  assos_ranking_array.push(landskoeffisienter[i][0])
+  assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
+  assos_ranking_array.push(enkelt_sesong1.toFixed(3))
+  assos_ranking_array.push(koeff_sesong2.toFixed(3))
+  assos_ranking_array.push(koeff_sesong3.toFixed(3))
+  assos_ranking_array.push(koeff_sesong4.toFixed(3))
+  assos_ranking_array.push(koeff_sesong5.toFixed(3))
+
+  ranking_array.push(assos_ranking_array)
+}
+
+for (p = 6; p > 1; p--) {
+  ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
+}
+ranking_array.sort(sortFunction_tall_1_flere_desimal);
+
+function sortFunction_tall_1_flere_desimal(a, b) {
+  if (parseFloat(a[1]) === parseFloat(b[1])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[1]) > parseFloat(b[1])) ? -1 : 1;
+  }
+}
+function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
+  if (parseFloat(a[p]) === parseFloat(b[p])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+  }
+}
+
+var landskode = []
+for (i = 0; i < ranking_array.length; i++) {
+  landskode.push(ranking_array[i][0])
+}
+var flagg_ikon = '';
+/* Lager knappene i menyen */
+for (i = 0; i < landskode.length; i++) {
+  let btn = document.createElement("button");
+  if (landskode[i] == 'NIR') {
+    flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR_" src="media/UEFA/NIR.svg" alt="NIR"></div>'
+  }
+  else {
+    flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + landskode[i] + '.svg" alt="' + landskode[i] + '"></div>'
+  }
+  btn.id = landskode[i]
+  btn.innerHTML = flagg_ikon;
+  btn.className = "meny_element"
+  btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
+  document.getElementById("dropdown_elementer").appendChild(btn);
+}
+btn = document.createElement("button");
+btn.innerHTML = '<img class="roter" src="media/UEFA/GLOBE2_element.svg" alt="Globe">';
+btn.className = "meny_element ekstra_meny_element"
+btn.setAttribute("onClick", "resett()")
+document.getElementById("dropdown_elementer").appendChild(btn);
+
+
+
+for (p = 0; p < filter_land_før.length; p++) {
+  filter_land.push(filter_land_før[p])
+  innerHTML = document.getElementById(filter_land[p]).innerHTML;
+
+  
+  if (document.getElementById("dropDownMeny").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
+    document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
+  }
+  var id = innerHTML.slice(68, 71)
+  if (id == 'NIR') {}
+  else {id = innerHTML.slice(72, 75)}
+  document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
+  document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
+  if (filter_land.length == 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<span>...</span>'}
+  else if (filter_land.length > 8) {}
+  else {
+    document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + innerHTML
+  }
+}
+sorter_etter_sesong()
+
+
+
+function endreMenyTittel(innerHTML) {
+  if (document.getElementById("dropDownMeny").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
+    document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
+  }
+  var id = innerHTML.slice(68, 71)
+  if (id == 'NIR') {}
+  else {id = innerHTML.slice(72, 75)}
+  if (filter_land.includes(id)) {
+    const index = filter_land.indexOf(id);
+    if (index > -1) {
+      filter_land.splice(index, 1); // 2nd parameter means remove one item only
+    }
+    document.getElementById(id).style.backgroundColor = '';
+    document.getElementById(id).style.border = '';
+    if (filter_land.length == 7) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('...','')}
+    if (document.getElementById("dropDownMeny").innerHTML.includes(innerHTML)) {
+      if (filter_land.length > 6) {
+        if (filter_land[6] == 'NIR') {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<div class="flagg_div"><img class="flagg" id="NIR_" src="media/UEFA/NIR.svg" alt="NIR"></div>'}
+          else {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + filter_land[6] + '.svg" alt="' + filter_land[6] + '"></div>'}
+      }
+      document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace(innerHTML,'')
+    }
+  }
+  else {
+    filter_land.push(id)
+    document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
+    document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
+    if (filter_land.length == 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<span>...</span>'}
+    else if (filter_land.length > 8) {}
+    else {
+      document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + innerHTML
+    }
+  }
+  if (filter_land.length == 0) {
+    document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">'
+  }
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
+  sorter_etter_sesong()
+}
+/* Dropdown meny slutt */
+
+function resett() {
+  document.getElementById('dropDownMeny').innerHTML = '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10094</div>'
+  for (p = 0; p < filter_land.length; p++) {
+    document.getElementById(filter_land[p]).style.backgroundColor = '';
+    document.getElementById(filter_land[p]).style.border = '';
+  }
+  filter_land = []
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
+  sorter_etter_sesong()
+}
