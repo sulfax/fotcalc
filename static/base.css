@@ -98,8 +98,8 @@ body{
     width: fit-content;
     float: left;
     height: 3,4rem;
-    padding-top: 9px;
-    padding-right: 12px;
+    margin-top: 9px;
+    margin-right: 12px;
     border-top-right-radius: 5px;
     margin-left: .75rem;
 }

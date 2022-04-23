@@ -322,8 +322,11 @@ function toggleMeny() {
     nedoverpil()
   }
   else {
-    document.getElementById("myDropdown").classList.add("show")
-    oppoverpil()
+    if (document.getElementById("myDropdown").classList.contains("show")) {}
+    else {
+      document.getElementById("myDropdown").classList.add("show")
+      oppoverpil()
+    }
   }
 }
 
@@ -344,8 +347,10 @@ $(document).mouseup(e => {
   if (!$menu.is(e.target) // if the target of the click isn't the container...
   && $menu.has(e.target).length === 0) // ... nor a descendant of the container
   {
+    if(document.getElementById("myDropdown").classList.contains('show')) {
       document.getElementById("myDropdown").classList.remove("show")
       nedoverpil()
+    }
   }
 });
 
