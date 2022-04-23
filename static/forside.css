@@ -236,6 +236,9 @@ th, td {
 #NIR_ {
     border-radius: 50%;
 }
+.grå_knappetekst {
+    color:#343a40;
+}
 .dropdown_elementer {
     max-height: none !important;
     display: inline-block;

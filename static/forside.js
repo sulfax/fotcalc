@@ -487,8 +487,8 @@ for (p = 0; p < filter_land_før.length; p++) {
   else {id = innerHTML.slice(72, 75)}
   document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
   document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
-  if (filter_land.length == 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<span>...</span>'}
-  else if (filter_land.length > 8) {}
+  if (filter_land.length == 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<span class="grå_knappetekst">...(1)</span>'}
+  else if (filter_land.length > 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace(filter_land.length - 8, filter_land.length - 7)}
   else {
     document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + innerHTML
   }
@@ -511,7 +511,7 @@ function endreMenyTittel(innerHTML) {
     }
     document.getElementById(id).style.backgroundColor = '';
     document.getElementById(id).style.border = '';
-    if (filter_land.length == 7) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('...','')}
+    if (filter_land.length == 7) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('...(1)','')}
     if (document.getElementById("dropDownMeny").innerHTML.includes(innerHTML)) {
       if (filter_land.length > 6) {
         if (filter_land[6] == 'NIR') {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<div class="flagg_div"><img class="flagg" id="NIR_" src="media/UEFA/NIR.svg" alt="NIR"></div>'}
@@ -519,13 +519,17 @@ function endreMenyTittel(innerHTML) {
       }
       document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace(innerHTML,'')
     }
+    if (filter_land.length > 7) {
+      document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace(filter_land.length - 6,filter_land.length - 7)
+    }
   }
   else {
     filter_land.push(id)
     document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
     document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
-    if (filter_land.length == 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<span>...</span>'}
-    else if (filter_land.length > 8) {}
+    if (filter_land.length == 8) {
+      document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<span class="grå_knappetekst">...(1)</span>'}
+    else if (filter_land.length > 8) {document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace(filter_land.length - 8, filter_land.length - 7)}
     else {
       document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + innerHTML
     }
