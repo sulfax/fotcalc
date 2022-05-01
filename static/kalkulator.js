@@ -226,9 +226,7 @@ for (let p = 1; p < 16; p++) {
 var aarstall = 0;
 
 oppdater_ved_refresh_1()
-
 function paa_av(clicked_id){
-    // alert(clicked_id)
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     const tall = -nummer;
     if (nummer > 0)  {
@@ -382,7 +380,6 @@ function flytt_SCUP_sum_venstre(clicked_id) {
         document.getElementById('b37_hoyre').innerText = '';
     }
 }
-
 function oppdater_b1() {
     if (document.getElementById("b-1")) {
         var aktuell_sum = (knapp_summer[0][aarstall]);

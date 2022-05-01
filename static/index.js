@@ -19,7 +19,7 @@ else if (overskrift_finnes) {
 function language(clicked_id) {
   language_koeffisient(clicked_id);
   language_standard(clicked_id);
-  aarstall = localStorage.getItem('sessong');
+  aarstall = localStorage.getItem('sessong') || 0;
   if (overskrift_koeff_deff_finnes) {}
   else {
     oppdater_sessong(aarstall)
