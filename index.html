@@ -82,10 +82,33 @@
           <h2 class="sesong" id="sessong_id">21/22</h2>
           <button class="btn btn-secondary" id="sessong_kontroller_2" disabled onclick="endre_sessong(this.id)">&#10095</button>
         </div>
-        <div class="dropdown">
-          <button onclick="toggleMeny()" class="btn btn-primary knapp" id="dropDownMeny"><img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10094</div></button>
-          <div id="myDropdown" class="dropdown-content">
+        <div class="dropdown dropdown_land">
+          <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10094</div></button>
+          <div id="myDropdown" class="dropdown-content content_land">
             <div class="dropdown_elementer" id="dropdown_elementer">
+            </div>
+          </div>
+        </div>
+        <div class="dropdown dropdown_adva">
+          <button onclick="toggleMeny_adva()" class="btn btn-primary" id="dropDownMeny_adva"><img class="filter" src="media/UEFA/FILTER.svg" alt="Filter icon"><span id="knappetekst">Advanced filtering </span><span id="filter_på"></span><div class="opp_ned_pil">&#10094</div></button>
+          <div id="myDropdown_adva" class="dropdown-content adva">
+            <div class="dropdown_elementer" id="dropdown_elementer_turnering">
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer_DC">
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer_vanlige">
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer_UECL">
+              <img src="media/UEFA/UECL.svg" class="turnering_ikon">
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer_SCUP">
+              <img src="media/UEFA/SCUP.svg" class="turnering_ikon_scup">
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer_reset">
+            </div>
+            <div id="dropdown_elementer_forklaring">
+              <p id="forklaring">Colored button = include</p>
+              <p id="forklaring_2">Red border = exclude</p>
             </div>
           </div>
         </div>
@@ -119,7 +142,7 @@
           <br>
           <br>
           <br>
-          <p class="tekst_1" id="kontakt_meg">Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a></p>
+          <p class="tekst_1" id="kontakt_meg">Found potential for improvement, a bug or something wrong with the website?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a></p>
         </div>
       </div>
     </footer>
