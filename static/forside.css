@@ -52,6 +52,40 @@
     }
 }
 
+
+
+@media screen and (min-width: 0px) {
+    abbr[data_title] {
+        position: relative;
+            
+        /* ensure consistent styling across browsers */
+        text-decoration: underline !important;
+    }        
+    abbr[data_title]:hover::after,
+    abbr[data_title]:focus::after {
+        content: attr(data_title);
+        cursor: default !important;
+            
+        /* position tooltip like the native one */
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        width: auto;
+        white-space: nowrap;
+        z-index: 1;
+            
+        /* style tooltip */
+        background-color: #343a40;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+        padding: 3px 5px;
+    }
+}
+
+
+
 #overskrift_forside, #beskrivelse_forside {
     text-align: center;
 }
@@ -227,6 +261,11 @@ th, td {
     margin-right: 2px;
     margin-left: -2px;
 }
+.filter {
+    height: 22px;
+    margin-top: -4px;
+    margin-right: 8px;
+}
 
 .dropdown_elementer .flagg_div {
     float:none !important;
@@ -236,15 +275,13 @@ th, td {
 #NIR_ {
     border-radius: 50%;
 }
-.grå_knappetekst {
-    color:#343a40;
-}
 .dropdown_elementer {
     max-height: none !important;
     display: inline-block;
     overflow:hidden !important;
+    width:100%;
 }
-.dropdown-content {
+.content_land {
     min-width: 0px;
     width: 236px;
     height: 197px;
@@ -252,7 +289,7 @@ th, td {
     border: 2px solid rgb(164, 164, 164);
 }
 @media (max-width:425px) {
-    .dropdown-content {
+    .content_land {
         width: 120px;
         height: 384px;
     }
@@ -272,6 +309,13 @@ th, td {
     padding-left: 1px;
     height: 27px;
 }
+.no_hover {
+    width: 40px;
+    float: left;
+}
+.no_hover:hover {
+    background-color: rgba(0,0,0,0) !important;
+}
 .meny_element:hover {
     background-color: rgb(221, 221, 221);
     border: 1px solid rgba(0, 0, 0, 0);
@@ -287,4 +331,142 @@ th, td {
 .meny_element_globe.active,.meny_element_globe:focus,.meny_element_globe:active,.meny_element_globe:focus:active {
     box-shadow:none !important;
     outline: none !important;
+}
+.btn.btn-danger:focus, .btn.btn-danger:active, .btn-danger.dropdown-toggle:focus, .btn-danger.focus, .form-control:focus, .form-control:active, .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
+    box-shadow:none !important;
+}
+.btn.btn-danger { /*Knappen fyller hele cellen*/
+    height:30px;
+    margin: 2px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: fit-content;
+    transition-duration:.0s;
+    float: left;
+}
+.adva {
+    width: 400px;
+    height: fit-content !important;
+    overflow-y: auto !important;
+    border: 2px solid rgb(164, 164, 164);
+}
+@media (max-width:666px) {
+    .adva {
+        width: 247px;
+    }
+}
+.turnering_ikon {
+    float: left;
+    width: 30px;
+    margin-right: 100%;
+}
+.turnering_ikon_scup {
+    float: left;
+    width: 35px;
+    margin-right: 100%;
+    margin-top: -5px;
+}
+.btn-danger {
+    border: 2px solid #777777;
+    background-color:#929292;
+    border-color: #777777;
+}
+.btn-danger:hover{
+    background-color:#777777;
+    border-color:#777777;
+}
+.ucl_knapp, .uel_knapp, .uecl_knapp {
+    background-color:#e0e0e0;
+    border-color: #c7c7c7;
+}
+.ucl_knapp:hover, .uel_knapp:hover, .uecl_knapp:hover {
+    background-color:#c7c7c7;
+    border-color: #c7c7c7;
+}
+.gullfarge {
+    background-color:#dea905;
+    border-color:#c89600;
+}
+.gullfarge:hover{
+    background-color:#c89600;
+    border-color:#c89600;
+}
+.ucl {
+    background-color:#2769AE;
+    border-color:#155599;
+    float:left;
+}
+.ucl:hover {
+    background-color:#155599;
+    border-color:#155599;
+}
+.uel {
+    background-color:#FF6900;
+    border-color:#df5d00;
+}
+.uel:hover {
+    background-color:#df5d00;
+    border-color:#df5d00;
+}
+.uecl {
+    float:left;
+    background-color:#00BF0C;
+    border-color:#00a70b;
+}
+.uecl:hover {
+    background-color:#00a70b;
+    border-color:#00a70b;
+}
+.scup {
+    background-color:#2d2b56;
+    border-color: #201F41;
+}
+.scup:hover{
+    background-color:#201F41;
+    border-color:#201F41;
+}
+.reset {
+    margin-top: 20px !important;
+    color: #343a40;
+    background-color: #ffffff00;
+    border-color: #afafaf;
+}
+.reset:hover{
+    color: #343a40;
+    background-color:#afafaf;
+    border-color:#afafaf;
+}
+.exclude {
+    border: 2px solid red !important;
+}
+#dropdown_elementer_forklaring {
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 100%;
+    border-top: 2px solid rgba(210, 210, 210, 0.5);
+    display:flex;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+#forklaring, #forklaring_2{
+    background-color:rgba(0,0,0,0) !important;
+    border-color: rgba(0,0,0,0) !important;
+    color: #343a40b9 !important;
+    font-style: italic;
+    font-size: 13px;
+    cursor: default !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 4px;
+}
+#forklaring {
+    margin-right: 10px;
+}
+#filter_på {
+    color: #343a40;
+}
+.no_hover:hover {
+    background-color:#929292 !important;
+    border: 2px solid #777777 !important;
+    cursor: default !important;
 }

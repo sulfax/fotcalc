@@ -178,8 +178,6 @@ const knapp_summer = [
     [UEL_vinner_2122,                   UEL_vinner_2223],
     [UECL_vinner_2122,                  UECL_vinner_2223],
     [Spilt_SCUP_2122,                   Spilt_SCUP_2223],
-    [Spilt_SCUP_2122,                   Spilt_SCUP_2223],
-    [Vunnet_SCUP_2122,                  Vunnet_SCUP_2223],
     [Vunnet_SCUP_2122,                  Vunnet_SCUP_2223]
 ];
 
@@ -209,13 +207,12 @@ var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club’s coefficient points";
 var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
 
-const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "b36_", "b38_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
-const UEL_inntjening_celler = ["b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "b37_", "b39_", "i5_", "i8_", "i14_", "i14__"];
+const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
+const UEL_inntjening_celler = ["b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__"];
 const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__"];
-const seriemester_inntjening_celler = ["b1_"];
+const seriemester_inntjening_celler = ["b1_", "b36_", "b36_hoyre", "b37_", "b37_hoyre"];
 
 const UECL_fjerning_av_summer_ved_deltagelse = ["b1_", "b5_", "b8_", "b12_", "b17_"];
-
 var UCL_ikke_avrundet = [0,0,0]
 var UEL_ikke_avrundet = [0,0,0]
 var UECL_ikke_avrundet = [0,0,0]
@@ -231,10 +228,11 @@ var aarstall = 0;
 oppdater_ved_refresh_1()
 
 function paa_av(clicked_id){
+    // alert(clicked_id)
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     const tall = -nummer;
     if (nummer > 0)  {
-        if (nummer == 2 || nummer == 3 || nummer == 4 || nummer == 6 || nummer == 7 || nummer == 9 || nummer == 10 || nummer == 11 || nummer == 13 || nummer == 14 || nummer == 15 || (nummer >= 21 && nummer <= 32) || (nummer >= 36 && nummer <= 37)) {
+        if (nummer == 2 || nummer == 3 || nummer == 4 || nummer == 6 || nummer == 7 || nummer == 9 || nummer == 10 || nummer == 11 || nummer == 13 || nummer == 14 || nummer == 15 || nummer == 36 || (nummer >= 21 && nummer <= 32)) {
             document.getElementById(clicked_id).innerText = (spilt_språk || "");
         }
         else {
@@ -294,6 +292,7 @@ function paa_av(clicked_id){
                 rund_av_enkeltcelle(aktuell_sum, clicked_id);
             }
         }
+        flytt_SCUP_sum_hoyre(clicked_id)
     }
     else {
         if ((clicked_id == "b-18" && document.getElementById("b19") && document.getElementById("b20")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b20")) || (clicked_id == "b-20" && document.getElementById("b18") && document.getElementById("b19"))) {
@@ -314,12 +313,75 @@ function paa_av(clicked_id){
         if (nummer == -20) {
             UECL_ikke_avrundet[0] = 0;
         }
+        if (clicked_id == 'b-36') {
+            document.getElementById('b36_').innerText = '';
+            document.getElementById('b36_hoyre').innerText = '';
+        }
+        if (clicked_id == 'b-37') {
+            document.getElementById('b37_').innerText = '';
+            document.getElementById('b37_hoyre').innerText = '';
+        }
         document.getElementById(clicked_id).innerText = "" /*nei_språk*/;
         document.getElementById(clicked_id).id = "b" + tall;
         document.getElementById("b" + tall + "_").innerText = "";
+        flytt_SCUP_sum_venstre(clicked_id, tall)
         summer();
     }
 };
+function flytt_SCUP_sum_hoyre(clicked_id) {
+    let UEL_celle_1 = (document.getElementById(UEL_inntjening_celler[0]).innerText)
+    let UEL_celle_2 = (document.getElementById(UEL_inntjening_celler[1]).innerText)
+    let UEL_celle_21 = (document.getElementById('b19_').innerText)
+    let UEL_celle_22 = (document.getElementById('i2_').innerText)
+    let UEL_celle_23 = (document.getElementById('i11_').innerText)
+    let UEL_celle_3 = (document.getElementById(UEL_inntjening_celler[2]).innerText)
+    let UEL_celle_4 = (document.getElementById(UEL_inntjening_celler[3]).innerText)
+    let UEL_celle_5 = (document.getElementById(UEL_inntjening_celler[4]).innerText)
+    let UEL_celle_6 = (document.getElementById(UEL_inntjening_celler[5]).innerText)
+    let UEL_celle_7 = (document.getElementById(UEL_inntjening_celler[6]).innerText)
+    let UEL_celle_8 = (document.getElementById(UEL_inntjening_celler[7]).innerText)
+    let UEL_celle_9 = (document.getElementById(UEL_inntjening_celler[8]).innerText)
+    let UEL_celle_10 = (document.getElementById(UEL_inntjening_celler[9]).innerText)
+    let UEL_celle_11 = (document.getElementById(UEL_inntjening_celler[10]).innerText)
+    if (UEL_celle_1 != '' || UEL_celle_2 != '' || UEL_celle_3 != '' || UEL_celle_4 != '' || UEL_celle_5 != '' || UEL_celle_6 != '' || UEL_celle_7 != '' || UEL_celle_8 != '' || UEL_celle_9 != '' || UEL_celle_10 != '' || UEL_celle_11 != '' || UEL_celle_21 != '' || UEL_celle_22 != '' || UEL_celle_23 != '' || document.getElementById('i14').value == 3 || document.getElementById('i14').value == 4) {
+        if (UEL_inntjening_celler.includes(clicked_id + '_') || clicked_id == 'b36' || clicked_id == 'b37' ||  UEL_celle_21 != '' ||  UEL_celle_22 != '' || UEL_celle_23 != '') {
+            if (document.getElementById('b36_').innerText != '') {
+                document.getElementById('b36_hoyre').innerText = document.getElementById('b36_').innerText
+            }
+            if (document.getElementById('b37_').innerText != '') {
+                document.getElementById('b37_hoyre').innerText = document.getElementById('b37_').innerText
+            }
+            document.getElementById('b36_').innerText = '';
+            document.getElementById('b37_').innerText = '';
+        }
+    }
+}
+function flytt_SCUP_sum_venstre(clicked_id) {
+    let UEL_celle_1 = (document.getElementById(UEL_inntjening_celler[0]).innerText)
+    let UEL_celle_2 = (document.getElementById(UEL_inntjening_celler[1]).innerText)
+    let UEL_celle_21 = (document.getElementById('b19_').innerText)
+    let UEL_celle_22 = (document.getElementById('i2_').innerText)
+    let UEL_celle_23 = (document.getElementById('i11_').innerText)
+    let UEL_celle_3 = (document.getElementById(UEL_inntjening_celler[2]).innerText)
+    let UEL_celle_4 = (document.getElementById(UEL_inntjening_celler[3]).innerText)
+    let UEL_celle_5 = (document.getElementById(UEL_inntjening_celler[4]).innerText)
+    let UEL_celle_6 = (document.getElementById(UEL_inntjening_celler[5]).innerText)
+    let UEL_celle_7 = (document.getElementById(UEL_inntjening_celler[6]).innerText)
+    let UEL_celle_8 = (document.getElementById(UEL_inntjening_celler[7]).innerText)
+    let UEL_celle_9 = (document.getElementById(UEL_inntjening_celler[8]).innerText)
+    let UEL_celle_10 = (document.getElementById(UEL_inntjening_celler[9]).innerText)
+    let UEL_celle_11 = (document.getElementById(UEL_inntjening_celler[10]).innerText)
+    if (UEL_celle_1 == '' && UEL_celle_2 == '' && UEL_celle_3 == '' && UEL_celle_4 == '' && UEL_celle_5 == '' && UEL_celle_6 == '' && UEL_celle_7 == '' && UEL_celle_8 == '' && UEL_celle_9 == '' && UEL_celle_10 == '' && UEL_celle_11 == '' && UEL_celle_21 == '' && UEL_celle_22 == '' && UEL_celle_23 == '' && document.getElementById('i14').value != 3 && document.getElementById('i14').value != 4) {
+        if (document.getElementById('b36_hoyre').innerText != '') {
+            document.getElementById('b36_').innerText = document.getElementById('b36_hoyre').innerText
+        }
+        if (document.getElementById('b37_hoyre').innerText != '') {
+            document.getElementById('b37_').innerText = document.getElementById('b37_hoyre').innerText
+        }
+        document.getElementById('b36_hoyre').innerText = '';
+        document.getElementById('b37_hoyre').innerText = '';
+    }
+}
 
 function oppdater_b1() {
     if (document.getElementById("b-1")) {
@@ -384,6 +446,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
             }
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id);
+            flytt_SCUP_sum_hoyre(clicked_id)
         }
         else {
             if (nummer_2 == 1) {UCL_ikke_avrundet[1] = 0;}
@@ -391,6 +454,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
             if (nummer_2 == 3) {UECL_ikke_avrundet[1] = 0;}
             utenfor_gyldig_input(clicked_id);
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
     }
     else {
@@ -399,6 +463,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
         if (nummer_2 == 3) {UECL_ikke_avrundet[1] = 0;}
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
+        flytt_SCUP_sum_venstre(clicked_id)
     }
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_1()
@@ -429,15 +494,18 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id);
+            flytt_SCUP_sum_hoyre(clicked_id)
         }
         else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
         else {
             utenfor_gyldig_input(clicked_id);
             utenfor_gyldig_input("i" + (nummer_2 + 3));
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
     }
     else if (nummer >= 7 && nummer <= 9 && document.getElementById(clicked_id).value != ""){
@@ -455,20 +523,24 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id); 
+            flytt_SCUP_sum_hoyre(clicked_id)
         }
         else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
         else {
             utenfor_gyldig_input(clicked_id);
             utenfor_gyldig_input("i" + (nummer_2 - 3));
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
     }
     else {
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
+        flytt_SCUP_sum_venstre(clicked_id)
     }
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_2()
@@ -497,6 +569,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
                 if (nummer_2 == 12) {UECL_ikke_avrundet[2] = aktuell_sum;}
                 summer();
                 rund_av_enkeltcelle(aktuell_sum, clicked_id);
+                flytt_SCUP_sum_hoyre(clicked_id)
             }
         }
         else {
@@ -505,6 +578,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
             if (nummer_2 == 12) {UECL_ikke_avrundet[2] = 0;}
             utenfor_gyldig_input(clicked_id);
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
     }
     else {
@@ -513,6 +587,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
         if (nummer_2 == 12) {UECL_ikke_avrundet[2] = 0;}
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
+        flytt_SCUP_sum_venstre(clicked_id)
     }
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_3()
@@ -547,6 +622,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {
                     summer();
                     rund_av_enkeltcelle(aktuell_sum, clicked_id);
+                    flytt_SCUP_sum_hoyre(clicked_id)
                 }
             }
             else if (tabellplassering == 2) {
@@ -567,6 +643,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                     rund_av_enkeltcelle(aktuell_sum, clicked_id);
                     clicked_id = ("i" + (nummer_2) + "_");
                     rund_av_enkeltcelle_2(spilt_uslagsrunde_PO, clicked_id);
+                    flytt_SCUP_sum_hoyre(clicked_id)
                 }
             }
             else if (tabellplassering == 3) {
@@ -588,6 +665,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                 summer();
                 if ((clicked_id == 'i13') || (clicked_id == 'i14')) {
                     rund_av_enkeltcelle_3(spilt_uslagsrunde_PO, nummer_2);
+                    flytt_SCUP_sum_hoyre(clicked_id)
                 }
             }
             else {
@@ -598,6 +676,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                     document.getElementById('i14__').innerText = "";
                 }
                 summer();
+                flytt_SCUP_sum_hoyre(clicked_id)
             }
         }
         else {
@@ -609,6 +688,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
             }
             utenfor_gyldig_input(clicked_id);
             summer();
+            flytt_SCUP_sum_venstre(clicked_id)
         }
     }
     else {
@@ -620,6 +700,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
         }
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
+        flytt_SCUP_sum_venstre(clicked_id)
     }
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_4()
@@ -721,7 +802,7 @@ function videre_fordeling(clicked_id) {
 
 function lagre_trykking() {
     var lagrede_verdier = [];
-    for (var l=0;l<39;l++) {
+    for (var l=0;l<37;l++) {
         if (document.getElementById('b-' + (l + 1))) {
             lagrede_verdier.push('b' + (l + 1));
         }
@@ -774,7 +855,7 @@ function lagre_trykking_input_4() {
 };
 
 function slett(slett_lagring) {
-    for (var c=0;c<39;c++) {
+    for (var c=0;c<37;c++) {
         if (document.getElementById('b-' + (c + 1))) {
             paa_av('b-' + (c + 1));
         }
@@ -975,13 +1056,13 @@ function oppdater_sessong(aarstall) {
         document.getElementById("sessong_id").innerText = "22/23";
         document.getElementById('uefa_distribution_link').setAttribute('href', '#');
     }
-    for (var uu=0;uu<39;uu++) {
+    for (var uu=0;uu<37;uu++) {
         if (document.getElementById("b-" + (uu + 1))) {
             var aktuell_sum = (knapp_summer[uu][aarstall]);
             document.getElementById("b" + (uu + 1) + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
         }
     }
-    for (var uy=0;uy<39;uy++) {
+    for (var uy=0;uy<37;uy++) {
         if (uy == 12) {
             null;
         }

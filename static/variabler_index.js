@@ -8,7 +8,7 @@ const norsk = [
     '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Tilbakestill',
     'Utviklet av Johannes Kaste',
-    'Funnet et forbedringspotensiale eller en feil med kalkulatoren?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
+    'Funnet et forbedringspotensiale eller en feil med nettsiden?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
 ];
 
 const norsk_forside = [
@@ -19,6 +19,11 @@ const norsk_forside = [
     'Premiepenger',
     'Assosiasjons-koeffisientpoeng',
     'Klubb-koeffisientpoeng',
+    'Farget knapp = inkluder',
+    'Rød ramme = ekskluder',
+    'Avansert filtrering ',
+    'Hjemlig seriemester', 'Preliminary runde', 'Q1', 'Eliminert i Q1', 'Q2', 'Eliminert i Q2', 'Q3', 'Eliminert i Q3', 'Playoff', 'Eliminert i Playoff', 'Gruppespill', 'Utslagsrunde-playoff', 'Åttendelsfinale', 'Kvartfinale', 'Semifinale', 'Finale', 'Vunnet finale', 'SCUP', 'Vunnet SCUP',
+    'Tilbakestill'
 ];
 
 const norsk_landskoeffisient = [
@@ -70,12 +75,12 @@ const norsk_kalkulator = [
 ];
 
 const norsk_koeffisient = [
-    'UEFA Koeffisient-Kalkulator UCL, UEL, UECL',
+    'UEFA Koeffisient-Kalkulator',
     'UEFA Koeffisient-kalkulator',
     'Kalkuler klubb- og assosiasjons-<a class="graa_hover_link_koeff_deffi" href="coefficient-definition">koeffisientpoeng</a> for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
-    '<abbr data_title="Første kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
-    '<abbr data_title="Andre kvalifiseringskamp for selve kvalifiseringen">Preliminary runde | finale</abbr>:',
+    '<abbr data_title="Første kvalifiseringskamp til selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
+    '<abbr data_title="Andre kvalifiseringskamp til selve kvalifiseringen">Preliminary runde | finale</abbr>:',
     '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr> | kamp 1',
     'Q1 | kamp 2',
     'Q1 | eliminert',
@@ -157,7 +162,7 @@ const english = [
     '<input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Reset',
     'Developed by Johannes Kaste',
-    'Found potential for improvement, a bug or something wrong with the calculator?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
+    'Found potential for improvement, a bug or something wrong with the website?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
 ];
 
 const english_forside = [
@@ -168,6 +173,11 @@ const english_forside = [
     'Prize money',
     'Association coefficient points',
     'Club coefficient points',
+    'Colored button = include',
+    'Red border = exclude',
+    'Advanced filtering ',
+    'Domestic Champion', 'Preliminary round', 'Q1', 'Eliminated in Q1', 'Q2', 'Eliminated in Q2', 'Q3', 'Eliminated in Q3', 'Play-off', 'Eliminated in Play-off', 'Group stage', 'Knockout round play-off', 'Round of 16', 'Quarter-final', 'Semi-final', 'Final', 'Champion', 'SCUP', 'Champion',
+    'Reset'
 ];
 
 const english_landskoeffisient = [
@@ -194,7 +204,7 @@ const english_kalkulator = [
     '<abbr data_title="Third qualifying round (ignore if your club plays in League Path)">Q3</abbr>:',
     'Eliminated in <abbr data_title="Third qualifying round (ignore if your club plays in League Path)">Q3</abbr>:',
     '<abbr data_title="Third qualifying round, League Path">Q3 League Path</abbr>:',
-    'Playoff:',
+    'Play-off:',
     'Eliminated in playoff:',
     'Group stage:',
     '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking among the club’s within the tournament (1-32). Follow link 1 to find your clubs ranking">Ten-year coeff</abbr>: </div> <a class="graa_hover_link" href="https://www.football-coefficient.eu/money/" target="_blank"><abbr data_title="Find your clubs coefficient ranking">1</abbr></a><a class="graa_hover_link_2" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Find your clubs coefficient ranking (official website, less recommended site)">2</abbr></a>',
@@ -219,7 +229,7 @@ const english_kalkulator = [
 ];
 
 const english_koeffisient = [
-    'UEFA Coefficient Calculator UCL, UEL, UECL',
+    'UEFA Coefficient points Calculator',
     'UEFA Coefficient points Calculator',
     'Calculate club- and association <a class="graa_hover_link_koeff_deffi" href="coefficient-definition">coefficient points</a> for your club.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',

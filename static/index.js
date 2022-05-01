@@ -248,7 +248,7 @@ function language_standard(clicked_id) {
           }
           else {
             y = (x + 1);
-            if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || (y >= 21 && y <= 32) || (y >= 36 && y <= 37)) {
+            if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || y == 36 || (y >= 21 && y <= 32)) {
               knapp_id_ja.innerText = spilt_språk;
             }
             else {
@@ -283,7 +283,12 @@ const sprak_id_forside = [
   'klubb_navn',
   'premiepenger_navn',
   'ass_koeff_navn',
-  'klubb_koeff_navn'
+  'klubb_koeff_navn',
+  'forklaring',
+  'forklaring_2',
+  'knappetekst',
+  'b1', 'b2', 'b3', 'b5', 'b6', 'b8', 'b9', 'b12', 'CLPO', 'b16', 'b18', 'i13', 'b21', 'b24', 'b27', 'b30', 'b33', 'b36', 'b37',
+  'reset'
 ];
 
 const sprak_id_landskoeffisient = [
@@ -485,6 +490,13 @@ function language_koeffisient(clicked_id) {
   else if (overskrift_forside_finnes) {
     var forside_antall_oversett = sprak_id_forside.length;
     if (clicked_id == "norsk") {
+      document.getElementById("dropdown_elementer_turnering").innerHTML = '';
+      const knapplabel_turneringer = ['<img src=media/UEFA/UCL.svg class=turnering_ikon>', '<img src=media/UEFA/UEL.svg class=turnering_ikon>', '<img src=media/UEFA/UECL.svg class=turnering_ikon>']
+      for (i = 0; i < knapplabel_turneringer.length; i++) {
+        let btn = "<abbr data_title='Alle stadier'><button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + ">" + knapplabel_turneringer[i] + "</button></abbr>"
+        document.getElementById("dropdown_elementer_turnering").innerHTML += btn;
+      }
+      fargelegg_etter_reset()
       for (x=0;x<forside_antall_oversett;x++) {
         try {
           document.getElementById(sprak_id_forside[x]).innerHTML = norsk_forside[x];
@@ -493,8 +505,18 @@ function language_koeffisient(clicked_id) {
           null;
         }
       }
+      if (document.getElementById('filter_på').innerText != '') {
+        document.getElementById('filter_på').innerText = '(på)'
+      }
     }
     else {
+      document.getElementById("dropdown_elementer_turnering").innerHTML = '';
+      const knapplabel_turneringer = ['<img src=media/UEFA/UCL.svg class=turnering_ikon>', '<img src=media/UEFA/UEL.svg class=turnering_ikon>', '<img src=media/UEFA/UECL.svg class=turnering_ikon>']
+      for (i = 0; i < knapplabel_turneringer.length; i++) {
+        let btn = "<abbr data_title='All stages'><button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + ">" + knapplabel_turneringer[i] + "</button></abbr>"
+        document.getElementById("dropdown_elementer_turnering").innerHTML += btn;
+      }
+      fargelegg_etter_reset()
       for (x=0;x<forside_antall_oversett;x++) {
         try {
           document.getElementById(sprak_id_forside[x]).innerHTML = english_forside[x];
@@ -502,6 +524,9 @@ function language_koeffisient(clicked_id) {
         catch {
           null;
         }
+      }
+      if (document.getElementById('filter_på').innerText != '') {
+        document.getElementById('filter_på').innerText = '(on)'
       }
     }
   }

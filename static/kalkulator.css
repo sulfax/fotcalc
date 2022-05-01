@@ -248,7 +248,7 @@ tbody {
     background-color:#929292;
     border-color:#777777;
 }
-#b1:hover {
+#b1:hover, #b36:hover, #b37:hover {
     background-color:#777777;
     border-color:#777777;
 }
@@ -262,39 +262,53 @@ tbody {
     background-color:#c89600;
     border-color:#c89600;
 }
-#b2, #b3, #b6, #b9, #b13, #b16, #b18, #b21, #b24, #b27, #b30, #b33, #b36, #b38 {
+#b36, #b37{
+    width:64.5%;
+    background-color:#929292;
+    border-color:#777777;
+}
+#b-36, #b-37 {
+    width:64.5%;
+    background-color:#2d2b56;
+    border-color: #201F41;
+}
+#b-36:hover, #b-37:hover{
+    background-color:#201F41;
+    border-color:#201F41;
+}
+#b2, #b3, #b6, #b9, #b13, #b16, #b18, #b21, #b24, #b27, #b30, #b33 {
     background-color:#929292;
     border-color:#777777;
     float:left;
 }
-#b2:hover, #b3:hover, #b6:hover, #b9:hover, #b13:hover, #b16:hover, #b18:hover, #b21:hover, #b24:hover, #b27:hover, #b30:hover, #b33:hover, #b36:hover, #b38:hover {
+#b2:hover, #b3:hover, #b6:hover, #b9:hover, #b13:hover, #b16:hover, #b18:hover, #b21:hover, #b24:hover, #b27:hover, #b30:hover, #b33:hover {
     background-color:#777777;
     border-color:#777777;
 }
-#b-2, #b-3, #b-6, #b-9, #b-13, #b-16, #b-18, #b-18, #b-21, #b-24, #b-27, #b-30, #b-33, #b-36, #b-38 {
+#b-2, #b-3, #b-6, #b-9, #b-13, #b-16, #b-18, #b-18, #b-21, #b-24, #b-27, #b-30, #b-33 {
     background-color:#2769AE;
     border-color:#155599;
     float:left;
 }
-#b-2:hover, #b-3:hover, #b-6:hover, #b-9:hover, #b-13:hover, #b-16:hover, #b-18:hover, #b-21:hover, #b-24:hover, #b-27:hover, #b-30:hover, #b-33:hover, #b-36:hover, #b-38:hover {
+#b-2:hover, #b-3:hover, #b-6:hover, #b-9:hover, #b-13:hover, #b-16:hover, #b-18:hover, #b-21:hover, #b-24:hover, #b-27:hover, #b-30:hover, #b-33:hover {
     background-color:#155599;
     border-color:#155599;
 }
-#b10, #b14, #b19, #b22, #b25, #b28, #b31, #b34, #b37, #b39 {
+#b10, #b14, #b19, #b22, #b25, #b28, #b31, #b34 {
     margin-left: 6.5%;
     background-color:#929292;
     border-color:#777777;
 }
-#b10:hover, #b14:hover, #b19:hover, #b22:hover, #b25:hover, #b28:hover, #b31:hover, #b34:hover, #b37:hover, #b39:hover {
+#b10:hover, #b14:hover, #b19:hover, #b22:hover, #b25:hover, #b28:hover, #b31:hover, #b34:hover {
     background-color:#777777;
     border-color:#777777;
 }
-#b-10, #b-14, #b-19, #b-22, #b-25, #b-28, #b-31, #b-34, #b-37, #b-39 {
+#b-10, #b-14, #b-19, #b-22, #b-25, #b-28, #b-31, #b-34 {
     margin-left: 6.5%;
     background-color:#FF6900;
     border-color:#df5d00;
 }
-#b-10:hover, #b-14:hover, #b-19:hover, #b-22:hover, #b-25:hover, #b-28:hover, #b-31:hover, #b-34:hover, #b-37:hover, #b-39:hover {
+#b-10:hover, #b-14:hover, #b-19:hover, #b-22:hover, #b-25:hover, #b-28:hover, #b-31:hover, #b-34:hover {
     background-color:#df5d00;
     border-color:#df5d00;
 }
@@ -376,6 +390,9 @@ td .placeholder::placeholder {
 .table .resultat_celle_1 {
     border: 1px solid rgba(177, 177, 177, 0.4);
 }
+.table .ingen_ramme_hoyre {
+    border-right: 1px solid rgba(177, 177, 177, 0) !important;
+}
 #tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
     border-top: 1px solid #b1b1b1 !important;
 }
@@ -427,4 +444,7 @@ th, td {
     height: 30px !important;
     padding-top: 3px !important;
     padding-bottom: 2px !important;
+}
+.høyde_won_scup {
+    height: 31px !important;
 }
