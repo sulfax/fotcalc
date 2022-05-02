@@ -75,7 +75,26 @@ function oppdater_ved_refresh() {
         koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]) || 0
       }
       koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/indeks_klubb.length) / 1000}
-
+    
+    if (landskoeffisienter[i][0] == 'RUS') {
+      if (aar_etter_forste_periode == 1) {
+        enkelt_sesong1 = 4.333
+      }
+      if (aar_etter_forste_periode == 2) {
+        koeff_sesong2 = 4.333
+      }
+      if (aar_etter_forste_periode == 3) {
+        koeff_sesong3 = 4.333
+      }
+      if (aar_etter_forste_periode == 4) {
+        koeff_sesong4 = 4.333
+      }
+      if (aar_etter_forste_periode == 5) {
+        koeff_sesong5 = 4.333
+      }
+    }
+    
+      // alert(enkelt_sesong1 + '    ' + landskoeffisienter[i][0] + '     ' + aar_etter_forste_periode)
 
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
