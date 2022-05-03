@@ -10,7 +10,7 @@ function oppdater_ved_refresh() {
   ranking_array = []
   testTabell = document.getElementById('minTest')
   testTabell2 = document.getElementById('minTest2')
-  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong[0] - 4) + '/' + (nåværende_sesong[2] - 4) + ' - ' + nåværende_sesong[0] + '/' + nåværende_sesong[2]) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong[0] - 5) + '/' + (nåværende_sesong[2] - 5) + ' - ' + (nåværende_sesong[0] - 1) + '/' + (nåværende_sesong[2] - 1)) + " <div class='opp_ned_pil'>&#10094</div>";
   
   var klubbers_assosiasjon = []
   let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
