@@ -2,7 +2,7 @@
 const norsk = [
     'Hjem',
     'Landskoeffisient-rangering',
-    'Premiepenger-kalkulator',
+    'Premiepenge-kalkulator',
     'Koeffisient-kalkulator',
     'Kalkuler fra bunnen',
     '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
@@ -14,7 +14,7 @@ const norsk = [
 const norsk_forside = [
     'Din klubbs premipenger & UEFA Koeffisientpoeng',
     'UEFA premiepenge- og koeffisient-oversikt',
-    'UEFAs inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng alle klubbturneringer.<br><br><span class="reklame_landskoeff">Sjekk også ut <a class="landskoeff_link" href="/country-coefficients">landskoeffisient-rangeringen</a>.</span>',
+    'UEFAs inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng i alle klubbturneringer.<br><br><span class="reklame_landskoeff">Sjekk også ut <a class="landskoeff_link" href="/country-coefficients">landskoeffisient-rangeringen</a>.</span>',
     'Klubb',
     'Premiepenger',
     'Assosiasjons-koeffisientpoeng',
@@ -37,9 +37,9 @@ const norsk_landskoeffisient = [
 ];
 
 const norsk_kalkulator = [
-    'UEFA Premiepenger-Kalkulator UCL, UEL, UECL',
-    'UEFA Premiepenger-kalkulator',
-    'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle premiepenger og ufordelte ressurser.',
+    'UEFA Premiepenge-Kalkulator UCL, UEL, UECL',
+    'UEFA Premiepenge-kalkulator',
+    'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle kalkulerbare premiepenger og ufordelte ressurser.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester:',
     '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Preliminary runde</abbr>:',
@@ -69,7 +69,7 @@ const norsk_kalkulator = [
     'Vunnet Super Cup:',
     'Inntjening per turnering:',
     'Total inntjening:',
-    '<p><p>*Kalkulasjonene inkluderer ikke TV-pengene, grunnet disse uvisse faktorene:<br><br>1. den faktiske endelige størrelsen på TV-pengene:<br>2. sammensetningen av deltakende klubber;<br>3. antallet klubber fra hver av de konkurrerende assosiasjonene;<br>4. den endelige plasseringen til hver konkurrerende klubb i hjemlige liga, forrige sesong;<br>5. prestasjonen til hver klubb i europa.<br><i>Kilde: UEFA</i></p>Det er derfor umulig å kalkulere.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA’s distribusjonsplan</a>.</p>',
+    '<p><p>*Kalkulasjonene inkluderer ikke TV-pengene, grunnet disse uvisse faktorene:<br><br>1. den faktiske endelige størrelsen på TV-pengene:<br>2. sammensetningen av deltakende klubber;<br>3. antallet klubber fra hver av de konkurrerende assosiasjonene;<br>4. den endelige plasseringen til hver konkurrerende klubb i hjemlige liga, forrige sesong;<br>5. prestasjonen til hver klubb i europa.<br><i>Kilde: UEFA</i></p>Det er derfor umulig å kalkulere.<br><br>**Kalkulasjonene tar ikke de mindre covid-fradragene i betraktning. Å finne denne summen krever ukjente tall fra TV-pengene.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA’s distribusjonsplan</a>.</p>',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">din klubbs koeffisientpoeng</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign premiepenger med andre klubber</a>.</b>'
 ];
@@ -193,7 +193,7 @@ const english_landskoeffisient = [
 const english_kalkulator = [
     'UEFA Prize money Calculator UCL, UEL, UECL',
     'UEFA Prize money Calculator',
-    'Calculate your clubs income and revenue distribution in UEFA competitions.<br>Calculations include all prize money and undistributed amounts.',
+    'Calculate your clubs income and revenue distribution in UEFA competitions.<br>Calculations include all exact prize money sums and<br>undistributed amounts.',
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Domestic champion:',
     '<abbr data_title="Qualification matches for the qualification itself">Preliminary round</abbr>:',
@@ -223,7 +223,7 @@ const english_kalkulator = [
     'Won Super Cup',
     'Income per competition:',
     'Total income:',
-    '<p><p>*The calculations does not include resources from the market pool because those depends on these factors:<br><br>1. the actual final amount in the market pool:<br>2. the composition of the field of clubs participating;<br>3. the number of clubs from any given association competing;<br>4. the final position of each competing club in their previous season’s domestic championship;<br>5. the performance of each club in Europe.<br><i>Source: UEFA</i></p>It is therefore imposible to calculate.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
+    '<p><p>*The calculations do not include resources from the market pool because those depends on these factors:<br><br>1. the actual final amount in the market pool:<br>2. the composition of the field of clubs participating;<br>3. the number of clubs from any given association competing;<br>4. the final position of each competing club in their previous season’s domestic championship;<br>5. the performance of each club in Europe.<br><i>Source: UEFA</i></p>It is therefore imposible to calculate.<br><br>**Calculations do not take the small covid deduction into consederation. Finding a club’s deduction sum requires unknown values from the marketpool.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
     'Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s coefficient points</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare prize money with other clubs</a>.</b>'
 ];
