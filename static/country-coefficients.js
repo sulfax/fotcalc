@@ -110,23 +110,23 @@ function oppdater_ved_refresh() {
       }
       koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
     
-    if (landskoeffisienter[i][0] == 'RUS') {
-      if (aar_etter_forste_periode == 1) {
-        enkelt_sesong1 = 4.333
-      }
-      if (aar_etter_forste_periode == 2) {
-        koeff_sesong2 = 4.333
-      }
-      if (aar_etter_forste_periode == 3) {
-        koeff_sesong3 = 4.333
-      }
-      if (aar_etter_forste_periode == 4) {
-        koeff_sesong4 = 4.333
-      }
-      if (aar_etter_forste_periode == 5) {
-        koeff_sesong5 = 4.333
-      }
-    }
+    // if (landskoeffisienter[i][0] == 'RUS') {
+    //   if (aar_etter_forste_periode == 1) {
+    //     enkelt_sesong1 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 2) {
+    //     koeff_sesong2 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 3) {
+    //     koeff_sesong3 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 4) {
+    //     koeff_sesong4 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 5) {
+    //     koeff_sesong5 = 4.333
+    //   }
+    // }
     
       // alert(enkelt_sesong1 + '    ' + landskoeffisienter[i][0] + '     ' + aar_etter_forste_periode)
 
