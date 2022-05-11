@@ -9,27 +9,32 @@
 
 <url>
   <loc>https://www.fotcalc.com/</loc>
-  <lastmod>2022-04-14T17:11:38+00:00</lastmod>
+  <lastmod>2022-05-11T18:33:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.fotcalc.com/country-coefficients</loc>
-  <lastmod>2022-04-14T17:11:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://www.fotcalc.com/prize-money-calculator</loc>
-  <lastmod>2022-04-14T17:11:38+00:00</lastmod>
+  <lastmod>2022-05-11T18:33:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.fotcalc.com/coefficient-calculator</loc>
-  <lastmod>2022-04-14T17:11:38+00:00</lastmod>
+  <lastmod>2022-05-11T18:33:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.fotcalc.com/country-coefficients</loc>
+  <lastmod>2022-05-11T18:33:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.fotcalc.com/club-coefficients</loc>
+  <lastmod>2022-05-11T18:33:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.fotcalc.com/coefficient-definition</loc>
-  <lastmod>2022-04-14T17:11:38+00:00</lastmod>
+  <lastmod>2022-05-11T18:33:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
