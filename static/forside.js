@@ -90,8 +90,6 @@ function sorter_etter_sesong() {
   for (var i = 0; i < menyvalg_edit.length; i++) {
     let containsAll = false;
     if (menyvalg_edit[i][6 + (aarstall*antall_MV_elem)] == null) {
-      menyvalg_edit.splice(i, 1)
-      i = i - 1
     }
     else {
       let klubb_knapp = menyvalg_edit[i][2].split(',');
@@ -728,7 +726,7 @@ function endreMenyTittel(innerHTML) {
 /* Dropdown meny slutt */
 
 function resett() {
-  document.getElementById('dropDownMeny').innerHTML = '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10094</div>'
+  document.getElementById('dropDownMeny').innerHTML = '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10095</div>'
   for (p = 0; p < filter_land.length; p++) {
     document.getElementById(filter_land[p]).style.backgroundColor = '';
     document.getElementById(filter_land[p]).style.border = '';

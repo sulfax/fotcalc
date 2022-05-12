@@ -6,6 +6,8 @@ var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club’s prize money";
 var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 let antall_MV_elem = 8;
+let filter_land = []
+let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 
 let ranking_array = []
 
@@ -18,6 +20,7 @@ let aar_etter_forste_periode = "";
 
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
+  let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || []
   ranking_array = []
   testTabell = document.getElementById('minTest')
   document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong[0] - 5) + '/' + (nåværende_sesong[2] - 5) + ' - ' + (nåværende_sesong[0] - 1) + '/' + (nåværende_sesong[2] - 1)) + " <div class='opp_ned_pil'>&#10094</div>";
@@ -103,23 +106,25 @@ function oppdater_ved_refresh() {
   
           }
         }
-        if (typeof(sesong5) == 'number') {
-          assos_ranking_array.push(parseFloat(sesong5).toFixed(3))} else {
-          assos_ranking_array.push(sesong5)}
-        if (typeof(sesong4) == 'number') {
-          assos_ranking_array.push(parseFloat(sesong4).toFixed(3))} else {
-          assos_ranking_array.push(sesong4)}
-        if (typeof(sesong3) == 'number') {
-          assos_ranking_array.push(parseFloat(sesong3).toFixed(3))} else {
-          assos_ranking_array.push(sesong3)}
-        if (typeof(sesong2) == 'number') {
-          assos_ranking_array.push(parseFloat(sesong2).toFixed(3))} else {
-          assos_ranking_array.push(sesong2)}
-        if (typeof(sesong1) == 'number') {
-          assos_ranking_array.push(parseFloat(sesong1).toFixed(3))} else {
-          assos_ranking_array.push(sesong1)}
-        ranking_array.push(assos_ranking_array)
-        klubber_allerede_lagt_til.push(klubb_koeffisienter_1112_2021[i][0])
+        if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
+          if (typeof(sesong5) == 'number') {
+            assos_ranking_array.push(parseFloat(sesong5).toFixed(3))} else {
+            assos_ranking_array.push(sesong5)}
+          if (typeof(sesong4) == 'number') {
+            assos_ranking_array.push(parseFloat(sesong4).toFixed(3))} else {
+            assos_ranking_array.push(sesong4)}
+          if (typeof(sesong3) == 'number') {
+            assos_ranking_array.push(parseFloat(sesong3).toFixed(3))} else {
+            assos_ranking_array.push(sesong3)}
+          if (typeof(sesong2) == 'number') {
+            assos_ranking_array.push(parseFloat(sesong2).toFixed(3))} else {
+            assos_ranking_array.push(sesong2)}
+          if (typeof(sesong1) == 'number') {
+            assos_ranking_array.push(parseFloat(sesong1).toFixed(3))} else {
+            assos_ranking_array.push(sesong1)}
+          ranking_array.push(assos_ranking_array)
+          klubber_allerede_lagt_til.push(klubb_koeffisienter_1112_2021[i][0])
+        }
       }
     }
   }
@@ -156,22 +161,24 @@ function oppdater_ved_refresh() {
             assos_ranking_array.push((Math.floor((NA_poeng_og_assosiasjon[p][1]/5)*1000)/1000).toFixed(3))
           }
         }
-        if (sesong5 !== "") {
-          sesong5 = sesong5.toFixed(3)}
-        if (sesong4 !== "") {
-          sesong4 = sesong4.toFixed(3)}
-        if (sesong3 !== "") {
-          sesong3 = sesong3.toFixed(3)}
-        if (sesong2 !== "") {
-          sesong2 = sesong2.toFixed(3)}
-        if (sesong1 !== "") {
-          sesong1 = sesong1.toFixed(3)}
-        assos_ranking_array.push(sesong5);
-        assos_ranking_array.push(sesong4);
-        assos_ranking_array.push(sesong3);
-        assos_ranking_array.push(sesong2);
-        assos_ranking_array.push(sesong1);
-        ranking_array.push(assos_ranking_array)
+        if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
+          if (sesong5 !== "") {
+            sesong5 = sesong5.toFixed(3)}
+          if (sesong4 !== "") {
+            sesong4 = sesong4.toFixed(3)}
+          if (sesong3 !== "") {
+            sesong3 = sesong3.toFixed(3)}
+          if (sesong2 !== "") {
+            sesong2 = sesong2.toFixed(3)}
+          if (sesong1 !== "") {
+            sesong1 = sesong1.toFixed(3)}
+          assos_ranking_array.push(sesong5);
+          assos_ranking_array.push(sesong4);
+          assos_ranking_array.push(sesong3);
+          assos_ranking_array.push(sesong2);
+          assos_ranking_array.push(sesong1);
+          ranking_array.push(assos_ranking_array) 
+        }
       }
     }
   }
@@ -203,6 +210,8 @@ function oppdater_ved_refresh() {
 // Endre meta-beskrivelsene
 var descval = document.getElementById('tabell_hoved').innerText;
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+
+
 
 
 
@@ -581,6 +590,10 @@ function endre_klubbnavn(i, kolonne) {
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function toggleMeny() {
+  if (document.getElementById("myDropdown_2").classList.contains("show")) {
+    document.getElementById("myDropdown_2").classList.remove("show")
+    nedoverpil_2()
+  }
   if (document.getElementById("myDropdown").classList.contains("show")) {
       document.getElementById("myDropdown").classList.remove("show")
       nedoverpil()
@@ -588,6 +601,24 @@ function toggleMeny() {
   else {
       document.getElementById("myDropdown").classList.add("show")
       oppoverpil()
+  }
+}
+
+function toggleMeny2() {
+  if (document.getElementById("myDropdown").classList.contains("show")) {
+    document.getElementById("myDropdown").classList.remove("show")
+    nedoverpil()
+}
+  if (document.getElementById("myDropdown_2").classList.contains("show")) {
+    document.getElementById("myDropdown_2").classList.remove("show")
+    nedoverpil_2()
+  }
+  else {
+    if (document.getElementById("myDropdown_2").classList.contains("show")) {}
+    else {
+      document.getElementById("myDropdown_2").classList.add("show")
+      oppoverpil_2()
+    }
   }
 }
 
@@ -599,6 +630,14 @@ function nedoverpil() {
 function oppoverpil() {
   let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
   document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10095</div>";
+}
+
+function nedoverpil_2() {
+  document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace('❯','❮');
+}
+
+function oppoverpil_2() {
+  document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace('❮','❯');
 }
 
 
@@ -613,6 +652,22 @@ $(document).mouseup(e => {
       nedoverpil()
   }
 });
+
+
+/* Lukker menyen om musepeker klikker utenfor boksen */
+const $menu2 = $('.dropdown_land');
+
+$(document).mouseup(e => {
+  if (!$menu.is(e.target) // if the target of the click isn't the container...
+  && $menu.has(e.target).length === 0) // ... nor a descendant of the container
+  {
+    if(document.getElementById("myDropdown_2").classList.contains('show')) {
+      document.getElementById("myDropdown_2").classList.remove("show")
+      nedoverpil_2()
+    }
+  }
+});
+
 
 /* Lager knappene i menyen */
 for (i = 0; i < nåværende_sesong[0] - 21 + 5; i++) {
@@ -629,7 +684,206 @@ function endreMenyTittel(innerHTML) {
   localStorage.setItem('dropdownmeny_valg_landskoeffisient', innerHTML)
   oppdater_ved_refresh()
 }
+
+
+
+
+var klubbers_assosiasjon = []
+let ranking_array_2 = []
+for (i = 0; i < menyvalg.length; i++) {
+  klubbers_assosiasjon.push(menyvalg[i][1])
+}
+let assos_ranking_array = []
+for (i = 0; i < landskoeffisienter.length; i++) {
+  let indeks = 0
+  let indeks_klubb = []
+  assos_ranking_array = []
+  do {
+    indeks_klubb.push(klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks))
+    indeks = klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) + 1
+  }
+  while (klubbers_assosiasjon.indexOf(landskoeffisienter[i][0], indeks) != -1)
+
+
+  let enkelt_sesong1 = 0
+  var koeff_sesong2 = 0;
+  var koeff_sesong3 = 0;
+  var koeff_sesong4 = 0;
+  var koeff_sesong5 = 0;
+  for (p = 0; p < indeks_klubb.length; p++) {
+    enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]) || 0
+  }
+  enkelt_sesong1 = Math.floor(enkelt_sesong1/indeks_klubb.length * 1000) / 1000
+  if (aar_etter_forste_periode <= 0) {
+    koeff_sesong2 = parseFloat(landskoeffisienter[i][4 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]) || 0
+    }
+    koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/indeks_klubb.length) / 1000}
+  if (aar_etter_forste_periode <= 1) {
+    koeff_sesong3 = parseFloat(landskoeffisienter[i][3 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]) || 0
+    }
+    koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/indeks_klubb.length) / 1000}
+  if (aar_etter_forste_periode <= 2) {
+    koeff_sesong4 = parseFloat(landskoeffisienter[i][2 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]) || 0
+    }
+    koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/indeks_klubb.length) / 1000}
+  if (aar_etter_forste_periode <= 3) {
+    koeff_sesong5 = parseFloat(landskoeffisienter[i][1 + aar_etter_forste_periode])
+  }else {
+    for (p = 0; p < indeks_klubb.length; p++) {
+      koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]) || 0
+    }
+    koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/indeks_klubb.length) / 1000}
+  assos_ranking_array.push(landskoeffisienter[i][0])
+  assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
+  assos_ranking_array.push(enkelt_sesong1.toFixed(3))
+  assos_ranking_array.push(koeff_sesong2.toFixed(3))
+  assos_ranking_array.push(koeff_sesong3.toFixed(3))
+  assos_ranking_array.push(koeff_sesong4.toFixed(3))
+  assos_ranking_array.push(koeff_sesong5.toFixed(3))
+
+  ranking_array_2.push(assos_ranking_array)
+}
+
+for (p = 6; p > 1; p--) {
+  ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
+}
+ranking_array_2.sort(sortFunction_tall_1_flere_desimal_land);
+
+function sortFunction_tall_1_flere_desimal_land(a, b) {
+  if (parseFloat(a[1]) === parseFloat(b[1])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[1]) > parseFloat(b[1])) ? -1 : 1;
+  }
+}
+function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
+  if (parseFloat(a[p]) === parseFloat(b[p])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+  }
+}
+
+var landskode = []
+for (i = 0; i < ranking_array_2.length; i++) {
+  landskode.push(ranking_array_2[i][0])
+}
+var flagg_ikon = '';
+/* Lager knappene i menyen */
+for (i = 0; i < landskode.length; i++) {
+  let btn = document.createElement("button");
+  if (landskode[i] == 'NIR') {
+    flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR_" src="media/UEFA/NIR.svg" alt="NIR"></div>'
+  }
+  else {
+    flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + landskode[i] + '.svg" alt="' + landskode[i] + '"></div>'
+  }
+  btn.id = landskode[i]
+  btn.innerHTML = flagg_ikon;
+  btn.className = "meny_element_2"
+  btn.setAttribute("onClick", "endreMenyTittel_2(innerHTML)");
+  document.getElementById("dropdown_elementer_2").appendChild(btn);
+}
+btn = document.createElement("button");
+btn.innerHTML = '<img class="roter" src="media/UEFA/GLOBE2_element.svg" alt="Globe">';
+btn.className = "meny_element_2 ekstra_meny_element"
+btn.setAttribute("onClick", "resett()")
+document.getElementById("dropdown_elementer_2").appendChild(btn);
+
+
+
+
+for (p = 0; p < filter_land_før.length; p++) {
+  filter_land.push(filter_land_før[p])
+  innerHTML = document.getElementById(filter_land[p]).innerHTML;
+
+  
+  if (document.getElementById("dropDownMeny_2").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
+    document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
+  }
+  var id = innerHTML.slice(68, 71)
+  if (id == 'NIR') {}
+  else {id = innerHTML.slice(72, 75)}
+  document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
+  document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
+  if (filter_land.length == 8) {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<span class="grå_knappetekst">...(1)</span>'}
+  else if (filter_land.length > 8) {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace(filter_land.length - 8, filter_land.length - 7)}
+  else {
+    document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + innerHTML
+  }
+}
+
+
+
+function endreMenyTittel_2(innerHTML) {
+  if (document.getElementById("dropDownMeny_2").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
+    document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
+  }
+  var id = innerHTML.slice(68, 71)
+  if (id == 'NIR') {}
+  else {id = innerHTML.slice(72, 75)}
+  if (filter_land.includes(id)) {
+    const index = filter_land.indexOf(id);
+    if (index > -1) {
+      filter_land.splice(index, 1); // 2nd parameter means remove one item only
+    }
+    document.getElementById(id).style.backgroundColor = '';
+    document.getElementById(id).style.border = '';
+    if (filter_land.length == 7) {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace('...(1)','')}
+    if (document.getElementById("dropDownMeny_2").innerHTML.includes(innerHTML)) {
+      if (filter_land.length > 6) {
+        if (filter_land[6] == 'NIR') {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<div class="flagg_div"><img class="flagg" id="NIR_" src="media/UEFA/NIR.svg" alt="NIR"></div>'}
+          else {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + filter_land[6] + '.svg" alt="' + filter_land[6] + '"></div>'}
+      }
+      document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace(innerHTML,'')
+    }
+    if (filter_land.length > 7) {
+      document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace(filter_land.length - 6,filter_land.length - 7)
+    }
+  }
+  else {
+    filter_land.push(id)
+    document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
+    document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
+    if (filter_land.length == 8) {
+      document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<span class="grå_knappetekst">...(1)</span>'}
+    else if (filter_land.length > 8) {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace(filter_land.length - 8, filter_land.length - 7)}
+    else {
+      document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + innerHTML
+    }
+  }
+  if (filter_land.length == 0) {
+    document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">'
+  }
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
+  oppdater_ved_refresh()
+}
+
+
+function resett() {
+  document.getElementById('dropDownMeny_2').innerHTML = '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10095</div>'
+  for (p = 0; p < filter_land.length; p++) {
+    document.getElementById(filter_land[p]).style.backgroundColor = '';
+    document.getElementById(filter_land[p]).style.border = '';
+  }
+  filter_land = []
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
+  oppdater_ved_refresh()
+}
 /* Dropdown meny slutt */
+
+
 
 
 function endre_sort_kolonne() {
