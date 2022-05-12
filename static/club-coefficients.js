@@ -106,25 +106,23 @@ function oppdater_ved_refresh() {
   
           }
         }
-        if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
-          if (typeof(sesong5) == 'number') {
-            assos_ranking_array.push(parseFloat(sesong5).toFixed(3))} else {
-            assos_ranking_array.push(sesong5)}
-          if (typeof(sesong4) == 'number') {
-            assos_ranking_array.push(parseFloat(sesong4).toFixed(3))} else {
-            assos_ranking_array.push(sesong4)}
-          if (typeof(sesong3) == 'number') {
-            assos_ranking_array.push(parseFloat(sesong3).toFixed(3))} else {
-            assos_ranking_array.push(sesong3)}
-          if (typeof(sesong2) == 'number') {
-            assos_ranking_array.push(parseFloat(sesong2).toFixed(3))} else {
-            assos_ranking_array.push(sesong2)}
-          if (typeof(sesong1) == 'number') {
-            assos_ranking_array.push(parseFloat(sesong1).toFixed(3))} else {
-            assos_ranking_array.push(sesong1)}
-          ranking_array.push(assos_ranking_array)
-          klubber_allerede_lagt_til.push(klubb_koeffisienter_1112_2021[i][0])
-        }
+        if (typeof(sesong5) == 'number') {
+          assos_ranking_array.push(parseFloat(sesong5).toFixed(3))} else {
+          assos_ranking_array.push(sesong5)}
+        if (typeof(sesong4) == 'number') {
+          assos_ranking_array.push(parseFloat(sesong4).toFixed(3))} else {
+          assos_ranking_array.push(sesong4)}
+        if (typeof(sesong3) == 'number') {
+          assos_ranking_array.push(parseFloat(sesong3).toFixed(3))} else {
+          assos_ranking_array.push(sesong3)}
+        if (typeof(sesong2) == 'number') {
+          assos_ranking_array.push(parseFloat(sesong2).toFixed(3))} else {
+          assos_ranking_array.push(sesong2)}
+        if (typeof(sesong1) == 'number') {
+          assos_ranking_array.push(parseFloat(sesong1).toFixed(3))} else {
+          assos_ranking_array.push(sesong1)}
+        ranking_array.push(assos_ranking_array)
+        klubber_allerede_lagt_til.push(klubb_koeffisienter_1112_2021[i][0])
       }
     }
   }
@@ -161,24 +159,24 @@ function oppdater_ved_refresh() {
             assos_ranking_array.push((Math.floor((NA_poeng_og_assosiasjon[p][1]/5)*1000)/1000).toFixed(3))
           }
         }
-        if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
-          if (sesong5 !== "") {
-            sesong5 = sesong5.toFixed(3)}
-          if (sesong4 !== "") {
-            sesong4 = sesong4.toFixed(3)}
-          if (sesong3 !== "") {
-            sesong3 = sesong3.toFixed(3)}
-          if (sesong2 !== "") {
-            sesong2 = sesong2.toFixed(3)}
-          if (sesong1 !== "") {
-            sesong1 = sesong1.toFixed(3)}
-          assos_ranking_array.push(sesong5);
-          assos_ranking_array.push(sesong4);
-          assos_ranking_array.push(sesong3);
-          assos_ranking_array.push(sesong2);
-          assos_ranking_array.push(sesong1);
-          ranking_array.push(assos_ranking_array) 
-        }
+        if (sesong5 !== "") {
+          sesong5 = sesong5.toFixed(3)}
+        if (sesong4 !== "") {
+          sesong4 = sesong4.toFixed(3)}
+        if (sesong3 !== "") {
+          sesong3 = sesong3.toFixed(3)}
+        if (sesong2 !== "") {
+          sesong2 = sesong2.toFixed(3)}
+        if (sesong1 !== "") {
+          sesong1 = sesong1.toFixed(3)}
+        assos_ranking_array.push(sesong5);
+        assos_ranking_array.push(sesong4);
+        assos_ranking_array.push(sesong3);
+        assos_ranking_array.push(sesong2);
+        assos_ranking_array.push(sesong1);
+        ranking_array.push(assos_ranking_array) 
+        // if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
+        // }
       }
     }
   }
@@ -203,6 +201,13 @@ function oppdater_ved_refresh() {
       }
     }
   }
+  let ranking_array_land_filter = []
+  for (p = 0; p < ranking_array.length; p++) {
+    if (filter_land_før.includes(ranking_array[p][2]) || filter_land_før == '') {
+      ranking_array_land_filter.push(ranking_array[p])
+    }
+  }
+  ranking_array = ranking_array_land_filter
   sorter_etter_sesong(ranking_array)
 }
 
@@ -485,9 +490,6 @@ function sortFunction_tall_2_flere_desimal(a, b) {
 }
 
 function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-  // if (a[0] == "West Ham United") {
-  //   alert(a[x])
-  // }
   if (((a[x] === '' || !a[x])) && a[x] !== 0) {a[x] = "0.0"}
   if (((b[x] === '' || !b[x])) && b[x] !== 0) {b[x] = "0.0"}
   if (parseFloat(a[x]) === parseFloat(b[x])) {
@@ -524,9 +526,6 @@ function byggTabell_test(ranking_array, column, order) {
     let sesong3 = ranking_array[i][6]
     let sesong2 = ranking_array[i][7]
     let sesong1 = ranking_array[i][8]
-    // if (ranking_array[i][0] == "West Ham United") {
-    //   alert(ranking_array[i])
-    // }
     if (sesong5 === "0.0") {sesong5 = ''}
     if (sesong4 === "0.0") {sesong4 = ''}
     if (sesong3 === "0.0") {sesong3 = ''}
@@ -542,21 +541,6 @@ function byggTabell_test(ranking_array, column, order) {
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong2}</a>`}
     if (aar_etter_forste_periode >= 4) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong1}</a>`}
-    // if ((column == "poeng" || column == "na_poeng")) {
-    //   let kolonne = ""
-    //   if (column == "poeng") {kolonne = 1}
-    //   if (column == "na_poeng") {kolonne = 3}
-    //   for (p = 0; p < ranking_array.length; p++) {
-    //     if (ranking_array[i][kolonne] == ranking_array[p][kolonne]) {
-    //       nummer -= (i-p)
-    //       break
-    //     }
-    //   }
-    // }
-    // alert(nummer + '    ' + ranking_array[i][0])
-    // if (order == "asc") {
-    //   nummer = ranking_array.length - nummer - 1
-    // }
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer + 1}</td>
                     <td class="id_nr utydelig"><b>${ranking_array[i][9] + 1}</b></td>
