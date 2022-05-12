@@ -672,7 +672,7 @@ function endre_link_landskoeff() {
   }
   else if (overskrift_klubbkoeffisient_finnes) {
     let siste_ord_linktekst = document.getElementById('overskrift_klubbkoeffisient').innerText;
-    if (siste_ord_linktekst == "Country coefficient ranking") {
+    if (siste_ord_linktekst == "Club coefficient ranking") {
         siste_ord_linktekst = "prize money"
     }
     else {
