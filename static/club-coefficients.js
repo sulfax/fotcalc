@@ -240,7 +240,8 @@ const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td =>
 arr[0][3] = "Country"
 for (i = 0; i < arr.length; i++) {
   arr[i].splice(0,1)
-  arr[i].splice(5,9)
+  arr[i].splice(2,1)
+  arr[i].splice(4,5)
 
 }
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
