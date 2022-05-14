@@ -220,7 +220,9 @@ const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td =>
 arr[0][1] = "Country"
 for (i = 0; i < land_ranking.length; i++) {
   arr[i+1][1] = land_ranking[i]
+  arr[i].splice(3,5)
 }
+// console.log(arr)
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
 
 
