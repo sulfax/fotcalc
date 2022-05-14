@@ -196,33 +196,13 @@ function sorter_etter_sesong() {
 // document.getElementById("tabell_hoved_2").classList.add("skjul")
 
 
-var schema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": []
-}
-var Lag_premiepenger = {
-    "@type": "Question",
-    "name": "How much prize money has PROMP earned so far?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "€ 15",
-    }
-}
-schema.mainEntity.push(Lag_premiepenger)
-const script = document.createElement('script');
-script.setAttribute('type', 'application/ld+json');
-script.textContent = JSON.stringify(schema);
-document.head.appendChild(script);
 
 const table = document.querySelector('table')
 const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
 arr[0][1] = "Country"
 for (i = 0; i < land_ranking.length; i++) {
   arr[i+1][1] = land_ranking[i]
-  arr[i].splice(3,5)
 }
-// console.log(arr)
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
 
 

@@ -212,32 +212,12 @@ function oppdater_ved_refresh() {
 }
 
 
-var schema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": []
-}
-var Lag_premiepenger = {
-    "@type": "Question",
-    "name": "How much prize money has PROMP earned so far?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "€ 15",
-    }
-}
-schema.mainEntity.push(Lag_premiepenger)
-const script = document.createElement('script');
-script.setAttribute('type', 'application/ld+json');
-script.textContent = JSON.stringify(schema);
-document.head.appendChild(script);
-
-
 // Endre meta-beskrivelsene
 // var descval = document.getElementById('tabell_hoved').innerText;
 
 const table = document.querySelector('table')
 const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
-arr[0][3] = "Country"
+arr[0][3] = 'Country'
 arr[0][6] = arr[0][6].slice(0, -1)
 arr[0][7] = arr[0][7].slice(0, -1)
 arr[0][8] = arr[0][8].slice(0, -1)
