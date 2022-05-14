@@ -238,13 +238,10 @@ document.head.appendChild(script);
 const table = document.querySelector('table')
 const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
 arr[0][3] = "Country"
-arr[0][6] = arr[0][6].slice(0, -1)
-arr[0][7] = arr[0][7].slice(0, -1)
-arr[0][8] = arr[0][8].slice(0, -1)
-arr[0][9] = arr[0][9].slice(0, -1)
-arr[0][10] = arr[0][10].slice(0, -1)
 for (i = 0; i < arr.length; i++) {
   arr[i].splice(0,1)
+  arr[i].splice(5,9)
+
 }
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
