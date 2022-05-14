@@ -233,8 +233,20 @@ document.head.appendChild(script);
 
 
 // Endre meta-beskrivelsene
-var descval = document.getElementById('tabell_hoved').innerText;
-var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+// var descval = document.getElementById('tabell_hoved').innerText;
+
+const table = document.querySelector('table')
+const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
+arr[0][3] = "Country"
+arr[0][6] = arr[0][6].slice(0, -1)
+arr[0][7] = arr[0][7].slice(0, -1)
+arr[0][8] = arr[0][8].slice(0, -1)
+arr[0][9] = arr[0][9].slice(0, -1)
+arr[0][10] = arr[0][10].slice(0, -1)
+for (i = 0; i < arr.length; i++) {
+  arr[i].splice(0,1)
+}
+var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
 
 
