@@ -5,6 +5,7 @@ var din_klubbs_premi_koef_e = "your club’s prize money";
 var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 
 let ranking_array = []
+let land_ranking = []
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   ranking_array = []
@@ -209,12 +210,17 @@ script.textContent = JSON.stringify(schema);
 document.head.appendChild(script);
 
 
-
 // Endre meta-beskrivelsene
-document.getElementById("tabell_hoved_2").classList.remove("skjul")
-var descval = document.getElementById('tabell_hoved_2').innerText;
-document.getElementById("tabell_hoved_2").classList.add("skjul")
-var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+// document.getElementById("tabell_hoved_2").classList.remove("skjul")
+// var descval = document.getElementById('tabell_hoved_2').innerText;
+// document.getElementById("tabell_hoved_2").classList.add("skjul")
+const table = document.querySelector('table')
+const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
+arr[0][1] = "Country"
+for (i = 0; i < land_ranking.length; i++) {
+  arr[i+1][1] = land_ranking[i]
+}
+var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
 
 function sorter(column, order, tekst, ranking_array) {
@@ -340,10 +346,9 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 // Mange fine flaggikoner: https://github.com/HatScripts/circle-flags
 function byggTabell_test(ranking_array) {
   testTabell.innerHTML = '';
-  testTabell2.innerHTML = '';
   var helTabellHTML = '';
-  var helTabellHTML2 = '';
   for (i = 0; i < ranking_array.length; i++) {
+    land_ranking.push(ranking_array[i][7])
     if (ranking_array[i][0] == 'NIR') {
       flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="Northern Ireland"></div>'
     }
@@ -361,20 +366,8 @@ function byggTabell_test(ranking_array) {
                     <td class='premie_koeff'>${ranking_array[i][6]}</td>
                 </tr>`
                 helTabellHTML += rad_test
-    rad_test_meta = `<tr>
-                <td class="id_nr"> ${i + 1}</td>
-                <td><nobr class="marign_venstre">${ranking_array[i][7]}</nobr></td>
-                <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
-                <td class='premie_koeff'>${ranking_array[i][2]}</td>
-                <td class='premie_koeff'>${ranking_array[i][3]}</td>
-                <td class='premie_koeff'>${ranking_array[i][4]}</td>
-                <td class='premie_koeff'>${ranking_array[i][5]}</td>
-                <td class='premie_koeff'>${ranking_array[i][6]}</td>
-                </tr>`
-                helTabellHTML2 += rad_test_meta
   }
   testTabell.innerHTML = helTabellHTML;
-  testTabell2.innerHTML = helTabellHTML2;
 }
 
 
