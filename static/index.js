@@ -606,7 +606,6 @@ if (overskrift_forside_finnes) {
     "@type": "FAQPage",
     "mainEntity": []
   }
-
   for (let i = 0; i < menyvalg_lengde; i++) {
     var Lag_premiepenger = {
         "@type": "Question",
