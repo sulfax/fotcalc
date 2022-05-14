@@ -241,7 +241,7 @@ for (i = 0; i < arr.length; i++) {
   arr[i].splice(0,2)
   arr[i].splice(2,7)
 }
-console.log(arr)
+// console.log(arr)
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
 
