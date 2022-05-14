@@ -212,6 +212,26 @@ function oppdater_ved_refresh() {
 }
 
 
+var schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": []
+}
+var Lag_premiepenger = {
+    "@type": "Question",
+    "name": "How much prize money has PROMP earned so far?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "€ 15",
+    }
+}
+schema.mainEntity.push(Lag_premiepenger)
+const script = document.createElement('script');
+script.setAttribute('type', 'application/ld+json');
+script.textContent = JSON.stringify(schema);
+document.head.appendChild(script);
+
+
 // Endre meta-beskrivelsene
 var descval = document.getElementById('tabell_hoved').innerText;
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
@@ -241,7 +261,7 @@ $('th').on('click', function(){
   sorter(column, order, tekst, ranking_array)
 })
 
-sorter_etter_sesong()
+
 function sorter_etter_sesong() {
   let column = localStorage.getItem('kolonne_klubbkoeffisient') || 'id_nr'
   let order = localStorage.getItem('rekkefølge_klubbkoeffisient') || 'asc'
@@ -259,12 +279,6 @@ function sorter_etter_sesong() {
   sorter(column, order, tekst, ranking_array)
 }
 
-
-// // Endre meta-beskrivelsene
-// document.getElementById("tabell_hoved_2").classList.remove("skjul")
-// var descval = document.getElementById('tabell_hoved_2').innerText;
-// document.getElementById("tabell_hoved_2").classList.add("skjul")
-// var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
 
 
 function sorter(column, order, tekst, ranking_array) {
