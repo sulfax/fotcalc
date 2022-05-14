@@ -237,7 +237,6 @@ document.head.appendChild(script);
 
 const table = document.querySelector('table')
 const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
-arr[0][3] = "Country"
 for (i = 0; i < arr.length; i++) {
   arr[i].splice(0,1)
   arr[i].splice(2,1)
