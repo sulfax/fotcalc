@@ -239,7 +239,7 @@ const table = document.querySelector('table')
 const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
 for (i = 0; i < arr.length; i++) {
   arr[i].splice(0,2)
-  arr[i].splice(1,8)
+  arr[i].splice(2,7)
 }
 console.log(arr)
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
