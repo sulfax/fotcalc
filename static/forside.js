@@ -140,7 +140,7 @@ function sorter_etter_sesong() {
           if (trykte_knapper.includes(knapp_filter_turneringer[0]) || (!trykte_knapper.includes(knapp_filter_turneringer[0]) && (!trykte_knapper.includes(knapp_filter_turneringer[1])) && !trykte_knapper.includes(knapp_filter_turneringer[2]))) {
             for (j = 0; j < ucl_knapper_riktig.length; j++) {
               if (containsAll) {
-                if (klubb_knapp.includes('b13') && trykte_knapper.includes('b9')) {
+                if (klubb_knapp.includes('b13') && trykte_knapper.includes('b9') && ((ucl_knapper_riktig[j] == 'b9') || (ucl_knapper_riktig[j] == 'b13'))) {
                 }
                 else if (trykte_knapper.includes(ucl_knapper_riktig[j]) || trykte_knapper.includes('i13')) {
                   if (klubb_knapp.includes(ucl_knapper_riktig[j]) || klubb_knapp.includes('i13')) {
