@@ -203,7 +203,7 @@ arr[0][1] = "Country"
 for (i = 0; i < land_ranking.length; i++) {
   arr[i+1][1] = land_ranking[i]
 }
-var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
 
 function sorter(column, order, tekst, ranking_array) {
