@@ -11,7 +11,7 @@ function oppdater_ved_refresh() {
   ranking_array = []
   testTabell = document.getElementById('minTest')
   testTabell2 = document.getElementById('minTest2')
-  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong[0] - 5) + '/' + (nåværende_sesong[2] - 5) + ' - ' + (nåværende_sesong[0] - 1) + '/' + (nåværende_sesong[2] - 1)) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0] - 5) + '/' + (nåværende_sesong_periode_valg[2] - 5) + ' - ' + (nåværende_sesong_periode_valg[0] - 1) + '/' + (nåværende_sesong_periode_valg[2] - 1)) + " <div class='opp_ned_pil'>&#10094</div>";
   
   var klubbers_assosiasjon = []
   let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
@@ -392,7 +392,7 @@ $(document).mouseup(e => {
 });
 
 /* Lager knappene i menyen */
-for (i = 0; i < nåværende_sesong[0] - 21 + 5; i++) {
+for (i = 0; i < nåværende_sesong_periode_valg[0] - 21 + 5; i++) {
   let btn = document.createElement("button");
   btn.innerHTML = (21 + i - 4) + '/' + (22 + i - 4) + ' - ' + (21 + i) + '/' + (22 + i);
   btn.className = "meny_element"

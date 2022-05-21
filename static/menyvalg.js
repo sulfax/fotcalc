@@ -267,6 +267,7 @@ const totale_uavgjorte_kamper = [
 ];
 
 const nåværende_sesong = [21, '/', 22]
+const nåværende_sesong_periode_valg = [22, '/', 23]
 
 
 const landskoeffisienter = [
