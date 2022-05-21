@@ -176,7 +176,6 @@ function sorter_etter_sesong() {
                       }
                     }
                     else if (klubb_knapp.includes(uel_knapper_riktig[j]) && uel_knapper_riktig[j]) {
-                      // alert(klubb_knapp + '     ' + uel_knapper_riktig[j] + '   ' + menyvalg_edit[i][0])
                     }
                     else {
                       containsAll = false;
@@ -240,9 +239,6 @@ function sorter_etter_sesong() {
               }
             }
           }
-          // if (containsAll) {
-          //   alert(menyvalg_edit[i][0])
-          // }
           if (containsAll && (trykte_knapper.includes(knapp_filter_turneringer[1]) || (!trykte_knapper.includes(knapp_filter_turneringer[0]) && (!trykte_knapper.includes(knapp_filter_turneringer[1])) && !trykte_knapper.includes(knapp_filter_turneringer[2])))) {
             containsAll = true
             const uel_knapper_riktig = ['', '', '', 'b10', '', 'b14', 'b16', 'b19', 'b22', 'b25', 'b28', 'b31', 'b34'];
@@ -591,38 +587,80 @@ function generer_lands_knapper() {
     var koeff_sesong3 = 0;
     var koeff_sesong4 = 0;
     var koeff_sesong5 = 0;
+    let antall_klubber1 = indeks_klubb.length;
+    let antall_klubber2 = indeks_klubb.length;
+    let antall_klubber3 = indeks_klubb.length;
+    let antall_klubber4 = indeks_klubb.length;
+    let antall_klubber5 = indeks_klubb.length;
     for (p = 0; p < indeks_klubb.length; p++) {
-      enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall + 1)))]) || 0
+      if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall + 1)))] == undefined) {
+        antall_klubber1 -= 1
+      } else {
+        enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall + 1)))]) || 0;
+      }
     }
-    enkelt_sesong1 = Math.floor(enkelt_sesong1/indeks_klubb.length * 1000) / 1000
+    enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0
     if (aarstall <= 0) {
       koeff_sesong2 = parseFloat(landskoeffisienter[i][4 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall)))]) || 0
+        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall)))] == undefined) {
+          antall_klubber2 -= 1
+        } else {
+          koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall)))]) || 0
+        }
       }
-      koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/indeks_klubb.length) / 1000}
+      koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/antall_klubber2) / 1000 || 0}
     if (aarstall <= 1) {
       koeff_sesong3 = parseFloat(landskoeffisienter[i][3 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 1)))]) || 0
+        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 1)))] == undefined) {
+          antall_klubber3 -= 1
+        } else {
+          koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 1)))]) || 0;
+        }
       }
-      koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/indeks_klubb.length) / 1000}
+      koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/antall_klubber3) / 1000 || 0}
     if (aarstall <= 2) {
       koeff_sesong4 = parseFloat(landskoeffisienter[i][2 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 2)))]) || 0
+        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 2)))] == undefined) {
+          antall_klubber4 -= 1
+        } else {
+          koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 2)))]) || 0
+        }
       }
-      koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/indeks_klubb.length) / 1000}
+      koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/antall_klubber4) / 1000 || 0}
     if (aarstall <= 3) {
       koeff_sesong5 = parseFloat(landskoeffisienter[i][1 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 3)))]) || 0
+        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 3)))] == undefined) {
+          antall_klubber5 -= 1
+        } else {
+          koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 3)))]) || 0
+        }
       }
-      koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/indeks_klubb.length) / 1000}
+      koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
+    if (landskoeffisienter[i][0] == 'RUS') {
+      if (aarstall == 1) {
+        enkelt_sesong1 = 4.333
+      }
+      if (aarstall == 2) {
+        koeff_sesong2 = 4.333
+      }
+      if (aarstall == 3) {
+        koeff_sesong3 = 4.333
+      }
+      if (aarstall == 4) {
+        koeff_sesong4 = 4.333
+      }
+      if (aarstall == 5) {
+        koeff_sesong5 = 4.333
+      }
+    }
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     assos_ranking_array.push(enkelt_sesong1.toFixed(3))
@@ -630,15 +668,14 @@ function generer_lands_knapper() {
     assos_ranking_array.push(koeff_sesong3.toFixed(3))
     assos_ranking_array.push(koeff_sesong4.toFixed(3))
     assos_ranking_array.push(koeff_sesong5.toFixed(3))
-  
     ranking_array.push(assos_ranking_array)
   }
-  
   for (p = 6; p > 1; p--) {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }
   ranking_array.sort(sortFunction_tall_1_flere_desimal);
   
+  console.log(ranking_array)
   
   var landskode = []
   for (i = 0; i < ranking_array.length; i++) {

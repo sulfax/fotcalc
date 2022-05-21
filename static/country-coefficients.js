@@ -49,7 +49,6 @@ function oppdater_ved_refresh() {
     let antall_klubber4 = indeks_klubb.length;
     let antall_klubber5 = indeks_klubb.length;
     for (p = 0; p < indeks_klubb.length; p++) {
-      // alert(menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))] + '    ' + menyvalg[indeks_klubb[p]][0])
       if (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))] == undefined) {
         antall_klubber1 -= 1
       }
@@ -128,8 +127,6 @@ function oppdater_ved_refresh() {
         koeff_sesong5 = 4.333
       }
     }
-    
-      // alert(enkelt_sesong1 + '    ' + landskoeffisienter[i][0] + '     ' + aar_etter_forste_periode)
 
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
