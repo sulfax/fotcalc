@@ -288,6 +288,8 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
 
 
 function sortFunction_tall_1_flere_desimal(a, b) {
+  if (a[i] == '') {a[i] = 0.000}
+  if (b[i] == '') {b[i] = 0.000}
   if (parseFloat(a[i]) === parseFloat(b[i])) {
     return 0;
   }
@@ -296,6 +298,8 @@ function sortFunction_tall_1_flere_desimal(a, b) {
   }
 }
 function sortFunction_tall_2_flere_desimal(a, b) {
+  if (a[i] == '') {a[i] = 0.000}
+  if (b[i] == '') {b[i] = 0.000}
   if (parseFloat(a[i]) === parseFloat(b[i])) {
     return 0;
   }
@@ -335,6 +339,11 @@ function byggTabell_test(ranking_array) {
     else {
       flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="' + ranking_array[i][7] + '"></div>'
     }
+    if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
+    if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}
+    if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "";}
+    if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "";}
+    if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "";}
     var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
                     <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
