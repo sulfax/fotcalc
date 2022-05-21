@@ -675,8 +675,6 @@ function generer_lands_knapper() {
   }
   ranking_array.sort(sortFunction_tall_1_flere_desimal);
   
-  console.log(ranking_array)
-  
   var landskode = []
   for (i = 0; i < ranking_array.length; i++) {
     landskode.push(ranking_array[i][0])
