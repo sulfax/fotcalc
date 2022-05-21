@@ -208,7 +208,6 @@ function oppdater_ved_refresh() {
   }
   ranking_array = ranking_array_land_filter
   sorter_etter_sesong(ranking_array)
-  generer_lands_knapper()
 }
 
 
@@ -598,7 +597,7 @@ function toggleMeny2() {
   if (document.getElementById("myDropdown").classList.contains("show")) {
     document.getElementById("myDropdown").classList.remove("show")
     nedoverpil()
-}
+  }
   if (document.getElementById("myDropdown_2").classList.contains("show")) {
     document.getElementById("myDropdown_2").classList.remove("show")
     nedoverpil_2()
@@ -610,6 +609,7 @@ function toggleMeny2() {
       oppoverpil_2()
     }
   }
+  generer_lands_knapper()
 }
 
 function nedoverpil() {
@@ -696,6 +696,7 @@ function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
   }
 }
 
+generer_lands_knapper()
 function generer_lands_knapper() {
   var klubbers_assosiasjon = []
   let ranking_array_2 = []
@@ -795,9 +796,11 @@ function generer_lands_knapper() {
   btn.className = "meny_element_2 ekstra_meny_element"
   btn.setAttribute("onClick", "resett()")
   document.getElementById("dropdown_elementer_2").appendChild(btn);
+  for (i = 0; i < filter_land_før.length; i++) {
+    document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
+    document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
+  }
 }
-
-
 
 
 for (p = 0; p < filter_land_før.length; p++) {
@@ -819,6 +822,8 @@ for (p = 0; p < filter_land_før.length; p++) {
     document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + innerHTML
   }
 }
+
+
 
 
 
