@@ -835,34 +835,35 @@ function generer_lands_knapper() {
   btn.className = "meny_element_2 ekstra_meny_element"
   btn.setAttribute("onClick", "resett()")
   document.getElementById("dropdown_elementer_2").appendChild(btn);
+  filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
+  for (i = 0; i < landskoeffisienter.length; i++) {
+    document.getElementById(landskoeffisienter[i][0]).style.backgroundColor = '';
+    document.getElementById(landskoeffisienter[i][0]).style.border = '';
+  }
   for (i = 0; i < filter_land_før.length; i++) {
     document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
     document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
   }
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
 }
-
 
 for (p = 0; p < filter_land_før.length; p++) {
   filter_land.push(filter_land_før[p])
   innerHTML = document.getElementById(filter_land[p]).innerHTML;
-
-  
   if (document.getElementById("dropDownMeny_2").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
     document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
   }
   var id = innerHTML.slice(68, 71)
   if (id == 'NIR') {}
   else {id = innerHTML.slice(72, 75)}
-  document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
-  document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
+  // document.getElementById(id).style.backgroundColor = 'rgb(196, 217, 255)';
+  // document.getElementById(id).style.border = '1px solid rgb(164, 164, 164)';
   if (filter_land.length == 8) {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<span class="grå_knappetekst">...(1)</span>'}
   else if (filter_land.length > 8) {document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML.replace(filter_land.length - 8, filter_land.length - 7)}
   else {
     document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + innerHTML
   }
 }
-
-
 
 
 
