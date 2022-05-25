@@ -47,10 +47,18 @@ function oppdater_ved_refresh() {
     let er_i_periode_menyvalg_aar_3 = (menyvalg[i][9 + ((aar_etter_forste_periode - 3) * antall_MV_elem)])
     let er_i_periode_menyvalg_aar_4 = (menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)])
     if (aar_etter_forste_periode == 0) {er_i_periode_menyvalg = er_i_periode_menyvalg_aar_0}
-    else if (aar_etter_forste_periode == 1) {er_i_periode_menyvalg = er_i_periode_menyvalg_aar_0 || er_i_periode_menyvalg_aar_1}
-    else if (aar_etter_forste_periode == 2) {er_i_periode_menyvalg = er_i_periode_menyvalg_aar_0 || er_i_periode_menyvalg_aar_1 || er_i_periode_menyvalg_aar_2}
-    else if (aar_etter_forste_periode == 3) {er_i_periode_menyvalg = er_i_periode_menyvalg_aar_0 || er_i_periode_menyvalg_aar_1 || er_i_periode_menyvalg_aar_2 || er_i_periode_menyvalg_aar_3}
-    else {er_i_periode_menyvalg = er_i_periode_menyvalg_aar_0 || er_i_periode_menyvalg_aar_1 || er_i_periode_menyvalg_aar_2 || er_i_periode_menyvalg_aar_3 || er_i_periode_menyvalg_aar_4}
+    else if (aar_etter_forste_periode == 1) {
+      if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined) {er_i_periode_menyvalg = true}
+      else  {er_i_periode_menyvalg = false}}
+    else if (aar_etter_forste_periode == 2) {
+      if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined || er_i_periode_menyvalg_aar_2 != undefined) {er_i_periode_menyvalg = true}
+      else  {er_i_periode_menyvalg = false}}
+    else if (aar_etter_forste_periode == 3) {
+      if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined || er_i_periode_menyvalg_aar_2 != undefined || er_i_periode_menyvalg_aar_3 != undefined) {er_i_periode_menyvalg = true}
+      else  {er_i_periode_menyvalg = false}}
+    else {
+      if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined || er_i_periode_menyvalg_aar_2 != undefined || er_i_periode_menyvalg_aar_3 != undefined || er_i_periode_menyvalg_aar_4 != undefined) {er_i_periode_menyvalg = true}
+      else  {er_i_periode_menyvalg = false}}
     if (er_i_periode_menyvalg) {
       klubber_med_i_ranking_menyvalg.push(menyvalg[i][0])
     }
@@ -537,13 +545,16 @@ function byggTabell_test(ranking_array, column, order) {
     if (sesong1 === "0.0") {sesong1 = ''}
     let nummer = i
 
-    if (aar_etter_forste_periode >= 1) {
+    if (aar_etter_forste_periode != 1) {
+      sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" class="utydelig_link">${sesong5}</a>`
+    }
+    if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong4}</a>`}
-    if (aar_etter_forste_periode >= 2) {
+    if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong3}</a>`}
-    if (aar_etter_forste_periode >= 3) {
+    if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong2}</a>`}
-    if (aar_etter_forste_periode >= 4) {
+    if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer + 1}</td>
@@ -552,7 +563,7 @@ function byggTabell_test(ranking_array, column, order) {
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>
                     <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'><a href="country-coefficients">${na_poeng}</a></div></div></td>
-                    <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'><a href="coefficient-calculator" class="utydelig_link" onclick="endre_klubbnavn(${i},${6})">${sesong5}</a></div></div></td>
+                    <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong5}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong4}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong3}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong2}</div></div></td>
