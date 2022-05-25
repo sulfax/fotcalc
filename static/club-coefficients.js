@@ -69,9 +69,8 @@ function oppdater_ved_refresh() {
         let assos_ranking_array = [];
         let klubbnavn = (klubb_koeffisienter_1112_2021[i][0]);
   
-  
+        
         assos_ranking_array.push(klubbnavn)
-  
   
         let sesong5 = "";
         let sesong4 = (klubb_koeffisienter_1112_2021[i][11 + aar_etter_forste_periode] || "");
@@ -150,7 +149,7 @@ function oppdater_ved_refresh() {
       if (aar_etter_forste_periode >= 4) {
         sesong1 = menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)] || ""}
         if (menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)] == 0) {sesong1 = 0}
-      if (sesong1 != "" || sesong2 != "" || sesong3 != "" || sesong4 != "" || sesong5 != "") {
+        if (sesong1 !== false || sesong2 !== false || sesong3 !== false || sesong4 !== false || sesong5 !== false) {
         assos_ranking_array.push(((sesong5||0)+(sesong4||0)+(sesong3||0)+(sesong2||0)+(sesong1||0)).toFixed(3))
         for (p = 0; p < landskoeffisienter.length; p++) {
           if (landskoeffisienter[p][0] == menyvalg[i][1]) {
@@ -173,7 +172,7 @@ function oppdater_ved_refresh() {
         assos_ranking_array.push(sesong3);
         assos_ranking_array.push(sesong2);
         assos_ranking_array.push(sesong1);
-        ranking_array.push(assos_ranking_array) 
+        ranking_array.push(assos_ranking_array)
         // if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
         // }
       }
