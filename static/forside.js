@@ -30,6 +30,11 @@ function endre_sessong(clicked_id) {
   oppdater_sessong(aarstall)
   sorter_etter_sesong()
   generer_lands_knapper()
+  for (i = 0; i < filter_land_før.length; i++) {
+    document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
+    document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
+  }
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
 };
 
 
