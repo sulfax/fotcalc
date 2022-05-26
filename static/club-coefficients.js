@@ -46,7 +46,9 @@ function oppdater_ved_refresh() {
     let er_i_periode_menyvalg_aar_2 = (menyvalg[i][9 + ((aar_etter_forste_periode - 2) * antall_MV_elem)])
     let er_i_periode_menyvalg_aar_3 = (menyvalg[i][9 + ((aar_etter_forste_periode - 3) * antall_MV_elem)])
     let er_i_periode_menyvalg_aar_4 = (menyvalg[i][9 + ((aar_etter_forste_periode - 4) * antall_MV_elem)])
-    if (aar_etter_forste_periode == 0) {er_i_periode_menyvalg = er_i_periode_menyvalg_aar_0}
+    if (aar_etter_forste_periode == 0) {
+      if (er_i_periode_menyvalg_aar_0 != undefined) {er_i_periode_menyvalg = true}
+      else  {er_i_periode_menyvalg = false}}
     else if (aar_etter_forste_periode == 1) {
       if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined) {er_i_periode_menyvalg = true}
       else  {er_i_periode_menyvalg = false}}
@@ -77,9 +79,9 @@ function oppdater_ved_refresh() {
         let assos_ranking_array = [];
         let klubbnavn = (klubb_koeffisienter_1112_2021[i][0]);
   
-        
         assos_ranking_array.push(klubbnavn)
   
+
         let sesong5 = "";
         let sesong4 = (klubb_koeffisienter_1112_2021[i][11 + aar_etter_forste_periode] || "");
         let sesong3 = (klubb_koeffisienter_1112_2021[i][10 + aar_etter_forste_periode] || "");
@@ -127,6 +129,7 @@ function oppdater_ved_refresh() {
         if (typeof(sesong1) == 'number') {
           assos_ranking_array.push(parseFloat(sesong1).toFixed(3))} else {
           assos_ranking_array.push(sesong1)}
+
         ranking_array.push(assos_ranking_array)
         klubber_allerede_lagt_til.push(klubb_koeffisienter_1112_2021[i][0])
       }
@@ -165,24 +168,26 @@ function oppdater_ved_refresh() {
             assos_ranking_array.push((Math.floor((NA_poeng_og_assosiasjon[p][1]/5)*1000)/1000).toFixed(3))
           }
         }
-        if (sesong5 !== "") {
-          sesong5 = sesong5.toFixed(3)}
-        if (sesong4 !== "") {
-          sesong4 = sesong4.toFixed(3)}
-        if (sesong3 !== "") {
-          sesong3 = sesong3.toFixed(3)}
-        if (sesong2 !== "") {
-          sesong2 = sesong2.toFixed(3)}
-        if (sesong1 !== "") {
-          sesong1 = sesong1.toFixed(3)}
-        assos_ranking_array.push(sesong5);
-        assos_ranking_array.push(sesong4);
-        assos_ranking_array.push(sesong3);
-        assos_ranking_array.push(sesong2);
-        assos_ranking_array.push(sesong1);
-        ranking_array.push(assos_ranking_array)
-        // if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
-        // }
+        if (sesong5 !== "" || sesong4 !== "" || sesong3 !== "" || sesong2 !== "" || sesong1 !== "") {
+          if (sesong5 !== "") {
+            sesong5 = sesong5.toFixed(3)}
+          if (sesong4 !== "") {
+            sesong4 = sesong4.toFixed(3)}
+          if (sesong3 !== "") {
+            sesong3 = sesong3.toFixed(3)}
+          if (sesong2 !== "") {
+            sesong2 = sesong2.toFixed(3)}
+          if (sesong1 !== "") {
+            sesong1 = sesong1.toFixed(3)}
+          assos_ranking_array.push(sesong5);
+          assos_ranking_array.push(sesong4);
+          assos_ranking_array.push(sesong3);
+          assos_ranking_array.push(sesong2);
+          assos_ranking_array.push(sesong1);
+          ranking_array.push(assos_ranking_array)
+          // if (filter_land_før.includes(assos_ranking_array[2]) || filter_land_før == '') {
+          // }
+        }
       }
     }
   }
