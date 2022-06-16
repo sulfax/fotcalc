@@ -62,7 +62,7 @@ const norsk_kalkulator = [
     'Playoff:',
     'Røk ut i playoff:',
     'Gruppespill:',
-    '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering internt i gruppespillet (1-32). Follow link 1 to figure out.">Ti års koeff</abbr>: </div> <a class="graa_hover_link" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Ti års koeffisient-rangering">1</abbr></a>',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering internt i gruppespillet (1-32). Følg lenke 1 for å finne ut.">Ti års koeff</abbr>: </div> <a class="graa_hover_link" href="https://www.uefa.com/nationalassociations/uefarankings/tenyears/" target="_blank"><abbr data_title="Ti års koeffisient-rangering">1</abbr></a>',
     '<abbr data_title="Antall seiere i gruppespillet">Seiere</abbr>:',
     '<abbr data_title="Antall uavgjort i gruppespillet">Uavgjort</abbr>:',
     '<abbr data_title="Antall uavgjorte kamper i alle gruppene til sammen (0-96)">Uavgjort totalt</abbr>:',
