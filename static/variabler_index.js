@@ -220,7 +220,7 @@ const english_klubbkoeffisient = [
 ];
 
 const english_ti_års = [
-    'UEFA 5-year Club Coefficient ranking',
+    'UEFA 10-year Club Coefficient ranking',
     '10-year coefficient ranking',
     'This ranking is used solely to find the club’s 10-year coefficient bonus (€)<br>for participating in European group stages.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Decisive for group stage bonus (€) for ',
