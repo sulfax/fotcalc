@@ -134,12 +134,13 @@ function oppdater_ved_refresh() {
         }
         let tittel_poeng = 0;
 
+        aar_etter_forste_periode = parseInt(aar_etter_forste_periode)
         for (p = 0; p < menyvalg.length; p++) {
           if (assos_ranking_array == menyvalg[p][0]) {
             for (b = 0; b < (menyvalg[p].length - 2)/antall_MV_elem; b++) {
               if (menyvalg[p][2 + antall_MV_elem*b]) {
                 if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b33')) {
-                  if (-b + aar_etter_forste_periode <= 4) {
+                  if ((-b+aar_etter_forste_periode)<= 4) {
                     tittel_poeng += 12
                   }
                   else {
@@ -147,7 +148,7 @@ function oppdater_ved_refresh() {
                   }
                 }
                 else if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b34')) {
-                  if (-b + aar_etter_forste_periode <= 4) {
+                  if ((-b+aar_etter_forste_periode) <= 4) {
                     tittel_poeng += 3
                   }
                   else {
@@ -161,10 +162,10 @@ function oppdater_ved_refresh() {
 
         for (p = 0; p < ucl_mestere.length; p++) {
           if (ucl_mestere[p][1] == assos_ranking_array) {
-            if (ucl_mestere[p][0] >= aar_etter_forste_periode + 2018) {
+            if (ucl_mestere[p][0] >= (aar_etter_forste_periode+2018)) {
               tittel_poeng += 12
             }
-            else if (ucl_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+            else if (ucl_mestere[p][0] >= (1993)) {
               tittel_poeng += 8
             }
             else {
@@ -174,10 +175,10 @@ function oppdater_ved_refresh() {
         }
         for (p = 0; p < uel_mestere.length; p++) {
           if (uel_mestere[p][1] == assos_ranking_array) {
-            if (uel_mestere[p][0] >= aar_etter_forste_periode + 2018) {
+            if (uel_mestere[p][0] >= (aar_etter_forste_periode+2018)) {
               tittel_poeng += 3
             }
-            else if (uel_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+            else if (uel_mestere[p][0] >= (1993)) {
               tittel_poeng += 2
             }
             else {
@@ -187,7 +188,7 @@ function oppdater_ved_refresh() {
         }
         for (p = 0; p < cup_vinner_cup_mestere.length; p++) {
           if (cup_vinner_cup_mestere[p][1] == assos_ranking_array) {
-            if (cup_vinner_cup_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+            if (cup_vinner_cup_mestere[p][0] >= (1993)) {
               tittel_poeng += 2
             }
             else {
@@ -195,6 +196,9 @@ function oppdater_ved_refresh() {
             }
           }
         }
+
+
+
         let poeng = (((sesong10||0)+(sesong9||0)+(sesong8||0)+(sesong7||0)+(sesong6||0)+(sesong5||0)+(sesong4||0)+(sesong3||0)+(sesong2||0)+(sesong1||0) + tittel_poeng).toFixed(3))
         assos_ranking_array.push(poeng)
         for (p = 0; p < landskoeffisienter.length; p++) {
@@ -294,10 +298,10 @@ function oppdater_ved_refresh() {
               for (b = 0; b < (menyvalg[p].length - 2)/antall_MV_elem; b++) {
                 if (menyvalg[p][2 + antall_MV_elem*b]) {
                   if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b33')) {
-                    if (-b + aar_etter_forste_periode <= 4) {
+                    if ((-b+aar_etter_forste_periode) <= 4) {
                       tittel_poeng += 12
                     }
-                    else if (-b + aar_etter_forste_periode <= 25) {
+                    else if ((-b+aar_etter_forste_periode) <= 25) {
                       tittel_poeng += 8
                     }
                     else {
@@ -305,10 +309,10 @@ function oppdater_ved_refresh() {
                     }
                   }
                   else if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b34')) {
-                    if (-b + aar_etter_forste_periode <= 4) {
+                    if ((-b+aar_etter_forste_periode) <= 4) {
                       tittel_poeng += 3
                     }
-                    else if (-b + aar_etter_forste_periode <= 25) {
+                    else if ((-b+aar_etter_forste_periode) <= 25) {
                       tittel_poeng += 2
                     }
                     else {
@@ -321,10 +325,10 @@ function oppdater_ved_refresh() {
           }
           for (p = 0; p < ucl_mestere.length; p++) {
             if (ucl_mestere[p][1] == assos_ranking_array) {
-              if (ucl_mestere[p][0] >= aar_etter_forste_periode + 2018) {
+              if (ucl_mestere[p][0] >= (aar_etter_forste_periode+2018)) {
                 tittel_poeng += 12
               }
-              else if (ucl_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+              else if (ucl_mestere[p][0] >= (1993)) {
                 tittel_poeng += 8
               }
               else {
@@ -334,10 +338,10 @@ function oppdater_ved_refresh() {
           }
           for (p = 0; p < uel_mestere.length; p++) {
             if (uel_mestere[p][1] == assos_ranking_array) {
-              if (uel_mestere[p][0] >= aar_etter_forste_periode + 2018) {
+              if (uel_mestere[p][0] >= (aar_etter_forste_periode+2018)) {
                 tittel_poeng += 3
               }
-              else if (uel_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+              else if (uel_mestere[p][0] >= (1993)) {
                 tittel_poeng += 2
               }
               else {
@@ -347,7 +351,7 @@ function oppdater_ved_refresh() {
           }
           for (p = 0; p < cup_vinner_cup_mestere.length; p++) {
             if (cup_vinner_cup_mestere[p][1] == assos_ranking_array) {
-              if (cup_vinner_cup_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+              if (cup_vinner_cup_mestere[p][0] >= (1993)) {
                 tittel_poeng += 2
               }
               else {
