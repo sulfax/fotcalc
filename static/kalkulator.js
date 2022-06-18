@@ -1196,3 +1196,9 @@ function endre_sort_kolonne() {
         localStorage.setItem('rekkefølge', 'desc')
     }
 }
+
+function endre_ti_års_periode() {
+    const tomt_array = [];
+    localStorage.setItem('filter_land', JSON.stringify(tomt_array))
+    localStorage.setItem('dropdownmeny_valg_ti_års', ((nåværende_sesong_periode_valg[0] - 10) + '/' + (nåværende_sesong_periode_valg[2] - 10) + ' - ' + (nåværende_sesong_periode_valg[0] - 1) + '/' + (nåværende_sesong_periode_valg[2] - 1)))
+}

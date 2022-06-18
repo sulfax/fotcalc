@@ -245,7 +245,7 @@ const english_kalkulator = [
     'Play-off:',
     'Eliminated in playoff:',
     'Group stage:',
-    '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the group stage (1-32). Follow link 1 to figure out.">Ten-year coeff</abbr>: </div> <a class="graa_hover_link" href="10-year-ranking" target="_blank"><abbr data_title="Ten year coefficient ranking">1</abbr></a>',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the group stage (1-32). Follow link 1 to figure out.">Ten-year coeff</abbr>: </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten year coefficient ranking">1</abbr></a>',
     '<abbr data_title="Amount of wins in the group stage">Wins</abbr>:',
     '<abbr data_title="Amount of draws in the group stage">Draws</abbr>:',
     '<abbr data_title="Total number of drawn games in the relevant group stage (0-96)">Total draws</abbr>:',
