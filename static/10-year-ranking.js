@@ -494,8 +494,8 @@ $('th').on('click', function(){
 
 
 function sorter_etter_sesong() {
-  let column = localStorage.getItem('kolonne_klubbkoeffisient') || 'id_nr'
-  let order = localStorage.getItem('rekkefølge_klubbkoeffisient') || 'asc'
+  let column = localStorage.getItem('kolonne_ti_års') || 'id_nr'
+  let order = localStorage.getItem('rekkefølge_ti_års') || 'asc'
   if(order == 'desc') {
     document.getElementById(column).dataset.order = 'asc';
   }
@@ -824,8 +824,8 @@ function sorter(column, order, tekst, ranking_array) {
       ranking_array.sort(sortFunction_2);
     }
   }
-  localStorage.setItem('kolonne_klubbkoeffisient', column)
-  localStorage.setItem('rekkefølge_klubbkoeffisient', order)
+  localStorage.setItem('kolonne_ti_års', column)
+  localStorage.setItem('rekkefølge_ti_års', order)
   document.getElementById(column).innerHTML = tekst;
   byggTabell_test(ranking_array, column, order)
 }
