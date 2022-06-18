@@ -38,7 +38,6 @@ function oppdater_ved_refresh() {
     klubbers_assosiasjon.push(menyvalg[i][1])
   }
 
-
   let klubber_med_i_ranking_menyvalg = [];
   for (i = 0; i < menyvalg.length; i++) {
     let er_i_periode_menyvalg_aar_0 = (menyvalg[i][9 + (aar_etter_forste_periode * antall_MV_elem)])
@@ -78,7 +77,7 @@ function oppdater_ved_refresh() {
     else if (aar_etter_forste_periode == 8) {
       if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined || er_i_periode_menyvalg_aar_2 != undefined || er_i_periode_menyvalg_aar_3 != undefined || er_i_periode_menyvalg_aar_4 != undefined || er_i_periode_menyvalg_aar_5 != undefined || er_i_periode_menyvalg_aar_6 != undefined || er_i_periode_menyvalg_aar_7 != undefined || er_i_periode_menyvalg_aar_8 != undefined) {er_i_periode_menyvalg = true}
       else  {er_i_periode_menyvalg = false}}
-    else if (aar_etter_forste_periode == 9) {
+    else if (aar_etter_forste_periode >= 9) {
       if (er_i_periode_menyvalg_aar_0 != undefined || er_i_periode_menyvalg_aar_1 != undefined || er_i_periode_menyvalg_aar_2 != undefined || er_i_periode_menyvalg_aar_3 != undefined || er_i_periode_menyvalg_aar_4 != undefined || er_i_periode_menyvalg_aar_5 != undefined || er_i_periode_menyvalg_aar_6 != undefined || er_i_periode_menyvalg_aar_7 != undefined || er_i_periode_menyvalg_aar_8 != undefined || er_i_periode_menyvalg_aar_9 != undefined) {er_i_periode_menyvalg = true}
       else  {er_i_periode_menyvalg = false}}
     if (er_i_periode_menyvalg) {
@@ -317,6 +316,42 @@ function oppdater_ved_refresh() {
                     }
                   }
                 } 
+              }
+            }
+          }
+          for (p = 0; p < ucl_mestere.length; p++) {
+            if (ucl_mestere[p][1] == assos_ranking_array) {
+              if (ucl_mestere[p][0] >= aar_etter_forste_periode + 2018) {
+                tittel_poeng += 12
+              }
+              else if (ucl_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+                tittel_poeng += 8
+              }
+              else {
+                tittel_poeng += 4
+              }
+            }
+          }
+          for (p = 0; p < uel_mestere.length; p++) {
+            if (uel_mestere[p][1] == assos_ranking_array) {
+              if (uel_mestere[p][0] >= aar_etter_forste_periode + 2018) {
+                tittel_poeng += 3
+              }
+              else if (uel_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+                tittel_poeng += 2
+              }
+              else {
+                tittel_poeng += 1
+              }
+            }
+          }
+          for (p = 0; p < cup_vinner_cup_mestere.length; p++) {
+            if (cup_vinner_cup_mestere[p][1] == assos_ranking_array) {
+              if (cup_vinner_cup_mestere[p][0] >= aar_etter_forste_periode + 1993) {
+                tittel_poeng += 2
+              }
+              else {
+                tittel_poeng += 1
               }
             }
           }
