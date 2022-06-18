@@ -47,7 +47,7 @@ body{
 #hjem {
     margin-right: 1rem !important;
 }
-#klubbkoeff_rangering {
+#ti_års_rangering {
     margin-right: 2rem !important;
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -56,10 +56,10 @@ body{
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
     color:rgba(250, 250, 250, 0.75)
 }
-#overskrift_klubbkoeffisient, #overskrift_landskoeffisient, #overskrift_forside, th, #overskrift_premiepenger, #overskrift_koeffisient {
+#overskrift_klubbkoeffisient, #overskrift_landskoeffisient, #overskrift_forside, th, #overskrift_premiepenger, #overskrift_koeffisient, #overskrift_ti_års {
     color: rgba(52, 58, 64, 1);
 }
-#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient {
+#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient, #beskrivelse_ti_års {
     color: rgba(52, 58, 64, 0.9);
 }
 .ytterst_tabell_div {
@@ -289,4 +289,11 @@ a:hover {
 .landskoeff_link:hover {
     padding-left: 0px !important;
     color: rgba(52, 58, 64, 0.6) !important;
+}
+.link_utydelig:hover {
+    color: rgba(52, 58, 64, 0.6);
+}
+.link_utydelig {
+    padding-left: 0px !important;
+    color: #6872ff;
 }
