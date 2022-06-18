@@ -316,7 +316,9 @@ const sprak_id_ti_års = [
   'title_ti_års',
   'overskrift_ti_års',
   'beskrivelse_ti_års',
-  'decisive_oversett'
+  'decisive_oversett',
+  'premiepenger_reklame',
+  'oversikt_reklame'
 ];
 
 const sprak_id_kalkulator = [
@@ -729,7 +731,7 @@ function endre_link_landskoeff() {
   }
   else if (overskrift_ti_års_finnes) {
     let siste_ord_linktekst = document.getElementById('overskrift_ti_års').innerText;
-    if (siste_ord_linktekst == "Club coefficient ranking") {
+    if (siste_ord_linktekst == "10-year coefficient ranking") {
         siste_ord_linktekst = "prize money"
     }
     else {
