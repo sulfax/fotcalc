@@ -1201,5 +1201,4 @@ function endre_ti_års_periode() {
     const tomt_array = [];
     localStorage.setItem('filter_land', JSON.stringify(tomt_array))
     localStorage.setItem('dropdownmeny_valg_ti_års', (11 + aarstall) + '/' + (12 + aarstall) + ' - ' + (20 + aarstall) + '/' + (21 + aarstall))
-    alert(localStorage.getItem('dropdownmeny_valg_ti_års'))
 }
