@@ -182,25 +182,25 @@ const knapp_summer = [
 ];
 
 const input_summer = [
-    [UCL_ti_års_kr_2122,                UCL_ti_års_kr_2223],
-    [UEL_ti_års_kr_2122,                UEL_ti_års_kr_2223],
-    [UECL_ti_års_kr_2122,               UECL_ti_års_kr_2223],
-    [UCL_seier_2122,                    UCL_seier_2223],
-    [UEL_seier_2122,                    UEL_seier_2223],
-    [UECL_seier_2122,                   UECL_seier_2223],
-    [UCL_uavgjort_2122,                 UCL_uavgjort_2223],
-    [UEL_uavgjort_2122,                 UEL_uavgjort_2223],
-    [UECL_uavgjort_2122,                UECL_uavgjort_2223],
-    [UCL_uavgjort_2122,                 UCL_uavgjort_2223],
-    [UEL_uavgjort_2122,                 UEL_uavgjort_2223],
-    [UECL_uavgjort_2122,                UECL_uavgjort_2223],
-    [påfyll_ingen_funksjon_2122,        påfyll_ingen_funksjon_2223],
-    [UEL_førsteplass_2122,              UEL_førsteplass_2223],
-    [UECL_førsteplass_2122,             UECL_førsteplass_2223],
-    [UEL_andreplass_2122,               UEL_andreplass_2223],
-    [UECL_andreplass_2122,              UECL_andreplass_2223],
-    [UEL_spilt_utslagsrunde_PO_2122,    UEL_spilt_utslagsrunde_PO_2223],
-    [UECL_spilt_utslagsrunde_PO_2122,   UECL_spilt_utslagsrunde_PO_2223],
+    [UCL_ti_års_kr_2122,                UCL_ti_års_kr_2122],
+    [UEL_ti_års_kr_2122,                UEL_ti_års_kr_2122],
+    [UECL_ti_års_kr_2122,               UECL_ti_års_kr_2122],
+    [UCL_seier_2122,                    UCL_seier_2122],
+    [UEL_seier_2122,                    UEL_seier_2122],
+    [UECL_seier_2122,                   UECL_seier_2122],
+    [UCL_uavgjort_2122,                 UCL_uavgjort_2122],
+    [UEL_uavgjort_2122,                 UEL_uavgjort_2122],
+    [UECL_uavgjort_2122,                UECL_uavgjort_2122],
+    [UCL_uavgjort_2122,                 UCL_uavgjort_2122],
+    [UEL_uavgjort_2122,                 UEL_uavgjort_2122],
+    [UECL_uavgjort_2122,                UECL_uavgjort_2122],
+    [påfyll_ingen_funksjon_2122,        påfyll_ingen_funksjon_2122],
+    [UEL_førsteplass_2122,              UEL_førsteplass_2122],
+    [UECL_førsteplass_2122,             UECL_førsteplass_2122],
+    [UEL_andreplass_2122,               UEL_andreplass_2122],
+    [UECL_andreplass_2122,              UECL_andreplass_2122],
+    [UEL_spilt_utslagsrunde_PO_2122,    UEL_spilt_utslagsrunde_PO_2122],
+    [UECL_spilt_utslagsrunde_PO_2122,   UECL_spilt_utslagsrunde_PO_2122]
 ];
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
@@ -223,7 +223,7 @@ var spilt_språk = "Spilt"
 for (let p = 1; p < 16; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
-var aarstall = localStorage.getItem('sessong') || 1;
+var aarstall = parseInt(localStorage.getItem('sessong')) || 0;
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){

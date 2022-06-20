@@ -68,7 +68,7 @@ const knapp_summer = [
     [Eliminert_PO_UECL_2122,            Eliminert_PO_UECL_2122]
 ]
 
-const input_summe122 = [
+const input_summer = [
     [UCL_seier_2122,                    UCL_seier_2122],
     [UEL_seier_2122,                    UEL_seier_2122],
     [UECL_seier_2122,                   UECL_seier_2122],
@@ -93,7 +93,9 @@ const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "b38__", "b40__", 
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
-var aarstall = 1;
+
+var aarstall = ((localStorage.getItem('sessong'))) || 1;
+aarstall = parseInt(aarstall)
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
@@ -494,7 +496,7 @@ function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
         aarstall -= 1;
         document.getElementById('sessong_kontroller_1').disabled = true;
-        // document.getElementById('sessong_kontroller_2').disabled = false;
+        document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else {
         aarstall += 1;
