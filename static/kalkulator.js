@@ -227,6 +227,7 @@ for (let p = 1; p < 16; p++) {
 var aarstall = 0;
 if (localStorage.getItem('sessong') == null) {
     aarstall = 1
+    localStorage.setItem('sessong', aarstall)
 }
 else {
     aarstall = parseInt(localStorage.getItem('sessong'));
