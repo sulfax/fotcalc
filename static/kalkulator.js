@@ -229,7 +229,7 @@ if (localStorage.getItem('sessong') == null) {
     aarstall = 1
 }
 else {
-    aarstall = parseInt(localStorage.getItem('sessong')) || 0;
+    aarstall = parseInt(localStorage.getItem('sessong'));
 }
 
 oppdater_ved_refresh_1()
