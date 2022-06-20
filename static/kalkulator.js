@@ -1031,7 +1031,7 @@ function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
         aarstall -= 1;
         document.getElementById('sessong_kontroller_1').disabled = true;
-        // document.getElementById('sessong_kontroller_2').disabled = false;
+        document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else {
         aarstall += 1;
