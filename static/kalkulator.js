@@ -1036,12 +1036,12 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
 
 function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
-        aarstall -= 1;
+        aarstall = 0;
         document.getElementById('sessong_kontroller_1').disabled = true;
         document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else {
-        aarstall += 1;
+        aarstall = 1;
         document.getElementById('sessong_kontroller_2').disabled = true;
         document.getElementById('sessong_kontroller_1').disabled = false;
     }
