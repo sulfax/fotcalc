@@ -223,7 +223,14 @@ var spilt_språk = "Spilt"
 for (let p = 1; p < 16; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
-var aarstall = parseInt(localStorage.getItem('sessong')) || 0;
+
+var aarstall = 0;
+if (localStorage.getItem('sessong') == null) {
+    aarstall = 1
+}
+else {
+    aarstall = parseInt(localStorage.getItem('sessong')) || 0;
+}
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){
