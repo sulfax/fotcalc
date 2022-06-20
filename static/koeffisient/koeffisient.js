@@ -54,32 +54,32 @@ var UEL_andreplass_2223 = 2;
 var UECL_andreplass_2223 = 1;
 
 const knapp_summer = [
-    [Seier_kvalifisering_2122,          Seier_kvalifisering_2223],
-    [Uavgjort_kvalifisering_2122,       Uavgjort_kvalifisering_2223],
-    [Seier_utslagsrunde_2122,           Seier_utslagsrunde_2223],
-    [Uavgjort_utslagsrunde_2122,        Uavgjort_utslagsrunde_2223],
-    [Eliminert_Deltatt_2122,            Eliminert_Deltatt_2223],
-    [Åttendels_Deltatt_2122,            Åttendels_Deltatt_2223],
-    [Gruppespill_UCL_2122,              Gruppespill_UCL_2223],
-    [Gruppespill_UEL_minimum_2122,      Gruppespill_UEL_minimum_2223],
-    [Gruppespill_UECL_minimum_2122,     Gruppespill_UECL_minimum_2223],
-    [Eliminert_Q2_UECL_2122,            Eliminert_Q2_UECL_2223],
-    [Eliminert_Q3_UECL_2122,            Eliminert_Q3_UECL_2223],
-    [Eliminert_PO_UECL_2122,            Eliminert_PO_UECL_2223]
-];
+    [Seier_kvalifisering_2122,          Seier_kvalifisering_2122],
+    [Uavgjort_kvalifisering_2122,       Uavgjort_kvalifisering_2122],
+    [Seier_utslagsrunde_2122,           Seier_utslagsrunde_2122],
+    [Uavgjort_utslagsrunde_2122,        Uavgjort_utslagsrunde_2122],
+    [Eliminert_Deltatt_2122,            Eliminert_Deltatt_2122],
+    [Åttendels_Deltatt_2122,            Åttendels_Deltatt_2122],
+    [Gruppespill_UCL_2122,              Gruppespill_UCL_2122],
+    [Gruppespill_UEL_minimum_2122,      Gruppespill_UEL_minimum_2122],
+    [Gruppespill_UECL_minimum_2122,     Gruppespill_UECL_minimum_2122],
+    [Eliminert_Q2_UECL_2122,            Eliminert_Q2_UECL_2122],
+    [Eliminert_Q3_UECL_2122,            Eliminert_Q3_UECL_2122],
+    [Eliminert_PO_UECL_2122,            Eliminert_PO_UECL_2122]
+]
 
-const input_summer = [
-    [UCL_seier_2122,                    UCL_seier_2223],
-    [UEL_seier_2122,                    UEL_seier_2223],
-    [UECL_seier_2122,                   UECL_seier_2223],
-    [UCL_uavgjort_2122,                 UCL_uavgjort_2223],
-    [UEL_uavgjort_2122,                 UEL_uavgjort_2223],
-    [UECL_uavgjort_2122,                UECL_uavgjort_2223],
+const input_summe122 = [
+    [UCL_seier_2122,                    UCL_seier_2122],
+    [UEL_seier_2122,                    UEL_seier_2122],
+    [UECL_seier_2122,                   UECL_seier_2122],
+    [UCL_uavgjort_2122,                 UCL_uavgjort_2122],
+    [UEL_uavgjort_2122,                 UEL_uavgjort_2122],
+    [UECL_uavgjort_2122,                UECL_uavgjort_2122],
 
-    [UEL_førsteplass_2122,              UEL_førsteplass_2223],
-    [UECL_førsteplass_2122,             UECL_førsteplass_2223],
-    [UEL_andreplass_2122,               UEL_andreplass_2223],
-    [UECL_andreplass_2122,              UECL_andreplass_2223]
+    [UEL_førsteplass_2122,              UEL_førsteplass_2122],
+    [UECL_førsteplass_2122,             UECL_førsteplass_2122],
+    [UEL_andreplass_2122,               UEL_andreplass_2122],
+    [UECL_andreplass_2122,              UECL_andreplass_2122]
 ];
 
 let resultat_status = [];
@@ -93,7 +93,7 @@ const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "b38__", "b40__", 
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
-var aarstall = 0;
+var aarstall = 1;
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
@@ -510,11 +510,11 @@ function endre_sessong(clicked_id) {
 function oppdater_sessong(aarstall) {
     if (aarstall == 0) {
         document.getElementById("sessong_id").innerText = "21/22";
-        document.getElementById('uefa_distribution_link').setAttribute('href', '#https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online');
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online');
     }
     if (aarstall == 1) {
         document.getElementById("sessong_id").innerText = "22/23";
-        document.getElementById('uefa_distribution_link').setAttribute('href', '#');
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online');
     }
 };
 

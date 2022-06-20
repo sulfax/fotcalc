@@ -142,43 +142,43 @@ var UEL_spilt_utslagsrunde_PO_2223 = 540000;
 var UECL_spilt_utslagsrunde_PO_2223 = 340000;
 
 const knapp_summer = [
-    [Hjemlig_seriemester_2122,          Hjemlig_seriemester_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [UECL_Slått_ut_Q1_2122,             UECL_Slått_ut_Q1_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [UECL_Slått_ut_Q2_2122,             UECL_Slått_ut_Q2_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [UECL_Slått_ut_Q3_2122,             UECL_Slått_ut_Q3_2223],
-    [Spilt_Q3_league_path_2122,         Spilt_Q3_league_path_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2223],
-    [UCL_utslått_lag_PO_2122,           UCL_utslått_lag_PO_2223],
-    [UECL_Slått_ut_PO_2122,             UECL_Slått_ut_PO_2223],
-    [UCL_deltaker_gruppespillet_2122,   UCL_deltaker_gruppespillet_2223],
-    [UEL_deltaker_gruppespillet_2122,   UEL_deltaker_gruppespillet_2223],
-    [UECL_deltaker_gruppespillet_2122,  UECL_deltaker_gruppespillet_2223],
-    [UCL_spilt_åttendedelsfinale_2122,  UCL_spilt_åttendedelsfinale_2223],
-    [UEL_spilt_åttendedelsfinale_2122,  UEL_spilt_åttendedelsfinale_2223],
-    [UECL_spilt_åttendedelsfinale_2122, UECL_spilt_åttendedelsfinale_2223],
-    [UCL_spilt_kvartfinale_2122,        UCL_spilt_kvartfinale_2223],
-    [UEL_spilt_kvartfinale_2122,        UEL_spilt_kvartfinale_2223],
-    [UECL_spilt_kvartfinale_2122,       UECL_spilt_kvartfinale_2223],
-    [UCL_spilt_semifinale_2122,         UCL_spilt_semifinale_2223],
-    [UEL_spilt_semifinale_2122,         UEL_spilt_semifinale_2223],
-    [UECL_spilt_semifinale_2122,        UECL_spilt_semifinale_2223],
-    [UCL_spilt_finale_2122,             UCL_spilt_finale_2223],
-    [UEL_spilt_finale_2122,             UEL_spilt_finale_2223],
-    [UECL_spilt_finale_2122,            UECL_spilt_finale_2223],
-    [UCL_vinner_2122,                   UCL_vinner_2223],
-    [UEL_vinner_2122,                   UEL_vinner_2223],
-    [UECL_vinner_2122,                  UECL_vinner_2223],
-    [Spilt_SCUP_2122,                   Spilt_SCUP_2223],
-    [Vunnet_SCUP_2122,                  Vunnet_SCUP_2223]
+    [Hjemlig_seriemester_2122,          Hjemlig_seriemester_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [UECL_Slått_ut_Q1_2122,             UECL_Slått_ut_Q1_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [UECL_Slått_ut_Q2_2122,             UECL_Slått_ut_Q2_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [UECL_Slått_ut_Q3_2122,             UECL_Slått_ut_Q3_2122],
+    [Spilt_Q3_league_path_2122,         Spilt_Q3_league_path_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
+    [UCL_utslått_lag_PO_2122,           UCL_utslått_lag_PO_2122],
+    [UECL_Slått_ut_PO_2122,             UECL_Slått_ut_PO_2122],
+    [UCL_deltaker_gruppespillet_2122,   UCL_deltaker_gruppespillet_2122],
+    [UEL_deltaker_gruppespillet_2122,   UEL_deltaker_gruppespillet_2122],
+    [UECL_deltaker_gruppespillet_2122,  UECL_deltaker_gruppespillet_2122],
+    [UCL_spilt_åttendedelsfinale_2122,  UCL_spilt_åttendedelsfinale_2122],
+    [UEL_spilt_åttendedelsfinale_2122,  UEL_spilt_åttendedelsfinale_2122],
+    [UECL_spilt_åttendedelsfinale_2122, UECL_spilt_åttendedelsfinale_2122],
+    [UCL_spilt_kvartfinale_2122,        UCL_spilt_kvartfinale_2122],
+    [UEL_spilt_kvartfinale_2122,        UEL_spilt_kvartfinale_2122],
+    [UECL_spilt_kvartfinale_2122,       UECL_spilt_kvartfinale_2122],
+    [UCL_spilt_semifinale_2122,         UCL_spilt_semifinale_2122],
+    [UEL_spilt_semifinale_2122,         UEL_spilt_semifinale_2122],
+    [UECL_spilt_semifinale_2122,        UECL_spilt_semifinale_2122],
+    [UCL_spilt_finale_2122,             UCL_spilt_finale_2122],
+    [UEL_spilt_finale_2122,             UEL_spilt_finale_2122],
+    [UECL_spilt_finale_2122,            UECL_spilt_finale_2122],
+    [UCL_vinner_2122,                   UCL_vinner_2122],
+    [UEL_vinner_2122,                   UEL_vinner_2122],
+    [UECL_vinner_2122,                  UECL_vinner_2122],
+    [Spilt_SCUP_2122,                   Spilt_SCUP_2122],
+    [Vunnet_SCUP_2122,                  Vunnet_SCUP_2122]
 ];
 
 const input_summer = [
@@ -223,7 +223,7 @@ var spilt_språk = "Spilt"
 for (let p = 1; p < 16; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
-var aarstall = localStorage.getItem('sessong') || 0;
+var aarstall = localStorage.getItem('sessong') || 1;
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){

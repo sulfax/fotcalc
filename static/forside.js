@@ -9,7 +9,7 @@ const knapp_filter_turneringer = ['ucl_knapp', 'uel_knapp', 'uecl_knapp']
 
 
 if (localStorage.getItem('sessong') == null) {
-  var aarstall = 0;
+  var aarstall = 1;
 }
 else {
   var aarstall = parseInt(localStorage.getItem('sessong'));
