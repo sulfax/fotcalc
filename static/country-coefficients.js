@@ -135,7 +135,7 @@ function oppdater_ved_refresh() {
     assos_ranking_array.push(koeff_sesong3.toFixed(3))
     assos_ranking_array.push(koeff_sesong4.toFixed(3))
     assos_ranking_array.push(koeff_sesong5.toFixed(3))
-    assos_ranking_array.push(landskoeffisienter[i][10])
+    assos_ranking_array.push(landskoeffisienter[i][11])
     // if (aar_etter_forste_periode <= 1) {
     //   assos_ranking_array.push(landskoeffisienter[i][3 + aar_etter_forste_periode].toFixed(3))
     // }
