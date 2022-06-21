@@ -224,7 +224,7 @@ function language_standard(clicked_id) {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ prize money";
       }
       else if (overskrift_koeff_finnes) {
-          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s prize money";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s prize money";
       }
     }
   }
@@ -704,7 +704,7 @@ function endre_link_landskoeff() {
   }
   else if (overskrift_klubbkoeffisient_finnes) {
     let siste_ord_linktekst = document.getElementById('overskrift_klubbkoeffisient').innerText;
-    if (siste_ord_linktekst == "Club coefficient ranking") {
+    if (siste_ord_linktekst == "5-year coefficient ranking") {
         siste_ord_linktekst = "prize money"
     }
     else {
