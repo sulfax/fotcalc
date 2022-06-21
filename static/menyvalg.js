@@ -919,7 +919,7 @@ const klubb_koeffisienter_1112_2021 = [
     ["Spartak Subotica",           "SRB",,,,,,,,2,,],
     ["Mladost Lucani",             "SRB",,,,,,,0.25,,,],
     ["FK Jagodina",                "SRB",,0.25,0.5,0.5,,,,,,],
-    ["FK Rad Belgrade",            "SRB",0.5,,,,,,,,,],
+    ["FK Rad",                     "SRB",0.5,,,,,,,,,],
     ["Shamrock Rovers FC",         "IRL",2,1,,,0.5,0.25,0.5,1,1.5,1.5],
     ["FC Vaduz",                   "LIE",1,,0.25,0.5,1,0.5,0.5,1.5,2,1],
     ["Djurgårdens IF Fotboll",     "SWE",,,,,,,,1.5,,2],
