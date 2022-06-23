@@ -156,6 +156,9 @@ th, td {
 .marign_venstre {
     padding-left: 5px;
 }
+#flagg_tabell2 {
+    min-width: 41px;
+}
 .premiepenger_span, .ass_coeff_span, .club_coeff_span {
     text-align: right;
     margin-right: 3px;

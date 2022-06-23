@@ -1312,7 +1312,7 @@ function bygg_tabell_2(land_array) {
     let premiepenger = "€ " + land_array[r][1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     var rad = `<tr>
                 <td class="id_nr">${r+1}</td>
-                <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
+                <td id="flagg_tabell2"><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                 <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_prize(${land_array[r][0]})"><nobr>${premiepenger}</nobr></a></span></td>
                 <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_ass(${land_array[r][0]})">${land_array[r][2]}</a></span></td>
                 <td class='premie_koeff'><span class="ass_coeff_span">${land_array[r][4]}</span></td>
