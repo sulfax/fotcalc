@@ -1498,6 +1498,7 @@ function endre_sort_kolonne() {
       localStorage.setItem('kolonne2', 'ass_coeff_total')
       localStorage.setItem('rekkefølge2', 'desc')
   }
+  localStorage.setItem('filter_land', JSON.stringify([]))
   localStorage.setItem('spoiler', 'synlig')
 }
 
