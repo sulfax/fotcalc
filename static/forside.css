@@ -474,3 +474,6 @@ th, td {
 #dropDownMeny_adva {
     margin-right: 10px;
 }
+#ass_coeff_ø {
+    min-width: 75px;
+}
