@@ -1400,12 +1400,12 @@ if (localStorage.getItem('spoiler') == 'synlig' || localStorage.getItem('spoiler
 }
 
 
-function endre_klubbnavn(i, kolonne) {
-  var rows = document.getElementsByTagName("table")[0].rows;
-  var last = rows[i + 1];
-  var cell = last.cells[2];
-  let aarstall = (rows[0].cells[kolonne+1].innerText[0] + rows[0].cells[kolonne+1].innerText[1] - 21)
-  localStorage.setItem('sessong', aarstall)
-  var value = cell.innerText;
-  localStorage.setItem('Klubbnavn', value)
-}
+// function endre_klubbnavn(i, kolonne) {
+//   var rows = document.getElementsByTagName("table")[0].rows;
+//   var last = rows[i + 1];
+//   var cell = last.cells[2];
+//   let aarstall = (rows[0].cells[kolonne+1].innerText[0] + rows[0].cells[kolonne+1].innerText[1] - 21)
+//   localStorage.setItem('sessong', aarstall)
+//   var value = cell.innerText;
+//   localStorage.setItem('Klubbnavn', value)
+// }
