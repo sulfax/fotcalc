@@ -150,7 +150,7 @@ function oppdater_ved_refresh() {
     // else {assos_ranking_array.push(landskoeffisienter[i][4].toFixed(3))}
     ranking_array.push(assos_ranking_array)
   }
-  sorter_etter_sesong(ranking_array)
+  sorter_etter_sesong(aar_etter_forste_periode)
 }
 
 
@@ -171,7 +171,7 @@ $('th').on('click', function(){
   sorter(column, order, tekst, ranking_array)
 })
 
-function sorter_etter_sesong() {
+function sorter_etter_sesong(aar_etter_forste_periode) {
   let column = localStorage.getItem('kolonne_landskoeffisient') || 'poeng'
   let order = localStorage.getItem('rekkefølge_landskoeffisient') || 'desc'
   if(order == 'desc') {
@@ -183,7 +183,7 @@ function sorter_etter_sesong() {
   if (column == 'poeng') {
     var tekst =  '<span id="poeng_oversett">' + document.getElementById(column).innerText + '</span>'
   } else {var tekst = document.getElementById(column).innerText}
-  sorter(column, order, tekst, ranking_array)
+  sorter(column, order, tekst, ranking_array, aar_etter_forste_periode)
 }
 
 
@@ -203,7 +203,7 @@ for (i = 0; i < land_ranking.length; i++) {
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
 
-function sorter(column, order, tekst, ranking_array) {
+function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   if (column == 'poeng') {
     i = 1
     endre_kolonne_overskrift('sesong1', opp_ned_pil)
@@ -273,7 +273,7 @@ function sorter(column, order, tekst, ranking_array) {
   localStorage.setItem('kolonne_landskoeffisient', column)
   localStorage.setItem('rekkefølge_landskoeffisient', order)
   document.getElementById(column).innerHTML = tekst;
-  byggTabell_test(ranking_array)
+  byggTabell_test(ranking_array, aar_etter_forste_periode)
 }
 
 
@@ -328,7 +328,7 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 
 
 // Mange fine flaggikoner: https://github.com/HatScripts/circle-flags
-function byggTabell_test(ranking_array) {
+function byggTabell_test(ranking_array, aar_etter_forste_periode) {
   testTabell.innerHTML = '';
   var helTabellHTML = '';
   for (i = 0; i < ranking_array.length; i++) {
@@ -344,15 +344,37 @@ function byggTabell_test(ranking_array) {
     if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "";}
     if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "";}
     if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "";}
+    let sesong1 = ranking_array[i][2]
+    let sesong2 = ranking_array[i][3]
+    let sesong3 = ranking_array[i][4]
+    let sesong4 = ranking_array[i][5]
+    let sesong5 = ranking_array[i][6]
+    if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1) {
+      sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
+    }
+    if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
+      sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
+      sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}
+    if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
+      sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`
+      sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}
+    if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
+      sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`
+      sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}
+    if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
+      sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`
+      sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
+    if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6) {
+      sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
                     <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
-                    <td class='premie_koeff'>${ranking_array[i][2]}</td>
-                    <td class='premie_koeff'>${ranking_array[i][3]}</td>
-                    <td class='premie_koeff'>${ranking_array[i][4]}</td>
-                    <td class='premie_koeff'>${ranking_array[i][5]}</td>
-                    <td class='premie_koeff'>${ranking_array[i][6]}</td>
+                    <td class='premie_koeff'>${sesong1}</td>
+                    <td class='premie_koeff'>${sesong2}</td>
+                    <td class='premie_koeff'>${sesong3}</td>
+                    <td class='premie_koeff'>${sesong4}</td>
+                    <td class='premie_koeff'>${sesong5}</td>
                 </tr>`
                 helTabellHTML += rad_test
   }
@@ -417,12 +439,48 @@ function endreMenyTittel(innerHTML) {
 
 function endre_sort_kolonne() {
   if (localStorage.getItem('kolonne') == 'prize_money') {
+    localStorage.setItem('kolonne', 'ass_coeff')
+    localStorage.setItem('rekkefølge', 'desc')
+    localStorage.setItem('kolonne2', 'ass_coeff_total')
+    localStorage.setItem('rekkefølge2', 'desc')
+  }
+  if (localStorage.getItem('kolonne2') == 'prize_money_total') {
       localStorage.setItem('kolonne', 'ass_coeff')
       localStorage.setItem('rekkefølge', 'desc')
+      localStorage.setItem('kolonne2', 'ass_coeff_total')
+      localStorage.setItem('rekkefølge2', 'desc')
   }
   if (localStorage.getItem('kolonne')) {}
   else {
       localStorage.setItem('kolonne', 'ass_coeff')
       localStorage.setItem('rekkefølge', 'desc')
+      localStorage.setItem('kolonne2', 'ass_coeff_total')
+      localStorage.setItem('rekkefølge2', 'desc')
   }
+  localStorage.setItem('spoiler', 'synlig')
+}
+
+function forside_ø_koeff(i, kolonne) {
+  localStorage.setItem('trykte_knapper', JSON.stringify([]))
+  localStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
+  localStorage.setItem('kolonne', 'ass_coeff')
+  localStorage.setItem('rekkefølge', 'desc')
+  localStorage.setItem('kolonne2', 'ass_coeff_ø')
+  localStorage.setItem('rekkefølge2', 'desc')
+  localStorage.setItem('spoiler', 'synlig')
+  $('#tabell_overordnet td').show()
+  var rows = document.getElementsByTagName("table")[0].rows;
+  var last = rows[i+1];
+  var cell = last.cells[1];
+  let filter_land_før = [];
+  let land = ''
+  if ((cell.innerHTML).slice(87,90) == 'dia') {
+    land = 'NIR'
+  } else {
+    land = (cell.innerHTML).slice(87,90)
+  }
+  filter_land_før.push(land)
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
+  let aarstall = ((rows[0].cells[kolonne].innerText).slice(0,2) - 21)
+  localStorage.setItem('sessong', aarstall)
 }

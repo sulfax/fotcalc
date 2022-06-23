@@ -250,3 +250,9 @@ th, td {
     font-size: 14px;
     font-style: italic;
 }
+.utydelig_link {
+    color: rgb(86, 97, 255) !important;
+}
+.utydelig_link:hover {
+    color:#343a40 !important;
+}

@@ -942,14 +942,25 @@ function resett() {
 
 function endre_sort_kolonne() {
   if (localStorage.getItem('kolonne') == 'prize_money') {
+    localStorage.setItem('kolonne', 'ass_coeff')
+    localStorage.setItem('rekkefølge', 'desc')
+    localStorage.setItem('kolonne2', 'ass_coeff_total')
+    localStorage.setItem('rekkefølge2', 'desc')
+  }
+  if (localStorage.getItem('kolonne2') == 'prize_money_total') {
       localStorage.setItem('kolonne', 'ass_coeff')
       localStorage.setItem('rekkefølge', 'desc')
+      localStorage.setItem('kolonne2', 'ass_coeff_total')
+      localStorage.setItem('rekkefølge2', 'desc')
   }
   if (localStorage.getItem('kolonne')) {}
   else {
       localStorage.setItem('kolonne', 'ass_coeff')
       localStorage.setItem('rekkefølge', 'desc')
+      localStorage.setItem('kolonne2', 'ass_coeff_total')
+      localStorage.setItem('rekkefølge2', 'desc')
   }
+  localStorage.setItem('spoiler', 'synlig')
 }
 
 

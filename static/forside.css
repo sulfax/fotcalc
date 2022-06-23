@@ -93,6 +93,9 @@ thead {
 th {
     border: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
+#ass_coeff_total {
+    border-right: 1px solid rgba(177, 177, 177, 0.297) !important;
+}
 th, td {
     color: #343a40;
     height: 20px !important;
@@ -131,7 +134,7 @@ th, td {
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
 }
-#club, #prize_money, #ass_coeff, #club_coeff {
+#club, #prize_money, #ass_coeff, #club_coeff, #land, #prize_money_total, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -140,7 +143,7 @@ th, td {
     user-select: none;
 }
 @media (min-width:1021px) {
-    #ass_coeff, #prize_money, #club_coeff {
+    #ass_coeff, #ass_coeff_ø, #prize_money, #club_coeff, #prize_money_total, #ass_coeff_total, #club_coeff_total {
         text-align: right;
     }
 }
@@ -440,4 +443,31 @@ th, td {
     background-color:#929292 !important;
     border: 2px solid #777777 !important;
     cursor: default !important;
+}
+.jordklode {
+    margin-bottom: 1px;
+}
+#land {
+    width: 0px !important;
+}
+#NIR {
+    border-radius: 50%;
+}
+#spoiler {
+    padding:3px;
+    height: 38px;
+    width: 29px;
+    padding-right: -1px !important;
+    padding-left: 5px !important;
+    padding-top: 4px !important;
+}
+.spoiler_pil {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+#dropDownMeny_adva {
+    margin-right: 10px;
 }
