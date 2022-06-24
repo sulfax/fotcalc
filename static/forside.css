@@ -328,7 +328,7 @@ th, td {
     overflow-y: auto !important;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:666px) {
+@media (max-width:807px) {
     .adva {
         width: 247px;
     }
