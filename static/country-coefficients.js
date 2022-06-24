@@ -348,22 +348,23 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     let sesong3 = ranking_array[i][4]
     let sesong4 = ranking_array[i][5]
     let sesong5 = ranking_array[i][6]
-    if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1) {
+    
+    if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1 && sesong1 != "") {
       sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
     }
     if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
-      sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
-      sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}
+      if (sesong1 != "") {sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`}
+      if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}}
     if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
-      sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`
-      sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}
+      if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}
+      if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}}
     if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
-      sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`
-      sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}
+      if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}
+      if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}}
     if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
-      sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`
-      sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
-    if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6) {
+      if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}
+      if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
+    if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
