@@ -35,7 +35,7 @@
     }
 }@media (min-width:768px) {
     .container, .container-md, .container-sm {
-        max-width:820px
+        max-width:800px
     }
 }@media (min-width:992px) {
     .container, .container-lg, .container-md, .container-sm {
@@ -476,7 +476,7 @@ th, td {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 #dropDownMeny_adva {
-    margin-right: 13px;
+    padding-right: 17px;
 }
 #ass_coeff_ø {
     min-width: 75px;
