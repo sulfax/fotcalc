@@ -10,7 +10,6 @@ oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   ranking_array = []
   testTabell = document.getElementById('minTest')
-  testTabell2 = document.getElementById('minTest2')
   document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0] - 4) + '/' + (nåværende_sesong_periode_valg[2] - 4) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
   
   var klubbers_assosiasjon = []
