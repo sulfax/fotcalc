@@ -1059,7 +1059,7 @@ function oppdater_sessong(aarstall) {
     }
     if (aarstall == 1) {
         document.getElementById("sessong_id").innerText = "22/23";
-        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
     }
     for (var uu=0;uu<37;uu++) {
         if (document.getElementById("b-" + (uu + 1))) {
