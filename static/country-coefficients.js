@@ -195,10 +195,10 @@ function sorter_etter_sesong(aar_etter_forste_periode) {
 
 const table = document.querySelector('table')
 const arr = [...table.rows].map(r => [...r.querySelectorAll('td, th')].map(td => td.textContent))
-arr[0][1] = "Country"
-for (i = 0; i < land_ranking.length; i++) {
-  arr[i+1][1] = land_ranking[i]
-}
+// arr[0][1] = "Country"
+// for (i = 0; i < land_ranking.length; i++) {
+//   arr[i+1][1] = land_ranking[i]
+// }
 var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = arr; document.getElementsByTagName('head')[0].appendChild(link);
 
 
@@ -332,11 +332,14 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
   var helTabellHTML = '';
   for (i = 0; i < ranking_array.length; i++) {
     land_ranking.push(ranking_array[i][7])
+    let land = ""
     if (ranking_array[i][0] == 'NIR') {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="Northern Ireland"></div>'
+      flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg"></div>'
+      land = "Northern Ireland"
     }
     else {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg" alt="' + ranking_array[i][7] + '"></div>'
+      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></div>'
+      land = ranking_array[i][7]
     }
     if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
     if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}
@@ -369,6 +372,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
                     <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
+                    <td id="tom_kolonne">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
                     <td class='premie_koeff'>${sesong1}</td>
                     <td class='premie_koeff'>${sesong2}</td>

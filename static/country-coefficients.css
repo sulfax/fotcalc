@@ -131,7 +131,11 @@ thead {
     border: 1px solid rgba(177, 177, 177, 0.8);
 }
 th {
-    border: 1px solid rgba(177, 177, 177, 0.8) !important;
+    border-top: 1px solid rgba(177, 177, 177, 0.8) !important;
+    border-bottom: 1px solid rgba(177, 177, 177, 0.8) !important;
+}
+th:not(.tom_kolonne1,.id_nr)  {
+    border-left: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
 th, td {
     color: #343a40;
@@ -255,4 +259,9 @@ th, td {
 }
 .utydelig_link:hover {
     color:#343a40 !important;
+}
+#tom_kolonne {
+    font-size: 0px;
+    padding:0px;
+    border-right: 0px solid red !important;
 }
