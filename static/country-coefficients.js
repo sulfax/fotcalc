@@ -489,3 +489,22 @@ function forside_ø_koeff(i, kolonne) {
   let aarstall = ((rows[0].cells[kolonne].innerText).slice(0,2) - 21)
   localStorage.setItem('sessong', aarstall)
 }
+
+var schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": []
+}
+var Lag_premiepenger = {
+    "@type": "Question",
+    "name": "How much prize money has PROMP earned so far?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "€ 15",
+    }
+}
+schema.mainEntity.push(Lag_premiepenger)
+const script = document.createElement('script');
+script.setAttribute('type', 'application/ld+json');
+script.textContent = JSON.stringify(schema);
+document.head.appendChild(script);
