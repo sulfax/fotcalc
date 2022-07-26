@@ -486,6 +486,6 @@ function forside_ø_koeff(i, kolonne) {
   }
   filter_land_før.push(land)
   localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
-  let aarstall = ((rows[0].cells[kolonne].innerText).slice(0,2) - 21)
+  let aarstall = ((rows[0].cells[kolonne+1].innerText).slice(0,2) - 21)
   localStorage.setItem('sessong', aarstall)
 }
