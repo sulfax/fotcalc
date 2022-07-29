@@ -137,8 +137,8 @@ th {
 th:not(.tom_kolonne1,.id_nr, #poeng)  {
     border-left: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
-.tom_kolonne1 {
-    border-left: 1px solid rgba(177, 177, 177, 0.8) !important;
+#poeng {
+    background: linear-gradient(to right, rgba(177, 177, 177, 0.8) 1px, #E9ECEF 1px);
 }
 
 th, td {
