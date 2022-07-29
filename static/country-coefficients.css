@@ -269,9 +269,18 @@ th, td {
     /* width: 50px; */
     border-left: 2px solid rgba(177, 177, 177, 0.8) !important;
     background-color: rgba(52, 58, 64, 0.1);
-    color: rgba(52, 58, 64, 0.6);
+    color: rgba(52, 58, 64, 0.7);
 }
 #klubb {
     text-align: right;
     border-left: 2px solid rgba(177, 177, 177, 0.8) !important;
+}
+.grønn {
+    background-color: rgb(212, 245, 205);
+}
+.rød {
+    background-color: rgb(255, 214, 214);
+}
+.gul {
+    background-color: rgb(255, 255, 216);
 }

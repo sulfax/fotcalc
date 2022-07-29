@@ -383,7 +383,16 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     let sesong3 = ranking_array[i][4]
     let sesong4 = ranking_array[i][5]
     let sesong5 = ranking_array[i][6]
-    
+    let klubber_igjen = ""
+
+    if ((ranking_array[i][8])[0] == '0') {
+      klubber_igjen = `<td class='premie_koeff klubb rød'>${ranking_array[i][8]}</td>`
+    } else if (((ranking_array[i][8])[0] - (ranking_array[i][8])[2]) == 0) {
+      klubber_igjen = `<td class='premie_koeff klubb grønn'>${ranking_array[i][8]}</td>`
+    } else {
+      klubber_igjen = `<td class='premie_koeff klubb gul'>${ranking_array[i][8]}</td>`
+    }
+
     if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1 && sesong1 != "") {
       sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
     }
@@ -411,7 +420,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
                     <td class='premie_koeff'>${sesong3}</td>
                     <td class='premie_koeff'>${sesong4}</td>
                     <td class='premie_koeff'>${sesong5}</td>
-                    <td class='premie_koeff klubb'>${ranking_array[i][8]}</td>
+                    ${klubber_igjen}
                 </tr>`
                 helTabellHTML += rad_test
   }
