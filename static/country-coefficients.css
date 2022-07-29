@@ -134,9 +134,13 @@ th {
     border-top: 1px solid rgba(177, 177, 177, 0.8) !important;
     border-bottom: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
-th:not(.tom_kolonne1,.id_nr)  {
+th:not(.tom_kolonne1,.id_nr, #poeng)  {
     border-left: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
+.tom_kolonne1 {
+    border-left: 1px solid rgba(177, 177, 177, 0.8) !important;
+}
+
 th, td {
     color: #343a40;
     height: 20px !important;
