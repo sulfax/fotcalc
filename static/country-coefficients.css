@@ -83,14 +83,14 @@
     display:inline-block;
 }
 .tabell_div_landskoeffisient{
-    width: calc(99.9% + 33px);
+    width: calc(100% + 20px);
     background-color:white;
     border-radius: .5rem;
     border-top-left-radius: 0;
     padding-bottom: .1%;
     padding-top: calc(0.7% + 5px);
-    margin-left:-17px;
-    overflow-x:auto
+    margin-left:-10px;
+    overflow-x:auto;
 }
 .dropdown {
     margin-bottom: 8px;
@@ -103,7 +103,7 @@
     color: rgba(52, 58, 64, 0.6);
     font-size: 13px;
     background-color: white;
-    margin-left: -17px !important;
+    margin-left: -10px !important;
     margin-bottom: -3px;
     padding-left: 16px;
     padding-right: 15px;
@@ -115,7 +115,7 @@
     display:flex;
     flex-wrap:wrap;
     height: fit-content;
-    margin-left: -17px;
+    margin-left: -10px;
     background-color: white;
     width:fit-content;
     margin-bottom: calc(-0.4% - 5px);
