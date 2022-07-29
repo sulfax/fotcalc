@@ -6,6 +6,14 @@ var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 
 let ranking_array = []
 let land_ranking = []
+
+if (localStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
+  localStorage.setItem('kolonne_landskoeffisient', 'poeng')
+}
+if (localStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
+  localStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+}
+
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   ranking_array = []
@@ -135,6 +143,28 @@ function oppdater_ved_refresh() {
     assos_ranking_array.push(koeff_sesong4.toFixed(3))
     assos_ranking_array.push(koeff_sesong5.toFixed(3))
     assos_ranking_array.push(landskoeffisienter[i][11])
+
+    let klubber_igjen = antall_klubber1
+    for (p = 0; p < menyvalg.length; p++) {
+      if (menyvalg[p][1] == landskoeffisienter[i][0]) {
+        if (menyvalg[p][(8 * ((aar_etter_forste_periode+1)))] != undefined) {
+          let gruppespillsplassering = (((menyvalg[p][(8 * ((aar_etter_forste_periode+1))) - 3])))
+          if (gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') {
+            klubber_igjen -= 1
+          }
+          else {
+            antall_knapper = (((menyvalg[p][(8 * ((aar_etter_forste_periode+1))) - 6]).split(',')))
+            for (s = 0; s < antall_knapper.length; s++) {
+              if (antall_knapper[s] == 'b5' || antall_knapper[s] == 'b8' || antall_knapper[s] == 'b12' || antall_knapper[s] == 'b17' || antall_knapper[s] == 'KO') {
+                klubber_igjen -= 1
+                break
+              }
+            }
+          }
+        }
+      }
+    }
+    assos_ranking_array.push(klubber_igjen + '/' + antall_klubber1)
     // if (aar_etter_forste_periode <= 1) {
     //   assos_ranking_array.push(landskoeffisienter[i][3 + aar_etter_forste_periode].toFixed(3))
     // }
@@ -167,7 +197,9 @@ $('th').on('click', function(){
   else {
       $(this).data('order', "desc")
   }
-  sorter(column, order, tekst, ranking_array)
+  if (column != undefined) {
+    sorter(column, order, tekst, ranking_array)
+  }
 })
 
 function sorter_etter_sesong(aar_etter_forste_periode) {
@@ -379,6 +411,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
                     <td class='premie_koeff'>${sesong3}</td>
                     <td class='premie_koeff'>${sesong4}</td>
                     <td class='premie_koeff'>${sesong5}</td>
+                    <td class='premie_koeff klubb'>${ranking_array[i][8]}</td>
                 </tr>`
                 helTabellHTML += rad_test
   }

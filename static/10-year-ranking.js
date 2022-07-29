@@ -12,8 +12,12 @@ let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 let ranking_array = []
 
 
-
-
+if (localStorage.getItem('kolonne_ti_års') == 'undefined') {
+  localStorage.setItem('kolonne_ti_års', 'id_nr')
+}
+if (localStorage.getItem('rekkefølge_ti_års') == 'undefined') {
+  localStorage.setItem('rekkefølge_ti_års', 'asc')
+}
 
 
 let aar_etter_forste_periode = "";
@@ -492,7 +496,9 @@ $('th').on('click', function(){
   if (column == 'tittel_poeng') {
     tekst = '<abbr data_title="Historic title points">Title</abbr>'
   }
-  sorter(column, order, tekst, ranking_array)
+  if (column != undefined) {
+    sorter(column, order, tekst, ranking_array)
+  }
 })
 
 

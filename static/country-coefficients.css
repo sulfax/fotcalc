@@ -184,7 +184,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
-    min-width: 73px;
+    min-width: 74px;
 }
 #poeng {
     min-width: 82px;
@@ -264,4 +264,14 @@ th, td {
     font-size: 0px;
     padding:0px;
     border-right: 0px solid red !important;
+}
+.klubb {
+    /* width: 50px; */
+    border-left: 2px solid rgba(177, 177, 177, 0.8) !important;
+    background-color: rgba(52, 58, 64, 0.1);
+    color: rgba(52, 58, 64, 0.6);
+}
+#klubb {
+    text-align: right;
+    border-left: 2px solid rgba(177, 177, 177, 0.8) !important;
 }

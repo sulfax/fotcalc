@@ -12,8 +12,12 @@ let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 let ranking_array = []
 
 
-
-
+if (localStorage.getItem('kolonne_klubbkoeffisient') == 'undefined') {
+  localStorage.setItem('kolonne_klubbkoeffisient', 'id_nr')
+}
+if (localStorage.getItem('rekkefølge_klubbkoeffisient') == 'undefined') {
+  localStorage.setItem('rekkefølge_klubbkoeffisient', 'asc')
+}
 
 
 let aar_etter_forste_periode = "";
@@ -254,7 +258,9 @@ $('th').on('click', function(){
   if (column == 'na_poeng') {
     tekst = '<abbr data_title="20% of country coefficient points for this period">NA</abbr>'
   }
-  sorter(column, order, tekst, ranking_array)
+  if (column != undefined) {
+    sorter(column, order, tekst, ranking_array)
+  }
 })
 
 
