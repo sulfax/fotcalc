@@ -384,7 +384,12 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     let sesong4 = ranking_array[i][5]
     let sesong5 = ranking_array[i][6]
     let klubber_igjen = ""
+    
 
+    let tom_kolonne = `<td class='premie_koeff tom'>${""}</td>`
+    if (i == 54) {
+      tom_kolonne = `<td class='premie_koeff tom ingen_ramme_under'>${""}</td>`
+    }
     if ((ranking_array[i][8])[0] == '0') {
       klubber_igjen = `<td class='premie_koeff klubb rød'>${ranking_array[i][8]}</td>`
     } else if (((ranking_array[i][8])[0] - (ranking_array[i][8])[2]) == 0) {
@@ -420,6 +425,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
                     <td class='premie_koeff'>${sesong3}</td>
                     <td class='premie_koeff'>${sesong4}</td>
                     <td class='premie_koeff'>${sesong5}</td>
+                    ${tom_kolonne}
                     ${klubber_igjen}
                 </tr>`
                 helTabellHTML += rad_test
