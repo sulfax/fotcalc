@@ -376,6 +376,32 @@ function sorter_etter_sesong() {
       let Ny9 = parseFloat(Ny.slice(9 + (aarstall*antall_MV_elem),10 + (aarstall*antall_MV_elem)))
       Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9)
       menyvalg_edit[i] = Ny1
+
+
+      let live_aarstall = nåværende_sesong_periode_valg[0] - 21
+      if (aarstall == live_aarstall) {
+        for (p = 0; p < menyvalg.length; p++) {
+          if (menyvalg[p][0] == menyvalg_edit[i][0]) {
+            let gruppespillsplassering = (((menyvalg[p][(8 * ((aarstall+1))) - 3])))
+            if (gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') {
+              menyvalg_edit[i][0] = menyvalg_edit[i][0] + '0/0'
+              break
+            }
+            else {
+              antall_knapper = (((menyvalg[p][(8 * ((aarstall+1))) - 6]).split(',')))
+              for (s = 0; s < antall_knapper.length; s++) {
+                if (antall_knapper[s] == 'b5' || antall_knapper[s] == 'b8' || antall_knapper[s] == 'b12' || antall_knapper[s] == 'b17' || antall_knapper[s] == 'KO') {
+                  menyvalg_edit[i][0] = menyvalg_edit[i][0] + '0/0'
+                  break
+                }
+              }
+            }
+            if (!menyvalg_edit[i][0].includes('0/0')) {
+              menyvalg_edit[i][0] = menyvalg_edit[i][0] + '1/1'
+            }
+          }
+        }
+      }
     }
     else {
       menyvalg_edit.splice(i, 1)
@@ -478,6 +504,12 @@ function byggTabell_test(data) {
   table.innerHTML = '';
   var helTabellHTML = '';
   for (var i = 0; i < data.length; i++) {
+    if (data[i][0].slice(-3) == '0/0') {
+      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg">' + data[i][0].slice(0, -3)
+    }
+    else if (data[i][0].slice(-3) == '1/1') {
+      data[i][0] = '<img class="check" src="media/check.svg">' + data[i][0].slice(0, -3)
+    }
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
     let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
