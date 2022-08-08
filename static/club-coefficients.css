@@ -120,6 +120,7 @@
     margin-bottom: calc(-0.4% - 5px);
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0;
 }
 table {
     border-top: 4px !important;
