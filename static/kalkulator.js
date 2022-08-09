@@ -238,8 +238,12 @@ function paa_av(clicked_id){
     if (clicked_id == 'CL-PO') {
         document.getElementById(clicked_id).innerText = "";
         document.getElementById(clicked_id).id = 'CLPO'
-        oppdater_b1();
-        oppdater_b2_b3_b6_b9();
+        if (!document.getElementById("b-13") && !document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
+            oppdater_b2_b3_b6_b9();
+        }
+        if (!document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
+            oppdater_b1();
+        }
         lagre_trykking()
     }
     else if (clicked_id == 'CLPO') {
@@ -321,10 +325,10 @@ function paa_av(clicked_id){
             flytt_SCUP_sum_hoyre(clicked_id)
         }
         else {
-            if ((clicked_id == "b-18" && document.getElementById("b19") && document.getElementById("b20")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b20")) || (clicked_id == "b-20" && document.getElementById("b18") && document.getElementById("b19"))) {
+            if ((clicked_id == "b-18" && document.getElementById("b19") && document.getElementById("b20") && document.getElementById("CLPO")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b20") && document.getElementById("CLPO")) || (clicked_id == "b-20" && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO"))) {
                 oppdater_b1();
             }
-            if ((clicked_id == "b-13" && document.getElementById("b16") && document.getElementById("b18") && document.getElementById("b19")) || (clicked_id == "b-16" && document.getElementById("b13") && document.getElementById("b18") && document.getElementById("b19")) || (clicked_id == "b-18" && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("b19")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b13") && document.getElementById("b16"))) {
+            if ((clicked_id == "b-13" && document.getElementById("b16") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-16" && document.getElementById("b13") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-18" && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("CLPO"))) {
                 oppdater_b2_b3_b6_b9();
             }
             if ((clicked_id == "b-19")) {
