@@ -67,10 +67,10 @@ let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows"><
 $('th').on('click', function(){
   var column = $(this).data('column')
   var order = $(this).data('order')
-  if (order == localStorage.getItem('rekkefølge') && order == 'desc' && column != 'ass_coeff_ø') {
+  if (order == localStorage.getItem('rekkefølge') && order == 'desc') {
     order = 'asc'
   }
-  if (order == localStorage.getItem('rekkefølge') && order == 'asc' && column != 'ass_coeff_ø') {
+  if (order == localStorage.getItem('rekkefølge') && order == 'asc') {
     order = 'desc'
   }
   if (column == 'club') {
@@ -82,6 +82,9 @@ $('th').on('click', function(){
   if (column == 'ass_coeff') {
     var tekst = '<span id="ass_koeff_navn">' + document.getElementById(column).innerText + '</span>'
   }
+  if (column == 'bidrag') {
+    var tekst = '<span id="bidrag_navn">' + document.getElementById(column).innerText + '</span>'
+  }
   if (column == 'club_coeff') {
     var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
   }
@@ -92,7 +95,7 @@ $('th').on('click', function(){
     var tekst = '<span id="ass_koeff_land_navn">' + document.getElementById(column).innerText + '</span>'
   }
   if (column == 'ass_coeff_ø') {
-    var tekst = '<span id="ass_coeff_ø_land_navn"><abbr data_title="Association coefficient points per club">Ø</abbr></span>'
+    var tekst = '<span id="bidrag_land_navn">' + document.getElementById(column).innerText + '</span>'
   }
   if (column == 'club_coeff_total') {
     var tekst = '<span id="klubb_koeff_land_navn">' + document.getElementById(column).innerText + '</span>'
@@ -104,7 +107,7 @@ $('th').on('click', function(){
     $(this).data('order', "desc")
   }
   let menyvalg_edit = JSON.parse(localStorage.getItem('menyvalg_edit'))
-  if (column == 'club' || column == 'prize_money' || column == 'ass_coeff' || column == 'club_coeff') {
+  if (column == 'club' || column == 'prize_money' || column == 'ass_coeff' || column == 'bidrag' || column == 'club_coeff') {
     sorter(column, order, tekst, menyvalg_edit)
     if (column == 'prize_money') {
       column = 'prize_money_total'
@@ -114,6 +117,11 @@ $('th').on('click', function(){
     if (column == 'ass_coeff') {
       column = 'ass_coeff_total'
       tekst = '<span id="ass_koeff_land_navn">' + document.getElementById(column).innerText + '</span>'
+      sorter_land_total(column, order, tekst, menyvalg_edit)
+    }
+    if (column == 'bidrag') {
+      column = 'ass_coeff_ø'
+      tekst = '<span id="bidrag_land_navn">' + document.getElementById(column).innerText + '</span>'
       sorter_land_total(column, order, tekst, menyvalg_edit)
     }
     if (column == 'club_coeff') {
@@ -132,6 +140,11 @@ $('th').on('click', function(){
     if (column == 'ass_coeff_total') {
       column = 'ass_coeff'
       tekst = '<span id="ass_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+      sorter(column, order, tekst, menyvalg_edit)
+    }
+    if (column == 'ass_coeff_ø') {
+      column = 'bidrag'
+      tekst = '<span id="bidrag_navn">' + document.getElementById(column).innerText + '</span>'
       sorter(column, order, tekst, menyvalg_edit)
     }
     if (column == 'club_coeff_total') {
@@ -374,8 +387,18 @@ function sorter_etter_sesong() {
       let Ny7 = parseInt(Ny.slice(7 + (aarstall*antall_MV_elem),8 + (aarstall*antall_MV_elem)))
       let Ny8 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
       let Ny9 = parseFloat(Ny.slice(9 + (aarstall*antall_MV_elem),10 + (aarstall*antall_MV_elem)))
-      Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9)
+      let Ny10 = Ny.slice(1,2)
+      let Ny11 = ''
+      Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9, Ny10, Ny11)
       menyvalg_edit[i] = Ny1
+      
+      let antall_klubber_fra_land = 0
+      for (let p = 0; p < menyvalg.length; p++) {
+        if (menyvalg[p][1] == menyvalg_edit[i][9] && menyvalg[p][(8 * ((aarstall+1)))] !== undefined) {
+          antall_klubber_fra_land += 1
+        }
+      }
+      menyvalg_edit[i][10] = menyvalg_edit[i][7]/antall_klubber_fra_land
 
 
       let live_aarstall = nåværende_sesong_periode_valg[0] - 21
@@ -426,6 +449,9 @@ function sorter_etter_sesong() {
   if (column == 'ass_coeff') {
     var tekst = '<span id="ass_koeff_navn">' + document.getElementById(column).innerText + '</span>'
   }
+  if (column == 'bidrag') {
+    var tekst = '<span id="bidrag_navn">' + document.getElementById(column).innerText + '</span>'
+  }
   if (column == 'club_coeff') {
     var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
   }
@@ -439,7 +465,7 @@ function sorter_etter_sesong() {
     var tekst = '<span id="ass_koeff_land_navn">' + document.getElementById(column).innerText + '</span>'
   }
   if (column == 'ass_coeff_ø') {
-    var tekst = '<span id="ass_coeff_ø_land_navn"><abbr data_title="Association coefficient points per club">Ø</abbr></span>'
+    var tekst = '<span id="bidrag_land_navn">' + document.getElementById(column).innerText + '</span>'
   }
   if (column == 'club_coeff_total') {
     var tekst = '<span id="klubb_koeff_land_navn">' + document.getElementById(column).innerText + '</span>'
@@ -452,18 +478,28 @@ function sorter(column, order, tekst, menyvalg_edit) {
     i = 0
     endre_kolonne_overskrift('prize_money', opp_ned_pil)
     endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
+    endre_kolonne_overskrift('bidrag', opp_ned_pil)
     endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'prize_money') {
     i = 6
     endre_kolonne_overskrift('club', opp_ned_pil_klubb)
     endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
+    endre_kolonne_overskrift('bidrag', opp_ned_pil)
     endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'ass_coeff') {
     i = 7
     endre_kolonne_overskrift('prize_money', opp_ned_pil)
     endre_kolonne_overskrift('club', opp_ned_pil_klubb)
+    endre_kolonne_overskrift('bidrag', opp_ned_pil)
+    endre_kolonne_overskrift('club_coeff', opp_ned_pil)
+  }
+  else if (column == 'bidrag') {
+    i = 10
+    endre_kolonne_overskrift('prize_money', opp_ned_pil)
+    endre_kolonne_overskrift('club', opp_ned_pil_klubb)
+    endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
     endre_kolonne_overskrift('club_coeff', opp_ned_pil)
   }
   else if (column == 'club_coeff') {
@@ -471,6 +507,7 @@ function sorter(column, order, tekst, menyvalg_edit) {
     endre_kolonne_overskrift('prize_money', opp_ned_pil)
     endre_kolonne_overskrift('club', opp_ned_pil_klubb)
     endre_kolonne_overskrift('ass_coeff', opp_ned_pil)
+    endre_kolonne_overskrift('bidrag', opp_ned_pil)
   }
   menyvalg_edit.sort(sortFunction_1_klubb);
   if(order == 'desc') {
@@ -512,6 +549,11 @@ function byggTabell_test(data) {
     }
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
+
+    data[i][10] = (Math.floor(data[i][10] * 1000) / 1000).toFixed(3) || 0;
+    if (data[i][10] == '0.000') {data[i][10] = ''}
+
+
     let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
     if ((data[i][1] + '').includes("b18")) {
       if ((data[i][4] + '').includes("3")) {
@@ -540,6 +582,7 @@ function byggTabell_test(data) {
                   <td><nobr class="marign_venstre">${data[i][0]}</nobr></td>
                   <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
+                  <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="#" onclick="endre_lands_filter_bidrag(${data[i][9]})">${data[i][10]}</a></span></td>
                   <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${klubb_koeff}</a></span></td>
               </tr>`
     helTabellHTML += rad;
@@ -575,10 +618,10 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
       document.getElementById(kolonne).innerHTML = '<span id="premiepenger_land_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
     }
     if (kolonne == 'ass_coeff_total') {
-      document.getElementById(kolonne).innerHTML = '<span id="ass_koeff_land_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
+      document.getElementById(kolonne).innerHTML = '<span id="ass_koeff_land_navn">' + document.getElementById(kolonne).innerText + '</span><span class="høyrestill">' + opp_ned_pil
     }
     if (kolonne == 'ass_coeff_ø') {
-      document.getElementById(kolonne).innerHTML = '<span id="ass_coeff_ø_land_navn"><abbr data_title="Association coefficient points per club">Ø</abbr></span>' + opp_ned_pil
+      document.getElementById(kolonne).innerHTML = '<span id="bidrag_land_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
     }
     if (kolonne == 'club_coeff_total') {
       document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_land_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
@@ -588,6 +631,9 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
     }
     if (kolonne == 'ass_coeff') {
       document.getElementById(kolonne).innerHTML = '<span id="ass_koeff_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
+    }
+    if (kolonne == 'bidrag') {
+      document.getElementById(kolonne).innerHTML = '<span id="bidrag_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
     }
     if (kolonne == 'club_coeff') {
       document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
@@ -1268,7 +1314,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
           if (landskoeffisienter[r][0] == menyvalg[q][1]) {
             landskoeffisienter[r][1] += parseInt((rows[p].cells[2].innerText).replace(/\D/g,''))
             landskoeffisienter[r][2] += parseFloat(rows[p].cells[3].innerText)
-            landskoeffisienter[r][3] += parseFloat(rows[p].cells[4].innerText)
+            landskoeffisienter[r][3] += parseFloat(rows[p].cells[5].innerText)
             landskoeffisienter[r][4] += 1
           }
         }
@@ -1291,11 +1337,11 @@ function totalt_land(column, order, tekst, antall_klubber) {
   }
   if(order == 'desc') {
     land_array.sort(sortFunction_1_tall);
-    tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></img></span>'
+    tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
     land_array.sort(sortFunction_2_tall);
-    tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></img></span>'
+    tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
   localStorage.setItem('kolonne2', column)
   localStorage.setItem('rekkefølge2', order)
@@ -1355,6 +1401,13 @@ function bygg_tabell_2(land_array) {
   table.innerHTML = helTabellHTML;
 }
 
+function endre_lands_filter_bidrag(land) {
+  localStorage.setItem('kolonne', 'bidrag')
+  localStorage.setItem('rekkefølge', 'desc')
+  localStorage.setItem('kolonne2', 'ass_coeff_ø')
+  localStorage.setItem('rekkefølge2', 'desc')
+  endre_lands_filter(land)
+}
 function endre_lands_filter_prize(land) {
   localStorage.setItem('kolonne', 'prize_money')
   localStorage.setItem('rekkefølge', 'desc')

@@ -1,4 +1,9 @@
 @media screen and (min-width: 0px) {
+    .abbr_bidrag:hover::after,
+    .abbr_bidrag:focus::after {
+        left: -271px !important;
+    }
+
     abbr[data_title] {
         position: relative;
             

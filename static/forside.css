@@ -93,7 +93,7 @@ thead {
 th {
     border: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
-#ass_coeff_total {
+#ass_coeff_total, #ass_coeff {
     border-right: 1px solid rgba(177, 177, 177, 0.297) !important;
 }
 th, td {
@@ -134,7 +134,7 @@ th, td {
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
 }
-#club, #prize_money, #ass_coeff, #club_coeff, #land, #prize_money_total, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
+#club, #prize_money, #ass_coeff, #bidrag, #club_coeff, #land, #prize_money_total, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -142,13 +142,18 @@ th, td {
     -ms-user-select: none;
     user-select: none;
 }
-@media (min-width:1021px) {
-    #ass_coeff, #ass_coeff_ø, #prize_money, #club_coeff, #prize_money_total, #ass_coeff_total, #club_coeff_total {
+@media (min-width:600px) {
+    #ass_coeff, #ass_coeff_ø, #bidrag, #prize_money, #club_coeff, #prize_money_total, #ass_coeff_total, #club_coeff_total {
         text-align: right;
     }
 }
-#ass_coeff, #prize_money, #club_coeff {
-    min-width: calc(10vw + 60px) !important;
+@media (min-width:740px) {
+    #ass_coeff_total {
+        min-width: calc(289px) !important;
+    }
+}
+#ass_coeff, #prize_money, #club_coeff, #bidrag {
+    min-width: calc(5vw + 30px) !important;
 }
 #club {
     padding-left: 9px;
@@ -491,11 +496,3 @@ th, td {
     padding-right: 4px;
     padding-bottom: 3px;
 }
-/* .x_symbol {
-    padding-left: 5px;
-    padding-bottom: 2px;
-}
-.check {
-    padding-left: 6px;
-    padding-bottom: 3px;
-} */
