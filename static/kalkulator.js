@@ -235,6 +235,25 @@ else {
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){
+    if (clicked_id == 'CL-PO') {
+        document.getElementById(clicked_id).innerText = "";
+        document.getElementById(clicked_id).id = 'CLPO'
+        oppdater_b1();
+        oppdater_b2_b3_b6_b9();
+        lagre_trykking()
+    }
+    if (clicked_id == 'CLPO') {
+        document.getElementById("b1_").innerText = "";
+        document.getElementById("b2_").innerText = "";
+        document.getElementById("b3_").innerText = "";
+        document.getElementById("b6_").innerText = "";
+        document.getElementById("b9_").innerText = "";
+        if ((document.getElementById('overskrift_premiepenger').innerText).includes('Prize')) {
+            document.getElementById(clicked_id).innerText = 'Played';
+        } else {document.getElementById(clicked_id).innerText = 'Spilt';}
+        document.getElementById(clicked_id).id = 'CL-PO'
+        lagre_trykking()
+    }
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     const tall = -nummer;
     if (nummer > 0)  {
@@ -247,7 +266,7 @@ function paa_av(clicked_id){
         document.getElementById(clicked_id).id = "b" + tall;
         var aktuell_sum = (knapp_summer[nummer - 1][aarstall]);
         if (clicked_id == "b1") {
-            if ((document.getElementById("b18")) && (document.getElementById("b19")) && (document.getElementById("b20"))) {
+            if ((document.getElementById("b18")) && (document.getElementById("b19")) && (document.getElementById("b20")) && (!document.getElementById("CL-PO"))) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 summer();
                 rund_av_enkeltcelle(aktuell_sum, clicked_id);
@@ -257,7 +276,7 @@ function paa_av(clicked_id){
             }
         }
         else if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
-            if ((document.getElementById("b13")) && (document.getElementById("b16")) && (document.getElementById("b18")) && (document.getElementById("b19"))) {
+            if ((document.getElementById("b13")) && (document.getElementById("b16")) && (document.getElementById("b18")) && (document.getElementById("b19")) && (!document.getElementById("CL-PO"))) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 summer();
                 rund_av_enkeltcelle(aktuell_sum, clicked_id);
@@ -812,6 +831,9 @@ function lagre_trykking() {
             lagrede_verdier.push('b' + (l + 1));
         }
     }
+    if (document.getElementById('CL-PO')) {
+        lagrede_verdier.push('CLPO');
+    }
     localStorage.setItem('Hallo', lagrede_verdier);
 };
 function lagre_trykking_input_1() {
@@ -864,6 +886,9 @@ function slett(slett_lagring) {
         if (document.getElementById('b-' + (c + 1))) {
             paa_av('b-' + (c + 1));
         }
+    }
+    if (document.getElementById('CL-PO')) {
+        paa_av('CL-PO');
     }
     for (var ce=0;ce<3;ce++) {
         document.getElementById('i' + (ce + 1)).value = "";

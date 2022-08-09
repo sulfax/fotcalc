@@ -247,21 +247,21 @@ tbody {
     background-color:#201F41;
     border-color:#201F41;
 }
-#b2, #b3, #b6, #b9, #b13, #b16, #b18, #b21, #b24, #b27, #b30, #b33 {
+#b2, #b3, #b6, #b9, #b13, #b16, #b18, #b21, #b24, #b27, #b30, #b33, #CLPO {
     background-color:#929292;
     border-color:#777777;
     float:left;
 }
-#b2:hover, #b3:hover, #b6:hover, #b9:hover, #b13:hover, #b16:hover, #b18:hover, #b21:hover, #b24:hover, #b27:hover, #b30:hover, #b33:hover {
+#b2:hover, #b3:hover, #b6:hover, #b9:hover, #b13:hover, #b16:hover, #b18:hover, #b21:hover, #b24:hover, #b27:hover, #b30:hover, #b33:hover, #CLPO:hover {
     background-color:#777777;
     border-color:#777777;
 }
-#b-2, #b-3, #b-6, #b-9, #b-13, #b-16, #b-18, #b-18, #b-21, #b-24, #b-27, #b-30, #b-33 {
+#b-2, #b-3, #b-6, #b-9, #b-13, #b-16, #b-18, #b-18, #b-21, #b-24, #b-27, #b-30, #b-33, #CL-PO {
     background-color:#2769AE;
     border-color:#155599;
     float:left;
 }
-#b-2:hover, #b-3:hover, #b-6:hover, #b-9:hover, #b-13:hover, #b-16:hover, #b-18:hover, #b-21:hover, #b-24:hover, #b-27:hover, #b-30:hover, #b-33:hover {
+#b-2:hover, #b-3:hover, #b-6:hover, #b-9:hover, #b-13:hover, #b-16:hover, #b-18:hover, #b-21:hover, #b-24:hover, #b-27:hover, #b-30:hover, #b-33:hover, #CL-PO:hover {
     background-color:#155599;
     border-color:#155599;
 }
