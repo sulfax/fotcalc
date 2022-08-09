@@ -615,7 +615,7 @@ var link = document.createElement('meta');  link.setAttribute('property', 'og:de
 function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
   if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
     if (kolonne == 'prize_money_total') {
-      document.getElementById(kolonne).innerHTML = '<span id="premiepenger_land_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
+      document.getElementById(kolonne).innerHTML = '<span id="premiepenger_land_navn">' + document.getElementById(kolonne).innerText + '</span><span class="høyrestill">' + opp_ned_pil
     }
     if (kolonne == 'ass_coeff_total') {
       document.getElementById(kolonne).innerHTML = '<span id="ass_koeff_land_navn">' + document.getElementById(kolonne).innerText + '</span><span class="høyrestill">' + opp_ned_pil
