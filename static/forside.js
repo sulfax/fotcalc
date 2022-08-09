@@ -550,7 +550,7 @@ function byggTabell_test(data) {
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
 
-    data[i][10] = (Math.floor(data[i][10] * 1000) / 1000).toFixed(3) || 0;
+    data[i][10] = data[i][10].toFixed(3) || 0;
     if (data[i][10] == '0.000') {data[i][10] = ''}
 
 
