@@ -31,6 +31,9 @@ function language_standard(clicked_id) {
   var kolonne_lengde = sprak_id.length;
   var flint = "";
   if (clicked_id == "norsk") {
+    if (document.getElementById('CL-PO')) {
+      document.getElementById('CL-PO').innerText = 'Spilt'
+    }
     endre_link_landskoeff()
     for (x=0;x<kolonne_lengde;x++) {
       try {
@@ -128,9 +131,10 @@ function language_standard(clicked_id) {
       }
     }
   }
-
-  
   else {
+    if (document.getElementById('CL-PO')) {
+      document.getElementById('CL-PO').innerText = 'Played'
+    }
     endre_link_landskoeff()
     for (x=0;x<kolonne_lengde;x++) {
       try {
@@ -260,7 +264,7 @@ function language_standard(clicked_id) {
         catch {
           null;
         }
-      } 
+      }
     }
   }
 }

@@ -893,7 +893,7 @@ function slett(slett_lagring) {
             paa_av('b-' + (c + 1));
         }
     }
-    if (document.getElementById('CL-PO')) {
+    if (document.getElementById('CL-PO') && slett_lagring != "nei") {
         paa_av('CL-PO');
     }
     for (var ce=0;ce<3;ce++) {
@@ -979,6 +979,9 @@ function oppdater_ved_refresh_1() {
                 oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
             }
         }
+    }
+    if (document.getElementById('b-19')) {
+        document.getElementById('b10_') = '';
     }
 };
 
