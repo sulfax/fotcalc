@@ -142,7 +142,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
 }
-@media (min-width:600px) {
+@media (min-width:800px) {
     #ass_coeff, #ass_coeff_ø, #bidrag, #prize_money, #club_coeff, #prize_money_total, #ass_coeff_total, #club_coeff_total {
         text-align: right;
     }
