@@ -245,6 +245,7 @@ function paa_av(clicked_id){
             oppdater_b1();
         }
         lagre_trykking()
+        summer();
     }
     else if (clicked_id == 'CLPO') {
         document.getElementById("b1_").innerText = "";
@@ -257,6 +258,7 @@ function paa_av(clicked_id){
         } else {document.getElementById(clicked_id).innerText = 'Spilt';}
         document.getElementById(clicked_id).id = 'CL-PO'
         lagre_trykking()
+        summer();
     }
     else {
         var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
@@ -963,6 +965,9 @@ function oppdater_ved_refresh_1() {
             if(menyvalg[i][0] == Klubbnavn){
                 let p = 1 *antall_MV_elem*(localStorage.getItem('sessong')) + 2;
                 const motak = menyvalg[i][p];
+                if (!motak.includes('CLPO') && document.getElementById("CL-PO")) {
+                    paa_av('CL-PO')
+                }
                 if (motak) {
                     if (motak.includes("b18")) {var turnering = 0;}
                     else if (motak.includes("b19")) {var turnering = 1;}
