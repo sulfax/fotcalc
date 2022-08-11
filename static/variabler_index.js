@@ -255,7 +255,7 @@ const english_kalkulator = [
     'Eliminated in <abbr data_title="Third qualifying round (ignore if your club plays in League Path)">Q3</abbr>:',
     '<abbr data_title="Third qualifying round, League Path">Q3 League Path</abbr>:',
     'Play-off:',
-    'Eliminated in playoff:',
+    'Eliminated in play-off:',
     'Group stage:',
     '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the group stage (1-32). Follow link 1 to figure out.">Ten-year coeff</abbr>: </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten year coefficient ranking">1</abbr></a>',
     '<abbr data_title="Amount of wins in the group stage">Wins</abbr>:',
