@@ -149,7 +149,7 @@ th, td {
 }
 @media (min-width:740px) {
     #ass_coeff_total {
-        min-width: calc(289px) !important;
+        min-width: calc(70px) !important;
     }
 }
 #ass_coeff, #prize_money, #club_coeff, #bidrag {
@@ -495,4 +495,9 @@ th, td {
     margin-left: -3px;
     padding-right: 4px;
     padding-bottom: 3px;
+}
+.klubb_logo {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
 }
