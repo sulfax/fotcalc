@@ -965,8 +965,10 @@ function oppdater_ved_refresh_1() {
             if(menyvalg[i][0] == Klubbnavn){
                 let p = 1 *antall_MV_elem*(localStorage.getItem('sessong')) + 2;
                 const motak = menyvalg[i][p];
-                if (!motak.includes('CLPO') && document.getElementById("CL-PO")) {
-                    paa_av('CL-PO')
+                if (motak) {
+                    if (!motak.includes('CLPO') && document.getElementById("CL-PO")) {
+                        paa_av('CL-PO')
+                    }
                 }
                 if (motak) {
                     if (motak.includes("b18")) {var turnering = 0;}
