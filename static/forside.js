@@ -541,11 +541,55 @@ function byggTabell_test(data) {
   table.innerHTML = '';
   var helTabellHTML = '';
   for (var i = 0; i < data.length; i++) {
+    let klubbnavn = data[i][0].slice(0, -3)
+    let klubbnavn_url = klubbnavn.replace(/\s/g, '')
+    if (klubbnavn_url.includes('/')) {
+      klubbnavn_url = klubbnavn_url.replace('/','')
+    }
+    // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" alt="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w"></img>'
     if (data[i][0].slice(-3) == '0/0') {
-      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg">' + data[i][0].slice(0, -3)
+      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg"><img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+      `data-srcset="
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `4.png 50w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"
+      data-fallback="media/klubblogo/fallback.png"
+      title="` + klubbnavn + `" alt="FC Bayern München" sizes="19px" srcset="
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `4.png 50w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>` + klubbnavn
     }
     else if (data[i][0].slice(-3) == '1/1') {
-      data[i][0] = '<img class="check" src="media/check.svg">' + data[i][0].slice(0, -3)
+      data[i][0] = '<img class="check" src="media/check.svg"><img class="klubblogo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+      `data-srcset="
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `4.png 50w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"
+      data-fallback="media/klubblogo/fallback.png"
+      title="` + klubbnavn + `" alt="FC Bayern München" sizes="19px" srcset="
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `4.png 50w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>` + klubbnavn
     }
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
@@ -589,6 +633,8 @@ function byggTabell_test(data) {
   }
   table.innerHTML = helTabellHTML;
 }
+
+
 function endre_klubbnavn(i) {
   var rows = document.getElementsByTagName("table")[0].rows;
   var last = rows[i + 1];
