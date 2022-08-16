@@ -570,7 +570,7 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>` + klubbnavn
     }
     else if (data[i][0].slice(-3) == '1/1') {
-      data[i][0] = '<img class="check" src="media/check.svg"><img class="klubblogo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+      data[i][0] = '<img class="check" src="media/check.svg"><img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
       `data-srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
