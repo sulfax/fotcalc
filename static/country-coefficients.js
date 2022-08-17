@@ -516,7 +516,7 @@ function endre_sort_kolonne() {
 function forside_ø_koeff(i, kolonne) {
   localStorage.setItem('trykte_knapper', JSON.stringify([]))
   localStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
-  localStorage.setItem('kolonne', 'ass_coeff')
+  localStorage.setItem('kolonne', 'bidrag')
   localStorage.setItem('rekkefølge', 'desc')
   localStorage.setItem('kolonne2', 'ass_coeff_ø')
   localStorage.setItem('rekkefølge2', 'desc')
