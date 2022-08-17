@@ -546,7 +546,7 @@ function byggTabell_test(data) {
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
-    // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" alt="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w"></img>'
+    // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w"></img>'
     if (data[i][0].slice(-3) == '0/0') {
       data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg"><img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
       `data-srcset="
@@ -559,7 +559,7 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"
       data-fallback="media/klubblogo/fallback.png"
-      title="` + klubbnavn + `" alt="FC Bayern München" sizes="19px" srcset="
+      title="` + klubbnavn + `" sizes="19px" srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
@@ -581,7 +581,7 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"
       data-fallback="media/klubblogo/fallback.png"
-      title="` + klubbnavn + `" alt="FC Bayern München" sizes="19px" srcset="
+      title="` + klubbnavn + `" sizes="19px" srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
