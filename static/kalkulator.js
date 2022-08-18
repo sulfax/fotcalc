@@ -1001,7 +1001,7 @@ function oppdater_ved_refresh_1() {
         }
     }
     if (document.getElementById('b-19')) {
-        document.getElementById('b10_') = '';
+        document.getElementById('b10_').innerText = '';
     }
 };
 
