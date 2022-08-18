@@ -241,7 +241,7 @@ function paa_av(clicked_id){
         if (!document.getElementById("b-13") && !document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
             oppdater_b2_b3_b6_b9();
         }
-        if (!document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
+        if (!document.getElementById("b-9") && !document.getElementById("b-13") && !document.getElementById("b-14") && !document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
             oppdater_b1();
         }
         lagre_trykking()
