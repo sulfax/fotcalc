@@ -273,17 +273,25 @@ function paa_av(clicked_id){
             document.getElementById(clicked_id).id = "b" + tall;
             var aktuell_sum = (knapp_summer[nummer - 1][aarstall]);
             if (clicked_id == "b1") {
-                if ((document.getElementById("b18")) && (document.getElementById("b19")) && (document.getElementById("b20")) && (!document.getElementById("CL-PO"))) {
+                if ((document.getElementById("b9")) && (document.getElementById("b13")) && (document.getElementById("b14")) && (document.getElementById("b18")) && (document.getElementById("b19")) && (document.getElementById("b20")) && (!document.getElementById("CL-PO"))) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     summer();
                     rund_av_enkeltcelle(aktuell_sum, clicked_id);
                 }
-                else if ((document.getElementById("b-18")) || (document.getElementById("b-19")) || (document.getElementById("b-20"))) {
+                else if ((document.getElementById("b-9")) || (document.getElementById("b-13")) || (document.getElementById("b-14")) || (document.getElementById("b-18")) || (document.getElementById("b-19")) || (document.getElementById("b-20"))) {
                     summer();
                 }
             }
             else if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
+                if (clicked_id == "b9" || clicked_id == "b14") {
+                    document.getElementById("b1_").innerText = "";
+                }
                 if ((document.getElementById("b13")) && (document.getElementById("b16")) && (document.getElementById("b18")) && (document.getElementById("b19")) && (!document.getElementById("CL-PO"))) {
+                    document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                    summer();
+                    rund_av_enkeltcelle(aktuell_sum, clicked_id);
+                }
+                else if (clicked_id == "b14" && (document.getElementById("b19"))) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     summer();
                     rund_av_enkeltcelle(aktuell_sum, clicked_id);
@@ -303,7 +311,7 @@ function paa_av(clicked_id){
                         document.getElementById("b10_").innerText = "";
                     }
                 }
-                if (clicked_id == "b18" || clicked_id == "b19" || clicked_id == "b20") {
+                if (clicked_id == "b13" || clicked_id == "b18" || clicked_id == "b19" || clicked_id == "b20") {
                     if (nummer == 18) {
                         UCL_ikke_avrundet[0] = aktuell_sum;
                     }
@@ -327,7 +335,12 @@ function paa_av(clicked_id){
             flytt_SCUP_sum_hoyre(clicked_id)
         }
         else {
-            if ((clicked_id == "b-18" && document.getElementById("b19") && document.getElementById("b20") && document.getElementById("CLPO")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b20") && document.getElementById("CLPO")) || (clicked_id == "b-20" && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO"))) {
+            if ((clicked_id == "b-9" && document.getElementById("b13") && document.getElementById("b14") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("b20") && document.getElementById("CLPO"))
+             || (clicked_id == "b-13" && document.getElementById("b9") && document.getElementById("b14") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("b20") && document.getElementById("CLPO"))
+             || (clicked_id == "b-14" && document.getElementById("b9") && document.getElementById("b13") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("b20") && document.getElementById("CLPO"))
+             || (clicked_id == "b-18" && document.getElementById("b9") && document.getElementById("b13") && document.getElementById("b14") && document.getElementById("b19") && document.getElementById("b20") && document.getElementById("CLPO"))
+             || (clicked_id == "b-19" && document.getElementById("b9") && document.getElementById("b13") && document.getElementById("b14") && document.getElementById("b18") && document.getElementById("b20") && document.getElementById("CLPO"))
+             || (clicked_id == "b-20" && document.getElementById("b9") && document.getElementById("b13") && document.getElementById("b14") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO"))) {
                 oppdater_b1();
             }
             if ((clicked_id == "b-13" && document.getElementById("b16") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-16" && document.getElementById("b13") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-18" && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("CLPO"))) {
@@ -1130,7 +1143,7 @@ function oppdater_sessong(aarstall) {
             document.getElementById('b14_').innerText = "";
         }
     }
-    if ((document.getElementById("b-18")) || (document.getElementById("b-19")) || (document.getElementById("b-20"))) {
+    if ((document.getElementById("b-9")) || (document.getElementById("b-13")) || (document.getElementById("b-14")) || (document.getElementById("b-18")) || (document.getElementById("b-19")) || (document.getElementById("b-20"))) {
         document.getElementById('b1_').innerText = "";
     }
     if (aarstall == null) {
