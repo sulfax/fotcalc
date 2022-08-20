@@ -649,6 +649,7 @@ if (overskrift_forside_finnes) {
     "mainEntity": []
   }
   for (let i = 0; i < menyvalg_lengde; i++) {
+    menyvalg_edit_2[i][0] = (menyvalg_edit_2[i][0]).slice(0,-3)
     var Lag_premiepenger = {
         "@type": "Question",
         "name": "How much prize money has " + menyvalg_edit_2[i][0] + " earned so far?",
@@ -670,7 +671,7 @@ if (overskrift_forside_finnes) {
       "name": "How many coefficient points has " + menyvalg_edit_2[i][0] + " earned in 22/23?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": menyvalg_edit_2[i][15] + " association coefficient " + poeng1 + " and " + menyvalg_edit_2[i][16] + " club coefficient " + poeng2,
+        "text": menyvalg_edit_2[i][7] + " association coefficient " + poeng1 + " and " + menyvalg_edit_2[i][8] + " club coefficient " + poeng2,
       }
   }
     schema.mainEntity.push(Lag_premiepenger)
