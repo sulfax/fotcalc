@@ -847,15 +847,20 @@ function videre_fordeling(clicked_id) {
 
 function lagre_trykking() {
     var lagrede_verdier = [];
+    if (document.getElementById('CL-PO')) {
+        lagrede_verdier.push('CLPO');
+    }
     for (var l=0;l<37;l++) {
         if (document.getElementById('b-' + (l + 1))) {
             lagrede_verdier.push('b' + (l + 1));
         }
     }
-    if (document.getElementById('CL-PO')) {
-        lagrede_verdier.push('CLPO');
+    let Klubbnavn = (localStorage.getItem('Klubbnavn'))
+    if (Klubbnavn == "Calculate from scratch" || Klubbnavn == "Kalkuler fra bunnen" || Klubbnavn == "Velg klubb" || Klubbnavn == "Choose club") {
+        if (((document.getElementById('dropDownMeny').innerHTML).includes('Calculate from scratch')) || ((document.getElementById('dropDownMeny').innerHTML).includes('Kalkuler fra bunnen')) || ((document.getElementById('dropDownMeny').innerHTML).includes('Velg klubb')) || ((document.getElementById('dropDownMeny').innerHTML).includes('Choose club'))) {
+            localStorage.setItem('Hallo', lagrede_verdier);
+        }
     }
-    localStorage.setItem('Hallo', lagrede_verdier);
 };
 function lagre_trykking_input_1() {
     var lagrede_verdier_input_id_1 = [];
@@ -908,7 +913,7 @@ function slett(slett_lagring) {
             paa_av('b-' + (c + 1));
         }
     }
-    if (document.getElementById('CL-PO') && slett_lagring != "nei") {
+    if (document.getElementById('CL-PO')) {
         paa_av('CL-PO');
     }
     for (var ce=0;ce<3;ce++) {
@@ -1170,6 +1175,10 @@ function oppdater_sessong(aarstall) {
                 document.getElementById('b' + (uy + 1) + '_').innerText = "€ " + avrundet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             }      
         }
+    }
+    if (document.getElementById('b-10')) {
+        paa_av('b-10')
+        paa_av('b10')
     }
     if ((document.getElementById("b-13")) || (document.getElementById("b-16")) || (document.getElementById("b-18")) || (document.getElementById("b-19"))) {
         document.getElementById('b2_').innerText = "";
