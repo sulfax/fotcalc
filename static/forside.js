@@ -15,7 +15,6 @@ let trykte_knapper_exclude = JSON.parse(localStorage.getItem('trykte_knapper_exc
 const knapp_filter_turneringer = ['ucl_knapp', 'uel_knapp', 'uecl_knapp']
 
 
-
 if (localStorage.getItem('sessong') == null) {
   var aarstall = 1;
 }
@@ -549,35 +548,25 @@ function byggTabell_test(data) {
   table.innerHTML = '';
   var helTabellHTML = '';
   for (var i = 0; i < data.length; i++) {
-    let klubbnavn = data[i][0].slice(0, -3)
+    let klubbnavn = data[i][0]
+    if (data[i][0].slice(-3) == '0/0' || data[i][0].slice(-3) == '1/1') {
+      klubbnavn = data[i][0].slice(0, -3)
+    }
     let klubbnavn_url = klubbnavn.replace(/\s/g, '')
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
     // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w"></img>'
     if (data[i][0].slice(-3) == '0/0') {
-      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg"><img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
-      `data-srcset="
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `4.png 50w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"
-      data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `3.png 36w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `4.png 50w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>` + klubbnavn
+      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg">'
     }
     else if (data[i][0].slice(-3) == '1/1') {
-      data[i][0] = '<img class="check" src="media/check.svg"><img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+      data[i][0] = '<img class="check" src="media/check.svg">'
+    }
+    else {
+      data[i][0] = ''
+    }
+    data[i][0] = data[i][0] + '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
       `data-srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,
@@ -596,12 +585,11 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>` + klubbnavn
-    }
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
 
     data[i][10] = data[i][10].toFixed(3) || 0;
-    if (data[i][10] == '0.000') {data[i][10] = ''}
+    if (data[i][10] == '0.000') {data[i][10] = '-'}
 
 
     let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
@@ -1416,19 +1404,19 @@ function bygg_tabell_2(land_array) {
   }
   for (r = 0; r < land_array.length; r++) {
     if (land_array[r][2] == 0) {
-      land_array[r][2] = "";
+      land_array[r][2] = "-";
     }
     else {
       land_array[r][2] = land_array[r][2].toFixed(1)
     }
     if (land_array[r][3] == 0) {
-      land_array[r][3] = "";
+      land_array[r][3] = "-";
     }
     else {
       land_array[r][3] = land_array[r][3].toFixed(1)
     }
     if (land_array[r][4] == 0 || (land_array[r][2] == 0 && (filter_land_før.includes('RUS') == false && filter_land_før.length != 0 && aarstall == 1))) {
-      land_array[r][4] = "";
+      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${"-"}</a>`
     }
     else if (land_array[r][4] != "-") {
       land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${land_array[r][4].toFixed(3)}</a>`

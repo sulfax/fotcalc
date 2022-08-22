@@ -197,8 +197,9 @@ $('th').on('click', function(){
   else {
       $(this).data('order', "desc")
   }
+  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
   if (column != undefined) {
-    sorter(column, order, tekst, ranking_array)
+    sorter(column, order, tekst, ranking_array, aar_etter_forste_periode)
   }
 })
 
@@ -319,8 +320,8 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
 
 
 function sortFunction_tall_1_flere_desimal(a, b) {
-  if (a[i] == '') {a[i] = 0.000}
-  if (b[i] == '') {b[i] = 0.000}
+  if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
+  if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
   if (parseFloat(a[i]) === parseFloat(b[i])) {
     return 0;
   }
@@ -329,8 +330,8 @@ function sortFunction_tall_1_flere_desimal(a, b) {
   }
 }
 function sortFunction_tall_2_flere_desimal(a, b) {
-  if (a[i] == '') {a[i] = 0.000}
-  if (b[i] == '') {b[i] = 0.000}
+  if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
+  if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
   if (parseFloat(a[i]) === parseFloat(b[i])) {
     return 0;
   }
@@ -373,18 +374,17 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></div>'
       land = ranking_array[i][7]
     }
-    if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
-    if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}
-    if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "";}
-    if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "";}
-    if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "";}
+    if ((ranking_array[i][2] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[4]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][2] = "-";} else if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
+    if ((ranking_array[i][3] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[5]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][3] = "-";} else if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}
+    if ((ranking_array[i][4] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[6]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][4] = "-";} else if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "";}
+    if ((ranking_array[i][5] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[7]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][5] = "-";} else if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "";}
+    if ((ranking_array[i][6] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[8]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][6] = "-";} else if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "";}
     let sesong1 = ranking_array[i][2]
     let sesong2 = ranking_array[i][3]
     let sesong3 = ranking_array[i][4]
     let sesong4 = ranking_array[i][5]
     let sesong5 = ranking_array[i][6]
     let klubber_igjen = ""
-    
 
     let tom_kolonne = `<td class='premie_koeff tom'>${""}</td>`
     if (i == 54) {
@@ -397,22 +397,21 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     } else {
       klubber_igjen = `<td class='premie_koeff klubb gul'>${ranking_array[i][8]}</td>`
     }
-
     if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1 && sesong1 != "") {
       sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
     }
     if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
-      if (sesong1 != "") {sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`}
-      if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}}
+      sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
+      sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}
     if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
-      if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}
-      if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}}
+      sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`
+      sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}
     if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
-      if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}
-      if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}}
+      sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`
+      sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}
     if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
-      if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}
-      if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
+      sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`
+      sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
     var rad_test = `<tr>
