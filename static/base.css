@@ -148,7 +148,7 @@ body{
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    min-width: 240px;
+    min-width: 154px;
     overflow: auto;
     border: 1px solid rgb(200, 200, 200);
     z-index: 1;
@@ -314,4 +314,16 @@ a:hover {
 .link_utydelig {
     padding-left: 0px !important;
     color: #6872ff;
+}
+.klubb_logo_kalkulatorer {
+    margin-right: 4px !important;
+    margin-bottom: 3px;
+}
+.klubb_logo_kalkulatorer_knapp {
+    margin-left: 0px !important;
+    margin-right: 8px !important;
+    margin-bottom: 3px;
+}
+.dropdown-content-egen-bredde {
+    width:280px !important;
 }

@@ -958,7 +958,46 @@ function oppdater_ved_refresh_1() {
     else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
         document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
     }
-    document.getElementById("dropDownMeny").innerHTML = Klubbnavn + " <div class='opp_ned_pil'>&#10094</div>"
+    let land = ""
+    let klubbnavn_url = Klubbnavn.replace(/\s/g, '')
+    if (Klubbnavn == "Velg klubb" || Klubbnavn == "Choose club") {
+        klubbnavn_url = "logo"
+        land = "standard"
+    } else {
+        for (i = 0; i < menyvalg.length; i++) {
+            if (menyvalg[i][0] == Klubbnavn) {
+                land = menyvalg[i][1]
+                break
+            }
+        }
+        if (klubbnavn_url.includes('/')) {
+            klubbnavn_url = klubbnavn_url.replace('/','')
+        }
+    }
+    if (Klubbnavn != "Calculate from scratch" && Klubbnavn != "Kalkuler fra bunnen") {
+        document.getElementById("dropDownMeny").innerHTML = '<img class="klubb_logo_kalkulatorer_knapp" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+        `data-srcset="
+        media/klubblogo/` + land + "/" + klubbnavn_url + `1.png 18w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `2.png 32w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `3.png 36w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `4.png 50w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `5.png 64w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `6.png 70w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `7.png 100w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `8.png 140w"
+        data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
+        media/klubblogo/` + land + "/" + klubbnavn_url + `1.png 18w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `2.png 32w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `3.png 36w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `4.png 50w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `5.png 64w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `6.png 70w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `7.png 100w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `8.png 140w"></img>` + Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+    }
+    else {
+        document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+    }
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
         const motak = localStorage.getItem('Hallo');
         const motak_2 = localStorage.getItem('Hallo_input_id_1');
@@ -1088,7 +1127,6 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
     }
 };
 
-
 function endre_sessong(clicked_id) {
     if (clicked_id == 'sessong_kontroller_1') {
         aarstall = 0;
@@ -1191,12 +1229,12 @@ function toggleMeny() {
 }
 
 function nedoverpil() {
-    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
+    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerHTML).slice(0, -32)
     document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10094</div>";
 }
 
 function oppoverpil() {
-    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerText).slice(0, -1)
+    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerHTML).slice(0, -32)
     document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10095</div>";
 }
 
@@ -1238,14 +1276,36 @@ $(document).mouseup(e => {
 /* Lager knappene i menyen */
 for (i = 0; i < menyvalg.length; i++) {
     let btn = document.createElement("button");
-    btn.innerHTML = menyvalg[i][0];
+    let klubbnavn_url = menyvalg[i][0].replace(/\s/g, '')
+    if (klubbnavn_url.includes('/')) {
+      klubbnavn_url = klubbnavn_url.replace('/','')
+    }
+    btn.innerHTML = '<img class="klubb_logo_kalkulatorer" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+    `data-srcset="
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `1.png 18w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `2.png 32w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `3.png 36w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `4.png 50w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `5.png 64w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `6.png 70w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `7.png 100w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w"
+    data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `1.png 18w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `2.png 32w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `3.png 36w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `4.png 50w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `5.png 64w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `6.png 70w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `7.png 100w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w"></img>` + menyvalg[i][0];
     btn.className = "meny_element"
-    btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
+    btn.setAttribute("onClick", "endreMenyTittel(innerText)");
     document.getElementById("dropdown_elementer").appendChild(btn);
 }
 
 function endreMenyTittel(Klubbnavn) {
-    document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+    // document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     toggleMeny();
     localStorage.setItem('Klubbnavn', Klubbnavn);
     slett("nei")

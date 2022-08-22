@@ -115,7 +115,12 @@ function language_standard(clicked_id) {
       }
       if (overskrift_forside_finnes || overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes || overskrift_klubbkoeffisient_finnes || overskrift_ti_års_finnes) {}
       else {
-        document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        if (Klubbnavn == "Calculate from scratch" || Klubbnavn == "Kalkuler fra bunnen") {
+          document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        }
+        else if (Klubbnavn == "Velg klubb") {
+          document.getElementById("dropDownMeny").innerHTML = ((document.getElementById("dropDownMeny").innerHTML).slice(0, 964)) + Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        }
       }
       if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + " koeffisientpoeng";
@@ -216,7 +221,12 @@ function language_standard(clicked_id) {
       }
       if (overskrift_forside_finnes || overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes || overskrift_klubbkoeffisient_finnes || overskrift_ti_års_finnes) {}
       else {
-        document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        if (Klubbnavn == "Calculate from scratch" || Klubbnavn == "Kalkuler fra bunnen") {
+          document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        }
+        else if (Klubbnavn == "Choose club") {
+          document.getElementById("dropDownMeny").innerHTML = ((document.getElementById("dropDownMeny").innerHTML).slice(0, 964)) + Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        }
       }
       if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ coefficient points";
@@ -368,7 +378,6 @@ const sprak_id_kalkulator = [
   'koeff_reklame',
   'oversikt_reklame'
 ];
-
 const sprak_id_koeffisient = [
   'title_koeffisient',
   'overskrift_koeffisient',
@@ -682,7 +691,6 @@ if (overskrift_forside_finnes) {
   script.textContent = JSON.stringify(schema);
   document.head.appendChild(script);
 }
-
 
 endre_link_landskoeff()
 function endre_link_landskoeff() {
