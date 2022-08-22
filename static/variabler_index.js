@@ -94,7 +94,7 @@ const norsk_kalkulator = [
     'Vunnet Super Cup:',
     'Inntjening per turnering:',
     'Total inntjening:',
-    '<p><p>*Kalkulasjonene inkluderer ikke TV-pengene, grunnet disse uvisse faktorene:<br><br>1. den faktiske endelige størrelsen på TV-pengene:<br>2. sammensetningen av deltakende klubber;<br>3. antallet klubber fra hver av de konkurrerende assosiasjonene;<br>4. den endelige plasseringen til hver konkurrerende klubb i hjemlig liga, forrige sesong;<br>5. prestasjonen til hver klubb i europa.<br><i>Kilde: UEFA</i></p>Det er derfor umulig å kalkulere.<br><br>**Kalkulasjonene tar ikke de mindre covid-fradragene i betraktning. Å finne denne summen krever ukjente tall fra TV-pengene.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf" target="_blank">UEFA’s distribusjonsplan</a>.</p>',
+    '<p><p>*Kalkulasjonene inkluderer ikke TV-pengene, grunnet disse uvisse faktorene:<br><br>1. den faktiske endelige størrelsen på TV-pengene:<br>2. sammensetningen av deltakende klubber;<br>3. antallet klubber fra hver av de konkurrerende assosiasjonene;<br>4. den endelige plasseringen til hver konkurrerende klubb i hjemlig liga, forrige sesong;<br>5. prestasjonen til hver klubb i europa.<br><i>Kilde: UEFA</i></p>Det er derfor umulig å kalkulere.<br><br>**Kalkulasjonene tar ikke de mindre covid-fradragene i betraktning. Å finne denne summen krever ukjente tall fra TV-pengene.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">din klubbs koeffisientpoeng</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign premiepenger med andre klubber</a>.</b>'
 ];
@@ -139,7 +139,7 @@ const norsk_koeffisient = [
     'Totale koeffisientpoeng',
     'Assosiasjons-poeng',
     'Klubb-poeng',
-    '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s koeffisient-rangeringssystem</a>.</p>',
+    '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2021/22/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFAs koeffisient-rangeringssystem</a>.</p>',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">din klubb’s premiepenger</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign koeffisientpoeng med andre klubber</a>.</b>',
     '<b>Ta en titt på <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">landskoeffisient-rangeringen</a>.</b>'
