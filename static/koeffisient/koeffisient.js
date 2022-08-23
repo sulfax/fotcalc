@@ -729,7 +729,7 @@ function oppdater_ved_refresh_koeff_1() {
                         deltakelse_eliminasjon = deltakelse_eliminasjon + ((knapper_fra_konvertering[u]) + ",");
                     }
                 }
-                const resultat = menyvalg[i][p+4];
+                const resultat = menyvalg[i][p+4] || "";
                 const oppdater_seier_tap = ((menyvalg[i][p+2] || ',,,,,') + ',' + (menyvalg[i][p+3] || ',,'));
                 var forkort = "ja";
                 oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap, forkort);
@@ -783,13 +783,15 @@ function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier
         }
         finally {
             let oppdater_seier_tap_status_oppdelt = (oppdater_seier_tap.split(',')) || '';
-            for (let d=1;d<=oppdater_seier_tap_status_oppdelt.length;d++) {
-                document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
-                if (d <= 6) {
-                    gjennomfør_1_gang_per_knapp("i" + d)
-                }
-                else if (d >= 7) {
-                    oppdater_plassering("i" + d)
+            for (let d=1;d<=(oppdater_seier_tap_status_oppdelt.length);d++) {
+                if (d==10) {} else {
+                    document.getElementById("i" + d).value = oppdater_seier_tap_status_oppdelt[d - 1];
+                    if (d <= 6) {
+                        gjennomfør_1_gang_per_knapp("i" + d)
+                    }
+                    else if (d >= 7) {
+                        oppdater_plassering("i" + d)
+                    }
                 }
             }
         }

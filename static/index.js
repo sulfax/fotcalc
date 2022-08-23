@@ -31,7 +31,9 @@ function language(clicked_id) {
   aarstall = localStorage.getItem('sessong') || 0;
   if (overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes) {}
   else {
-    oppdater_sessong(aarstall)
+    try {
+      oppdater_sessong(aarstall)
+    } catch {null}
   }
 }
 
