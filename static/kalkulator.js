@@ -1238,8 +1238,10 @@ function toggleMeny() {
 }
 
 function nedoverpil() {
-    let DropdownMenyElement = (document.getElementById("dropDownMeny").innerHTML).slice(0, -32)
-    document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10094</div>";
+    if (!(document.getElementById("dropDownMeny").innerHTML).includes("❮")) {
+        let DropdownMenyElement = (document.getElementById("dropDownMeny").innerHTML).slice(0, -32)
+        document.getElementById("dropDownMeny").innerHTML = DropdownMenyElement + "<div class='opp_ned_pil'>&#10094</div>";
+    }
 }
 
 function oppoverpil() {
