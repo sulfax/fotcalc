@@ -10,15 +10,9 @@ var UCL_utslåtte_lagene_PO_2122 = 30000000;
 var UCL_deltagelsespenger_2122 = UCL_total_mengde_2122 * 0.25;
 var UEL_deltagelsespenger_2122 = UEL_total_mengde_2122 * 0.25;
 var UECL_deltagelsespenger_2122 = UECL_total_mengde_2122 * 0.40;
-var UCL_ti_års_koeffisient_rangering_2122 = UCL_total_mengde_2122 * 0.30;
-var UEL_ti_års_koeffisient_rangering_2122 = UEL_total_mengde_2122 * 0.15;
-var UECL_ti_års_koeffisient_rangering_2122 = UECL_total_mengde_2122 * 0.10;
 var UCL_antall_deltagere_2122 = 32;
 var UEL_antall_deltagere_2122 = 32;
 var UECL_antall_deltagere_2122 = 32;
-var UCL_antall_deler_2122 = 528;
-var UEL_antall_deler_2122 = 528;
-var UECL_antall_deler_2122 = 528;
 var Spilt_SCUP_total_2122 = 7000000;
 /*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*21/22 knapper*/
@@ -54,9 +48,9 @@ var Vunnet_SCUP_2122 = 1000000;
 
 
 /*21/22 input felt*/
-var UCL_ti_års_kr_2122 = UCL_ti_års_koeffisient_rangering_2122 / UCL_antall_deler_2122;
-var UEL_ti_års_kr_2122 = UEL_ti_års_koeffisient_rangering_2122 / UECL_antall_deler_2122;
-var UECL_ti_års_kr_2122 = UECL_ti_års_koeffisient_rangering_2122 / UEL_antall_deler_2122;
+var UCL_ti_års_kr_2122 = 1137000;
+var UEL_ti_års_kr_2122 = 132000;
+var UECL_ti_års_kr_2122 = 44500;
 var UCL_seier_2122 = 2800000;
 var UEL_seier_2122 = 630000;
 var UECL_seier_2122 = 500000;
@@ -83,9 +77,6 @@ var UCL_utslåtte_lagene_PO_2223 = 35000000;
 var UCL_deltagelsespenger_2223 = UCL_total_mengde_2223 * 0.25;
 var UEL_deltagelsespenger_2223 = UEL_total_mengde_2223 * 0.25;
 var UECL_deltagelsespenger_2223 = UECL_total_mengde_2223 * 0.40;
-var UCL_ti_års_koeffisient_rangering_2223 = UCL_total_mengde_2223 * 0.30;
-var UEL_ti_års_koeffisient_rangering_2223 = UEL_total_mengde_2223 * 0.15;
-var UECL_ti_års_koeffisient_rangering_2223 = UECL_total_mengde_2223 * 0.10;
 var UCL_antall_deltagere_2223 = 32;
 var UEL_antall_deltagere_2223 = 32;
 var UECL_antall_deltagere_2223 = 32;
@@ -124,9 +115,9 @@ var UECL_vinner_2223 = 2300000;
 var Spilt_SCUP_2223 = Spilt_SCUP_total_2223 / 2;
 var Vunnet_SCUP_2223 = 1300000;
 /*21/22 input felt*/
-var UCL_ti_års_kr_2223 = UCL_ti_års_koeffisient_rangering_2223 / UCL_antall_deler_2223;
-var UEL_ti_års_kr_2223 = UEL_ti_års_koeffisient_rangering_2223 / UECL_antall_deler_2223;
-var UECL_ti_års_kr_2223 = UECL_ti_års_koeffisient_rangering_2223 / UEL_antall_deler_2223;
+var UCL_ti_års_kr_2223 = 1137000;
+var UEL_ti_års_kr_2223 = 132000;
+var UECL_ti_års_kr_2223 = 44500;
 var UCL_seier_2223 = 3000000;
 var UEL_seier_2223 = 670000;
 var UECL_seier_2223 = 540000;
