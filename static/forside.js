@@ -1500,6 +1500,7 @@ function landsranking_endre_periode() {
   localStorage.setItem('kolonne_landskoeffisient', 'poeng')
   localStorage.setItem('rekkefølge_landskoeffisient', 'desc')
   localStorage.setItem('dropdownmeny_valg_landskoeffisient', (nåværende_sesong_periode_valg[0] - 5 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 5 + aarstall) + ' - ' + (nåværende_sesong_periode_valg[0] - 1 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 1 + aarstall))
+  localStorage.setItem('dropdownmeny_valg_klubbkoeffisient', (nåværende_sesong_periode_valg[0] - 5 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 5 + aarstall) + ' - ' + (nåværende_sesong_periode_valg[0] - 1 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 1 + aarstall))
 }
 
 
