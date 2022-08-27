@@ -639,9 +639,9 @@ function endre_klubbnavn(i) {
 
 
 // Endre meta-beskrivelsene
-var descval = document.getElementById('tabell_hoved').innerText;
-var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
-var link = document.createElement('meta');  link.setAttribute('property', 'og:description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+// var descval = document.getElementById('tabell_hoved').innerText;
+// var link = document.createElement('meta');  link.setAttribute('name', 'description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
+// var link = document.createElement('meta');  link.setAttribute('property', 'og:description');  link.content = descval; document.getElementsByTagName('head')[0].appendChild(link);
 
 // var paras = document.getElementsByTagName('meta');
 // for (i = 0; i < paras.length; i++) {
