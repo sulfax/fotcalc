@@ -505,4 +505,5 @@ th, td {
     font-size: 0px;
     padding:0px;
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
+    width: 0px !important;
 }
