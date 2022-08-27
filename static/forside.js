@@ -617,6 +617,7 @@ function byggTabell_test(data) {
     }
     var rad = `<tr>
                   ${nummer}
+                  <td id="tom_kolonne">${klubbnavn}</td>
                   <td><nobr class="marign_venstre">${data[i][0]}${klubbnavn}</nobr></td>
                   <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
@@ -1352,9 +1353,9 @@ function totalt_land(column, order, tekst, antall_klubber) {
       if (rows[p].cells[1].innerText == menyvalg[q][0]) {
         for (r = 0; r < landskoeffisienter.length; r++) {
           if (landskoeffisienter[r][0] == menyvalg[q][1]) {
-            landskoeffisienter[r][1] += parseInt((rows[p].cells[2].innerText).replace(/\D/g,''))
-            landskoeffisienter[r][2] += parseFloat(rows[p].cells[3].innerText)
-            landskoeffisienter[r][3] += parseFloat(rows[p].cells[5].innerText)
+            landskoeffisienter[r][1] += parseInt((rows[p].cells[3].innerText).replace(/\D/g,''))
+            landskoeffisienter[r][2] += parseFloat(rows[p].cells[4].innerText)
+            landskoeffisienter[r][3] += parseFloat(rows[p].cells[6].innerText)
             landskoeffisienter[r][4] += 1
           }
         }
@@ -1524,7 +1525,6 @@ if (localStorage.getItem('spoiler') == 'synlig' || localStorage.getItem('spoiler
   $('#tabell_overordnet td').show()
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
-
 
 // function endre_klubbnavn(i, kolonne) {
 //   var rows = document.getElementsByTagName("table")[0].rows;

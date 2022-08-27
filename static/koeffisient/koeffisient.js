@@ -689,7 +689,7 @@ function oppdater_ved_refresh_koeff_1() {
         media/klubblogo/` + land + "/" + klubbnavn_url + `5.png 64w,
         media/klubblogo/` + land + "/" + klubbnavn_url + `6.png 70w,
         media/klubblogo/` + land + "/" + klubbnavn_url + `7.png 100w,
-        media/klubblogo/` + land + "/" + klubbnavn_url + `8.png 140w"></img>` + Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
+        media/klubblogo/` + land + "/" + klubbnavn_url + `8.png 140w">` + Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
     else {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
@@ -884,7 +884,7 @@ for (i = 0; i < menyvalg.length; i++) {
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `5.png 64w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `6.png 70w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `7.png 100w,
-    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w"></img>` + menyvalg[i][0];
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w">` + menyvalg[i][0];
     btn.className = "meny_element"
     btn.setAttribute("onClick", "endreMenyTittel(innerText)");
     document.getElementById("dropdown_elementer").appendChild(btn);
