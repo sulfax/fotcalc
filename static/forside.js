@@ -584,7 +584,7 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>` + klubbnavn
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img> ` + klubbnavn
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
 
