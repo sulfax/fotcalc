@@ -558,10 +558,10 @@ function byggTabell_test(data) {
     }
     // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w"></img>'
     if (data[i][0].slice(-3) == '0/0') {
-      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg">'
+      data[i][0] = '<img class="x_symbol" alt="' + klubbnavn + '" src="media/x-symbol.svg">'
     }
     else if (data[i][0].slice(-3) == '1/1') {
-      data[i][0] = '<img class="check" src="media/check.svg">'
+      data[i][0] = '<img class="check" alt="' + klubbnavn + '" src="media/check.svg">'
     }
     else {
       data[i][0] = ''
