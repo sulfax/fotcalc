@@ -585,7 +585,6 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w">`
-    data[i][0] += klubbnavn
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
 
@@ -618,7 +617,7 @@ function byggTabell_test(data) {
     }
     var rad = `<tr>
                   ${nummer}
-                  <td><nobr class="marign_venstre">${data[i][0]}</nobr></td>
+                  <td><nobr class="marign_venstre">${data[i][0] + klubbnavn}</nobr></td>
                   <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="#" onclick="endre_lands_filter_bidrag(${data[i][9]})">${data[i][10]}</a></span></td>
