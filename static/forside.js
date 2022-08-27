@@ -68,8 +68,8 @@ function oppdater_sessong(aarstall) {
 }
 
 
-let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></img></span>'
-let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows"></img>'
+let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
+let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows">'
 
 $('th').on('click', function(){
   var column = $(this).data('column')
@@ -520,21 +520,21 @@ function sorter(column, order, tekst, menyvalg_edit) {
   if(order == 'desc') {
     if (column == 'club') {
       menyvalg_edit.sort(sortFunction_1);
-      tekst += '<img src="media/opp_NEDpil.svg" alt="Sorting arrows"></img>'
+      tekst += '<img src="media/opp_NEDpil.svg" alt="Sorting arrows">'
     }
     else {
       menyvalg_edit.sort(sortFunction_1_tall);
-      tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></img></span>'
+      tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
     }
   }
   else {
     if (column == 'club') {
       menyvalg_edit.sort(sortFunction_2);
-      tekst += '<img src="media/OPPned_pil.svg" alt="Sorting arrows"></img>'
+      tekst += '<img src="media/OPPned_pil.svg" alt="Sorting arrows">'
     }
     else {
       menyvalg_edit.sort(sortFunction_2_tall);
-      tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></img></span>'
+      tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
     }
   }
   localStorage.setItem('kolonne', column)
@@ -556,12 +556,12 @@ function byggTabell_test(data) {
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
-    // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w"></img>'
+    // '<img loading="lazy" data-sizes="auto" src="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" data-srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w" data-fallback="https://img.uefa.com/imgml/TP/teams/logos/clublogo_fallback.svg" title="FC Bayern München" sizes="32px" srcset="media/klubb_logo/real madrid.png 18w, media/klubb_logo/real madrid.png 32w, media/klubb_logo/real madrid.png 36w, media/klubb_logo/real madrid.png 50w, media/klubb_logo/real madrid.png 64w, media/klubb_logo/real madrid.png 70w, media/klubb_logo/real madrid.png 100w, media/klubb_logo/real madrid.png 140w">'
     if (data[i][0].slice(-3) == '0/0') {
-      data[i][0] = '<img class="x_symbol" alt="' + klubbnavn + '" src="media/x-symbol.svg">'
+      data[i][0] = '<img class="x_symbol" src="media/x-symbol.svg">'
     }
     else if (data[i][0].slice(-3) == '1/1') {
-      data[i][0] = '<img class="check" alt="' + klubbnavn + '" src="media/check.svg">'
+      data[i][0] = '<img class="check" src="media/check.svg">'
     }
     else {
       data[i][0] = ''
@@ -584,7 +584,7 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `5.png 64w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `6.png 70w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
-      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w"></img>`
+      media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w">`
     data[i][0] += klubbnavn
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
