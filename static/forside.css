@@ -108,7 +108,7 @@ th, td {
     margin-right:1%;
     margin-bottom: 1.1%;
 }
-.btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus {  /*Fjerner irriterende ramme på knapp ved trykking*/
+.btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus {
     box-shadow:none !important;
 }
 .btn-primary {
@@ -134,7 +134,7 @@ th, td {
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
 }
-#club, #prize_money, #ass_coeff, #bidrag, #club_coeff, #land, #prize_money_total, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
+/* #club, #prize_money, #ass_coeff, #bidrag, #club_coeff, #land, #prize_money_total, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -152,7 +152,7 @@ th, td {
         min-width: calc(70px) !important;
     }
 }
-/* #ass_coeff, #prize_money, #club_coeff, #bidrag {
+#ass_coeff, #prize_money, #club_coeff, #bidrag {
     min-width: calc(5vw + 30px) !important;
 }
 #club {
@@ -184,7 +184,7 @@ th, td {
 .høyrestill {
     float: right;
     margin-left: 5px;
-} */
+}
 
 
 .premie_koeff {
@@ -283,7 +283,7 @@ th, td {
     border: 1px solid rgba(0, 0, 0, 0);
     padding:3px;
     border-radius: 0% !important;
-}
+} */
 .ekstra_meny_element {
     padding:0px;
     float: right;
