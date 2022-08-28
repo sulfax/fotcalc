@@ -1010,7 +1010,7 @@ function byggTabell_test(ranking_array, column, order) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${15})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer + 1}</td>
-                    <td class="id_nr utydelig"><b>${ranking_array[i][15] + 1}</b></td>
+                    <td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>
                     <td><nobr class="marign_venstre">${ranking_array[i][0]}</nobr></td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>

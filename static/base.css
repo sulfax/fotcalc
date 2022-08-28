@@ -327,3 +327,11 @@ a:hover {
 .dropdown-content-egen-bredde {
     width:280px !important;
 }
+.klubb_logo {
+    margin-left: 3px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+.ramme_hoyre_tynn {
+    border-right: 1px solid rgba(177, 177, 177, 1) !important;
+}
