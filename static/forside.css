@@ -198,7 +198,7 @@ th, td {
     min-width: 42px;
     width: 10vw;
     text-align: center;
-    border-right: 2px solid rgba(177, 177, 177, 1) !important;
+    border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
 .tabell_link {
     color: rgb(86, 97, 255);
