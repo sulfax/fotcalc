@@ -206,7 +206,7 @@ th {
     user-select: none;
 }
 .ramme_hoyre {
-    border-right: 2px solid rgba(177, 177, 177, 1) !important;
+    border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
 #id_nr {
     text-align: right;
