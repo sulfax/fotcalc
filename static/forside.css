@@ -198,7 +198,7 @@ th, td {
     min-width: 42px;
     width: 10vw;
     text-align: center;
-    border-right: 1px solid rgba(177, 177, 177, 1) !important;
+    border-right: 2px solid rgba(177, 177, 177, 1) !important;
 }
 .tabell_link {
     color: rgb(86, 97, 255);
@@ -500,8 +500,11 @@ th, td {
     width: 0px !important;
     padding:0px !important;
     font-size: 0px !important;
-    border-right: 1px solid rgba(177, 177, 177, 1) !important;
+    /* border-right: 1px solid rgba(177, 177, 177, 1) !important; */
     /* width: 0px !important;
     padding:0px !important;
     margin-left: -10px !important;*/
+}
+#tom_kolonne {
+    border-right: 1px solid rgba(0,0,0,0) !important;
 }

@@ -553,25 +553,25 @@ function byggTabell_test(ranking_array, column, order) {
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
-    ranking_array[i][0] = '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
-    `data-srcset="
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w"
-    data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w">` + ranking_array[i][0]
+    // ranking_array[i][0] = '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+    // `data-srcset="
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w"
+    // data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
+    // media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w">` + ranking_array[i][0]
     if (aar_etter_forste_periode != 1) {
       sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" class="utydelig_link">${sesong5}</a>`
     }
