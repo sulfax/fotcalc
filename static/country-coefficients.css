@@ -233,10 +233,10 @@ th, td {
     margin-left: 2px;
     height: 21px;
     margin-top: -23px !important;
-    /* width: 21px;
+    width: 21px;
     border-radius: 50%;
     border: 1px solid rgba(161, 161, 161, 0.5);
-    box-shadow: .7px .7px rgba(110, 110, 110, 0.5); */
+    box-shadow: .7px .7px rgba(110, 110, 110, 0.5);
 }
 #NIR {
     border-radius: 50%;
