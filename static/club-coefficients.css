@@ -265,7 +265,7 @@ th {
 .id_nr {
     max-width: 60px;
     min-width: 42px;
-    width: 10vw;
+    width: 60px;
     text-align: center;
 }
 .link, .link_2 {
