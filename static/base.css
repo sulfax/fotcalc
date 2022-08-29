@@ -214,6 +214,7 @@ body{
 }
 footer div{
     height: 24rem;
+    min-height: 24.87vh !important;
     background-color: #343a40;
 }
 .laget_av {
@@ -334,4 +335,9 @@ a:hover {
 }
 .ramme_hoyre_tynn {
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
+}
+.container {
+    display: flex;
+    min-height: 69vh;
+    flex-direction: column;
 }
