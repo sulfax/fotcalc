@@ -194,7 +194,7 @@ th, td {
 }
 
 .id_nr {
-    max-width: 60px;
+    max-width: 60px !important;
     min-width: 42px;
     width: 10vw;
     text-align: center;
