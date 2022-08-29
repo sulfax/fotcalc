@@ -230,11 +230,9 @@ th, td {
     margin-bottom: 8px;
 }
 .flagg_div {
-    position: fixed;
     margin-left: 2px;
-    /* top: 1px; */
     height: 21px;
-    margin-top: 1px !important;
+    margin-top: -1.4rem !important;
     width: 21px;
     border-radius: 50%;
     border: 1px solid rgba(161, 161, 161, 0.5);
