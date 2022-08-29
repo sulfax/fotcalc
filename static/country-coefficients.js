@@ -371,7 +371,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       land = "Northern Ireland"
     }
     else {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></div>'
+      flagg_ikon = ''
       land = ranking_array[i][7]
     }
     if ((ranking_array[i][2] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[4]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][2] = "-";} else if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
