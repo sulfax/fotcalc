@@ -416,7 +416,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
-                    <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
+
                     <td id="tom_kolonne">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
                     <td class='premie_koeff'>${sesong1}</td>
