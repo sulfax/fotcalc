@@ -555,7 +555,7 @@ function byggTabell_test(ranking_array, column, order) {
     if (sesong1 === "0.0") {sesong1 = ''}
 
     let nummer = i+1;
-    if (nummer <= 3) {
+    if (nummer == 1) {
       nummer = '<img src="media/kolonnefjerner.png">' + nummer + '<img src="media/kolonnefjerner.png">';
     }
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
