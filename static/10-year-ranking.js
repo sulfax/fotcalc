@@ -435,7 +435,7 @@ function oppdater_ved_refresh() {
       let kolonne1_lik9 = (ranking_array[p][12] == ranking_array[p-1][12])
       let kolonne1_lik10 = (ranking_array[p][13] == ranking_array[p-1][13])
       if (poeng_lik && kolonne1_lik1 && kolonne1_lik2 && kolonne1_lik3 && kolonne1_lik4 && kolonne1_lik5 && kolonne1_lik6 && kolonne1_lik7 && kolonne1_lik8 && kolonne1_lik9 && kolonne1_lik10) {
-        ranking_array[p].splice(14,1,ranking_array[p-1][14]) /* Kanskje 9 i stedet for 14 */
+        ranking_array[p].splice(15,1,ranking_array[p-1][15]) /* Kanskje 9 i stedet for 14 */
       }
     }
   }
