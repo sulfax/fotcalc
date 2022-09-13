@@ -971,7 +971,10 @@ function byggTabell_test(ranking_array, column, order) {
     if (sesong3 === "0.0") {sesong3 = ''}
     if (sesong2 === "0.0") {sesong2 = ''}
     if (sesong1 === "0.0") {sesong1 = ''}
-    let nummer = i
+    let nummer = i+1
+    if (nummer <= 3) {
+      nummer = '<img src="media/kolonnefjerner.png">' + nummer + '<img src="media/kolonnefjerner.png">';
+    }
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
 
     if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
@@ -1049,7 +1052,7 @@ function byggTabell_test(ranking_array, column, order) {
     if (aar_etter_forste_periode >= 10 && aar_etter_forste_periode != 11) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${15})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
-                    <td class="id_nr veldig_utydelig ramme_hoyre">${nummer + 1}</td>
+                    <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
                     ${rangering}
                     <td><nobr class="marign_venstre">${ranking_array[i][0]}</nobr></td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
@@ -1750,3 +1753,33 @@ function regn_ut_NA_poeng() {
   }
   return NA_poeng_og_assosiasjon
 }
+
+
+var schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": []
+}
+var Lag_premiepenger = {
+  "@type": "Question",
+  "name": "How much prize money has earned so far?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "€ ",
+  }
+}
+var Lag_koeff = {
+  "@type": "Question",
+  "name": "How many coefficient points has earned in 22/23?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": " association coefficient ",
+  }
+}
+schema.mainEntity.push(Lag_premiepenger)
+schema.mainEntity.push(Lag_koeff)
+
+const script = document.createElement('script');
+script.setAttribute('type', 'application/ld+json');
+script.textContent = JSON.stringify(schema);
+document.head.appendChild(script);
