@@ -1146,9 +1146,6 @@ function regn_ut_NA_poeng() {
 
 
 
-const menyvalg_lengde = JSON.parse(localStorage.getItem('menyvalg_edit')).length
-var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
-
 var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
