@@ -972,6 +972,38 @@ function byggTabell_test(ranking_array, column, order) {
     if (sesong2 === "0.0") {sesong2 = ''}
     if (sesong1 === "0.0") {sesong1 = ''}
     let nummer = i
+    let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+
+    if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-21) {
+      for (r = 0; r < menyvalg.length; r++) {
+        if (menyvalg[r][0] == ranking_array[i][0]) {
+          let knapper = ((menyvalg[r][2 + ((aar_etter_forste_periode) * antall_MV_elem)])) || "";
+          let plassering = ((menyvalg[r][5 + ((aar_etter_forste_periode) * antall_MV_elem)])) || "";
+          knapper = knapper.split(",")
+          plassering = plassering.split(",")
+          if ((knapper).includes("b18")) {
+            if ((plassering).includes("3")) {
+              rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+            }
+            else {
+              rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+            }
+          }
+          else if ((knapper).includes("b19")) {
+            if ((plassering).includes("3")) {
+              rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+            }
+            else {
+              rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+            }
+          }
+          else if ((knapper).includes("b20")) {
+            rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+          }
+        }
+      }
+    }
+
     let tittel_poeng = ''
     if (ranking_array[i][14] != 0) {
       tittel_poeng = ranking_array[i][14].toFixed(3)
@@ -1010,7 +1042,7 @@ function byggTabell_test(ranking_array, column, order) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${15})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer + 1}</td>
-                    <td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>
+                    ${rangering}
                     <td><nobr class="marign_venstre">${ranking_array[i][0]}</nobr></td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>

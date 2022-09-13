@@ -207,21 +207,6 @@ th, td {
 .tabell_link:hover {
     color:#343a40;
 }
-.ucl_gs {
-    background-color: rgba(190, 210, 231, 0.7) !important;
-}
-.ucl_gs_uel {
-    background: linear-gradient(to right, #bed2e7b3 50%, #ffd2b2b3 50%);
-}
-.uel_gs {
-    background-color: rgba(255, 210, 178, 0.7) !important;
-}
-.uel_gs_uecl {
-    background: linear-gradient(to right, #ffd2b2b3 50%, #b2ecb6b3 50%);
-}
-.uecl_gs {
-    background-color: rgba(178, 236, 182, 0.7) !important;
-}
 
 .flagg {
     height:19px;

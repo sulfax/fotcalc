@@ -91,6 +91,8 @@ function oppdater_ved_refresh() {
         let sesong3 = (klubb_koeffisienter_1112_2021[i][10 + aar_etter_forste_periode] || "");
         let sesong2 = (klubb_koeffisienter_1112_2021[i][9 + aar_etter_forste_periode] || "");
         let sesong1 = (klubb_koeffisienter_1112_2021[i][8 + aar_etter_forste_periode] || "");
+        let knapper = ""
+        let plassering = ""
         if (klubber_med_i_ranking_menyvalg.includes(klubb_koeffisienter_1112_2021[i][0])) {
           for (p = 0; p < menyvalg.length; p++) {
             if (menyvalg[p][0] == klubb_koeffisienter_1112_2021[i][0]) {
@@ -128,6 +130,7 @@ function oppdater_ved_refresh() {
           assos_ranking_array.push(sesong1)}
 
         ranking_array.push(assos_ranking_array)
+
         klubber_allerede_lagt_til.push(klubb_koeffisienter_1112_2021[i][0])
       }
     }
@@ -550,7 +553,39 @@ function byggTabell_test(ranking_array, column, order) {
     if (sesong3 === "0.0") {sesong3 = ''}
     if (sesong2 === "0.0") {sesong2 = ''}
     if (sesong1 === "0.0") {sesong1 = ''}
-    let nummer = i
+
+    let nummer = i+1;
+    let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+
+    if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-21) {
+      for (r = 0; r < menyvalg.length; r++) {
+        if (menyvalg[r][0] == ranking_array[i][0]) {
+          let knapper = ((menyvalg[r][2 + ((aar_etter_forste_periode) * antall_MV_elem)])) || "";
+          let plassering = ((menyvalg[r][5 + ((aar_etter_forste_periode) * antall_MV_elem)])) || "";
+          knapper = knapper.split(",")
+          plassering = plassering.split(",")
+          if ((knapper).includes("b18")) {
+            if ((plassering).includes("3")) {
+              rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+            }
+            else {
+              rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+            }
+          }
+          else if ((knapper).includes("b19")) {
+            if ((plassering).includes("3")) {
+              rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+            }
+            else {
+              rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+            }
+          }
+          else if ((knapper).includes("b20")) {
+            rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+          }
+        }
+      }
+    }
     let klubbnavn = ranking_array[i][0]
     let klubbnavn_url = klubbnavn.replace(/\s/g, '')
     if (klubbnavn_url.includes('/')) {
@@ -593,8 +628,8 @@ function byggTabell_test(ranking_array, column, order) {
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${11})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
-                    <td class="id_nr veldig_utydelig ramme_hoyre">${nummer + 1}</td>
-                    <td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>
+                    <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
+                    ${rangering}
                     <td><nobr class="marign_venstre">${ranking_array[i][0]}</nobr></td>
                     <td id="tom_kolonne">${klubbnavn}</td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
