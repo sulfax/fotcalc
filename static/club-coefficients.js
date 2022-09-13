@@ -557,11 +557,19 @@ function byggTabell_test(ranking_array, column, order) {
     let nummer = i+1;
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
 
-    if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-21) {
+    if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
       for (r = 0; r < menyvalg.length; r++) {
         if (menyvalg[r][0] == ranking_array[i][0]) {
-          let knapper = ((menyvalg[r][2 + ((aar_etter_forste_periode) * antall_MV_elem)])) || "";
-          let plassering = ((menyvalg[r][5 + ((aar_etter_forste_periode) * antall_MV_elem)])) || "";
+          let knapper = "";
+          let plassering = "";
+          if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22) {
+            knapper = ((menyvalg[r][2 + ((aar_etter_forste_periode+1) * antall_MV_elem)])) || "";
+            plassering = ((menyvalg[r][5 + ((aar_etter_forste_periode+1) * antall_MV_elem)])) || "";
+          }
+          if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
+            knapper = ((menyvalg[r][2 + ((nåværende_sesong_periode_valg[0]-21) * antall_MV_elem)])) || "";
+            plassering = ((menyvalg[r][5 + ((nåværende_sesong_periode_valg[0]-21) * antall_MV_elem)])) || "";
+          }
           knapper = knapper.split(",")
           plassering = plassering.split(",")
           if ((knapper).includes("b18")) {
