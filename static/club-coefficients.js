@@ -1141,3 +1141,49 @@ function regn_ut_NA_poeng() {
   }
   return NA_poeng_og_assosiasjon
 }
+
+
+
+
+
+const menyvalg_lengde = JSON.parse(localStorage.getItem('menyvalg_edit')).length
+var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
+
+var schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": []
+}
+for (let i = 0; i < menyvalg_lengde; i++) {
+  menyvalg_edit_2[i][0] = (menyvalg_edit_2[i][0]).slice(0,-3)
+  var Lag_premiepenger = {
+      "@type": "Question",
+      "name": "How much prize money has " + menyvalg_edit_2[i][0] + " earned so far?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "€ " + menyvalg_edit_2[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+      }
+  }
+  var poeng1 = "points"
+  var poeng2 = "points"
+  if (menyvalg_edit_2[i][7] == 1) {
+    poeng1 = "point"
+  }
+  if (menyvalg_edit_2[i][8] == 1) {
+    poeng2 = "point"
+  }
+  var Lag_koeff = {
+    "@type": "Question",
+    "name": "How many coefficient points has " + menyvalg_edit_2[i][0] + " earned in 22/23?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": menyvalg_edit_2[i][7] + " association coefficient " + poeng1 + " and " + menyvalg_edit_2[i][8] + " club coefficient " + poeng2,
+    }
+}
+  schema.mainEntity.push(Lag_premiepenger)
+  schema.mainEntity.push(Lag_koeff)
+}
+const script = document.createElement('script');
+script.setAttribute('type', 'application/ld+json');
+script.textContent = JSON.stringify(schema);
+document.head.appendChild(script);
