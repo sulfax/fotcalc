@@ -1339,15 +1339,16 @@ div.id = "reklame_venstre";
 div.style.display = "block";
 div.style.width = "300px";
 div.style.marginTop = "700px";
+div2.style.height = "1000px";
 div.style.float = "left";
 div.innerHTML = 
 `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
     crossorigin="anonymous"></script>
-<!-- Stående, banner -->
+<!-- Kvadratisk, banner -->
 <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-8377146818251154"
-    data-ad-slot="2416074186"
+    data-ad-slot="6582001165"
     data-ad-format="auto"
     data-full-width-responsive="true"></ins>
 <script>
@@ -1361,15 +1362,16 @@ div2.id = "reklame_hoyre";
 div2.style.display = "block";
 div2.style.width = "300px";
 div2.style.marginTop = "700px";
+div2.style.height = "1000px";
 div2.style.float = "right";
 div2.innerHTML = 
 `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
     crossorigin="anonymous"></script>
-<!-- Stående, banner -->
+<!-- Kvadratisk, banner -->
 <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-8377146818251154"
-    data-ad-slot="2416074186"
+    data-ad-slot="6582001165"
     data-ad-format="auto"
     data-full-width-responsive="true"></ins>
 <script>
