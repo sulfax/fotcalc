@@ -30,7 +30,7 @@ const norsk_forside = [
     'Farget knapp = inkluder',
     'Rød ramme = ekskluder',
     'Avansert filtrering ',
-    'Hjemlig seriemester', 'Preliminary runde', 'Q1', 'Eliminert i Q1', 'Q2', 'Eliminert i Q2', 'Q3', 'Eliminert i Q3', 'Playoff', 'Eliminert i Playoff', 'Gruppespill', 'Utslagsrunde-playoff', 'Åttendelsfinale', 'Kvartfinale', 'Semifinale', 'Finale', 'Vunnet finale', 'SCUP', 'Vunnet SCUP',
+    'Hjemlig seriemester', 'Innledende runde', 'Q1', 'Eliminert i Q1', 'Q2', 'Eliminert i Q2', 'Q3', 'Eliminert i Q3', 'Playoff', 'Eliminert i Playoff', 'Gruppespill', 'Utslagsrunde-playoff', 'Åttendelsfinale', 'Kvartfinale', 'Semifinale', 'Finale', 'Vunnet finale', 'SCUP', 'Vunnet SCUP',
     'Tilbakestill'
 ];
 
@@ -67,7 +67,7 @@ const norsk_kalkulator = [
     'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle kalkulerbare premiepenger og ufordelte ressurser.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester:',
-    '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Preliminary runde</abbr>:',
+    '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Innledende runde</abbr>:',
     '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr>:',
     'Røk ut i Q1:',
     '<abbr data_title="Andre kvalifiseringsrunde">Q2</abbr>:',
@@ -104,8 +104,8 @@ const norsk_koeffisient = [
     'UEFA Koeffisient-kalkulator',
     'Kalkuler klubb- og assosiasjons-<a class="graa_hover_link_koeff_deffi" href="coefficient-definition">koeffisientpoeng</a> for din klubb.',
     '<br> Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
-    '<abbr data_title="Første kvalifiseringskamp til selve kvalifiseringen">Preliminary runde | semifinale</abbr>:',
-    '<abbr data_title="Andre kvalifiseringskamp til selve kvalifiseringen">Preliminary runde | finale</abbr>:',
+    '<abbr data_title="Første kvalifiseringskamp til selve kvalifiseringen">Innledende runde | semifinale</abbr>:',
+    '<abbr data_title="Andre kvalifiseringskamp til selve kvalifiseringen">Innledende runde | finale</abbr>:',
     '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr> | kamp 1',
     'Q1 | kamp 2',
     'Q1 | eliminert',
