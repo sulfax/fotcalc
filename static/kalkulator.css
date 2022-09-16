@@ -23,9 +23,6 @@
     margin-right: 20px;
     float: right;
 }
-ins {
-    background-color: rgb(196, 217, 255) !important;
-}
 @media (min-width:256px) {
     .container {
         max-width:600px
