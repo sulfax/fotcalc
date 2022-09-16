@@ -23,6 +23,10 @@
     margin-right: 20px;
     float: right;
 }
+ins {
+    color: #000 !important;
+    background-color: rgba(119, 25, 0, 0) !important;
+}
 @media (min-width:256px) {
     .container {
         max-width:600px
