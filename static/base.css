@@ -1,3 +1,28 @@
+.container {
+    display: block;
+}
+@media (min-width:1871px) {
+    .reaklame_sidene {
+        display: block !important;
+    }
+}
+@media (max-width:1870px) {
+    .reaklame_sidene {
+        display: none;
+    }
+}
+.reaklame_sidene {
+    width: 250px;
+    margin-top: 1000px;
+}
+#ad_venstre {
+    margin-left: 20px;
+    float: left;
+}
+#ad_hoyre {
+    margin-right: 20px;
+    float: right;
+}
 @media screen and (min-width: 0px) {
     .abbr_bidrag:hover::after,
     .abbr_bidrag:focus::after {
