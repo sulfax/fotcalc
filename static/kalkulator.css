@@ -14,11 +14,14 @@
 .reaklame_sidene {
     width: 250px;
     margin-top: 800px;
+    background-color: rgb(255, 164, 164);
 }
 #ad_venstre {
+    margin-left: 20px;
     float: left;
 }
 #ad_hoyre {
+    margin-right: 20px;
     float: right;
 }
 @media (min-width:256px) {
