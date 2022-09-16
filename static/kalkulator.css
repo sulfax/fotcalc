@@ -24,8 +24,7 @@
     float: right;
 }
 ins {
-    color: #000 !important;
-    background-color: rgba(119, 25, 0, 0) !important;
+    background-color: rgb(119, 25, 0) !important;
 }
 @media (min-width:256px) {
     .container {
