@@ -1,3 +1,28 @@
+.container {
+    display: block;
+}
+/* @media (min-width:1870px) {
+    .reaklame_sidene {
+        display: block !important;
+    }
+}
+@media (max-width:1870px) {
+    .reaklame_sidene {
+        display: none;
+    }
+} */
+/* .reaklame_sidene {
+    display: none;
+    width: 300px;
+    margin-top: 1000px;
+    background-color: rgb(255, 164, 164);
+}
+#ad_venstre {
+    float: left;
+}
+#ad_hoyre {
+    float: right;
+} */
 @media (min-width:256px) {
     .container {
         max-width:600px
