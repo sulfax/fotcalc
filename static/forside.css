@@ -6,12 +6,10 @@
 #ad_venstre {
     margin-left: 20px;
     float: left;
-    background-color: #00a70b;
 }
 #ad_hoyre {
     margin-right: 20px;
     float: right;
-    background-color: #00a70b;
 }
 @media (min-width:256px) {
     .container {
