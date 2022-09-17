@@ -7,19 +7,13 @@
     /* margin-left: 20px; */
     float: left;
     padding-bottom: 10px;
-    border-right: 5px solid #aabcdc;
     background-color: #343a40;
 }
 #ad_hoyre {
     /* margin-right: 20px; */
     float: right;
     padding-bottom: 10px;
-    border-left: 5px solid #aabcdc;
     background-color: #343a40;
-}
-#ad_hoyre,#ad_venstre {
-    border-top: 5px solid #aabcdc;
-    border-bottom: 5px solid #aabcdc;
 }
 .reaklame_sidene {
     position: -webkit-sticky; /* Safari */
