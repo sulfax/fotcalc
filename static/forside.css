@@ -6,18 +6,20 @@
 #ad_venstre {
     margin-left: 20px;
     float: left;
+    padding: 10px;
+    background-color: rgb(196, 217, 255);
 }
 #ad_hoyre {
     margin-right: 20px;
     float: right;
+    padding: 10px;
+    background-color: rgb(196, 217, 255);
 }
 .reaklame_sidene {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     padding-top: 50px;
-    padding: 10px;
-    background-color: rgb(196, 217, 255);
 }
 @media (min-width:256px) {
     .container {
