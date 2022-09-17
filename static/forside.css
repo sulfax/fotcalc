@@ -16,6 +16,8 @@
     position: sticky;
     top: 0;
     padding-top: 50px;
+    padding: 10px;
+    background-color: rgb(196, 217, 255);
 }
 @media (min-width:256px) {
     .container {
