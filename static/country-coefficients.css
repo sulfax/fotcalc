@@ -1,9 +1,4 @@
-@media (min-width:1871px) {
-    .reaklame_sidene {
-        display: block !important;
-    }
-}
-@media (max-width:1870px) {
+@media (max-width:1810px) {
     .reaklame_sidene {
         display: none;
     }
