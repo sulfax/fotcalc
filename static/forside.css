@@ -6,14 +6,14 @@
 #ad_venstre {
     /* margin-left: 20px; */
     float: left;
-    padding-bottom: 1000px;
-    background-color: rgb(196, 217, 255);
+    /* padding-bottom: 1000px; */
+    background-color: #343a40;
 }
 #ad_hoyre {
     /* margin-right: 20px; */
     float: right;
-    padding-bottom: 1000px;
-    background-color: rgb(196, 217, 255);
+    /* padding-bottom: 1000px; */
+    background-color: #343a40;
 }
 .reaklame_sidene {
     position: -webkit-sticky; /* Safari */
