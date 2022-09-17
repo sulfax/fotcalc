@@ -1,0 +1,508 @@
+@media (max-width:1820px) {
+    .reaklame_sidene {
+        display: none;
+    }
+}
+#ad_venstre {
+    margin-left: 20px;
+    float: left;
+}
+#ad_hoyre {
+    margin-right: 20px;
+    float: right;
+}
+@media (min-width:256px) {
+    .container {
+        max-width:600px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:128px !important;
+    }
+}
+@media (min-width:768px) {
+    .container {
+        max-width:820px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:128px !important;
+    }
+}
+@media (min-width:992px) {
+    .container {
+        max-width:950px
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        max-width:1140px
+    }
+} 
+@media (min-width:1308px) {
+    .container {
+        max-width:1220px
+    }
+}
+@media (min-width:256px) {
+    .container,.container-sm {
+        max-width:820px
+    }
+}@media (min-width:768px) {
+    .container, .container-md, .container-sm {
+        max-width:800px
+    }
+}@media (min-width:992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width:950px
+    }
+}@media (min-width:1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1140px
+    }
+}
+@media (min-width:1308px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1220px
+    }
+}
+
+
+
+
+
+
+#overskrift_forside, #beskrivelse_forside {
+    text-align: center;
+}
+.btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
+    box-shadow:none !important;
+}
+.btn-secondary {
+    display:inline;
+    float:left;
+    height:38px;
+    font-size: 20px;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    color: rgb(196, 217, 255);
+    transition: all 0s !important;
+}
+#sessong_kontroller_1 {
+    margin-left: 5px !important;
+}
+#sessong_kontroller_2 {
+    margin-right: 6px !important;
+}
+table {
+    border-top: 4px !important;
+    border: 1px solid rgba(177, 177, 177, 0.8);
+}
+thead {
+    border-top: 4px !important;
+    border: 1px solid rgba(177, 177, 177, 0.8);
+}
+th {
+    border: 1px solid rgba(177, 177, 177, 0.8) !important;
+}
+#ass_coeff_total, #ass_coeff {
+    border-right: 1px solid rgba(177, 177, 177, 0.297) !important;
+}
+th, td {
+    color: #343a40;
+    height: 20px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.table.table-sm{
+    width:98%;
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom: 1.1%;
+}
+.btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus {
+    box-shadow:none !important;
+}
+.btn-primary {
+    background-color: rgb(196, 217, 255);
+    border-color: rgb(154, 176, 218);
+    color: #4a56ff;
+}
+.btn-primary:hover {
+    background-color: rgb(154, 176, 218) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.btn-primary:active, .btn.btn-primary:active {
+    background-color: rgb(154, 176, 218) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn-primary:focus {
+    background-color: rgb(196, 217, 255) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.table-hover tbody tr:hover{
+    background-color:rgba(151, 151, 151, 0.275);
+}
+#club, #prize_money, #ass_coeff, #bidrag, #club_coeff, #land, #prize_money_total, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@media (min-width:800px) {
+    #ass_coeff, #ass_coeff_ø, #bidrag, #prize_money, #club_coeff, #prize_money_total, #ass_coeff_total, #club_coeff_total {
+        text-align: right;
+    }
+}
+@media (min-width:740px) {
+    #ass_coeff_total {
+        min-width: calc(70px) !important;
+    }
+}
+#ass_coeff, #prize_money, #club_coeff, #bidrag {
+    min-width: calc(5vw + 30px) !important;
+}
+#club {
+    padding-left: 9px;
+}
+.marign_venstre {
+    padding-left: 5px;
+}
+#flagg_tabell2 {
+    min-width: 41px;
+}
+.premiepenger_span, .ass_coeff_span, .club_coeff_span {
+    text-align: right;
+    margin-right: 3px;
+}
+
+.premiepenger_span {
+    width:106px;
+    margin-right: 2px;
+}
+.ass_coeff_span {
+    width:70%;
+    margin-right: 2px;
+}
+.club_coeff_span {
+    width:70%;
+    margin-right: 5px;
+}
+.høyrestill {
+    float: right;
+    margin-left: 5px;
+}
+
+
+.premie_koeff {
+    vertical-align:middle;
+    font-family: "Noto Sans Math", monospace;
+    text-align: right;
+}
+
+.id_nr {
+    max-width: 60px !important;
+    min-width: 42px;
+    width: 60px;
+    text-align: center;
+    border-right: 1px solid rgba(177, 177, 177, 1) !important;
+}
+.tabell_link {
+    color: rgb(86, 97, 255);
+    padding: 0px !important;
+}
+.tabell_link:hover {
+    color:#343a40;
+}
+
+.flagg {
+    height:19px;
+    margin-bottom: 8px;
+}
+.flagg_div {
+    margin-top: 1px;
+    margin-right: 4px;
+    float:left;
+    height: 21px;
+    width: 21px;
+    border-radius: 100%;
+    border: 1px solid rgba(161, 161, 161, 0.5);
+    box-shadow: .7px .7px rgba(110, 110, 110, 0.5);
+}
+.jordklode {
+    margin-top: -3px;
+    margin-bottom: -1px;
+    margin-right: 2px;
+    margin-left: -2px;
+}
+.filter {
+    height: 22px;
+    margin-top: -4px;
+    margin-right: 8px;
+}
+
+.dropdown_elementer .flagg_div {
+    float:none !important;
+    margin-top: -2px;
+    margin-right: 0px;
+}
+#NIR_ {
+    border-radius: 50%;
+}
+.dropdown_elementer {
+    max-height: none !important;
+    display: inline-block;
+    overflow:hidden !important;
+    width:100%;
+}
+.content_land {
+    min-width: 0px;
+    width: 236px;
+    height: 197px;
+    overflow-y: hidden;
+    border: 2px solid rgb(164, 164, 164);
+}
+@media (max-width:425px) {
+    .content_land {
+        width: 120px;
+        height: 384px;
+    }
+}
+.meny_element {
+    color: #343a40;
+    width:fit-content;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding:3px;
+    border-radius: 0% !important;
+}
+.ekstra_meny_element {
+    padding:0px;
+    float: right;
+    width: 29px;
+    padding-left: 1px;
+    height: 27px;
+}
+.no_hover {
+    width: 40px;
+    float: left;
+}
+.no_hover:hover {
+    background-color: rgba(0,0,0,0) !important;
+}
+.meny_element:hover {
+    background-color: rgb(221, 221, 221);
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+.meny_element:hover .flagg_div {
+    transition-duration: 0.2s;
+    transform: rotate(20deg);
+}
+.ekstra_meny_element:hover .roter {
+    transition-duration: 0.2s;
+    transform: rotate(20deg);
+}
+.meny_element_globe.active,.meny_element_globe:focus,.meny_element_globe:active,.meny_element_globe:focus:active {
+    box-shadow:none !important;
+    outline: none !important;
+}
+.btn.btn-danger:focus, .btn.btn-danger:active, .btn-danger.dropdown-toggle:focus, .btn-danger.focus, .form-control:focus, .form-control:active, .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
+    box-shadow:none !important;
+}
+.btn.btn-danger { /*Knappen fyller hele cellen*/
+    height:30px;
+    margin: 2px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: fit-content;
+    transition-duration:.0s;
+    float: left;
+}
+.adva {
+    width: 345px;
+    height: fit-content !important;
+    overflow-y: auto !important;
+    border: 2px solid rgb(164, 164, 164);
+}
+@media (max-width:807px) {
+    .adva {
+        width: 247px;
+    }
+}
+.turnering_ikon {
+    float: left;
+    width: 30px;
+    margin-right: 100%;
+}
+.turnering_ikon_scup {
+    float: left;
+    width: 35px;
+    margin-right: 100%;
+    margin-top: -5px;
+}
+.btn-danger {
+    border: 2px solid #777777;
+    background-color:#929292;
+    border-color: #777777;
+}
+.btn-danger:hover{
+    background-color:#777777;
+    border-color:#777777;
+}
+.ucl_knapp, .uel_knapp, .uecl_knapp {
+    background-color:#e0e0e0;
+    border-color: #c7c7c7;
+}
+.ucl_knapp:hover, .uel_knapp:hover, .uecl_knapp:hover {
+    background-color:#c7c7c7;
+    border-color: #c7c7c7;
+}
+.gullfarge {
+    background-color:#dea905;
+    border-color:#c89600;
+}
+.gullfarge:hover{
+    background-color:#c89600;
+    border-color:#c89600;
+}
+.ucl {
+    background-color:#2769AE;
+    border-color:#155599;
+    float:left;
+}
+.ucl:hover {
+    background-color:#155599;
+    border-color:#155599;
+}
+.uel {
+    background-color:#FF6900;
+    border-color:#df5d00;
+}
+.uel:hover {
+    background-color:#df5d00;
+    border-color:#df5d00;
+}
+.uecl {
+    float:left;
+    background-color:#00BF0C;
+    border-color:#00a70b;
+}
+.uecl:hover {
+    background-color:#00a70b;
+    border-color:#00a70b;
+}
+.scup {
+    background-color:#2d2b56;
+    border-color: #201F41;
+}
+.scup:hover{
+    background-color:#201F41;
+    border-color:#201F41;
+}
+.reset {
+    margin-top: 20px !important;
+    color: #343a40;
+    background-color: #ffffff00;
+    border-color: #afafaf;
+}
+.reset:hover{
+    color: #343a40;
+    background-color:#afafaf;
+    border-color:#afafaf;
+}
+.exclude {
+    border: 2px solid red !important;
+}
+#dropdown_elementer_forklaring {
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 100%;
+    border-top: 2px solid rgba(210, 210, 210, 0.5);
+    display:flex;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+#forklaring, #forklaring_2{
+    background-color:rgba(0,0,0,0) !important;
+    border-color: rgba(0,0,0,0) !important;
+    color: #343a40b9 !important;
+    font-style: italic;
+    font-size: 13px;
+    cursor: default !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 4px;
+}
+#forklaring {
+    margin-right: 10px;
+}
+#filter_på {
+    color: #343a40;
+}
+.no_hover:hover {
+    background-color:#929292 !important;
+    border: 2px solid #777777 !important;
+    cursor: default !important;
+}
+.jordklode {
+    margin-bottom: 1px;
+}
+#land {
+    width: 0px !important;
+}
+#NIR {
+    border-radius: 50%;
+}
+#spoiler {
+    padding:3px;
+    height: 38px;
+    width: 29px;
+    margin-top: 9px;
+    margin-left: 19px;
+    margin-right: 9px;
+    margin-bottom: 5px;
+    padding-right: -1px !important;
+    padding-left: 5px !important;
+    padding-top: 4px !important;
+}
+.spoiler_pil {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+#dropDownMeny_adva {
+    padding-right: 17px;
+}
+#ass_coeff_ø {
+    min-width: 75px;
+}
+.x_symbol {
+    margin-left: -5px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}
+.check {
+    margin-left: -3px;
+    padding-right: 4px;
+    padding-bottom: 3px;
+}
+#tom_kolonne {
+    width: 0px !important;
+    padding:0px !important;
+    font-size: 0px !important;
+    /* border-right: 1px solid rgba(177, 177, 177, 1) !important; */
+    /* width: 0px !important;
+    padding:0px !important;
+    margin-left: -10px !important;*/
+}
+#tom_kolonne {
+    border-right: 1px solid rgba(0,0,0,0) !important;
+}
