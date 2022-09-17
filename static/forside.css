@@ -16,27 +16,10 @@
     background-color: #343a40;
 }
 .reaklame_sidene {
-    visibility: hidden;
-    -moz-animation: cssAnimation 1s ease-in 3s forwards;
-    -webkit-animation: cssAnimation 1s ease-in 3s forwards;
-    -o-animation: cssAnimation 1s ease-in 3s forwards;
-    animation: cssAnimation 1s ease-in 3s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     width: 270px !important;
-}
-@keyframes cssAnimation {
-    to {
-        visibility: visible;
-    }
-}
-@-webkit-keyframes cssAnimation {
-    to {
-        visibility: visible;
-    }
 }
 @media (min-width:256px) {
     .container {
