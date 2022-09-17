@@ -4,15 +4,17 @@
     }
 }
 #ad_venstre {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     float: left;
     padding: 10px;
+    padding-right: 0px;
     background-color: rgb(196, 217, 255);
 }
 #ad_hoyre {
-    margin-right: 20px;
+    /* margin-right: 20px; */
     float: right;
     padding: 10px;
+    padding-right: 0px;
     background-color: rgb(196, 217, 255);
 }
 .reaklame_sidene {
