@@ -19,7 +19,7 @@
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    width: 270px !important;
+    width: 260px !important;
 }
 @media (min-width:256px) {
     .container {
