@@ -9,11 +9,15 @@ let iterasjoner = 0;
 const kamper = [
     ['Bodø/Glimt',188286,188287,188288],
     ['FKH',193640],
+    ['Jerv',224198],
     ['KBK',219441],
     ['Lillestrøm',194409],
     ['Molde',172438],
+    ['Odd',190208],
     ['Rosenborg',224388,219041,220997,221065],
+    ['Sandefjord',175224],
     ['Sarpsborg',174890,174891,174893],
+    ['Strømsgodset',225217],
     ['Trømsø',190898,190899],
     ['Viking',223382],
     ['Vålerenga',194301,194302,194303]
@@ -21,11 +25,15 @@ const kamper = [
 const bortefelt = [
     ['Felt-C'],
     ['J','K','L'],
+    ['Felt-G'],
     ['KBBL-B-BORTE','KBBL-A-BORTE','KBBL-C','KBBL-D','KBBL-E','KBBL-STÅPLASSER'], /* C,D,E og ståplass kun mot RBK */
     ['Felt-W','Felt-V','Felt-U'],
     ['ISTAD - K Nedre','ISTAD - K Øvre'],
+    ['Felt-R1','Felt-R2','Felt-S1','Felt-S2'],
     ['FELT-SB'],
+    ['N'],
     ['Felt-D','HCP-D'],
+    ['Felt-S Ståplasser','Felt-S Sitteplass'],
     ['TRIBUNE VEST Felt H - Bortesupport'],
     ['E-Away'],
     ['201/202']
@@ -185,6 +193,8 @@ function hentHTML(event,kamptittel) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" tc:role=', seksjon_n+1))));
                 } else if (seksjoner_json.includes('KJERNEN" fill="')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'xlink:title="', seksjon_n+1)+13),(getPosition(seksjoner_json, '"> <', seksjon_n+1)))).toUpperCase();
+                } else if (seksjoner_json.substring(0,10) == 'ink:href="') {
+                    seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" tc:role=', seksjon_n+1))));
                 } else {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" fill=', seksjon_n+1))));
                 }
@@ -201,8 +211,6 @@ function hentHTML(event,kamptittel) {
                 seksjoner.push(seksjon_json)
                 seksjon_n += 1;
             }
-            console.log(seksjoner_navn)
-            console.log(seksjoner)
             /* Laster inn json-filen til seksjonene */
             lastInnSeksjoner(event,kamptittel)
         }
