@@ -208,6 +208,8 @@ function hentHTML(event,kamptittel) {
                         } else {
                             seksjon_navn_json = (seksjon_navn_json.substring(0,5));
                         }
+                    } else if (seksjon_navn_json.substring(0,19) == ('SPV F - Brannbørsen')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,19));
                     } else if (seksjon_navn_json.substring(0,21) == ('FRYDENBØ Felt A Nedre')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,21));
                     } else if (seksjon_navn_json.substring(0,20) == ('FRYDENBØ Felt D Øvre')) {
