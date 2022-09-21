@@ -11,7 +11,7 @@ const kamper = [
     ['FKH',193640],
     ['KBK',219441],
     ['Lillestrøm',194409],
-    ['Molde',172436,172438],
+    ['Molde',172438],
     ['Rosenborg',224388,219041,220997,221065],
     ['Sarpsborg',174890,174891,174893],
     ['Trømsø',190898,190899],
@@ -69,7 +69,7 @@ function generer_kalender(klubb) {
 }
 
 function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
-    btn = document.getElementById('knapper').innerHTML = '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
+    document.getElementById('knapper').innerHTML += '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
