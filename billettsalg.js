@@ -208,7 +208,23 @@ function hentHTML(event,kamptittel) {
                         } else {
                             seksjon_navn_json = (seksjon_navn_json.substring(0,5));
                         }
-                    } else if (seksjon_navn_json.includes('SPV A - Br') || seksjon_navn_json.includes('SPV B - Br')) {
+                    } else if (seksjon_navn_json.substring(0,21) == ('FRYDENBØ Felt A Nedre')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,21));
+                    } else if (seksjon_navn_json.substring(0,20) == ('FRYDENBØ Felt D Øvre')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,20));
+                    } else if (seksjon_navn_json.substring(0,21) == ('FRYDENBØ D - Bataljon')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,23));
+                    } else if (seksjon_navn_json.substring(0,19) == ('SPV E - Brannbørsen')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,19));
+                    } else if (seksjon_navn_json.substring(0,18) == ('SPV D - Brannstuen')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,18));
+                    } else if (seksjon_navn_json.substring(0,10) == ('BOB B - Kr')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,20));
+                    } else if (seksjon_navn_json.includes('BOB Felt B') || seksjon_navn_json.includes('BOB Felt D')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,10));
+                    } else if (seksjon_navn_json.includes('SPV Brannstuen Pre')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,20));
+                    } else if (seksjon_navn_json.includes('SPV A - Br') || seksjon_navn_json.includes('SPV B - Br') || seksjon_navn_json.includes('SPV D - Br')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,18));
                     } else if (seksjon_navn_json.includes('SPV F - Br')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,19));
