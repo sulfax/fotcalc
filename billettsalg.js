@@ -8,6 +8,7 @@ let oversikt = [];
 let iterasjoner = 0;
 const kamper = [
     ['Bodø/Glimt',188286,188287,188288],
+    ['Brann',193994,193995,193996],
     ['FKH',193640],
     ['Jerv',224198],
     ['KBK',219441],
@@ -24,6 +25,7 @@ const kamper = [
 ]
 const bortefelt = [
     ['Felt-C'],
+    ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
     ['J','K','L'],
     ['Felt-G'],
     ['KBBL-B-BORTE','KBBL-A-BORTE','KBBL-C','KBBL-D','KBBL-E','KBBL-STÅPLASSER'], /* C,D,E og ståplass kun mot RBK */
@@ -200,10 +202,14 @@ function hentHTML(event,kamptittel) {
                 }
                 /* Lillestrøm og Sarpsborg fiks HCP felt */
                 if (seksjon_navn_json.includes('<path fill="') || seksjon_navn_json.includes('" fill="#')) {
-                    if (seksjon_navn_json.substring(0,5) == 'HCP">') {
-                        seksjon_navn_json = (seksjon_navn_json.substring(0,3));
-                    } else {
-                        seksjon_navn_json = (seksjon_navn_json.substring(0,5));
+                    if (!seksjon_navn_json.includes('FJORDKRAFT')) {
+                        if (seksjon_navn_json.substring(0,5) == 'HCP">') {
+                            seksjon_navn_json = (seksjon_navn_json.substring(0,3));
+                        } else {
+                            seksjon_navn_json = (seksjon_navn_json.substring(0,5));
+                        }
+                    } else if (seksjon_navn_json.includes('FJORDKRAFT Felt')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,17));
                     }
                 }
                 /*=================================================================================*/
