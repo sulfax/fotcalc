@@ -202,22 +202,38 @@ function hentHTML(event,kamptittel) {
                 }
                 /* Lillestrøm og Sarpsborg fiks HCP felt */
                 if (seksjon_navn_json.includes('<path fill="') || seksjon_navn_json.includes('" fill="#')) {
-                    if (!seksjon_navn_json.includes('FJORDKRAFT') && !seksjon_navn_json.includes('SPV') && !seksjon_navn_json.includes('BOB F') && !seksjon_navn_json.includes('FRYDENBØ') && !seksjon_navn_json.includes('STORE STÅ') && !seksjon_navn_json.includes('VIP')) {
+                    if (!seksjon_navn_json.includes('FJORDKRAFT') && !seksjon_navn_json.includes('SPV') && !seksjon_navn_json.includes('BOB') && !seksjon_navn_json.includes('FRYDENBØ') && !seksjon_navn_json.includes('STORE STÅ') && !seksjon_navn_json.includes('VIP') && !seksjon_navn_json.includes('brannstuen') && !seksjon_navn_json.includes('brannbørsen')) {
                         if (seksjon_navn_json.substring(0,5) == 'HCP">') {
                             seksjon_navn_json = (seksjon_navn_json.substring(0,3));
                         } else {
                             seksjon_navn_json = (seksjon_navn_json.substring(0,5));
                         }
+                    } else if (seksjon_navn_json.includes('SPV A - Br') || seksjon_navn_json.includes('SPV B - Br')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,18));
+                    } else if (seksjon_navn_json.includes('SPV F - Br')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,19));
+                    } else if (seksjon_navn_json.includes('BOB - Rull')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,15));
+                    } else if (seksjon_navn_json.includes('SPV Brannstuen')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,20));
+                    } else if (seksjon_navn_json.includes('SPV')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,10));
+                    } else if (seksjon_navn_json.includes('FJORDKRAFT - Rull')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,22));
+                    } else if (seksjon_navn_json.includes('BOB F')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,10));
+                    } else if (seksjon_navn_json.includes('BOB B')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,20));
                     } else if (seksjon_navn_json.includes('VIP')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,5));
                     } else if (seksjon_navn_json.includes('STORE STÅ')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,9));
                     } else if (seksjon_navn_json.includes('FJORDKRAFT Felt')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,17));
-                    } else if (seksjon_navn_json.includes('SPV')) {
-                        seksjon_navn_json = (seksjon_navn_json.substring(0,10));
-                    } else if (seksjon_navn_json.includes('BOB F')) {
-                        seksjon_navn_json = (seksjon_navn_json.substring(0,10));
+                    } else if (seksjon_navn_json.includes('Brannbørsen')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,19));
+                    } else if (seksjon_navn_json.includes('brannstuen')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,18));
                     } else if (seksjon_navn_json.includes('FRYDENBØ Felt') && seksjon_navn_json.includes('Nedre')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,21));
                     } else if (seksjon_navn_json.includes('FRYDENBØ Felt') && seksjon_navn_json.includes('Øvre')) {
