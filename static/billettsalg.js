@@ -69,7 +69,7 @@ function generer_kalender(klubb) {
 }
 
 function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
-    btn = document.getElementById('knapper').innerHTML += '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
+    document.getElementById('knapper').innerHTML += '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
