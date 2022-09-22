@@ -14,7 +14,7 @@ const kamper = [
     ['Lillestrøm',194409],
     ['Molde',172436,172438],
     ['Odd',190208],
-    ['RBK',224388,219041,220997,221065],
+    ['RBK',224388,219041,220406,220997,221065],
     ['Sandefjord',175224],
     ['Sarpsborg',174890,174891,174893],
     ['Strømsgodset',225217],
@@ -96,14 +96,14 @@ function generer_kalender(klubb) {
                 if (request.readyState == 4) {
                     kamptittel = (request.responseText)
                     kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                    lagKampProgram1(kamptittel,(kamper[f][p]),(kamper[f][p+1]),(kamper[f][p+2]),(kamper[f][p+3]),f)
+                    lagKampProgram1(kamptittel,(kamper[f][p]),(kamper[f][p+1]),(kamper[f][p+2]),(kamper[f][p+3]),(kamper[f][p+4]),f)
                 }
             };
         }
     }
 }
 
-function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,f) {
+function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,f) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
@@ -118,12 +118,12 @@ function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,f) {
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4)
+                lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
             }
         };
     }
 }
-function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
+function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_2;
@@ -143,7 +143,7 @@ function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
         };
     }
 }
-function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
+function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_3;
@@ -158,15 +158,35 @@ function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4)
+                lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
             }
         };
     }
 }
-function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4) {
+function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_4;
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_5) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_5 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
+            }
+        };
+    }
+}
+function lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_5;
     btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
     document.getElementById('knapper').appendChild(btn);
 
