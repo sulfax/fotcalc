@@ -384,17 +384,11 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
 
 /* Funksjon for å skrive ut infomasjonen til HTML-siden */
 function skrivUt(kamptittel) {
-    for (j = 0; j < oversikt.length; j++) {
-        if (!oversikt[j][0]) {
-            oversikt[j][0] = "";
-            oversikt[j][1] = -1;
-        }
-    }
     oversikt.sort(sortFunction);
     document.getElementById('innhold').innerHTML += '<h2>' + kamptittel + '</h2>'
     document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '</b></p>'
     for (j = 0; j < seksjoner.length; j++) {
-        if (oversikt[j][1] != -1) {
+        if (oversikt[j][1] != undefined) {
             if (bortefelt[f].includes(oversikt[j][0])) {
                 document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '</p>'
             }
