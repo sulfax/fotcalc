@@ -296,6 +296,7 @@ const sprak_id = [
   'ti_års_rangering',
   'premiepenger_kalkulator',
   'koeffisient_kalkulator',
+  'billettsalg',
   'eksperimentell_profil_meny_element',
   'søk',
   'tilbakestill',
