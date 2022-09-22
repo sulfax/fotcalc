@@ -384,6 +384,10 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
 function skrivUt(kamptittel) {
     oversikt.sort(sortFunction);
     for (j = 0; j < seksjoner.length; j++) {
+        if (kamptittel == 'UEFA Conference League MD5 Molde FK vs Djurgården IF' && oversikt[j][0] == 'ISTAD - K Nedre') {
+            oversikt[j][1] -= 282;
+            solgte -= 282;
+        }
         if (oversikt[j][0] == 'FJORDKRAFT Felt A') {
             oversikt[j][1] -= 34;
             solgte -= 34
