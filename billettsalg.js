@@ -12,7 +12,7 @@ const kamper = [
     ['Jerv',224198],
     ['KBK',219441],
     ['Lillestrøm',194409],
-    ['Molde',172436,172438],
+    ['Molde',172438,222593,224278],
     ['Odd',190208],
     ['RBK',224388,219041,220406,220997,221065],
     ['Sandefjord',175224],
@@ -139,7 +139,7 @@ function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4)
+                lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
             }
         };
     }
@@ -179,7 +179,7 @@ function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
+                lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
             }
         };
     }
