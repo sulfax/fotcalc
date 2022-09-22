@@ -21,11 +21,14 @@ const kamper = [
     ['Trømsø',190898,190899],
     ['Viking',223382,215906],
     ['Vålerenga',194301,194302,194303],
+
     ['RBK Kvinner',222885],
     ['Stabæk Kvinner',223569,214348],
+
     ['Brann',193994,193995,193996],
     ['Mjøndalen',224400],
     ['Ranheim',222795,222796,222797],
+    ['Sandnes Ulf',212077,212078],
     ['Stabæk',193941,193942,193944],
     ['Start',224985]
 ]
@@ -49,6 +52,7 @@ const bortefelt = [
     ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
     ['Felt-E','Felt-F','Felt-G'],
     ['EA'],
+    ['Bortesupporterfelt','Felt-I','Felt-H'],
     ['307','308','309','309-HC'],
     ['Felt-I1']
 ]
