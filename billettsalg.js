@@ -26,6 +26,7 @@ const kamper = [
     ['Stabæk Kvinner',223569,214348],
 
     ['Brann',193994,193995,193996],
+    ['Bryne',222417,222418,222419],
     ['Mjøndalen',224400],
     ['Ranheim',222795,222796,222797],
     ['Sandnes Ulf',212077,212078],
@@ -47,9 +48,12 @@ const bortefelt = [
     ['TRIBUNE VEST Felt H - Bortesupport','TRIBUNE SØR'],
     ['E-Away'],
     ['201/202'],
+
     ['Felt-5',],
     ['201'],
+
     ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
+    ['Felt T'],
     ['Felt-E','Felt-F','Felt-G'],
     ['EA'],
     ['Bortesupporterfelt','Felt-I','Felt-H'],
@@ -236,7 +240,7 @@ function hentHTML(event,kamptittel) {
                 let seksjon_navn_json = ""
                 /*==================================================================================*/
                 /* Vålerenga har en spesiell rekkefølge på sine atributter. Derav "if-setningen" */
-                if (seksjoner_json.includes('tc:role="Section" fill')) {
+                if (seksjoner_json.includes('tc:role="Section" fill') || seksjoner_json.includes('" xlink:title="s - hovedtribune"> <path tc:name="S')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" tc:role=', seksjon_n+1))));
                 } else if (seksjoner_json.includes('KJERNEN" fill="')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'xlink:title="', seksjon_n+1)+13),(getPosition(seksjoner_json, '"> <', seksjon_n+1)))).toUpperCase();
