@@ -80,7 +80,7 @@ function generer_kalender(klubb) {
 
 function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,f) {
     document.getElementById('knapper').innerHTML += '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
-    document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Har du oppdaget at en klubbs totalt antall solgte billetter avviker fra det faktiske antallet til kamp?<br>I så fall vil avviket sannsynligvis ikke forandre seg til neste kamp.</p>';
+    document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Har du oppdaget at en klubbs totalt antall solgte billetter avviker fra det faktiske antallet til en kamp?<br>I så fall vil avviket sannsynligvis ikke forandre seg til neste kamp.</p>';
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
