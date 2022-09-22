@@ -386,7 +386,6 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
 
 /* Funksjon for å skrive ut infomasjonen til HTML-siden */
 function skrivUt(kamptittel) {
-    oversikt.sort(sortFunction);
     for (j = 0; j < seksjoner.length; j++) {
         if (kamptittel == 'UEFA Conference League MD5 Molde FK vs Djurgården IF' && oversikt[j][0] == 'ISTAD - K Nedre') {
             oversikt[j][1] -= 282;
@@ -405,6 +404,7 @@ function skrivUt(kamptittel) {
             solgte -= 1
         }
     }
+    oversikt.sort(sortFunction);
     document.getElementById('innhold').innerHTML += '<h2>' + kamptittel + '</h2>'
     document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '</b></p>'
     for (j = 0; j < seksjoner.length; j++) {
