@@ -8,24 +8,29 @@ let oversikt = [];
 let iterasjoner = 0;
 const kamper = [
     ['Bodø/Glimt',188286,188287,188288],
-    ['Brann',193994,193995,193996],
     ['FKH',193640],
     ['Jerv',224198],
     ['KBK',219441],
     ['Lillestrøm',194409],
     ['Molde',172436,172438],
     ['Odd',190208],
-    ['Rosenborg',224388,219041,220997,221065],
+    ['RBK',224388,219041,220997,221065],
     ['Sandefjord',175224],
     ['Sarpsborg',174890,174891,174893],
     ['Strømsgodset',225217],
     ['Trømsø',190898,190899],
     ['Viking',223382,215906],
-    ['Vålerenga',194301,194302,194303]
+    ['Vålerenga',194301,194302,194303],
+    ['RBK Kvinner',222885],
+    ['Stabæk Kvinner',223569,214348],
+    ['Brann',193994,193995,193996],
+    ['Mjøndalen',224400],
+    ['Ranheim',222795,222796,222797],
+    ['Stabæk',193941,193942,193944],
+    ['Start',224985]
 ]
 const bortefelt = [
     ['Felt-C'],
-    ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
     ['J','K','L'],
     ['Felt-G'],
     ['KBBL-B-BORTE','KBBL-A-BORTE','KBBL-C','KBBL-D','KBBL-E','KBBL-STÅPLASSER'], /* C,D,E og ståplass kun mot RBK */
@@ -38,10 +43,20 @@ const bortefelt = [
     ['Felt-S Ståplasser','Felt-S Sitteplass'],
     ['TRIBUNE VEST Felt H - Bortesupport'],
     ['E-Away'],
-    ['201/202']
+    ['201/202'],
+    ['Felt-5',],
+    ['201'],
+    ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
+    ['Felt-E','Felt-F','Felt-G'],
+    ['EA'],
+    ['307','308','309','309-HC'],
+    ['Felt-I1']
 ]
 
 for (i = 0; i < kamper.length; i++) {
+    if (i == 14 || i == 16) {
+        document.getElementById('knapper').innerHTML += '<br><br>';
+    }
     let btn = document.createElement("button");
     btn.innerHTML = kamper[i][0];
     btn.id = kamper[i][0];
@@ -213,6 +228,8 @@ function hentHTML(event,kamptittel) {
                         } else {
                             seksjon_navn_json = (seksjon_navn_json.substring(0,5));
                         }
+                    } else if (seksjon_navn_json.substring(0,17) == ('FJORDKRAFT Felt A')) {
+                        seksjon_navn_json = (seksjon_navn_json.substring(0,17));
                     } else if (seksjon_navn_json.substring(0,19) == ('SPV F - Brannbørsen')) {
                         seksjon_navn_json = (seksjon_navn_json.substring(0,19));
                     } else if (seksjon_navn_json.substring(0,21) == ('FRYDENBØ Felt A Nedre')) {
