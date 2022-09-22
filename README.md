@@ -1,4 +1,4 @@
 # fotcalc
 fotcalc
 
-En setning: Koden er ROTETE!
+En setning. Koden er ROTETE!
