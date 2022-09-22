@@ -41,7 +41,7 @@ const bortefelt = [
     ['ISTAD - K Nedre','ISTAD - K Øvre'],
     ['Felt-R1','Felt-R2','Felt-S1','Felt-S2'],
     ['FELT-SB'],
-    ['N'],
+    ['N','M'],
     ['Felt-D','HCP-D'],
     ['Felt-S Ståplasser','Felt-S Sitteplass'],
     ['TRIBUNE VEST Felt H - Bortesupport','TRIBUNE SØR'],
