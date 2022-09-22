@@ -20,7 +20,7 @@ const kamper = [
     ['Sarpsborg',174890,174891,174893],
     ['Strømsgodset',225217],
     ['Trømsø',190898,190899],
-    ['Viking',223382],
+    ['Viking',223382,215906],
     ['Vålerenga',194301,194302,194303]
 ]
 const bortefelt = [
