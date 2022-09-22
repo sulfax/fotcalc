@@ -13,7 +13,7 @@ const kamper = [
     ['Jerv',224198],
     ['KBK',219441],
     ['Lillestrøm',194409],
-    ['Molde',172438],
+    ['Molde',172436,172438],
     ['Odd',190208],
     ['Rosenborg',224388,219041,220997,221065],
     ['Sandefjord',175224],
@@ -52,6 +52,12 @@ for (i = 0; i < kamper.length; i++) {
 function generer_kalender(klubb) {
     document.getElementById('innhold').innerHTML = "";
     document.getElementById('knapper').innerHTML = "";
+    document.getElementById('knapper').innerHTML += '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
+    if (klubb == 'Molde') {
+        document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Moldes billettsalg til Eliteseriekamper er omtrent 1350 billetter for høyt på denne nettsiden i forhold til det faktiske tallet. Trekk derfor fra.</p>';
+    } else {
+        document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Har du oppdaget at en klubbs totalt antall solgte billetter avviker fra det faktiske antallet til en kamp?<br>I så fall vil avviket sannsynligvis ikke forandre seg til neste kamp.</p>';
+    }
     for (h = 0; h < kamper.length; h++) {
         if (kamper[h][0] == klubb) {
             let btn = document.createElement("button");
@@ -79,8 +85,6 @@ function generer_kalender(klubb) {
 }
 
 function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,f) {
-    document.getElementById('knapper').innerHTML += '<h3 style="backgroundcolor:red;">Verdiene er ikke nødvendigvis korrekt. Stol derfor ikke blindt på tallene.</h3>';
-    document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Har du oppdaget at en klubbs totalt antall solgte billetter avviker fra det faktiske antallet til en kamp?<br>I så fall vil avviket sannsynligvis ikke forandre seg til neste kamp.</p>';
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
