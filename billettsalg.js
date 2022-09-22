@@ -346,10 +346,8 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
     let totalt_seksjon = data.split(',"section_remaining_amount')[0];
     totalt_seksjon = totalt_seksjon.substring(totalt_seksjon.indexOf('"section_amount":'));
     totalt_seksjon = totalt_seksjon.replace('"section_amount":','');
-
     /* Finner ut antall solgte på seksjon */
     let solgte_seksjon = totalt_seksjon - ledige_seksjon;
-
     /* Finner etter hvert ut totalt solgte på stadion */
     /* Legger seksjonsnavn, solgte på seksjon og kapasitet på seksjon inn i et array */
     let duplikat = false;
@@ -388,6 +386,9 @@ function skrivUt(kamptittel) {
     document.getElementById('innhold').innerHTML += '<h2>' + kamptittel + '</h2>'
     document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '</b></p>'
     for (j = 0; j < seksjoner.length; j++) {
+        if (oversikt[j][0] == 'FJORDKRAFT Felt A') {
+            oversikt[j][1] -= 34;
+        }
         if (oversikt[j][1] != undefined) {
             if (bortefelt[f].includes(oversikt[j][0])) {
                 document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '</p>'
