@@ -8,7 +8,7 @@ let oversikt = [];
 let iterasjoner = 0;
 const kamper = [
     ['Bodø/Glimt',188286,188287,188288],
-    ['FKH',193640],
+    ['FKH',193639,193640],
     ['Jerv',224198],
     ['KBK',219441],
     ['Lillestrøm',194409],
