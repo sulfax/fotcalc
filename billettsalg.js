@@ -1,5 +1,6 @@
 /* Deffinerer variablene for solgte på stadion og json data fra seksjonene */
-let solgte = 0
+let solgte = 0;
+let kapasitet = 0;
 let data = '';
 let f = 0;
 
@@ -382,6 +383,7 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
         }
     }
     if (duplikat == false) {
+        // kapasitet += parseInt(totalt_seksjon);
         solgte += solgte_seksjon;
         oversikt[i].push(seksjon_navn)
         oversikt[i].push(solgte_seksjon)
