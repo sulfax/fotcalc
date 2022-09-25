@@ -11,7 +11,7 @@ const kamper = [
     ['FKH',193639,193640],
     ['Jerv',224198],
     ['KBK',219441],
-    ['Lillestrøm',194409],
+    ['Lillestrøm',194409,194410],
     ['Molde',222592,172438,222593,224278],
     ['Odd',190208],
     ['RBK',224388,219041,220406,220997,221065],
@@ -31,7 +31,9 @@ const kamper = [
     ['Ranheim',222795,222796,222797],
     ['Sandnes Ulf',212077,212078],
     ['Stabæk',193941,193942,193944],
-    ['Start',224985]
+    ['Start',224985],
+
+    ['Kilmarnock',217917,217918]
 ]
 const bortefelt = [
     ['Felt-C'],
@@ -58,11 +60,13 @@ const bortefelt = [
     ['EA'],
     ['Bortesupporterfelt','Felt-I','Felt-H'],
     ['307','308','309','309-HC'],
-    ['Felt-I1']
+    ['Felt-I1'],
+
+    ['Chadwick Stand - Block 2','Chadwick Stand - Block 3','Chadwick Stand - Block 4','Chadwick Stand - Block 5']
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16) {
+    if (i == 14 || i == 16 || i == 23) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
@@ -108,10 +112,12 @@ function generer_kalender(klubb) {
     }
 }
 
+
 function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,f) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
+    btn.className = "kamper";
     btn.setAttribute("onClick", " hentHTML(this.id,this.innerHTML)");
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_2) {
@@ -132,6 +138,7 @@ function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_2;
+    btn.className = "kamper";
     btn.setAttribute("onClick", " hentHTML(this.id,this.innerHTML)");
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_3) {
@@ -152,6 +159,7 @@ function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_3;
+    btn.className = "kamper";
     btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_4) {
@@ -172,6 +180,7 @@ function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_4;
+    btn.className = "kamper";
     btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_5) {
@@ -192,6 +201,7 @@ function lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_5;
+    btn.className = "kamper";
     btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
     document.getElementById('knapper').appendChild(btn);
 
@@ -219,6 +229,11 @@ function makeHttpObject() {
 /* Henter HTML-en fra billettsiden til klubben */
 
 function hentHTML(event,kamptittel) {
+    let elements = document.getElementsByClassName("kamper");
+    for(let i = 0; i < elements.length; i++) {
+        document.getElementById(elements[i].id).disabled = true;
+    }
+
     document.getElementById('innhold').innerHTML = "";
     var request = makeHttpObject();
     request.open("GET", 'https://ticketco.events/no/nb/events/' + event + '/seating_arrangement/', true);
@@ -418,6 +433,10 @@ function skrivUt(kamptittel) {
         }
     }
     document.getElementById('innhold').innerHTML += '<br><br>'
+    let elements = document.getElementsByClassName("kamper");
+    for(let i = 0; i < elements.length; i++) {
+        document.getElementById(elements[i].id).disabled = false;
+    }
 }
 
 /*=========================================================================================*/
