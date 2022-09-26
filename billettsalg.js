@@ -8,7 +8,7 @@ let f = 0;
 let oversikt = [];
 let iterasjoner = 0;
 const kamper = [
-    ['Bodø/Glimt',188286,188287,188288],
+    ['Bodø/Glimt',188282,188283,188286,188287,188288],
     ['FKH',193639,193640],
     ['Jerv',224198],
     ['KBK',219441],
@@ -383,10 +383,11 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
         }
     }
     if (duplikat == false) {
-        // kapasitet += parseInt(totalt_seksjon);
+        kapasitet += parseInt(totalt_seksjon);
         solgte += solgte_seksjon;
         oversikt[i].push(seksjon_navn)
         oversikt[i].push(solgte_seksjon)
+        oversikt[i].push(totalt_seksjon)
     }
     /*  */
     iterasjoner_oversikt += 1;
@@ -423,14 +424,34 @@ function skrivUt(kamptittel) {
     }
     oversikt.sort(sortFunction);
     document.getElementById('innhold').innerHTML += '<h2>' + kamptittel + '</h2>'
-    document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '</b></p>'
+    if (kamptittel.substring(0,13) == 'FK Bodø/Glimt') {
+        if (solgte >= kapasitet) {
+            document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;"><b>' + solgte + '/' + kapasitet + '</b><span></p>'
+        } else {
+            document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '/' + kapasitet + '</b></p>'
+        }   
+    } else {
+        document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '</b></p>'
+    }
     for (j = 0; j < seksjoner.length; j++) {
         if (oversikt[j][1] != undefined) {
-            if (bortefelt[f].includes(oversikt[j][0])) {
-                document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '</p>'
-            }
-            else {
-                document.getElementById('innhold').innerHTML += '<p>' + oversikt[j][0] + ': ' + oversikt[j][1]+ '</p>'
+            if (kamptittel.substring(0,13) == 'FK Bodø/Glimt') {
+                if (oversikt[j][1] >= oversikt[j][2]) {
+                    document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
+                }
+                if (bortefelt[f].includes(oversikt[j][0])) {
+                    document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</p>'
+                }
+                else {
+                    document.getElementById('innhold').innerHTML += '<p>' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</p>'
+                }
+            } else {
+                if (bortefelt[f].includes(oversikt[j][0])) {
+                    document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '</p>'
+                }
+                else {
+                    document.getElementById('innhold').innerHTML += '<p>' + oversikt[j][0] + ': ' + oversikt[j][1] + '</p>'
+                }
             }
         }
     }
