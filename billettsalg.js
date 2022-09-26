@@ -230,6 +230,7 @@ function makeHttpObject() {
 /* Henter HTML-en fra billettsiden til klubben */
 
 function hentHTML(event,kamptittel) {
+    kapasitet = 0;
     let elements = document.getElementsByClassName("kamper");
     for(let i = 0; i < elements.length; i++) {
         document.getElementById(elements[i].id).disabled = true;
