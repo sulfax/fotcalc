@@ -640,7 +640,7 @@ function skrivUt(kamptittel) {
         document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '/' + kapasitet + '</b></p>'
     }   
     for (j = 0; j < seksjoner.length; j++) {
-        if (oversikt[j][1] != undefined) {
+        if (oversikt[j][0] != undefined) {
             if (oversikt[j][1] >= oversikt[j][2] && bortefelt[f].includes(oversikt[j][0])) {
                 document.getElementById('innhold').innerHTML += '<p style="color:red;"><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
             }
@@ -666,6 +666,8 @@ function skrivUt(kamptittel) {
 
 /* Sorteringsfunksjon */
 function sortFunction(a, b) {
+    if (b[1] == undefined) {b[1] = -1} 
+    if (a[1] == undefined) {a[1] = -1} 
     if (a[1] === b[1]) {
         return 0;
     }
