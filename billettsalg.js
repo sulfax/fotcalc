@@ -8,7 +8,7 @@ let f = 0;
 let oversikt = [];
 let iterasjoner = 0;
 const kamper = [
-    ['Bodø/Glimt',188282,188283,188286,188287,188288],
+    ['Bodø/Glimt',188269,188271,188273,188274,188275,188276,188277,188279,188280,188281,188282,188283,188286,188287,188288],
     ['FKH',193639,193640],
     ['Jerv',224198],
     ['KBK',219441],
@@ -106,7 +106,7 @@ function generer_kalender(klubb) {
                 if (request.readyState == 4) {
                     kamptittel = (request.responseText)
                     kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                    lagKampProgram1(kamptittel,(kamper[f][p]),(kamper[f][p+1]),(kamper[f][p+2]),(kamper[f][p+3]),(kamper[f][p+4]),f)
+                    lagKampProgram1(kamptittel,(kamper[f][p]),(kamper[f][p+1]),(kamper[f][p+2]),(kamper[f][p+3]),(kamper[f][p+4]),(kamper[f][p+5]),(kamper[f][p+6]),(kamper[f][p+7]),(kamper[f][p+8]),(kamper[f][p+9]),(kamper[f][p+10]),(kamper[f][p+11]),(kamper[f][p+12]),(kamper[f][p+13]),(kamper[f][p+14]),f)
                 }
             };
         }
@@ -114,7 +114,7 @@ function generer_kalender(klubb) {
 }
 
 
-function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,f) {
+function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15,f) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id;
@@ -130,12 +130,12 @@ function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
+                lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
             }
         };
     }
 }
-function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
+function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_2;
@@ -151,12 +151,12 @@ function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
+                lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
             }
         };
     }
 }
-function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
+function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_3;
@@ -172,12 +172,12 @@ function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
+                lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
             }
         };
     }
 }
-function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
+function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_4;
@@ -193,19 +193,228 @@ function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
             if (request.readyState == 4) {
                 kamptittel = (request.responseText)
                 kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
-                lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5)
+                lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
             }
         };
     }
 }
-function lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5) {
+function lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
     btn = document.createElement("button");
     btn.innerHTML = kamptittel;
     btn.id = kamp_id_5;
     btn.className = "kamper";
     btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
     document.getElementById('knapper').appendChild(btn);
-
+    if (kamp_id_6) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_6 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram6(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram6(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_6;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_7) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_7 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram7(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram7(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_7;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_8) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_8 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram8(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram8(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_8;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_9) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_9 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram9(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram9(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_9;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_10) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_10 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram10(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram10(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_10;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_11) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_11 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram11(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram11(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_11;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_12) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_12 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram12(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram12(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_12;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_13) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_13 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram13(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram13(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_13;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_14) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_14 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram14(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram14(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_14;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
+    if (kamp_id_15) {
+        var request = makeHttpObject();
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_15 + '/seating_arrangement/', true);
+        request.send(null);
+        var kamptittel = "";
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                kamptittel = (request.responseText)
+                kamptittel = (kamptittel.substring((getPosition(kamptittel, '<h1>', 1)+4),(getPosition(kamptittel, '</h1>', 1)-0)));
+                lagKampProgram15(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15)
+            }
+        };
+    }
+}
+function lagKampProgram15(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_id_5,kamp_id_6,kamp_id_7,kamp_id_8,kamp_id_9,kamp_id_10,kamp_id_11,kamp_id_12,kamp_id_13,kamp_id_14,kamp_id_15) {
+    btn = document.createElement("button");
+    btn.innerHTML = kamptittel;
+    btn.id = kamp_id_15;
+    btn.className = "kamper";
+    btn.setAttribute("onClick", ' hentHTML(this.id,this.innerHTML)');
+    document.getElementById('knapper').appendChild(btn);
 }
 
     
@@ -437,11 +646,14 @@ function skrivUt(kamptittel) {
     for (j = 0; j < seksjoner.length; j++) {
         if (oversikt[j][1] != undefined) {
             if (kamptittel.substring(0,13) == 'FK Bodø/Glimt') {
-                if (oversikt[j][1] >= oversikt[j][2]) {
-                    document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
+                if (oversikt[j][1] >= oversikt[j][2] && bortefelt[f].includes(oversikt[j][0])) {
+                    document.getElementById('innhold').innerHTML += '<p style="color:red;"><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
                 }
-                if (bortefelt[f].includes(oversikt[j][0])) {
+                else if (bortefelt[f].includes(oversikt[j][0])) {
                     document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</p>'
+                }
+                else if (oversikt[j][1] >= oversikt[j][2]) {
+                    document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
                 }
                 else {
                     document.getElementById('innhold').innerHTML += '<p>' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</p>'
