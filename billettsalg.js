@@ -35,6 +35,8 @@ const kamper = [
     ['Start',224985],
     
     ['Viking Kvinner',225699],
+    
+    ['Strømsgodset Kvinner',209538],
 
     ['Kilmarnock',217917,217918]
 ]
@@ -66,12 +68,14 @@ const bortefelt = [
     ['Felt-I1'],
     
     [],
+    
+    [],
 
     ['Chadwick Stand - Block 2','Chadwick Stand - Block 3','Chadwick Stand - Block 4','Chadwick Stand - Block 5']
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16 || i == 23 || i == 24) {
+    if (i == 14 || i == 16 || i == 23 || i == 24 || i == 25) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
