@@ -71,7 +71,7 @@ const bortefelt = [
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16 || i == 23 || i == 30) {
+    if (i == 14 || i == 16 || i == 23 || i == 24) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
