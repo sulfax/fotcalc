@@ -65,7 +65,7 @@ const bortefelt = [
     ['307','308','309','309-HC'],
     ['Felt-I1'],
     
-    []
+    [],
 
     ['Chadwick Stand - Block 2','Chadwick Stand - Block 3','Chadwick Stand - Block 4','Chadwick Stand - Block 5']
 ]
@@ -642,7 +642,7 @@ function skrivUt(kamptittel) {
         document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;"><b>' + solgte + '/' + kapasitet + '</b><span></p>'
     } else {
         document.getElementById('innhold').innerHTML += '<p><b>' + solgte + '/' + kapasitet + '</b></p>'
-    }   
+    }
     for (j = 0; j < seksjoner.length; j++) {
         if (oversikt[j][0] != undefined) {
             if (oversikt[j][1] >= oversikt[j][2] && bortefelt[f].includes(oversikt[j][0])) {
