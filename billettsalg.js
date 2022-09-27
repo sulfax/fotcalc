@@ -33,6 +33,8 @@ const kamper = [
     ['Sandnes Ulf',212077,212078],
     ['Stabæk',193941,193942,193944],
     ['Start',224985],
+    
+    ['Viking Kvinner',225699],
 
     ['Kilmarnock',217917,217918]
 ]
@@ -62,12 +64,14 @@ const bortefelt = [
     ['Bortesupporterfelt','Felt-I','Felt-H'],
     ['307','308','309','309-HC'],
     ['Felt-I1'],
+    
+    []
 
     ['Chadwick Stand - Block 2','Chadwick Stand - Block 3','Chadwick Stand - Block 4','Chadwick Stand - Block 5']
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16 || i == 23) {
+    if (i == 14 || i == 16 || i == 23 || i == 30) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
