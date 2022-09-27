@@ -627,7 +627,7 @@ function skrivUt(kamptittel) {
             oversikt[j][1] -= 282;
             solgte -= 282;
         }
-        if (oversikt[j][0] == 'FJORDKRAFT Felt A' || (oversikt[j][0] == '308') && kamptittel == 'OBOS-Ligaen: Stabæk Fotball - Åsane') {
+        if (oversikt[j][0] == 'FJORDKRAFT Felt A' || (oversikt[j][0] == '307') && kamptittel == 'OBOS-Ligaen: Stabæk Fotball - Åsane') {
             oversikt[j][1] -= 34;
             solgte -= 34
         }
