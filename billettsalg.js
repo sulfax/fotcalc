@@ -34,6 +34,8 @@ const kamper = [
     ['Stabæk',193941,193942,193944],
     ['Start',224985],
     
+    ['Arendal',181000,181001],
+    
     ['Viking Kvinner',225699],
     
     ['Strømsgodset Kvinner',209538],
@@ -67,6 +69,8 @@ const bortefelt = [
     ['307','308','309','309-HC'],
     ['Felt-I1'],
     
+    ['FELT-R STÅPLASSER'],
+    
     [],
     
     [],
@@ -75,7 +79,7 @@ const bortefelt = [
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16 || i == 23 || i == 24 || i == 25) {
+    if (i == 14 || i == 16 || i == 23 || i == 24 || i == 25 || i == 26) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
