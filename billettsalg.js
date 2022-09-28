@@ -28,6 +28,7 @@ const kamper = [
 
     ['Brann',193994,193995,193996],
     ['Bryne',222417,222418,222419],
+    ['Kongsvinger',225092],
     ['Mjøndalen',224400],
     ['Ranheim',222795,222796,222797],
     ['Sandnes Ulf',212077,212078],
@@ -63,6 +64,7 @@ const bortefelt = [
 
     ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
     ['Felt T'],
+    ['STÅPLASSER BORTESUPPORTER'],
     ['Felt-E','Felt-F','Felt-G'],
     ['EA'],
     ['Bortesupporterfelt','Felt-I','Felt-H'],
@@ -79,7 +81,7 @@ const bortefelt = [
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16 || i == 23 || i == 24 || i == 25 || i == 26) {
+    if (i == 14 || i == 16 || i == 24 || i == 25 || i == 26 || i == 27) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
