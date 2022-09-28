@@ -69,7 +69,7 @@ const bortefelt = [
     ['307','308','309','309-HC'],
     ['Felt-I1'],
     
-    ['FELT-R STÅPLASSER'],
+    ['Felt R-STÅPLASSER'],
     
     [],
     
@@ -482,7 +482,7 @@ function hentHTML(event,kamptittel) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" tc:role=', seksjon_n+1))));
                 } else if (seksjoner_json.includes('KJERNEN" fill="')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'xlink:title="', seksjon_n+1)+13),(getPosition(seksjoner_json, '"> <', seksjon_n+1)))).toUpperCase();
-                } else if (seksjoner_json.includes('Felt-S-Sitteplass')) {
+                } else if (seksjoner_json.includes('Felt-S-Sitteplass') || seksjoner_json.includes('xlink:title="felt g-ståplasser"')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" tc:role=', seksjon_n+1))));
                 } else {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" fill=', seksjon_n+1))));
