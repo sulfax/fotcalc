@@ -70,11 +70,10 @@
 
 
 #knapper {
-    width: 100% !important;
+    width: 94% !important;
+    margin: auto;
 }
 .container {
-    padding-left: 5%;
-    padding-right: 5%;
     margin: auto;
 }
 .ytterst_tabell_div {
