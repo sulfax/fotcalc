@@ -69,6 +69,7 @@
 }
 
 .ytterst_tabell_div {
+    width:100% !important;
     margin: auto;
 }
 
