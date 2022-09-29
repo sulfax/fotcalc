@@ -102,7 +102,7 @@ function generer_kalender(klubb) {
     } else {
         document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Har du oppdaget at en klubbs totalt antall solgte billetter avviker fra det faktiske antallet til en kamp?<br>I så fall vil avviket sannsynligvis ikke forandre seg til neste kamp.</p>';
     }
-    document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Mangler en kamp eller to? Kontakt meg på <a class="logo_twitter" href="https://twitter.com/fotcalc" target="_blank">twitter</a></p>';
+    document.getElementById('knapper').innerHTML += '<p style="backgroundcolor:red;">Mangler en kamp eller to? Kontakt meg på <a class="twitter_link" href="https://twitter.com/fotcalc" target="_blank">twitter</a></p>';
     for (h = 0; h < kamper.length; h++) {
         if (kamper[h][0] == klubb) {
             let btn = document.createElement("button");

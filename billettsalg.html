@@ -25,6 +25,10 @@
     <meta property="og:description" content="Billettsalg for norske klubber i sanntid. Finn ut hvor mange billetter din Eliteserieklubb har solgt. Oppdateres kontinuerlig." />
     <meta property="og:locale" content="nb_NO"/>
     <title id="title">Billettsalg i sanntid | Fotcalc</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/googleapis_font.css">
+    <link rel="stylesheet" type="text/css" href="static/base.css">
     <link rel="stylesheet" type="text/css" href="static/billettsalg.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -38,10 +42,125 @@
     </script>
   </head>
   <body>
-    <div id="knapper"><a href="https://www.fotcalc.com">Hjem</a><br><br><br></div>
-    <div id="innhold"></div>
-    <script type="text/javascript" src="https://ticketco.events/no/nb/events/193640/seating_arrangement/sections/223502.json"></script>  
-    <script type="text/javascript" src="billettsalg.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="hjem" href="https://www.fotcalc.com">Home</a>
+          <a class="nav-item nav-link" id="premiepenger_kalkulator" href="prize-money-calculator">Prize money calculator</a>
+          <a class="nav-item nav-link" id="koeffisient_kalkulator" href="coefficient-calculator">Coefficient calculator</a>
+          <a class="nav-item nav-link" id="landskoeff_rangering" href="country-coefficients">Country coefficient ranking</a>
+          <a class="nav-item nav-link" id="klubbkoeff_rangering" href="club-coefficients">5-year ranking</a>
+          <a class="nav-item nav-link" id="ti_års_rangering" href="10-year-ranking">10-year ranking</a>
+          <a class="nav-item nav-link" id="billettsalg" href="billettsalg">Norwegian ticket sales (off topic)</a>
+          <button type="button" class="btn btn-link" id="english" onclick="language(this.id)">English</button>
+          <button type="button" class="btn btn-link" id="norsk" onclick="language(this.id)">Norsk</button>
+        </div>
+      </div>
+    </nav>
+    <div class="reaklame_sidene" id="ad_venstre">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+        crossorigin="anonymous"></script>
+      <!-- Anbefalt, kvadratisk -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8377146818251154"
+        data-ad-slot="6582001165"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="reaklame_sidene" id="ad_hoyre">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+        crossorigin="anonymous"></script>
+      <!-- Anbefalt, kvadratisk -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8377146818251154"
+        data-ad-slot="6582001165"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <br>
+    <div class="container">
+      <div class="ytterst_tabell_div">
+        <div id="knapper"></div>
+        <br>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+          crossorigin="anonymous"></script>
+        <!-- Anbefalt, kvadratisk -->
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8377146818251154"
+          data-ad-slot="6582001165"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br>
+        <div id="innhold"></div>
+        <script type="text/javascript" src="https://ticketco.events/no/nb/events/193640/seating_arrangement/sections/223502.json"></script>  
+        <script type="text/javascript" src="billettsalg.js"></script>
+      </div>
+    </div>
+    <br>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+      crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-format="autorelaxed"
+      data-ad-client="ca-pub-8377146818251154"
+      data-ad-slot="8335804646"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <br>
+    <footer>
+      <div>
+        <div class="laget_av">
+          <h3 class="tekst_1" id="laget_av_Johannes">Developed by Johannes Kaste</h3>
+          <br>
+          <a class="logo_twitter" href="https://twitter.com/fotcalc" target="_blank">
+            <img src="media/iconmonstr-twitter-1.svg" alt="twitter icon">
+          </a>
+          <br>
+          <br>
+          <br>
+          <p class="tekst_1" id="kontakt_meg">Found potential for improvement, a bug or something wrong with the website?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script
+      type="text/javascript" 
+      src="static/variabler_index.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/index.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/hentet_fra_nettet/jquery-3.2.1.slim.min.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/hentet_fra_nettet/bootstrap.min.js"
+    ></script>
     <!--
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
