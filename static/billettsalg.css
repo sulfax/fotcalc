@@ -64,13 +64,15 @@
         max-width:1220px
     }
 }
+#knapper {
+    width: 100% !important;
+}
 .container {
     margin: auto;
 }
 .ytterst_tabell_div {
     background-color: rgba(0,0,0,0);
 }
-
 button {
     min-width: 50px;
     min-height: 28px;
