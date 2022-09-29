@@ -68,11 +68,11 @@
     }
 }
 
-
-#knapper {
-    width: 94% !important;
+.ytterst_tabell_div {
+    width: 94%;
     margin: auto;
 }
+
 .container {
     margin: auto;
 }
