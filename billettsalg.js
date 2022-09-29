@@ -89,6 +89,7 @@ for (i = 0; i < kamper.length; i++) {
     let btn = document.createElement("button");
     btn.innerHTML = kamper[i][0];
     btn.id = kamper[i][0];
+    btn.class = "kamper";
     btn.setAttribute("onClick", " generer_kalender(this.id)");
     document.getElementById('knapper').appendChild(btn);
 }
