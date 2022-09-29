@@ -1149,7 +1149,7 @@ function regn_ut_NA_poeng() {
 
 
 
-var schema = {
+/*var schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": []
@@ -1176,4 +1176,4 @@ schema.mainEntity.push(Lag_koeff)
 const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
 script.textContent = JSON.stringify(schema);
-document.head.appendChild(script);
+document.head.appendChild(script);*/
