@@ -84,7 +84,7 @@ button {
     margin-bottom: 3px;
     border: 1px solid #343a40;
 }
-button:not(.navbar-toggler, #tilbake) {
+button:not(.navbar-toggler, #tilbake, .btn-link) {
     background-color: rgb(238, 238, 238) !important;
 }
 #tilbake {
