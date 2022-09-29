@@ -630,6 +630,7 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
 
 /* Funksjon for å skrive ut infomasjonen til HTML-siden */
 function skrivUt(kamptittel) {
+    document.getElementById('innhold').innerHTML += '<br>';
     for (j = 0; j < seksjoner.length; j++) {
         if (kamptittel == 'UEFA Conference League MD5 Molde FK vs Djurgården IF' && oversikt[j][0] == 'ISTAD - K Nedre') {
             oversikt[j][1] -= 282;
