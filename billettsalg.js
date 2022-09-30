@@ -42,7 +42,7 @@ const kamper = [
     
     ['Strømsgodset Kvinner',209538],
 
-    ['Kilmarnock',223829,217917,217918]
+    ['Kilmarnock',217917,217918,223829]
 ]
 const bortefelt = [
     ['Felt-C'],
