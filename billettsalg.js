@@ -44,42 +44,42 @@ const kamper = [
 
     ['Kilmarnock',217917,217918,223829]
 ]
-const bortefelt = [
-    ['Felt-C'],
-    ['J','K','L'],
-    ['Felt-G'],
-    ['KBBL-B-BORTE','KBBL-A-BORTE','KBBL-C','KBBL-D','KBBL-E','KBBL-STÅPLASSER'], /* C,D,E og ståplass kun mot RBK */
-    ['Felt-W','Felt-V','Felt-U'],
-    ['ISTAD - K Nedre','ISTAD - K Øvre'],
-    ['Felt-R1','Felt-R2','Felt-S1','Felt-S2'],
-    ['FELT-SB'],
-    ['N','M'],
-    ['Felt-D','HCP-D'],
-    ['Felt-S Ståplasser','Felt-S Sitteplass'],
-    ['TRIBUNE VEST Felt H - Bortesupport','TRIBUNE SØR'],
-    ['E-Away'],
-    ['201/202'],
+const spesialfelt = [
+    [['Felt-C'],['J-feltet stå','Felt-J']],
+    [['J','K','L'],['MAAKEBERGET','O']],
+    [['Felt-G'],['Felt-1921']],
+    [['KBBL-B-BORTE','KBBL-A-BORTE','KBBL-C','KBBL-D','KBBL-E','KBBL-STÅPLASSER'],['1 TRIBUNE-STÅPLASSER']], /* C,D,E og ståplass kun mot RBK */
+    [['Felt-W','Felt-V','Felt-U'],['Felt-AB']],
+    [['ISTAD - K Nedre','ISTAD - K Øvre'],['SYLTE - U Nedre']],
+    [['Felt-R1','Felt-R2','Felt-S1','Felt-S2'],['ODDRANE']],
+    [['FELT-SB','FELT-RB'],['KJERNEN']],
+    [['N','M'],['J']],
+    [['Felt-D','HCP-D'],['Felt-H']],
+    [['Felt-S Ståplasser','Felt-S Sitteplass'],['Felt-K','Felt-J','Felt-I']],
+    [['TRIBUNE VEST Felt H - Bortesupport','TRIBUNE SØR'],['TRIBUNE VEST Felt L','COOPTRIBUNEN Felt A']],
+    [['E-Away'],['Felt O','Felt O - Jr']],
+    [['201/202'],['401-403','404-406']],
 
-    ['Felt-5',],
-    ['201'],
+    [['Felt-5',],[]],
+    [['201'],['STABÆK SUPPORT','100 Jr. Support']],
 
-    ['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],
-    ['Felt T'],
-    ['STÅPLASSER BORTESUPPORTER'],
-    [],
-    ['Felt-E','Felt-F','Felt-G'],
-    ['EA'],
-    ['Bortesupporterfelt','Felt-I','Felt-H'],
-    ['307','308','309','309-HC'],
-    ['Felt-I1'],
+    [['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],['STORE STÅ','FRYDENBØ D - Bataljonen','']],
+    [['Felt T'],['S - Ståtribune']],
+    [['STÅPLASSER BORTESUPPORTER'],['STÅPLASSER HJEMMESUPPORTER']],
+    [[],[]],
+    [['Felt-E','Felt-F','Felt-G'],['Felt-A']],
+    [['EA'],['AA']],
+    [['Bortesupporterfelt','Felt-I','Felt-H'],['Supporterfelt']],
+    [['307','308','309','309-HC'],['STABÆK SUPPORT','100 Jr. Support']],
+    [['Felt-I1'],['Felt-T1']],
     
-    ['Felt R-STÅPLASSER'],
+    [['Felt R-STÅPLASSER'],['Felt G-STÅPLASSER']],
     
-    [],
+    [[],[]],
     
-    [],
+    [['Felt-S Ståplasser','Felt-S Sitteplass'],['Felt-K','Felt-J','Felt-I']],
 
-    ['Chadwick Stand - Block 2','Chadwick Stand - Block 3','Chadwick Stand - Block 4','Chadwick Stand - Block 5']
+    [['Chadwick Stand - Block 2','Chadwick Stand - Block 3','Chadwick Stand - Block 4','Chadwick Stand - Block 5'],[]]
 ]
 
 for (i = 0; i < kamper.length; i++) {
@@ -637,7 +637,7 @@ function skrivUt(kamptittel) {
             oversikt[j][1] -= 282;
             solgte -= 282;
         }
-        if (oversikt[j][0] == 'FJORDKRAFT Felt A' || (oversikt[j][0] == '307') && kamptittel == 'OBOS-Ligaen: Stabæk Fotball - Åsane') {
+        if (oversikt[j][0] == 'FJORDKRAFT Felt A' || ((oversikt[j][0] == '307') && kamptittel == 'OBOS-Ligaen: Stabæk Fotball - Åsane')) {
             oversikt[j][1] -= 34;
             solgte -= 34
         }
@@ -659,17 +659,20 @@ function skrivUt(kamptittel) {
     }
     for (j = 0; j < seksjoner.length; j++) {
         if (oversikt[j][0] != undefined) {
-            if (oversikt[j][1] >= oversikt[j][2] && bortefelt[f].includes(oversikt[j][0])) {
-                document.getElementById('innhold').innerHTML += '<p style="color:red;"><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
+            if (spesialfelt[f][0].includes(oversikt[j][0])) {
+                document.getElementById('innhold').innerHTML += '<p id="felt_tekst' + j + '" style="color:red"></p>'
             }
-            else if (bortefelt[f].includes(oversikt[j][0])) {
-                document.getElementById('innhold').innerHTML += '<p style="color:red;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</p>'
-            }
-            else if (oversikt[j][1] >= oversikt[j][2]) {
-                document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span></p>'
+            else if (spesialfelt[f][1].includes(oversikt[j][0])) {
+                document.getElementById('innhold').innerHTML += '<p id="felt_tekst' + j + '" style="color:#ea00ff"></p>'
             }
             else {
-                document.getElementById('innhold').innerHTML += '<p>' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</p>'
+                document.getElementById('innhold').innerHTML += '<p id="felt_tekst' + j + '"></p>'
+            }
+            if (oversikt[j][1] >= oversikt[j][2]) {
+                document.getElementById('felt_tekst' + j).innerHTML = '<span style="background-color:LightGreen">' + oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2] + '</span>'
+            }
+            else {
+                document.getElementById('felt_tekst' + j).innerHTML = oversikt[j][0] + ': ' + oversikt[j][1] + '/' + oversikt[j][2];
             }
         }
     }
