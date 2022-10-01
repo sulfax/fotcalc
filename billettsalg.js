@@ -49,7 +49,7 @@ const spesialfelt = [
     [['J','K','L'],['MAAKEBERGET','O']],
     [['Felt-G'],['Felt-1921']],
     [['KBBL-B-BORTE','KBBL-A-BORTE','KBBL-C','KBBL-D','KBBL-E','KBBL-STÅPLASSER'],['1 TRIBUNE-STÅPLASSER']], /* C,D,E og ståplass kun mot RBK */
-    [['Felt-W','Felt-V','Felt-U'],['Felt-AB']],
+    [['Felt-W','Felt-V','Felt-U'],['Felt-AB','Felt-C']],
     [['ISTAD - K Nedre','ISTAD - K Øvre'],['SYLTE - U Nedre']],
     [['Felt-R1','Felt-R2','Felt-S1','Felt-S2'],['ODDRANE']],
     [['FELT-SB','FELT-RB'],['KJERNEN']],
