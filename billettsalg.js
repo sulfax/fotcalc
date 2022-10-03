@@ -33,6 +33,7 @@ const kamper = [
     ['Mjøndalen',224400],
     ['Ranheim',222795,222796,222797],
     ['Sandnes Ulf',212077,212078],
+    ['Sogndal',180236],
     ['Stabæk',193941,193942,193944],
     ['Start',224985],
     
@@ -70,6 +71,7 @@ const spesialfelt = [
     [['Felt-E','Felt-F','Felt-G'],['Felt-A']],
     [['EA'],['AA']],
     [['Bortesupporterfelt','Felt-I','Felt-H'],['Supporterfelt']],
+    [],
     [['307','308','309','309-HC'],['STABÆK SUPPORT','100 Jr. Support']],
     [['Felt-I1'],['Felt-T1']],
     
@@ -83,7 +85,7 @@ const spesialfelt = [
 ]
 
 for (i = 0; i < kamper.length; i++) {
-    if (i == 14 || i == 16 || i == 25 || i == 26 || i == 27 || i == 28) {
+    if (i == 14 || i == 16 || i == 26 || i == 27 || i == 28 || i == 29) {
         document.getElementById('knapper').innerHTML += '<br><br>';
     }
     let btn = document.createElement("button");
