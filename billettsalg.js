@@ -33,7 +33,7 @@ const kamper = [
     ['Mjøndalen',224400],
     ['Ranheim',222795,222796,222797],
     ['Sandnes Ulf',212077,212078],
-    ['Sogndal',180236],
+    ['Sogndal'],
     ['Stabæk',193941,193942,193944],
     ['Start',224985],
     
