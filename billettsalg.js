@@ -71,7 +71,7 @@ const spesialfelt = [
     [['Felt-E','Felt-F','Felt-G'],['Felt-A']],
     [['EA'],['AA']],
     [['Bortesupporterfelt','Felt-I','Felt-H'],['Supporterfelt']],
-    [],
+    [[],[]],
     [['307','308','309','309-HC'],['STABÆK SUPPORT','100 Jr. Support']],
     [['Felt-I1'],['Felt-T1']],
     
