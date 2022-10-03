@@ -650,7 +650,8 @@ function skrivUt(kamptittel) {
             solgte -= 1
         }
     }
-    oversikt.sort(sortFunction);
+    oversikt.sort(sorter_navn_seksjon);
+    oversikt.sort(sorter_solgte_seksjon);
     document.getElementById('innhold').innerHTML += '<h2>' + kamptittel + '</h2>'
     if (solgte >= kapasitet) {
         document.getElementById('innhold').innerHTML += '<p><span style="background-color:LightGreen;"><b>' + solgte + '/' + kapasitet + '</b><span></p>'
@@ -685,8 +686,20 @@ function skrivUt(kamptittel) {
 
 /*=========================================================================================*/
 
-/* Sorteringsfunksjon */
-function sortFunction(a, b) {
+/* Sorteringsfunksjoner */
+function sorter_navn_seksjon(a, b) {
+    a[2] = parseInt(a[2])
+    b[2] = parseInt(b[2])
+    if (b[2] == undefined) {b[2] = -1} 
+    if (a[2] == undefined) {a[2] = -1} 
+    if (a[2] === b[2]) {
+        return 0;
+    }
+    else {
+        return (a[2] > b[2]) ? -1 : 1;
+    }
+}
+function sorter_solgte_seksjon(a, b) {
     if (b[1] == undefined) {b[1] = -1} 
     if (a[1] == undefined) {a[1] = -1} 
     if (a[1] === b[1]) {
