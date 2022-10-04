@@ -33,7 +33,7 @@ const kamper = [
     ['Mjøndalen',224400],
     ['Ranheim',222795,222796,222797],
     ['Sandnes Ulf',212077,212078],
-    ['Sogndal'],
+    ['Sogndal',180236],
     ['Stabæk',193941,193942,193944],
     ['Start',224985],
     
@@ -71,7 +71,7 @@ const spesialfelt = [
     [['Felt-E','Felt-F','Felt-G'],['Felt-A']],
     [['EA'],['AA']],
     [['Bortesupporterfelt','Felt-I','Felt-H'],['Supporterfelt']],
-    [[],[]],
+    [['C','D','E','F'],['P','Q']],
     [['307','308','309','309-HC'],['STABÆK SUPPORT','100 Jr. Support']],
     [['Felt-I1'],['Felt-T1']],
     
@@ -485,7 +485,7 @@ function hentHTML(event,kamptittel) {
                 let seksjon_navn_json = ""
                 /*==================================================================================*/
                 /* Vålerenga har en spesiell rekkefølge på sine atributter. Derav "if-setningen" */
-                if (seksjoner_json.includes('tc:role="Section" fill') || seksjoner_json.includes('" xlink:title="s - hovedtribune"> <path tc:name="S')) {
+                if (seksjoner_json.includes('tc:role="Section" fill') || seksjoner_json.includes('" xlink:title="s - hovedtribune"> <path tc:name="S') || seksjoner_json.includes('<path tc:name="J Nedre" tc:role="Section" class="st2" d="')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'tc:name="', seksjon_n+1)+9),(getPosition(seksjoner_json, '" tc:role=', seksjon_n+1))));
                 } else if (seksjoner_json.includes('KJERNEN" fill="')) {
                     seksjon_navn_json = (seksjoner_json.substring((getPosition(seksjoner_json, 'xlink:title="', seksjon_n+1)+13),(getPosition(seksjoner_json, '"> <', seksjon_n+1)))).toUpperCase();
@@ -555,8 +555,10 @@ function hentHTML(event,kamptittel) {
                     }
                 }
                 /*=================================================================================*/
-                seksjoner_navn.push(seksjon_navn_json)
-                seksjoner.push(seksjon_json)
+                if (!seksjoner.includes(seksjon_json) && seksjon_navn_json != "") {
+                    seksjoner_navn.push(seksjon_navn_json)
+                    seksjoner.push(seksjon_json)
+                }
                 seksjon_n += 1;
             }
             /* Laster inn json-filen til seksjonene */
@@ -621,6 +623,7 @@ function enkeltSeksjon(data,seksjon_navn,i,kamptittel) {
     /*  */
     iterasjoner_oversikt += 1;
     iterasjoner += 1;
+    // alert(iterasjoner + '    ' + seksjoner.length)
     if (iterasjoner == seksjoner.length) {
         iterasjoner = 0;
         skrivUt(kamptittel)
