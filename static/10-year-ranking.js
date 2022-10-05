@@ -1753,33 +1753,3 @@ function regn_ut_NA_poeng() {
   }
   return NA_poeng_og_assosiasjon
 }
-
-
-var schema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": []
-}
-var Lag_premiepenger = {
-  "@type": "Question",
-  "name": "How much prize money has earned so far?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "€ ",
-  }
-}
-var Lag_koeff = {
-  "@type": "Question",
-  "name": "How many coefficient points has earned in 22/23?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": " association coefficient ",
-  }
-}
-schema.mainEntity.push(Lag_premiepenger)
-schema.mainEntity.push(Lag_koeff)
-
-const script = document.createElement('script');
-script.setAttribute('type', 'application/ld+json');
-script.textContent = JSON.stringify(schema);
-document.head.appendChild(script);
