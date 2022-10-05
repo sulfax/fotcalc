@@ -7,13 +7,13 @@
     float: left;
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
+    padding-top:300px;
 }
 #ad_hoyre {
     float: right;
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
+    padding-top:300px;
 }
 #land {
     width: 52px;
