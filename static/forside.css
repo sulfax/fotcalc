@@ -4,12 +4,17 @@
     }
 }
 #ad_venstre {
-    margin-left: 20px;
     float: left;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 #ad_hoyre {
     margin-right: 20px;
     float: right;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 @media (min-width:256px) {
     .container {
