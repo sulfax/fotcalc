@@ -1526,6 +1526,16 @@ if (localStorage.getItem('spoiler') == 'synlig' || localStorage.getItem('spoiler
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
 
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("ad_venstre").style.top = -scrolled + "px";
+}
+
 // function endre_klubbnavn(i, kolonne) {
 //   var rows = document.getElementsByTagName("table")[0].rows;
 //   var last = rows[i + 1];
