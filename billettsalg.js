@@ -68,7 +68,7 @@ const spesialfelt = [
     [['FJORDKRAFT Felt A','FJORDKRAFT Felt B'],['STORE STÅ','FRYDENBØ D - Bataljonen','FRYDENBØ Felt B Øvre','FRYDENBØ Felt С Øvre','FRYDENBØ Felt D Øvre']],
     [['Felt T'],['S - Ståtribune']],
     [['STÅPLASSER BORTESUPPORTER'],['STÅPLASSER HJEMMESUPPORTER']],
-    [[],[]],
+    [['201/202'],[]],
     [['Felt-E','Felt-F','Felt-G'],['Felt-A']],
     [['EA'],['AA']],
     [['Seksjon D'],['Seksjon C']],
