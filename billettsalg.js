@@ -4,7 +4,7 @@ let kapasitet = 0;
 let data = '';
 let f = 0;
 
-
+$("#links").load("/Main_Page #jq-p-Getting-Started li");
 
 /* Deffinerer variablene for print-dataen (oversikt) */
 let oversikt = [];
@@ -120,6 +120,7 @@ function generer_kalender(klubb) {
             /* Loopen må være der av en merkelig grunn */
             for (p = 0; p < 1; p++) {}
             var request = makeHttpObject();
+            request.header("Access-Control-Allow-Origin",'https://www.fotcalc.com/billettsalg')
             request.open("GET", 'https://ticketco.events/no/nb/events/' + kamper[h][p] + '/seating_arrangement/', true);
             request.send(null);
             var kamptittel = "";
