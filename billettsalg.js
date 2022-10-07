@@ -1,8 +1,11 @@
 /* Deffinerer variablene for solgte på stadion og json data fra seksjonene */
+header("Access-Control-Allow-Origin: *");
 let solgte = 0;
 let kapasitet = 0;
 let data = '';
 let f = 0;
+
+
 
 /* Deffinerer variablene for print-dataen (oversikt) */
 let oversikt = [];
@@ -97,7 +100,6 @@ for (i = 0; i < kamper.length; i++) {
     btn.setAttribute("onClick", " generer_kalender(this.id)");
     document.getElementById('knapper').appendChild(btn);
 }
-
 function generer_kalender(klubb) {
     document.getElementById('innhold').innerHTML = "";
     document.getElementById('knapper').innerHTML = "";
