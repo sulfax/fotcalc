@@ -1,5 +1,4 @@
 /* Deffinerer variablene for solgte på stadion og json data fra seksjonene */
-header("Access-Control-Allow-Origin: *");
 let solgte = 0;
 let kapasitet = 0;
 let data = '';
