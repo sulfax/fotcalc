@@ -103,5 +103,5 @@ button:not(.navbar-toggler, #tilbake, .btn-link) {
     padding: 0px !important;
 }
 .twitter_link:hover {
-    color: #343a40;
+    color: red;
 }
