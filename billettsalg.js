@@ -4,17 +4,6 @@ let kapasitet = 0;
 let data = '';
 let f = 0;
 
-fetch('https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/215906/seating_arrangement/').then(function (response) {
-	// The API call was successful!
-	return response.text();
-}).then(function (html) {
-	// This is the HTML from our response as a text string
-	console.log(html);
-}).catch(function (err) {
-	// There was an error
-	console.warn('Something went wrong.', err);
-});
-
 /* Deffinerer variablene for print-dataen (oversikt) */
 let oversikt = [];
 let iterasjoner = 0;
@@ -129,7 +118,7 @@ function generer_kalender(klubb) {
             /* Loopen må være der av en merkelig grunn */
             for (p = 0; p < 1; p++) {}
             var request = makeHttpObject();
-            request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamper[h][p] + '/seating_arrangement/', true);
+            request.open("GET", 'https://ticketco.events/no/nb/events/' + kamper[h][p] + '/seating_arrangement/', true);
             request.send(null);
             var kamptittel = "";
             f = h;
@@ -154,7 +143,7 @@ function lagKampProgram1(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_2) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_2 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_2 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -175,7 +164,7 @@ function lagKampProgram2(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_3) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_3 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_3 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -196,7 +185,7 @@ function lagKampProgram3(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_4) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_4 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_4 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -217,7 +206,7 @@ function lagKampProgram4(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_5) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_5 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_5 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -238,7 +227,7 @@ function lagKampProgram5(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_6) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_6 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_6 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -259,7 +248,7 @@ function lagKampProgram6(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_7) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_7 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_7 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -280,7 +269,7 @@ function lagKampProgram7(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_8) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_8 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_8 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -301,7 +290,7 @@ function lagKampProgram8(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_9) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_9 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_9 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -322,7 +311,7 @@ function lagKampProgram9(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_i
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_10) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_10 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_10 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -343,7 +332,7 @@ function lagKampProgram10(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_11) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_11 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_11 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -364,7 +353,7 @@ function lagKampProgram11(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_12) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_12 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_12 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -385,7 +374,7 @@ function lagKampProgram12(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_13) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_13 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_13 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -406,7 +395,7 @@ function lagKampProgram13(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_14) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_14 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_14 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -427,7 +416,7 @@ function lagKampProgram14(kamptittel,kamp_id,kamp_id_2,kamp_id_3,kamp_id_4,kamp_
     document.getElementById('knapper').appendChild(btn);
     if (kamp_id_15) {
         var request = makeHttpObject();
-        request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + kamp_id_15 + '/seating_arrangement/', true);
+        request.open("GET", 'https://ticketco.events/no/nb/events/' + kamp_id_15 + '/seating_arrangement/', true);
         request.send(null);
         var kamptittel = "";
         request.onreadystatechange = function() {
@@ -478,7 +467,7 @@ function hentHTML(event,kamptittel) {
 
     document.getElementById('innhold').innerHTML = "";
     var request = makeHttpObject();
-    request.open("GET", 'https://mycorsproxy-fotcalc.herokuapp.com/https://ticketco.events/no/nb/events/' + event + '/seating_arrangement/', true);
+    request.open("GET", 'https://ticketco.events/no/nb/events/' + event + '/seating_arrangement/', true);
     request.send(null);
     request.onreadystatechange = function() {
         if (request.readyState == 4) {
