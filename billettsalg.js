@@ -4,7 +4,16 @@ let kapasitet = 0;
 let data = '';
 let f = 0;
 
-$("#links").load("/Main_Page #jq-p-Getting-Started li");
+fetch('https://ticketco.events/no/nb/events/215906/seating_arrangement/').then(function (response) {
+	// The API call was successful!
+	return response.text();
+}).then(function (html) {
+	// This is the HTML from our response as a text string
+	console.log(html);
+}).catch(function (err) {
+	// There was an error
+	console.warn('Something went wrong.', err);
+});
 
 /* Deffinerer variablene for print-dataen (oversikt) */
 let oversikt = [];
