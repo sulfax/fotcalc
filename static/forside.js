@@ -566,7 +566,7 @@ function byggTabell_test(data) {
     else {
       data[i][0] = ''
     }
-    data[i][0] += '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+    data[i][0] += '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/' + data[i][9] + "/" + klubbnavn_url + '2.png"' + 
       `data-srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `2.png 32w,

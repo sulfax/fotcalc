@@ -602,7 +602,7 @@ function byggTabell_test(ranking_array, column, order) {
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
-    ranking_array[i][0] = '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/fallback.png"' + 
+    ranking_array[i][0] = '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/' + ranking_array[i][2] + "/" + klubbnavn_url + '2.png"' + 
     `data-srcset="
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
