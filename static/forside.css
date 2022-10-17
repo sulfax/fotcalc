@@ -3,9 +3,6 @@
         display: none;
     }
 }
-.dropdown_land {
-    z-index: 1000;
-}
 #ad_venstre {
     float: left;
     position: -webkit-sticky; /* Safari */
