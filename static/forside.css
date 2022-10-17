@@ -3,11 +3,6 @@
         display: none;
     }
 }
-
-.dropdown_adva {
-    z-index: 999;
-}
-
 #ad_venstre {
     float: left;
     position: -webkit-sticky; /* Safari */
