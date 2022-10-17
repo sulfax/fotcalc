@@ -81,6 +81,7 @@
     width: fit-content;
     height: 4rem;
     float: right;
+    z-index: 0;
 }
 .table-hover {
     background-color: rgb(255, 255, 255)

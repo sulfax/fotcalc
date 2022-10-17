@@ -86,6 +86,7 @@
     width: fit-content;
     height: 4rem;
     float: right;
+    z-index: 0;
 }
 #overskrift_premiepenger, #beskrivelse_premiepenger {
     text-align: center;
