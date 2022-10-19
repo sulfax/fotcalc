@@ -237,7 +237,6 @@ function paa_av(clicked_id){
         if (!document.getElementById("b-9") && !document.getElementById("b-13") && !document.getElementById("b-14") && !document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
             oppdater_b1();
         }
-        lagre_trykking()
         summer();
     }
     else if (clicked_id == 'CLPO') {
@@ -250,7 +249,6 @@ function paa_av(clicked_id){
             document.getElementById(clicked_id).innerText = 'Played';
         } else {document.getElementById(clicked_id).innerText = 'Spilt';}
         document.getElementById(clicked_id).id = 'CL-PO'
-        lagre_trykking()
         summer();
     }
     else {
