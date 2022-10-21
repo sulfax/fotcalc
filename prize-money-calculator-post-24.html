@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name=”robots” content=”noindex”>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Calculate your club's Prize money in UEFA club competitions, 22/23. Income and Revenue in Champions League, Europa League and Conference League.">
@@ -132,7 +133,7 @@
       <div class="ytterst_tabell_div">
         <div class="ytre_tabell_div">
           <button class="btn btn-secondary" id="sessong_kontroller_1" onclick="endre_sessong(this.id)">&#10094</button>
-          <h2 class="sesong" id="sessong_id">22/23</h2>
+          <h2 class="sesong" id="sessong_id">24/25</h2>
           <button class="btn btn-secondary" id="sessong_kontroller_2" onclick="endre_sessong(this.id)">&#10095</button>
         </div>
         <div class="dropdown">
@@ -152,6 +153,7 @@
         </div>
       </div>
       <div class="tabell_div">
+        <h2 class="ventemelding">Correct values coming soon</h2>
         <table class="table table-sm table-hover">
           <thead class="thead-light">
             <tr class="head_tr">
@@ -177,26 +179,16 @@
               <td colspan="3" class="resultat_celle tydelig_ramme_hoyre_under_over" id="b1_"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="spilt_preliminary">Preliminary round:</th>
+              <th scope="row" id="spilt_q1_post_24">Q1:</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
-                <button id="b2" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
-              </td>
-              <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b2_"></td>
-              <td class="tom_celle" id="tom_celle_ramme"></td>
-              <td class="tom_celle tydelig_ramme_hoyre_under_over"></td>
-            </tr>
-            <tr class="Kvalifisering">
-              <th scope="row" id="spilt_q1">Q1:</th>
-              <td class="mellomrom_2"></td>
-              <td colspan="3" class="knapp_celle">
                 <button id="b3" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
+                <button id="uelQ1" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
                 <button id="b4" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="b3_"></td>
-              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b3_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="uelQ1_"></td>
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b4_"></td>
             </tr>
             <tr class="Kvalifisering">
@@ -215,11 +207,12 @@
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b6" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
+                <button id="uelQ2" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
                 <button id="b7" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_hoyre tydelig_ramme_under" id="b6_"></td>
-              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b6_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="uelQ2_"></td>
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b7_"></td>
             </tr>
             <tr class="Kvalifisering">
@@ -579,7 +572,7 @@
     ></script>
     <script
       type="text/javascript" 
-      src="static/kalkulator.js"
+      src="static/kalkulator-post-24.js"
     ></script>
     <script
       type="text/javascript" 

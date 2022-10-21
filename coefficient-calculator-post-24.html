@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name=”robots” content=”noindex”>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Calculate Club- and Association Coefficient points in UEFA club competitions 22/23. Champions League, Europa League and Conference League.">
@@ -139,7 +140,7 @@
         </div>
       </div>
       <div class="tabell_div">
-        <div id="ventemelding_div"></div>
+        <h2 class="ventemelding">Correct values coming soon</h2>
         <table class="table table-sm table-hover">
           <thead class="thead-light">
             <tr class="head_tr">
@@ -169,7 +170,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="Kvalifisering">
+            <!-- <tr class="Kvalifisering">
               <th scope="row" id="prelim_semifinale">Preliminary round | Semi-final</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
@@ -198,35 +199,35 @@
               <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
               <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
               <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
-            </tr>
+            </tr> -->
             <tr class="Kvalifisering">
-              <th scope="row" id="q1_kamp1">Q1 | match 1</th>
+              <th scope="row" id="q1_kamp1" class="q1_kamp1_post_24">Q1 | match 1</th>
               <td class="mellomrom_2"></td>
-              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+              <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
                 <button id="b3" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
-                <div class="knapp_erstatning"></div>
+                <button id="b4" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b5" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b3_"></td>
-              <td class="tom_celle tydelig_ramme_hoyre"></td>
-              <td class="resultat_celle_1" id="b5_"></td>
+              <td class="resultat_celle_1 tydelig_ramme" id="b3_"></td>
+              <td class="resultat_celle_1 tydelig_ramme" id="b4_"></td>
+              <td class="resultat_celle_1 tydelig_ramme" id="b5_"></td>
               <td class="mellomrom_2"></td>
-              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
-              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
-              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_utenom_oppe"></td>
             </tr>
             <tr class="Kvalifisering">
               <th scope="row" id="q1_kamp2">Q1 | match 2</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b6" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
-                <div class="knapp_erstatning"></div>
+                <button id="b7" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b8" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="b6_"></td>
-              <td class="tom_celle tydelig_ramme_hoyre"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b6_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b7_"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="b8_"></td>
               <td class="mellomrom_2"></td>
               <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
@@ -243,7 +244,7 @@
               </td>
               <td class="mellomrom"></td>
               <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
-              <td class="tom_celle" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
               <td class="tom_celle tydelig_ramme_under"></td>
               <td class="mellomrom_2"></td>
               <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
@@ -255,12 +256,12 @@
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b10" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
-                <div class="knapp_erstatning"></div>
+                <button id="b11" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b12" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b10_"></td>
-              <td class="tom_celle tydelig_ramme_hoyre"></td>
+              <td class="resultat_celle_1" id="b10_"></td>
+              <td class="resultat_celle_1" id="b11_"></td>
               <td class="resultat_celle_1" id="b12_"></td>
               <td class="mellomrom_2"></td>
               <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
@@ -272,12 +273,12 @@
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b13" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
-                <div class="knapp_erstatning"></div>
+                <button id="b14" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b15" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="b13_"></td>
-              <td class="tom_celle tydelig_ramme_hoyre"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b13_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b14_"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="b15_"></td>
               <td class="mellomrom_2"></td>
               <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
@@ -463,7 +464,7 @@
                 <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i9" name="9" placeholder="Antall" onblur="oppdater_plassering(this.id)">
               </td>
               <td class="mellomrom"></td>
-              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="tom_celle tydelig_ramme_under tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="i8_"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="i9_"></td>
               <td class="mellomrom_2"></td>
@@ -475,12 +476,12 @@
               <th scope="row" id="knock_po_kamp1">Knockout round play-off | match 1</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
-                <div class="knapp_erstatning"></div>
+                <button id="b1" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b34" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b35" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="resultat_celle_1" id="b1_"></td>
               <td class="resultat_celle_1" id="b34_"></td>
               <td class="resultat_celle_1" id="b35_"></td>
               <td class="mellomrom_2"></td>
@@ -492,12 +493,12 @@
               <th scope="row" id="knock_po_kamp2">Knockout round play-off | match 2</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <div class="knapp_erstatning"></div>
+                <button id="b2" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b36" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
                 <button id="b37" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="tom_celle tydelig_ramme_hoyre tydelig_ramme_under"></td>
+              <td class="resultat_celle_1" id="b2_"></td>
               <td class="resultat_celle_1" id="b36_"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="b37_"></td>
               <td class="mellomrom_2"></td>
@@ -771,7 +772,7 @@
   ></script>
     <script
       type="text/javascript" 
-      src="static/koeffisient/koeffisient.js"
+      src="static/koeffisient/koeffisient-post-24.js"
     ></script>
     <script
       type="text/javascript" 
