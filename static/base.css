@@ -366,6 +366,10 @@ a:hover {
 .uecl_gs {
     background-color: rgba(178, 236, 182, 0.7) !important;
 }
+.ventemelding {
+    margin-left: 18px;
+    color: rgba(255, 0, 0, 0.316);
+}
 .dropdown_periode {
     z-index: 1001;
 }

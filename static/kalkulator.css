@@ -282,21 +282,21 @@ tbody {
     background-color:#155599;
     border-color:#155599;
 }
-#b10, #b14, #b19, #b22, #b25, #b28, #b31, #b34 {
+#uelQ1, #uelQ2 ,#b10, #b14, #b19, #b22, #b25, #b28, #b31, #b34 {
     margin-left: 6.5%;
     background-color:#929292;
     border-color:#777777;
 }
-#b10:hover, #b14:hover, #b19:hover, #b22:hover, #b25:hover, #b28:hover, #b31:hover, #b34:hover {
+#uelQ1:hover, #uelQ2:hover, #b10:hover, #b14:hover, #b19:hover, #b22:hover, #b25:hover, #b28:hover, #b31:hover, #b34:hover {
     background-color:#777777;
     border-color:#777777;
 }
-#b-10, #b-14, #b-19, #b-22, #b-25, #b-28, #b-31, #b-34 {
+#uel-Q1, #uel-Q2, #b-10, #b-14, #b-19, #b-22, #b-25, #b-28, #b-31, #b-34 {
     margin-left: 6.5%;
     background-color:#FF6900;
     border-color:#df5d00;
 }
-#b-10:hover, #b-14:hover, #b-19:hover, #b-22:hover, #b-25:hover, #b-28:hover, #b-31:hover, #b-34:hover {
+#uel-Q1:hover, #uel-Q2:hover, #b-10:hover, #b-14:hover, #b-19:hover, #b-22:hover, #b-25:hover, #b-28:hover, #b-31:hover, #b-34:hover {
     background-color:#df5d00;
     border-color:#df5d00;
 }
@@ -381,7 +381,7 @@ td .placeholder::placeholder {
 .table .ingen_ramme_hoyre {
     border-right: 1px solid rgba(177, 177, 177, 0) !important;
 }
-#tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
+#tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_q1_post_24, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
     border-top: 1px solid #b1b1b1 !important;
 }
 #inntjening_turnering, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening {

@@ -93,8 +93,8 @@ const input_summer = [
 let resultat_status = [];
 let deltakelse_eliminasjon_status = [];
 
-const UCL_assoskoeffisient_celler = ["b1_", "b2_", "b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
-const UEL_assoskoeffisient_celler = [/*"b4_", "b7_", "b11_", "b14_",*/ "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
+const UCL_assoskoeffisient_celler = ["b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "b1_", "b2_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
+const UEL_assoskoeffisient_celler = ["b4_", "b7_", "b11_", "b14_", "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
 const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b42_", "b45_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
 
 const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
@@ -116,10 +116,10 @@ function deltakelse_eliminasjon_pre(clicked_id) {
     deltakelse_eliminasjon(clicked_id)
     if(localStorage.getItem('Klubbnavn')){
     }else{
-        localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
+        localStorage.setItem('deltakelse_eliminasjon_status_local_s_post_24', knapper_som_må_oppdateres);
     }
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e) || (localStorage.getItem('Klubbnavn') == eksperimentell_profil_n) || (localStorage.getItem('Klubbnavn') == "") || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") {
-        localStorage.setItem('deltakelse_eliminasjon_status_local_s', knapper_som_må_oppdateres);
+        localStorage.setItem('deltakelse_eliminasjon_status_local_s_post_24', knapper_som_må_oppdateres);
     }
 }
 
@@ -275,13 +275,9 @@ function resultat(clicked_id) {
     if (knapp_status == 4) {
         knapp_status = 0;
     }
-    if (felt_nummer <= 29) {
-        if (knapp_status == 1) {
-            var aktuell_sum = (knapp_summer[0][0]);
-            document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-        }
-        else if (knapp_status == 2) {
-            var aktuell_sum = (knapp_summer[1][0]);
+    if (felt_nummer <= 29 && felt_nummer != 1 && felt_nummer != 2) {
+        if (knapp_status == 1 || knapp_status == 2) {
+            var aktuell_sum = (knapp_summer[knapp_status-1][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
         }
         else {
@@ -289,23 +285,18 @@ function resultat(clicked_id) {
         }
     }
     else {
-        if (knapp_status == 1) {
-            var aktuell_sum = (knapp_summer[2][0]);
+        if (knapp_status == 1 || knapp_status == 2) {
+            var aktuell_sum = (knapp_summer[knapp_status+1][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            if (felt_nummer != 34 && felt_nummer != 35 && felt_nummer != 36 && felt_nummer != 37) {
-                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-            }
-        }
-        else if (knapp_status == 2) {
-            var aktuell_sum = (knapp_summer[3][0]);
-            document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            if (felt_nummer != 34 && felt_nummer != 35 && felt_nummer != 36 && felt_nummer != 37) {
+            if (felt_nummer != 1 && felt_nummer != 34 && felt_nummer != 35 && felt_nummer != 2 && felt_nummer != 36 && felt_nummer != 37) {
                 document.getElementById(clicked_id + "__").innerText = aktuell_sum;
             }
         }
         else {
             document.getElementById(clicked_id + "_").innerText = "";
-            document.getElementById(clicked_id + "__").innerText = "";
+            if (felt_nummer != 1 && felt_nummer != 2) {
+                document.getElementById(clicked_id + "__").innerText = "";
+            }
         }
     }
     document.getElementById(clicked_id).className = "btn btn-danger r" + knapp_status;
@@ -320,7 +311,7 @@ function resultat(clicked_id) {
 }
 
 function post_resultat(clicked_id) {
-    var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
+    var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length)) || clicked_id;
     var klasse = (document.getElementById(clicked_id).className);
     var knapp_status = parseInt(klasse[16]) + 1;
     if (knapp_status == 4) {
@@ -339,7 +330,7 @@ function post_resultat(clicked_id) {
         resultat_status[felt_nummer - 1] = "";
     }
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
-        localStorage.setItem('resultat_status_local_s', resultat_status);
+        localStorage.setItem('resultat_status_local_s_post_24', resultat_status);
     }
 }
 
@@ -379,23 +370,33 @@ function oppdater_seier_tap(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.backgroundColor = "";
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
-    var innenfor_1_6 = (input_felt_verdi >= 0) && (input_felt_verdi <= 6)
+    var innenfor_1_8 = (input_felt_verdi >= 0) && (input_felt_verdi <= 8)
+    if (felt_nummer == 3 || felt_nummer == 6) {innenfor_1_8 = (input_felt_verdi >= 0) && (input_felt_verdi <= 6)}
+
     if (felt_nummer >= 1 && felt_nummer <= 3 && document.getElementById(clicked_id).value != "") {
         let motsatt_input = (parseInt(document.getElementById("i" + (felt_nummer + 3)).value)) || 0;
-        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6));
+        let sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 8));
+        if (felt_nummer == 3) {sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6));}
+
         let motsatt_input_ikke_avrundet = (document.getElementById("i" + (felt_nummer + 3)).value) || 0;
-        if (motsatt_input < 0) {
-            motsatt_input = 0
-        }
-        else if (motsatt_input > 6) {
+        if (felt_nummer == 3 && motsatt_input > 6) {
             motsatt_input = 6
         }
-        if (((sammen_innenfor_1_6 || motsatt_input_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (motsatt_input_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
+        else if (motsatt_input < 0) {
+            motsatt_input = 0
+        }
+        else if (motsatt_input > 8) {
+            motsatt_input = 8
+        }
+        if (((sammen_innenfor_1_8 || motsatt_input_ikke_avrundet < 0) && innenfor_1_8 && input_felt_verdi % 1 == 0) || (motsatt_input_ikke_avrundet % 1 != 0 && innenfor_1_8 && input_felt_verdi % 1 == 0)) {
             var aktuell_sum = (input_felt_verdi * input_summer[0][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
+        else if (felt_nummer == 3 && (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0)) {
+            utenfor_gyldig_input(clicked_id);
+        }
+        else if (input_felt_verdi > 8 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
         }
         else {
@@ -405,20 +406,27 @@ function oppdater_seier_tap(clicked_id, lagre_endring) {
     }
     else if (felt_nummer >= 4 && felt_nummer <= 6 && document.getElementById(clicked_id).value != "") {
         let motsatt_input = (parseInt(document.getElementById("i" + (felt_nummer - 3)).value)) || 0;
-        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6));
+        let sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 8));
+        if (felt_nummer == 6) {sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + motsatt_input >= 0 && ((parseInt(input_felt_verdi)) + motsatt_input <= 6));}
         let motsatt_input_ikke_avrundet = (document.getElementById("i" + (felt_nummer - 3)).value) || 0;
-        if (motsatt_input < 0) {
-            motsatt_input = 0
-        }
-        else if (motsatt_input > 6) {
+        if (felt_nummer == 6 && motsatt_input > 6) {
             motsatt_input = 6
         }
-        if (((sammen_innenfor_1_6 || motsatt_input_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (motsatt_input_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
+        else if (motsatt_input < 0) {
+            motsatt_input = 0
+        }
+        else if (motsatt_input > 8) {
+            motsatt_input = 8
+        }
+        if (((sammen_innenfor_1_8 || motsatt_input_ikke_avrundet < 0) && innenfor_1_8 && input_felt_verdi % 1 == 0) || (motsatt_input_ikke_avrundet % 1 != 0 && innenfor_1_8 && input_felt_verdi % 1 == 0)) {
             var aktuell_sum = (input_felt_verdi * input_summer[3][0]);
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
+        else if (felt_nummer == 6 && (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0)) {
+            utenfor_gyldig_input(clicked_id);
+        }
+        else if (input_felt_verdi > 8 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
             utenfor_gyldig_input(clicked_id);
         }
         else {
@@ -433,7 +441,7 @@ function oppdater_seier_tap(clicked_id, lagre_endring) {
     }
     oppdater_seier_tap_status[felt_nummer - 1] = input_felt_verdi
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
-        localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
+        localStorage.setItem('oppdater_seier_tap_status_local_s_post_24', oppdater_seier_tap_status);
     }
 }
 
@@ -494,7 +502,7 @@ function oppdater_plassering(clicked_id, lagre_endring) {
     }
     oppdater_seier_tap_status[felt_nummer - 1] = input_felt_verdi
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
-        localStorage.setItem('oppdater_seier_tap_status_local_s', oppdater_seier_tap_status);
+        localStorage.setItem('oppdater_seier_tap_status_local_s_post_24', oppdater_seier_tap_status);
     }
     oppdater_trostepoeng()
     summer()
@@ -507,20 +515,8 @@ function endre_sessong(clicked_id) {
     else {
         aarstall += 1;
     }
-    if (aarstall == 0) {
-      document.getElementById('sessong_kontroller_1').disabled = true;
-      document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else if (aarstall == 2) {
-      document.getElementById('sessong_kontroller_1').disabled = false;
-      document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else if (aarstall > 2) {
-        location.href = '/coefficient-calculator-post-24.html';
-    }
-    else {
-      document.getElementById('sessong_kontroller_1').disabled = false;
-      document.getElementById('sessong_kontroller_2').disabled = false;
+    if (aarstall < 3) {
+        location.href = '/coefficient-calculator.html';
     }
     localStorage.setItem('sessong', aarstall);
     slett("nei")
@@ -625,9 +621,9 @@ function slett(slett_lagring) {
         oppdater_plassering("i" + c, slett_lagring)
     }
     if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
-        localStorage.setItem('resultat_status_local_s', "");
-        localStorage.setItem('oppdater_seier_tap_status_local_s', "");
-        localStorage.setItem('deltakelse_eliminasjon_status_local_s', "");
+        localStorage.setItem('resultat_status_local_s_post_24', "");
+        localStorage.setItem('oppdater_seier_tap_status_local_s_post_24', "");
+        localStorage.setItem('deltakelse_eliminasjon_status_local_s_post_24', "");
     }
 };
 
@@ -714,25 +710,25 @@ function oppdater_ved_refresh_koeff_1() {
         document.getElementById('sessong_kontroller_1').disabled = true;
         // document.getElementById('sessong_kontroller_2').disabled = false;
     }
-    else if (aarstall > 2) {
-        location.href = '/coefficient-calculator-post-24.html';
+    if (aarstall < 3) {
+        location.href = '/coefficient-calculator.html';
     }
-    else {
+    if (aarstall == 3) {
         document.getElementById('sessong_kontroller_1').disabled = false;
-        document.getElementById('sessong_kontroller_2').disabled = false;
+        document.getElementById('sessong_kontroller_2').disabled = true;
     }
     oppdater_sessong(aarstall)
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
-        const deltakelse_eliminasjon = localStorage.getItem('deltakelse_eliminasjon_status_local_s') || '';
-        const resultat = localStorage.getItem('resultat_status_local_s') || '';
-        var oppdater_seier_tap = localStorage.getItem('oppdater_seier_tap_status_local_s') || ',,';
+        const deltakelse_eliminasjon = localStorage.getItem('deltakelse_eliminasjon_status_local_s_post_24') || '';
+        const resultat = localStorage.getItem('resultat_status_local_s_post_24') || '';
+        var oppdater_seier_tap = localStorage.getItem('oppdater_seier_tap_status_local_s_post_24') || ',,';
         oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier_tap)
     }
     else {
         for(var i=0;i<menyvalg.length;i++){
             if(menyvalg[i][0] == Klubbnavn){
                 let p = 1 *antall_MV_elem*aarstall + 2;
-                // const resultat = localStorage.getItem('resultat_status_local_s');
+                // const resultat = localStorage.getItem('resultat_status_local_s_post_24');
                 const knapper_fra_prem_kalk = menyvalg[i][p] || '';
                 var deltakelse_eliminasjon = "";
                 const knapper_til_konvertering = ["b5","b8","b12","b17","b18","b19","b20","b21","b22","b24","b25","b27","b28","b29","b30","b31","b32"];
@@ -766,15 +762,7 @@ function oppdater_ved_refresh_2(deltakelse_eliminasjon, resultat, oppdater_seier
         try {
             if (forkort == "ja") {
                 if (resultat) {
-                    let posisjon = resultat.split(',', 3).join(',').length
-                    let resultat2 = resultat.slice(0, posisjon) + "," + resultat.slice(posisjon)
-                    let posisjon_2 = resultat2.split(',', 6).join(',').length
-                    let resultat3 = resultat2.slice(0, posisjon_2) + "," + resultat2.slice(posisjon_2)
-                    let posisjon_3 = resultat3.split(',', 10).join(',').length
-                    let resultat4 = resultat3.slice(0, posisjon_3) + "," + resultat3.slice(posisjon_3)
-                    let posisjon_4 = resultat4.split(',', 13).join(',').length
-                    let resultat5 = resultat4.slice(0, posisjon_4) + "," + resultat4.slice(posisjon_4)
-                    var resultat_status_oppdelt = (resultat5.split(','));
+                    var resultat_status_oppdelt = (resultat.split(','));
                     var resultat_status_oppdelt_lengde = resultat_status_oppdelt.length;
                 }
             }

@@ -10,9 +10,9 @@ var UCL_utslåtte_lagene_PO_2122 = 30000000;
 var UCL_deltagelsespenger_2122 = UCL_total_mengde_2122 * 0.25;
 var UEL_deltagelsespenger_2122 = UEL_total_mengde_2122 * 0.25;
 var UECL_deltagelsespenger_2122 = UECL_total_mengde_2122 * 0.40;
-var UCL_antall_deltagere_2122 = 32;
-var UEL_antall_deltagere_2122 = 32;
-var UECL_antall_deltagere_2122 = 32;
+var UCL_antall_deltagere_2122 = 36;
+var UEL_antall_deltagere_2122 = 36;
+var UECL_antall_deltagere_2122 = 36;
 var Spilt_SCUP_total_2122 = 7000000;
 /*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*21/22 knapper*/
@@ -23,7 +23,7 @@ var UECL_Slått_ut_Q1_2122 = 150000;
 var UECL_Slått_ut_Q2_2122 = 350000;
 var UECL_Slått_ut_Q3_2122 = 550000;
 var Spilt_Q3_league_path_2122 = "";
-var UCL_utslått_lag_PO_2122 = UCL_utslåtte_lagene_PO_2122 / 6;
+var UCL_utslått_lag_PO_2122 = UCL_utslåtte_lagene_PO_2122 / 7;
 var UECL_Slått_ut_PO_2122 = 750000;
 var UCL_deltaker_gruppespillet_2122 = UCL_deltagelsespenger_2122 / UCL_antall_deltagere_2122;
 var UEL_deltaker_gruppespillet_2122 = UEL_deltagelsespenger_2122 / UEL_antall_deltagere_2122;
@@ -67,75 +67,74 @@ var UECL_spilt_utslagsrunde_PO_2122 = 300000;
 
 
 
-
 const knapp_summer = [
-    [Hjemlig_seriemester_2122,          Hjemlig_seriemester_2122,          Hjemlig_seriemester_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [UECL_Slått_ut_Q1_2122,             UECL_Slått_ut_Q1_2122,             UECL_Slått_ut_Q1_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [UECL_Slått_ut_Q2_2122,             UECL_Slått_ut_Q2_2122,             UECL_Slått_ut_Q2_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [UECL_Slått_ut_Q3_2122,             UECL_Slått_ut_Q3_2122,             UECL_Slått_ut_Q3_2122],
-    [Spilt_Q3_league_path_2122,         Spilt_Q3_league_path_2122,         Spilt_Q3_league_path_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
-    [UCL_utslått_lag_PO_2122,           UCL_utslått_lag_PO_2122,           UCL_utslått_lag_PO_2122],
-    [UECL_Slått_ut_PO_2122,             UECL_Slått_ut_PO_2122,             UECL_Slått_ut_PO_2122],
-    [UCL_deltaker_gruppespillet_2122,   UCL_deltaker_gruppespillet_2122,   UCL_deltaker_gruppespillet_2122],
-    [UEL_deltaker_gruppespillet_2122,   UEL_deltaker_gruppespillet_2122,   UEL_deltaker_gruppespillet_2122],
-    [UECL_deltaker_gruppespillet_2122,  UECL_deltaker_gruppespillet_2122,  UECL_deltaker_gruppespillet_2122],
-    [UCL_spilt_åttendedelsfinale_2122,  UCL_spilt_åttendedelsfinale_2122,  UCL_spilt_åttendedelsfinale_2122],
-    [UEL_spilt_åttendedelsfinale_2122,  UEL_spilt_åttendedelsfinale_2122,  UEL_spilt_åttendedelsfinale_2122],
-    [UECL_spilt_åttendedelsfinale_2122, UECL_spilt_åttendedelsfinale_2122, UECL_spilt_åttendedelsfinale_2122],
-    [UCL_spilt_kvartfinale_2122,        UCL_spilt_kvartfinale_2122,        UCL_spilt_kvartfinale_2122],
-    [UEL_spilt_kvartfinale_2122,        UEL_spilt_kvartfinale_2122,        UEL_spilt_kvartfinale_2122],
-    [UECL_spilt_kvartfinale_2122,       UECL_spilt_kvartfinale_2122,       UECL_spilt_kvartfinale_2122],
-    [UCL_spilt_semifinale_2122,         UCL_spilt_semifinale_2122,         UCL_spilt_semifinale_2122],
-    [UEL_spilt_semifinale_2122,         UEL_spilt_semifinale_2122,         UEL_spilt_semifinale_2122],
-    [UECL_spilt_semifinale_2122,        UECL_spilt_semifinale_2122,        UECL_spilt_semifinale_2122],
-    [UCL_spilt_finale_2122,             UCL_spilt_finale_2122,             UCL_spilt_finale_2122],
-    [UEL_spilt_finale_2122,             UEL_spilt_finale_2122,             UEL_spilt_finale_2122],
-    [UECL_spilt_finale_2122,            UECL_spilt_finale_2122,            UECL_spilt_finale_2122],
-    [UCL_vinner_2122,                   UCL_vinner_2122,                   UCL_vinner_2122],
-    [UEL_vinner_2122,                   UEL_vinner_2122,                   UEL_vinner_2122],
-    [UECL_vinner_2122,                  UECL_vinner_2122,                  UECL_vinner_2122],
-    [Spilt_SCUP_2122,                   Spilt_SCUP_2122,                   Spilt_SCUP_2122],
-    [Vunnet_SCUP_2122,                  Vunnet_SCUP_2122,                  Vunnet_SCUP_2122]
+    [Hjemlig_seriemester_2122],
+    [],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [UECL_Slått_ut_Q1_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [UECL_Slått_ut_Q2_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [UECL_Slått_ut_Q3_2122],
+    [Spilt_Q3_league_path_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [Spilt_Pre_Q_eller_PO_2122],
+    [UCL_utslått_lag_PO_2122],
+    [UECL_Slått_ut_PO_2122],
+    [UCL_deltaker_gruppespillet_2122],
+    [UEL_deltaker_gruppespillet_2122],
+    [UECL_deltaker_gruppespillet_2122],
+    [UCL_spilt_åttendedelsfinale_2122],
+    [UEL_spilt_åttendedelsfinale_2122],
+    [UECL_spilt_åttendedelsfinale_2122],
+    [UCL_spilt_kvartfinale_2122],
+    [UEL_spilt_kvartfinale_2122],
+    [UECL_spilt_kvartfinale_2122],
+    [UCL_spilt_semifinale_2122],
+    [UEL_spilt_semifinale_2122],
+    [UECL_spilt_semifinale_2122],
+    [UCL_spilt_finale_2122],
+    [UEL_spilt_finale_2122],
+    [UECL_spilt_finale_2122],
+    [UCL_vinner_2122],
+    [UEL_vinner_2122],
+    [UECL_vinner_2122],
+    [Spilt_SCUP_2122],
+    [Vunnet_SCUP_2122]
 ];
 
 const input_summer = [
-    [UCL_ti_års_kr_2122,                UCL_ti_års_kr_2122,                UCL_ti_års_kr_2122],
-    [UEL_ti_års_kr_2122,                UEL_ti_års_kr_2122,                UEL_ti_års_kr_2122],
-    [UECL_ti_års_kr_2122,               UECL_ti_års_kr_2122,               UECL_ti_års_kr_2122],
-    [UCL_seier_2122,                    UCL_seier_2122,                    UCL_seier_2122],
-    [UEL_seier_2122,                    UEL_seier_2122,                    UEL_seier_2122],
-    [UECL_seier_2122,                   UECL_seier_2122,                   UECL_seier_2122],
-    [UCL_uavgjort_2122,                 UCL_uavgjort_2122,                 UCL_uavgjort_2122],
-    [UEL_uavgjort_2122,                 UEL_uavgjort_2122,                 UEL_uavgjort_2122],
-    [UECL_uavgjort_2122,                UECL_uavgjort_2122,                UECL_uavgjort_2122],
-    [UCL_uavgjort_2122,                 UCL_uavgjort_2122,                 UCL_uavgjort_2122],
-    [UEL_uavgjort_2122,                 UEL_uavgjort_2122,                 UEL_uavgjort_2122],
-    [UECL_uavgjort_2122,                UECL_uavgjort_2122,                UECL_uavgjort_2122],
-    [påfyll_ingen_funksjon_2122,        påfyll_ingen_funksjon_2122,        påfyll_ingen_funksjon_2122],
-    [UEL_førsteplass_2122,              UEL_førsteplass_2122,              UEL_førsteplass_2122],
-    [UECL_førsteplass_2122,             UECL_førsteplass_2122,             UECL_førsteplass_2122],
-    [UEL_andreplass_2122,               UEL_andreplass_2122,               UEL_andreplass_2122],
-    [UECL_andreplass_2122,              UECL_andreplass_2122,              UECL_andreplass_2122],
-    [UEL_spilt_utslagsrunde_PO_2122,    UEL_spilt_utslagsrunde_PO_2122,    UEL_spilt_utslagsrunde_PO_2122],
-    [UECL_spilt_utslagsrunde_PO_2122,   UECL_spilt_utslagsrunde_PO_2122,   UECL_spilt_utslagsrunde_PO_2122]
+    [UCL_ti_års_kr_2122],
+    [UEL_ti_års_kr_2122],
+    [UECL_ti_års_kr_2122],
+    [UCL_seier_2122],
+    [UEL_seier_2122],
+    [UECL_seier_2122],
+    [UCL_uavgjort_2122],
+    [UEL_uavgjort_2122],
+    [UECL_uavgjort_2122],
+    [UCL_uavgjort_2122],
+    [UEL_uavgjort_2122],
+    [UECL_uavgjort_2122],
+    [påfyll_ingen_funksjon_2122],
+    [UEL_førsteplass_2122],
+    [UECL_førsteplass_2122],
+    [UEL_andreplass_2122],
+    [UECL_andreplass_2122],
+    [UEL_spilt_utslagsrunde_PO_2122],
+    [UECL_spilt_utslagsrunde_PO_2122]
 ];
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club’s coefficient points";
 var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
 
-const UCL_inntjening_celler = ["b2_", "b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
-const UEL_inntjening_celler = ["b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__"];
+const UCL_inntjening_celler = ["b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
+const UEL_inntjening_celler = ["uelQ1_", "uelQ2_", "b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__"];
 const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__"];
 const seriemester_inntjening_celler = ["b1_", "b36_", "b36_hoyre", "b37_", "b37_hoyre"];
 
@@ -164,9 +163,30 @@ else {
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){
-    if (clicked_id == 'CLPO') {
+    if (clicked_id == 'uelQ1' || clicked_id == 'uelQ2') {
+        if ((document.getElementById('overskrift_premiepenger').innerText).includes('Prize')) {
+            document.getElementById(clicked_id).innerText = 'Played';
+        } else {document.getElementById(clicked_id).innerText = 'Spilt';}
+        // Midlertidig
+        // document.getElementById(clicked_id + "_").innerText = "€ " + knapp_summer[2][aarstall-3].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        // document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)
+        // summer();
+        if (document.getElementById('b19')) {
+            document.getElementById(clicked_id + "_").innerText = "€ " + knapp_summer[2][aarstall-3].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)
+            summer();
+        } else {document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)}
+        flytt_SCUP_sum_hoyre(clicked_id)
+    }
+    else if (clicked_id == 'uel-Q1' || clicked_id == 'uel-Q2') {
+        document.getElementById(clicked_id).innerText = '';
+        document.getElementById(clicked_id.slice(0, 3) + clicked_id.slice(4, 6) + '_').innerText = '';
+        document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + clicked_id.slice(4, 6);
+        summer();
+        flytt_SCUP_sum_venstre(clicked_id)
+    }
+    else if (clicked_id == 'CLPO') {
         document.getElementById("b1_").innerText = "";
-        document.getElementById("b2_").innerText = "";
         document.getElementById("b3_").innerText = "";
         document.getElementById("b6_").innerText = "";
         document.getElementById("b9_").innerText = "";
@@ -180,6 +200,13 @@ function paa_av(clicked_id){
     else if (clicked_id == 'CL-PO') {
         document.getElementById(clicked_id).innerText = "";
         document.getElementById(clicked_id).id = 'CLPO'
+        // Midlertidig
+        // if (!document.getElementById("b-18")) {
+        //     oppdater_b2_b3_b6_b9();
+        // }
+        // if (!document.getElementById("b-9") && !document.getElementById("b-13") && !document.getElementById("b-14") && !document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
+        //     oppdater_b1();
+        // }
         if (!document.getElementById("b-13") && !document.getElementById("b-18") && !document.getElementById("b-19") && !document.getElementById("b-20")) {
             oppdater_b2_b3_b6_b9();
         }
@@ -200,7 +227,7 @@ function paa_av(clicked_id){
                 document.getElementById(clicked_id).innerText = (ja_språk || "");
             }
             document.getElementById(clicked_id).id = "b" + tall;
-            var aktuell_sum = (knapp_summer[nummer - 1][aarstall]);
+            var aktuell_sum = (knapp_summer[nummer - 1][aarstall-3]);
             if (clicked_id == "b1") {
                 if ((document.getElementById("b9")) && (document.getElementById("b13")) && (document.getElementById("b14")) && (document.getElementById("b18")) && (document.getElementById("b19")) && (document.getElementById("b20")) && (!document.getElementById("CL-PO"))) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -211,10 +238,16 @@ function paa_av(clicked_id){
                     summer();
                 }
             }
-            else if (clicked_id == "b2" || clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
+            else if (clicked_id == "b3" || clicked_id == "b6" || clicked_id == "b9" || clicked_id == "b10" ||  clicked_id == "b14") {
                 if (clicked_id == "b9" || clicked_id == "b14") {
                     document.getElementById("b1_").innerText = "";
                 }
+                // Midlertidig
+                // if ((clicked_id == 'b3' || clicked_id == 'b6' || clicked_id == 'b9') && (document.getElementById("CLPO")) && (document.getElementById("b18"))) {
+                //     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                //     summer();
+                //     rund_av_enkeltcelle(aktuell_sum, clicked_id);
+                // }
                 if ((document.getElementById("b13")) && (document.getElementById("b16")) && (document.getElementById("b18")) && (document.getElementById("b19")) && (!document.getElementById("CL-PO"))) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     summer();
@@ -236,11 +269,18 @@ function paa_av(clicked_id){
             }
             else {
                 if (clicked_id == "b13" || clicked_id == "b16" || clicked_id == "b18" || clicked_id == "b19") {
-                    document.getElementById("b2_").innerText = "";
                     document.getElementById("b3_").innerText = "";
                     document.getElementById("b6_").innerText = "";
                     document.getElementById("b9_").innerText = "";
+                    // Midlertidig
+                    // if (clicked_id != 'b13' && clicked_id != 'b19') {
+                    // document.getElementById("b3_").innerText = "";
+                    // document.getElementById("b6_").innerText = "";
+                    // document.getElementById("b9_").innerText = "";
+                    // }
                     if (clicked_id == "b19") {
+                        document.getElementById("uelQ1_").innerText = "";
+                        document.getElementById("uelQ2_").innerText = "";
                         document.getElementById("b14_").innerText = "";
                         document.getElementById("b10_").innerText = "";
                     }
@@ -309,21 +349,23 @@ function paa_av(clicked_id){
     }
 };
 function flytt_SCUP_sum_hoyre(clicked_id) {
-    let UEL_celle_1 = (document.getElementById(UEL_inntjening_celler[0]).innerText)
-    let UEL_celle_2 = (document.getElementById(UEL_inntjening_celler[1]).innerText)
+    let UEL_celle_00 = (document.getElementById(UEL_inntjening_celler[0]).innerText)
+    let UEL_celle_0 = (document.getElementById(UEL_inntjening_celler[1]).innerText)
+    let UEL_celle_1 = (document.getElementById(UEL_inntjening_celler[2]).innerText)
+    let UEL_celle_2 = (document.getElementById(UEL_inntjening_celler[3]).innerText)
     let UEL_celle_21 = (document.getElementById('b19_').innerText)
     let UEL_celle_22 = (document.getElementById('i2_').innerText)
     let UEL_celle_23 = (document.getElementById('i11_').innerText)
-    let UEL_celle_3 = (document.getElementById(UEL_inntjening_celler[2]).innerText)
-    let UEL_celle_4 = (document.getElementById(UEL_inntjening_celler[3]).innerText)
-    let UEL_celle_5 = (document.getElementById(UEL_inntjening_celler[4]).innerText)
-    let UEL_celle_6 = (document.getElementById(UEL_inntjening_celler[5]).innerText)
-    let UEL_celle_7 = (document.getElementById(UEL_inntjening_celler[6]).innerText)
-    let UEL_celle_8 = (document.getElementById(UEL_inntjening_celler[7]).innerText)
-    let UEL_celle_9 = (document.getElementById(UEL_inntjening_celler[8]).innerText)
-    let UEL_celle_10 = (document.getElementById(UEL_inntjening_celler[9]).innerText)
-    let UEL_celle_11 = (document.getElementById(UEL_inntjening_celler[10]).innerText)
-    if (UEL_celle_1 != '' || UEL_celle_2 != '' || UEL_celle_3 != '' || UEL_celle_4 != '' || UEL_celle_5 != '' || UEL_celle_6 != '' || UEL_celle_7 != '' || UEL_celle_8 != '' || UEL_celle_9 != '' || UEL_celle_10 != '' || UEL_celle_11 != '' || UEL_celle_21 != '' || UEL_celle_22 != '' || UEL_celle_23 != '' || document.getElementById('i14').value == 3 || document.getElementById('i14').value == 4) {
+    let UEL_celle_3 = (document.getElementById(UEL_inntjening_celler[4]).innerText)
+    let UEL_celle_4 = (document.getElementById(UEL_inntjening_celler[5]).innerText)
+    let UEL_celle_5 = (document.getElementById(UEL_inntjening_celler[6]).innerText)
+    let UEL_celle_6 = (document.getElementById(UEL_inntjening_celler[7]).innerText)
+    let UEL_celle_7 = (document.getElementById(UEL_inntjening_celler[8]).innerText)
+    let UEL_celle_8 = (document.getElementById(UEL_inntjening_celler[9]).innerText)
+    let UEL_celle_9 = (document.getElementById(UEL_inntjening_celler[10]).innerText)
+    let UEL_celle_10 = (document.getElementById(UEL_inntjening_celler[11]).innerText)
+    let UEL_celle_11 = (document.getElementById(UEL_inntjening_celler[12]).innerText)
+    if (UEL_celle_00 != '' || UEL_celle_0 != '' || UEL_celle_1 != '' || UEL_celle_2 != '' || UEL_celle_3 != '' || UEL_celle_4 != '' || UEL_celle_5 != '' || UEL_celle_6 != '' || UEL_celle_7 != '' || UEL_celle_8 != '' || UEL_celle_9 != '' || UEL_celle_10 != '' || UEL_celle_11 != '' || UEL_celle_21 != '' || UEL_celle_22 != '' || UEL_celle_23 != '' || document.getElementById('i14').value == 3 || document.getElementById('i14').value == 4) {
         if (UEL_inntjening_celler.includes(clicked_id + '_') || clicked_id == 'b36' || clicked_id == 'b37' ||  UEL_celle_21 != '' ||  UEL_celle_22 != '' || UEL_celle_23 != '') {
             if (document.getElementById('b36_').innerText != '') {
                 document.getElementById('b36_hoyre').innerText = document.getElementById('b36_').innerText
@@ -364,35 +406,39 @@ function flytt_SCUP_sum_venstre(clicked_id) {
 }
 function oppdater_b1() {
     if (document.getElementById("b-1")) {
-        var aktuell_sum = (knapp_summer[0][aarstall]);
+        var aktuell_sum = (knapp_summer[0][aarstall-3]);
         document.getElementById("b1_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 };
 function oppdater_b2_b3_b6_b9() {
-    if (document.getElementById("b-2")) {
-        var aktuell_sum = (knapp_summer[1][aarstall]);
-        document.getElementById("b2_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
     if (document.getElementById("b-3")) {
-        var aktuell_sum = (knapp_summer[2][aarstall]);
+        var aktuell_sum = (knapp_summer[2][aarstall-3]);
         document.getElementById("b3_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
     if (document.getElementById("b-6")) {
-        var aktuell_sum = (knapp_summer[5][aarstall]);
+        var aktuell_sum = (knapp_summer[5][aarstall-3]);
         document.getElementById("b6_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
     if (document.getElementById("b-9")) {
-        var aktuell_sum = (knapp_summer[8][aarstall]);
+        var aktuell_sum = (knapp_summer[8][aarstall-3]);
         document.getElementById("b9_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 };
 function oppdater_b10_b14() {
+    if (document.getElementById("uel-Q1")) {
+        let aktuell_sum = (knapp_summer[2][aarstall-3]);
+        document.getElementById("uelQ1_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+    if (document.getElementById("uel-Q2")) {
+        let aktuell_sum = (knapp_summer[2][aarstall-3]);
+        document.getElementById("uelQ2_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
     if (document.getElementById("b-10")) {
-        var aktuell_sum = (knapp_summer[9][aarstall]);
+        var aktuell_sum = (knapp_summer[9][aarstall-3]);
         document.getElementById("b10_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
     if (document.getElementById("b-14")) {
-        var aktuell_sum = (knapp_summer[13][aarstall]);
+        var aktuell_sum = (knapp_summer[13][aarstall-3]);
         document.getElementById("b14_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 };
@@ -412,7 +458,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
     if (document.getElementById(clicked_id).value != "") {
         if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltagere[nummer_2 - 1] && input_felt_verdi % 1 == 0) {
             var deltakere_i_turnering = antall_deltagere[nummer_2 - 1];
-            var aktuell_sum = ((deltakere_i_turnering + 1 - input_felt_verdi) * input_summer[nummer_2 - 1][aarstall]);
+            var aktuell_sum = ((deltakere_i_turnering + 1 - input_felt_verdi) * input_summer[nummer_2 - 1][aarstall-3]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if (nummer_2 == 1) {
                 UCL_ikke_avrundet[1] = aktuell_sum;
@@ -452,7 +498,10 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
     var input_felt_verdi = document.getElementById(clicked_id).value;
-    var innenfor_1_6 = (input_felt_verdi >= 0) && (input_felt_verdi <= 6);
+    var innenfor_1_8 = (input_felt_verdi >= 0) && (input_felt_verdi <= 8);
+    if (clicked_id == 'i6' || clicked_id == 'i9') {
+        innenfor_1_8 = (input_felt_verdi >= 0) && (input_felt_verdi <= 6);
+    }
     document.getElementById(clicked_id + "_").innerText = "";
     document.getElementById(clicked_id).style.borderColor = "";
     document.getElementById(clicked_id).style.backgroundColor = "";
@@ -461,21 +510,32 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
     if (nummer >= 4 && nummer <= 6 && document.getElementById(clicked_id).value != "") {
         let hjelp = (parseInt(document.getElementById("i" + (nummer_2 + 3)).value)) || 0;
         let hjelp_ikke_avrundet = (document.getElementById("i" + (nummer_2 + 3)).value) || 0;
-        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6));
+        let sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 8));
+        if (nummer == 6) {
+            sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6));
+        }
         if (hjelp < 0) {
             hjelp = 0
         }
-        else if (hjelp > 6) {
+        else if (hjelp > 8 && nummer != 6) {
+            hjelp = 8
+        }
+        else if (hjelp > 6 && nummer == 6) {
             hjelp = 6
         }
-        if (((sammen_innenfor_1_6 || hjelp_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (hjelp_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
-            var aktuell_sum = (input_felt_verdi * input_summer[nummer_2 - 1][aarstall]);
+        if (((sammen_innenfor_1_8 || hjelp_ikke_avrundet < 0) && innenfor_1_8 && input_felt_verdi % 1 == 0) || (hjelp_ikke_avrundet % 1 != 0 && innenfor_1_8 && input_felt_verdi % 1 == 0)) {
+            var aktuell_sum = (input_felt_verdi * input_summer[nummer_2 - 1][aarstall-3]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id);
             flytt_SCUP_sum_hoyre(clicked_id)
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
+        else if ((input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) && nummer == 6) {
+            utenfor_gyldig_input(clicked_id);
+            summer();
+            flytt_SCUP_sum_venstre(clicked_id)
+        }
+        else if ((input_felt_verdi > 8 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) && nummer != 6) {
             utenfor_gyldig_input(clicked_id);
             summer();
             flytt_SCUP_sum_venstre(clicked_id)
@@ -490,21 +550,32 @@ function forlat_input_felt_2(clicked_id, lagre_endring) {
     else if (nummer >= 7 && nummer <= 9 && document.getElementById(clicked_id).value != ""){
         let hjelp = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value)) || 0;
         let hjelp_ikke_avrundet = (document.getElementById("i" + (nummer_2 - 3)).value) || 0;
-        let sammen_innenfor_1_6 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6));
+        let sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 8));
+        if (nummer == 9) {
+            sammen_innenfor_1_8 = (parseInt(input_felt_verdi) + hjelp >= 0 && ((parseInt(input_felt_verdi)) + hjelp <= 6));
+        }
         if (hjelp < 0) {
             hjelp = 0
         }
-        else if (hjelp > 6) {
+        else if (hjelp > 8 && nummer != 9) {
+            hjelp = 8
+        }
+        else if (hjelp > 6 && nummer == 9) {
             hjelp = 6
         }
-        if (((sammen_innenfor_1_6 || hjelp_ikke_avrundet < 0) && innenfor_1_6 && input_felt_verdi % 1 == 0) || (hjelp_ikke_avrundet % 1 != 0 && innenfor_1_6 && input_felt_verdi % 1 == 0)) {
-            var aktuell_sum = (input_felt_verdi * input_summer[nummer_2 - 1][aarstall]);
+        if (((sammen_innenfor_1_8 || hjelp_ikke_avrundet < 0) && innenfor_1_8 && input_felt_verdi % 1 == 0) || (hjelp_ikke_avrundet % 1 != 0 && innenfor_1_8 && input_felt_verdi % 1 == 0)) {
+            var aktuell_sum = (input_felt_verdi * input_summer[nummer_2 - 1][aarstall-3]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             rund_av_enkeltcelle(aktuell_sum, clicked_id); 
             flytt_SCUP_sum_hoyre(clicked_id)
         }
-        else if (input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) {
+        else if ((input_felt_verdi > 6 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) && nummer == 9) {
+            utenfor_gyldig_input(clicked_id);
+            summer();
+            flytt_SCUP_sum_venstre(clicked_id)
+        }
+        else if ((input_felt_verdi > 8 || input_felt_verdi < 0 || input_felt_verdi % 1 != 0) && nummer != 9) {
             utenfor_gyldig_input(clicked_id);
             summer();
             flytt_SCUP_sum_venstre(clicked_id)
@@ -535,9 +606,12 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
     var totalt_antall_uavgjorte_kamper = document.getElementById(clicked_id).value;
     if (document.getElementById(clicked_id).value != "") {
         var antall_uavgjorte_kamper = (parseInt(document.getElementById("i" + (nummer_2 - 3)).value) || 0);
-        if ((totalt_antall_uavgjorte_kamper >= (antall_uavgjorte_kamper)) && ((totalt_antall_uavgjorte_kamper <= (96 - (6 - (antall_uavgjorte_kamper)) || 96))) && totalt_antall_uavgjorte_kamper % 1 == 0) {
-            var totale_ufordelte_ressurser = (totalt_antall_uavgjorte_kamper * input_summer[nummer_2 - 4][aarstall]);
-            var totalt_antall_kamper_med_vinner = (96 - document.getElementById(clicked_id).value);
+        if ((totalt_antall_uavgjorte_kamper >= (antall_uavgjorte_kamper)) && ((nummer_2 != 12 && ((totalt_antall_uavgjorte_kamper <= (144 - (8 - (antall_uavgjorte_kamper)) || 144)))) || (nummer_2 == 12 && ((totalt_antall_uavgjorte_kamper <= (108 - (6 - (antall_uavgjorte_kamper)) || 108))))) && totalt_antall_uavgjorte_kamper % 1 == 0) {
+            var totale_ufordelte_ressurser = (totalt_antall_uavgjorte_kamper * input_summer[nummer_2 - 4][aarstall-3]);
+            var totalt_antall_kamper_med_vinner = (144 - document.getElementById(clicked_id).value);
+            if (nummer_2 == 12) {
+                totalt_antall_kamper_med_vinner = (108 - document.getElementById(clicked_id).value);
+            }
             var antall_seiere = (document.getElementById("i" + (nummer_2 - 6)).value) || 0;
             var aktuell_sum = ((antall_seiere/totalt_antall_kamper_med_vinner)*totale_ufordelte_ressurser);
             let antall_seiere_er_desimal = (document.getElementById("i" + (nummer_2 - 6)).value % 1 == 0) || 0;
@@ -588,7 +662,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     if (document.getElementById(clicked_id).value != "") {
         if ((tabellplassering >= 1) && (tabellplassering <= 4) && tabellplassering % 1 == 0) {
             if (tabellplassering == 1) {
-                var aktuell_sum = input_summer[nummer_2 - 1][aarstall];
+                var aktuell_sum = input_summer[nummer_2 - 1][aarstall-3];
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 }
@@ -605,7 +679,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                 }
             }
             else if (tabellplassering == 2) {
-                aktuell_sum = input_summer[nummer_2 + 1][aarstall];
+                aktuell_sum = input_summer[nummer_2 + 1][aarstall-3];
                 if ((document.getElementById('i14').value != 3) && (document.getElementById('i15').value != 2)) {
                     document.getElementById('i15__').innerText = "";
                 }
@@ -614,7 +688,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                 }
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                    spilt_uslagsrunde_PO = input_summer[nummer_2 + 3][aarstall];
+                    spilt_uslagsrunde_PO = input_summer[nummer_2 + 3][aarstall-3];
                     document.getElementById(clicked_id + "__").innerText = "€ " + spilt_uslagsrunde_PO.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                 }
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {
@@ -627,23 +701,23 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
             }
             else if (tabellplassering == 3) {
                 if (clicked_id != 'i15') {
-                    spilt_uslagsrunde_PO = input_summer[nummer_2 + 4][aarstall];
+                    spilt_uslagsrunde_PO = input_summer[nummer_2 + 4][aarstall-3];
                 }
                 if ((clicked_id == 'i14') || (clicked_id == 'i15')) {
                     document.getElementById((clicked_id) + "_").innerText = "";
                 }
-                if ((clicked_id == 'i14') && (document.getElementById('i13').value != 3))  {
-                    document.getElementById('i14__').innerText = "";
-                }
-                if ((document.getElementById('i14').value != 3) && (document.getElementById('i15').value != 2)) {
-                    document.getElementById('i15__').innerText = "";
-                }
-                if ((clicked_id == 'i13') || (clicked_id == 'i14')) {
-                    document.getElementById('i' + (nummer_2 + 1) + "__").innerText = "€ " + spilt_uslagsrunde_PO.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                }
+                // if ((clicked_id == 'i14') && (document.getElementById('i13').value != 3))  {
+                //     document.getElementById('i14__').innerText = "";
+                // }
+                // if ((document.getElementById('i14').value != 3) && (document.getElementById('i15').value != 2)) {
+                //     document.getElementById('i15__').innerText = "";
+                // }
+                // if ((clicked_id == 'i13') || (clicked_id == 'i14')) {
+                //     document.getElementById('i' + (nummer_2 + 1) + "__").innerText = "€ " + spilt_uslagsrunde_PO.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                // }
                 summer();
                 if ((clicked_id == 'i13') || (clicked_id == 'i14')) {
-                    rund_av_enkeltcelle_3(spilt_uslagsrunde_PO, nummer_2);
+                    // rund_av_enkeltcelle_3(spilt_uslagsrunde_PO, nummer_2);
                     flytt_SCUP_sum_hoyre(clicked_id)
                 }
             }
@@ -784,6 +858,12 @@ function lagre_trykking() {
     if (document.getElementById('CL-PO')) {
         lagrede_verdier.push('CLPO');
     }
+    if (document.getElementById('uel-Q1')) {
+        lagrede_verdier.push('uelQ1');
+    }
+    if (document.getElementById('uel-Q2')) {
+        lagrede_verdier.push('uelQ2');
+    }
     for (var l=0;l<37;l++) {
         if (document.getElementById('b-' + (l + 1))) {
             lagrede_verdier.push('b' + (l + 1));
@@ -792,7 +872,7 @@ function lagre_trykking() {
     let Klubbnavn = (localStorage.getItem('Klubbnavn'))
     if (Klubbnavn == "Calculate from scratch" || Klubbnavn == "Kalkuler fra bunnen" || Klubbnavn == "Velg klubb" || Klubbnavn == "Choose club") {
         if (((document.getElementById('dropDownMeny').innerHTML).includes('Calculate from scratch')) || ((document.getElementById('dropDownMeny').innerHTML).includes('Kalkuler fra bunnen')) || ((document.getElementById('dropDownMeny').innerHTML).includes('Velg klubb')) || ((document.getElementById('dropDownMeny').innerHTML).includes('Choose club'))) {
-            localStorage.setItem('Hallo', lagrede_verdier);
+            localStorage.setItem('Hallo_post_24', lagrede_verdier);
         }
     }
 };
@@ -804,8 +884,8 @@ function lagre_trykking_input_1() {
         var verdi = document.getElementById('i' + (f + 1)).value;
         lagrede_verdier_input_1.push(verdi);
     }
-    localStorage.setItem('Hallo_input_id_1', lagrede_verdier_input_id_1);
-    localStorage.setItem('Hallo_input_verdi_1', lagrede_verdier_input_1);
+    localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_1);
+    localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_1);
 };
 function lagre_trykking_input_2() {
     var lagrede_verdier_input_id_2 = [];
@@ -815,8 +895,8 @@ function lagre_trykking_input_2() {
         var verdi = document.getElementById('i' + (f + 1)).value;
         lagrede_verdier_input_2.push(verdi);
     }
-    localStorage.setItem('Hallo_input_id_2', lagrede_verdier_input_id_2);
-    localStorage.setItem('Hallo_input_verdi_2', lagrede_verdier_input_2);
+    localStorage.setItem('Hallo_input_id_2_post_24', lagrede_verdier_input_id_2);
+    localStorage.setItem('Hallo_input_verdi_2_post_24', lagrede_verdier_input_2);
 };
 function lagre_trykking_input_3() {
     var lagrede_verdier_input_id_3 = [];
@@ -826,8 +906,8 @@ function lagre_trykking_input_3() {
         var verdi = document.getElementById('i' + (y + 1)).value;
         lagrede_verdier_input_3.push(verdi);
     }
-    localStorage.setItem('Hallo_input_id_3', lagrede_verdier_input_id_3);
-    localStorage.setItem('Hallo_input_verdi_3', lagrede_verdier_input_3);
+    localStorage.setItem('Hallo_input_id_3_post_24', lagrede_verdier_input_id_3);
+    localStorage.setItem('Hallo_input_verdi_3_post_24', lagrede_verdier_input_3);
 };
 function lagre_trykking_input_4() {
     var lagrede_verdier_input_id_4 = [];
@@ -837,8 +917,8 @@ function lagre_trykking_input_4() {
         var verdi = document.getElementById('i' + (z + 1)).value;
         lagrede_verdier_input_4.push(verdi);
     }
-    localStorage.setItem('Hallo_input_id_4', lagrede_verdier_input_id_4);
-    localStorage.setItem('Hallo_input_verdi_4', lagrede_verdier_input_4);
+    localStorage.setItem('Hallo_input_id_4_post_24', lagrede_verdier_input_id_4);
+    localStorage.setItem('Hallo_input_verdi_4_post_24', lagrede_verdier_input_4);
 };
 
 function slett(slett_lagring) {
@@ -847,8 +927,11 @@ function slett(slett_lagring) {
             paa_av('b-' + (c + 1));
         }
     }
-    if (document.getElementById('CL-PO')) {
-        paa_av('CL-PO');
+    const fjerne_knapper = ['CL-PO', 'uel-Q1', 'uel-Q2'];
+    for (let i=0;i<fjerne_knapper.length;i++) {
+        if (document.getElementById(fjerne_knapper[i])) {
+            paa_av(fjerne_knapper[i]);
+        }
     }
     for (var ce=0;ce<3;ce++) {
         document.getElementById('i' + (ce + 1)).value = "";
@@ -867,15 +950,15 @@ function slett(slett_lagring) {
         forlat_input_felt_4('i' + (ce + 1), slett_lagring);
     }
     if (slett_lagring != "nei" && (localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
-        localStorage.setItem('Hallo', null);
-        localStorage.setItem('Hallo_input_id_1', "");
-        localStorage.setItem('Hallo_input_verdi_1', "");
-        localStorage.setItem('Hallo_input_id_2', "");
-        localStorage.setItem('Hallo_input_verdi_2', "");
-        localStorage.setItem('Hallo_input_id_3', "");
-        localStorage.setItem('Hallo_input_verdi_3', "");
-        localStorage.setItem('Hallo_input_id_4', "");
-        localStorage.setItem('Hallo_input_verdi_4', "");
+        localStorage.setItem('Hallo_post_24', null);
+        localStorage.setItem('Hallo_input_id_1_post_24', "");
+        localStorage.setItem('Hallo_input_verdi_1_post_24', "");
+        localStorage.setItem('Hallo_input_id_2_post_24', "");
+        localStorage.setItem('Hallo_input_verdi_2_post_24', "");
+        localStorage.setItem('Hallo_input_id_3_post_24', "");
+        localStorage.setItem('Hallo_input_verdi_3_post_24', "");
+        localStorage.setItem('Hallo_input_id_4_post_24', "");
+        localStorage.setItem('Hallo_input_verdi_4_post_24', "");
     }
 };
 
@@ -938,15 +1021,15 @@ function oppdater_ved_refresh_1() {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
-        const motak = localStorage.getItem('Hallo');
-        const motak_2 = localStorage.getItem('Hallo_input_id_1');
-        const motak_3 = localStorage.getItem('Hallo_input_verdi_1');
-        const motak_4 = localStorage.getItem('Hallo_input_id_2');
-        const motak_5 = localStorage.getItem('Hallo_input_verdi_2');
-        const motak_6 = localStorage.getItem('Hallo_input_id_3');
-        const motak_7 = localStorage.getItem('Hallo_input_verdi_3');
-        const motak_8 = localStorage.getItem('Hallo_input_id_4');
-        const motak_9 = localStorage.getItem('Hallo_input_verdi_4');
+        const motak = localStorage.getItem('Hallo_post_24');
+        const motak_2 = localStorage.getItem('Hallo_input_id_1_post_24');
+        const motak_3 = localStorage.getItem('Hallo_input_verdi_1_post_24');
+        const motak_4 = localStorage.getItem('Hallo_input_id_2_post_24');
+        const motak_5 = localStorage.getItem('Hallo_input_verdi_2_post_24');
+        const motak_6 = localStorage.getItem('Hallo_input_id_3_post_24');
+        const motak_7 = localStorage.getItem('Hallo_input_verdi_3_post_24');
+        const motak_8 = localStorage.getItem('Hallo_input_id_4_post_24');
+        const motak_9 = localStorage.getItem('Hallo_input_verdi_4_post_24');
         // let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_9 + '"],';
         // alert(profildata)
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
@@ -997,16 +1080,12 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
         else {
             null;
         }
-        if (aarstall == 0) {
-          document.getElementById('sessong_kontroller_1').disabled = true;
-          // document.getElementById('sessong_kontroller_2').disabled = false;
+        if (aarstall < 3) {
+            location.href = '/prize-money-calculator.html';
         }
-        else if (aarstall > 2) {
-            location.href = '/prize-money-calculator-post-24.html';
-        }
-        else {
-          document.getElementById('sessong_kontroller_1').disabled = false;
-          document.getElementById('sessong_kontroller_2').disabled = false;
+        if (aarstall == 3) {
+            document.getElementById('sessong_kontroller_1').disabled = false;
+            document.getElementById('sessong_kontroller_2').disabled = true;
         }
         oppdater_sessong(aarstall)
     }
@@ -1082,20 +1161,8 @@ function endre_sessong(clicked_id) {
     else {
         aarstall += 1;
     }
-    if (aarstall == 0) {
-      document.getElementById('sessong_kontroller_1').disabled = true;
-      document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else if (aarstall == 2) {
-      document.getElementById('sessong_kontroller_1').disabled = false;
-      document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else if (aarstall > 2) {
-        location.href = '/prize-money-calculator-post-24.html';
-    }
-    else {
-      document.getElementById('sessong_kontroller_1').disabled = false;
-      document.getElementById('sessong_kontroller_2').disabled = false;
+    if (aarstall < 3) {
+        location.href = '/prize-money-calculator.html';
     }
     localStorage.setItem('sessong', aarstall);
     slett("nei")
@@ -1113,7 +1180,7 @@ function oppdater_sessong(aarstall) {
     }
     for (var uu=0;uu<37;uu++) {
         if (document.getElementById("b-" + (uu + 1))) {
-            var aktuell_sum = (knapp_summer[uu][aarstall]);
+            var aktuell_sum = (knapp_summer[uu][aarstall-3]);
             document.getElementById("b" + (uu + 1) + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
         }
     }
@@ -1123,7 +1190,7 @@ function oppdater_sessong(aarstall) {
         }
         else {
             if (document.getElementById("b-" + (uy + 1))) {
-                var aktuell_sum = (knapp_summer[uy][aarstall]);
+                var aktuell_sum = (knapp_summer[uy][aarstall-3]);
                 var avrundet = Number((aktuell_sum).toFixed(0));
                 document.getElementById('b' + (uy + 1) + '_').innerText = "€ " + avrundet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             }      
@@ -1134,7 +1201,6 @@ function oppdater_sessong(aarstall) {
         paa_av('b10')
     }
     if ((document.getElementById("b-13")) || (document.getElementById("b-16")) || (document.getElementById("b-18")) || (document.getElementById("b-19"))) {
-        document.getElementById('b2_').innerText = "";
         document.getElementById('b3_').innerText = "";
         document.getElementById('b6_').innerText = "";
         document.getElementById('b9_').innerText = "";
@@ -1166,7 +1232,6 @@ function oppdater_sessong(aarstall) {
     }
     if (document.getElementById('CL-PO')) {
         document.getElementById("b1_").innerText = "";
-        document.getElementById("b2_").innerText = "";
         document.getElementById("b3_").innerText = "";
         document.getElementById("b6_").innerText = "";
         document.getElementById("b9_").innerText = "";

@@ -25,14 +25,22 @@ else {
 function endre_sessong(clicked_id) {
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   if (clicked_id == 'sessong_kontroller_1') {
-    aarstall = 0;
+    aarstall -= 1;
+  }
+  else {
+    aarstall += 1;
+  }
+  if (aarstall == 0) {
     document.getElementById('sessong_kontroller_1').disabled = true;
     document.getElementById('sessong_kontroller_2').disabled = false;
   }
-  else {
-    aarstall = 1;
-    document.getElementById('sessong_kontroller_2').disabled = true;
+  else if (aarstall == 3) {
     document.getElementById('sessong_kontroller_1').disabled = false;
+    document.getElementById('sessong_kontroller_2').disabled = true;
+  }
+  else {
+    document.getElementById('sessong_kontroller_1').disabled = false;
+    document.getElementById('sessong_kontroller_2').disabled = false;
   }
   localStorage.setItem('sessong', aarstall);
   oppdater_sessong(aarstall)
@@ -53,18 +61,17 @@ if (aarstall == 0) {
   document.getElementById('sessong_kontroller_1').disabled = true;
   document.getElementById('sessong_kontroller_2').disabled = false;
 }
-if (aarstall == 1) {
+else if (aarstall == 3) {
   document.getElementById('sessong_kontroller_1').disabled = false;
   document.getElementById('sessong_kontroller_2').disabled = true;
 }
+else {
+  document.getElementById('sessong_kontroller_1').disabled = false;
+  document.getElementById('sessong_kontroller_2').disabled = false;
+}
 oppdater_sessong(aarstall)
 function oppdater_sessong(aarstall) {
-  if (aarstall == 0) {
-    document.getElementById("sessong_id").innerText = "21/22";
-  }
-  if (aarstall == 1) {
-    document.getElementById("sessong_id").innerText = "22/23";
-  }
+  document.getElementById("sessong_id").innerText = (aarstall + 21) + '/' + (aarstall + 22);
 }
 
 
@@ -172,7 +179,7 @@ $('th').on('click', function(){
 function sorter_etter_sesong() {
   var menyvalg_edit = menyvalg.slice(0);
   const ucl_knapper = ['b2', 'b3', 'b6', 'b9', 'b13', 'CLPO', 'b16', 'b18'];
-  const uel_knapper = ['b10', 'b14', 'b19'];
+  const uel_knapper = ['uelQ1', 'uelQ2', 'b10', 'b14', 'b19'];
   const uecl_knapper = ['b4', 'b7', 'b11', 'b15', 'b20'];
   const scup_knapper = ['b36'];
   for (var i = 0; i < menyvalg_edit.length; i++) {
@@ -225,7 +232,7 @@ function sorter_etter_sesong() {
       }
       /* --------------------------------------------------------- */
       const ucl_knapper_riktig = ['b2', 'b3', 'b6', 'b9', 'b13', 'CLPO', 'b16', 'b18', 'b21', 'b24', 'b27', 'b30', 'b33'];
-      const uel_knapper_riktig = ['', '', '', 'b10', '', 'b14', 'b16', 'b19', 'b22', 'b25', 'b28', 'b31', 'b34'];
+      const uel_knapper_riktig = ['', 'uelQ1', 'uelQ2', 'b10', '', 'b14', 'b16', 'b19', 'b22', 'b25', 'b28', 'b31', 'b34'];
       const uecl_knapper_riktig = ['','b4', 'b7', 'b11', '', 'b15', 'b17', 'b20', 'b23', 'b26', 'b29', 'b32', 'b35'];
       if (containsAll) {
         // if (!trykte_knapper.includes(knapp_filter_turneringer[0]) && (!trykte_knapper.includes(knapp_filter_turneringer[1])) && !trykte_knapper.includes(knapp_filter_turneringer[2])) {
@@ -1197,12 +1204,10 @@ function adva_filtrer(clicked_id) {
       }
     }
     if (knapp_filter_turneringer.includes(clicked_id)) {
-
       let index = trykte_knapper.indexOf(knapp_filter_turneringer[0]);
       if (index > -1) {trykte_knapper.splice(index, 1);}
       index = trykte_knapper_exclude.indexOf(knapp_filter_turneringer[0]);
       if (index > -1) {trykte_knapper_exclude.splice(index, 1);}
-
       index = trykte_knapper.indexOf(knapp_filter_turneringer[1]);
       if (index > -1) {trykte_knapper.splice(index, 1);}
       index = trykte_knapper_exclude.indexOf(knapp_filter_turneringer[1]);
