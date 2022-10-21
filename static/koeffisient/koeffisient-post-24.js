@@ -105,6 +105,10 @@ const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__"
 var aarstall = ((localStorage.getItem('sessong'))) || 1;
 aarstall = parseInt(aarstall)
 
+if (aarstall < 3) {
+    location.href = '/coefficient-calculator.html';
+}
+
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
@@ -709,9 +713,6 @@ function oppdater_ved_refresh_koeff_1() {
     if (aarstall == 0) {
         document.getElementById('sessong_kontroller_1').disabled = true;
         // document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    if (aarstall < 3) {
-        location.href = '/coefficient-calculator.html';
     }
     if (aarstall == 3) {
         document.getElementById('sessong_kontroller_1').disabled = false;

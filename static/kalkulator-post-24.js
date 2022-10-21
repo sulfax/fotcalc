@@ -161,6 +161,10 @@ else {
     aarstall = parseInt(localStorage.getItem('sessong'));
 }
 
+if (aarstall < 3) {
+    location.href = '/prize-money-calculator.html';
+}
+
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){
     if (clicked_id == 'uelQ1' || clicked_id == 'uelQ2') {
@@ -1079,9 +1083,6 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
         }
         else {
             null;
-        }
-        if (aarstall < 3) {
-            location.href = '/prize-money-calculator.html';
         }
         if (aarstall == 3) {
             document.getElementById('sessong_kontroller_1').disabled = false;

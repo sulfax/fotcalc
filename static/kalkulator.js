@@ -67,7 +67,6 @@ var UECL_spilt_utslagsrunde_PO_2122 = 300000;
 
 
 
-
 const knapp_summer = [
     [Hjemlig_seriemester_2122,          Hjemlig_seriemester_2122,          Hjemlig_seriemester_2122],
     [Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122,         Spilt_Pre_Q_eller_PO_2122],
@@ -160,6 +159,10 @@ if (localStorage.getItem('sessong') == null) {
 }
 else {
     aarstall = parseInt(localStorage.getItem('sessong'));
+}
+
+if (aarstall > 2) {
+    location.href = '/prize-money-calculator-post-24.html';
 }
 
 oppdater_ved_refresh_1()
@@ -1000,9 +1003,6 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
         if (aarstall == 0) {
           document.getElementById('sessong_kontroller_1').disabled = true;
           // document.getElementById('sessong_kontroller_2').disabled = false;
-        }
-        else if (aarstall > 2) {
-            location.href = '/prize-money-calculator-post-24.html';
         }
         else {
           document.getElementById('sessong_kontroller_1').disabled = false;
