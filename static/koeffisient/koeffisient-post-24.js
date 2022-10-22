@@ -476,13 +476,16 @@ function endre_sessong(clicked_id) {
     else {
         aarstall += 1;
     }
+    localStorage.setItem('sessong', aarstall);
     if (aarstall < 3) {
+        document.getElementById('sessong_kontroller_1').disabled = true;
         location.href = '/coefficient-calculator';
     }
-    localStorage.setItem('sessong', aarstall);
-    slett("nei")
-    oppdater_sessong(aarstall)
-    oppdater_ved_refresh_koeff_1()
+    else {
+        slett("nei")
+        oppdater_sessong(aarstall)
+        oppdater_ved_refresh_koeff_1()
+    }
 };
 
 function oppdater_sessong(aarstall) {

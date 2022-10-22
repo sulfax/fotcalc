@@ -1162,13 +1162,16 @@ function endre_sessong(clicked_id) {
     else {
         aarstall += 1;
     }
+    localStorage.setItem('sessong', aarstall);
     if (aarstall < 3) {
+        document.getElementById('sessong_kontroller_1').disabled = true;
         location.href = '/prize-money-calculator';
     }
-    localStorage.setItem('sessong', aarstall);
-    slett("nei")
-    oppdater_ved_refresh_1()
-    oppdater_sessong(aarstall)
+    else {
+        slett("nei")
+        oppdater_ved_refresh_1()
+        oppdater_sessong(aarstall)
+    }
 };
 
 function oppdater_sessong(aarstall) {
