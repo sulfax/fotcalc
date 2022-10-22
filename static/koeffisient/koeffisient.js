@@ -80,6 +80,15 @@ aarstall = parseInt(aarstall)
 if (aarstall > 2) {
     location.href = '/coefficient-calculator-post-24';
 }
+else if (aarstall == 0) {
+    document.getElementById('sessong_kontroller_1').disabled = true;
+    // document.getElementById('sessong_kontroller_2').disabled = false;
+}
+else {
+    document.getElementById('sessong_kontroller_1').disabled = false;
+    document.getElementById('sessong_kontroller_2').disabled = false;
+}
+oppdater_sessong(aarstall)
 
 for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
@@ -668,21 +677,6 @@ function oppdater_ved_refresh_koeff_1() {
     else {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
-    if (parseInt(localStorage.getItem('sessong'))) {
-        aarstall = parseInt(localStorage.getItem('sessong'));
-    }
-    else {
-        null;
-    }
-    if (aarstall == 0) {
-        document.getElementById('sessong_kontroller_1').disabled = true;
-        // document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else {
-        document.getElementById('sessong_kontroller_1').disabled = false;
-        document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    oppdater_sessong(aarstall)
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
         const deltakelse_eliminasjon = localStorage.getItem('deltakelse_eliminasjon_status_local_s') || '';
         const resultat = localStorage.getItem('resultat_status_local_s') || '';
