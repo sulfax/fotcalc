@@ -78,6 +78,7 @@ var aarstall = ((localStorage.getItem('sessong'))) || 1;
 aarstall = parseInt(aarstall)
 
 if (aarstall > 2) {
+    document.getElementById('sessong_kontroller_2').disabled = true;
     location.href = '/coefficient-calculator-post-24';
 }
 
