@@ -467,26 +467,28 @@ function endre_sessong(clicked_id) {
     else {
         aarstall += 1;
     }
-    if (aarstall == 0) {
-      document.getElementById('sessong_kontroller_1').disabled = true;
-      document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else if (aarstall == 2) {
-      document.getElementById('sessong_kontroller_1').disabled = false;
-      document.getElementById('sessong_kontroller_2').disabled = false;
-    }
-    else if (aarstall > 2) {
+    if (aarstall > 2) {
         document.getElementById('sessong_kontroller_2').disabled = true;
         location.href = '/coefficient-calculator-post-24';
     }
     else {
-      document.getElementById('sessong_kontroller_1').disabled = false;
-      document.getElementById('sessong_kontroller_2').disabled = false;
+        if (aarstall == 0) {
+            document.getElementById('sessong_kontroller_1').disabled = true;
+            document.getElementById('sessong_kontroller_2').disabled = false;
+          }
+          else if (aarstall == 2) {
+            document.getElementById('sessong_kontroller_1').disabled = false;
+            document.getElementById('sessong_kontroller_2').disabled = false;
+          }
+          else {
+            document.getElementById('sessong_kontroller_1').disabled = false;
+            document.getElementById('sessong_kontroller_2').disabled = false;
+          }
+          localStorage.setItem('sessong', aarstall);
+          slett("nei")
+          oppdater_sessong(aarstall)
+          oppdater_ved_refresh_koeff_1()
     }
-    localStorage.setItem('sessong', aarstall);
-    slett("nei")
-    oppdater_sessong(aarstall)
-    oppdater_ved_refresh_koeff_1()
 };
 
 function oppdater_sessong(aarstall) {
