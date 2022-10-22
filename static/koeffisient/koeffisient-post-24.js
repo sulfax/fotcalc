@@ -82,8 +82,10 @@ const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__"
 
 var aarstall = ((localStorage.getItem('sessong'))) || 1;
 aarstall = parseInt(aarstall)
-
-if (aarstall < 3) {
+if (aarstall > 3) {
+    aarstall = 3
+}
+else if (aarstall < 3) {
     location.href = '/coefficient-calculator';
 }
 

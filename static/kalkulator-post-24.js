@@ -159,6 +159,9 @@ if (localStorage.getItem('sessong') == null) {
 }
 else {
     aarstall = parseInt(localStorage.getItem('sessong'));
+    if (aarstall > 3) {
+        aarstall = 3
+    }
 }
 
 if (aarstall < 3) {
