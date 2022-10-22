@@ -33,61 +33,33 @@ var UECL_førsteplass_2122 = 2;
 var UEL_andreplass_2122 = 2; 
 var UECL_andreplass_2122 = 1;
 
-
-
-
-/*22/23 knapper*/
-let Seier_kvalifisering_2223 = 1;
-let Uavgjort_kvalifisering_2223 = 0.5;
-let Seier_utslagsrunde_2223 = 2;
-let Uavgjort_utslagsrunde_2223 = 1;
-let Eliminert_Deltatt_2223 = 1;
-let Åttendels_Deltatt_2223 = 5;
-let Gruppespill_UCL_2223 = 4;
-let Gruppespill_UEL_minimum_2223 = 3;
-let Gruppespill_UECL_minimum_2223 = 2.5;
-let Eliminert_Q2_UECL_2223 = 1.5;
-let Eliminert_Q3_UECL_2223 = 2;
-let Eliminert_PO_UECL_2223 = 2.5;
-/*22/23 input felt*/
-var UCL_seier_2223 = 2;
-var UEL_seier_2223 = 2;
-var UECL_seier_2223 = 2;
-var UCL_uavgjort_2223 = 1;
-var UEL_uavgjort_2223 = 1;
-var UECL_uavgjort_2223 = 1;
-var UEL_førsteplass_2223 = 4;
-var UECL_førsteplass_2223 = 2;
-var UEL_andreplass_2223 = 2; 
-var UECL_andreplass_2223 = 1;
-
 const knapp_summer = [
-    [Seier_kvalifisering_2122,          Seier_kvalifisering_2122],
-    [Uavgjort_kvalifisering_2122,       Uavgjort_kvalifisering_2122],
-    [Seier_utslagsrunde_2122,           Seier_utslagsrunde_2122],
-    [Uavgjort_utslagsrunde_2122,        Uavgjort_utslagsrunde_2122],
-    [Eliminert_Deltatt_2122,            Eliminert_Deltatt_2122],
-    [Åttendels_Deltatt_2122,            Åttendels_Deltatt_2122],
-    [Gruppespill_UCL_2122,              Gruppespill_UCL_2122],
-    [Gruppespill_UEL_minimum_2122,      Gruppespill_UEL_minimum_2122],
-    [Gruppespill_UECL_minimum_2122,     Gruppespill_UECL_minimum_2122],
-    [Eliminert_Q2_UECL_2122,            Eliminert_Q2_UECL_2122],
-    [Eliminert_Q3_UECL_2122,            Eliminert_Q3_UECL_2122],
-    [Eliminert_PO_UECL_2122,            Eliminert_PO_UECL_2122]
+    [Seier_kvalifisering_2122],
+    [Uavgjort_kvalifisering_2122],
+    [Seier_utslagsrunde_2122],
+    [Uavgjort_utslagsrunde_2122],
+    [Eliminert_Deltatt_2122],
+    [Åttendels_Deltatt_2122],
+    [Gruppespill_UCL_2122],
+    [Gruppespill_UEL_minimum_2122],
+    [Gruppespill_UECL_minimum_2122],
+    [Eliminert_Q2_UECL_2122],
+    [Eliminert_Q3_UECL_2122],
+    [Eliminert_PO_UECL_2122]
 ]
 
 const input_summer = [
-    [UCL_seier_2122,                    UCL_seier_2122],
-    [UEL_seier_2122,                    UEL_seier_2122],
-    [UECL_seier_2122,                   UECL_seier_2122],
-    [UCL_uavgjort_2122,                 UCL_uavgjort_2122],
-    [UEL_uavgjort_2122,                 UEL_uavgjort_2122],
-    [UECL_uavgjort_2122,                UECL_uavgjort_2122],
+    [UCL_seier_2122],
+    [UEL_seier_2122],
+    [UECL_seier_2122],
+    [UCL_uavgjort_2122],
+    [UEL_uavgjort_2122],
+    [UECL_uavgjort_2122],
 
-    [UEL_førsteplass_2122,              UEL_førsteplass_2122],
-    [UECL_førsteplass_2122,             UECL_førsteplass_2122],
-    [UEL_andreplass_2122,               UEL_andreplass_2122],
-    [UECL_andreplass_2122,              UECL_andreplass_2122]
+    [UEL_førsteplass_2122],
+    [UECL_førsteplass_2122],
+    [UEL_andreplass_2122],
+    [UECL_andreplass_2122]
 ];
 
 let resultat_status = [];
@@ -450,30 +422,14 @@ function oppdater_plassering(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (input_felt_verdi >= 1 && input_felt_verdi <= 4 && document.getElementById(clicked_id).value != "" && input_felt_verdi % 1 == 0) {
-        if (clicked_id == "i8") {
+        if (felt_nummer == 8 || felt_nummer == 9) {
             if (input_felt_verdi == 1) {
-                var aktuell_sum = input_summer[6][0];
+                var aktuell_sum = input_summer[felt_nummer-2][0];
                 document.getElementById(clicked_id + "_").innerText = aktuell_sum;
                 document.getElementById(clicked_id + "__").innerText = aktuell_sum;
             }
             else if (input_felt_verdi == 2) {
-                var aktuell_sum = input_summer[8][0];
-                document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-            }
-            else {
-                document.getElementById(clicked_id + "_").innerText = "";
-                document.getElementById(clicked_id + "__").innerText = "";
-            }
-        }
-        else if (clicked_id == "i9") {
-            if (input_felt_verdi == 1) {
-                var aktuell_sum = input_summer[7][0];
-                document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-            }
-            else if (input_felt_verdi == 2) {
-                var aktuell_sum = input_summer[9][0];
+                var aktuell_sum = input_summer[felt_nummer][0];
                 document.getElementById(clicked_id + "_").innerText = aktuell_sum;
                 document.getElementById(clicked_id + "__").innerText = aktuell_sum;
             }
