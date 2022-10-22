@@ -163,10 +163,15 @@ else {
         aarstall = 3
     }
 }
-
 if (aarstall < 3) {
     location.href = '/prize-money-calculator';
 }
+else if (aarstall == 3) {
+    document.getElementById('sessong_kontroller_1').disabled = false;
+    document.getElementById('sessong_kontroller_2').disabled = true;
+}
+oppdater_sessong(aarstall)
+
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){
@@ -1080,22 +1085,6 @@ function oppdater_ved_refresh_1() {
 };
 
 function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9) {
-    try {
-        if (parseInt(localStorage.getItem('sessong'))) {
-            aarstall = parseInt(localStorage.getItem('sessong'));
-        }
-        else {
-            null;
-        }
-        if (aarstall == 3) {
-            document.getElementById('sessong_kontroller_1').disabled = false;
-            document.getElementById('sessong_kontroller_2').disabled = true;
-        }
-        oppdater_sessong(aarstall)
-    }
-    finally {
-        null;
-    }
     try {
         try {
             var oppdelt_motak = motak.split(',');
