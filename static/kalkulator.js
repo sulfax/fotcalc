@@ -162,7 +162,7 @@ else {
 }
 
 if (aarstall > 2) {
-    location.href = '/prize-money-calculator-post-24.html';
+    location.href = '/prize-money-calculator-post-24';
 }
 
 oppdater_ved_refresh_1()
@@ -1091,7 +1091,7 @@ function endre_sessong(clicked_id) {
       document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else if (aarstall > 2) {
-        location.href = '/prize-money-calculator-post-24.html';
+        location.href = '/prize-money-calculator-post-24';
     }
     else {
       document.getElementById('sessong_kontroller_1').disabled = false;

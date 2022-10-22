@@ -78,7 +78,7 @@ var aarstall = ((localStorage.getItem('sessong'))) || 1;
 aarstall = parseInt(aarstall)
 
 if (aarstall > 2) {
-    location.href = '/coefficient-calculator-post-24.html';
+    location.href = '/coefficient-calculator-post-24';
 }
 
 for (let p = 1; p < 10; p++) {
@@ -476,7 +476,7 @@ function endre_sessong(clicked_id) {
       document.getElementById('sessong_kontroller_2').disabled = false;
     }
     else if (aarstall > 2) {
-        location.href = '/coefficient-calculator-post-24.html';
+        location.href = '/coefficient-calculator-post-24';
     }
     else {
       document.getElementById('sessong_kontroller_1').disabled = false;

@@ -84,7 +84,7 @@ var aarstall = ((localStorage.getItem('sessong'))) || 1;
 aarstall = parseInt(aarstall)
 
 if (aarstall < 3) {
-    location.href = '/coefficient-calculator.html';
+    location.href = '/coefficient-calculator';
 }
 
 for (let p = 1; p < 10; p++) {
@@ -477,7 +477,7 @@ function endre_sessong(clicked_id) {
         aarstall += 1;
     }
     if (aarstall < 3) {
-        location.href = '/coefficient-calculator.html';
+        location.href = '/coefficient-calculator';
     }
     localStorage.setItem('sessong', aarstall);
     slett("nei")

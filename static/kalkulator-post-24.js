@@ -162,7 +162,7 @@ else {
 }
 
 if (aarstall < 3) {
-    location.href = '/prize-money-calculator.html';
+    location.href = '/prize-money-calculator';
 }
 
 oppdater_ved_refresh_1()
@@ -1163,7 +1163,7 @@ function endre_sessong(clicked_id) {
         aarstall += 1;
     }
     if (aarstall < 3) {
-        location.href = '/prize-money-calculator.html';
+        location.href = '/prize-money-calculator';
     }
     localStorage.setItem('sessong', aarstall);
     slett("nei")
