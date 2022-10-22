@@ -2,7 +2,6 @@ var antall_MV_elem = 8;
 
 /*Variabler som skal brukes i utregninger under*/
 /*21/22 variabler til utregning av noen summer*/
-
 var UCL_total_mengde_2122 = 2002000000;
 var UEL_total_mengde_2122 = 465000000; 
 var UECL_total_mengde_2122 = 235000000;
@@ -173,6 +172,7 @@ else {
     document.getElementById('sessong_kontroller_1').disabled = false;
     document.getElementById('sessong_kontroller_2').disabled = false;
 }
+
 oppdater_sessong(aarstall)
 
 
@@ -1106,24 +1106,24 @@ function oppdater_sessong(aarstall) {
     if (aarstall >= 1) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
     }
-    for (var uu=0;uu<37;uu++) {
-        if (document.getElementById("b-" + (uu + 1))) {
-            var aktuell_sum = (knapp_summer[uu][aarstall]);
-            document.getElementById("b" + (uu + 1) + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        }
-    }
-    for (var uy=0;uy<37;uy++) {
-        if (uy == 12) {
-            null;
-        }
-        else {
-            if (document.getElementById("b-" + (uy + 1))) {
-                var aktuell_sum = (knapp_summer[uy][aarstall]);
-                var avrundet = Number((aktuell_sum).toFixed(0));
-                document.getElementById('b' + (uy + 1) + '_').innerText = "€ " + avrundet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            }      
-        }
-    }
+    // for (var uu=0;uu<37;uu++) {
+    //     if (document.getElementById("b-" + (uu + 1))) {
+    //         var aktuell_sum = (knapp_summer[uu][aarstall]);
+    //         document.getElementById("b" + (uu + 1) + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    //     }
+    // }
+    // for (var uy=0;uy<37;uy++) {
+    //     if (uy == 12) {
+    //         null;
+    //     }
+    //     else {
+    //         if (document.getElementById("b-" + (uy + 1))) {
+    //             var aktuell_sum = (knapp_summer[uy][aarstall]);
+    //             var avrundet = Number((aktuell_sum).toFixed(0));
+    //             document.getElementById('b' + (uy + 1) + '_').innerText = "€ " + avrundet.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    //         }      
+    //     }
+    // }
     if (document.getElementById('b-10')) {
         paa_av('b-10')
         paa_av('b10')
@@ -1147,18 +1147,18 @@ function oppdater_sessong(aarstall) {
     document.getElementById('i10').placeholder = totale_uavgjorte_kamper[aarstall][0].replace(/,/g,'');
     document.getElementById('i11').placeholder = totale_uavgjorte_kamper[aarstall][1].replace(/,/g,'');
     document.getElementById('i12').placeholder = totale_uavgjorte_kamper[aarstall][2].replace(/,/g,'');
-    for (var rt=0;rt<3;rt++) {
-        forlat_input_felt_1('i' + (rt + 1));
-    }
-    for (var ra=3;ra<9;ra++) {
-        gjennomfør_1_gang_per_knapp('i' + (ra + 1));
-    }
-    for (var re=9;re<12;re++) {
-        forlat_input_felt_3('i' + (re + 1));
-    }
-    for (var ry=12;ry<15;ry++) {
-        forlat_input_felt_4('i' + (ry + 1));
-    }
+    // for (var rt=0;rt<3;rt++) {
+    //     forlat_input_felt_1('i' + (rt + 1));
+    // }
+    // for (var ra=3;ra<9;ra++) {
+    //     gjennomfør_1_gang_per_knapp('i' + (ra + 1));
+    // }
+    // for (var re=9;re<12;re++) {
+    //     forlat_input_felt_3('i' + (re + 1));
+    // }
+    // for (var ry=12;ry<15;ry++) {
+    //     forlat_input_felt_4('i' + (ry + 1));
+    // }
     if (document.getElementById('CL-PO')) {
         document.getElementById("b1_").innerText = "";
         document.getElementById("b2_").innerText = "";
