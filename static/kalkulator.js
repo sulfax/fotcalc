@@ -162,6 +162,7 @@ else {
 }
 
 if (aarstall > 2) {
+    document.getElementById('sessong_kontroller_2').disabled = true;
     location.href = '/prize-money-calculator-post-24';
 }
 
