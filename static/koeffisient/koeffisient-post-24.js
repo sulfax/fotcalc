@@ -73,11 +73,11 @@ let deltakelse_eliminasjon_status = [];
 
 const UCL_assoskoeffisient_celler = ["b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "i7_", "b1_", "b2_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
 const UEL_assoskoeffisient_celler = ["b4_", "b7_", "b11_", "b14_", "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
-const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b42_", "b45_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
+const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b69_", "b42_", "b45_", "b70_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
 
 const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "i7__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
-const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
+const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b69__", "b42__", "b45__", "b70__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 
 var aarstall = ((localStorage.getItem('sessong'))) || 1;
@@ -688,8 +688,8 @@ function oppdater_ved_refresh_koeff_1() {
                 // const resultat = localStorage.getItem('resultat_status_local_s_post_24');
                 const knapper_fra_prem_kalk = menyvalg[i][p] || '';
                 var deltakelse_eliminasjon = "";
-                const knapper_til_konvertering = ["b5","b8","b12","b17","b18","b19","b20","b21","b22","b24","b25","b27","b28","b29","b30","b31","b32"];
-                const knapper_fra_konvertering = ["b9","b16","b23","b30","b31","b32","b33","b38","b39","b46","b47","b54","b55","b56","b63","b64","b65"]
+                const knapper_til_konvertering = ["b5","b8","b12","b17","b18","b19","b20","b21","b22","b23","b24","b25","b26","b27","b28","b29","b30","b31","b32"];
+                const knapper_fra_konvertering = ["b9","b16","b23","b30","b31","b32","b33","b38","b39","b69","b46","b47","b70","b54","b55","b56","b63","b64","b65"]
                 for (u=0;u<knapper_til_konvertering.length;u++) {
                     if (knapper_fra_prem_kalk.includes(knapper_til_konvertering[u])) {
                         deltakelse_eliminasjon = deltakelse_eliminasjon + ((knapper_fra_konvertering[u]) + ",");
