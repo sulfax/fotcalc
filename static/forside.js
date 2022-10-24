@@ -1079,7 +1079,7 @@ for (i = 0; i < knapplabel_dc.length; i++) {
 
 
 const knapp_filter_id_ucl = ['b2', 'b3', 'b6', 'b9', 'CLPO', 'b16', 'b18', 'i13', 'b21', 'b24', 'b27', 'b30', 'b33']
-const knapplabel_ucl = ['Preliminary round', 'Q1', 'Q2', 'Q3', 'Play-off', 'Eliminated in Play-off', 'Group stage', 'Knockout round play-off', 'Round of 16' , 'Quarter-final', 'Semi-final', 'Final', 'Champion']
+const knapplabel_ucl = ['Preliminary round', 'Q1', 'Q2', 'Q3', 'Play-off', 'Eliminated in play-off', 'Group stage', 'Knockout round play-off', 'Round of 16' , 'Quarter-final', 'Semi-final', 'Final', 'Champion']
 for (i = 0; i < knapplabel_ucl.length; i++) {
   let btn = document.createElement("button");
   btn.id = knapp_filter_id_ucl[i]

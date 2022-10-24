@@ -211,7 +211,7 @@ const english_forside = [
     'Colored button = include',
     'Red border = exclude',
     'Advanced filtering ',
-    'Domestic Champion', 'Preliminary round', 'Q1', 'Eliminated in Q1', 'Q2', 'Eliminated in Q2', 'Q3', 'Eliminated in Q3', 'Play-off', 'Eliminated in Play-off', 'Group stage', 'Knockout round play-off', 'Round of 16', 'Quarter-final', 'Semi-final', 'Final', 'Champion', 'SCUP', 'Champion',
+    'Domestic Champion', 'Preliminary round', 'Q1', 'Eliminated in Q1', 'Q2', 'Eliminated in Q2', 'Q3', 'Eliminated in Q3', 'Play-off', 'Eliminated in play-off', 'Group stage', 'Knockout round play-off', 'Round of 16', 'Quarter-final', 'Semi-final', 'Final', 'Champion', 'SCUP', 'Champion',
     'Reset'
 ];
 
