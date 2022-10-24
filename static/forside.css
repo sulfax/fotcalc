@@ -83,6 +83,9 @@
 .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
     box-shadow:none !important;
 }
+.klubb_logo {
+    margin-bottom: calc(-0.14vw + 4px);
+}
 .btn-secondary {
     display:inline;
     float:left;
