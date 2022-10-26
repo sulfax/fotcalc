@@ -3,6 +3,9 @@
         display: none;
     }
 }
+#dropDownMeny {
+    z-index: 500;
+}
 .reaklame_sidene {
     width: 250px !important;
 }
