@@ -263,7 +263,7 @@ const english_kalkulator = [
     '<abbr data_title="Amount of wins in the group stage">Wins</abbr>:',
     '<abbr data_title="Amount of draws in the group stage">Draws</abbr>:',
     '<abbr data_title="Total number of drawn games in the relevant group stage (0-96)">Total draws</abbr>:',
-    '<abbr data_title="Redistributed amounts remaining from the mathes ending with a draw">Undistributed amounts</abbr>:',
+    '<abbr data_title="Redistributed amounts remaining from the matches ending in a draw">Undistributed amounts</abbr>:',
     'Group-placement:',
     '<abbr data_title="Qualification play-off for the knockout rounds">Knockout round play-off</abbr>:',
     'Round of 16:',
