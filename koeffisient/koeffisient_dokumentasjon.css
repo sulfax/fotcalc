@@ -1,0 +1,150 @@
+@media (min-width:1871px) {
+    .reaklame_sidene {
+        display: block !important;
+    }
+}
+@media (max-width:1870px) {
+    .reaklame_sidene {
+        display: none;
+    }
+}
+#ad_venstre {
+    margin-left: 20px;
+    float: left;
+}
+#ad_hoyre {
+    margin-right: 20px;
+    float: right;
+}
+.reaklame_sidene {
+    margin-top: 1200px !important;
+}
+.reklame_sidene_under {
+    margin-top: 580px;
+}
+@media (min-width:256px) {
+    .container {
+        max-width:600px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:43px !important;
+    }
+}
+@media (min-width:768px) {
+    .container {
+        max-width:820px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:43px !important;
+    }
+}
+@media (min-width:992px) {
+    .container {
+        max-width:950px
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        max-width:1140px
+    }
+} 
+@media (min-width:1308px) {
+    .container {
+        max-width:1220px
+    }
+} 
+@media (min-width:256px) {
+    .container,.container-sm {
+        max-width:820px
+    }
+}@media (min-width:768px) {
+    .container, .container-md, .container-sm {
+        max-width:820px
+    }
+}@media (min-width:992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width:950px
+    }
+}@media (min-width:1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1140px
+    }
+}
+@media (min-width:1308px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1220px
+    }
+}
+.tabell_div{
+    width:104%;
+    background-color:white;
+    border-radius: .5rem;
+    padding-bottom: .1%;
+    padding-top: 1%;
+    margin-left:-1.99%;
+    overflow-x:auto;
+    font-size: 16px;
+}
+.table.table-sm{
+    width:98%;
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom: 1%;
+}
+.ytre_tabell_div_spesial{
+    margin-left:-2%;
+    background-color: white;
+    width:fit-content;
+    padding-right: 1rem;
+    height:fit-content;
+    padding-top:.6rem;
+    padding-bottom:5rem;
+    margin-bottom:-6.9rem;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    display: flex;
+}
+.underoverskrift {
+    color: #343a40
+}
+td {
+    border: 1px solid #b1b1b1 !important;
+}
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+th, td td {
+    padding: 1px !important;
+    border: 1px solid rgba(177, 177, 177, 0.493) !important;
+}
+td th {
+    padding-right: 6px !important;
+}
+.kortere_tall {
+    text-align: right;
+    padding-right: 34.5% !important;
+}
+.lengre_tall {
+    text-align: right;
+    padding-right: 30.2% !important;
+}
+.lengre_tall_english {
+    text-align: right;
+    padding-right: 30.8% !important;
+}
+.sentrert_tall {
+    text-align: center;
+}
+.sentrert_vertikalt_tall {
+    vertical-align: middle !important;
+}
+.margin_tabell {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+#overskrift_koeffisient_dokumentasjon {
+    color: #343a40;
+}

@@ -1,0 +1,441 @@
+@media (max-width:1830px) {
+    .reaklame_sidene {
+        display: none;
+    }
+}
+.reaklame_sidene {
+    width: 250px !important;
+}
+#ad_venstre {
+    margin-left: 20px;
+    float: left;
+}
+#ad_hoyre {
+    margin-right: 20px;
+    float: right;
+}
+@media (min-width:256px) {
+    .container {
+        max-width:600px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:128px !important;
+    }
+}
+@media (min-width:768px) {
+    .container {
+        max-width:820px
+    }
+    .table-sm .resultat_celle_1, .tom_celle {
+        min-width:128px !important;
+    }
+}
+@media (min-width:992px) {
+    .container {
+        max-width:950px
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        max-width:1140px
+    }
+} 
+@media (min-width:1308px) {
+    .container {
+        max-width:1220px
+    }
+}
+@media (min-width:256px) {
+    .container,.container-sm {
+        max-width:820px
+    }
+}@media (min-width:768px) {
+    .container, .container-md, .container-sm {
+        max-width:820px
+    }
+}@media (min-width:992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width:950px
+    }
+}@media (min-width:1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1140px
+    }
+}
+@media (min-width:1308px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1220px
+    }
+} 
+
+
+.sesong_valg {
+    display:flex;
+}
+
+.knapp_celle {
+    padding:1px !important;
+}
+.ytre_tabell_div_2 {
+    height:3.8rem;
+    padding-top:9px;
+    border-top-right-radius: 0.5rem;
+    margin-bottom: -0.7rem;
+    margin-right: 3px;
+    padding-left: 12px;
+    width: fit-content;
+    height: 4rem;
+    float: right;
+    z-index: 0;
+}
+#overskrift_premiepenger, #beskrivelse_premiepenger {
+    text-align: center;
+}
+.table-hover {
+    background-color: rgb(255, 255, 255)
+}
+.table-hover tbody tr.Hjemlig_seriemester{
+    background-color:rgba(151, 151, 151, 0.075)
+}
+.table-hover tbody tr.Hjemlig_seriemester:hover{
+    background-color:rgba(151, 151, 151, 0.275);
+}
+.table-hover tbody tr.Kvalifisering{
+    background-color:rgba(151, 151, 151, 0.125);
+}
+.table-hover tbody tr.Kvalifisering:hover{
+    background-color:rgba(151, 151, 151, 0.325);
+}
+.table-hover tbody tr.Gruppespill{
+    background-color:rgba(151, 151, 151, 0.175);
+}
+.table-hover tbody tr.Gruppespill:hover{
+    background-color:rgba(151, 151, 151, 0.375);
+}
+.table-hover tbody tr.Utslagsrunde{
+    background-color:rgba(151, 151, 151, 0.225);
+}
+.table-hover tbody tr.Utslagsrunde:hover{
+    background-color:rgba(151, 151, 151, 0.425);
+}
+.table-hover tbody tr.SCUP, .table-hover tbody tr.SCUP_vinner{
+    background-color:rgba(151, 151, 151, 0.275);
+}
+.table-hover tbody tr.SCUP:hover, .table-hover tbody tr.SCUP_vinner:hover{
+    background-color:rgba(151, 151, 151, 0.475);
+}
+.table-hover tbody tr.Inntjening_pr_turnering{
+    background-color:rgba(151, 151, 151, 0.325);
+}
+.table-hover tbody tr.Inntjening_pr_turnering:hover{
+    background-color:rgba(151, 151, 151, 0.525);
+}
+.table-hover tbody tr.Inntjening{
+    background-color:rgba(151, 151, 151, 0.375);
+}
+.table-hover tbody tr.Inntjening:hover{
+    background-color:rgba(151, 151, 151, 0.575);
+}
+.table.table-sm{
+    width:98%;
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom: 1.1%;
+}
+tbody {
+    border-top: 4px !important;
+    border: 1px solid #b1b1b1;
+}
+.btn.btn-danger:focus, .btn.btn-danger:active, .btn-danger.dropdown-toggle:focus, .btn-danger.focus, .btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking*/
+    box-shadow:none !important;
+}
+.btn.btn-danger, td .form-control { /*Knappen fyller hele cellen*/
+    width: 29%;
+    padding:0px !important;
+    transition-duration:.0s;
+    height: 100%;
+}
+.table .tom_celle, .table .resultat_celle, .table .resultat_celle_1, #total_inntjening, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening  {
+    vertical-align:middle;
+    font-family: "Noto Sans Math", monospace;
+}
+.table .resultat_celle {
+    text-align: center;
+}
+#total_inntjening {
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+.table-sm .resultat_celle_1, .tom_celle {
+    text-align: right;
+    padding-right:calc(2.5% - 15px) !important;
+    min-width:125px;
+}
+.mellomrom {
+    width: 20px;
+    border-right: 2px solid #b1b1b1 !important;
+    border-left: 2px solid #b1b1b1 !important;
+    background-color: #b1b1b1b7 !important;
+}
+.mellomrom_2 {
+    width: 0px;
+    padding:0px !important;
+    border-left: 2px solid #b1b1b1 !important;
+}
+.turnering, .turnering_2 {
+    text-align: center;
+    padding: 0px !important;
+    padding-top: 12px !important;
+    vertical-align: middle !important;
+}
+.turnering {
+    width: 11.9%;
+}
+.turnering_2 {
+    width: 9.9%;
+}
+.btn-secondary {
+    display:inline;
+    float:left;
+    height:38px;
+    font-size: 20px;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    color: rgb(196, 217, 255);
+    transition: all 0s !important;
+}
+.btn-primary {
+    background-color: rgb(196, 217, 255);
+    border-color: rgb(154, 176, 218);
+    color: #4a56ff;
+}
+.btn-primary:hover {
+    background-color: rgb(154, 176, 218) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.btn-primary:active, .btn.btn-primary:active {
+    background-color: rgb(154, 176, 218) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+.btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn-primary:focus {
+    background-color: rgb(196, 217, 255) !important;
+    border-color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
+}
+#tilbakestill {
+    float: right !important;
+    margin-right: 12px;
+}
+#b1{
+    width:100%;
+    background-color:#929292;
+    border-color:#777777;
+}
+#b1:hover, #b36:hover, #b37:hover {
+    background-color:#777777;
+    border-color:#777777;
+}
+
+#b-1 {
+    width:100%;
+    background-color:#dea905;
+    border-color:#c89600;
+}
+#b-1:hover{
+    background-color:#c89600;
+    border-color:#c89600;
+}
+#b36, #b37{
+    width:64.5%;
+    background-color:#929292;
+    border-color:#777777;
+}
+#b-36, #b-37 {
+    width:64.5%;
+    background-color:#2d2b56;
+    border-color: #201F41;
+}
+#b-36:hover, #b-37:hover{
+    background-color:#201F41;
+    border-color:#201F41;
+}
+#b2, #b3, #b6, #b9, #b13, #b16, #b18, #b21, #b24, #b27, #b30, #b33, #CLPO {
+    background-color:#929292;
+    border-color:#777777;
+    float:left;
+}
+#b2:hover, #b3:hover, #b6:hover, #b9:hover, #b13:hover, #b16:hover, #b18:hover, #b21:hover, #b24:hover, #b27:hover, #b30:hover, #b33:hover, #CLPO:hover {
+    background-color:#777777;
+    border-color:#777777;
+}
+#b-2, #b-3, #b-6, #b-9, #b-13, #b-16, #b-18, #b-18, #b-21, #b-24, #b-27, #b-30, #b-33, #CL-PO {
+    background-color:#2769AE;
+    border-color:#155599;
+    float:left;
+}
+#b-2:hover, #b-3:hover, #b-6:hover, #b-9:hover, #b-13:hover, #b-16:hover, #b-18:hover, #b-21:hover, #b-24:hover, #b-27:hover, #b-30:hover, #b-33:hover, #CL-PO:hover {
+    background-color:#155599;
+    border-color:#155599;
+}
+#uelQ1, #uelQ2 ,#b10, #b14, #b19, #b22, #b25, #b28, #b31, #b34 {
+    margin-left: 6.5%;
+    background-color:#929292;
+    border-color:#777777;
+}
+#uelQ1:hover, #uelQ2:hover, #b10:hover, #b14:hover, #b19:hover, #b22:hover, #b25:hover, #b28:hover, #b31:hover, #b34:hover {
+    background-color:#777777;
+    border-color:#777777;
+}
+#uel-Q1, #uel-Q2, #b-10, #b-14, #b-19, #b-22, #b-25, #b-28, #b-31, #b-34 {
+    margin-left: 6.5%;
+    background-color:#FF6900;
+    border-color:#df5d00;
+}
+#uel-Q1:hover, #uel-Q2:hover, #b-10:hover, #b-14:hover, #b-19:hover, #b-22:hover, #b-25:hover, #b-28:hover, #b-31:hover, #b-34:hover {
+    background-color:#df5d00;
+    border-color:#df5d00;
+}
+#b4, #b5, #b7, #b8, #b11, #b12, #b15, #b17, #b20, #b23, #b26, #b29, #b32, #b35 {
+    float:right;
+    background-color:#929292;
+    border-color:#777777;
+}
+#b4:hover, #b5:hover, #b7:hover, #b8:hover, #b11:hover, #b12:hover, #b15:hover, #b17:hover, #b20:hover, #b23:hover, #b26:hover, #b29:hover, #b32:hover, #b35:hover {
+    background-color:#777777;
+    border-color:#777777;
+}
+#b-4, #b-5, #b-7, #b-8, #b-11, #b-12, #b-15, #b-17, #b-20, #b-23, #b-26, #b-29, #b-32, #b-35 {
+    float:right;
+    background-color:#00BF0C;
+    border-color:#00a70b;
+}
+#b-4:hover, #b-5:hover, #b-7:hover, #b-8:hover, #b-11:hover, #b-12:hover, #b-15:hover, #b-17:hover, #b-20:hover, #b-23:hover, #b-26:hover, #b-29:hover, #b-32:hover, #b-35:hover {
+    background-color:#00a70b;
+    border-color:#00a70b;
+}
+td .form-control {
+    text-align:center;
+    display:inline;
+}
+td .placeholder::placeholder {
+    color: rgb(207, 207, 207);
+}
+#i1, #i4, #i7, #i10, #i13 {
+    color:#2769AE;
+    border-color:#2769AE;
+    transition: color .5s ease-in;
+    transition: none;
+    float:left;
+}
+#i2, #i5, #i8, #i11, #i14 {
+    color:#FF6900;
+    border-color:#FF6900;
+    transition: color .5s ease-in;
+    transition: none;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+}
+#i3, #i6, #i9, #i12, #i15 {
+    color:#00BF0C;
+    border-color:#00BF0C;
+    transition: color .5s ease-in;
+    transition: none;
+    float:right;
+}
+#UCL {
+    color:#2769AE;
+    margin-right: 11%;
+}
+#UEL {
+    color:#FF6900;
+}
+#UECL {
+    color:#00BF0C;
+    margin-left: 9%;
+}
+#UCL_2 {
+    color:#2769AE;
+}
+#UECL_2 {
+    color:#00BF0C;
+}
+.knapp_erstatning{
+    width:29%;
+    height:100%;
+    float:left;
+}
+.table td, .table th, .table .head_tr th{
+    border: 0px;
+}
+.head_tr{
+    border: 1px solid #b1b1b1;
+}
+.table .resultat_celle_1 {
+    border: 1px solid rgba(177, 177, 177, 0.4);
+}
+.table .ingen_ramme_hoyre {
+    border-right: 1px solid rgba(177, 177, 177, 0) !important;
+}
+#tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_q1_post_24, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
+    border-top: 1px solid #b1b1b1 !important;
+}
+#inntjening_turnering, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening {
+    border-top: 2px solid #b1b1b1;
+}
+.tydelig_ramme_under, .tydelig_ramme_hoyre_under_over {
+    border-bottom: 1px solid rgb(177, 177, 177) !important;
+}
+.tydelig_ramme_hoyre, .tydelig_ramme_hoyre_under_over {
+    border-right: 1px solid rgb(177, 177, 177) !important;
+}
+.tom_celle {
+    background-color: #343a40;
+}
+#tom_celle_ramme_bottom {
+    border-bottom-color: #343a40;
+}
+#tom_celle_ramme_right {
+    border-right-color: #343a40;
+}
+#tom_celle_ramme {
+    border-color: #343a40;
+}
+.Inntjening_pr_turnering, .Inntjening {
+    font-weight: bold;
+}
+.Inntjening {
+    text-decoration:  underline;
+}
+.head_tr {
+    border-bottom: 0px !important;
+}
+#progresjon {
+    width:calc(11rem - 30px);
+    height:72px;
+    margin-top: -13px;
+    margin-bottom: 31px !important;
+}
+.tekst_margin_hoyre {
+    margin-right: 1.2rem !important;
+    display:inline;
+}
+.graa_hover_link_2 {
+    margin-left: 1rem !important;
+    padding-left: 0px !important;
+}
+th, td {
+    height: 30px !important;
+    padding-top: 3px !important;
+    padding-bottom: 2px !important;
+}
+.høyde_won_scup {
+    height: 31px !important;
+}
+.meny_element {
+    padding-left: 13px !important;
+}
