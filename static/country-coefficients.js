@@ -537,11 +537,8 @@ function forside_ø_koeff(i, kolonne) {
   var cell = last.cells[1];
   let filter_land_før = [];
   let land = ''
-  if ((cell.innerHTML).slice(87,90) == 'dia') {
-    land = 'NIR'
-  } else {
-    land = (cell.innerHTML).slice(87,90)
-  }
+  let str = (cell.innerHTML);
+  land = (str.substring(str.indexOf('/UEFA/') + 6)).substring(0, 3)
   filter_land_før.push(land)
   localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
   let aarstall = ((rows[0].cells[kolonne+1].innerText).slice(0,2) - 21)
