@@ -143,6 +143,8 @@ function oppdater_ved_refresh() {
     assos_ranking_array.push(koeff_sesong4.toFixed(3))
     assos_ranking_array.push(koeff_sesong5.toFixed(3))
     assos_ranking_array.push(landskoeffisienter[i][11])
+    assos_ranking_array.push(landskoeffisienter[i][12])
+
 
     let klubber_igjen = antall_klubber1
     for (p = 0; p < menyvalg.length; p++) {
@@ -363,15 +365,24 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 function byggTabell_test(ranking_array, aar_etter_forste_periode) {
   testTabell.innerHTML = '';
   var helTabellHTML = '';
+  let spraak = localStorage.getItem("someVarKey");
   for (i = 0; i < ranking_array.length; i++) {
     land_ranking.push(ranking_array[i][7])
     let land = ""
     if (ranking_array[i][0] == 'NIR') {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg"></div>'
+      if (spraak == 'english') {
+        flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][7] + '"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
+      } else {
+        flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][8] + '"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
+      }
       land = "Northern Ireland"
     }
     else {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></div>'
+      if (spraak == 'english') {
+        flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][7] + '"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
+      } else {
+        flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][8] + '"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
+      }
       land = ranking_array[i][7]
     }
     if ((ranking_array[i][2] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[4]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][2] = "-";} else if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
@@ -390,12 +401,12 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     if (i == 54) {
       tom_kolonne = `<td class='premie_koeff tom ingen_ramme_under'>${""}</td>`
     }
-    if ((ranking_array[i][8])[0] == '0') {
-      klubber_igjen = `<td class='premie_koeff klubb rød'>${ranking_array[i][8]}</td>`
-    } else if (((ranking_array[i][8])[0] - (ranking_array[i][8])[2]) == 0) {
-      klubber_igjen = `<td class='premie_koeff klubb grønn'>${ranking_array[i][8]}</td>`
+    if ((ranking_array[i][9])[0] == '0') {
+      klubber_igjen = `<td class='premie_koeff klubb rød'>${ranking_array[i][9]}</td>`
+    } else if (((ranking_array[i][9])[0] - (ranking_array[i][9])[2]) == 0) {
+      klubber_igjen = `<td class='premie_koeff klubb grønn'>${ranking_array[i][9]}</td>`
     } else {
-      klubber_igjen = `<td class='premie_koeff klubb gul'>${ranking_array[i][8]}</td>`
+      klubber_igjen = `<td class='premie_koeff klubb gul'>${ranking_array[i][9]}</td>`
     }
     if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1 && sesong1 != "") {
       sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`

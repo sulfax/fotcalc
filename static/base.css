@@ -35,7 +35,7 @@
             
         /* style tooltip */
         background-color: #343a40;
-        color: #fff;
+        color: rgb(240, 240, 240);
         border-radius: 3px;
         box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
         font-size: 14px;
