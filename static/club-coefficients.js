@@ -577,12 +577,33 @@ function byggTabell_test(ranking_array, column, order) {
           }
           knapper = knapper.split(",")
           plassering = plassering.split(",")
-          if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode && !(knapper).includes("KO")) {
+          // if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode && !(knapper).includes("KO")) {
+          //   if ((knapper).includes("b18")) {
+          //     if ((plassering).includes("3")) {
+          //       rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+          //     }
+          //     else if (!(plassering).includes("4")) {
+          //       rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+          //     }
+          //   }
+          //   else if ((knapper).includes("b19")) {
+          //     if ((plassering).includes("3")) {
+          //       rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+          //     }
+          //     else if (!(plassering).includes("4")) {
+          //       rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+          //     }
+          //   }
+          //   else if ((knapper).includes("b20") && !(plassering).includes("3") && !(plassering).includes("4")) {
+          //     rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
+          //   }
+          // }
+          if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
             if ((knapper).includes("b18")) {
               if ((plassering).includes("3")) {
                 rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
               }
-              else if (!(plassering).includes("4")) {
+              else {
                 rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
               }
             }
@@ -590,11 +611,11 @@ function byggTabell_test(ranking_array, column, order) {
               if ((plassering).includes("3")) {
                 rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
               }
-              else if (!(plassering).includes("4")) {
+              else {
                 rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
               }
             }
-            else if ((knapper).includes("b20") && !(plassering).includes("3") && !(plassering).includes("4")) {
+            else if ((knapper).includes("b20")) {
               rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
             }
           }
