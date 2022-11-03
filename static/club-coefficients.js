@@ -578,7 +578,7 @@ function byggTabell_test(ranking_array, column, order) {
           }
           knapper = knapper.split(",")
           plassering = plassering.split(",")
-          if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
+          if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
             if (knapper[0] != '') {
               klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
             }
