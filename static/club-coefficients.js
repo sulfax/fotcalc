@@ -605,7 +605,7 @@ function byggTabell_test(ranking_array, column, order) {
           //   }
           // }
           if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
-            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && !plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && knapper[0] != '') {
+            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && !plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
               klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
             }
             if ((knapper).includes("b18")) {
