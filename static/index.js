@@ -28,7 +28,8 @@ else if (overskrift_finnes) {
 function language(clicked_id) {
   language_koeffisient(clicked_id);
   language_standard(clicked_id);
-  aarstall = localStorage.getItem('sessong') || 0;
+  if (aarstall > 7) {aarstall = 1}
+  aarstall = parseInt(localStorage.getItem('sessong')) || 0;
   if (overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes) {}
   else {
     try {
