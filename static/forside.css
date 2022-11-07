@@ -533,10 +533,10 @@ th, td {
         cursor: default !important;
             
         /* position tooltip like the native one */
-        position: absolute;
-        left: 10px;
+        position: relative;
+        left: -15px;
         float:right !important;
-        bottom: -30px;
+        bottom: -3px;
         width: auto;
         white-space: nowrap;
         z-index: 1;
