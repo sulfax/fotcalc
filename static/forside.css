@@ -535,8 +535,8 @@ th, td {
             
         /* position tooltip like the native one */
         position: absolute;
-        left: -21px;
-        bottom: -25px;
+        left: 40px;
+        bottom: -30px;
         width: auto;
         white-space: nowrap;
         z-index: 1;
