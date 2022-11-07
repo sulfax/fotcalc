@@ -523,7 +523,6 @@ th, td {
     }
 
     abbr[data_title] {
-        position: relative;
             
         /* ensure consistent styling across browsers */
         text-decoration: underline !important;
@@ -534,9 +533,10 @@ th, td {
         cursor: default !important;
             
         /* position tooltip like the native one */
-        position: absolute;
-        left: 40px;
-        bottom: -30px;
+        position: relative;
+        left: -16px;
+        float:right !important;
+        bottom: -3px;
         width: auto;
         white-space: nowrap;
         z-index: 1;
