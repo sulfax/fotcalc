@@ -599,7 +599,7 @@ function language_koeffisient(clicked_id) {
       document.getElementById("dropdown_elementer_turnering").innerHTML = '';
       const knapplabel_turneringer = ['<img src=media/UEFA/UCL.svg class=turnering_ikon>', '<img src=media/UEFA/UEL.svg class=turnering_ikon>', '<img src=media/UEFA/UECL.svg class=turnering_ikon>']
       for (i = 0; i < knapplabel_turneringer.length; i++) {
-        let btn = "<abbr data_title='Alle stadier'><button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + ">" + knapplabel_turneringer[i] + "</button></abbr>"
+        let btn = "<button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + "><abbr data_title='Alle stadier' class='abbr_all_stages'>" + knapplabel_turneringer[i] + "</abbr></button>"
         document.getElementById("dropdown_elementer_turnering").innerHTML += btn;
       }
       fargelegg_etter_reset()
@@ -619,7 +619,7 @@ function language_koeffisient(clicked_id) {
       document.getElementById("dropdown_elementer_turnering").innerHTML = '';
       const knapplabel_turneringer = ['<img src=media/UEFA/UCL.svg class=turnering_ikon>', '<img src=media/UEFA/UEL.svg class=turnering_ikon>', '<img src=media/UEFA/UECL.svg class=turnering_ikon>']
       for (i = 0; i < knapplabel_turneringer.length; i++) {
-        let btn = "<abbr data_title='All stages'><button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + ">" + knapplabel_turneringer[i] + "</button></abbr>"
+        let btn = "<button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + "><abbr data_title='All stages' class='abbr_all_stages'>" + knapplabel_turneringer[i] + "</abbr></button>"
         document.getElementById("dropdown_elementer_turnering").innerHTML += btn;
       }
       fargelegg_etter_reset()

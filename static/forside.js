@@ -1,3 +1,4 @@
+
 (function () {
 	window.onpageshow = function(event) {
 		if (event.persisted) {
@@ -243,9 +244,15 @@ function sorter_etter_sesong() {
               if (containsAll) {
                 if (klubb_knapp.includes('b13') && trykte_knapper.includes('b9') && ((ucl_knapper_riktig[j] == 'b9') || (ucl_knapper_riktig[j] == 'b13'))) {
                 }
-                else if (trykte_knapper.includes(ucl_knapper_riktig[j]) || trykte_knapper.includes('i13')) {
-                  if (klubb_knapp.includes(ucl_knapper_riktig[j]) || klubb_knapp.includes('i13')) {
+                else if (trykte_knapper.includes(ucl_knapper_riktig[j])) {
+                  if (klubb_knapp.includes(ucl_knapper_riktig[j])) {
                   }
+                  else {
+                    containsAll = false;
+                  }
+                }
+                if (trykte_knapper.includes('i13')) {
+                  if ((gruppeplassering[0] <= 24 && gruppeplassering[0] >= 9 && aarstall >= 3) || aarstall <= 2) {}
                   else {
                     containsAll = false;
                   }
@@ -276,7 +283,7 @@ function sorter_etter_sesong() {
                     }
                   }
                   if (trykte_knapper.includes('i13')) {
-                    if (gruppeplassering[0] == 3 || gruppeplassering[1] == 2) {}
+                    if (((gruppeplassering[0] == 3 || gruppeplassering[1] == 2) && aarstall <= 2) || (gruppeplassering[1] <= 24 && gruppeplassering[1] >= 9 && aarstall >= 3)) {}
                     else {
                       containsAll = false;
                     }
@@ -298,7 +305,7 @@ function sorter_etter_sesong() {
                     }
                   }
                   if (trykte_knapper.includes('i13')) {
-                    if (gruppeplassering[1] == 3 || gruppeplassering[2] == 2) {}
+                    if (((gruppeplassering[1] == 3 || gruppeplassering[2] == 2) && aarstall <= 2) || (gruppeplassering[2] <= 24 && gruppeplassering[2] >= 9 && aarstall >= 3)) {}
                     else {
                       containsAll = false;
                     }
@@ -329,6 +336,11 @@ function sorter_etter_sesong() {
                   if (klubb_knapp.includes('b13') && trykte_knapper_exclude.includes('b9')) {
                     containsAll = false;
                   }
+                  if (trykte_knapper_exclude.includes('i13')) {
+                    if ((gruppeplassering[0] <= 24 && gruppeplassering[0] >= 9 && aarstall >= 3) || aarstall <= 2) {
+                      containsAll = false;
+                    }
+                  }
                 }
               }
             }
@@ -350,7 +362,7 @@ function sorter_etter_sesong() {
                     }
                   }
                   if (trykte_knapper_exclude.includes('i13')) {
-                    if (gruppeplassering[0] == 3 || gruppeplassering[1] == 2) {
+                    if (((gruppeplassering[0] == 3 || gruppeplassering[1] == 2) && aarstall <= 2) || (gruppeplassering[1] <= 24 && gruppeplassering[1] >= 9 && aarstall >= 3)) {
                       containsAll = false;
                     }
                   }
@@ -370,7 +382,7 @@ function sorter_etter_sesong() {
                     }
                   }
                   if (trykte_knapper_exclude.includes('i13')) {
-                    if (gruppeplassering[1] == 3 || gruppeplassering[2] == 2) {
+                    if (((gruppeplassering[1] == 3 || gruppeplassering[2] == 2) && aarstall <= 2) || (gruppeplassering[2] <= 24 && gruppeplassering[2] >= 9 && aarstall >= 3)) {
                       containsAll = false;
                     }
                   }
@@ -420,7 +432,8 @@ function sorter_etter_sesong() {
         for (p = 0; p < menyvalg.length; p++) {
           if (menyvalg[p][0] == menyvalg_edit[i][0]) {
             let gruppespillsplassering = (((menyvalg[p][(8 * ((aarstall+1))) - 3])))
-            if (gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') {
+            if (!gruppespillsplassering) {gruppespillsplassering = ","}
+            if (((gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') && aarstall <= 2) || (gruppespillsplassering.replaceAll(',','') > 24 && aarstall >= 3)) {
               menyvalg_edit[i][0] = menyvalg_edit[i][0] + '0/0'
               break
             }
@@ -601,7 +614,7 @@ function byggTabell_test(data) {
 
     let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
     if ((data[i][1] + '').includes("b18")) {
-      if ((data[i][4] + '').includes("3")) {
+      if ((data[i][4] + '').includes("3") && aarstall <=2) {
         nummer = '<td class="ucl_gs_uel id_nr">' + (i + 1) + '</td>'
       }
       else {
@@ -609,7 +622,7 @@ function byggTabell_test(data) {
       }
     }
     else if ((data[i][1] + '').includes("b19")) {
-      if ((data[i][4] + '').includes("3")) {
+      if ((data[i][4] + '').includes("3") && aarstall <= 2) {
         nummer = '<td class="uel_gs_uecl id_nr">' + (i + 1) + '</td>'
       }
       else {
@@ -1059,7 +1072,7 @@ $(document).mouseup(e => {
 
 const knapplabel_turneringer = ['<img src=media/UEFA/UCL.svg class=turnering_ikon>', '<img src=media/UEFA/UEL.svg class=turnering_ikon>', '<img src=media/UEFA/UECL.svg class=turnering_ikon>']
 for (i = 0; i < knapplabel_turneringer.length; i++) {
-  let btn = "<abbr data_title='All stages'><button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + ">" + knapplabel_turneringer[i] + "</button></abbr>"
+  let btn = "<button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + "><abbr data_title='All stages' class='abbr_all_stages'>" + knapplabel_turneringer[i] + "</abbr></button>"
   document.getElementById("dropdown_elementer_turnering").innerHTML += btn;
 }
 
