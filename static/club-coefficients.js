@@ -557,7 +557,7 @@ function byggTabell_test(ranking_array, column, order) {
     if (sesong1 === "0.0") {sesong1 = ''}
 
     let nummer = i+1;
-    if (nummer == 1) {
+    if (nummer <= 3) {
       nummer = '<img src="media/kolonnefjerner.png">' + nummer + '<img src="media/kolonnefjerner.png">';
     }
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
@@ -605,11 +605,11 @@ function byggTabell_test(ranking_array, column, order) {
           //   }
           // }
           if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
-            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && !plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
+            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
               klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
             }
             if ((knapper).includes("b18")) {
-              if ((plassering).includes("3")) {
+              if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
                 rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
               }
               else {
@@ -617,7 +617,7 @@ function byggTabell_test(ranking_array, column, order) {
               }
             }
             else if ((knapper).includes("b19")) {
-              if ((plassering).includes("3")) {
+              if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
                 rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
               }
               else {
