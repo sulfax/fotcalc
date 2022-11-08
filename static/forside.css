@@ -345,7 +345,22 @@ th, td {
     .adva {
         width: 247px;
     }
+    abbr[data_title]:hover::after,
+    abbr[data_title]:focus::after {
+        position: relative;
+        left: -15px !important;
+        float:right !important;
+        bottom: -3px !important;
+    }
 }
+abbr[data_title]:hover::after,
+abbr[data_title]:focus::after {
+    position: relative;
+    left: -113px;
+    float:right !important;
+    bottom: -3px;
+}
+
 .turnering_ikon {
     float: left;
     width: 30px;
@@ -515,43 +530,4 @@ th, td {
 }
 #tom_kolonne {
     border-right: 1px solid rgba(0,0,0,0) !important;
-}
-@media screen and (min-width: 0px) {
-    .abbr_bidrag:hover::after,
-    .abbr_bidrag:focus::after {
-        left: -271px !important;
-    }
-
-    abbr[data_title] {
-            
-        /* ensure consistent styling across browsers */
-        text-decoration: underline !important;
-    }        
-    abbr[data_title]:hover::after,
-    abbr[data_title]:focus::after {
-        content: attr(data_title);
-        cursor: default !important;
-            
-        /* position tooltip like the native one */
-        position: relative;
-        left: -15px;
-        float:right !important;
-        bottom: -3px;
-        width: auto;
-        white-space: nowrap;
-        z-index: 1;
-            
-        /* style tooltip */
-        background-color: #343a40;
-        color: rgb(240, 240, 240);
-        border-radius: 3px;
-        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
-        font-size: 14px;
-        padding: 3px 5px;
-    }
-    #spoiler_abbr:hover::after,
-    #spoiler_abbr:focus::after {
-        bottom: -18px !important;
-        left: 19px !important;
-    }
 }
