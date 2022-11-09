@@ -253,7 +253,7 @@ function sorter_etter_sesong() {
                   }
                 }
                 if (trykte_knapper.includes('i13')) {
-                  if ((gruppeplassering[0] <= 24 && gruppeplassering[0] >= 9 && aarstall >= 3) || aarstall <= 2) {}
+                  if ((gruppeplassering[0] <= 24 && gruppeplassering[0] >= 9 && aarstall >= 3) || (aarstall <= 2 && gruppeplassering[0] == 3 && !klubb_knapp.includes('b18'))) {}
                   else {
                     containsAll = false;
                   }
@@ -338,7 +338,7 @@ function sorter_etter_sesong() {
                     containsAll = false;
                   }
                   if (trykte_knapper_exclude.includes('i13')) {
-                    if ((gruppeplassering[0] <= 24 && gruppeplassering[0] >= 9 && aarstall >= 3) || aarstall <= 2) {
+                    if ((gruppeplassering[0] <= 24 && gruppeplassering[0] >= 9 && aarstall >= 3) || aarstall <= 2 && gruppeplassering[0] == 3 && !klubb_knapp.includes('b18')) {
                       containsAll = false;
                     }
                   }
