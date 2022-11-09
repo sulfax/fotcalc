@@ -353,8 +353,8 @@ th, td {
         bottom: -3px !important;
     }
 }
-abbr[data_title]:hover::after,
-abbr[data_title]:focus::after {
+#dropdown_elementer_turnering abbr[data_title]:hover::after,
+#dropdown_elementer_turnering abbr[data_title]:focus::after {
     position: relative;
     left: -113px;
     float:right !important;
@@ -502,6 +502,16 @@ abbr[data_title]:focus::after {
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.rod_knapp:hover, .rod_knapp:active:hover {
+    background-color: rgb(157, 202, 155) !important;
+    border-color: rgb(157, 202, 155) !important;
+    color: #329539 !important;
+}
+.rod_knapp, .rod_knapp:focus {
+    background-color: rgb(213, 247, 214) !important;
+    border-color: rgb(157, 202, 155) !important;
+    color: #329539 !important;
 }
 #dropDownMeny_adva {
     padding-right: 17px;

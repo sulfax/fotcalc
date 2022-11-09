@@ -170,6 +170,7 @@ $('th').on('click', function(){
   }
   if (localStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
+    document.getElementById('spoiler').classList.add('rod_knapp')
     document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
   }
   // document.getElementById('spoiler').innerHTML = '<img class="jordklode" src="media/red-circle.svg" alt="Country">'
@@ -1511,6 +1512,7 @@ function endre_lands_filter(land) {
   }
   sorter_etter_sesong()
   localStorage.setItem('spoiler', 'synlig')
+  document.getElementById('spoiler').classList.remove('rod_knapp')
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
 
@@ -1527,20 +1529,24 @@ $('#spoiler').click(function(){
   if ($('#tabell_overordnet td').is(':visible')) {
     $('#tabell_overordnet td').hide()
     localStorage.setItem('spoiler', 'skjult')
+    document.getElementById('spoiler').classList.add('rod_knapp')
     document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
   } else {
     $('#tabell_overordnet td').show()
     localStorage.setItem('spoiler', 'synlig')
+    document.getElementById('spoiler').classList.remove('rod_knapp')
     document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
   }
 })
 
 if (localStorage.getItem('spoiler') == 'skjult') {
   $('#tabell_overordnet td').hide()
+  document.getElementById('spoiler').classList.add('rod_knapp')
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
 }
 if (localStorage.getItem('spoiler') == 'synlig' || localStorage.getItem('spoiler') == undefined) {
   $('#tabell_overordnet td').show()
+  document.getElementById('spoiler').classList.remove('rod_knapp')
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
 
