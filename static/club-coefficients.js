@@ -679,7 +679,7 @@ function byggTabell_test(ranking_array, column, order) {
                     <td id="tom_kolonne">${klubbnavn}</td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>
-                    <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'><a href="country-coefficients">${na_poeng}</a></div></div></td>
+                    <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'><a href="country-coefficients" onclick="trykker_na_poeng()">${na_poeng}</a></div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong5}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong4}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong3}</div></div></td>
@@ -852,7 +852,7 @@ function generer_lands_knapper() {
     let antall_klubber3 = indeks_klubb.length;
     let antall_klubber4 = indeks_klubb.length;
     let antall_klubber5 = indeks_klubb.length;
-    if (aar_etter_forste_periode <= 1) {
+    if (aar_etter_forste_periode <= -1) {
       enkelt_sesong1 = parseFloat(landskoeffisienter[i][11 + aar_etter_forste_periode])
     } else {
       for (p = 0; p < indeks_klubb.length; p++) {
@@ -1112,7 +1112,7 @@ function regn_ut_NA_poeng() {
     let antall_klubber3 = indeks_klubb.length;
     let antall_klubber4 = indeks_klubb.length;
     let antall_klubber5 = indeks_klubb.length;
-    if (aar_etter_forste_periode <= 1) {
+    if (aar_etter_forste_periode <= -1) {
       enkelt_sesong1 = parseFloat(landskoeffisienter[i][11 + aar_etter_forste_periode])
     } else {
       for (p = 0; p < indeks_klubb.length; p++) {
@@ -1195,7 +1195,9 @@ function myFunction() {
   document.getElementById("ad_hoyre").style.top = -3*scrolled + "px";
 }
 
-
+function trykker_na_poeng() {
+  localStorage.setItem('dropdownmeny_valg_landskoeffisient', document.getElementById("dropDownMeny").innerText)
+}
 
 /*var schema = {
   "@context": "https://schema.org",
