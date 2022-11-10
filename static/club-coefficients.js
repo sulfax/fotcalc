@@ -1195,8 +1195,9 @@ function myFunction() {
   document.getElementById("ad_hoyre").style.top = -3*scrolled + "px";
 }
 
+
 function trykker_na_poeng() {
-  localStorage.setItem('dropdownmeny_valg_landskoeffisient', document.getElementById("dropDownMeny").innerText)
+  localStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
 }
 
 /*var schema = {
