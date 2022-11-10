@@ -1198,6 +1198,8 @@ function myFunction() {
 
 function trykker_na_poeng() {
   localStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
+  localStorage.setItem('kolonne_landskoeffisient', 'poeng')
+  localStorage.setItem('rekkefølge_landskoeffisient', 'desc')
 }
 
 /*var schema = {
