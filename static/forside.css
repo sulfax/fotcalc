@@ -345,8 +345,8 @@ th, td {
     .adva {
         width: 247px;
     }
-    abbr[data_title]:hover::after,
-    abbr[data_title]:focus::after {
+    #dropdown_elementer_turnering abbr[data_title]:hover::after,
+    #dropdown_elementer_turnering abbr[data_title]:focus::after {
         position: relative;
         left: -15px !important;
         float:right !important;
