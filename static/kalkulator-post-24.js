@@ -1003,6 +1003,12 @@ function oppdater_ved_refresh_1() {
                 land = menyvalg[i][1]
                 break
             }
+            if (i+1 == menyvalg.length) {
+                Klubbnavn = menyvalg[0][0];
+                localStorage.setItem('Klubbnavn',Klubbnavn)
+                klubbnavn_url = Klubbnavn.replace(/\s/g, '')
+                land = menyvalg[0][1];
+            }
         }
         if (klubbnavn_url.includes('/')) {
             klubbnavn_url = klubbnavn_url.replace('/','')
@@ -1042,8 +1048,6 @@ function oppdater_ved_refresh_1() {
         const motak_7 = localStorage.getItem('Hallo_input_verdi_3_post_24');
         const motak_8 = localStorage.getItem('Hallo_input_id_4_post_24');
         const motak_9 = localStorage.getItem('Hallo_input_verdi_4_post_24');
-        // let profildata = '["FOTBALLKLUBB",            "' + motak + '",  "' + motak_3 + '",  "' + motak_5 + '",  "' + motak_9 + '"],';
-        // alert(profildata)
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
     }
     else {

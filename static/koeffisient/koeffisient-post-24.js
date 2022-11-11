@@ -646,6 +646,12 @@ function oppdater_ved_refresh_koeff_1() {
                 land = menyvalg[i][1]
                 break
             }
+            if (i+1 == menyvalg.length) {
+                Klubbnavn = menyvalg[0][0];
+                localStorage.setItem('Klubbnavn',Klubbnavn)
+                klubbnavn_url = Klubbnavn.replace(/\s/g, '')
+                land = menyvalg[0][1];
+            }
         }
         if (klubbnavn_url.includes('/')) {
             klubbnavn_url = klubbnavn_url.replace('/','')
