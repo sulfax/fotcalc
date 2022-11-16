@@ -647,7 +647,7 @@ function byggTabell_test(ranking_array, column, order) {
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w"
     data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 17w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
