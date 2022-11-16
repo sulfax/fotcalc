@@ -157,6 +157,9 @@ if (localStorage.getItem('sessong') == null) {
     aarstall = 1
     localStorage.setItem('sessong', aarstall)
 }
+if (aarstall == 'NaN') {
+    aarstall = 1;
+}
 else {
     aarstall = parseInt(localStorage.getItem('sessong'));
     if (aarstall > 3) {

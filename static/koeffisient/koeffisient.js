@@ -75,6 +75,9 @@ const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__"
 
 
 var aarstall = ((localStorage.getItem('sessong'))) || 1;
+if (aarstall == 'NaN') {
+    aarstall = 1;
+}
 aarstall = parseInt(aarstall)
 
 if (aarstall > 2) {
