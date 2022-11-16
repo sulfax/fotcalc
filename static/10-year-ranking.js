@@ -998,13 +998,33 @@ function byggTabell_test(ranking_array, column, order) {
               klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
             }
           }
-
+          // if (nåværende_sesong_periode_valg[0]-11 != aar_etter_forste_periode && !(knapper).includes("KO")) {
+          //   if ((knapper).includes("b18")) {
+          //     if ((plassering).includes("3")) {
+          //       rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+          //     }
+          //     else if (!(plassering).includes("4")) {
+          //       rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+          //     }
+          //   }
+          //   else if ((knapper).includes("b19")) {
+          //     if ((plassering).includes("3")) {
+          //       rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+          //     }
+          //     else if (!(plassering).includes("4")) {
+          //       rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+          //     }
+          //   }
+          //   else if ((knapper).includes("b20") && !(plassering).includes("3") && !(plassering).includes("4")) {
+          //     rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
+          //   }
+          // }
           if (nåværende_sesong_periode_valg[0]-11 != aar_etter_forste_periode) {
-            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && !plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
+            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
               klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
             }
             if ((knapper).includes("b18")) {
-              if ((plassering).includes("3")) {
+              if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
                 rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
               }
               else {
@@ -1012,7 +1032,7 @@ function byggTabell_test(ranking_array, column, order) {
               }
             }
             else if ((knapper).includes("b19")) {
-              if ((plassering).includes("3")) {
+              if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
                 rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
               }
               else {
@@ -1026,7 +1046,32 @@ function byggTabell_test(ranking_array, column, order) {
         }
       }
     }
-    let tittel_poeng = '';
+    let klubbnavn = ranking_array[i][0]
+    let klubbnavn_url = klubbnavn.replace(/\s/g, '')
+    if (klubbnavn_url.includes('/')) {
+      klubbnavn_url = klubbnavn_url.replace('/','')
+    }
+    let klubb_med_logo = '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/' + ranking_array[i][2] + "/" + klubbnavn_url + '2.png"' + 
+    `data-srcset="
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w"
+    data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `2.png 32w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `3.png 36w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `4.png 50w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w">` + ranking_array[i][0]
+
+    let tittel_poeng = ''
     if (ranking_array[i][14] != 0) {
       tittel_poeng = ranking_array[i][14].toFixed(3)
     }
@@ -1065,7 +1110,8 @@ function byggTabell_test(ranking_array, column, order) {
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
                     ${rangering}
-                    ${klubbnavn_HTML_start + ranking_array[i][0]}</nobr></td>
+                    ${klubbnavn_HTML_start + klubb_med_logo}</nobr></td>
+                    <td id="tom_kolonne">${klubbnavn}</td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>
                     <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'>${na_poeng}</div></div></td>
