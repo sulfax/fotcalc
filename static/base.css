@@ -1,4 +1,4 @@
-.container {
+.container_ {
     display: block;
 }
 .dropdown_land {
@@ -346,7 +346,7 @@ a:hover {
 .ramme_hoyre_tynn {
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
-.container {
+.container_ {
     display: flex;
     min-height: 69vh;
     flex-direction: column;
