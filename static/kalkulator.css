@@ -14,60 +14,26 @@
     margin-right: 20px;
     float: right;
 }
-@media (min-width:256px) {
-    .container {
-        max-width:600px
-    }
-    .table-sm .resultat_celle_1, .tom_celle {
-        min-width:128px !important;
-    }
-}
-@media (min-width:768px) {
-    .container {
-        max-width:820px
-    }
-    .table-sm .resultat_celle_1, .tom_celle {
-        min-width:128px !important;
-    }
-}
-@media (min-width:992px) {
-    .container {
-        max-width:950px
-    }
-}
-@media (min-width:1200px) {
-    .container {
-        max-width:1140px
-    }
-} 
-@media (min-width:1308px) {
-    .container {
-        max-width:1220px
-    }
-}
-@media (min-width:256px) {
-    .container,.container-sm {
-        max-width:820px
-    }
-}@media (min-width:768px) {
-    .container, .container-md, .container-sm {
-        max-width:820px
-    }
-}@media (min-width:992px) {
-    .container, .container-lg, .container-md, .container-sm {
-        max-width:950px
-    }
-}@media (min-width:1200px) {
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width:1140px
-    }
-}
-@media (min-width:1308px) {
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width:1220px
-    }
-} 
 
+.container_ {
+    width: 95.9%;
+    margin: auto;
+}
+@media (min-width:1030px) {
+    .container_ {
+        width: 1180px;
+    }
+    @media (max-width:1790px) {
+        .container_ {
+            width: 1000px;
+        }
+    }
+    @media (max-width:1290px) {
+        .container_ {
+            width: 850px;
+        }
+    }
+}
 
 .sesong_valg {
     display:flex;
