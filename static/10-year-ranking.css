@@ -70,6 +70,12 @@
     }
 }
 
+@media (min-width:2500px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width:1467px
+    }
+}
+
 
 #overskrift_ti_års, #beskrivelse_ti_års {
     text-align: center;
