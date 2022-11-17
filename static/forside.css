@@ -1,4 +1,4 @@
-@media (max-width:1745px) {
+@media (max-width:1645px) {
     .reaklame_sidene {
         display: none;
     }
@@ -35,11 +35,6 @@
     @media (max-width:1290px) {
         .container_ {
             width: 950px;
-        }
-    }
-    @media (max-width:1100px) {
-        .container_ {
-            width: 750px;
         }
     }
 }
