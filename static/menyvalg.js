@@ -825,7 +825,7 @@ const klubb_koeffisienter_1112_2021 = [
     ["Wolfsberger AC",             "AUT",,,,,1,,,,4,7],
     ["TSV Hartberg",               "AUT",,,,,,,,,,1.5],
     ["Sturm Graz",                 "AUT",2,,0.5,,1,,1,2,1.5,],
-    ["FC Flyeralarm Admira",       "AUT",,1,,,,1,,1.5,,],
+    ["FC Admira Wacker Mödling",   "AUT",,1,,,,1,,1.5,,],
     ["SCR Altach",                 "AUT",,,,,1.5,,1.5,,,],
     ["SKN St. Pölten",             "AUT",,,,1,,,,,,],
     ["SV Grödig",                  "AUT",,,,1,,,,,,],
