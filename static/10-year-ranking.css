@@ -33,6 +33,11 @@
         width: 1365px;
     }
 }
+@media (min-width:1921px) {
+    .container_ {
+        width: 1380px;
+    }
+}
 
 
 #overskrift_ti_års, #beskrivelse_ti_års {
