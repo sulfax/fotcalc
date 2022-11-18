@@ -4,12 +4,7 @@
     }
 }
 .reaklame_sidene {
-    width: 260px !important;
-}
-@media (min-width:1920px) {
-    .reaklame_sidene {
-        width: 246px !important;
-    }
+    width: 246px !important;
 }
 @media (min-width:2270px) {
     .reaklame_sidene {
