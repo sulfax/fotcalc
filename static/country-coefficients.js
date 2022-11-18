@@ -392,7 +392,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       } else {
         flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][8] + '"><img class="flagg" id="NIR" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
       }
-      land = "Northern Ireland"
+      land = "Northern Ireland";
     }
     else {
       if (spraak == 'english') {
@@ -400,7 +400,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       } else {
         flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][8] + '"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
       }
-      land = ranking_array[i][7]
+      land = ranking_array[i][8]
     }
     if ((ranking_array[i][2] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[4]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][2] = "-";} else if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
     if ((ranking_array[i][3] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[5]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][3] = "-";} else if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}

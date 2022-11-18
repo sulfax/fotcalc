@@ -1,10 +1,20 @@
-@media (max-width:1910px) {
+@media (max-width:1919px) {
     .reaklame_sidene {
         display: none;
     }
 }
 .reaklame_sidene {
     width: 260px !important;
+}
+@media (min-width:1920px) {
+    .reaklame_sidene {
+        width: 246px !important;
+    }
+}
+@media (min-width:2270px) {
+    .reaklame_sidene {
+        width: 400px !important;
+    }
 }
 #ad_venstre {
     float: left;
@@ -30,7 +40,7 @@
 
 @media (min-width:1400px) {
     .container_ {
-        width: 1365px;
+        width: 1376px;
     }
 }
 @media (min-width:1921px) {
@@ -38,6 +48,11 @@
         width: 1380px;
     }
 }
+/* @media (min-width:1437px) {
+    .container_ {
+        width: 1680px;
+    }
+} */
 
 
 #overskrift_ti_års, #beskrivelse_ti_års {

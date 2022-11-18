@@ -948,7 +948,7 @@ function oppdater_ved_refresh_1() {
         media/klubblogo/` + land + "/" + klubbnavn_url + `7.png 100w,
         media/klubblogo/` + land + "/" + klubbnavn_url + `8.png 140w"
         data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
-        media/klubblogo/` + land + "/" + klubbnavn_url + `1.png 18w,
+        media/klubblogo/` + land + "/" + klubbnavn_url + `1.png 13w,
         media/klubblogo/` + land + "/" + klubbnavn_url + `2.png 32w,
         media/klubblogo/` + land + "/" + klubbnavn_url + `3.png 36w,
         media/klubblogo/` + land + "/" + klubbnavn_url + `4.png 50w,
@@ -1255,7 +1255,7 @@ for (i = 0; i < menyvalg.length; i++) {
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `7.png 100w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w"
     data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
-    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `1.png 18w,
+    media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `1.png 13w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `2.png 32w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `3.png 36w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `4.png 50w,

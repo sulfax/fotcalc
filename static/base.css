@@ -383,3 +383,6 @@ a:hover {
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
 }
+.reklame_bunn_margin {
+    margin-left: 15px !important;
+}

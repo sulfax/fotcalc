@@ -1441,11 +1441,20 @@ function bygg_tabell_2(land_array) {
     else if (land_array[r][4] != "-") {
       land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${land_array[r][4].toFixed(3)}</a>`
     }
+    let spraak = localStorage.getItem("someVarKey");
     if (land_array[r][0] == 'NIR') {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" id="NIR" src="media/UEFA/' + land_array[r][0] + '.svg" alt="Northern Ireland"></div>'
+      if (spraak == 'english') {
+        flagg_ikon = '<div class="flagg_div" id="' + land_array[r][0] + '_oversett"><abbr data_title="' + land_array[r][11] + '"><img class="flagg" id="NIR" src="media/UEFA/' + land_array[r][0] + '.svg"></abbr></div>'
+      } else {
+        flagg_ikon = '<div class="flagg_div" id="' + land_array[r][0] + '_oversett"><abbr data_title="' + land_array[r][12] + '"><img class="flagg" id="NIR" src="media/UEFA/' + land_array[r][0] + '.svg"></abbr></div>'
+      }
     }
     else {
-      flagg_ikon = '<div class="flagg_div"><img class="flagg" src="media/UEFA/' + land_array[r][0] + '.svg" alt="' + land_array[r][11] + '"></div>'
+      if (spraak == 'english') {
+        flagg_ikon = '<div class="flagg_div" id="' + land_array[r][0] + '_oversett"><abbr data_title="' + land_array[r][11] + '"><img class="flagg" src="media/UEFA/' + land_array[r][0] + '.svg"></abbr></div>'
+      } else {
+        flagg_ikon = '<div class="flagg_div" id="' + land_array[r][0] + '_oversett"><abbr data_title="' + land_array[r][12] + '"><img class="flagg" src="media/UEFA/' + land_array[r][0] + '.svg"></abbr></div>'
+      }
     }
     let premiepenger = "€ " + land_array[r][1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     var rad = `<tr>
