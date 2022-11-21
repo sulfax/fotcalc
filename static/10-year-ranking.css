@@ -382,5 +382,6 @@ a {
     border-right: 1px solid rgba(0,0,0,0) !important;
 }
 .midtstill_reklame {
-    padding: auto;
+    max-width: 1200px;
+    margin: auto;
 }
