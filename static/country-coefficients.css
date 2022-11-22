@@ -6,9 +6,10 @@
     }
 }
 .reaklame_sidene {
+    background-color: #343a40;
     width: 310px !important;
 }
-@media (max-width:1610px) {
+@media (max-width:1750px) {
     .reaklame_sidene {
         display: none;
     }
