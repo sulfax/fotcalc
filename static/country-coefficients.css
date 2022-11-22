@@ -8,7 +8,7 @@
 .reaklame_sidene {
     width: 300px !important;
 }
-@media (max-width:1750px) {
+@media (max-width:1740px) {
     .reaklame_sidene {
         display: none;
     }
