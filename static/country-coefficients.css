@@ -5,13 +5,13 @@
         bottom: -2px;
     }
 }
-@media (max-width:1810px) {
+.reaklame_sidene {
+    width: 310px !important;
+}
+@media (max-width:1610px) {
     .reaklame_sidene {
         display: none;
     }
-}
-.reaklame_sidene {
-    width: 250px !important;
 }
 #ad_venstre {
     margin-left: 20px;
