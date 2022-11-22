@@ -1,22 +1,21 @@
-@media (min-width:1651px) {
+@media (min-width:1691px) {
     .reaklame_sidene {
         display: block !important;
     }
 }
-@media (max-width:1870px) {
+@media (max-width:1850px) {
     .reaklame_sidene {
         display: none;
     }
 }
 #ad_venstre {
-    margin-left: 20px;
     float: left;
 }
 #ad_hoyre {
-    margin-right: 20px;
     float: right;
 }
 .reaklame_sidene {
+    width: 280px !important;
     margin-top: 1200px !important;
 }
 .reklame_sidene_under {
