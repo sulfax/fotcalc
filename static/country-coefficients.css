@@ -6,9 +6,9 @@
     }
 }
 .reaklame_sidene {
-    width: 300px !important;
+    width: 280px !important;
 }
-@media (max-width:1740px) {
+@media (max-width:1700px) {
     .reaklame_sidene {
         display: none;
     }
