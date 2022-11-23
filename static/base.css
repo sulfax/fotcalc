@@ -50,6 +50,8 @@
 
 
 body{
+    background-image: url("../media/klubb_bakgrunn_liten.png");
+    background-size: contain;
     background-color: rgb(196, 217, 255);
     font-family: sans-serif;
 }
@@ -225,6 +227,8 @@ body{
 footer div{
     height: 24rem;
     min-height: 24.87vh !important;
+}
+footer {
     background-color: #343a40;
 }
 .laget_av {
