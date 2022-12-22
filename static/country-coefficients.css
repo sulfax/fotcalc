@@ -6,17 +6,19 @@
     }
 }
 .reaklame_sidene {
-    width: 290px !important;
+    width: 280px !important;
 }
-@media (max-width:1680px) {
+@media (max-width:1700px) {
     .reaklame_sidene {
         display: none;
     }
 }
 #ad_venstre {
+    margin-left: 20px;
     float: left;
 }
 #ad_hoyre {
+    margin-right: 20px;
     float: right;
 }
 

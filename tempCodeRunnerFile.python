@@ -1,0 +1,35 @@
+import pygame
+
+# Definer bredde og høyde på vinduet
+WIN_WIDTH = 500
+WIN_HEIGHT = 800
+
+# Definer farger som skal brukes i spillet
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+
+# Initialiser Pygame
+pygame.init()
+
+# Lag et vindu med ønsket bredde og høyde
+win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+
+# Lag en variabel for å holde styr på spillerens poeng
+score = 0
+
+# Definer en funksjon for å tegne spilleren
+def draw_player(x, y):
+    # Tegn en firkant for spilleren
+    pygame.draw.rect(win, WHITE, (x, y, 40, 40))
+
+# Definer en funksjon for å tegne pipe-objekter
+def draw_pipe(x, y):
+    # Tegn en rektangel som representerer pipe-objektet
+    pygame.draw.rect(win, WHITE, (x, y, 60, 400))
+
+# Definer en funksjon for å oppdatere spillet
+def update():
+    # Sett tittelen på vinduet til å vise poengsummen til spilleren
+    pygame.display.set_caption("Flappy Bird | Score: {}".format(score))
+
+    # Oppdater posisjonen til spilleren basert på farten

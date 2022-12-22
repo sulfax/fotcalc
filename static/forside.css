@@ -3,6 +3,11 @@
         display: none;
     }
 }
+.reklame_øverst_forside {
+    margin-left: -8px;
+    background-color: #343a40;
+    width:calc(100% - 9px);
+}
 .dropdown_adva {
     z-index: 999;
 }
