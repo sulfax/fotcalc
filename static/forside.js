@@ -1,11 +1,11 @@
 
-(function () {
-	window.onpageshow = function(event) {
-		if (event.persisted) {
-			window.location.reload();
-		}
-	};
-})();
+// (function () {
+// 	window.onpageshow = function(event) {
+// 		if (event.persisted) {
+// 			window.location.reload();
+// 		}
+// 	};
+// })();
 
 let antall_MV_elem = 8;
 let filter_land = []
