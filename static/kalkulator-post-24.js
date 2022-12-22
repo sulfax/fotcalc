@@ -1,3 +1,11 @@
+(function () {
+	window.onpageshow = function(event) {
+		if (event.persisted) {
+			window.location.reload();
+		}
+	};
+})();
+
 var antall_MV_elem = 8;
 
 /*Variabler som skal brukes i utregninger under*/

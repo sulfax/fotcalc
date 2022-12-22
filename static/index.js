@@ -1,11 +1,3 @@
-(function () {
-	window.onpageshow = function(event) {
-		if (event.persisted) {
-			window.location.reload();
-		}
-	};
-})();
-
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
 
