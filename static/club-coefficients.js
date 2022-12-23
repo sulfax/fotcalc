@@ -666,19 +666,19 @@ function byggTabell_test(ranking_array, column, order) {
     if (aar_etter_forste_periode == 0) {
       sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong5}</a>`
     }
-    if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
+    if (aar_etter_forste_periode == 1) {
       sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong5}</a>`
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong4}</a>`}
-    if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
+    if (aar_etter_forste_periode == 2) {
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong4}</a>`
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong3}</a>`}
-    if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
+    if (aar_etter_forste_periode == 3) {
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong3}</a>`
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong2}</a>`}
-    if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
+    if (aar_etter_forste_periode == 4) {
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong2}</a>`
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${11})" class="utydelig_link">${sesong1}</a>`}
-    if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6) {
+    if (aar_etter_forste_periode == 5) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${11})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>

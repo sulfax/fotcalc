@@ -1083,37 +1083,37 @@ function byggTabell_test(ranking_array, column, order) {
     if (ranking_array[i][14] != 0) {
       tittel_poeng = ranking_array[i][14].toFixed(3)
     }
-    if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1) {
+    if (aar_etter_forste_periode == 0) {
       sesong10 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" class="utydelig_link">${sesong10}</a>`
     }
-    if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
+    if (aar_etter_forste_periode == 1) {
       sesong10 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" class="utydelig_link">${sesong10}</a>`
       sesong9 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong9}</a>`}
-    if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
+    if (aar_etter_forste_periode == 2) {
       sesong9 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong9}</a>`
       sesong8 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong8}</a>`}
-    if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
+    if (aar_etter_forste_periode == 3) {
       sesong8 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong8}</a>`
       sesong7 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong7}</a>`}
-    if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
+    if (aar_etter_forste_periode == 4) {
       sesong7 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong7}</a>`
       sesong6 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong6}</a>`}
-    if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6) {
+    if (aar_etter_forste_periode == 5) {
       sesong6 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong6}</a>`
       sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${11})" class="utydelig_link">${sesong5}</a>`}
-    if (aar_etter_forste_periode >= 6 && aar_etter_forste_periode != 7) {
+    if (aar_etter_forste_periode == 6) {
       sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${11})" class="utydelig_link">${sesong5}</a>`
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${12})" class="utydelig_link">${sesong4}</a>`}
-    if (aar_etter_forste_periode >= 7 && aar_etter_forste_periode != 8) {
+    if (aar_etter_forste_periode == 7) {
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${12})" class="utydelig_link">${sesong4}</a>`
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${13})" class="utydelig_link">${sesong3}</a>`}
-    if (aar_etter_forste_periode >= 8 && aar_etter_forste_periode != 9) {
+    if (aar_etter_forste_periode == 8) {
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${13})" class="utydelig_link">${sesong3}</a>`
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${14})" class="utydelig_link">${sesong2}</a>`}
-    if (aar_etter_forste_periode >= 9 && aar_etter_forste_periode != 10) {
+    if (aar_etter_forste_periode == 9) {
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${14})" class="utydelig_link">${sesong2}</a>`
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${15})" class="utydelig_link">${sesong1}</a>`}
-    if (aar_etter_forste_periode >= 10 && aar_etter_forste_periode != 11) {
+    if (aar_etter_forste_periode == 10) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${15})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
