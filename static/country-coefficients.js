@@ -7,18 +7,18 @@ var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
 let ranking_array = []
 let land_ranking = []
 
-if (localStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
-  localStorage.setItem('kolonne_landskoeffisient', 'poeng')
+if (sessionStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
+  sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
 }
-if (localStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
-  localStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+if (sessionStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
+  sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
 }
 
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   ranking_array = []
   testTabell = document.getElementById('minTest')
-  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0] - 4) + '/' + (nåværende_sesong_periode_valg[2] - 4) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0] - 4) + '/' + (nåværende_sesong_periode_valg[2] - 4) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
   
   var klubbers_assosiasjon = []
   let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
@@ -223,8 +223,8 @@ $('th').on('click', function(){
 })
 
 function sorter_etter_sesong(aar_etter_forste_periode) {
-  let column = localStorage.getItem('kolonne_landskoeffisient') || 'poeng'
-  let order = localStorage.getItem('rekkefølge_landskoeffisient') || 'desc'
+  let column = sessionStorage.getItem('kolonne_landskoeffisient') || 'poeng'
+  let order = sessionStorage.getItem('rekkefølge_landskoeffisient') || 'desc'
   if(order == 'desc') {
     document.getElementById(column).dataset.order = 'asc';
   }
@@ -321,8 +321,8 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     ranking_array.sort(sortFunction_tall_2_flere_desimal);
     tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
-  localStorage.setItem('kolonne_landskoeffisient', column)
-  localStorage.setItem('rekkefølge_landskoeffisient', order)
+  sessionStorage.setItem('kolonne_landskoeffisient', column)
+  sessionStorage.setItem('rekkefølge_landskoeffisient', order)
   document.getElementById(column).innerHTML = tekst;
   byggTabell_test(ranking_array, aar_etter_forste_periode)
 }
@@ -510,7 +510,7 @@ for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
 function endreMenyTittel(innerHTML) {
   document.getElementById("dropDownMeny").innerHTML = innerHTML + "<div class='opp_ned_pil'>&#10094</div>";
   toggleMeny();
-  localStorage.setItem('dropdownmeny_valg_landskoeffisient', innerHTML)
+  sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', innerHTML)
   oppdater_ved_refresh()
 }
 /* Dropdown meny slutt */

@@ -20,11 +20,11 @@ let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 let ranking_array = []
 
 
-if (localStorage.getItem('kolonne_ti_års') == 'undefined') {
-  localStorage.setItem('kolonne_ti_års', 'id_nr')
+if (sessionStorage.getItem('kolonne_ti_års') == 'undefined') {
+  sessionStorage.setItem('kolonne_ti_års', 'id_nr')
 }
-if (localStorage.getItem('rekkefølge_ti_års') == 'undefined') {
-  localStorage.setItem('rekkefølge_ti_års', 'asc')
+if (sessionStorage.getItem('rekkefølge_ti_års') == 'undefined') {
+  sessionStorage.setItem('rekkefølge_ti_års', 'asc')
 }
 
 
@@ -35,7 +35,7 @@ function oppdater_ved_refresh() {
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || []
   ranking_array = []
   testTabell = document.getElementById('minTest')
-  document.getElementById("dropDownMeny").innerHTML = (localStorage.getItem('dropdownmeny_valg_ti_års') || (nåværende_sesong_periode_valg[0] - 9) + '/' + (nåværende_sesong_periode_valg[2] - 9) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_ti_års') || (nåværende_sesong_periode_valg[0] - 9) + '/' + (nåværende_sesong_periode_valg[2] - 9) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
   var klubbers_assosiasjon = []
   aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
   let p = 12;
@@ -511,8 +511,8 @@ $('th').on('click', function(){
 
 
 function sorter_etter_sesong() {
-  let column = localStorage.getItem('kolonne_ti_års') || 'id_nr'
-  let order = localStorage.getItem('rekkefølge_ti_års') || 'asc'
+  let column = sessionStorage.getItem('kolonne_ti_års') || 'id_nr'
+  let order = sessionStorage.getItem('rekkefølge_ti_års') || 'asc'
   if(order == 'desc') {
     document.getElementById(column).dataset.order = 'asc';
   }
@@ -841,8 +841,8 @@ function sorter(column, order, tekst, ranking_array) {
       ranking_array.sort(sortFunction_2);
     }
   }
-  localStorage.setItem('kolonne_ti_års', column)
-  localStorage.setItem('rekkefølge_ti_års', order)
+  sessionStorage.setItem('kolonne_ti_års', column)
+  sessionStorage.setItem('rekkefølge_ti_års', order)
   document.getElementById(column).innerHTML = tekst;
   byggTabell_test(ranking_array, column, order)
 }
@@ -1246,7 +1246,7 @@ for (i = -1; i < nyligste_poeng_rangering[0] - 21 + 10; i++) {
 function endreMenyTittel(innerHTML) {
   document.getElementById("dropDownMeny").innerHTML = innerHTML + "<div class='opp_ned_pil'>&#10094</div>";
   toggleMeny();
-  localStorage.setItem('dropdownmeny_valg_ti_års', innerHTML)
+  sessionStorage.setItem('dropdownmeny_valg_ti_års', innerHTML)
   oppdater_ved_refresh()
 }
 
