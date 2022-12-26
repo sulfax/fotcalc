@@ -10,8 +10,8 @@ let antall_MV_elem = 8;
 let filter_land = []
 let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 let innerHTML = ''
-let trykte_knapper = JSON.parse(localStorage.getItem('trykte_knapper')) || [];
-let trykte_knapper_exclude = JSON.parse(localStorage.getItem('trykte_knapper_exclude')) || [];
+let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
+let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
 const knapp_filter_turneringer = ['ucl_knapp', 'uel_knapp', 'uecl_knapp']
 
 
@@ -51,7 +51,7 @@ function endre_sessong(clicked_id) {
     document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
   }
   localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
-  if (localStorage.getItem('spoiler') == 'skjult') {
+  if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
   }
 };
@@ -167,7 +167,7 @@ $('th').on('click', function(){
       sorter(column, order, tekst, menyvalg_edit)
     }
   }
-  if (localStorage.getItem('spoiler') == 'skjult') {
+  if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
     document.getElementById('spoiler').classList.add('rod_knapp')
     document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
@@ -1003,7 +1003,7 @@ function endreMenyTittel(innerHTML) {
   }
   localStorage.setItem('filter_land', JSON.stringify(filter_land))
   sorter_etter_sesong()
-  if (localStorage.getItem('spoiler') == 'skjult') {
+  if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
   }
 }
@@ -1019,7 +1019,7 @@ function resett() {
   filter_land = []
   localStorage.setItem('filter_land', JSON.stringify(filter_land))
   sorter_etter_sesong()
-  if (localStorage.getItem('spoiler') == 'skjult') {
+  if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
   }
 }
@@ -1197,13 +1197,13 @@ function reset(clicked_id) {
   document.getElementById('filter_på').innerText = '';
   trykte_knapper = []
   trykte_knapper_exclude = []
-  localStorage.setItem('trykte_knapper', JSON.stringify(trykte_knapper))
-  localStorage.setItem('trykte_knapper_exclude', JSON.stringify(trykte_knapper_exclude))
+  sessionStorage.setItem('trykte_knapper', JSON.stringify(trykte_knapper))
+  sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify(trykte_knapper_exclude))
   sorter_etter_sesong()
   for (p = 0; p < filter_id.length; p++) {
     document.getElementById(filter_id[p]).classList.add('no_hover')
   }
-  if (localStorage.getItem('spoiler') == 'skjult') {
+  if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
   }
 }
@@ -1261,8 +1261,8 @@ function adva_filtrer(clicked_id) {
     else {
       document.getElementById('filter_på').innerText = '';
     }
-    localStorage.setItem('trykte_knapper', JSON.stringify(trykte_knapper))
-    localStorage.setItem('trykte_knapper_exclude', JSON.stringify(trykte_knapper_exclude))
+    sessionStorage.setItem('trykte_knapper', JSON.stringify(trykte_knapper))
+    sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify(trykte_knapper_exclude))
     sorter_etter_sesong()
   }
   else {
@@ -1283,7 +1283,7 @@ function adva_filtrer(clicked_id) {
       }, 1500)
     }
   }
-  if (localStorage.getItem('spoiler') == 'skjult') {
+  if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
   }
 }
@@ -1388,8 +1388,8 @@ function totalt_land(column, order, tekst, antall_klubber) {
       land_array.push(landskoeffisienter[r])
     }
   }
-  let trykte_knapper = JSON.parse(localStorage.getItem('trykte_knapper')) || [];
-  let trykte_knapper_exclude = JSON.parse(localStorage.getItem('trykte_knapper_exclude')) || [];
+  let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
+  let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   if (trykte_knapper.length == 0 && trykte_knapper_exclude.length == 0 && aarstall == 1  && (filter_land_før.length == 0 || filter_land_før.includes('RUS'))) {
     land_array.push(['RUS', 0, '', '', 4.333, 0, 0, 0.166, 0.5, 0, 0.5, 'Russia'])
@@ -1410,8 +1410,8 @@ function totalt_land(column, order, tekst, antall_klubber) {
 
 
 function bygg_tabell_2(land_array) {
-  let trykte_knapper = JSON.parse(localStorage.getItem('trykte_knapper')) || [];
-  let trykte_knapper_exclude = JSON.parse(localStorage.getItem('trykte_knapper_exclude')) || [];
+  let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
+  let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   table = document.getElementById('myTable_2')
   table.innerHTML = '';
@@ -1519,7 +1519,7 @@ function endre_lands_filter(land) {
     document.getElementById('dropDownMeny').innerHTML = '<div class="opp_ned_pil">❮</div><div class="flagg_div"><img class="flagg" src="media/UEFA/' + land + '.svg" alt="' + land + '"></div>'
   }
   sorter_etter_sesong()
-  localStorage.setItem('spoiler', 'synlig')
+  sessionStorage.setItem('spoiler', 'synlig')
   document.getElementById('spoiler').classList.remove('rod_knapp')
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
@@ -1536,23 +1536,23 @@ function landsranking_endre_periode() {
 $('#spoiler').click(function(){
   if ($('#tabell_overordnet td').is(':visible')) {
     $('#tabell_overordnet td').hide()
-    localStorage.setItem('spoiler', 'skjult')
+    sessionStorage.setItem('spoiler', 'skjult')
     document.getElementById('spoiler').classList.add('rod_knapp')
     document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
   } else {
     $('#tabell_overordnet td').show()
-    localStorage.setItem('spoiler', 'synlig')
+    sessionStorage.setItem('spoiler', 'synlig')
     document.getElementById('spoiler').classList.remove('rod_knapp')
     document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
   }
 })
 
-if (localStorage.getItem('spoiler') == 'skjult') {
+if (sessionStorage.getItem('spoiler') == 'skjult') {
   $('#tabell_overordnet td').hide()
   document.getElementById('spoiler').classList.add('rod_knapp')
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
 }
-if (localStorage.getItem('spoiler') == 'synlig' || localStorage.getItem('spoiler') == undefined) {
+if (sessionStorage.getItem('spoiler') == 'synlig' || sessionStorage.getItem('spoiler') == undefined) {
   $('#tabell_overordnet td').show()
   document.getElementById('spoiler').classList.remove('rod_knapp')
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
