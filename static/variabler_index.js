@@ -157,7 +157,7 @@ const norsk_landskoeffisient = [
 const norsk_klubbkoeffisient = [
     'UEFA klubb-koeffisient-rangering',
     'Klubbkoeffisient-rangering',
-    'Denne 5 års rangeringen til en klubb styrer seeding og pot-fordeling i Europakvalikk<br>og gruppespill. Høyere rangering gir lettere motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
+    'Denne 5 års rangeringen styrer seeding og pot-fordeling i Europakvalikk<br>og gruppespill. Høyere rangering gir lettere motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
     'Avgjørende for klubbutplassering i ',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
