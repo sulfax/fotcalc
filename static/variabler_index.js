@@ -2,7 +2,7 @@
 const norsk = [
     'Hjem',
     'Landskoeffisient-rangering',
-    '5 års rangering',
+    'Klubbkoeffisient-rangering',
     '10 års rangering',
     'Premiepenge-kalkulator',
     'Koeffisient-kalkulator',
@@ -292,7 +292,7 @@ const norsk_koeffisient_dokumentasjon = [
 const english = [
     'Home',
     'Country coefficient ranking',
-    '5-year ranking',
+    'Club coefficient ranking',
     '10-year ranking',
     'Prize money calculator',
     'Coefficient calculator',
