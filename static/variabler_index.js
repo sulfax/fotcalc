@@ -157,7 +157,7 @@ const norsk_landskoeffisient = [
 const norsk_klubbkoeffisient = [
     'UEFA klubb-koeffisient-rangering',
     '5 års koeffisient-rangering',
-    '5-års rangeringen til en klubb bestemmer seeding og pot-fordeling i Europakvalikk<br>og gruppespill. En høyere ranking hjelper klubben med å møte<br>lettere motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffiesient rangeringen</a>.</span><br>',
+    'Klubbkoeffisient-rangeringen til en klubb bestemmer seeding og pot-fordeling i Europakvalikk<br>og gruppespill. En høyere ranking hjelper klubben med å møte<br>lettere motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffiesient rangeringen</a>.</span><br>',
     'Avgjørende for klubbutplassering i ',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
@@ -447,7 +447,7 @@ const english_landskoeffisient = [
 const english_klubbkoeffisient = [
     'UEFA 5-year Club Coefficient ranking',
     '5-year coefficient ranking',
-    'The 5-year coefficient ranking decides seeding and pot-distribution in qualifying rounds<br>and the group stage. A higher ranking gives the club weaker opponents<br>in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
+    'The Club coefficient ranking decides seeding and pot-distribution in qualifying rounds<br>and the group stage. A higher ranking gives the club weaker opponents<br>in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
     'Decisive for club deployment in ',
     'Check out',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
