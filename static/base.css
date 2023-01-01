@@ -5,7 +5,7 @@
     margin:auto;
     padding: auto;
     /* background-color: #343a40; */
-    width:calc(100% - 31px);
+    width:calc(100% - 90px);
 }
 .dropdown_land {
     z-index: 1000;
