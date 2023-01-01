@@ -6,7 +6,7 @@
     }
 }
 .reaklame_sidene {
-    width: 280px !important;
+    width: 220px !important;
 }
 @media (max-width:1700px) {
     .reaklame_sidene {
@@ -14,11 +14,11 @@
     }
 }
 #ad_venstre {
-    margin-left: 20px;
+    margin-left: 12px;
     float: left;
 }
 #ad_hoyre {
-    margin-right: 20px;
+    margin-right: 12px;
     float: right;
 }
 
