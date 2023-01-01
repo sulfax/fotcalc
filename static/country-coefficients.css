@@ -224,6 +224,16 @@ th, td {
 #NIR {
     border-radius: 50%;
 }
+.rod_knapp:hover, .rod_knapp:active:hover {
+    background-color: rgb(157, 202, 155) !important;
+    border-color: rgb(157, 202, 155) !important;
+    color: #329539 !important;
+}
+.rod_knapp, .rod_knapp:focus {
+    background-color: rgb(213, 247, 214) !important;
+    border-color: rgb(157, 202, 155) !important;
+    color: #329539 !important;
+}
 .link {
     padding: 0px !important;
 }

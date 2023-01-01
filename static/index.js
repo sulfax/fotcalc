@@ -890,3 +890,24 @@ function endre_link_landskoeff() {
     }
   }
 }
+
+// Koeffisient deffinisjon.
+// Når Landskoeffisient-rangerings lenken trykkes:
+
+function trykker_lands_rank_deffinisjon() {
+  sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
+  sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  sessionStorage.setItem('spoiler2', 'synlig')
+}
+
+// Når forside-lenken trykkes:
+function trykker_forside_deffinisjon() {
+  localStorage.setItem('kolonne', 'prize_money')
+  localStorage.setItem('rekkefølge', 'desc')
+  localStorage.setItem('kolonne2', 'prize_money_total')
+  localStorage.setItem('rekkefølge2', 'desc')
+  localStorage.setItem('filter_land', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
+  sessionStorage.setItem('spoiler', 'synlig')
+}

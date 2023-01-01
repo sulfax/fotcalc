@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="Country, Coefficient, UEFA, points, association, clubs, Champions League, Europa League, Conference League, 22/23, 21/22, ranking">
-    <meta name="description" content="Find your country’s coefficient ranking (UEFA). The ranking is based on every club’s collected association coefficient points. Multible five year periods." />
+    <meta name="description" content="Find your country’s coefficient ranking. The ranking is based on every club’s collected association coefficient points. Built for multible five year periods." />
     <meta name="author" content="Johannes Kaste">
     <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://www.fotcalc.com/country-coefficients" alt="fotcalc logo" />
     <meta property="og:image" content="https://s10.gifyu.com/images/ok_4x_generellfa6faeac0235e0c9.png" alt="fotcalc logo" />
     <meta property="og:image:alt" content="fotcalc logo" />
-    <meta property="og:description" content="Find your country’s coefficient ranking (UEFA). The ranking is based on every club’s collected association coefficient points. Multible five year periods." />
+    <meta property="og:description" content="Find your country’s coefficient ranking. The ranking is based on every club’s collected association coefficient points. Built for multible five year periods." />
     <meta property="og:locale" content="en_US"/>
     <meta property="og:locale:alternate" content="nb_NO"/>
     <title id="title">UEFA Country Coefficient ranking</title>
@@ -68,7 +68,7 @@
           <a class="nav-item nav-link" id="premiepenger_kalkulator" href="prize-money-calculator">Prize money calculator</a>
           <a class="nav-item nav-link" id="koeffisient_kalkulator" href="coefficient-calculator">Coefficient calculator</a>
           <a class="nav-item nav-link" id="landskoeff_rangering" href="country-coefficients">Country coefficient ranking</a>
-          <a class="nav-item nav-link" id="klubbkoeff_rangering" href="club-coefficients">Club coefficient ranking</a>
+          <a class="nav-item nav-link" id="klubbkoeff_rangering" href="club-coefficients">5-year ranking</a>
           <a class="nav-item nav-link" id="ti_års_rangering" href="10-year-ranking">10-year ranking</a>
           <button type="button" class="btn btn-link" id="english" onclick="language(this.id)">English</button>
           <button type="button" class="btn btn-link" id="norsk" onclick="language(this.id)">Norsk</button>
@@ -107,7 +107,7 @@
       <br><br><br>
       <h1 id="overskrift_landskoeffisient">Country coefficient ranking</h1> <!--Ikke endre id-->
       <br>
-      <p id="beskrivelse_landskoeffisient">The ranking of a country decides how many European places they are going to get<br>and how far into the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient".</span></p>
+      <p id="beskrivelse_landskoeffisient">The ranking of a country decides how many European places they are going to get<br>and how far in the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient".</span></p>
       <br>
       <div class="reklame_øverst">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
@@ -132,6 +132,7 @@
             </div>
           </div>
         </div>
+        <abbr id="spoiler_abbr" data_title="Hide/Show table"><button class="btn btn-primary" id="spoiler"><span id="spoiler"><div class="spoiler_pil">&#10095</div></span><span id="filter_på"></span></button></abbr>
       </div>
       <div class="decisive_tekst"><span id="decisive_oversett">Decisive for club deployment in </span><span id="decisive_sesong"></span></div>
       <div class="tabell_div_landskoeffisient">

@@ -406,3 +406,22 @@ a:hover {
 .reklame_bunn_margin {
     margin-left: 15px !important;
 }
+#spoiler {
+    padding:3px;
+    height: 38px;
+    width: 29px;
+    margin-top: 9px;
+    margin-left: 19px;
+    margin-right: 9px;
+    margin-bottom: 5px;
+    padding-right: -1px !important;
+    padding-left: 5px !important;
+    padding-top: 4px !important;
+}
+.spoiler_pil {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}

@@ -1292,13 +1292,17 @@ function endre_sort_kolonne() {
     localStorage.setItem('kolonne2', 'prize_money_total')
     localStorage.setItem('rekkefølge2', 'desc')
     localStorage.setItem('filter_land', JSON.stringify([]))
-    localStorage.setItem('spoiler', 'synlig')
+    sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+    sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
+    sessionStorage.setItem('spoiler', 'synlig')
 }
 
 
 function endre_ti_års_periode() {
     aarstall = parseInt(aarstall)
-    const tomt_array = [];
-    localStorage.setItem('filter_land', JSON.stringify(tomt_array))
-    localStorage.setItem('dropdownmeny_valg_ti_års', (11 + aarstall) + '/' + (12 + aarstall) + ' - ' + (20 + aarstall) + '/' + (21 + aarstall))
+    localStorage.setItem('filter_land', JSON.stringify([]))
+    sessionStorage.setItem('kolonne_ti_års', 'id_nr')
+    sessionStorage.setItem('rekkefølge_ti_års', 'asc')
+    localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (11 + aarstall) + '/' + (12 + aarstall) + ' - ' + (20 + aarstall) + '/' + (21 + aarstall))
+    sessionStorage.setItem('dropdownmeny_valg_ti_års', (11 + aarstall) + '/' + (12 + aarstall) + ' - ' + (20 + aarstall) + '/' + (21 + aarstall))
 }

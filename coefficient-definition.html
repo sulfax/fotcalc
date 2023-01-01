@@ -74,7 +74,7 @@
           <a class="nav-item nav-link" id="premiepenger_kalkulator" href="prize-money-calculator">Prize money calculator</a>
           <a class="nav-item nav-link" id="koeffisient_kalkulator" href="coefficient-calculator">Coefficient calculator</a>
           <a class="nav-item nav-link" id="landskoeff_rangering" href="country-coefficients">Country coefficient ranking</a>
-          <a class="nav-item nav-link" id="klubbkoeff_rangering" href="club-coefficients">Club coefficient ranking</a>
+          <a class="nav-item nav-link" id="klubbkoeff_rangering" href="club-coefficients">5-year ranking</a>
           <a class="nav-item nav-link" id="ti_års_rangering" href="10-year-ranking">10-year ranking</a>
           <button type="button" class="btn btn-link" id="english" onclick="language(this.id)">English</button>
           <button type="button" class="btn btn-link" id="norsk" onclick="language(this.id)">Norsk</button>
@@ -145,7 +145,7 @@
       <br><br><br>
       <h1 id="overskrift_koeffisient_dokumentasjon" class="sentrer">Coefficient Points explained</h1> <!--Ikke endre id-->
       <br>
-      <p id="beskrivelse_koeffisient_dokumentasjon" class="sentrer reklame_landskoeff">Check out your clubs’s <a class="link_utydelig" href="https://www.fotcalc.com/">prize money and coefficient points</a> too.</p>
+      <p id="beskrivelse_koeffisient_dokumentasjon" class="sentrer reklame_landskoeff">Check out your club’s <a class="link_utydelig" href="https://www.fotcalc.com/" onclick="trykker_forside_deffinisjon()">prize money and coefficient points</a> too.</p>
       <br>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
         crossorigin="anonymous"></script>
@@ -276,7 +276,7 @@
                   <thead class="thead-light">
                     <tr class="head_tr">
                       <th scope="col"></th>
-                      <th scope="col"><span class="italic"><a class="graa_hover_link_tabell_header" href="country-coefficients">Country coefficient ranking</a> (17/18 - 21/22)</span></th>
+                      <th scope="col"><span class="italic"><a class="graa_hover_link_tabell_header" href="country-coefficients" onclick="trykker_lands_rank_deffinisjon()">Country coefficient ranking</a> (17/18 - 21/22)</span></th>
                       <th scope="col"><span class="italic">European spots (23/24)</span></th>
                     </tr>
                   </thead>

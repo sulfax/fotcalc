@@ -35,6 +35,10 @@ function oppdater_ved_refresh() {
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || []
   ranking_array = []
   testTabell = document.getElementById('minTest')
+  if (localStorage.getItem('dropdownmeny_valg_ti_års_midlertidig')) {
+    sessionStorage.setItem('dropdownmeny_valg_ti_års', localStorage.getItem('dropdownmeny_valg_ti_års_midlertidig'))
+    localStorage.removeItem('dropdownmeny_valg_ti_års_midlertidig');
+  }
   document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_ti_års') || (nåværende_sesong_periode_valg[0] - 9) + '/' + (nåværende_sesong_periode_valg[2] - 9) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
   var klubbers_assosiasjon = []
   aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
@@ -824,6 +828,12 @@ function sorter(column, order, tekst, ranking_array) {
   if(order == 'desc') {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
+      if (column == 'poeng') {
+        for (i = 13; i >= 4; i--) {
+          ranking_array.sort(sortFunction_tall_1_flere_desimal);
+        }
+        i = 1;
+      }
       ranking_array.sort(sortFunction_tall_1_flere_desimal);
     }
     else {
@@ -834,6 +844,12 @@ function sorter(column, order, tekst, ranking_array) {
   else {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
+      if (column == 'poeng') {
+        for (i = 13; i >= 4; i--) {
+          ranking_array.sort(sortFunction_tall_2_flere_desimal);
+        }
+        i = 1;
+      }
       ranking_array.sort(sortFunction_tall_2_flere_desimal);
     }
     else {
@@ -1612,8 +1628,10 @@ function endre_sort_kolonne() {
       localStorage.setItem('kolonne2', 'ass_coeff_total')
       localStorage.setItem('rekkefølge2', 'desc')
   }
+  sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   localStorage.setItem('filter_land', JSON.stringify([]))
-  localStorage.setItem('spoiler', 'synlig')
+  sessionStorage.setItem('spoiler', 'synlig')
 }
 
 

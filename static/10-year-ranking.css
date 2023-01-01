@@ -178,7 +178,7 @@ th, td {
     user-select: none;
     min-width: 73px;
 }
-#poeng, #na_poeng, #sesong1, #sesong2, #sesong3, #sesong4, #sesong5, #sesong6, #sesong7, #sesong8, #sesong9, #sesong10 {
+#poeng, #tittel_poeng, #na_poeng, #sesong1, #sesong2, #sesong3, #sesong4, #sesong5, #sesong6, #sesong7, #sesong8, #sesong9, #sesong10 {
     text-align: center;
 }
 #klubb {

@@ -896,6 +896,8 @@ function endre_sort_kolonne() {
         localStorage.setItem('kolonne2', 'ass_coeff_total')
         localStorage.setItem('rekkefølge2', 'desc')
     }
+    sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+    sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
     localStorage.setItem('filter_land', JSON.stringify([]))
-    localStorage.setItem('spoiler', 'synlig')
+    sessionStorage.setItem('spoiler', 'synlig')
 }

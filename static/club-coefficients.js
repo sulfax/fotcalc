@@ -423,6 +423,12 @@ function sorter(column, order, tekst, ranking_array) {
   if(order == 'desc') {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
+      if (column == 'poeng') {
+        for (i = 8; i >= 4; i--) {
+          ranking_array.sort(sortFunction_tall_1_flere_desimal);
+        }
+        i = 1;
+      }
       ranking_array.sort(sortFunction_tall_1_flere_desimal);
     }
     else {
@@ -433,6 +439,12 @@ function sorter(column, order, tekst, ranking_array) {
   else {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
+      if (column == 'poeng') {
+        for (i = 8; i >= 4; i--) {
+          ranking_array.sort(sortFunction_tall_2_flere_desimal);
+        }
+        i = 1;
+      }
       ranking_array.sort(sortFunction_tall_2_flere_desimal);
     }
     else {
@@ -1086,8 +1098,10 @@ function endre_sort_kolonne() {
       localStorage.setItem('kolonne2', 'ass_coeff_total')
       localStorage.setItem('rekkefølge2', 'desc')
   }
+  sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   localStorage.setItem('filter_land', JSON.stringify([]))
-  localStorage.setItem('spoiler', 'synlig')
+  sessionStorage.setItem('spoiler', 'synlig')
 }
 
 
@@ -1205,9 +1219,10 @@ function myFunction() {
 
 
 function trykker_na_poeng() {
-  localStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
-  localStorage.setItem('kolonne_landskoeffisient', 'poeng')
-  localStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
+  sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
+  sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  sessionStorage.setItem('spoiler2', 'synlig')
 }
 
 /*var schema = {

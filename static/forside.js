@@ -120,7 +120,7 @@ $('th').on('click', function(){
   else {
     $(this).data('order', "desc")
   }
-  let menyvalg_edit = JSON.parse(localStorage.getItem('menyvalg_edit'))
+  let menyvalg_edit = JSON.parse(sessionStorage.getItem('menyvalg_edit'))
   if (column == 'club' || column == 'prize_money' || column == 'ass_coeff' || column == 'bidrag' || column == 'club_coeff') {
     sorter(column, order, tekst, menyvalg_edit)
     if (column == 'prize_money') {
@@ -458,7 +458,7 @@ function sorter_etter_sesong() {
       i = i - 1
     }
   }
-  localStorage.setItem('menyvalg_edit', JSON.stringify(menyvalg_edit))
+  sessionStorage.setItem('menyvalg_edit', JSON.stringify(menyvalg_edit))
   let column = localStorage.getItem('kolonne') || 'prize_money'
   let order = localStorage.getItem('rekkefølge') || 'desc'
   if(order == 'desc') {
@@ -1526,10 +1526,20 @@ function endre_lands_filter(land) {
 
 
 function landsranking_endre_periode() {
-  localStorage.setItem('kolonne_landskoeffisient', 'poeng')
-  localStorage.setItem('rekkefølge_landskoeffisient', 'desc')
-  localStorage.setItem('dropdownmeny_valg_landskoeffisient', (nåværende_sesong_periode_valg[0] - 5 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 5 + aarstall) + ' - ' + (nåværende_sesong_periode_valg[0] - 1 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 1 + aarstall))
-  localStorage.setItem('dropdownmeny_valg_klubbkoeffisient', (nåværende_sesong_periode_valg[0] - 5 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 5 + aarstall) + ' - ' + (nåværende_sesong_periode_valg[0] - 1 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 1 + aarstall))
+  sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
+  sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  let perioden_valgt = parseInt((sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || ((nåværende_sesong_periode_valg[0]-4) + '/' + (nåværende_sesong_periode_valg[2]-4) + ' - ' + nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2])).slice(0, 2))
+  let aarstall_her = parseInt(21 + aarstall)
+  let differanse = perioden_valgt - aarstall_her
+  if (perioden_valgt <= aarstall_her && perioden_valgt + 4 >= aarstall_her) {
+  }
+  else if (differanse > 0) {
+    sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (perioden_valgt - differanse) + '/' + (perioden_valgt + 1 - differanse) + ' - ' + (perioden_valgt + 4 - differanse) + '/' + (perioden_valgt + 5 - differanse))
+  }
+  else {
+    sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (17 + aarstall) + '/' + (18 + aarstall) + ' - ' + (21 + aarstall) + '/' + (22 + aarstall))
+  }
+  // sessionStorage.setItem('dropdownmeny_valg_klubbkoeffisient', (nåværende_sesong_periode_valg[0] - 5 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 5 + aarstall) + ' - ' + (nåværende_sesong_periode_valg[0] - 1 + aarstall) + '/' + (nåværende_sesong_periode_valg[2] - 1 + aarstall))
 }
 
 

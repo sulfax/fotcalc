@@ -220,6 +220,11 @@ $('th').on('click', function(){
   if (column != undefined) {
     sorter(column, order, tekst, ranking_array, aar_etter_forste_periode)
   }
+  if (sessionStorage.getItem('spoiler2') == 'skjult') {
+    $('.tabell_div_landskoeffisient td').hide()
+    document.getElementById('spoiler').classList.add('rod_knapp')
+    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
+  }
 })
 
 function sorter_etter_sesong(aar_etter_forste_periode) {
@@ -512,6 +517,9 @@ function endreMenyTittel(innerHTML) {
   toggleMeny();
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', innerHTML)
   oppdater_ved_refresh()
+  if (sessionStorage.getItem('spoiler2') == 'skjult') {
+    $('.tabell_div_landskoeffisient td').hide()
+  }
 }
 /* Dropdown meny slutt */
 
@@ -536,19 +544,21 @@ function endre_sort_kolonne() {
       localStorage.setItem('kolonne2', 'ass_coeff_total')
       localStorage.setItem('rekkefølge2', 'desc')
   }
+  sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   localStorage.setItem('filter_land', JSON.stringify([]))
-  localStorage.setItem('spoiler', 'synlig')
+  sessionStorage.setItem('spoiler', 'synlig')
 }
 
 function forside_ø_koeff(i, kolonne) {
-  localStorage.setItem('trykte_knapper', JSON.stringify([]))
-  localStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
+  sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   localStorage.setItem('kolonne', 'bidrag')
   localStorage.setItem('rekkefølge', 'desc')
   localStorage.setItem('kolonne2', 'ass_coeff_ø')
   localStorage.setItem('rekkefølge2', 'desc')
-  localStorage.setItem('spoiler', 'synlig')
-  $('#tabell_overordnet td').show()
+  sessionStorage.setItem('spoiler', 'synlig')
+  // $('#tabell_overordnet td').show()
   var rows = document.getElementsByTagName("table")[0].rows;
   var last = rows[i+1];
   var cell = last.cells[1];
@@ -560,4 +570,29 @@ function forside_ø_koeff(i, kolonne) {
   localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
   let aarstall = ((rows[0].cells[kolonne+1].innerText).slice(0,2) - 21)
   localStorage.setItem('sessong', aarstall)
+}
+
+$('#spoiler').click(function(){
+  if ($('.tabell_div_landskoeffisient td').is(':visible')) {
+    $('.tabell_div_landskoeffisient td').hide()
+    sessionStorage.setItem('spoiler2', 'skjult')
+    document.getElementById('spoiler').classList.add('rod_knapp')
+    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
+  } else {
+    $('.tabell_div_landskoeffisient td').show()
+    sessionStorage.setItem('spoiler2', 'synlig')
+    document.getElementById('spoiler').classList.remove('rod_knapp')
+    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
+  }
+})
+
+if (sessionStorage.getItem('spoiler2') == 'skjult') {
+  $('.tabell_div_landskoeffisient td').hide()
+  document.getElementById('spoiler').classList.add('rod_knapp')
+  document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
+}
+if (sessionStorage.getItem('spoiler2') == 'synlig' || sessionStorage.getItem('spoiler2') == undefined) {
+  $('.tabell_div_landskoeffisient td').show()
+  document.getElementById('spoiler').classList.remove('rod_knapp')
+  document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
