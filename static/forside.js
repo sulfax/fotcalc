@@ -609,7 +609,7 @@ function byggTabell_test(data) {
     let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
 
     data[i][10] = data[i][10].toFixed(3) || 0;
-    if (data[i][10] == '0.000') {data[i][10] = '-'}
+    if (data[i][10] == '0.000') {data[i][10] = `-` + `&nbsp`}
 
 
     let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
@@ -1418,26 +1418,26 @@ function bygg_tabell_2(land_array) {
   var helTabellHTML = '';
   if (trykte_knapper.length > 0 || trykte_knapper_exclude.length > 0) {
     for (r = 0; r < land_array.length; r++) {
-      land_array[r][4] = "-"
+      land_array[r][4] = "-&nbsp"
     }
   }
   for (r = 0; r < land_array.length; r++) {
     if (land_array[r][2] == 0) {
-      land_array[r][2] = "-";
+      land_array[r][2] = "-&nbsp";
     }
     else {
       land_array[r][2] = land_array[r][2].toFixed(1)
     }
     if (land_array[r][3] == 0) {
-      land_array[r][3] = "-";
+      land_array[r][3] = "-&nbsp";
     }
     else {
       land_array[r][3] = land_array[r][3].toFixed(1)
     }
     if (land_array[r][4] == 0 || (land_array[r][2] == 0 && (filter_land_før.includes('RUS') == false && filter_land_før.length != 0 && aarstall == 1))) {
-      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${"-"}</a>`
+      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${"-&nbsp"}</a>`
     }
-    else if (land_array[r][4] != "-") {
+    else if (land_array[r][4] != "-&nbsp") {
       land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${land_array[r][4].toFixed(3)}</a>`
     }
     let spraak = localStorage.getItem("someVarKey");
@@ -1528,6 +1528,8 @@ function endre_lands_filter(land) {
 function landsranking_endre_periode() {
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
+  sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
   let perioden_valgt = parseInt((sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || ((nåværende_sesong_periode_valg[0]-4) + '/' + (nåværende_sesong_periode_valg[2]-4) + ' - ' + nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2])).slice(0, 2))
   let aarstall_her = parseInt(21 + aarstall)
   let differanse = perioden_valgt - aarstall_her

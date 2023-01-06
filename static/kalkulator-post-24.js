@@ -139,7 +139,7 @@ const input_summer = [
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club’s coefficient points";
-var din_klubbs_premi_koef_n = "din klubb’s koeffisientpoeng";
+var din_klubbs_premi_koef_n = "din klubbs koeffisientpoeng";
 
 const UCL_inntjening_celler = ["b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
 const UEL_inntjening_celler = ["uelQ1_", "uelQ2_", "b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__"];

@@ -12,7 +12,7 @@ let opp_ned_pil_midten = '<span><img src="media/opp_ned_pil.svg" alt="Sorting ar
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club’s prize money";
-var din_klubbs_premi_koef_n = "din klubb’s premiepenger";
+var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 let antall_MV_elem = 8;
 let filter_land = []
 let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
@@ -656,6 +656,13 @@ function byggTabell_test(ranking_array, column, order) {
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
+    if (i == ranking_array.length - 1) {
+      if (klubbnavn_HTML_start == '<td class="fortsatt_med"><nobr class="marign_venstre">') {
+        klubbnavn_HTML_start = '<td class="fortsatt_med ramme_ikke_grønn"><nobr class="marign_venstre">'
+      } else if (klubbnavn_HTML_start == '<td class="var_med"><nobr class="marign_venstre">') {
+        klubbnavn_HTML_start = '<td class="var_med ramme_ikke_grønn"><nobr class="marign_venstre">'
+      }
+    }
     ranking_array[i][0] = '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/' + ranking_array[i][2] + "/" + klubbnavn_url + '2.png"' + 
     `data-srcset="
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `1.png 18w,
@@ -1223,6 +1230,8 @@ function trykker_na_poeng() {
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
   sessionStorage.setItem('spoiler2', 'synlig')
+  sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
+  sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
 }
 
 /*var schema = {

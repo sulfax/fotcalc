@@ -27,18 +27,18 @@
     width: 95%;
     margin: auto;
 }
-@media (min-width:1030px) {
+@media (min-width:930px) {
     .container_ {
-        width: 1180px;
+        width: 850px;
     }
     @media (max-width:1790px) {
         .container_ {
-            width: 1000px;
+            width: 900px;
         }
     }
     @media (max-width:1290px) {
         .container_ {
-            width: 950px;
+            width: 850px;
         }
     }
 }

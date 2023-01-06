@@ -56,6 +56,11 @@
         bottom: -18px !important;
         left: 19px !important;
     }
+    #NA_prosent:hover::after,
+    #NA_prosent:focus::after {
+        bottom: -30px !important;
+        left: 0px !important;
+    }
 }
 
 
@@ -101,7 +106,7 @@ body{
 #overskrift_klubbkoeffisient, #overskrift_landskoeffisient, #overskrift_forside, th, #overskrift_premiepenger, #overskrift_koeffisient, #overskrift_ti_års {
     color: rgba(52, 58, 64, 1);
 }
-#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient, #beskrivelse_ti_års, #premiepenger_land_beskrivelse {
+#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #beskrivelse_landskoeffisient_klubb, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient, #beskrivelse_ti_års, #premiepenger_land_beskrivelse {
     color: rgba(52, 58, 64, 0.9);
 }
 .ytterst_tabell_div {
@@ -264,7 +269,7 @@ footer {
 a {
     color: #4a56ff;
 }
-a:not(.poengtype_overskrift) {
+a:not(.poengtype_overskrift, #link_lands_klubb, .nav-link) {
     padding-left: 1rem;
 }
 a:hover {
@@ -287,6 +292,9 @@ a:hover {
 }
 #mailto {
     padding-left: 1px !important;
+}
+#twitter_tekst {
+    padding-left: 0px !important;
 }
 #Layer_1 {
     fill:red;
@@ -330,7 +338,7 @@ a:hover {
 .nav-link {
     padding-right: 16px !important;
 }
-.reklame_landskoeff {
+.reklame_landskoeff, #premiepenger_bidrag_beskrivelse {
     color: rgba(52, 58, 64, 0.6);
     font-size: 14px;
     font-style: italic;
@@ -367,8 +375,18 @@ a:hover {
     margin-right: 6px;
     margin-bottom: 3px;
 }
-.ramme_hoyre_tynn {
+.ramme_hoyre_tynn, .ramme_hoyre {
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
+}
+.veldig_utydelig {
+    color: rgb(135, 142, 150);
+}
+.mørk_bakgrunn {
+    background-color: #343a4012;
+}
+.senter {
+    width:fit-content;
+    margin: auto;
 }
 .container_ {
     display: flex;
@@ -407,7 +425,10 @@ a:hover {
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
 }
-.reklame_bunn_margin {
+.ramme_ikke_grønn {
+    border-bottom: 1px solid rgba(177, 177, 177, 0.8) !important;
+}
+.reklame_bunn_margin, #beskrivelse_landskoeffisient_klubb {
     margin-left: 15px !important;
 }
 #spoiler {
@@ -428,4 +449,9 @@ a:hover {
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.premie_koeff_3 {
+    vertical-align:middle;
+    min-width: 34px;
+    margin: 0 auto;
 }

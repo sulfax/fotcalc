@@ -178,8 +178,11 @@ th, td {
     user-select: none;
     min-width: 73px;
 }
-#poeng, #tittel_poeng, #na_poeng, #sesong1, #sesong2, #sesong3, #sesong4, #sesong5, #sesong6, #sesong7, #sesong8, #sesong9, #sesong10 {
+#tittel_poeng, #na_poeng {
     text-align: center;
+}
+#sesong1, #sesong2, #sesong3, #sesong4, #sesong5, #sesong6, #sesong7, #sesong8, #sesong9, #sesong10, #poeng {
+    text-align: right;
 }
 #klubb {
     padding-left: 8px;
@@ -202,9 +205,6 @@ th {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-.ramme_hoyre {
-    border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
 #id_nr {
     text-align: right;
@@ -233,9 +233,6 @@ th {
 .utydelig_link {
     color: rgb(112, 122, 255);;
 }
-.veldig_utydelig {
-    color: rgb(135, 142, 150);
-}
 .premie_koeff {
     vertical-align:middle;
     font-family: "Noto Sans Math", monospace;
@@ -249,15 +246,6 @@ th {
     text-align: right;
     min-width: 61px;
     margin: 0 auto;
-}
-.premie_koeff_3 {
-    vertical-align:middle;
-    min-width: 34px;
-    margin: 0 auto;
-}
-.senter {
-    width:fit-content;
-    margin: auto;
 }
 .id_nr {
     max-width: 60px;
@@ -281,9 +269,6 @@ th {
 }
 a {
     padding-left: 0px !important;
-}
-.mørk_bakgrunn {
-    background-color: #343a4012;
 }
 .no_hover {
     width: 40px;
@@ -338,7 +323,7 @@ a {
     overflow-y: hidden;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:425px) {
+@media (max-width:427px) {
     .content_land {
         width: 120px;
         height: 384px;

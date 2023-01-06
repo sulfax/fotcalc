@@ -114,7 +114,7 @@ function language_standard(clicked_id) {
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
       if (Klubbnavn == "Velg klubb" && overskrift_finnes) {
-        document.getElementById("klubb_link").innerHTML = "din klubb’s";
+        document.getElementById("klubb_link").innerHTML = "din klubbs";
       }
       if (overskrift_forside_finnes || overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes || overskrift_klubbkoeffisient_finnes || overskrift_ti_års_finnes) {}
       else {
@@ -306,6 +306,7 @@ const sprak_id_forside = [
   'ass_koeff_navn',
   'bidrag_navn',
   'klubb_koeff_navn',
+  'premiepenger_bidrag_beskrivelse',
   'premiepenger_land_beskrivelse',
   'premiepenger_land_navn',
   'ass_koeff_land_navn',
@@ -377,6 +378,7 @@ const sprak_id_landskoeffisient = [
   'title',
   'overskrift_landskoeffisient',
   'beskrivelse_landskoeffisient',
+  'beskrivelse_landskoeffisient_klubb',
   'decisive_oversett',
   'premiepenger_reklame',
   'oversikt_reklame',
@@ -898,6 +900,8 @@ function trykker_lands_rank_deffinisjon() {
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
   sessionStorage.setItem('spoiler2', 'synlig')
+  sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
+  sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
 }
 
 // Når forside-lenken trykkes:

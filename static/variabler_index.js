@@ -11,7 +11,7 @@ const norsk = [
     '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Tilbakestill',
     'Utviklet av Johannes Kaste',
-    'Funnet et forbedringspotensiale eller en feil med nettsiden?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a>  '
+    'Funnet et forbedringspotensiale eller en feil med nettsiden?<br><br>Kontakt meg gjerne på <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Premiepenger kalkulator">johanneskaste@gmail.com</a> eller <a id="twitter_tekst" href="https://twitter.com/fotcalc" target="_blank">Twitter</a>'
 ];
 
 const norsk_forside = [
@@ -23,6 +23,7 @@ const norsk_forside = [
     'Assosiasjons-poeng',
     'Bidrag',
     'Klubb-poeng',
+    'Kolonnen, "bidrag" beregnes ved å dele assosiasjons-koeffisientpoengene på antall klubber fra landet.',
     'Tallene i tabellen ovenfor fordelt på assosiasjonene:',
     'Premiepenger',
     'Assosiasjons-poeng',
@@ -94,6 +95,7 @@ const norsk_landskoeffisient = [
     'UEFA Landskoeffisient-rangering',
     'Landskoeffisient-rangering',
     'UEFA Rangeringen av et land bestemmer hvor mange<br>Europaplasser dem vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "Assosiasjons-klubbkoeffisient".</span>',
+    'Rangering av klubber basert på bidratte lands-koeffisientpoeng til eget land:',
     'Avgjørende for klubbutplassering i ',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>',
@@ -251,7 +253,7 @@ const norsk_koeffisient = [
     'Assosiasjons-poeng',
     'Klubb-poeng',
     '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFAs koeffisient-rangeringssystem</a>.</p>',
-    'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">din klubb’s premiepenger</a>.',
+    'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">din klubbs premiepenger</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign koeffisientpoeng med andre klubber</a>.</b>',
     '<b>Ta en titt på <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">landskoeffisient-rangeringen</a>.</b>'
 ];
@@ -301,7 +303,7 @@ const english = [
     '<input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Reset',
     'Developed by Johannes Kaste',
-    'Found potential for improvement, a bug or something wrong with the website?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a>'
+    'Found potential for improvement, a bug or something wrong with the website?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a> or <a id="twitter_tekst" href="https://twitter.com/fotcalc" target="_blank">Twitter</a>'
 ];
 
 const english_forside = [
@@ -313,6 +315,7 @@ const english_forside = [
     'Association points',
     'Contribution',
     'Club points',
+    'The "contribution" column is calculated by dividing the association coefficient points by the number of clubs from the country.',
     'The figures in the table above distributed on the assosiations:',
     'Prize money',
     'Association points',
@@ -384,6 +387,7 @@ const english_landskoeffisient = [
     'UEFA Country Coefficient ranking',
     'Country coefficient ranking',
     'The UEFA ranking of a country decides how many European places they are going to<br>get and how far in the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient".</span>',
+    'Ranking of clubs based on scored country coefficient points for their country:',
     'Decisive for club deployment in ',
     'Check out',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>',
