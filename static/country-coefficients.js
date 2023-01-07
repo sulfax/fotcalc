@@ -767,7 +767,9 @@ function sorter_etter_sesong2() {
   }
   if (column == 'land2') {
     tekst =  '<img class="jordklode" src="media/UEFA/GLOBE.svg" alt="Country">';
-  } else {
+  } else if (column == 'prosent_NA') {
+      tekst = `<abbr id="NA_prosent" data_title="% of country's coefficient points coming from club">NA %</abbr>`
+    } else {
     tekst = document.getElementById(column).innerText
   }
   for (p = 0; p < klubber.length; p++) {
