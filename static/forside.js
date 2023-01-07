@@ -586,6 +586,7 @@ function byggTabell_test(data) {
     else {
       data[i][0] = ''
     }
+    let land_land = data[i][9];
     data[i][0] += '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/' + data[i][9] + "/" + klubbnavn_url + '2.png"' + 
       `data-srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
@@ -641,7 +642,7 @@ function byggTabell_test(data) {
                   <td id="tom_kolonne">${klubbnavn}</td>
                   <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
-                  <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="#" onclick="endre_lands_filter_bidrag(${data[i][9]})">${data[i][10]}</a></span></td>
+                  <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode(${land_land}.innerHTML)">${data[i][10]}</a></span></td>
                   <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${klubb_koeff}</a></span></td>
               </tr>`
     helTabellHTML += rad;
@@ -1435,10 +1436,10 @@ function bygg_tabell_2(land_array) {
       land_array[r][3] = land_array[r][3].toFixed(1)
     }
     if (land_array[r][4] == 0 || (land_array[r][2] == 0 && (filter_land_før.includes('RUS') == false && filter_land_før.length != 0 && aarstall == 1))) {
-      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${"-&nbsp"}</a>`
+      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode('ikke_klubb')">${"-&nbsp"}</a>`
     }
     else if (land_array[r][4] != "-&nbsp") {
-      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode()">${land_array[r][4].toFixed(3)}</a>`
+      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode('ikke_klubb')">${land_array[r][4].toFixed(3)}</a>`
     }
     let spraak = localStorage.getItem("someVarKey");
     if (land_array[r][0] == 'NIR') {
@@ -1525,7 +1526,16 @@ function endre_lands_filter(land) {
 }
 
 
-function landsranking_endre_periode() {
+function landsranking_endre_periode(klubb) {
+  if (klubb) {
+    if (klubb.length > 20) {
+      let id = 'NIR'
+      try {
+        if (klubb.slice(72, 75)) {id = klubb.slice(72, 75)}
+      } catch {}
+      localStorage.setItem('filter_land', JSON.stringify([id]))
+    }
+  } else {localStorage.setItem('filter_land', JSON.stringify(['NIR']))}
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
   sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
