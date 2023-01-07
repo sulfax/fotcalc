@@ -1536,6 +1536,7 @@ function landsranking_endre_periode(klubb) {
       localStorage.setItem('filter_land', JSON.stringify([id]))
     }
   } else {localStorage.setItem('filter_land', JSON.stringify(['NIR']))}
+  sessionStorage.setItem('spoiler2', 'synlig')
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
   sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
