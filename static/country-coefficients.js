@@ -246,11 +246,6 @@ $('.tabell_div_landskoeffisient th').on('click', function(){
   if (column != undefined) {
     sorter(column, order, tekst, ranking_array, aar_etter_forste_periode)
   }
-  if (sessionStorage.getItem('spoiler2') == 'skjult') {
-    $('.tabell_div_landskoeffisient td').hide()
-    document.getElementById('spoiler').classList.add('rod_knapp')
-    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
-  }
 })
 
 function sorter_etter_sesong(aar_etter_forste_periode) {
@@ -637,9 +632,6 @@ function endreMenyTittel(innerHTML,id) {
   toggleMeny(id);
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', innerHTML)
   oppdater_ved_refresh()
-  if (sessionStorage.getItem('spoiler2') == 'skjult') {
-    $('.tabell_div_landskoeffisient td').hide()
-  }
   bygg_klubb_tabell()
 }
 /* Dropdown meny slutt */
@@ -693,31 +685,6 @@ function forside_ø_koeff(i, kolonne) {
   localStorage.setItem('sessong', aarstall)
 }
 
-$('#spoiler').click(function(){
-  if ($('.tabell_div_landskoeffisient td').is(':visible')) {
-    $('.tabell_div_landskoeffisient td').hide()
-    sessionStorage.setItem('spoiler2', 'skjult')
-    document.getElementById('spoiler').classList.add('rod_knapp')
-    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
-  } else {
-    $('.tabell_div_landskoeffisient td').show()
-    sessionStorage.setItem('spoiler2', 'synlig')
-    document.getElementById('spoiler').classList.remove('rod_knapp')
-    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
-  }
-})
-
-if (sessionStorage.getItem('spoiler2') == 'skjult') {
-  $('.tabell_div_landskoeffisient td').hide()
-  document.getElementById('spoiler').classList.add('rod_knapp')
-  document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
-}
-if (sessionStorage.getItem('spoiler2') == 'synlig' || sessionStorage.getItem('spoiler2') == undefined) {
-  $('.tabell_div_landskoeffisient td').show()
-  document.getElementById('spoiler').classList.remove('rod_knapp')
-  document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
-}
-
 
 let klubber = [];
 $('.tabell_div_landskoeffisient_klubb th').on('click', function(){
@@ -738,11 +705,6 @@ $('.tabell_div_landskoeffisient_klubb th').on('click', function(){
   }
   if (column != undefined) {
     sorter_klubb(column, order, tekst)
-  }
-  if (sessionStorage.getItem('spoiler2') == 'skjult') {
-    $('.tabell_div_landskoeffisient td').hide()
-    document.getElementById('spoiler').classList.add('rod_knapp')
-    document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10094</div>'
   }
   for (p = 0; p < klubber.length; p++) {
     for (i = 0; i < 5; i++) {

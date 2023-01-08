@@ -1229,7 +1229,6 @@ function trykker_na_poeng() {
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
-  sessionStorage.setItem('spoiler2', 'synlig')
   sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
   sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
 }

@@ -899,7 +899,6 @@ function endre_link_landskoeff() {
 function trykker_lands_rank_deffinisjon() {
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
-  sessionStorage.setItem('spoiler2', 'synlig')
   sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
   sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
 }
