@@ -905,10 +905,10 @@ function trykker_lands_rank_deffinisjon() {
 
 // Når forside-lenken trykkes:
 function trykker_forside_deffinisjon() {
-  localStorage.setItem('kolonne', 'prize_money')
-  localStorage.setItem('rekkefølge', 'desc')
-  localStorage.setItem('kolonne2', 'prize_money_total')
-  localStorage.setItem('rekkefølge2', 'desc')
+  sessionStorage.setItem('kolonne', 'prize_money')
+  sessionStorage.setItem('rekkefølge', 'desc')
+  sessionStorage.setItem('kolonne2', 'prize_money_total')
+  sessionStorage.setItem('rekkefølge2', 'desc')
   localStorage.setItem('filter_land', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))

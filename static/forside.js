@@ -81,10 +81,10 @@ let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows">'
 $('th').on('click', function(){
   var column = $(this).data('column')
   var order = $(this).data('order')
-  if (order == localStorage.getItem('rekkefølge') && order == 'desc') {
+  if (order == sessionStorage.getItem('rekkefølge') && order == 'desc') {
     order = 'asc'
   }
-  if (order == localStorage.getItem('rekkefølge') && order == 'asc') {
+  if (order == sessionStorage.getItem('rekkefølge') && order == 'asc') {
     order = 'desc'
   }
   if (column == 'club') {
@@ -459,8 +459,8 @@ function sorter_etter_sesong() {
     }
   }
   sessionStorage.setItem('menyvalg_edit', JSON.stringify(menyvalg_edit))
-  let column = localStorage.getItem('kolonne') || 'prize_money'
-  let order = localStorage.getItem('rekkefølge') || 'desc'
+  let column = sessionStorage.getItem('kolonne') || 'prize_money'
+  let order = sessionStorage.getItem('rekkefølge') || 'desc'
   if(order == 'desc') {
     document.getElementById(column).dataset.order = 'asc';
   }
@@ -483,8 +483,8 @@ function sorter_etter_sesong() {
     var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
   }
   sorter(column, order, tekst, menyvalg_edit)
-  column = localStorage.getItem('kolonne2') || 'prize_money_total'
-  order = localStorage.getItem('rekkefølge2') || 'desc'
+  column = sessionStorage.getItem('kolonne2') || 'prize_money_total'
+  order = sessionStorage.getItem('rekkefølge2') || 'desc'
   if (column == 'prize_money_total') {
     var tekst = '<span id="premiepenger_land_navn">' + document.getElementById(column).innerText + '</span>'
   }
@@ -557,8 +557,8 @@ function sorter(column, order, tekst, menyvalg_edit) {
       tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
     }
   }
-  localStorage.setItem('kolonne', column)
-  localStorage.setItem('rekkefølge', order)
+  sessionStorage.setItem('kolonne', column)
+  sessionStorage.setItem('rekkefølge', order)
   document.getElementById(column).innerHTML = tekst;
   byggTabell_test(menyvalg_edit)  
 }
@@ -1403,8 +1403,8 @@ function totalt_land(column, order, tekst, antall_klubber) {
     land_array.sort(sortFunction_2_tall);
     tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
-  localStorage.setItem('kolonne2', column)
-  localStorage.setItem('rekkefølge2', order)
+  sessionStorage.setItem('kolonne2', column)
+  sessionStorage.setItem('rekkefølge2', order)
   document.getElementById(column).innerHTML = tekst;
   bygg_tabell_2(land_array)
 }
@@ -1471,31 +1471,31 @@ function bygg_tabell_2(land_array) {
 }
 
 function endre_lands_filter_bidrag(land) {
-  localStorage.setItem('kolonne', 'bidrag')
-  localStorage.setItem('rekkefølge', 'desc')
-  localStorage.setItem('kolonne2', 'ass_coeff_ø')
-  localStorage.setItem('rekkefølge2', 'desc')
+  sessionStorage.setItem('kolonne', 'bidrag')
+  sessionStorage.setItem('rekkefølge', 'desc')
+  sessionStorage.setItem('kolonne2', 'ass_coeff_ø')
+  sessionStorage.setItem('rekkefølge2', 'desc')
   endre_lands_filter(land)
 }
 function endre_lands_filter_prize(land) {
-  localStorage.setItem('kolonne', 'prize_money')
-  localStorage.setItem('rekkefølge', 'desc')
-  localStorage.setItem('kolonne2', 'prize_money_total')
-  localStorage.setItem('rekkefølge2', 'desc')
+  sessionStorage.setItem('kolonne', 'prize_money')
+  sessionStorage.setItem('rekkefølge', 'desc')
+  sessionStorage.setItem('kolonne2', 'prize_money_total')
+  sessionStorage.setItem('rekkefølge2', 'desc')
   endre_lands_filter(land)
 }
 function endre_lands_filter_ass(land) {
-  localStorage.setItem('kolonne', 'ass_coeff')
-  localStorage.setItem('rekkefølge', 'desc')
-  localStorage.setItem('kolonne2', 'ass_coeff_total')
-  localStorage.setItem('rekkefølge2', 'desc')
+  sessionStorage.setItem('kolonne', 'ass_coeff')
+  sessionStorage.setItem('rekkefølge', 'desc')
+  sessionStorage.setItem('kolonne2', 'ass_coeff_total')
+  sessionStorage.setItem('rekkefølge2', 'desc')
   endre_lands_filter(land)
 }
 function endre_lands_filter_club(land) {
-  localStorage.setItem('kolonne', 'club_coeff')
-  localStorage.setItem('rekkefølge', 'desc')
-  localStorage.setItem('kolonne2', 'club_coeff_total')
-  localStorage.setItem('rekkefølge2', 'desc')
+  sessionStorage.setItem('kolonne', 'club_coeff')
+  sessionStorage.setItem('rekkefølge', 'desc')
+  sessionStorage.setItem('kolonne2', 'club_coeff_total')
+  sessionStorage.setItem('rekkefølge2', 'desc')
   endre_lands_filter(land)
 }
 

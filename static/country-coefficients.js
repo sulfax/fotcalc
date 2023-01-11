@@ -638,24 +638,24 @@ function endreMenyTittel(innerHTML,id) {
 
 
 function endre_sort_kolonne() {
-  if (localStorage.getItem('kolonne') == 'prize_money') {
-    localStorage.setItem('kolonne', 'ass_coeff')
-    localStorage.setItem('rekkefølge', 'desc')
-    localStorage.setItem('kolonne2', 'ass_coeff_total')
-    localStorage.setItem('rekkefølge2', 'desc')
+  if (sessionStorage.getItem('kolonne') == 'prize_money') {
+    sessionStorage.setItem('kolonne', 'ass_coeff')
+    sessionStorage.setItem('rekkefølge', 'desc')
+    sessionStorage.setItem('kolonne2', 'ass_coeff_total')
+    sessionStorage.setItem('rekkefølge2', 'desc')
   }
-  if (localStorage.getItem('kolonne2') == 'prize_money_total') {
-      localStorage.setItem('kolonne', 'ass_coeff')
-      localStorage.setItem('rekkefølge', 'desc')
-      localStorage.setItem('kolonne2', 'ass_coeff_total')
-      localStorage.setItem('rekkefølge2', 'desc')
+  if (sessionStorage.getItem('kolonne2') == 'prize_money_total') {
+      sessionStorage.setItem('kolonne', 'ass_coeff')
+      sessionStorage.setItem('rekkefølge', 'desc')
+      sessionStorage.setItem('kolonne2', 'ass_coeff_total')
+      sessionStorage.setItem('rekkefølge2', 'desc')
   }
-  if (localStorage.getItem('kolonne')) {}
+  if (sessionStorage.getItem('kolonne')) {}
   else {
-      localStorage.setItem('kolonne', 'ass_coeff')
-      localStorage.setItem('rekkefølge', 'desc')
-      localStorage.setItem('kolonne2', 'ass_coeff_total')
-      localStorage.setItem('rekkefølge2', 'desc')
+      sessionStorage.setItem('kolonne', 'ass_coeff')
+      sessionStorage.setItem('rekkefølge', 'desc')
+      sessionStorage.setItem('kolonne2', 'ass_coeff_total')
+      sessionStorage.setItem('rekkefølge2', 'desc')
   }
   sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
@@ -666,10 +666,10 @@ function endre_sort_kolonne() {
 function forside_ø_koeff(i, kolonne) {
   sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
-  localStorage.setItem('kolonne', 'bidrag')
-  localStorage.setItem('rekkefølge', 'desc')
-  localStorage.setItem('kolonne2', 'ass_coeff_ø')
-  localStorage.setItem('rekkefølge2', 'desc')
+  sessionStorage.setItem('kolonne', 'bidrag')
+  sessionStorage.setItem('rekkefølge', 'desc')
+  sessionStorage.setItem('kolonne2', 'ass_coeff_ø')
+  sessionStorage.setItem('rekkefølge2', 'desc')
   sessionStorage.setItem('spoiler', 'synlig')
   // $('#tabell_overordnet td').show()
   var rows = document.getElementsByTagName("table")[0].rows;
