@@ -20,6 +20,7 @@
 }
 .reklame_hoyde, .reklame_øverst_forside, .reklame_øverst {
     max-height:125px !important;
+    height:125px !important;
     background-color: #343a40;
 }
 @media screen and (min-width: 0px) {
