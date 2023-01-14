@@ -365,7 +365,7 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
   }
   else if (kolonne == 'prosent_NA') {
     if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
-      document.getElementById(kolonne).innerHTML = '<abbr id="NA_prosent" data_title="% of country coefficient points coming from club">NA %</abbr>' + opp_ned_pil
+      document.getElementById(kolonne).innerHTML = '<abbr id="NA_prosent" data_title="% of country’s coefficient points coming from club">NA %</abbr>' + opp_ned_pil
     }
   }
   else if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
