@@ -491,6 +491,7 @@ const sprak_id_kalkulator = [
   'inntjening_turnering',
   'inntjening',
   'marketPool_id',
+  'marketPool_id2',
   'koeff_reklame',
   'oversikt_reklame'
 ];
