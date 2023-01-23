@@ -474,12 +474,12 @@ th, td {
 .x_symbol {
     margin-left: -5px;
     padding-right: 3px;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
 }
 .check {
     margin-left: -3px;
     padding-right: 4px;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
 }
 #tom_kolonne {
     width: 0px !important;
