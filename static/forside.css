@@ -146,9 +146,9 @@ th, td {
         min-width: calc(70px) !important;
     }
 }
-#ass_coeff, #prize_money, #club_coeff, #bidrag {
+/* #ass_coeff, #prize_money, #club_coeff, #bidrag {
     min-width: calc(5vw + 30px) !important;
-}
+} */
 #club {
     padding-left: 9px;
 }
