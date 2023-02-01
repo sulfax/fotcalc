@@ -364,11 +364,13 @@ a:hover {
 .klubb_logo_kalkulatorer {
     margin-right: 4px !important;
     margin-bottom: 3px;
+    height: 19px !important;
 }
 .klubb_logo_kalkulatorer_knapp {
     margin-left: 0px !important;
     margin-right: 8px !important;
     margin-bottom: 3px;
+    height: 19px !important;
 }
 .dropdown-content-egen-bredde {
     width:280px !important;
@@ -377,6 +379,8 @@ a:hover {
     margin-left: 3px;
     margin-right: 6px;
     margin-bottom: 3px;
+    height: 19px;
+    width: 19px;
 }
 .ramme_hoyre_tynn, .ramme_hoyre {
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
