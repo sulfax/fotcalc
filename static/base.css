@@ -293,6 +293,9 @@ a:hover {
 #koeff_reklame {
     font-weight: bold;
 }
+#legend {
+    font-style: italic;
+}
 #mailto {
     padding-left: 1px !important;
 }

@@ -161,6 +161,7 @@ const norsk_klubbkoeffisient = [
     'Klubbkoeffisient-rangering',
     'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>Europakvalikk og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
     'Avgjørende for klubbutplassering i ',
+    'Klubber med blå bakgrunnsfarge er fortsatt i konkurranse. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
 ];
@@ -170,6 +171,7 @@ const norsk_ti_års = [
     '10 års koeffisient-rangering',
     'Denne rangeringen benyttes kun til å finne 10 års koeffisient-bonusen (€)<br>til klubbene som deltar i europeisk gruppespill.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen</a>.</span>',
     'Avgjørende for gruppespills-bonus (€) i ',
+    'Klubber med blå bakgrunnsfarge er fortsatt i konkurranse. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
 ]
@@ -454,6 +456,7 @@ const english_klubbkoeffisient = [
     'Club coefficient ranking',
     'This UEFA 5-year ranking decides seeding and pot-distribution in qualifying rounds<br>and the group stage. A higher ranking gives the club weaker opponents<br>in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
     'Decisive for club deployment in ',
+    'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
     'Check out',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
 ];
@@ -463,6 +466,7 @@ const english_ti_års = [
     '10-year coefficient ranking',
     'This ranking is used solely to find the clubs’ 10-year coefficient bonus (€)<br>for participating in European group stages.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Decisive for group stage bonus (€) for ',
+    'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
     'Check out',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
 ]
