@@ -380,6 +380,7 @@ const sprak_id_landskoeffisient = [
   'beskrivelse_landskoeffisient',
   'beskrivelse_landskoeffisient_klubb',
   'decisive_oversett',
+  'legend',
   'premiepenger_reklame',
   'oversikt_reklame',
   'ENG_oversett',
