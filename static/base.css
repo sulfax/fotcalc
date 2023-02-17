@@ -470,6 +470,6 @@ a:hover {
     padding-left: 13px;
 }
 .reklame_topp {
-    max-width: 78%;
-    margin: auto;
+    padding-left: 11%;
+    padding-right: 11%;
 }
