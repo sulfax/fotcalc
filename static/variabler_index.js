@@ -390,7 +390,7 @@ const english_forside = [
 const english_landskoeffisient = [
     'UEFA Country Coefficient ranking',
     'Country coefficient ranking',
-    'The UEFA ranking of a country decides how many European places they are going to<br>get and how far in the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient".</span>',
+    'The UEFA ranking of a country decides how many European places they are going to<br>get and how far into the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficient</a> is also known as "association club coefficient".</span>',
     'Ranking of clubs based on scored country coefficient points for their country:',
     'Decisive for club deployment in ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',

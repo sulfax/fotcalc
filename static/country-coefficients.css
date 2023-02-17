@@ -81,7 +81,7 @@
     margin-bottom: 8px;
 }
 .dropdown-content {
-    border: 2px solid rgb(164, 164, 164);
+    border: 3px solid rgb(164, 164, 164);
 }
 .decisive_tekst {
     font-style: italic;
@@ -133,8 +133,8 @@ th, td {
     white-space: nowrap !important;
 }
 .table.table-sm{
-    width:98%;
-    margin-left:1%;
+    width:97.9%;
+    margin-left:1.1%;
     margin-right:1%;
     margin-bottom: 1.1%;
 }

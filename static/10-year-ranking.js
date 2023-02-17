@@ -35,13 +35,16 @@ function oppdater_ved_refresh() {
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || []
   ranking_array = []
   testTabell = document.getElementById('minTest')
+  try {if (sessionStorage.getItem('dropdownmeny_valg_ti_års').length > 10) {
+    sessionStorage.setItem('dropdownmeny_valg_ti_års', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
+  }} catch {null;}
   if (localStorage.getItem('dropdownmeny_valg_ti_års_midlertidig')) {
     sessionStorage.setItem('dropdownmeny_valg_ti_års', localStorage.getItem('dropdownmeny_valg_ti_års_midlertidig'))
     localStorage.removeItem('dropdownmeny_valg_ti_års_midlertidig');
   }
-  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_ti_års') || (nåværende_sesong_periode_valg[0] - 9) + '/' + (nåværende_sesong_periode_valg[2] - 9) + ' - ' + (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_ti_års') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
   var klubbers_assosiasjon = []
-  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
+  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
   let p = 12;
   let pilstatus = ''
   for (i = 0; i < 10; i++) {
@@ -1290,7 +1293,7 @@ $(document).mouseup(e => {
 /* Lager knappene i menyen */
 for (i = -1; i < nyligste_poeng_rangering[0] - 21 + 10; i++) {
   let btn = document.createElement("button");
-  btn.innerHTML = (21 + i - 9) + '/' + (22 + i - 9) + ' - ' + (21 + i) + '/' + (22 + i);
+  btn.innerHTML = (21 + i) + '/' + (22 + i);
   btn.className = "meny_element"
   btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
   document.getElementById("dropdown_elementer").appendChild(btn);
@@ -1678,7 +1681,7 @@ function regn_ut_NA_poeng() {
   for (i = 0; i < menyvalg.length; i++) {
     klubbers_assosiasjon.push(menyvalg[i][1])
   }
-  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(8,10) - 21;
+  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
   let NA_poeng_og_assosiasjon = [];
   for (i = 0; i < landskoeffisienter.length; i++) {
     let indeks = 0
