@@ -70,7 +70,7 @@
     border-radius: .5rem;
     border-top-left-radius: 0;
     padding-bottom: .1%;
-    padding-top: calc(0.7% + 5px);
+    padding-top: calc(0.6% + 4px);
     overflow-x:auto
 }
 .dropdown {
@@ -126,10 +126,10 @@ th, td {
     white-space: nowrap !important;
 }
 .table.table-sm{
-    width:98%;
+    width:98.1%;
     margin-left:1%;
-    margin-right:1%;
-    margin-bottom: 1.1%;
+    margin-right:0.9%;
+    margin-bottom: 1%;
 }
 .btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus {  /*Fjerner irriterende ramme på knapp ved trykking*/
     box-shadow:none !important;
