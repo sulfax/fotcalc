@@ -176,7 +176,8 @@ th, td {
 }
 #poeng2 {
     text-align: center;
-    padding-bottom: 3px !important;
+    padding-left: 8px;
+    padding-bottom: 2px !important;
 }
 #land2, #club, #prosent_NA, #id_nr_klubb, #sesong1_klubb, #sesong2_klubb, #sesong3_klubb, #sesong4_klubb, #sesong5_klubb {
     -webkit-touch-callout: none;
