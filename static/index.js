@@ -843,7 +843,7 @@ function endre_link_landskoeff() {
   }
   else if (overskrift_klubbkoeffisient_finnes) {
     let siste_ord_linktekst = document.getElementById('overskrift_klubbkoeffisient').innerText;
-    if (siste_ord_linktekst == "5-year coefficient ranking") {
+    if (siste_ord_linktekst == "Club coefficient ranking") {
         siste_ord_linktekst = "prize money"
     }
     else {
@@ -918,3 +918,4 @@ function trykker_forside_deffinisjon() {
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   sessionStorage.setItem('spoiler', 'synlig')
 }
+
