@@ -1369,6 +1369,6 @@ function endre_ti_års_periode() {
     localStorage.setItem('filter_land', JSON.stringify([]))
     sessionStorage.setItem('kolonne_ti_års', 'id_nr')
     sessionStorage.setItem('rekkefølge_ti_års', 'asc')
-    localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (11 + aarstall) + '/' + (12 + aarstall) + ' - ' + (20 + aarstall) + '/' + (21 + aarstall))
-    sessionStorage.setItem('dropdownmeny_valg_ti_års', (11 + aarstall) + '/' + (12 + aarstall) + ' - ' + (20 + aarstall) + '/' + (21 + aarstall))
+    localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (20 + aarstall) + '/' + (21 + aarstall))
+    sessionStorage.setItem('dropdownmeny_valg_ti_års', (20 + aarstall) + '/' + (21 + aarstall))
 }
