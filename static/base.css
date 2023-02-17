@@ -438,8 +438,9 @@ a:hover {
 .ramme_ikke_grønn {
     border-bottom: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
-.reklame_bunn_margin, #beskrivelse_landskoeffisient_klubb {
+.reklame_bunn_margin, #beskrivelse_landskoeffisient, #beskrivelse_landskoeffisient_klubb, #beskrivelse_koeffisient {
     margin-left: 15px !important;
+    margin-right: 15px !important;
 }
 #spoiler {
     padding:3px;
@@ -467,4 +468,7 @@ a:hover {
 }
 .padd_dropDown {
     padding-left: 13px;
+}
+.reklame_topp {
+    max-width: 78%;
 }
