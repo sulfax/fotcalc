@@ -196,14 +196,13 @@ th, td {
     text-align: right;
 }
 .senter_prosent_NA {
-    width:59px;
+    width:59px !important;
     float: right;
-    margin-right: 13px;
+    margin-right: 5px;
 }
 .senter_klubb_poeng {
-    width: 50px;
+    width: 50px !important;
     float: right;
-    margin-right: 2px;
 }
 .senter_klubb_sesong {
     width:39px;
