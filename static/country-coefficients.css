@@ -400,6 +400,9 @@ th, td {
 .gul {
     background-color: rgb(255, 255, 216);
 }
+.gjennomsiktig {
+    background-color: rgba(0, 0, 0, 0);
+}
 .tom_th {
     border-bottom: 1px solid white !important;
 }
