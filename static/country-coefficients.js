@@ -227,6 +227,42 @@ function oppdater_ved_refresh() {
     // else {assos_ranking_array.push(landskoeffisienter[i][4].toFixed(3))}
     ranking_array.push(assos_ranking_array)
   }
+  for (i = 0; i < ranking_array.length; i++) {
+    if (aar_etter_forste_periode >= 4) {ranking_array[i].push([0,0,0,0,0])}
+    else if (aar_etter_forste_periode == 3) {ranking_array[i].push([0,0,0,0,1])}
+    else if (aar_etter_forste_periode == 2) {ranking_array[i].push([0,0,0,1,1])}
+    else if (aar_etter_forste_periode == 1) {ranking_array[i].push([0,0,1,1,1])}
+    else if (aar_etter_forste_periode == 0) {ranking_array[i].push([0,1,1,1,1])}
+    else if (aar_etter_forste_periode == -1) {ranking_array[i].push([1,1,1,1,1])}
+  }
+  console.log(ranking_array)
+  let x_klubber_neste_sesong = [];
+  for (p = 4; p < 9; p++) {
+    if (x_klubber_neste_sesong.length == 0) {
+      for (i = 0; i < ranking_array.length; i++) {
+        x_klubber_neste_sesong.push(ranking_array[i][0])
+      }
+    }
+    for (i = 0; i < menyvalg.length; i++) {
+      if (menyvalg[i][(8 * (aar_etter_forste_periode - p+5) + 1)]) {
+        ranking_array[x_klubber_neste_sesong.indexOf(menyvalg[i][1])][10][p-4] = 1;
+      }
+    }
+  }
+  console.log(ranking_array)
+  for (i = 0; i < ranking_array.length; i++) {
+    if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "-";} else if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
+    if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "-";} else if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}
+    if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "-";} else if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "";}
+    if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "-";} else if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "";}
+    if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "-";} else if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "";}
+    if (ranking_array[i][2] == "-" && ranking_array[i][10][0] == 0) {ranking_array[i][2] = "";}
+    if (ranking_array[i][3] == "-" && ranking_array[i][10][1] == 0) {ranking_array[i][3] = "";}
+    if (ranking_array[i][4] == "-" && ranking_array[i][10][2] == 0) {ranking_array[i][4] = "";}
+    if (ranking_array[i][5] == "-" && ranking_array[i][10][3] == 0) {ranking_array[i][5] = "";}
+    if (ranking_array[i][6] == "-" && ranking_array[i][10][4] == 0) {ranking_array[i][6] = "";}
+    if(aar_etter_forste_periode == -1) {if(ranking_array[i][0] == 'KVX') {ranking_array[i][6] = '';}}
+  }
   sorter_etter_sesong(aar_etter_forste_periode)
 }
 
@@ -338,7 +374,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
         ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
       }
     }
-    ranking_array.sort(sortFunction_tall_1_flere_desimal);
+    ranking_array.sort(sortFunction_tall_1_forskjellig);
     tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
@@ -347,7 +383,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
         ranking_array.sort(sortFunction_tall_2_flere_desimal_nyligste);
       }
     }
-    ranking_array.sort(sortFunction_tall_2_flere_desimal);
+    ranking_array.sort(sortFunction_tall_2_forskjellig);
     tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
   if (column == 'poeng' || column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5') {
@@ -355,6 +391,15 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     sessionStorage.setItem('rekkefølge_landskoeffisient', order)
   }
   document.getElementById(column).innerHTML = tekst;
+  for (p = 2; p < 7; p++) {
+    for (i = 0; i < ranking_array.length; i++) {
+      if (ranking_array[i][p] == 0.0001) {
+        ranking_array[i][p] = '-';
+      } else if (ranking_array[i][p] == 0.000) {
+        ranking_array[i][p] = '';
+      }
+    }
+  }
   byggTabell_test(ranking_array, aar_etter_forste_periode)
 }
 
@@ -392,6 +437,32 @@ function sortFunction_tall_1_flere_desimal(a, b) {
 function sortFunction_tall_2_flere_desimal(a, b) {
   if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
   if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
+  if (parseFloat(a[i]) === parseFloat(b[i])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[i]) < parseFloat(b[i])) ? -1 : 1;
+  }
+}
+
+function sortFunction_tall_1_forskjellig(a, b) {
+  if (a[i] == '') {a[i] = 0.000}
+  else if (a[i] == '-') {a[i] = 0.0001}
+  if (b[i] == '') {b[i] = 0.000}
+  else if (b[i] == '-') {b[i] = 0.0001}
+  if (parseFloat(a[i]) === parseFloat(b[i])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[i]) > parseFloat(b[i])) ? -1 : 1;
+  }
+}
+
+function sortFunction_tall_2_forskjellig(a, b) {
+  if (a[i] == '') {a[i] = 0.000}
+  else if (a[i] == '-') {a[i] = 0.0001}
+  if (b[i] == '') {b[i] = 0.000}
+  else if (b[i] == '-') {b[i] = 0.0001}
   if (parseFloat(a[i]) === parseFloat(b[i])) {
     return 0;
   }
@@ -450,18 +521,16 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       }
       land = ranking_array[i][8]
     }
-    if ((ranking_array[i][2] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[4]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][2] = "-";} else if (ranking_array[i][2] == 0.000) {ranking_array[i][2] = "";}
-    if ((ranking_array[i][3] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[5]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][3] = "-";} else if (ranking_array[i][3] == 0.000) {ranking_array[i][3] = "";}
-    if ((ranking_array[i][4] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[6]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][4] = "-";} else if (ranking_array[i][4] == 0.000) {ranking_array[i][4] = "";}
-    if ((ranking_array[i][5] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[7]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][5] = "-";} else if (ranking_array[i][5] == 0.000) {ranking_array[i][5] = "";}
-    if ((ranking_array[i][6] == 0.000) && ((((document.getElementById("tabell_hoved")).rows[0].cells[8]).innerText.slice(0, 2)) - nåværende_sesong_forside[0] <= 0)) {ranking_array[i][6] = "-";} else if (ranking_array[i][6] == 0.000) {ranking_array[i][6] = "";}
-    if(aar_etter_forste_periode == -1) {if(ranking_array[i][0] == 'KVX') {ranking_array[i][6] = '';}}
-    else if(aar_etter_forste_periode == 2) {if(ranking_array[i][0] == 'RUS') {ranking_array[i][2] = '';}}
     let sesong1 = ranking_array[i][2]
     let sesong2 = ranking_array[i][3]
     let sesong3 = ranking_array[i][4]
     let sesong4 = ranking_array[i][5]
     let sesong5 = ranking_array[i][6]
+    if (sesong1 == '-') {sesong1 = '<span class="bindestrek">-</span>'}
+    if (sesong2 == '-') {sesong2 = '<span class="bindestrek">-</span>'}
+    if (sesong3 == '-') {sesong3 = '<span class="bindestrek">-</span>'}
+    if (sesong4 == '-') {sesong4 = '<span class="bindestrek">-</span>'}
+    if (sesong5 == '-') {sesong5 = '<span class="bindestrek">-</span>'}
     let klubber_igjen = ""
     let tom_kolonne = `<td class='premie_koeff tom'>${""}</td>`
     if (i == 54) {
