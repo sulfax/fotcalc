@@ -1,3 +1,11 @@
+@media screen and (min-width: 0px) {
+    #bidratte_poeng_td abbr:hover::after,
+    #bidratte_poeng_td abbr:focus::after {
+        bottom: -3px !important;
+        left: 26px !important;
+    }
+}
+
 @media (max-width:1588px) {
     .reaklame_sidene {
         display: none;
@@ -162,6 +170,12 @@
 .table-hover tbody tr.Koeffisientpoeng:hover{
     background-color:rgba(151, 151, 151, 0.575);
 }
+.table-hover tbody tr.landskoeffisientpoeng{
+    background-color:rgba(151, 151, 151, 0.450);
+}
+.table-hover tbody tr.landskoeffisientpoeng:hover{
+    background-color:rgba(151, 151, 151, 0.650);
+}
 .table.table-sm{
     width:98%;
     margin-left:1%;
@@ -181,7 +195,7 @@ tbody {
     transition-duration:.0s;
     height: 100%;
 }
-.table .tom_celle, .table .resultat_celle_1, #total_inntjening_assos, #total_inntjening_klubb, #UCL_inntjening_assos, #UEL_inntjening_assos, #UECL_inntjening_assos, #UCL_inntjening_klubb, #UEL_inntjening_klubb, #UECL_inntjening_klubb  {
+.table .tom_celle, .table .resultat_celle_1, #total_inntjening_assos, #total_inntjening_klubb, #UCL_inntjening_assos, #UEL_inntjening_assos, #UECL_inntjening_assos, #UCL_inntjening_klubb, #UEL_inntjening_klubb, #UECL_inntjening_klubb, #koeffisienter_bidrag_sum {
     vertical-align:middle;
     font-family: "Noto Sans Math", monospace;
 }
@@ -358,13 +372,13 @@ td .placeholder::placeholder {
 #prelim_semifinale, #gruppespill_del, #knock_po_kamp1, .tydelig_ramme, .tydelig_ramme_hoyre_under_over, .q1_kamp1_post_24 {
     border-top: 1px solid rgb(177, 177, 177) !important;
 }
-.tydelig_ramme_under, #total_inntjening_assos, #total_inntjening_klubb, .tydelig_ramme_hoyre_under_over {
+.tydelig_ramme_under, #total_inntjening_klubb, .tydelig_ramme_hoyre_under_over, .bånn {
     border-bottom: 1px solid rgb(177, 177, 177) !important;
 }
 .tydelig_ramme_hoyre, .tydelig_ramme_hoyre_under_over {
     border-right: 1px solid rgb(177, 177, 177) !important;
 }
-#koeffisienter_turnering, #UCL_inntjening_assos, #UEL_inntjening_assos, #UECL_inntjening_assos, #UCL_inntjening_klubb, #UEL_inntjening_klubb, #UECL_inntjening_klubb {
+#koeffisienter_turnering, #UCL_inntjening_assos, #UEL_inntjening_assos, #UECL_inntjening_assos, #UCL_inntjening_klubb, #UEL_inntjening_klubb, #UECL_inntjening_klubb, #bidratte_poeng_td, #koeffisienter_bidrag, #tykk_ramme_over, #koeffisienter_bidrag_sum {
     border-top: 2px solid #b1b1b1;
 }
 .tom_celle {
@@ -386,10 +400,10 @@ td .placeholder::placeholder {
     border-color: #343a40;
     border-top: 1px solid #b1b1b1;
 }
-.Koeffisient_pr_turnering, .Koeffisientpoeng {
+.Koeffisient_pr_turnering, .Koeffisientpoeng, .landskoeffisientpoeng {
     font-weight: bold;
 }
-.Koeffisientpoeng {
+.Koeffisientpoeng, #bidratte_poeng_td {
     text-decoration: underline;
 }
 #progresjon {
@@ -451,4 +465,30 @@ th, td {
 }
 .meny_element {
     padding-left: 13px !important;
+}
+.ingen_understrek {
+    text-decoration: underline !important;
+}
+.flagg {
+    height:19px;
+    margin-bottom: 8px;
+}
+.flagg_div {
+    margin-top: 1px;
+    height: 21px;
+    width: 21px;
+    border-radius: 100%;
+    border: 1px solid rgba(161, 161, 161, 0.5);
+    box-shadow: .7px .7px rgba(110, 110, 110, 0.5);
+    float:left;
+}
+#bidratte_poeng {
+    float:left;
+    margin-right: 6px;
+}
+.bidrag_lenke {
+    float:left;
+}
+#NIR {
+    border-radius: 50%;
 }

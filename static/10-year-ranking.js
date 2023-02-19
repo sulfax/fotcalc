@@ -980,7 +980,7 @@ function byggTabell_test(ranking_array, column, order) {
     knapper = knapper.split(",")
     plassering = plassering.split(",")
 
-    if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
+    if (nåværende_sesong_periode_valg[0]-11 != aar_etter_forste_periode) {
       if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
         if (!gjennværende_land.includes(menyvalg[i][1])) {
           gjennværende_land.push(menyvalg[i][1])
@@ -1043,7 +1043,7 @@ function byggTabell_test(ranking_array, column, order) {
           }
           knapper = knapper.split(",")
           plassering = plassering.split(",")
-          if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
+          if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-11) {
             if (gjennværende_land.includes(menyvalg[r][1])) {
               klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
             }
@@ -1097,7 +1097,7 @@ function byggTabell_test(ranking_array, column, order) {
       }
     }
     if (klubbnavn_HTML_start == '<td><nobr class="marign_venstre">') {
-      if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
+      if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-11) {
         if (gjennværende_land.includes(ranking_array[i][2])) {
           klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
         }
@@ -1291,15 +1291,24 @@ $(document).mouseup(e => {
 });
 
 /* Lager knappene i menyen */
-for (i = -1; i < nyligste_poeng_rangering[0] - 21 + 10; i++) {
+let btnid = "";
+let valg_navn = document.getElementById('dropDownMeny').innerText.slice(0,-2);
+id = "dropDownMeny";
+for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 10; i++) {
   let btn = document.createElement("button");
-  btn.innerHTML = (21 + i) + '/' + (22 + i);
-  btn.className = "meny_element"
-  btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
+  btn.innerHTML = (20 + i) + '/' + (21 + i);
+  if ((20 + i) + '/' + (21 + i) == valg_navn) {
+    btn.className = "meny_element valgt_element";}
+  else {btn.className = "meny_element";}
+  btnid = "valgt" + i;
+  btn.id = btnid;
+  btn.setAttribute("onclick", "endreMenyTittel(innerHTML,"+id+","+btnid+")");
   document.getElementById("dropdown_elementer").appendChild(btn);
 }
 
-function endreMenyTittel(innerHTML) {
+function endreMenyTittel(innerHTML,id,btnid) {
+  document.querySelector('.valgt_element').classList.remove("valgt_element");
+  document.getElementById(btnid.id).classList.add("valgt_element");
   document.getElementById("dropDownMeny").innerHTML = innerHTML + "<div class='opp_ned_pil'>&#10094</div>";
   toggleMeny();
   sessionStorage.setItem('dropdownmeny_valg_ti_års', innerHTML)

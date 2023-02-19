@@ -847,15 +847,24 @@ $(document).mouseup(e => {
 
 
 /* Lager knappene i menyen */
-for (i = -1; i < nyligste_poeng_rangering[0] - 21 + 5; i++) {
+let btnid = "";
+let valg_navn = document.getElementById('dropDownMeny').innerText.slice(0,-2);
+id = "dropDownMeny";
+for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
   let btn = document.createElement("button");
-  btn.innerHTML = (21 + i) + '/' + (22 + i);
-  btn.className = "meny_element"
-  btn.setAttribute("onClick", "endreMenyTittel(innerHTML)");
+  btn.innerHTML = (20 + i) + '/' + (21 + i);
+  if ((20 + i) + '/' + (21 + i) == valg_navn) {
+    btn.className = "meny_element valgt_element";}
+  else {btn.className = "meny_element";}
+  btnid = "valgt" + i;
+  btn.id = btnid;
+  btn.setAttribute("onclick", "endreMenyTittel(innerHTML,"+id+","+btnid+")");
   document.getElementById("dropdown_elementer").appendChild(btn);
 }
 
-function endreMenyTittel(innerHTML) {
+function endreMenyTittel(innerHTML,id,btnid) {
+  document.querySelector('.valgt_element').classList.remove("valgt_element");
+  document.getElementById(btnid.id).classList.add("valgt_element");
   document.getElementById("dropDownMeny").innerHTML = innerHTML + "<div class='opp_ned_pil'>&#10094</div>";
   toggleMeny();
   sessionStorage.setItem('dropdownmeny_valg_klubbkoeffisient', innerHTML)

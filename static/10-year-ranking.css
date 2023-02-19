@@ -366,3 +366,6 @@ a {
     font-size: 0px !important;
     border-right: 1px solid rgba(0,0,0,0) !important;
 }
+.ikke_land:hover {
+    width: calc(100% + 6px) !important;
+}

@@ -334,7 +334,7 @@ const totale_uavgjorte_kamper = [
 
 const nyligste_poeng_rangering = [23, '/', 24]
 const nåværende_sesong_periode_valg = [22, '/', 23]
-const nåværende_sesong_forside = [23, '/', 24]
+const nåværende_sesong_forside = [22, '/', 23]
 
 
 const landskoeffisienter = [
@@ -396,62 +396,63 @@ const landskoeffisienter = [
 ['SMR',  0.000,  0.000,	 0.333,	 0.000,	 0.000,	 0.000,  0.166,	 0.500,  0.000,  0.500,  'San Marino',             'San Marino']
 ]
 
+// Forskyv data til venstre når ny landsrangerings-sesong starter
 const totalt_antall_klubber = [
-    [7, 7], // ENG
-    [7, 7], // ESP
-    [7, 7], // ITA
-    [7, 7], // GER
+    [7, 7],   // ENG
+    [7, 7],   // ESP
+    [7, 7],   // ITA
+    [7, 7],   // GER
     [6, '?'], // FRA
     [6, '?'], // POR
     [5, '?'], // NED
-    [5, 5], // AUT
-    [5, 5], // SCO
-    [0, 0], // RUS
-    [5, 5], // SRB
+    [5, 5],   // AUT
+    [5, 5],   // SCO
+    [0, 0],   // RUS
+    [5, 5],   // SRB
     [5, '?'], // UKR
-    [5, 5], // BEL
+    [5, 5],   // BEL
     [5, '?'], // SUI
-    [5, 4], // GRE
+    [5, 4],   // GRE
     [4, '?'], // CZE
     [4, '?'], // NOR
     [4, '?'], // DEN
-    [4, 4], // CRO
+    [4, 4],   // CRO
     [4, '?'], // TUR
-    [4, 4], // CYP
-    [4, 4], // ISR
-    [4, 4], // SWE
-    [4, 4], // BUL
-    [4, 4], // ROU
-    [4, 4], // AZE
-    [4, 4], // HUN
-    [4, 4], // POL
-    [4, 4], // KAZ
-    [4, 4], // SVK
-    [4, 4], // SVN
-    [4, 4], // BLR
-    [4, 4], // MDA
-    [4, 4], // LTU
-    [4, 4], // BIH
-    [4, 4], // FIN
-    [4, 4], // LUX
-    [4, 4], // LVA
-    [4, 4], // KVX
-    [4, 4], // IRL
-    [4, 4], // ARM
-    [4, 4], // NIR
-    [4, 4], // ALB
-    [4, 4], // FRO
-    [4, 4], // EST
-    [4, 4], // MLT
-    [4, 4], // GEO
-    [4, 3], // MKD
-    [1, 1], // LIE
-    [4, 4], // WAL
-    [3, 3], // GIB
-    [3, 4], // ISL
-    [3, 3], // MNE
-    [3, 3], // AND
-    [3, 3]  // SMR
+    [4, 4],   // CYP
+    [4, 4],   // ISR
+    [4, 4],   // SWE
+    [4, 4],   // BUL
+    [4, 4],   // ROU
+    [4, 4],   // AZE
+    [4, 4],   // HUN
+    [4, 4],   // POL
+    [4, 4],   // KAZ
+    [4, 4],   // SVK
+    [4, 4],   // SVN
+    [4, 4],   // BLR
+    [4, 4],   // MDA
+    [4, 4],   // LTU
+    [4, 4],   // BIH
+    [4, 4],   // FIN
+    [4, 4],   // LUX
+    [4, 4],   // LVA
+    [4, 4],   // KVX
+    [4, 4],   // IRL
+    [4, 4],   // ARM
+    [4, 4],   // NIR
+    [4, 4],   // ALB
+    [4, 4],   // FRO
+    [4, 4],   // EST
+    [4, 4],   // MLT
+    [4, 4],   // GEO
+    [4, 3],   // MKD
+    [1, 1],   // LIE
+    [4, 4],   // WAL
+    [3, 3],   // GIB
+    [3, 4],   // ISL
+    [3, 3],   // MNE
+    [3, 3],   // AND
+    [3, 3]    // SMR
 ]
 
 

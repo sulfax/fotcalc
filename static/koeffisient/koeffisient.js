@@ -74,9 +74,9 @@ const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 
-var aarstall = ((localStorage.getItem('sessong'))) || 1;
+var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
 if (aarstall == 'NaN') {
-    aarstall = 1;
+    aarstall = nåværende_sesong_forside[0] - 21;
 }
 aarstall = parseInt(aarstall)
 
@@ -97,6 +97,7 @@ for (let p = 1; p < 10; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
 
+let antall_klubber = 0;
 
 let knapper_som_må_oppdateres = [];
 
@@ -556,6 +557,16 @@ function summer() {
     document.getElementById("UEL_inntjening_assos").innerText = UEL_total_sum_assos;
     document.getElementById("UECL_inntjening_assos").innerText = UECL_total_sum_assos;
     document.getElementById("total_inntjening_assos").innerText = total_sum_assos;
+    let bidrag = 0;
+    if (antall_klubber != 0) {
+        bidrag = total_sum_assos/antall_klubber
+        bidrag = bidrag.toFixed(3) || 0;
+        document.getElementById("koeffisienter_bidrag_sum").innerHTML = '<span class="ingen_understrek">' + bidrag + '<span>';
+    }
+    else {
+        bidrag = '-';
+        document.getElementById("koeffisienter_bidrag_sum").innerHTML = bidrag;
+    }
 
     for (x=0;x<UCL_antall_summer_klubb;x++) {
         let UCL_enkeltsum_klubb = ((document.getElementById(UCL_klubbkoeffisient_celler[x]).innerText));
@@ -610,6 +621,7 @@ function slett(slett_lagring) {
 
 
 function oppdater_ved_refresh_koeff_1() {
+    tell_klubber_land()
     let siste_ord_linktekst = JSON.stringify(document.getElementById("klubb_link").innerHTML.split(" ").splice(-1)).replace(',','').replace('[','').replace(']','').replace('"','').replace('"','');
     if (siste_ord_linktekst == "money") {
         siste_ord_linktekst = "prize money"
@@ -837,6 +849,13 @@ $(document).mouseup(e => {
 });
 
 /* Lager knappene i menyen */
+let btnid = "";
+let Klubbnavn = (localStorage.getItem('Klubbnavn') || "Choose club");
+if (Klubbnavn == 'Kalkuler fra bunnen' || Klubbnavn == 'Calculate from scratch') {
+    document.getElementById('eksperimentell_profil_meny_element').classList.add('valgt_element')
+}
+id = "dropDownMeny";
+let land_klubb = "";
 for (i = 0; i < menyvalg.length; i++) {
     let btn = document.createElement("button");
     let klubbnavn_url = menyvalg[i][0].replace(/\s/g, '')
@@ -862,12 +881,24 @@ for (i = 0; i < menyvalg.length; i++) {
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `6.png 70w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `7.png 100w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w">` + menyvalg[i][0];
-    btn.className = "meny_element"
-    btn.setAttribute("onClick", "endreMenyTittel(innerText)");
+    if (menyvalg[i][0] == Klubbnavn) {
+        btn.className = "meny_element valgt_element";}
+    else {btn.className = "meny_element";}
+    land_klubb = menyvalg[i][1];
+    btnid = "valgt" + i;
+    btn.id = btnid;
+    btn.setAttribute("onClick", "endreMenyTittel(innerText,"+id+","+btnid+")");
     document.getElementById("dropdown_elementer").appendChild(btn);
 }
 
-function endreMenyTittel(Klubbnavn) {
+function endreMenyTittel(Klubbnavn,id,btnid) {
+    try {document.querySelector('.valgt_element').classList.remove("valgt_element");} catch {null;}
+    if (id != 'eksperimentell_profil_meny_element') {
+        document.getElementById(btnid.id).classList.add("valgt_element");
+    }
+    else {
+        document.getElementById(id).classList.add("valgt_element");
+    }
     // document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     toggleMeny();
     localStorage.setItem('Klubbnavn', Klubbnavn);
@@ -875,6 +906,70 @@ function endreMenyTittel(Klubbnavn) {
     oppdater_ved_refresh_koeff_1()
 }
 /* Dropdown meny slutt */
+
+function tell_klubber_land() {
+    Klubbnavn = (localStorage.getItem('Klubbnavn') || "Choose club");
+    antall_klubber = 0;
+    if (Klubbnavn != "Choose club" && Klubbnavn != "Velg klubb" && Klubbnavn != "Calculate from scratch" && Klubbnavn != "Kalkuler bra bunnen") {
+        let land = "";
+        for (i = 0; i < menyvalg.length; i++) {
+            if (menyvalg[i][0] == Klubbnavn) {
+                land = menyvalg[i][1];
+                break
+            }
+        }
+        if (land == '') {
+            document.getElementById('land_bidrag').innerHTML = '';    
+        } else {
+            document.getElementById('land_bidrag').innerHTML = '<div class="flagg_div" id="' + land + '_oversett"></div>';
+        }
+        let spraak = localStorage.getItem("someVarKey") || 'english'
+        language_standard(spraak)
+        if (spraak == 'english') {
+            document.getElementById('land_lenke').innerHTML = `<a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('` + land + `')"><span id="ranking_spraak">Ranking</span></a>`;
+        } else {
+            document.getElementById('land_lenke').innerHTML = `<a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('` + land + `')"><span id="ranking_spraak">Rangering</span></a>`;
+        }
+        if (aarstall >= 2) {
+            for (i = 0; i < landskoeffisienter.length; i++) {
+                if (land == landskoeffisienter[i][0]) {
+                    antall_klubber = totalt_antall_klubber[i][aarstall - 2];
+                    if (antall_klubber == '?' || !antall_klubber) {antall_klubber = 0;}
+                }
+            }
+        }
+        else {
+            for (i = 0; i < menyvalg.length; i++) {
+                if (menyvalg[i][1] == land && menyvalg[i][antall_MV_elem*(aarstall + 1) + 1]) {
+                    antall_klubber += 1;
+                }
+            }
+        }
+    }
+}
+
+function endre_land(land) {
+    localStorage.setItem('filter_land', JSON.stringify([land]))
+    sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
+    sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+    sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
+    sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
+    try {if (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient').length > 10) {
+        sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
+      }}
+    catch {null;}
+    let perioden_valgt = parseInt((sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2])).slice(0, 2)) - 4;
+    let aarstall_her = parseInt(21 + aarstall)
+    let differanse = perioden_valgt - aarstall_her
+    if (perioden_valgt <= aarstall_her && perioden_valgt + 4 >= aarstall_her) {
+    }
+    else if (differanse > 0) {
+      sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (perioden_valgt + 4 - differanse) + '/' + (perioden_valgt + 5 - differanse))
+    }
+    else {
+      sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (21 + aarstall) + '/' + (22 + aarstall))
+    }
+}
 
 function endre_sort_kolonne() {
     if (sessionStorage.getItem('kolonne') == 'prize_money') {

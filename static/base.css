@@ -185,7 +185,7 @@ body{
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    min-width: 60px;
+    min-width: 70px;
     overflow: auto;
     border: 1px solid rgb(200, 200, 200);
     z-index: 1;
@@ -281,7 +281,7 @@ a:hover {
 .graa_hover_link:hover, .graa_hover_link_2:hover {
     color: #929292;
 }
-.graa_hover_link_koeff_deffi:hover {
+.graa_hover_link_koeff_deffi:hover, .poengtype_overskrift:hover {
     color: #343a40;
 }
 .graa_hover_link_tabell_header:hover {
@@ -469,4 +469,9 @@ a:hover {
 .reklame_topp {
     padding-left: 11%;
     padding-right: 11%;
+}
+.valgt_element, .valgt_element2 {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(195, 217, 255, 0.8) 25%, rgba(0,0,0,0) 100%);
+    border-top: 1px solid rgb(183, 183, 183);
+    border-bottom: 1px solid rgb(183, 183, 183);
 }

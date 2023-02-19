@@ -160,19 +160,12 @@ for (let p = 1; p < 16; p++) {
     document.getElementById("i" + p).style.borderColor = "#ced4da";
 };
 
-var aarstall = 0;
-if (localStorage.getItem('sessong') == null) {
-    aarstall = 1
-    localStorage.setItem('sessong', aarstall)
-}
+var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
 if (aarstall == 'NaN') {
-    aarstall = 1;
+    aarstall = nåværende_sesong_forside[0] - 21;
 }
-else {
-    aarstall = parseInt(localStorage.getItem('sessong'));
-    if (aarstall > 3) {
-        aarstall = 3
-    }
+if (aarstall > 3) {
+    aarstall = 3
 }
 if (aarstall < 3) {
     location.href = '/prize-money-calculator';
@@ -1312,6 +1305,12 @@ $(document).mouseup(e => {
 });
 
 /* Lager knappene i menyen */
+let btnid = "";
+let Klubbnavn = (localStorage.getItem('Klubbnavn') || "Choose club");
+if (Klubbnavn == 'Kalkuler fra bunnen' || Klubbnavn == 'Calculate from scratch') {
+    document.getElementById('eksperimentell_profil_meny_element').classList.add('valgt_element')
+}
+id = "dropDownMeny";
 for (i = 0; i < menyvalg.length; i++) {
     let btn = document.createElement("button");
     let klubbnavn_url = menyvalg[i][0].replace(/\s/g, '')
@@ -1337,12 +1336,23 @@ for (i = 0; i < menyvalg.length; i++) {
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `6.png 70w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `7.png 100w,
     media/klubblogo/` + menyvalg[i][1] + "/" + klubbnavn_url + `8.png 140w">` + menyvalg[i][0];
-    btn.className = "meny_element"
-    btn.setAttribute("onClick", "endreMenyTittel(innerText)");
+    if (menyvalg[i][0] == Klubbnavn) {
+        btn.className = "meny_element valgt_element";}
+    else {btn.className = "meny_element";}
+    btnid = "valgt" + i;
+    btn.id = btnid;
+    btn.setAttribute("onClick", "endreMenyTittel(innerText,"+id+","+btnid+")");
     document.getElementById("dropdown_elementer").appendChild(btn);
 }
 
-function endreMenyTittel(Klubbnavn) {
+function endreMenyTittel(Klubbnavn,id,btnid) {
+    try {document.querySelector('.valgt_element').classList.remove("valgt_element");} catch {null;}
+    if (id != 'eksperimentell_profil_meny_element') {
+        document.getElementById(btnid.id).classList.add("valgt_element");
+    }
+    else {
+        document.getElementById(id).classList.add("valgt_element");
+    }
     // document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     toggleMeny();
     localStorage.setItem('Klubbnavn', Klubbnavn);
@@ -1350,7 +1360,6 @@ function endreMenyTittel(Klubbnavn) {
     oppdater_ved_refresh_1()
 }
 /* Dropdown meny slutt */
-
 
 function endre_sort_kolonne() {
     sessionStorage.setItem('kolonne', 'prize_money')

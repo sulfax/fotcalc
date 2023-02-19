@@ -132,7 +132,7 @@
               <button class="knapp_clean"><img class="x_clean" src="media/x-svgrepo-com.svg" alt="x icon" onclick="fjernSøkeord()"></button>
             </div>
             <div class="dropdown_elementer" id="dropdown_elementer">
-              <button class="meny_element" id="eksperimentell_profil_meny_element" onclick="endreMenyTittel(innerHTML)"></button>
+              <button class="meny_element" id="eksperimentell_profil_meny_element" onclick="endreMenyTittel(innerHTML,this.id)"></button>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@
               <th scope="col" class="turnering"><p id="UECL">Europa Conference League</p></th>
               <th class="mellomrom"></th>
               <th scope="col" class="turnering_2_2" colspan="3">
-                <p class="sentrer"><a id="assosiasjons_poeng_link" class="poengtype_overskrift" href="coefficient-definition#association">Assosiasjons-poeng</a></p>
+                <p class="sentrer"><a id="assosiasjons_poeng_link" class="poengtype_overskrift" href="coefficient-definition#association">Association points</a></p>
                 <div class="Turnerings_oversikt">
                   <p id="UCL_2">UCL</p>
                   <p id="UEL_2">UEL</p>
@@ -161,7 +161,7 @@
               </th>
               <td class="mellomrom_2"></td>
               <th scope="col" class="turnering_2_2" colspan="3">
-                <p class="sentrer"><a id="klubb_poeng" class="poengtype_overskrift" href="coefficient-definition#club">Klubb-poeng</a></p>
+                <p class="sentrer"><a id="klubb_poeng" class="poengtype_overskrift" href="coefficient-definition#club">Club points</a></p>
                 <div class="Turnerings_oversikt">
                   <p id="UCL_2">UCL</p>
                   <p id="UEL_2">UEL</p>
@@ -713,18 +713,39 @@
               <th scope="row" id="koeffisienter">Total coefficient points</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning ramme_over_tynn"></div>
                 <div class="knapp_erstatning"></div>
-                <div class="knapp_erstatning"></div>
-                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning ramme_over_tynn"></div>
               </td>
               <td class="mellomrom"></td>
               <td></td>
               <td class="resultat_celle_1" id="total_inntjening_assos"></td>
               <td></td>
               <td class="mellomrom_2"></td>
-              <td class="venstre"></td>
+              <td class="venstre tydelig_ramme_under"></td>
               <td class="resultat_celle_1" id="total_inntjening_klubb"></td>
-              <td></td>
+              <td class="tydelig_ramme_under"></td>
+            </tr>
+            <tr class="landskoeffisientpoeng">
+              <th scope="row" id="bidratte_poeng_td">
+                <span id="land_lenke">
+                  <a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('ENG')">
+                    <span id="ranking_spraak">Ranking</span>
+                  </a>
+                </span>
+                <div id="bidratte_poeng">&nbsppoints for </div>
+                <span id="land_bidrag"></div>
+              </th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="koeffisienter_bidrag">
+                <span class="knapp_erstatning"></span>
+              </td>
+              <td class="mellomrom"></td>
+              <td colspan="3" class="resultat_celle_1 bånn" id="koeffisienter_bidrag_sum"></td>
+              <td class="mellomrom_2" id=""></td>
+              <td class="tom_celle"></td>
+              <td class="tom_celle"></td>
+              <td class="tom_celle"></td>
             </tr>
           </tbody>
         </table>

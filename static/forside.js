@@ -15,12 +15,7 @@ let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_e
 const knapp_filter_turneringer = ['ucl_knapp', 'uel_knapp', 'uecl_knapp']
 
 
-if (localStorage.getItem('sessong') == null) {
-  var aarstall = 1;
-}
-else {
-  var aarstall = parseInt(localStorage.getItem('sessong'));
-}
+var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
 
 function endre_sessong(clicked_id) {
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
@@ -586,7 +581,6 @@ function byggTabell_test(data) {
     else {
       data[i][0] = ''
     }
-    let land_land = data[i][9];
     data[i][0] += '<img class="klubb_logo" loading="lazy" data-sizes="auto" src="media/klubblogo/' + data[i][9] + "/" + klubbnavn_url + '2.png"' + 
       `data-srcset="
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `1.png 18w,
@@ -642,7 +636,7 @@ function byggTabell_test(data) {
                   <td id="tom_kolonne">${klubbnavn}</td>
                   <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
-                  <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode(${land_land}.innerHTML)">${data[i][10]}</a></span></td>
+                  <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${data[i][10]}</a></span></td>
                   <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${klubb_koeff}</a></span></td>
               </tr>`
     helTabellHTML += rad;
