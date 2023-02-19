@@ -739,7 +739,7 @@ function byggTabell_test(ranking_array, column, order) {
                     <td id="tom_kolonne">${klubbnavn}</td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>
-                    <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'><a href="country-coefficients" onclick="trykker_na_poeng()">${na_poeng}</a></div></div></td>
+                    <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'><a href="country-coefficients" onclick="trykker_na_poeng(${ranking_array[i][2]})">${na_poeng}</a></div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong5}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong4}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong3}</div></div></td>
@@ -1267,7 +1267,12 @@ function myFunction() {
 }
 
 
-function trykker_na_poeng() {
+function trykker_na_poeng(land) {
+  if (((land.innerHTML).substring(68,71)) == 'NIR') {
+    localStorage.setItem('filter_land', JSON.stringify(["NIR"]))
+  } else {
+    localStorage.setItem('filter_land', JSON.stringify([(land.innerHTML).substring(58,61)]))
+  }
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
