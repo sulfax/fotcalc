@@ -78,7 +78,7 @@ const norsk_forside = [
     'Assosiasjons-poeng',
     'Bidrag',
     'Klubb-poeng',
-    'Kolonnen, "bidrag" beregnes ved å dele assosiasjons-koeffisientpoengene på antallet klubber fra klubbens landet.',
+    'Kolonnen, "bidrag" beregnes ved å dele assosiasjons-koeffisientpoengene på antallet klubber fra landet.',
     'Tallene i tabellen ovenfor fordelt på assosiasjonene:',
     'Premiepenger',
     'Assosiasjons-poeng',
