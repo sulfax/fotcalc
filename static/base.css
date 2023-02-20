@@ -341,7 +341,7 @@ a:hover {
 .nav-link {
     padding-right: 16px !important;
 }
-.reklame_landskoeff, #premiepenger_bidrag_beskrivelse {
+.reklame_landskoeff, #premiepenger_bidrag_beskrivelse, #koeff_bidrag_beskrivelse {
     color: rgba(52, 58, 64, 0.6);
     font-size: 14px;
     font-style: italic;

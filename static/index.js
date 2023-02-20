@@ -485,6 +485,7 @@ const sprak_id_koeffisient = [
   'klubb_poeng',
   'bidratte_poeng',
   'ranking_spraak',
+  'koeff_bidrag_beskrivelse',
   'kilde_koeff_id',
   'koeff_reklame',
   'oversikt_reklame',
