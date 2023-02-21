@@ -935,7 +935,8 @@ function tell_klubber_land() {
 }
 
 function endre_land(land) {
-    localStorage.setItem('filter_land', JSON.stringify([land]))
+    if (land == '') {land = localStorage.setItem('filter_land', JSON.stringify([]))}
+    else {localStorage.setItem('filter_land', JSON.stringify([land]))}
     sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
     sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
     sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')

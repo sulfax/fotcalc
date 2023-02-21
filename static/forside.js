@@ -6,9 +6,15 @@
 	};
 })();
 
+
 let antall_MV_elem = 8;
 let filter_land = []
 let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
+if (filter_land_før == '') {
+  localStorage.setItem('filter_land', JSON.stringify([]))
+  filter_land_før = [];
+}
+
 let innerHTML = ''
 let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
 let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
@@ -954,7 +960,6 @@ function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
 
 
 
-
 function endreMenyTittel(innerHTML) {
   let filter_land = JSON.parse(localStorage.getItem('filter_land')) || [];
   if (document.getElementById("dropDownMeny").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
@@ -1064,7 +1069,6 @@ $(document).mouseup(e => {
 });
 
 
-
 const knapplabel_turneringer = ['<img src=media/UEFA/UCL.svg class=turnering_ikon>', '<img src=media/UEFA/UEL.svg class=turnering_ikon>', '<img src=media/UEFA/UECL.svg class=turnering_ikon>']
 for (i = 0; i < knapplabel_turneringer.length; i++) {
   let btn = "<abbr data_title='All stages'><button onClick='adva_filtrer(this.id)' class='btn btn-danger " + knapp_filter_turneringer[i] + "' id=" + knapp_filter_turneringer[i] + ">" + knapplabel_turneringer[i] + "</button></abbr>"
@@ -1134,10 +1138,11 @@ document.getElementById("dropdown_elementer_reset").appendChild(btn);
 
 const filter_id = ['b1', 'b2', 'b3','b5', 'b6', 'b8', 'b9', 'b12', 'CLPO', 'b16', 'b18', 'i13', 'b21', 'b24', 'b27', 'b30', 'b33', 'b36', 'b37'];
 
+
 for (p = 0; p < filter_land_før.length; p++) {
-  filter_land.push(filter_land_før[p])
+  filter_land.push(filter_land_før[p]);
   innerHTML = document.getElementById(filter_land[p]).innerHTML;
-  
+
   if (document.getElementById("dropDownMeny").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
     document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
   }
@@ -1597,3 +1602,4 @@ function myFunction() {
 //   var value = cell.innerText;
 //   localStorage.setItem('Klubbnavn', value)
 // }
+

@@ -15,6 +15,10 @@ var din_klubbs_premi_koef_e = "your club’s prize money";
 var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 let filter_land = []
 let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
+if (filter_land_før == '') {
+  localStorage.setItem('filter_land', JSON.stringify([]))
+  filter_land_før = [];
+}
 
 let antall_MV_elem = 8;
 let ranking_array = []
