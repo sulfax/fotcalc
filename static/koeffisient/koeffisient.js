@@ -564,7 +564,7 @@ function summer() {
         document.getElementById("koeffisienter_bidrag_sum").innerHTML = '<span class="ingen_understrek">' + bidrag + '<span>';
     }
     else {
-        bidrag = '-';
+        bidrag = '?';
         document.getElementById("koeffisienter_bidrag_sum").innerHTML = bidrag;
     }
 
@@ -910,39 +910,37 @@ function endreMenyTittel(Klubbnavn,id,btnid) {
 function tell_klubber_land() {
     Klubbnavn = (localStorage.getItem('Klubbnavn') || "Choose club");
     antall_klubber = 0;
-    if (Klubbnavn != "Choose club" && Klubbnavn != "Velg klubb" && Klubbnavn != "Calculate from scratch" && Klubbnavn != "Kalkuler bra bunnen") {
-        let land = "";
+    let land = "";
+    for (i = 0; i < menyvalg.length; i++) {
+        if (menyvalg[i][0] == Klubbnavn) {
+            land = menyvalg[i][1];
+            break
+        }
+    }
+    if (land == '') {
+        document.getElementById('land_bidrag').innerHTML = '';
+    } else {
+        document.getElementById('land_bidrag').innerHTML = '<div class="flagg_div" id="' + land + '_oversett"></div>';
+    }
+    let spraak = localStorage.getItem("someVarKey") || 'english'
+    language_standard(spraak)
+    if (spraak == 'english') {
+        document.getElementById('land_lenke').innerHTML = `<a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('` + land + `')"><span id="ranking_spraak">Ranking</span></a>`;
+    } else {
+        document.getElementById('land_lenke').innerHTML = `<a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('` + land + `')"><span id="ranking_spraak">Rangering</span></a>`;
+    }
+    if (aarstall >= 2) {
+        for (i = 0; i < landskoeffisienter.length; i++) {
+            if (land == landskoeffisienter[i][0]) {
+                antall_klubber = totalt_antall_klubber[i][aarstall - 2];
+                if (antall_klubber == '?' || !antall_klubber) {antall_klubber = 0;}
+            }
+        }
+    }
+    else {
         for (i = 0; i < menyvalg.length; i++) {
-            if (menyvalg[i][0] == Klubbnavn) {
-                land = menyvalg[i][1];
-                break
-            }
-        }
-        if (land == '') {
-            document.getElementById('land_bidrag').innerHTML = '';    
-        } else {
-            document.getElementById('land_bidrag').innerHTML = '<div class="flagg_div" id="' + land + '_oversett"></div>';
-        }
-        let spraak = localStorage.getItem("someVarKey") || 'english'
-        language_standard(spraak)
-        if (spraak == 'english') {
-            document.getElementById('land_lenke').innerHTML = `<a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('` + land + `')"><span id="ranking_spraak">Ranking</span></a>`;
-        } else {
-            document.getElementById('land_lenke').innerHTML = `<a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('` + land + `')"><span id="ranking_spraak">Rangering</span></a>`;
-        }
-        if (aarstall >= 2) {
-            for (i = 0; i < landskoeffisienter.length; i++) {
-                if (land == landskoeffisienter[i][0]) {
-                    antall_klubber = totalt_antall_klubber[i][aarstall - 2];
-                    if (antall_klubber == '?' || !antall_klubber) {antall_klubber = 0;}
-                }
-            }
-        }
-        else {
-            for (i = 0; i < menyvalg.length; i++) {
-                if (menyvalg[i][1] == land && menyvalg[i][antall_MV_elem*(aarstall + 1) + 1]) {
-                    antall_klubber += 1;
-                }
+            if (menyvalg[i][1] == land && menyvalg[i][antall_MV_elem*(aarstall + 1) + 1]) {
+                antall_klubber += 1;
             }
         }
     }
