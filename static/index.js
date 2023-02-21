@@ -17,10 +17,15 @@ else if (overskrift_finnes) {
   var din_klubbs_premi_koef_e = "your club’s coefficient points";
   var din_klubbs_premi_koef_n = "din klubbs koeffisientpoeng";
 }
+
+
 function language(clicked_id) {
   language_koeffisient(clicked_id);
   language_standard(clicked_id);
-  aarstall = parseInt(localStorage.getItem('sessong')) || 1;
+  aarstall = parseInt(localStorage.getItem('sessong')) || nåværende_sesong_forside[0] - 21;
+  if (parseInt(localStorage.getItem('sessong')) == 0) {
+    aarstall = 0;
+  }
   if (aarstall > 7) {aarstall = 1}
   if (overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes) {}
   else {
@@ -707,6 +712,7 @@ function language_koeffisient(clicked_id) {
     }
   }
 }
+
 var flint_2 = localStorage.getItem("someVarKey");
 language_koeffisient(flint_2);
 language_standard(flint_2);
@@ -715,11 +721,9 @@ if (overskrift_koeff_finnes) {
   oppdater_ved_refresh_koeff_1();
 }
 
-
 if (overskrift_forside_finnes) {
-  const menyvalg_lengde = JSON.parse(localStorage.getItem('menyvalg_edit')).length
-  var menyvalg_edit_2 = JSON.parse(localStorage.getItem('menyvalg_edit'))
-
+  const menyvalg_lengde = JSON.parse(sessionStorage.getItem('menyvalg_edit')).length || 0;
+  var menyvalg_edit_2 = JSON.parse(sessionStorage.getItem('menyvalg_edit')) || "";
   var schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -866,4 +870,3 @@ function trykker_forside_deffinisjon() {
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   sessionStorage.setItem('spoiler', 'synlig')
 }
-

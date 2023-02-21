@@ -1602,4 +1602,3 @@ function myFunction() {
 //   var value = cell.innerText;
 //   localStorage.setItem('Klubbnavn', value)
 // }
-
