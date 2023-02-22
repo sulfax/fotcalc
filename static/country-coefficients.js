@@ -506,7 +506,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       } else {
         flagg_ikon = '<div class="flagg_div" id="' + ranking_array[i][0] + '_oversett"><abbr data_title="' + ranking_array[i][8] + '"><img class="flagg" src="media/UEFA/' + ranking_array[i][0] + '.svg"></abbr></div>'
       }
-      land = ranking_array[i][8]
+      land = ranking_array[i][7]
     }
     let sesong1 = ranking_array[i][2]
     let sesong2 = ranking_array[i][3]
@@ -551,7 +551,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
-    var rad_test = `<tr>
+      var rad_test = `<tr>
                     <td class="id_nr"> ${i + 1}</td>
                     <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne">${land}</td>
@@ -1206,7 +1206,6 @@ function utplasser_klubb_tabell(klubber) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
     if (aar_etter_forste_periode == 6) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
-
     var rad_test = `<tr>
                     <td class="id_nr_klubb veldig_utydelig ramme_hoyre">${i+1}</td>
                     ${rangering}
