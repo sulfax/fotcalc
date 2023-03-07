@@ -1,11 +1,10 @@
-// Oppdater disse 10:
-//   if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+4)/5 * 1000) / 1000 || 0;}
-//   else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+8)/6 * 1000) / 1000 || 0;}
-//   else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+16)/7 * 1000) / 1000 || 0;}
-//   else {enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0;}
+// Oppdater ALLE disse:
+//   ['SRB','SCO','AUT','NED'] + Eventuelt UKR
+//   ['POR','FRA']
+//   ['GER','ITA','ESP','ENG']
 
-// ...i country-coefficients.js når vi vet hvilken klubb som direktekvalifiserer seg til UCL.
-// Koden ovenfor gir bonuspoeng til land som direktekvalifiserer seg til UCL.
+// ... når en klubb direktekvalifiserer seg til UCL.
+// Kodebitene gir bonuspoeng til land som har klubber som direktekvalifiserer seg til UCL.
 // Denne poenggivningen skal fjernes når vi vet hvilken klubb fra det aktuelle landet som tar
 // den direkte UCL-plassen.
 

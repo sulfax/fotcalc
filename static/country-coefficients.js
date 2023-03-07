@@ -112,10 +112,7 @@ function oppdater_ved_refresh() {
           enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+16)/7 * 1000) / 1000 || 0;}
-      else {enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0;}
+      enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0;
     }
 
     if (aar_etter_forste_periode <= 0) {
@@ -129,10 +126,7 @@ function oppdater_ved_refresh() {
           koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 3) {koeff_sesong2 = Math.floor((koeff_sesong2+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 3) {koeff_sesong2 = Math.floor((koeff_sesong2+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 3) {koeff_sesong2 = Math.floor((koeff_sesong2+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/antall_klubber2) / 1000 || 0}
+      koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/antall_klubber2) / 1000 || 0;
     }
 
 
@@ -148,10 +142,7 @@ function oppdater_ved_refresh() {
           koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 4) {koeff_sesong3 = Math.floor((koeff_sesong3+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 4) {koeff_sesong3 = Math.floor((koeff_sesong3+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 4) {koeff_sesong3 = Math.floor((koeff_sesong3+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/antall_klubber3) / 1000 || 0}
+      koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/antall_klubber3) / 1000 || 0;
     }
     if (aar_etter_forste_periode <= 2) {
       koeff_sesong4 = parseFloat(landskoeffisienter[i][8 + aar_etter_forste_periode])
@@ -164,10 +155,7 @@ function oppdater_ved_refresh() {
           koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 5) {koeff_sesong4 = Math.floor((koeff_sesong4+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 5) {koeff_sesong4 = Math.floor((koeff_sesong4+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 5) {koeff_sesong4 = Math.floor((koeff_sesong4+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/antall_klubber4) / 1000 || 0}
+      koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/antall_klubber4) / 1000 || 0;
     }
     if (aar_etter_forste_periode <= 3) {
       koeff_sesong5 = parseFloat(landskoeffisienter[i][7 + aar_etter_forste_periode])
@@ -180,10 +168,7 @@ function oppdater_ved_refresh() {
           koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 6) {koeff_sesong5 = Math.floor((koeff_sesong5+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 6) {koeff_sesong5 = Math.floor((koeff_sesong5+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 6) {koeff_sesong5 = Math.floor((koeff_sesong5+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
+      koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0;
     }
     
     if (landskoeffisienter[i][0] == 'RUS') {
@@ -203,6 +188,24 @@ function oppdater_ved_refresh() {
         koeff_sesong5 = 4.333
       }
     }
+    if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 0.8}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 0.8}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 0.8}}
+    if (['POR','FRA'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 1.333}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 1.333}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 1.333}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 1.333}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 1.333}}
+    if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.285}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.285}}
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     landskoeffisienter_totalt.push([assos_ranking_array[1]])
@@ -1335,10 +1338,7 @@ function generer_lands_knapper() {
           enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode + 1)))]) || 0;
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 2) {enkelt_sesong1 = Math.floor((enkelt_sesong1+16)/7 * 1000) / 1000 || 0;}
-      else {enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0;}
+      enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0;
     }
     if (aar_etter_forste_periode <= 0) {
       koeff_sesong2 = parseFloat(landskoeffisienter[i][10 + aar_etter_forste_periode])
@@ -1350,10 +1350,7 @@ function generer_lands_knapper() {
           koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 3) {koeff_sesong2 = Math.floor((koeff_sesong2+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 3) {koeff_sesong2 = Math.floor((koeff_sesong2+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 3) {koeff_sesong2 = Math.floor((koeff_sesong2+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/antall_klubber2) / 1000 || 0}
+      koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/antall_klubber2) / 1000 || 0
     }
     if (aar_etter_forste_periode <= 1) {
       koeff_sesong3 = parseFloat(landskoeffisienter[i][9 + aar_etter_forste_periode])
@@ -1365,10 +1362,7 @@ function generer_lands_knapper() {
           koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 1)))]) || 0;
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 4) {koeff_sesong3 = Math.floor((koeff_sesong3+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 4) {koeff_sesong3 = Math.floor((koeff_sesong3+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 4) {koeff_sesong3 = Math.floor((koeff_sesong3+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/antall_klubber3) / 1000 || 0}
+      koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/antall_klubber3) / 1000 || 0
     }
     if (aar_etter_forste_periode <= 2) {
       koeff_sesong4 = parseFloat(landskoeffisienter[i][8 + aar_etter_forste_periode])
@@ -1380,10 +1374,7 @@ function generer_lands_knapper() {
           koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 2)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 5) {koeff_sesong4 = Math.floor((koeff_sesong4+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 5) {koeff_sesong4 = Math.floor((koeff_sesong4+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 5) {koeff_sesong4 = Math.floor((koeff_sesong4+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/antall_klubber4) / 1000 || 0}
+      koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/antall_klubber4) / 1000 || 0
     }
     if (aar_etter_forste_periode <= 3) {
       koeff_sesong5 = parseFloat(landskoeffisienter[i][7 + aar_etter_forste_periode])
@@ -1395,10 +1386,7 @@ function generer_lands_knapper() {
           koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aar_etter_forste_periode - 3)))]) || 0
         }
       }
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 6) {koeff_sesong5 = Math.floor((koeff_sesong5+4)/5 * 1000) / 1000 || 0;}
-      else if (['POR','FRA'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 6) {koeff_sesong5 = Math.floor((koeff_sesong5+8)/6 * 1000) / 1000 || 0;}
-      else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0]) && aar_etter_forste_periode == 6) {koeff_sesong5 = Math.floor((koeff_sesong5+16)/7 * 1000) / 1000 || 0;}
-      else {koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
+      koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0
     }
     if (landskoeffisienter[i][0] == 'RUS') {
       if (aar_etter_forste_periode == 1) {
@@ -1417,6 +1405,24 @@ function generer_lands_knapper() {
         koeff_sesong5 = 4.333
       }
     }
+    if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 0.8}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 0.8}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 0.8}}
+    if (['POR','FRA'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 1.333}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 1.333}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 1.333}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 1.333}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 1.333}}
+    if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.285}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.285}}
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     assos_ranking_array.push(enkelt_sesong1.toFixed(3))
