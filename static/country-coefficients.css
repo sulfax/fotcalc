@@ -228,7 +228,7 @@ th, td {
     overflow-y: hidden;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:435px) {
+@media (max-width:373px) {
     .content_land {
         width: 120px;
         height: 384px;
