@@ -164,7 +164,7 @@ th, td {
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
 }
-#poeng, #sesong1, #sesong2, #sesong3, #sesong4, #sesong5 {
+#sesong1, #sesong2, #sesong3, #sesong4, #sesong5 {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -173,6 +173,16 @@ th, td {
     user-select: none;
     text-align: right;
     min-width: 74px;
+}
+#id_nr {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: right;
+    padding-right: 8px;
 }
 #poeng2 {
     text-align: center;
@@ -211,6 +221,8 @@ th, td {
 }
 #poeng {
     min-width: 82px;
+    text-align: right;
+    padding: 10px;
 }
 .jordklode {
     margin-bottom: 1px;

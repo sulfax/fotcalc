@@ -25,7 +25,7 @@ let ranking_array = []
 let land_ranking = []
 
 if (sessionStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
-  sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
+  sessionStorage.setItem('kolonne_landskoeffisient', 'id_nr')
 }
 if (sessionStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
@@ -297,7 +297,8 @@ $('.tabell_div_landskoeffisient th').on('click', function(){
 })
 
 function sorter_etter_sesong(aar_etter_forste_periode) {
-  let column = sessionStorage.getItem('kolonne_landskoeffisient') || 'poeng'
+  let column = sessionStorage.getItem('kolonne_landskoeffisient') || 'id_nr'
+  if (column == 'poeng') {column = 'id_nr'} 
   let order = sessionStorage.getItem('rekkefølge_landskoeffisient') || 'desc'
   if(order == 'desc') {
     document.getElementById(column).dataset.order = 'asc';
@@ -305,7 +306,7 @@ function sorter_etter_sesong(aar_etter_forste_periode) {
   else {
     document.getElementById(column).dataset.order = 'desc';
   }
-  if (column == 'poeng') {
+  if (column == 'id_nr') {
     var tekst =  '<span id="poeng_oversett">' + document.getElementById(column).innerText + '</span>'
   } else {var tekst = document.getElementById(column).innerText}
   sorter(column, order, tekst, ranking_array, aar_etter_forste_periode)
@@ -329,7 +330,50 @@ var link = document.createElement('meta');  link.setAttribute('name', 'descripti
 
 
 function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
-  if (column == 'poeng') {
+  for (p = 6; p > 1; p--) {
+    ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
+  }
+  i = 1
+  ranking_array.sort(sortFunction_tall_1_forskjellig);
+
+  for (i = 0; i < ranking_array.length; i++) {
+    ranking_array[i].push(i+1)
+    if (i > 0) {
+      let poeng1 = ranking_array[i][1];
+      let kolonne1_1 = ranking_array[i][2];
+      let kolonne1_2 = ranking_array[i][3];
+      let kolonne1_3 = ranking_array[i][4];
+      let kolonne1_4 = ranking_array[i][5];
+      let kolonne1_5 = ranking_array[i][6];
+      let poeng0 = ranking_array[i-1][1];
+      let kolonne0_1 = ranking_array[i-1][2];
+      let kolonne0_2 = ranking_array[i-1][3];
+      let kolonne0_3 = ranking_array[i-1][4];
+      let kolonne0_4 = ranking_array[i-1][5];
+      let kolonne0_5 = ranking_array[i-1][6];
+      if (poeng1 == '-') {poeng0 = ''}
+      if (kolonne1_1 == '-') {kolonne1_1 = ''}
+      if (kolonne1_2 == '-') {kolonne1_2 = ''}
+      if (kolonne1_3 == '-') {kolonne1_3 = ''}
+      if (kolonne1_4 == '-') {kolonne1_4 = ''}
+      if (kolonne1_5 == '-') {kolonne1_5 = ''}
+      if (kolonne0_1 == '-') {kolonne0_1 = ''}
+      if (kolonne0_2 == '-') {kolonne0_2 = ''}
+      if (kolonne0_3 == '-') {kolonne0_3 = ''}
+      if (kolonne0_4 == '-') {kolonne0_4 = ''}
+      if (kolonne0_5 == '-') {kolonne0_5 = ''}
+      let poeng_lik = (poeng1 == poeng0)
+      let kolonne1_lik = (kolonne1_1 == kolonne0_1)
+      let kolonne2_lik = (kolonne1_2 == kolonne0_2)
+      let kolonne3_lik = (kolonne1_3 == kolonne0_3)
+      let kolonne4_lik = (kolonne1_4 == kolonne0_4)
+      let kolonne5_lik = (kolonne1_5 == kolonne0_5)
+      if (poeng_lik && kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) {
+        ranking_array[i].splice(10,1,ranking_array[i-1][10])
+      }
+    }
+  }
+  if (column == 'id_nr') {
     i = 1
     endre_kolonne_overskrift('sesong1', opp_ned_pil)
     endre_kolonne_overskrift('sesong2', opp_ned_pil)
@@ -339,7 +383,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   }
   else if (column == 'sesong1') {
     i = 2
-    endre_kolonne_overskrift('poeng', opp_ned_pil)
+    endre_kolonne_overskrift('id_nr', opp_ned_pil)
     endre_kolonne_overskrift('sesong2', opp_ned_pil)
     endre_kolonne_overskrift('sesong3', opp_ned_pil)
     endre_kolonne_overskrift('sesong4', opp_ned_pil)
@@ -347,7 +391,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   }
   else if (column == 'sesong2') {
     i = 3
-    endre_kolonne_overskrift('poeng', opp_ned_pil)
+    endre_kolonne_overskrift('id_nr', opp_ned_pil)
     endre_kolonne_overskrift('sesong1', opp_ned_pil)
     endre_kolonne_overskrift('sesong3', opp_ned_pil)
     endre_kolonne_overskrift('sesong4', opp_ned_pil)
@@ -355,7 +399,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   }
   else if (column == 'sesong3') {
     i = 4
-    endre_kolonne_overskrift('poeng', opp_ned_pil)
+    endre_kolonne_overskrift('id_nr', opp_ned_pil)
     endre_kolonne_overskrift('sesong1', opp_ned_pil)
     endre_kolonne_overskrift('sesong2', opp_ned_pil)
     endre_kolonne_overskrift('sesong4', opp_ned_pil)
@@ -363,7 +407,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   }
   else if (column == 'sesong4') {
     i = 5
-    endre_kolonne_overskrift('poeng', opp_ned_pil)
+    endre_kolonne_overskrift('id_nr', opp_ned_pil)
     endre_kolonne_overskrift('sesong1', opp_ned_pil)
     endre_kolonne_overskrift('sesong2', opp_ned_pil)
     endre_kolonne_overskrift('sesong3', opp_ned_pil)
@@ -371,23 +415,20 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   }
   else if (column == 'sesong5') {
     i = 6
-    endre_kolonne_overskrift('poeng', opp_ned_pil)
+    endre_kolonne_overskrift('id_nr', opp_ned_pil)
     endre_kolonne_overskrift('sesong1', opp_ned_pil)
     endre_kolonne_overskrift('sesong2', opp_ned_pil)
     endre_kolonne_overskrift('sesong3', opp_ned_pil)
     endre_kolonne_overskrift('sesong4', opp_ned_pil)
   }
   if(order == 'desc') {
-    if (column == 'poeng') {
-      for (p = 6; p > 1; p--) {
-        ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
-      }
+    if (column != 'id_nr') {
+      ranking_array.sort(sortFunction_tall_1_forskjellig);
     }
-    ranking_array.sort(sortFunction_tall_1_forskjellig);
     tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
-    if (column == 'poeng') {
+    if (column == 'id_nr') {
       for (p = 6; p > 1; p--) {
         ranking_array.sort(sortFunction_tall_2_flere_desimal_nyligste);
       }
@@ -395,7 +436,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     ranking_array.sort(sortFunction_tall_2_forskjellig);
     tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
-  if (column == 'poeng' || column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5') {
+  if (column == 'id_nr' || column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5') {
     sessionStorage.setItem('kolonne_landskoeffisient', column)
     sessionStorage.setItem('rekkefølge_landskoeffisient', order)
   }
@@ -574,7 +615,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
       var rad_test = `<tr>
-                    <td class="id_nr"> ${i + 1}</td>
+                    <td class="id_nr"> ${ranking_array[i][10]}</td>
                     <td><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
