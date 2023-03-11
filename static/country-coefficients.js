@@ -422,18 +422,14 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     endre_kolonne_overskrift('sesong4', opp_ned_pil)
   }
   if(order == 'desc') {
-    if (column != 'id_nr') {
-      ranking_array.sort(sortFunction_tall_1_forskjellig);
-    }
+    if (column == 'id_nr') {ranking_array.sort(sortFunction_tall_2_forskjellig);}
+    else {ranking_array.sort(sortFunction_tall_1_forskjellig);}
     tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
-    if (column == 'id_nr') {
-      for (p = 6; p > 1; p--) {
-        ranking_array.sort(sortFunction_tall_2_flere_desimal_nyligste);
-      }
+    if (column != 'id_nr') {
+      ranking_array.sort(sortFunction_tall_2_forskjellig);
     }
-    ranking_array.sort(sortFunction_tall_2_forskjellig);
     tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
   if (column == 'id_nr' || column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5') {

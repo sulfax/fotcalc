@@ -441,7 +441,8 @@ function sorter(column, order, tekst, ranking_array) {
         }
         i = 1;
       }
-      ranking_array.sort(sortFunction_tall_1_flere_desimal);
+      if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
+      else {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
     }
     else {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
@@ -457,7 +458,8 @@ function sorter(column, order, tekst, ranking_array) {
         }
         i = 1;
       }
-      ranking_array.sort(sortFunction_tall_2_flere_desimal);
+      if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
+      else {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
     }
     else {
       tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
