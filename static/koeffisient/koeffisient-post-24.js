@@ -938,7 +938,7 @@ function endre_land(land) {
     if (land == '') {land = localStorage.setItem('filter_land', JSON.stringify([]))}
     else {localStorage.setItem('filter_land', JSON.stringify([land]))}
     sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
-    sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+    sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
     sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
     sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
     try {if (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient').length > 10) {

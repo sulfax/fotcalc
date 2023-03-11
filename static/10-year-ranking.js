@@ -436,6 +436,8 @@ function oppdater_ved_refresh() {
   }
   i = 0
   ranking_array.sort(sortFunction_2);
+  i = 3
+  ranking_array.sort(sortFunction_tall_2_flere_desimal);
   for (x = 14; x >= 5; x--) {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }

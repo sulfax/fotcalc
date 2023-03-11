@@ -28,7 +28,7 @@ if (sessionStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
   sessionStorage.setItem('kolonne_landskoeffisient', 'id_nr')
 }
 if (sessionStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
-  sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
 }
 try {if (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient').length > 10) {
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);

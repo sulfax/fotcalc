@@ -213,6 +213,8 @@ function oppdater_ved_refresh() {
   }
   i = 0
   ranking_array.sort(sortFunction_2);
+  i = 3
+  ranking_array.sort(sortFunction_tall_2_flere_desimal);
   for (x = 9; x >= 5; x--) {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }
@@ -1385,7 +1387,7 @@ function trykker_na_poeng(land) {
   }
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
-  sessionStorage.setItem('rekkefølge_landskoeffisient', 'desc')
+  sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
   sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
   sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
 }
