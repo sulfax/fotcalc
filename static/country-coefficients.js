@@ -299,7 +299,7 @@ $('.tabell_div_landskoeffisient th').on('click', function(){
 function sorter_etter_sesong(aar_etter_forste_periode) {
   let column = sessionStorage.getItem('kolonne_landskoeffisient') || 'id_nr'
   if (column == 'poeng') {column = 'id_nr'} 
-  let order = sessionStorage.getItem('rekkefølge_landskoeffisient') || 'desc'
+  let order = sessionStorage.getItem('rekkefølge_landskoeffisient') || 'asc'
   if(order == 'desc') {
     document.getElementById(column).dataset.order = 'asc';
   }
