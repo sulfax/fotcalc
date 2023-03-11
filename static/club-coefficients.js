@@ -616,7 +616,6 @@ function byggTabell_test(ranking_array, column, order) {
       nummer = '<img src="media/kolonnefjerner.png">' + nummer + '<img src="media/kolonnefjerner.png">';
     }
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][10] + 1}</b></td>`;
-
     let klubbnavn_HTML_start = '<td><nobr class="marign_venstre">';
     if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
       for (r = 0; r < menyvalg.length; r++) {
@@ -1189,10 +1188,14 @@ function regn_ut_NA_poeng() {
   }
   let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
   let NA_poeng_og_assosiasjon = [];
+  // Kanskje fjern
   let denne_NA_poeng_og_assos_skygge = [];
   let denne_NA_poeng_og_assos_skygge2 = [];
+  // -------------------
   for (i = 0; i < landskoeffisienter.length; i++) {
+    // Kanskje fjern
     denne_NA_poeng_og_assos_skygge = [];
+    // -------------------
     let indeks = 0
     let indeks_klubb = []
     do {
