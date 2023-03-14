@@ -85,6 +85,7 @@ if (aarstall == 'NaN') {
     aarstall = nåværende_sesong_forside[0] - 21;
 }
 aarstall = parseInt(aarstall)
+localStorage.setItem('sessong', aarstall);
 if (aarstall > 3) {
     aarstall = 3
 }

@@ -163,6 +163,7 @@ var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_seson
 if (aarstall == 'NaN') {
     aarstall = nåværende_sesong_forside[0] - 21;
 }
+localStorage.setItem('sessong', aarstall);
 if (aarstall > 2) {
     location.href = '/prize-money-calculator-post-24';
 }
@@ -325,6 +326,7 @@ function paa_av(clicked_id){
         }
     }
 };
+
 function flytt_SCUP_sum_hoyre(clicked_id) {
     let UEL_celle_1 = (document.getElementById(UEL_inntjening_celler[0]).innerText)
     let UEL_celle_2 = (document.getElementById(UEL_inntjening_celler[1]).innerText)

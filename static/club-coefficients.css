@@ -27,12 +27,28 @@
 
 @media (min-width:1000px) {
     .container_ {
-        width: 980px;
+        width: 960px;
     }
 }
 @media (min-width:1400px) {
     .container_ {
-        width: 980px;
+        width: 960px;
+    }
+}
+
+.container_4_aar {
+    width: 99.3%;
+    margin: auto;
+}
+
+@media (min-width:1000px) {
+    .container_4_aar {
+        width: 880px;
+    }
+}
+@media (min-width:1400px) {
+    .container_4_aar {
+        width: 880px;
     }
 }
 
