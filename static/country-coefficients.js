@@ -612,7 +612,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
       var rad_test = `<tr>
                     <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${i+1}</td>
-                    <td class="id_nr bold">${ranking_array[i][10]}</td>
+                    <td class="id_nr">${ranking_array[i][10]}</td>
                     <td><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
