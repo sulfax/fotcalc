@@ -227,6 +227,9 @@ th, td {
 .jordklode {
     margin-bottom: 1px;
 }
+.jordklode_mod {
+    float:right;
+}
 .jordklode2 {
     margin-top: -3px;
     margin-bottom: -1px;
@@ -313,6 +316,9 @@ th, td {
 .marign_venstre {
     padding-left: 5px;
 }
+.flagg_hoyre {
+    float:right;
+}
 
 .høyrestill {
     float: right;
@@ -325,11 +331,11 @@ th, td {
     text-align: right;
 }
 .id_nr {
-    max-width: 60px;
+    max-width: 42px;
     min-width: 42px;
-    width: 60px;
+    width: 42px;
     text-align: center;
-    border-right: 1px solid rgba(177, 177, 177, 1) !important;
+    /* border-right: 1px solid rgba(177, 177, 177, 1) !important; */
 }
 .id_nr_klubb {
     max-width: 42px;
@@ -353,6 +359,9 @@ th, td {
     border-radius: 50%;
     border: 1px solid rgba(161, 161, 161, 0.5);
     box-shadow: .7px .7px rgba(110, 110, 110, 0.5);
+}
+.flagg_mod {
+    margin-top: 1px !important;
 }
 #NIR, #NIRe {
     border-radius: 50%;
@@ -443,4 +452,7 @@ th, td {
 }
 .bindestrek {
     margin-right: 2px;
+}
+.ekstremt_utydelig {
+    color: rgba(135, 142, 150, 0.4);
 }
