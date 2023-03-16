@@ -860,7 +860,7 @@ function forside_ø_koeff(i, kolonne) {
   land = (str.substring(str.indexOf('/UEFA/') + 6)).substring(0, 3)
   filter_land_før.push(land)
   localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
-  let aarstall = ((rows[0].cells[kolonne+1].innerText).slice(0,2) - 21)
+  let aarstall = ((rows[0].cells[kolonne+2].innerText).slice(0,2) - 21)
   localStorage.setItem('sessong', aarstall)
 }
 
