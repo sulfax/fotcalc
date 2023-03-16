@@ -586,7 +586,10 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
         landskoeffisienter_totalt[p].push(i)
       }
     }
-
+    let nummer = i+1
+    if (nummer <= 3) {
+      nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][11] + '<img src="media/kolonnefjerner.png">';
+    } else {nummer = ranking_array[i][11]}
     land_ranking.push(ranking_array[i][7])
     let land = ""
     if (ranking_array[i][0] == 'NIR') {
@@ -649,7 +652,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
       var rad_test = `<tr>
-                    <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${ranking_array[i][11]}</td>
+                    <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${nummer}</td>
                     <td class="id_nr">${ranking_array[i][10]}</td>
                     <td><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne">${land}</td>

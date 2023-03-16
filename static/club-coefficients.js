@@ -658,8 +658,8 @@ function byggTabell_test(ranking_array, column, order) {
 
     let nummer = i+1;
     if (nummer <= 3) {
-      nummer = '<img src="media/kolonnefjerner.png">' + nummer + '<img src="media/kolonnefjerner.png">';
-    }
+      nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][11] + '<img src="media/kolonnefjerner.png">';
+    } else {nummer = ranking_array[i][11]}
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][10] + 1}</b></td>`;
     let klubbnavn_HTML_start = '<td><nobr class="marign_venstre">';
     if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
@@ -786,7 +786,7 @@ function byggTabell_test(ranking_array, column, order) {
     if (aar_etter_forste_periode == 5) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${11})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
-                    <td class="id_nr veldig_utydelig ramme_hoyre">${ranking_array[i][11]}</td>
+                    <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
                     ${rangering}
                     ${klubbnavn_HTML_start + ranking_array[i][0]}</nobr></td>
                     <td id="tom_kolonne">${klubbnavn}</td>

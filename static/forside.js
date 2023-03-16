@@ -562,6 +562,46 @@ function sorter(column, order, tekst, menyvalg_edit) {
   sessionStorage.setItem('kolonne', column)
   sessionStorage.setItem('rekkefølge', order)
   document.getElementById(column).innerHTML = tekst;
+
+  if (order == 'desc' || column != 'bidrag') {
+    for (p = 0; p < menyvalg_edit.length; p++) {
+      if (menyvalg_edit[p][11]) {
+        menyvalg_edit[p][11] = p+1;
+      } else {
+        menyvalg_edit[p].push(p+1);
+      }
+    }
+  }
+  else {
+    for (p = 0; p < menyvalg_edit.length; p++) {
+      if (menyvalg_edit[p][11]) {
+        menyvalg_edit[p][11] = menyvalg_edit.length-p;
+      } else {
+        menyvalg_edit[p].push(menyvalg_edit.length-p);
+      }
+    }
+  }
+  if (column == 'bidrag') {
+    if (order == 'desc') {
+      for (p = 0; p < menyvalg_edit.length; p++) {
+        if (p > 0) {
+          if (menyvalg_edit[p-1][i] == menyvalg_edit[p][i]) {
+            menyvalg_edit[p].splice(11,1,menyvalg_edit[p-1][11])
+          }
+        }
+      }
+    }
+    else {
+      for (p = menyvalg_edit.length - 1; p >= 0; p--) {
+        if (p < menyvalg_edit.length - 1) {
+          if (menyvalg_edit[p+1][i] == menyvalg_edit[p][i]) {
+            menyvalg_edit[p].splice(11,1,menyvalg_edit[p+1][11])
+          }
+        }
+      }
+    }
+  }
+
   byggTabell_test(menyvalg_edit)  
 }
 
@@ -617,25 +657,25 @@ function byggTabell_test(data) {
     let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
     if ((data[i][1] + '').includes("b18")) {
       if ((data[i][4] + '').includes("3") && aarstall <=2) {
-        nummer = '<td class="ucl_gs_uel id_nr">' + (i + 1) + '</td>'
+        nummer = '<td class="ucl_gs_uel id_nr">' + data[i][11] + '</td>'
       }
       else {
-        nummer = '<td class="ucl_gs id_nr">' + (i + 1) + '</td>'
+        nummer = '<td class="ucl_gs id_nr">' + data[i][11] + '</td>'
       }
     }
     else if ((data[i][1] + '').includes("b19")) {
       if ((data[i][4] + '').includes("3") && aarstall <= 2) {
-        nummer = '<td class="uel_gs_uecl id_nr">' + (i + 1) + '</td>'
+        nummer = '<td class="uel_gs_uecl id_nr">' + data[i][11] + '</td>'
       }
       else {
-        nummer = '<td class="uel_gs id_nr">' + (i + 1) + '</td>'
+        nummer = '<td class="uel_gs id_nr">' + data[i][11] + '</td>'
       }
     }
     else if ((data[i][1] + '').includes("b20")) {
-      nummer = '<td class="uecl_gs id_nr">' + (i + 1) + '</td>'
+      nummer = '<td class="uecl_gs id_nr">' + data[i][11] + '</td>'
     }
     else {
-      nummer = '<td class="id_nr" >' + (i + 1) + '</td>'
+      nummer = '<td class="id_nr" >' + data[i][11] + '</td>'
     }
     var rad = `<tr>
                   ${nummer}
@@ -1431,6 +1471,50 @@ function totalt_land(column, order, tekst, antall_klubber) {
   sessionStorage.setItem('kolonne2', column)
   sessionStorage.setItem('rekkefølge2', order)
   document.getElementById(column).innerHTML = tekst;
+  if (order == 'desc' || column != 'ass_coeff_ø') {
+    for (p = 0; p < land_array.length; p++) {
+      if (land_array[p][13]) {
+        land_array[p][13] = p+1;
+      } else {
+        land_array[p].push(p+1);
+        if (!land_array[p][13]) {
+          land_array[p].push(p+1);
+        }
+      }
+    }
+  }
+  else {
+    for (p = 0; p < land_array.length; p++) {
+      if (land_array[p][13]) {
+        land_array[p][13] = land_array.length-p;
+      } else {
+        land_array[p].push(land_array.length-p);
+        if (!land_array[p][13]) {
+          land_array[p].push(land_array.length-p);
+        }
+      }
+    }
+  }
+  if (column == 'ass_coeff_ø') {
+    if (order == 'desc') {
+      for (p = 0; p < land_array.length; p++) {
+        if (p > 0) {
+          if (land_array[p-1][i] == land_array[p][i]) {
+            land_array[p].splice(13,1,land_array[p-1][13])
+          }
+        }
+      }
+    }
+    else {
+      for (p = land_array.length - 1; p >= 0; p--) {
+        if (p < land_array.length - 1) {
+          if (land_array[p+1][i] == land_array[p][i]) {
+            land_array[p].splice(13,1,land_array[p+1][13])
+          }
+        }
+      }
+    }
+  }
   bygg_tabell_2(land_array)
 }
 
@@ -1483,7 +1567,7 @@ function bygg_tabell_2(land_array) {
     }
     let premiepenger = "€ " + land_array[r][1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     var rad = `<tr>
-                <td class="id_nr">${r+1}</td>
+                <td class="id_nr">${land_array[r][13]}</td>
                 <td id="flagg_tabell2"><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                 <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_prize(${land_array[r][0]})"><nobr>${premiepenger}</nobr></a></span></td>
                 <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_ass(${land_array[r][0]})">${land_array[r][2]}</a></span></td>
