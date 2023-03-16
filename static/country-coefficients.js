@@ -853,7 +853,7 @@ function forside_ø_koeff(i, kolonne) {
   // $('#tabell_overordnet td').show()
   var rows = document.getElementsByTagName("table")[0].rows;
   var last = rows[i+1];
-  var cell = last.cells[1];
+  var cell = last.cells[2];
   let filter_land_før = [];
   let land = ''
   let str = (cell.innerHTML);
