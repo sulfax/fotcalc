@@ -875,6 +875,48 @@ function sorter(column, order, tekst, ranking_array) {
   sessionStorage.setItem('kolonne_ti_års', column)
   sessionStorage.setItem('rekkefølge_ti_års', order)
   document.getElementById(column).innerHTML = tekst;
+
+  console.log(ranking_array)
+  if (order == 'desc' || column == 'id_nr' || column == 'land' || column == 'klubb') {
+    for (p = 0; p < ranking_array.length; p++) {
+      if (ranking_array[p][17]) {
+        ranking_array[p][17] = p+1;
+      } else {
+        ranking_array[p].push(p+1);
+      }
+    }
+  }
+  else {
+    for (p = 0; p < ranking_array.length; p++) {
+      if (ranking_array[p][17]) {
+        ranking_array[p][17] = ranking_array.length-p;
+      } else {
+        ranking_array[p].push(ranking_array.length-p);
+      }
+    }
+  }
+  if (column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5' || column == 'sesong6' || column == 'sesong7' || column == 'sesong8' || column == 'sesong9' || column == 'sesong10' || column == 'na_poeng' || column == 'poeng' || column == 'tittel_poeng') {
+    if (order == 'desc') {
+      for (p = 0; p < ranking_array.length; p++) {
+        if (p > 0) {
+          if (ranking_array[p-1][i] == ranking_array[p][i]) {
+            ranking_array[p].splice(17,1,ranking_array[p-1][17])
+          }
+        }
+      }
+    }
+    else {
+      for (p = ranking_array.length - 1; p >= 0; p--) {
+        if (p < ranking_array.length - 1) {
+          if (ranking_array[p+1][i] == ranking_array[p][i]) {
+            ranking_array[p].splice(17,1,ranking_array[p+1][17])
+          }
+        }
+      }
+    }
+  }
+
+
   byggTabell_test(ranking_array, column, order)
 }
 
@@ -1184,7 +1226,7 @@ function byggTabell_test(ranking_array, column, order) {
     if (aar_etter_forste_periode == 10) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${15})" class="utydelig_link">${sesong1}</a>`}
     var rad_test = `<tr>
-                    <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
+                    <td class="id_nr veldig_utydelig ramme_hoyre">${ranking_array[i][17]}</td>
                     ${rangering}
                     ${klubbnavn_HTML_start + klubb_med_logo}</nobr></td>
                     <td id="tom_kolonne">${klubbnavn}</td>
@@ -1969,7 +2011,7 @@ function regn_ut_NA_poeng() {
     denne_NA_poeng_og_assos.push((koeff_sesong10 + koeff_sesong9 + koeff_sesong8 + koeff_sesong7 + koeff_sesong6 + koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     // Kanskje fjern
     denne_NA_poeng_og_assos_skygge.push(landskoeffisienter[i][0])
-    denne_NA_poeng_og_assos_skygge.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
+    denne_NA_poeng_og_assos_skygge.push((koeff_sesong10 + koeff_sesong9 + koeff_sesong8 + koeff_sesong7 + koeff_sesong6 + koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     denne_NA_poeng_og_assos_skygge.push(enkelt_sesong1)
     denne_NA_poeng_og_assos_skygge.push(koeff_sesong2)
     denne_NA_poeng_og_assos_skygge.push(koeff_sesong3)

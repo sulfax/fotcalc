@@ -1079,6 +1079,46 @@ function sorter_klubb(column, order, tekst) {
   sessionStorage.setItem('kolonne_landskoeffisient2', column)
   sessionStorage.setItem('rekkefølge_landskoeffisient2', order)
   document.getElementById(column).innerHTML = tekst;
+
+  if (order == 'desc' || column == 'id_nr_klubb' || column == 'club' || column == 'land2') {
+    for (p = 0; p < klubber.length; p++) {
+      if (klubber[p][10]) {
+        klubber[p][10] = p+1;
+      } else {
+        klubber[p].push(p+1);
+      }
+    }
+  }
+  else {
+    for (p = 0; p < klubber.length; p++) {
+      if (klubber[p][10]) {
+        klubber[p][10] = klubber.length-p;
+      } else {
+        klubber[p].push(klubber.length-p);
+      }
+    }
+  }
+  if (column == 'sesong1_klubb' || column == 'sesong2_klubb' || column == 'sesong3_klubb' || column == 'sesong4_klubb' || column == 'sesong5_klubb' || column == 'prosent_NA') {
+    if (order == 'desc') {
+      for (p = 0; p < klubber.length; p++) {
+        if (p > 0) {
+          if (klubber[p-1][i] == klubber[p][i]) {
+            klubber[p].splice(10,1,klubber[p-1][10])
+          }
+        }
+      }
+    }
+    else {
+      for (p = klubber.length - 1; p >= 0; p--) {
+        if (p < klubber.length - 1) {
+          if (klubber[p+1][i] == klubber[p][i]) {
+            klubber[p].splice(10,1,klubber[p+1][10])
+          }
+        }
+      }
+    }
+  }
+
   utplasser_klubb_tabell(klubber)
 }
 
@@ -1307,7 +1347,7 @@ function utplasser_klubb_tabell(klubber) {
     if (aar_etter_forste_periode == 6) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
     var rad_test = `<tr>
-                    <td class="id_nr_klubb veldig_utydelig ramme_hoyre">${i+1}</td>
+                    <td class="id_nr_klubb veldig_utydelig ramme_hoyre">${klubber[i][10]}</td>
                     ${rangering}
                     ${klubbnavn_HTML_start + klubbnavn}</nobr></td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${klubber[i][1]}</div></div></td>
