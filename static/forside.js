@@ -563,7 +563,7 @@ function sorter(column, order, tekst, menyvalg_edit) {
   sessionStorage.setItem('rekkefølge', order)
   document.getElementById(column).innerHTML = tekst;
 
-  if (order == 'desc' || column != 'bidrag') {
+  if (order == 'desc' || (column != 'bidrag' && column != 'ass_coeff' && column != 'club_coeff')) {
     for (p = 0; p < menyvalg_edit.length; p++) {
       if (menyvalg_edit[p][11]) {
         menyvalg_edit[p][11] = p+1;
@@ -581,7 +581,7 @@ function sorter(column, order, tekst, menyvalg_edit) {
       }
     }
   }
-  if (column == 'bidrag') {
+  if (column == 'bidrag' || column == 'ass_coeff' || column == 'club_coeff') {
     if (order == 'desc') {
       for (p = 0; p < menyvalg_edit.length; p++) {
         if (p > 0) {
