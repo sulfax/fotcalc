@@ -437,6 +437,44 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     sessionStorage.setItem('rekkefølge_landskoeffisient', order)
   }
   document.getElementById(column).innerHTML = tekst;
+  if (order == 'desc' || column == 'id_nr') {
+    for (p = 0; p < ranking_array.length; p++) {
+      if (ranking_array[p][11]) {
+        ranking_array[p][11] = p+1;
+      } else {
+        ranking_array[p].push(p+1);
+      }
+    }
+  }
+  else {
+    for (p = 0; p < ranking_array.length; p++) {
+      if (ranking_array[p][11]) {
+        ranking_array[p][11] = ranking_array.length-p;
+      } else {
+        ranking_array[p].push(ranking_array.length-p);
+      }
+    }
+  }
+  if (column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5') {
+    if (order == 'desc') {
+      for (p = 0; p < ranking_array.length; p++) {
+        if (p > 0) {
+          if (ranking_array[p-1][i] == ranking_array[p][i]) {
+            ranking_array[p].splice(11,1,ranking_array[p-1][11])
+          }
+        }
+      }
+    }
+    else {
+      for (p = ranking_array.length - 1; p >= 0; p--) {
+        if (p < ranking_array.length - 1) {
+          if (ranking_array[p+1][i] == ranking_array[p][i]) {
+            ranking_array[p].splice(11,1,ranking_array[p+1][11])
+          }
+        }
+      }
+    }
+  }
   for (p = 2; p < 7; p++) {
     for (i = 0; i < ranking_array.length; i++) {
       if (ranking_array[i][p] == 0.0001) {
@@ -611,7 +649,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
       var rad_test = `<tr>
-                    <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${i+1}</td>
+                    <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${ranking_array[i][11]}</td>
                     <td class="id_nr">${ranking_array[i][10]}</td>
                     <td><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne">${land}</td>
