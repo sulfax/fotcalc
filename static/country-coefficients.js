@@ -1183,7 +1183,7 @@ function bygg_klubb_tabell() {
     for (i = 0; i < klubber.length; i++) {
       if (klubber[i][aar+1]) {
         klubber[i][aar+1] = Math.floor(klubber[i][aar+1] * 1000/klubber_fra_land[land.indexOf(klubber[i][1])][aar-1]) / 1000 || 0;
-        klubber[i][aar+1] = klubber[i][aar+1].toFixed(3) || 0;
+        // klubber[i][aar+1] = klubber[i][aar+1].toFixed(3) || 0;
       }
     }
     aar += 1;
