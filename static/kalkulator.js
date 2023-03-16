@@ -160,7 +160,7 @@ for (let p = 1; p < 16; p++) {
 };
 
 var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
-if (aarstall == 'NaN') {
+if (aarstall == 'NaN' || !aarstall) {
     aarstall = nåværende_sesong_forside[0] - 21;
 }
 localStorage.setItem('sessong', aarstall);
