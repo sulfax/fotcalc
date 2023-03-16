@@ -1047,6 +1047,14 @@ function sorter_klubb(column, order, tekst) {
     endre_kolonne_overskrift('sesong3_klubb', opp_ned_pil)
     endre_kolonne_overskrift('sesong4_klubb', opp_ned_pil)
   }
+  filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
+  let ranking_array_land_filter = []
+  for (p = 0; p < klubber.length; p++) {
+    if (filter_land_før.includes(klubber[p][1]) || filter_land_før == '') {
+      ranking_array_land_filter.push(klubber[p])
+    }
+  }
+  klubber = ranking_array_land_filter;
   if(order == 'desc') {
     if (column == 'id_nr_klubb') {
       for (i = 2; i < 7; i++) {
@@ -1185,14 +1193,6 @@ function bygg_klubb_tabell() {
 }
 
 function utplasser_klubb_tabell(klubber) {
-  filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
-  let ranking_array_land_filter = []
-  for (p = 0; p < klubber.length; p++) {
-    if (filter_land_før.includes(klubber[p][1]) || filter_land_før == '') {
-      ranking_array_land_filter.push(klubber[p])
-    }
-  }
-  klubber = ranking_array_land_filter;
   let helTabellHTML = '';
   let testTabell_klubb = document.getElementById('minTest_klubb')
   let gjennværende_land = [];
