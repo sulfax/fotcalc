@@ -558,7 +558,7 @@ function summer() {
     document.getElementById("total_inntjening_assos").innerText = total_sum_assos;
     let bidrag = 0;
     if (antall_klubber != 0) {
-        bidrag = total_sum_assos/antall_klubber
+        bidrag = Math.floor(total_sum_assos * 1000/antall_klubber) / 1000 || 0;
         bidrag = bidrag.toFixed(3) || 0;
         document.getElementById("koeffisienter_bidrag_sum").innerHTML = '<span class="ingen_understrek">' + bidrag + '<span>';
     }
