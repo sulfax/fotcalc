@@ -22,7 +22,7 @@ const knapp_filter_turneringer = ['ucl_knapp', 'uel_knapp', 'uecl_knapp']
 
 
 var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
-if (aarstall == 'NaN' || !aarstall) {
+if (aarstall == 'NaN' || (!aarstall && aarstall != 0)) {
   aarstall = nåværende_sesong_forside[0] - 21;
 }
 localStorage.setItem('sessong', aarstall);
