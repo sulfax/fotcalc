@@ -1474,7 +1474,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
   sessionStorage.setItem('kolonne2', column)
   sessionStorage.setItem('rekkefølge2', order)
   document.getElementById(column).innerHTML = tekst;
-  if (order == 'desc' || column != 'ass_coeff_ø') {
+  if (order == 'desc' || (column != 'ass_coeff_ø' && column != 'ass_coeff_total' && column != 'club_coeff_total')) {
     for (p = 0; p < land_array.length; p++) {
       if (land_array[p][13]) {
         land_array[p][13] = p+1;
@@ -1498,7 +1498,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
       }
     }
   }
-  if (column == 'ass_coeff_ø') {
+  if (column == 'ass_coeff_ø' || column == 'ass_coeff_total' || column == 'club_coeff_total') {
     if (order == 'desc') {
       for (p = 0; p < land_array.length; p++) {
         if (p > 0) {
