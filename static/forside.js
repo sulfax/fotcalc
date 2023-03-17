@@ -429,7 +429,7 @@ function sorter_etter_sesong() {
           antall_klubber_fra_land += 1
         }
       }
-      menyvalg_edit[i][10] = Math.floor(menyvalg_edit[i][7] * 1000/antall_klubber_fra_land) / 1000 || 0;
+      menyvalg_edit[i][10] = (menyvalg_edit[i][7]/antall_klubber_fra_land) || 0;
 
 
       let live_aarstall = nåværende_sesong_periode_valg[0] - 21
