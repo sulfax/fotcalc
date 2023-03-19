@@ -760,16 +760,16 @@ function summer() {
     var total_sum = (UCL_faktisk_total_sum + UEL_faktisk_total_sum + UECL_faktisk_total_sum + seriemester_total_sum);
 
     var avrundet_UCL_total = Number((UCL_faktisk_total_sum).toFixed(0));
-    document.getElementById("UCL_inntjening").innerText = "€ " + (avrundet_UCL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById("UCL_inntjening").innerHTML = "<nobr>€ " + (avrundet_UCL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + '</nobr>';
     
     var avrundet_UEL_total = Number((UEL_faktisk_total_sum).toFixed(0));
-    document.getElementById("UEL_inntjening").innerText = "€ " + (avrundet_UEL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById("UEL_inntjening").innerHTML = "<nobr>€ " + (avrundet_UEL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + '</nobr>';
     
     var avrundet_UECL_total = Number((UECL_faktisk_total_sum).toFixed(0));
-    document.getElementById("UECL_inntjening").innerText = "€ " + (avrundet_UECL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById("UECL_inntjening").innerHTML = "<nobr>€ " + (avrundet_UECL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + '</nobr>';
     
     var avrundet_total = Number((total_sum).toFixed(0));
-    document.getElementById("total_inntjening").innerText = "€ " + (avrundet_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.getElementById("total_inntjening").innerHTML = "<nobr>€ " + (avrundet_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + '</nobr>';
 };
 
 function rund_av_enkeltcelle(aktuell_sum, clicked_id) {
