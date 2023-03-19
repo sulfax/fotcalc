@@ -270,7 +270,7 @@ function paa_av(clicked_id){
                     summer();
                     rund_av_enkeltcelle(aktuell_sum, clicked_id);
                 }
-                else if (clicked_id == 'b10' && (document.getElementById("b-18") || document.getElementById("CL-PO"))) {
+                else if (clicked_id == 'b10' && ((document.getElementById("b-18") && document.getElementById("b19")) || document.getElementById("CL-PO"))) {
                     document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     summer();
                     rund_av_enkeltcelle(aktuell_sum, clicked_id);

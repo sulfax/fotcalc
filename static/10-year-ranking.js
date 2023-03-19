@@ -875,8 +875,6 @@ function sorter(column, order, tekst, ranking_array) {
   sessionStorage.setItem('kolonne_ti_års', column)
   sessionStorage.setItem('rekkefølge_ti_års', order)
   document.getElementById(column).innerHTML = tekst;
-
-  console.log(ranking_array)
   if (order == 'desc' || column == 'id_nr' || column == 'land' || column == 'klubb') {
     for (p = 0; p < ranking_array.length; p++) {
       if (ranking_array[p][17]) {
