@@ -619,9 +619,9 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
     if (sesong4 == '-') {sesong4 = '<span class="bindestrek">-</span>'}
     if (sesong5 == '-') {sesong5 = '<span class="bindestrek">-</span>'}
     let klubber_igjen = ""
-    let tom_kolonne = `<td class='premie_koeff tom'>${""}</td>`
+    let tom_kolonne = `<td class='tom'>${""}</td>`
     if (i == 54) {
-      tom_kolonne = `<td class='premie_koeff tom ingen_ramme_under'>${""}</td>`
+      tom_kolonne = `<td class='tom ingen_ramme_under'>${""}</td>`
     }
     if ((ranking_array[i][9])[0] == '0' && ranking_array[i][9] != '0/?') {
       klubber_igjen = `<td class='premie_koeff klubb rød'>${ranking_array[i][9]}</td>`
@@ -651,11 +651,11 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
-      var rad_test = `<tr>
+      var rad_test = `
                     <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${nummer}</td>
                     <td class="id_nr">${ranking_array[i][10]}</td>
-                    <td><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
-                    <td id="tom_kolonne">${land}</td>
+                    <td class="grense_celle"><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
+                    <td id="tom_kolonne" class="grense_celle">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
                     <td class='premie_koeff'>${sesong1}</td>
                     <td class='premie_koeff'>${sesong2}</td>
@@ -665,7 +665,12 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
                     ${tom_kolonne}
                     ${klubber_igjen}
                 </tr>`
-                helTabellHTML += rad_test
+      if ((i == 4 && aar_etter_forste_periode > 0) || (i == 5 && aar_etter_forste_periode > 0) || (i == 3 && aar_etter_forste_periode <= 0) || (i == 5 && aar_etter_forste_periode <= 0) || i == 14 || i == 49) {
+        rad_test = '<tr class="grense">' + rad_test
+      } else {
+        rad_test = '<tr>' + rad_test
+      }
+      helTabellHTML += rad_test
   }
   testTabell.innerHTML = helTabellHTML;
 }

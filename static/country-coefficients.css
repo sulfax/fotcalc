@@ -456,3 +456,6 @@ th, td {
 .ekstremt_utydelig {
     color: rgba(135, 142, 150, 0.4);
 }
+.grense .premie_koeff, .grense .grense_celle, .grense .id_nr, .grense .id_nr_klubb{
+    border-bottom: 1px solid rgba(52, 58, 64, 0.5) !important;
+}
