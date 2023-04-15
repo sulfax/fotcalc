@@ -1477,17 +1477,14 @@ function totalt_land(column, order, tekst, antall_klubber) {
     }
   }
   let k = i;
+  i = 13;
+  land_array.sort(sortFunction_2_tall);
+  i = k;
   if(order == 'desc') {
-    i = 13;
-    land_array.sort(sortFunction_2_tall);
-    i = k;
     land_array.sort(sortFunction_1_tall);
     tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
-    i = 13;
-    land_array.sort(sortFunction_1_tall);
-    i = k;
     land_array.sort(sortFunction_2_tall);
     tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
