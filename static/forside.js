@@ -6,6 +6,7 @@
 	};
 })();
 
+let sortering_land = [];
 
 let antall_MV_elem = 8;
 let filter_land = []
@@ -971,6 +972,11 @@ function generer_lands_knapper() {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }
   ranking_array.sort(sortFunction_tall_1_flere_desimal);
+
+  sortering_land = [];
+  for (i = 0; i < ranking_array.length; i++) {
+    sortering_land.push(ranking_array[i][0])
+  }
   
   var landskode = []
   for (i = 0; i < ranking_array.length; i++) {
@@ -1463,11 +1469,25 @@ function totalt_land(column, order, tekst, antall_klubber) {
   if (trykte_knapper.length == 0 && trykte_knapper_exclude.length == 0 && aarstall == 1  && (filter_land_før.length == 0 || filter_land_før.includes('RUS'))) {
     land_array.push(['RUS', 0, '', '', 4.333, 0, 0, 0.166, 0.5, 0, 0.5, 'Russia'])
   }
+  for (r = 0; r < land_array.length; r++) {
+    for (p = 0; p < sortering_land.length; p++) {
+      if (land_array[r][0] == sortering_land[p]) {
+        land_array[r].push(p)
+      }
+    }
+  }
+  let k = i;
   if(order == 'desc') {
+    i = 13;
+    land_array.sort(sortFunction_2_tall);
+    i = k;
     land_array.sort(sortFunction_1_tall);
     tekst += '<span class="høyrestill"><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
+    i = 13;
+    land_array.sort(sortFunction_1_tall);
+    i = k;
     land_array.sort(sortFunction_2_tall);
     tekst += '<span class="høyrestill"><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
@@ -1476,11 +1496,11 @@ function totalt_land(column, order, tekst, antall_klubber) {
   document.getElementById(column).innerHTML = tekst;
   if (order == 'desc' || (column != 'ass_coeff_ø' && column != 'ass_coeff_total' && column != 'club_coeff_total')) {
     for (p = 0; p < land_array.length; p++) {
-      if (land_array[p][13]) {
-        land_array[p][13] = p+1;
+      if (land_array[p][14]) {
+        land_array[p][14] = p+1;
       } else {
         land_array[p].push(p+1);
-        if (!land_array[p][13]) {
+        if (!land_array[p][14]) {
           land_array[p].push(p+1);
         }
       }
@@ -1488,11 +1508,11 @@ function totalt_land(column, order, tekst, antall_klubber) {
   }
   else {
     for (p = 0; p < land_array.length; p++) {
-      if (land_array[p][13]) {
-        land_array[p][13] = land_array.length-p;
+      if (land_array[p][14]) {
+        land_array[p][14] = land_array.length-p;
       } else {
         land_array[p].push(land_array.length-p);
-        if (!land_array[p][13]) {
+        if (!land_array[p][14]) {
           land_array[p].push(land_array.length-p);
         }
       }
@@ -1503,7 +1523,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
       for (p = 0; p < land_array.length; p++) {
         if (p > 0) {
           if (land_array[p-1][i] == land_array[p][i]) {
-            land_array[p].splice(13,1,land_array[p-1][13])
+            land_array[p].splice(14,1,land_array[p-1][14])
           }
         }
       }
@@ -1512,7 +1532,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
       for (p = land_array.length - 1; p >= 0; p--) {
         if (p < land_array.length - 1) {
           if (land_array[p+1][i] == land_array[p][i]) {
-            land_array[p].splice(13,1,land_array[p+1][13])
+            land_array[p].splice(14,1,land_array[p+1][14])
           }
         }
       }
@@ -1570,7 +1590,7 @@ function bygg_tabell_2(land_array) {
     }
     let premiepenger = "€ " + land_array[r][1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     var rad = `<tr>
-                <td class="id_nr">${land_array[r][13]}</td>
+                <td class="id_nr">${land_array[r][14]}</td>
                 <td id="flagg_tabell2"><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                 <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_prize(${land_array[r][0]})"><nobr>${premiepenger}</nobr></a></span></td>
                 <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_ass(${land_array[r][0]})">${land_array[r][2]}</a></span></td>
