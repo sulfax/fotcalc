@@ -425,9 +425,18 @@ function sorter_etter_sesong() {
       menyvalg_edit[i] = Ny1
       
       let antall_klubber_fra_land = 0
-      for (let p = 0; p < menyvalg.length; p++) {
-        if (menyvalg[p][1] == menyvalg_edit[i][9] && menyvalg[p][(8 * ((aarstall+1)))] !== undefined) {
-          antall_klubber_fra_land += 1
+      if (aarstall >= 2) {
+        for (p = 0; p < totalt_antall_klubber.length; p++) {
+          if (menyvalg_edit[i][9] == landskoeffisienter[p][0]) {
+            antall_klubber_fra_land = totalt_antall_klubber[p][aarstall-2];
+          }
+        }
+      }
+      else {
+        for (let p = 0; p < menyvalg.length; p++) {
+          if (menyvalg[p][1] == menyvalg_edit[i][9] && menyvalg[p][(8 * ((aarstall+1)))] !== undefined) {
+            antall_klubber_fra_land += 1
+          }
         }
       }
       menyvalg_edit[i][10] = (menyvalg_edit[i][7]/antall_klubber_fra_land) || 0;
