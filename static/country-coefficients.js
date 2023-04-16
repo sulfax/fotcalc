@@ -1185,6 +1185,11 @@ function bygg_klubb_tabell() {
         }
       }
     }
+    if (p >= 9 && p <= 8 + totalt_antall_klubber[0].length) {
+      for (l = 0; l < totalt_antall_klubber.length; l++) {
+        klubber_fra_land[l][aar-1] = totalt_antall_klubber[l][p-9]
+      }
+    }
     for (i = 0; i < klubber.length; i++) {
       if (klubber[i][aar+1]) {
         klubber[i][aar+1] = (klubber[i][aar+1]/klubber_fra_land[land.indexOf(klubber[i][1])][aar-1]) || 0;
