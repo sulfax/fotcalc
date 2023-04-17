@@ -1173,14 +1173,16 @@ function bygg_klubb_tabell() {
           for (j = 0; j < klubber.length; j++) {
             if (klubber[j][0] == menyvalg[i][0]) {
               klubber[j][aar+1] = menyvalg[i][(p-6)*8]
-              klubber_fra_land[land.indexOf(menyvalg[i][1])][aar-1] += 1;
+              if (p < 9) {
+                klubber_fra_land[land.indexOf(menyvalg[i][1])][aar-1] += 1;}
               legg_til_klubb = false
             }
           }
           if (legg_til_klubb == true) {
             klubber.push([menyvalg[i][0],menyvalg[i][1]])
             klubber[klubber.length - 1][aar+1] = menyvalg[i][(p-6)*8]
-            klubber_fra_land[land.indexOf(menyvalg[i][1])][aar-1] += 1;
+            if (p < 9) {
+              klubber_fra_land[land.indexOf(menyvalg[i][1])][aar-1] += 1;}
           }
         }
       }
