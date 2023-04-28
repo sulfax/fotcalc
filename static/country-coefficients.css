@@ -357,7 +357,8 @@ th, td {
     margin-top: -23px !important;
     width: 21px;
     border-radius: 50%;
-    border: 1px solid rgba(161, 161, 161, 0.5);
+    background-color: rgba(161, 161, 161, 0.5);
+    border: 1px solid rgb(0,0,0,0);
     box-shadow: .7px .7px rgba(110, 110, 110, 0.5);
 }
 .flagg_mod {

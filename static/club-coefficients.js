@@ -665,7 +665,6 @@ function byggTabell_test(ranking_array, column, order) {
     }
   }
   let spraak = localStorage.getItem("someVarKey");
-  console.log(ranking_array)
   for (i = 0; i < ranking_array.length; i++) {
     let gaa = true;
     if (column == "klubb" || column == "poeng" || column == "sesong1" || column == "sesong2" || column == "sesong3" || column == "sesong4" || column == "sesong5") {
