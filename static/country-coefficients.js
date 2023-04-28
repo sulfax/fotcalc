@@ -979,6 +979,8 @@ function sorter_klubb(column, order, tekst) {
     endre_kolonne_overskrift('sesong5_klubb', opp_ned_pil)
   }
   else if (column == 'land2') {
+    i = 9
+    klubber.sort(sortFunction_tall_2_flere_desimal)
     i = 1
     endre_kolonne_overskrift('id_nr_klubb', opp_ned_pil) 
     endre_kolonne_overskrift('club', opp_ned_pil) 

@@ -423,12 +423,12 @@ a:hover {
     z-index: 1001;
 }
 .fortsatt_med {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(203,222,255,0.8) 25%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(193, 215, 255, 0.8) 25%, rgba(0,0,0,0) 100%);
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
 }
 .var_med {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(208, 255, 225, 0.8) 25%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(192, 255, 214, 0.8) 25%, rgba(0,0,0,0) 100%);
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
 }
@@ -474,4 +474,30 @@ a:hover {
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(195, 217, 255, 0.8) 25%, rgba(0,0,0,0) 100%);
     border-top: 1px solid rgb(183, 183, 183);
     border-bottom: 1px solid rgb(183, 183, 183);
+}
+.flagg_div2 .flagg {
+    width: 16.3px;
+    margin-bottom: 10.1px;
+}
+.flagg_div2 {
+    margin-left: 8.6px;
+    margin-top: 2.3px;
+    float:left;
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    border: .8px solid rgba(161, 161, 161, 0.5);
+    box-shadow: .6px .6px rgba(110, 110, 110, 0.5);
+}
+#NIR__ {
+    border-radius: 50%;
+}
+#NIR, #NIRe {
+    border-radius: 50%;
+}
+.land_klubb_rank {
+    background-color: #fcffe4 !important;
+}
+.land_klubb_rank .id_nr {
+    border-right: none !important;
 }

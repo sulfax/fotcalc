@@ -1,3 +1,10 @@
+@media screen and (min-width: 0px) {
+    .flagg_div2 abbr[data_title]:hover::after,
+    .flagg_div2 abbr[data_title]:focus::after {
+        left: 30px;
+        bottom: -2px;
+    }
+}
 @media (max-width:1745px) {
     .reaklame_sidene {
         display: none;
@@ -286,7 +293,7 @@ a {
     border: 2px solid #777777 !important;
     cursor: default !important;
 }
-.flagg {
+.flagg_div .flagg {
     height:19px;
     margin-bottom: 8px;
 }
