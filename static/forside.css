@@ -53,6 +53,9 @@
 /* .klubb_logo {
     margin-bottom: calc(-0.14vw + 4px);
 } */
+.klubb_logo {
+    margin-bottom: 0px;
+}
 .btn-secondary {
     display:inline;
     float:left;
