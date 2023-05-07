@@ -459,7 +459,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     if (order == 'desc') {
       for (p = 0; p < ranking_array.length; p++) {
         if (p > 0) {
-          if (ranking_array[p-1][i] == ranking_array[p][i]) {
+          if (parseFloat(ranking_array[p-1][i]).toFixed(3) == parseFloat(ranking_array[p][i]).toFixed(3)) {
             ranking_array[p].splice(11,1,ranking_array[p-1][11])
           }
         }
@@ -468,7 +468,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     else {
       for (p = ranking_array.length - 1; p >= 0; p--) {
         if (p < ranking_array.length - 1) {
-          if (ranking_array[p+1][i] == ranking_array[p][i]) {
+          if (parseFloat(ranking_array[p+1][i]).toFixed(3) == parseFloat(ranking_array[p][i]).toFixed(3)) {
             ranking_array[p].splice(11,1,ranking_array[p+1][11])
           }
         }
@@ -1120,7 +1120,7 @@ function sorter_klubb(column, order, tekst) {
     if (order == 'desc') {
       for (p = 0; p < klubber.length; p++) {
         if (p > 0) {
-          if (klubber[p-1][i] == klubber[p][i]) {
+          if (parseFloat(klubber[p-1][i]).toFixed(3) == parseFloat(klubber[p][i]).toFixed(3)) {
             klubber[p].splice(10,1,klubber[p-1][10])
           }
         }
@@ -1129,7 +1129,7 @@ function sorter_klubb(column, order, tekst) {
     else {
       for (p = klubber.length - 1; p >= 0; p--) {
         if (p < klubber.length - 1) {
-          if (klubber[p+1][i] == klubber[p][i]) {
+          if (parseFloat(klubber[p+1][i]).toFixed(3) == parseFloat(klubber[p][i]).toFixed(3)) {
             klubber[p].splice(10,1,klubber[p+1][10])
           }
         }

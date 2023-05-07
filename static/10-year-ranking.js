@@ -905,7 +905,6 @@ function sorter(column, order, tekst, ranking_array) {
           ranking_array[p].push(p+1-land_over);
         }
       }
-      // console.log(ranking_array[p][18] + '   ' + ranking_array[p][0])
     }
   }
   else {
