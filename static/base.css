@@ -378,7 +378,7 @@ a:hover {
 .klubb_logo {
     margin-left: 3px;
     margin-right: 6px;
-    margin-bottom: 2.2px;
+    margin-bottom: 1.95px;
     height: 20px;
     width: 20px;
 }
@@ -476,15 +476,15 @@ a:hover {
     border-bottom: 1px solid rgb(183, 183, 183);
 }
 .flagg_div2 .flagg {
-    width: 16.4px;
+    width: 17.4px;
     margin-bottom: 10.1px;
 }
 .flagg_div2 {
-    margin-left: 8.6px;
+    margin-left: 8.7px;
     margin-top: 2.3px;
     float:left;
-    height: 18px;
-    width: 18px;
+    height: 19.1px;
+    width: 19.1px;
     border-radius: 100%;
     background-color: rgba(161, 161, 161, 0.5);
     border: .8px solid rgb(0,0,0,0);
