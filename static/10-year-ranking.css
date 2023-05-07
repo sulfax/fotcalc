@@ -378,6 +378,6 @@ a {
 .ikke_land:hover {
     width: calc(100% + 6px) !important;
 }
-.klubb_logo {
+/* .klubb_logo {
     margin-bottom: calc(-0.14vw + 4px);
-}
+} */

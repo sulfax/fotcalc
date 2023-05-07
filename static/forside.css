@@ -51,10 +51,12 @@
     box-shadow:none !important;
 }
 /* .klubb_logo {
-    margin-bottom: calc(-0.14vw + 4px);
+    margin-top: 0px !important;
+    margin-bottom: calc(-0.14vw + 4px) !important;
 } */
 .klubb_logo {
-    margin-bottom: 0px;
+    margin-top: -1px !important;
+    margin-bottom: 2px;
 }
 .btn-secondary {
     display:inline;

@@ -344,9 +344,9 @@ th, td {
     text-align: center;
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
-.klubb_logo {
+/* .klubb_logo {
     margin-bottom: calc(-0.14vw + 4px);
-}
+} */
 .flagg {
     height:19px;
     margin-bottom: 8px;
