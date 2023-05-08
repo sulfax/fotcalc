@@ -1326,7 +1326,7 @@ function utplasser_klubb_tabell(klubber) {
       media/klubblogo/` + klubber[i][1] + "/" + klubbnavn_url + `6.png 70w,
       media/klubblogo/` + klubber[i][1] + "/" + klubbnavn_url + `7.png 100w,
       media/klubblogo/` + klubber[i][1] + "/" + klubbnavn_url + `8.png 140w"
-      data-fallback="media/klubblogo/fallback.png" sizes="19px" srcset="
+      data-fallback="media/klubblogo/fallback.png" sizes="20px" srcset="
       media/klubblogo/` + klubber[i][1] + "/" + klubbnavn_url + `1.png 13w,
       media/klubblogo/` + klubber[i][1] + "/" + klubbnavn_url + `2.png 32w,
       media/klubblogo/` + klubber[i][1] + "/" + klubbnavn_url + `3.png 36w,
