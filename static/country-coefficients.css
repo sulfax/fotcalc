@@ -460,3 +460,8 @@ th, td {
 .grense .premie_koeff, .grense .grense_celle, .grense .id_nr, .grense .id_nr_klubb{
     border-bottom: 1px solid rgba(52, 58, 64, 0.38) !important;
 }
+@media screen and (min-width: 900px) {
+    .klubb_logo {
+        margin-bottom: 2px;
+    }
+}
