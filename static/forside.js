@@ -933,23 +933,23 @@ function generer_lands_knapper() {
         }
       }
       koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
-    // if (landskoeffisienter[i][0] == 'RUS') {
-    //   if (aarstall == 1) {
-    //     enkelt_sesong1 = 4.333
-    //   }
-    //   if (aarstall == 2) {
-    //     koeff_sesong2 = 4.333
-    //   }
-    //   if (aarstall == 3) {
-    //     koeff_sesong3 = 4.333
-    //   }
-    //   if (aarstall == 4) {
-    //     koeff_sesong4 = 4.333
-    //   }
-    //   if (aarstall == 5) {
-    //     koeff_sesong5 = 4.333
-    //   }
-    // }
+    if (landskoeffisienter[i][0] == 'RUS') {
+      if (aarstall == 1) {
+        enkelt_sesong1 = 4.333
+      }
+      if (aarstall == 2) {
+        koeff_sesong2 = 4.333
+      }
+      if (aarstall == 3) {
+        koeff_sesong3 = 4.333
+      }
+      if (aarstall == 4) {
+        koeff_sesong4 = 4.333
+      }
+      if (aarstall == 5) {
+        koeff_sesong5 = 4.333
+      }
+    }
     if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
       if (aarstall == 2) {enkelt_sesong1 = 0.8}
       if (aarstall == 3) {koeff_sesong2 = 0.8}
