@@ -1626,38 +1626,38 @@ function generer_lands_knapper() {
       koeff_sesong10 = Math.floor(koeff_sesong10 * 1000/antall_klubber10) / 1000 || 0}
 
 
-    if (landskoeffisienter[i][0] == 'RUS') {
-      if (aar_etter_forste_periode == 1) {
-        enkelt_sesong1 = 4.333
-      }
-      if (aar_etter_forste_periode == 2) {
-        koeff_sesong2 = 4.333
-      }
-      if (aar_etter_forste_periode == 3) {
-        koeff_sesong3 = 4.333
-      }
-      if (aar_etter_forste_periode == 4) {
-        koeff_sesong4 = 4.333
-      }
-      if (aar_etter_forste_periode == 5) {
-        koeff_sesong5 = 4.333
-      }
-      if (aar_etter_forste_periode == 6) {
-        koeff_sesong6 = 4.333
-      }
-      if (aar_etter_forste_periode == 7) {
-        koeff_sesong7 = 4.333
-      }
-      if (aar_etter_forste_periode == 8) {
-        koeff_sesong8 = 4.333
-      }
-      if (aar_etter_forste_periode == 9) {
-        koeff_sesong9 = 4.333
-      }
-      if (aar_etter_forste_periode == 10) {
-        koeff_sesong10 = 4.333
-      }
-    }
+    // if (landskoeffisienter[i][0] == 'RUS') {
+    //   if (aar_etter_forste_periode == 1) {
+    //     enkelt_sesong1 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 2) {
+    //     koeff_sesong2 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 3) {
+    //     koeff_sesong3 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 4) {
+    //     koeff_sesong4 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 5) {
+    //     koeff_sesong5 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 6) {
+    //     koeff_sesong6 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 7) {
+    //     koeff_sesong7 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 8) {
+    //     koeff_sesong8 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 9) {
+    //     koeff_sesong9 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 10) {
+    //     koeff_sesong10 = 4.333
+    //   }
+    // }
     if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
@@ -2022,38 +2022,38 @@ function regn_ut_NA_poeng() {
       koeff_sesong10 = Math.floor(koeff_sesong10 * 1000/antall_klubber10) / 1000 || 0}
 
 
-    if (landskoeffisienter[i][0] == 'RUS') {
-      if (aar_etter_forste_periode == 1) {
-        enkelt_sesong1 = 4.333
-      }
-      if (aar_etter_forste_periode == 2) {
-        koeff_sesong2 = 4.333
-      }
-      if (aar_etter_forste_periode == 3) {
-        koeff_sesong3 = 4.333
-      }
-      if (aar_etter_forste_periode == 4) {
-        koeff_sesong4 = 4.333
-      }
-      if (aar_etter_forste_periode == 5) {
-        koeff_sesong5 = 4.333
-      }
-      if (aar_etter_forste_periode == 6) {
-        koeff_sesong6 = 4.333
-      }
-      if (aar_etter_forste_periode == 7) {
-        koeff_sesong7 = 4.333
-      }
-      if (aar_etter_forste_periode == 8) {
-        koeff_sesong8 = 4.333
-      }
-      if (aar_etter_forste_periode == 9) {
-        koeff_sesong9 = 4.333
-      }
-      if (aar_etter_forste_periode == 10) {
-        koeff_sesong10 = 4.333
-      }
-    }
+    // if (landskoeffisienter[i][0] == 'RUS') {
+    //   if (aar_etter_forste_periode == 1) {
+    //     enkelt_sesong1 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 2) {
+    //     koeff_sesong2 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 3) {
+    //     koeff_sesong3 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 4) {
+    //     koeff_sesong4 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 5) {
+    //     koeff_sesong5 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 6) {
+    //     koeff_sesong6 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 7) {
+    //     koeff_sesong7 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 8) {
+    //     koeff_sesong8 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 9) {
+    //     koeff_sesong9 = 4.333
+    //   }
+    //   if (aar_etter_forste_periode == 10) {
+    //     koeff_sesong10 = 4.333
+    //   }
+    // }
     if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
