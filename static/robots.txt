@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://www.fotcalc.com/sitemap.xml
