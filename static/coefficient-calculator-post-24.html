@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name=”robots” content=”noindex”>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Calculate Club- and Association Coefficient points in UEFA club competitions 24/25. Champions League, Europa League and Conference League.">
+    <meta name="keywords" content="Calculate, UEFA, coefficient points, club, association, Champions League, Europa League, Conference League">
+    <meta name="author" content="Johannes Kaste">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/faviconfavicon-16x16.png">
+    <link rel="manifest" href="media/site.webmanifest">
+    <link rel="mask-icon" href="media/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@fotcalc" />
+    <meta name="twitter:creator" content="@fotcalc" />
+    <meta name="twitter:image" content="https://i.ibb.co/89PxYz6/ok-4x.png" alt="fotcalc logo" />
+    <meta property="og:title" content="UEFA Coefficient Points Calculator" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fotcalc.com/coefficient-calculator" alt="fotcalc logo" />
+    <meta property="og:image" content="https://i.ibb.co/X75zqhX/ok-4x-generell.png" alt="fotcalc logo" />
+    <meta property="og:image:alt" content="fotcalc logo" />
+    <meta property="og:description" content="Calculate Club- and Association Coefficient points in UEFA club competitions 24/25. Champions League, Europa League and Conference League." />
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:locale:alternate" content="nb_NO"/>
+    <meta property="fb:app_id" content="1298383237691401"/>
+    <title id="title_koeffisient">UEFA Coefficient points Calculator</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+     crossorigin="anonymous"></script>
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X432MQE0BZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X432MQE0BZ');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/hentet_fra_nettet/googleapis_font.css">
+    <link rel="stylesheet" type="text/css" href="static/base.css">
+    <link rel="stylesheet" type="text/css" href="static/koeffisient/koeffisient.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="hjem" href="https://www.fotcalc.com">Home</a>
+          <a class="nav-item nav-link" id="premiepenger_kalkulator" href="prize-money-calculator">Prize money calculator</a>
+          <a class="nav-item nav-link" id="koeffisient_kalkulator" href="coefficient-calculator">Coefficient calculator</a>
+          <a class="nav-item nav-link" id="landskoeff_rangering" href="country-coefficients">Country coefficient ranking</a>
+          <a class="nav-item nav-link" id="klubbkoeff_rangering" href="club-coefficients">Club coefficient ranking</a>
+          <a class="nav-item nav-link" id="ti_års_rangering" href="10-year-ranking">10-year ranking</a>
+          <button type="button" class="btn btn-link" id="english" onclick="language(this.id)">English</button>
+          <button type="button" class="btn btn-link" id="norsk" onclick="language(this.id)">Norsk</button>
+        </div>
+      </div>
+    </nav>
+    <div class="reaklame_sidene" id="ad_venstre">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+        crossorigin="anonymous"></script>
+      <!-- Kvadratisk, banner -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8377146818251154"
+        data-ad-slot="6582001165"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="reaklame_sidene" id="ad_hoyre">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+        crossorigin="anonymous"></script>
+      <!-- Kvadratisk, banner -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8377146818251154"
+        data-ad-slot="6582001165"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="container_">
+      <br><br><br>
+      <h1 id="overskrift_koeffisient" class="sentrer">UEFA Coefficient points Calculator</h1> <!--Ikke endre id-->
+      <br>
+      <p id="beskrivelse_koeffisient" class="sentrer">Calculate club- and association <a class="graa_hover_link_koeff_deffi" href="coefficient-definition">coefficient points</a> for your club.</p>
+      <br>
+      <div class="reklame_topp">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+        crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+              style="display:block; text-align:center;"
+              data-ad-layout="in-article"
+              data-ad-format="fluid"
+              data-ad-client="ca-pub-8377146818251154"
+              data-ad-slot="6833111479"></ins>
+        <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <br><br>
+      <div class="ytterst_tabell_div">
+        <div class="ytre_tabell_div">
+          <button class="btn btn-secondary" id="sessong_kontroller_1" onclick="endre_sessong(this.id)">&#10094</button>
+          <h2 class="sesong" id="sessong_id">24/25</h2>
+          <button class="btn btn-secondary" id="sessong_kontroller_2" onclick="endre_sessong(this.id)">&#10095</button>
+        </div>
+        <div class="dropdown">
+          <button onclick="toggleMeny()" class="btn btn-primary" id="dropDownMeny"><div class="opp_ned_pil">&#10094</div></button>
+          <div id="myDropdown" class="dropdown-content dropdown-content-egen-bredde">
+            <div class="søkeområde">
+              <span id="søk"><input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"></span>
+              <button class="knapp_clean"><img class="x_clean" src="media/x-svgrepo-com.svg" alt="x icon" onclick="fjernSøkeord()"></button>
+            </div>
+            <div class="dropdown_elementer" id="dropdown_elementer">
+              <button class="meny_element" id="eksperimentell_profil_meny_element" onclick="endreMenyTittel(innerHTML,this.id)"></button>
+            </div>
+          </div>
+        </div>
+        <div class="ytre_tabell_div_2" id="ytre_tabell_div_id">
+          <button class="btn btn-primary" id="tilbakestill" onclick="slett()">Tilbakestill</button>
+        </div>
+      </div>
+      <div class="tabell_div">
+        <h2 class="ventemelding">Correct values coming soon</h2>
+        <table class="table table-sm table-hover">
+          <thead class="thead-light">
+            <tr class="head_tr">
+              <th scope="col"><p id="progresjon"></p></th>
+              <th class="mellomrom_2"></th>
+              <th scope="col" class="turnering"><p id="UCL">Champions League</p></th>
+              <th scope="col" class="turnering"><p id="UEL">Europa League</p></th>
+              <th scope="col" class="turnering"><p id="UECL">Europa Conference League</p></th>
+              <th class="mellomrom"></th>
+              <th scope="col" class="turnering_2_2" colspan="3">
+                <p class="sentrer"><a id="assosiasjons_poeng_link" class="poengtype_overskrift" href="coefficient-definition#association">Association points</a></p>
+                <div class="Turnerings_oversikt">
+                  <p id="UCL_2">UCL</p>
+                  <p id="UEL_2">UEL</p>
+                  <p id="UECL_2">UECL</p>
+                </div>
+              </th>
+              <td class="mellomrom_2"></td>
+              <th scope="col" class="turnering_2_2" colspan="3">
+                <p class="sentrer"><a id="klubb_poeng" class="poengtype_overskrift" href="coefficient-definition#club">Club points</a></p>
+                <div class="Turnerings_oversikt">
+                  <p id="UCL_2">UCL</p>
+                  <p id="UEL_2">UEL</p>
+                  <p id="UECL_2">UECL</p>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr class="Kvalifisering">
+              <th scope="row" id="prelim_semifinale">Preliminary round | Semi-final</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
+                <button id="b1" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme tydelig_ramme_hoyre" id="b1_"></td>
+              <td class="tom_celle" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_utenom_oppe"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="prelim_finale">Preliminary round | Final</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b2" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b2_"></td>
+              <td class="tom_celle" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+            </tr> -->
+            <tr class="Kvalifisering">
+              <th scope="row" id="q1_kamp1" class="q1_kamp1_post_24">Q1 | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
+                <button id="b3" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b4" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b5" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme" id="b3_"></td>
+              <td class="resultat_celle_1 tydelig_ramme" id="b4_"></td>
+              <td class="resultat_celle_1 tydelig_ramme" id="b5_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle" id="tom_celle_ramme_utenom_oppe"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_utenom_oppe"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q1_kamp2">Q1 | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b6" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b7" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b8" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b6_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b7_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b8_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q1_elim">Q1 | eliminated</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <button id="b9" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre_under_over" id="b9__"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q2_kamp1">Q2 | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b10" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b11" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b12" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b10_"></td>
+              <td class="resultat_celle_1" id="b11_"></td>
+              <td class="resultat_celle_1" id="b12_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q2_kamp2">Q2 | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b13" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b14" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b15" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b13_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b14_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b15_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q2_elim">Q2 | eliminated</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <button id="b16" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre_under_over" id="b16__"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q3_kamp1">Q3 | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b17" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b18" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b19" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b17_"></td>
+              <td class="resultat_celle_1" id="b18_"></td>
+              <td class="resultat_celle_1" id="b19_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q3_kamp2">Q3 | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b20" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b21" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b22" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b20_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b21_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b22_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="q3_elim">Q3 | eliminated</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <button id="b23" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre_under_over" id="b23__"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="po_kamp1">Play-off | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b24" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b25" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b26" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b24_"></td>
+              <td class="resultat_celle_1" id="b25_"></td>
+              <td class="resultat_celle_1" id="b26_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
+            </tr>
+            <tr class="Kvalifisering">
+              <th scope="row" id="po_kamp2">Play-off | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b27" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b28" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b29" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b27_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b28_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b29_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle tydelig_ramme_hoyre"></td>
+            </tr>
+            <tr class="Kvalifisering border_bunn">
+              <th scope="row" id="po_elim">Play-off | eliminated</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <button id="b30" type="button" class="btn btn-danger de0_UECL ele" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle" id="tom_celle_ramme_hoyre_bunn"></td>
+              <td class="tom_celle" id="tom_celle_ramme_bottom"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_hoyre tydelig_ramme_under"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre_under_over" id="b30__"></td>
+            </tr>
+            <tr class="Gruppespill">
+              <th scope="row" id="gruppespill_del">Group stage</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
+                <button id="b31" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b32" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b33" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b31_"></td>
+              <td class="tom_celle tydelig_ramme_under" id="tom_celle_ramme_right"></td>
+              <td class="tom_celle tydelig_ramme_under"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b31__"></td>
+              <td class="resultat_celle_1" id="b32__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b33__"></td>
+            </tr>
+            <tr class="Gruppespill">
+              <th scope="row" id="seiere_antall">Wins</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i2" name="2" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i3" name="3" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="i1_"></td>
+              <td class="resultat_celle_1" id="i2_"></td>
+              <td class="resultat_celle_1" id="i3_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="i1__"></td>
+              <td class="resultat_celle_1" id="i2__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i3__"></td>
+            </tr>
+            <tr class="Gruppespill">
+              <th scope="row" id="uavgjort_antall">Draws</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i4" name="4" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i5" name="5" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i6" name="6" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="i4_"></td>
+              <td class="resultat_celle_1" id="i5_"></td>
+              <td class="resultat_celle_1" id="i6_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="i4__"></td>
+              <td class="resultat_celle_1" id="i5__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i6__"></td>
+            </tr>
+            <tr class="Gruppespill">
+              <th scope="row" id="gruppeplassering">Group placement</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i7" name="7" placeholder="Antall" onblur="oppdater_plassering(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i8" name="8" placeholder="Antall" onblur="oppdater_plassering(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i9" name="9" placeholder="Antall" onblur="oppdater_plassering(this.id)">
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="i7_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="i8_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="i9_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="i7__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="i8__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="i9__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="knock_po_kamp1">Knockout round play-off | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
+                <button id="b1" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b34" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b35" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b1_"></td>
+              <td class="resultat_celle_1" id="b34_"></td>
+              <td class="resultat_celle_1" id="b35_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre" id="tom_celle_ramme_bottom"></td>
+              <td class="tom_celle" id="b34__"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="b35__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="knock_po_kamp2">Knockout round play-off | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b2" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b36" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b37" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b2_"></td>
+              <td class="resultat_celle_1" id="b36_"></td>
+              <td class="resultat_celle_1" id="b37_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="tom_celle venstre tydelig_ramme_under"></td>
+              <td class="tom_celle tydelig_ramme_under" id="b36__"></td>
+              <td class="tom_celle tydelig_ramme_hoyre" id="b37__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="åtten">Round of 16</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b38" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b39" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b69" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b38_"></td>
+              <td class="resultat_celle_1" id="b39_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b69_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b38__"></td>
+              <td class="resultat_celle_1" id="b39__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b69__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="åtten_kamp1">Round of 16 | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b40" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b41" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b42" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b40_"></td>
+              <td class="resultat_celle_1" id="b41_"></td>
+              <td class="resultat_celle_1" id="b42_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b40__"></td>
+              <td class="resultat_celle_1" id="b41__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b42__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="åtten_kamp2">Round of 16 | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b43" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b44" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b45" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b43_"></td>
+              <td class="resultat_celle_1" id="b44_"></td>
+              <td class="resultat_celle_1" id="b45_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b43__"></td>
+              <td class="resultat_celle_1" id="b44__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b45__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="kvart">Quarter-final</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b46" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b47" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b70" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b46_"></td>
+              <td class="resultat_celle_1" id="b47_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b70_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b46__"></td>
+              <td class="resultat_celle_1" id="b47__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b70__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="kvart_kamp1">Quarter-final | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b48" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b49" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b50" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b48_"></td>
+              <td class="resultat_celle_1" id="b49_"></td>
+              <td class="resultat_celle_1" id="b50_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b48__"></td>
+              <td class="resultat_celle_1" id="b49__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b50__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="kvart_kamp2">Quarter-final | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b51" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b52" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b53" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b51_"></td>
+              <td class="resultat_celle_1" id="b52_"></td>
+              <td class="resultat_celle_1" id="b53_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b51__"></td>
+              <td class="resultat_celle_1" id="b52__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b53__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="semi">Semi-final</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b54" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b55" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b56" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b54_"></td>
+              <td class="resultat_celle_1" id="b55_"></td>
+              <td class="resultat_celle_1" id="b56_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b54__"></td>
+              <td class="resultat_celle_1" id="b55__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b56__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="semi_kamp1">Semi-final | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b57" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b58" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b59" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b57_"></td>
+              <td class="resultat_celle_1" id="b58_"></td>
+              <td class="resultat_celle_1" id="b59_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b57__"></td>
+              <td class="resultat_celle_1" id="b58__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b59__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="semi_kamp2">Semi-final | match 2</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b60" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b61" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b62" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b60_"></td>
+              <td class="resultat_celle_1" id="b61_"></td>
+              <td class="resultat_celle_1" id="b62_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b60__"></td>
+              <td class="resultat_celle_1" id="b61__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b62__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="finale">Final</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
+                <button id="b63" type="button" class="btn btn-danger de0_UCL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b64" type="button" class="btn btn-danger de0_UEL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+                <button id="b65" type="button" class="btn btn-danger de0_UECL del" onclick="deltakelse_eliminasjon_pre(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b63_"></td>
+              <td class="resultat_celle_1" id="b64_"></td>
+              <td class="resultat_celle_1" id="b65_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b63__"></td>
+              <td class="resultat_celle_1" id="b64__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b65__"></td>
+            </tr>
+            <tr class="Utslagsrunde">
+              <th scope="row" id="finale_kamp1">Final | match 1</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <button id="b66" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b67" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+                <button id="b68" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="b66_"></td>
+              <td class="resultat_celle_1" id="b67_"></td>
+              <td class="resultat_celle_1" id="b68_"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="b66__"></td>
+              <td class="resultat_celle_1" id="b67__"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b68__"></td>
+            </tr>
+            <tr class="Koeffisient_pr_turnering">
+              <th scope="row" id="koeffisienter_turnering">Points per competition</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="koeffisienter_turnering">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="UCL_inntjening_assos"></td>
+              <td class="resultat_celle_1" id="UEL_inntjening_assos"></td>
+              <td class="resultat_celle_1" id="UECL_inntjening_assos"></td>
+              <td class="mellomrom_2"></td>
+              <td class="resultat_celle_1 venstre" id="UCL_inntjening_klubb"></td>
+              <td class="resultat_celle_1" id="UEL_inntjening_klubb"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="UECL_inntjening_klubb"></td>
+            </tr>
+            <tr class="Koeffisientpoeng">
+              <th scope="row" id="koeffisienter">Total points</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning ramme_over_tynn"></div>
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning ramme_over_tynn"></div>
+              </td>
+              <td class="mellomrom"></td>
+              <td></td>
+              <td class="resultat_celle_1" id="total_inntjening_assos"></td>
+              <td></td>
+              <td class="mellomrom_2"></td>
+              <td class="venstre tydelig_ramme_under"></td>
+              <td class="resultat_celle_1" id="total_inntjening_klubb"></td>
+              <td class="tydelig_ramme_under"></td>
+            </tr>
+            <tr class="landskoeffisientpoeng">
+              <th scope="row" id="bidratte_poeng_td">
+                <span id="land_lenke">
+                  <a class="graa_hover_link bidrag_lenke" href="country-coefficients" onclick="endre_land('ENG')">
+                    <span id="ranking_spraak">Ranking</span>
+                  </a>
+                </span>
+                <div id="bidratte_poeng">&nbsppoints for </div>
+                <span id="land_bidrag"></div>
+              </th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle" id="koeffisienter_bidrag">
+                <span class="knapp_erstatning"></span>
+              </td>
+              <td class="mellomrom"></td>
+              <td colspan="3" class="resultat_celle_1 bånn" id="koeffisienter_bidrag_sum"></td>
+              <td class="mellomrom_2" id=""></td>
+              <td class="tom_celle"></td>
+              <td class="tom_celle"></td>
+              <td class="tom_celle"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+      <div class="marketPool" id="kilde_koeff_id">
+        <p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>
+      </div>
+      <br>
+      <span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/prize-money-calculator">your club’s prize money</a>.</span>
+      <br><br>
+      <span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/">Compare coefficient points with other clubs</a>.</b></span>
+      <br><br>
+      <span class="marketPool" id="landskoeff_reklame"><b>Take a look at the <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">country coefficient ranking</a>.</b></span>
+      <br><br><br>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8377146818251154"
+        crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-format="autorelaxed"
+        data-ad-client="ca-pub-8377146818251154"
+        data-ad-slot="8335804646"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <br>
+    </div>
+    <footer>
+      <div>
+        <div class="laget_av">
+          <h3 class="tekst_1" id="laget_av_Johannes">Developed by Johannes Kaste</h3>
+          <br>
+          <a class="logo_twitter" href="https://twitter.com/fotcalc" target="_blank">
+            <img src="media/iconmonstr-twitter-1.svg" alt="twitter icon"></a>
+          </a>
+          <br>
+          <br>
+          <br>
+          <p class="tekst_1" id="kontakt_meg">Found potential for improvement, a bug or something wrong with the website?<br><br>You are welcome to contact me on <a id="mailto" href="mailto:johanneskaste@gmail.com?subject=Prize money calculator">johanneskaste@gmail.com</a> or <a id="twitter_tekst" href="https://twitter.com/fotcalc" target="_blank">Twitter</a></p>
+        </div>
+      </div>
+    </footer>
+    <script
+    type="text/javascript" 
+    src="static/menyvalg.js"
+  ></script>
+    <script
+      type="text/javascript" 
+      src="static/koeffisient/koeffisient-post-24.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/variabler_index.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/index.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/hentet_fra_nettet/jquery-3.2.1.slim.min.js"
+    ></script>
+    <script
+      type="text/javascript" 
+      src="static/hentet_fra_nettet/bootstrap.min.js"
+    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    --->
+  </body>
+</html>
