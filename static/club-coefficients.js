@@ -240,9 +240,11 @@ function oppdater_ved_refresh() {
       let na_større = (Math.max(ranking_array[p][1], ranking_array[p][4]) == ranking_array[p][4]) && (Math.max(ranking_array[p-1][1], ranking_array[p-1][4]) == ranking_array[p-1][4]);
       if (((poeng_lik && !na_større) || (na_lik && na_større)) && kolonne1_lik1 && kolonne1_lik2 && kolonne1_lik3 && kolonne1_lik4 && kolonne1_lik5) {
         ranking_array[p].splice(10,1,ranking_array[p-1][10])
+        ranking_array[p].splice(11,1,ranking_array[p-1][11])
       }
     }
   }
+  console.log(ranking_array)
   let ranking_array_land_filter = []
   for (p = 0; p < ranking_array.length; p++) {
     if (filter_land_før.includes(ranking_array[p][2]) || filter_land_før == '') {

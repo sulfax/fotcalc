@@ -468,6 +468,7 @@ function oppdater_ved_refresh() {
       let na_større = (Math.max(ranking_array[p][1], ranking_array[p][4]) == ranking_array[p][4]) && (Math.max(ranking_array[p-1][1], ranking_array[p-1][4]) == ranking_array[p-1][4]);
       if (((poeng_lik && !na_større) || (na_lik && na_større)) && kolonne1_lik1 && kolonne1_lik2 && kolonne1_lik3 && kolonne1_lik4 && kolonne1_lik5 && kolonne1_lik6 && kolonne1_lik7 && kolonne1_lik8 && kolonne1_lik9 && kolonne1_lik10) {
         ranking_array[p].splice(16,1,ranking_array[p-1][16])
+        ranking_array[p].splice(17,1,ranking_array[p-1][17])
       }
     }
   }
