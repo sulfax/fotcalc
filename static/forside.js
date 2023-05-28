@@ -950,7 +950,7 @@ function generer_lands_knapper() {
         koeff_sesong5 = 4.333
       }
     }
-    if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
+    if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
       if (aarstall == 2) {enkelt_sesong1 = 0.8}
       if (aarstall == 3) {koeff_sesong2 = 0.8}
       if (aarstall == 4) {koeff_sesong3 = 0.8}
@@ -1460,7 +1460,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
   }
   if (aarstall == 2) {
     for (r = 0; r < landskoeffisienter.length; r++) {
-      if (['SRB','SCO','AUT','NED'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 4; landskoeffisienter[r][4] = 5;}
+      if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 4; landskoeffisienter[r][4] = 5;}
       if (['POR','FRA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 8; landskoeffisienter[r][4] = 6;}
       if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 16; landskoeffisienter[r][4] = 7;}
     }
