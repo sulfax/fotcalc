@@ -244,7 +244,6 @@ function oppdater_ved_refresh() {
       }
     }
   }
-  console.log(ranking_array)
   let ranking_array_land_filter = []
   for (p = 0; p < ranking_array.length; p++) {
     if (filter_land_før.includes(ranking_array[p][2]) || filter_land_før == '') {
