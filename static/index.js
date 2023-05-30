@@ -51,11 +51,13 @@ function language_standard(clicked_id) {
         null;
       }
     }
-    if (aarstall == 0) {
-      document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
-    }
-    if (aarstall >= 1) {
-      document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
+    if (document.getElementById('uefa_distribution_link')) {
+      if (aarstall == 0) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
+      }
+      if (aarstall >= 1) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
+      }
     }
     ja_språk = ja_nei[0][0];
     nei_språk = ja_nei[0][1];
@@ -163,11 +165,13 @@ function language_standard(clicked_id) {
         null;
       }
     }
-    if (aarstall == 0) {
-      document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
-    }
-    if (aarstall >= 1) {
-      document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
+    if (document.getElementById('uefa_distribution_link')) {
+      if (aarstall == 0) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
+      }
+      if (aarstall >= 1) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
+      }
     }
     ja_språk = ja_nei[1][0];
     nei_språk = ja_nei[1][1];
