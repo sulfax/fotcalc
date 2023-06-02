@@ -442,7 +442,7 @@ const landskoeffisienter = [
 // Forskyv data til venstre når ny landsrangerings-sesong starter
 const totalt_antall_klubber = [
     [7, 7],// ENG
-    [7, 7],// ESP
+    [8, 7],// ESP
     [7, 7],// ITA
     [7, 7],// GER
     [6, 7],// FRA
