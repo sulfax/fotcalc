@@ -951,24 +951,24 @@ function generer_lands_knapper() {
         koeff_sesong5 = 4.333
       }
     }
-    if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
-      if (aarstall == 2) {enkelt_sesong1 = 0.8}
-      if (aarstall == 3) {koeff_sesong2 = 0.8}
-      if (aarstall == 4) {koeff_sesong3 = 0.8}
-      if (aarstall == 5) {koeff_sesong4 = 0.8}
-      if (aarstall == 6) {koeff_sesong5 = 0.8}}
-    if (['POR','FRA'].includes(landskoeffisienter[i][0])) {
-      if (aarstall == 2) {enkelt_sesong1 = 1.333}
-      if (aarstall == 3) {koeff_sesong2 = 1.333}
-      if (aarstall == 4) {koeff_sesong3 = 1.333}
-      if (aarstall == 5) {koeff_sesong4 = 1.333}
-      if (aarstall == 6) {koeff_sesong5 = 1.333}}
-    if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0])) {
-      if (aarstall == 2) {enkelt_sesong1 = 2.285}
-      if (aarstall == 3) {koeff_sesong2 = 2.285}
-      if (aarstall == 4) {koeff_sesong3 = 2.285}
-      if (aarstall == 5) {koeff_sesong4 = 2.285}
-      if (aarstall == 6) {koeff_sesong5 = 2.285}}
+    // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
+    //   if (aarstall == 2) {enkelt_sesong1 = 0.8}
+    //   if (aarstall == 3) {koeff_sesong2 = 0.8}
+    //   if (aarstall == 4) {koeff_sesong3 = 0.8}
+    //   if (aarstall == 5) {koeff_sesong4 = 0.8}
+    //   if (aarstall == 6) {koeff_sesong5 = 0.8}}
+    // if (['POR','FRA'].includes(landskoeffisienter[i][0])) {
+    //   if (aarstall == 2) {enkelt_sesong1 = 1.333}
+    //   if (aarstall == 3) {koeff_sesong2 = 1.333}
+    //   if (aarstall == 4) {koeff_sesong3 = 1.333}
+    //   if (aarstall == 5) {koeff_sesong4 = 1.333}
+    //   if (aarstall == 6) {koeff_sesong5 = 1.333}}
+    // if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    //   if (aarstall == 2) {enkelt_sesong1 = 2.285}
+    //   if (aarstall == 3) {koeff_sesong2 = 2.285}
+    //   if (aarstall == 4) {koeff_sesong3 = 2.285}
+    //   if (aarstall == 5) {koeff_sesong4 = 2.285}
+    //   if (aarstall == 6) {koeff_sesong5 = 2.285}}
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     assos_ranking_array.push(enkelt_sesong1.toFixed(3))
@@ -1459,13 +1459,13 @@ function totalt_land(column, order, tekst, antall_klubber) {
       }
     }
   }
-  if (aarstall == 2) {
-    for (r = 0; r < landskoeffisienter.length; r++) {
-      if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 4; landskoeffisienter[r][4] = 5;}
-      if (['POR','FRA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 8; landskoeffisienter[r][4] = 6;}
-      if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 16; landskoeffisienter[r][4] = 7;}
-    }
-  }
+  // if (aarstall == 2) {
+  //   for (r = 0; r < landskoeffisienter.length; r++) {
+  //     if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 4; landskoeffisienter[r][4] = 5;}
+  //     if (['POR','FRA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 8; landskoeffisienter[r][4] = 6;}
+  //     if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 16; landskoeffisienter[r][4] = 7;}
+  //   }
+  // }
   let land_array = []
   let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
   let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
