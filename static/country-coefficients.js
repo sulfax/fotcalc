@@ -29,9 +29,6 @@ const tilgangslister = ['https://kassiesa.net/uefa/AccessList2022.html',
                         'https://kassiesa.net/uefa/AccessList2024.html',
                         'https://kassiesa.net/uefa/AccessList2024.html',
                         'https://kassiesa.net/uefa/AccessList2024.html',
-                        'https://kassiesa.net/uefa/AccessList2024.html',
-                        'https://kassiesa.net/uefa/AccessList2024.html',
-                        'https://kassiesa.net/uefa/AccessList2024.html'
 ]
 
 if (sessionStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
@@ -1735,10 +1732,20 @@ function myFunction() {
 
 
 function access_list(spraak) {
-  if (spraak == 'norsk') {
-    document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">klubb-utplassering i ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+  if (tilgangslister[aar_etter_forste_periode+1]) {
+    if (spraak == 'norsk') {
+      document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">klubb-utplassering i ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+    }
+    else {
+      document.getElementById('decisive_sesong').innerHTML = 'Decisive for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">club deployment in ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+    }
   }
   else {
-    document.getElementById('decisive_sesong').innerHTML = 'Decisive for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">club deployment in ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+    if (spraak == 'norsk') {
+      document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for klubb-utplassering i ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+    }
+    else {
+      document.getElementById('decisive_sesong').innerHTML = 'Decisive for club deployment in ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+    }
   }
 }
