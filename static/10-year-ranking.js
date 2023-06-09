@@ -1681,7 +1681,18 @@ function generer_lands_knapper() {
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 1.333}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 1.333}
       if (aar_etter_forste_periode == 11) {koeff_sesong10 = 1.333}}
-    if (['GER','ITA','ENG'].includes(landskoeffisienter[i][0])) {
+    if (['ENG'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2}
+      if (aar_etter_forste_periode == 7) {koeff_sesong6 = 2}
+      if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2}
+      if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2}
+      if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2}
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2}
+    if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
       if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}
@@ -2088,7 +2099,18 @@ function regn_ut_NA_poeng() {
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 1.333}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 1.333}
       if (aar_etter_forste_periode == 11) {koeff_sesong10 = 1.333}}
-    if (['GER','ITA','ENG'].includes(landskoeffisienter[i][0])) {
+    if (['ENG'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2}
+      if (aar_etter_forste_periode == 7) {koeff_sesong6 = 2}
+      if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2}
+      if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2}
+      if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2}
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2}
+    if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
       if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}

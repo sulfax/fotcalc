@@ -963,12 +963,18 @@ function generer_lands_knapper() {
       if (aarstall == 4) {koeff_sesong3 = 1.333}
       if (aarstall == 5) {koeff_sesong4 = 1.333}
       if (aarstall == 6) {koeff_sesong5 = 1.333}}
-    if (['GER','ITA','ENG'].includes(landskoeffisienter[i][0])) {
-      if (aarstall == 2) {enkelt_sesong1 = 2.285}
-      if (aarstall == 3) {koeff_sesong2 = 2.285}
-      if (aarstall == 4) {koeff_sesong3 = 2.285}
-      if (aarstall == 5) {koeff_sesong4 = 2.285}
-      if (aarstall == 6) {koeff_sesong5 = 2.285}}
+    if (['ENG'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2}}
+    if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
+      if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
+      if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
+      if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}
+      if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.285}
+      if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.285}}
     if (['ESP'].includes(landskoeffisienter[i][0])) {
       if (aarstall == 2) {enkelt_sesong1 = 2.5}
       if (aarstall == 3) {koeff_sesong2 = 2.5}
@@ -1469,7 +1475,8 @@ function totalt_land(column, order, tekst, antall_klubber) {
     for (r = 0; r < landskoeffisienter.length; r++) {
       if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 4; landskoeffisienter[r][4] = 5;}
       if (['POR','FRA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 8; landskoeffisienter[r][4] = 6;}
-      if (['GER','ITA','ENG'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 16; landskoeffisienter[r][4] = 7;}
+      if (['ENG'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 16; landskoeffisienter[r][4] = 8;}
+      if (['GER','ITA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 16; landskoeffisienter[r][4] = 7;}
       if (['ESP'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 20; landskoeffisienter[r][4] = 8;}
     }
   }
