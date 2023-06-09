@@ -275,7 +275,7 @@ a:not(.poengtype_overskrift, #link_lands_klubb, .nav-link) {
 a:hover {
     color: rgb(196, 217, 255);
 }
-.graa_hover_link, .graa_hover_link_koeff_deffi, .graa_hover_link_tabell_header {
+.graa_hover_link, .graa_hover_link_koeff_deffi, .graa_hover_link_tabell_header, .graa_hover_link_decisive {
     padding-left: 0px !important;
 }
 .graa_hover_link:hover, .graa_hover_link_2:hover {
@@ -284,13 +284,19 @@ a:hover {
 .graa_hover_link_koeff_deffi:hover, .poengtype_overskrift:hover {
     color: #343a40;
 }
+.graa_hover_link_decisive:hover {
+    color: rgba(52, 58, 64, 0.6);
+}
+.graa_hover_link_decisive {
+    color: rgba(74, 86, 255, 0.8)
+}
 .graa_hover_link_tabell_header:hover {
     color: rgb(73, 80, 87);
 }
 #koeff_reklame {
     font-weight: bold;
 }
-#legend {
+#legend, #access_list {
     font-style: italic;
 }
 #mailto {

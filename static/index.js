@@ -400,7 +400,7 @@ const sprak_id_landskoeffisient = [
   'overskrift_landskoeffisient',
   'beskrivelse_landskoeffisient',
   'beskrivelse_landskoeffisient_klubb',
-  'decisive_oversett',
+  'accesslist_tekst',
   'legend',
   'premiepenger_reklame',
   'oversikt_reklame',
@@ -680,6 +680,7 @@ function language_koeffisient(clicked_id) {
         }
       }
     }
+    access_list(clicked_id);
   }
   else if (overskrift_klubbkoeffisient_finnes) {
     var klubbkoeffisient_antall_oversett = sprak_id_klubbkoeffisient.length;

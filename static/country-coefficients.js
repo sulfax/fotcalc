@@ -24,6 +24,16 @@ let antall_MV_elem = 8;
 let ranking_array = []
 let land_ranking = []
 
+const tilgangslister = ['https://kassiesa.net/uefa/AccessList2022.html',
+                        'https://kassiesa.net/uefa/AccessList2023.html',
+                        'https://kassiesa.net/uefa/AccessList2024.html',
+                        'https://kassiesa.net/uefa/AccessList2024.html',
+                        'https://kassiesa.net/uefa/AccessList2024.html',
+                        'https://kassiesa.net/uefa/AccessList2024.html',
+                        'https://kassiesa.net/uefa/AccessList2024.html',
+                        'https://kassiesa.net/uefa/AccessList2024.html'
+]
+
 if (sessionStorage.getItem('kolonne_landskoeffisient') == 'undefined') {
   sessionStorage.setItem('kolonne_landskoeffisient', 'id_nr')
 }
@@ -62,7 +72,6 @@ function oppdater_ved_refresh() {
     document.getElementById('sesong' + (5 - i) + '_klubb').innerHTML = (p + aar_etter_forste_periode) + '/' + ((p + 1) + aar_etter_forste_periode) + pilstatus2
     p += 1;
   }
-  document.getElementById('decisive_sesong').innerText = (p + 1 + aar_etter_forste_periode) + '/' + ((p + 2) + aar_etter_forste_periode)
   if (aar_etter_forste_periode >= 0) {
     for (i = 0; i < menyvalg.length; i++) {
       klubbers_assosiasjon.push(menyvalg[i][1])
@@ -273,6 +282,9 @@ function oppdater_ved_refresh() {
   }
 
   sorter_etter_sesong(aar_etter_forste_periode)
+
+  let spraak = localStorage.getItem("someVarKey");
+  access_list(spraak)
 }
 
 
@@ -1259,9 +1271,8 @@ function utplasser_klubb_tabell(klubber) {
               klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
             }
           }
-
           if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
-            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
+            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (nåværende_sesong_periode_valg[0] - aar_etter_forste_periode != 22)) {
               klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
             }
             if ((knapper).includes("b18")) {
@@ -1720,4 +1731,14 @@ function myFunction() {
   var scrolled = (winScroll / height) * 100;
   document.getElementById("ad_venstre").style.top = -3*scrolled + "px";
   document.getElementById("ad_hoyre").style.top = -3*scrolled + "px";
+}
+
+
+function access_list(spraak) {
+  if (spraak == 'norsk') {
+    document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">klubb-utplassering i ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+  }
+  else {
+    document.getElementById('decisive_sesong').innerHTML = 'Decisive for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">club deployment in ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+  }
 }
