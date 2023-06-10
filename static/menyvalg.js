@@ -379,7 +379,7 @@ const totale_uavgjorte_kamper = [
 ];
 
 const nyligste_poeng_rangering = [23, '/', 24]
-const nåværende_sesong_periode_valg = [22, '/', 23]
+const nåværende_sesong_periode_valg = [23, '/', 24]
 const nåværende_sesong_forside = [22, '/', 23]
 const nåværende_klubbvm = [24, '/', 25];
 

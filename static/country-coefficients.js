@@ -38,11 +38,11 @@ if (sessionStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
 }
 try {if (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient').length > 10) {
-  sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
+  sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', nåværende_sesong_periode_valg[0]-1 + '/' + nåværende_sesong_periode_valg[2]-1);
 }}
 catch {null;}
-document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
-document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]-1) + '/' + (nåværende_sesong_periode_valg[2]-1)) + " <div class='opp_ned_pil'>&#10094</div>";
+document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]-1) + '/' + (nåværende_sesong_periode_valg[2]-1)) + " <div class='opp_ned_pil'>&#10094</div>";
 let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
 
 // Skal legge landskoeffisientpoengene inn her:
@@ -51,8 +51,8 @@ let landskoeffisienter_totalt = []
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   landskoeffisienter_totalt = []
-  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
-  document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]-1) + '/' + (nåværende_sesong_periode_valg[2]-1)) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]-1) + '/' + (nåværende_sesong_periode_valg[2]-1)) + " <div class='opp_ned_pil'>&#10094</div>";
   aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
   ranking_array = []
   testTabell = document.getElementById('minTest')
