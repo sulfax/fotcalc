@@ -1691,7 +1691,7 @@ function generer_lands_knapper() {
       if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2}
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2}
-      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2}
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2}}
     if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
@@ -1702,7 +1702,7 @@ function generer_lands_knapper() {
       if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2.285}
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2.285}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2.285}
-      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.285}
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.285}}
     if (['ESP'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.5}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.5}
@@ -1713,8 +1713,7 @@ function generer_lands_knapper() {
       if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2.5}
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2.5}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2.5}
-      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.5}
-    }
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.5}}
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong10 + koeff_sesong9 + koeff_sesong8 + koeff_sesong7 + koeff_sesong6 + koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2 + enkelt_sesong1).toFixed(3))
     assos_ranking_array.push(enkelt_sesong1.toFixed(3))
@@ -2109,7 +2108,7 @@ function regn_ut_NA_poeng() {
       if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2}
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2}
-      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2}
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2}}
     if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.285}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
@@ -2120,7 +2119,7 @@ function regn_ut_NA_poeng() {
       if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2.285}
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2.285}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2.285}
-      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.285}
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.285}}
     if (['ESP'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 2.5}
       if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.5}
@@ -2131,8 +2130,7 @@ function regn_ut_NA_poeng() {
       if (aar_etter_forste_periode == 8) {koeff_sesong7 = 2.5}
       if (aar_etter_forste_periode == 9) {koeff_sesong8 = 2.5}
       if (aar_etter_forste_periode == 10) {koeff_sesong9 = 2.5}
-      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.5}
-    }
+      if (aar_etter_forste_periode == 11) {koeff_sesong10 = 2.5}}
 
     
     let denne_NA_poeng_og_assos = []
