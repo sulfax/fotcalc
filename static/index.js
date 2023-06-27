@@ -766,7 +766,7 @@ if (overskrift_forside_finnes) {
     }
     var Lag_koeff = {
       "@type": "Question",
-      "name": "How many coefficient points has " + menyvalg_edit_2[i][0] + " earned in 22/23?",
+      "name": "How many coefficient points has " + menyvalg_edit_2[i][0] + " earned in 23/24?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": menyvalg_edit_2[i][7] + " association coefficient " + poeng1 + " and " + menyvalg_edit_2[i][8] + " club coefficient " + poeng2,

@@ -1557,7 +1557,7 @@ var Lag_premiepenger = {
 }
 var Lag_koeff = {
   "@type": "Question",
-  "name": "How many coefficient points has earned in 22/23?",
+  "name": "How many coefficient points has earned in 23/24?",
   "acceptedAnswer": {
     "@type": "Answer",
     "text": " association coefficient ",
