@@ -354,7 +354,6 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   for (p = 6; p > 1; p--) {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }
-  console.log(ranking_array)
   i = 1
   ranking_array.sort(sortFunction_tall_1_forskjellig);
 
@@ -1232,6 +1231,7 @@ function bygg_klubb_tabell() {
     klubber[i].length = 7
     klubber[i].push((klubber[i][2]||0) + (klubber[i][3]||0) + (klubber[i][4]||0) + (klubber[i][5]||0) + (klubber[i][6]||0))
     klubber[i].push(parseFloat((((klubber[i][7] / (landskoeffisienter_totalt[land.indexOf(klubber[i][1])][0])) * 100) || 0).toFixed(6)))
+    if (klubber[i][8] > 100) {klubber[i][8] = 100}
   }
   sorter_etter_sesong2(klubber)
 }
