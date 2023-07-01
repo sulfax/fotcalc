@@ -383,7 +383,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       if (kolonne0_3 == '-') {kolonne0_3 = ''}
       if (kolonne0_4 == '-') {kolonne0_4 = ''}
       if (kolonne0_5 == '-') {kolonne0_5 = ''}
-      // Gjør om linjene til kode dersom du ønsker at land uten deltagelse skal være rangert under land uten poeng.
+      // Gjør om linjene til kode dersom du ønsker at land uten deltagelse skal være rangert likt som land uten poeng.
       // if (kolonne1_1 == 0) {kolonne1_1 = 0.0001}
       // if (kolonne1_2 == 0) {kolonne1_2 = 0.0001}
       // if (kolonne1_3 == 0) {kolonne1_3 = 0.0001}
@@ -496,7 +496,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     if (order == 'desc') {
       for (p = 0; p < ranking_array.length; p++) {
         if (p > 0) {
-          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert under land uten poeng 1 sesong.
+          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
           if (ranking_array[p-1][i] == ranking_array[p][i] /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p-1][i])) */) {
             ranking_array[p].splice(11,1,ranking_array[p-1][11])
           }
@@ -506,7 +506,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     else {
       for (p = ranking_array.length - 1; p >= 0; p--) {
         if (p < ranking_array.length - 1) {
-          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert under land uten poeng 1 sesong.
+          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
           if (ranking_array[p+1][i] == ranking_array[p][i] /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p+1][i])) */) {
             ranking_array[p].splice(11,1,ranking_array[p+1][11])
           }
