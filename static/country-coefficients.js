@@ -383,6 +383,17 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       if (kolonne0_3 == '-') {kolonne0_3 = ''}
       if (kolonne0_4 == '-') {kolonne0_4 = ''}
       if (kolonne0_5 == '-') {kolonne0_5 = ''}
+      // Gjør om linjene til kode dersom du ønsker at land uten deltagelse skal være rangert under land uten poeng.
+      // if (kolonne1_1 == 0) {kolonne1_1 = 0.0001}
+      // if (kolonne1_2 == 0) {kolonne1_2 = 0.0001}
+      // if (kolonne1_3 == 0) {kolonne1_3 = 0.0001}
+      // if (kolonne1_4 == 0) {kolonne1_4 = 0.0001}
+      // if (kolonne1_5 == 0) {kolonne1_5 = 0.0001}
+      // if (kolonne0_1 == 0) {kolonne0_1 = 0.0001}
+      // if (kolonne0_2 == 0) {kolonne0_2 = 0.0001}
+      // if (kolonne0_3 == 0) {kolonne0_3 = 0.0001}
+      // if (kolonne0_4 == 0) {kolonne0_4 = 0.0001}
+      // if (kolonne0_5 == 0) {kolonne0_5 = 0.0001}
       let poeng_lik = (poeng1 == poeng0)
       let kolonne1_lik = (kolonne1_1 == kolonne0_1)
       let kolonne2_lik = (kolonne1_2 == kolonne0_2)
@@ -443,7 +454,12 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     endre_kolonne_overskrift('sesong4', opp_ned_pil)
   }
   if(order == 'desc') {
-    if (column == 'id_nr') {ranking_array.sort(sortFunction_tall_2_forskjellig);}
+    if (column == 'id_nr') {
+      for (p = 2; p <= 6; p++) {
+        ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste2);
+      }
+      ranking_array.sort(sortFunction_tall_2_forskjellig);
+    }
     else {ranking_array.sort(sortFunction_tall_1_forskjellig);}
     tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
@@ -480,7 +496,8 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     if (order == 'desc') {
       for (p = 0; p < ranking_array.length; p++) {
         if (p > 0) {
-          if (ranking_array[p-1][i] == ranking_array[p][i]) {
+          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert under land uten poeng 1 sesong.
+          if (ranking_array[p-1][i] == ranking_array[p][i] /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p-1][i])) */) {
             ranking_array[p].splice(11,1,ranking_array[p-1][11])
           }
         }
@@ -489,7 +506,8 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
     else {
       for (p = ranking_array.length - 1; p >= 0; p--) {
         if (p < ranking_array.length - 1) {
-          if (ranking_array[p+1][i] == ranking_array[p][i]) {
+          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert under land uten poeng 1 sesong.
+          if (ranking_array[p+1][i] == ranking_array[p][i] /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p+1][i])) */) {
             ranking_array[p].splice(11,1,ranking_array[p+1][11])
           }
         }
@@ -586,6 +604,18 @@ function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
   }
   else {
     return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+  }
+}
+function sortFunction_tall_1_flere_desimal_nyligste2(a, b) {
+  if (a[p] == '-') {a[p] = 0.0001}
+  if (b[p] == '-') {b[p] = 0.0001}
+  if (a[p] == '') {a[p] = 0}
+  if (b[p] == '') {b[p] = 0}
+  if (parseFloat(a[p]) === parseFloat(b[p])) {
+    return 0;
+  }
+  else {
+    return (parseFloat(a[p]) < parseFloat(b[p])) ? -1 : 1;
   }
 }
 function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
