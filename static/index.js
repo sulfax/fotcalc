@@ -887,3 +887,78 @@ function trykker_forside_deffinisjon() {
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   sessionStorage.setItem('spoiler', 'synlig')
 }
+
+const bokstaver = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ','-','/','0','1','2','3','4','5','6','7','8','9','.',"'",'(',')','&'];
+function convertString(filter)
+{
+    //Convert Characters
+    filter = filter.replace(/Á/g, 'A');
+    filter = filter.replace(/Å/g, 'A');
+    filter = filter.replace(/Ä/g, 'A');
+    filter = filter.replace(/Â/g, 'A');
+    filter = filter.replace(/Ă/g, 'A');
+    filter = filter.replace(/Ā/g, 'A');
+    filter = filter.replace(/Ą/g, 'A');
+    filter = filter.replace(/À/g, 'A');
+    filter = filter.replace(/Ə/g, 'A');
+    filter = filter.replace(/Æ/g, 'AE');
+    filter = filter.replace(/Ç/g, 'C');
+    filter = filter.replace(/Ć/g, 'C');
+    filter = filter.replace(/Č/g, 'C');
+    filter = filter.replace(/Ð/g, 'D');
+    filter = filter.replace(/È/g, 'E');
+    filter = filter.replace(/Ė/g, 'E');
+    filter = filter.replace(/Ë/g, 'E');
+    filter = filter.replace(/Ę/g, 'E');
+    filter = filter.replace(/É/g, 'E');
+    filter = filter.replace(/Ğ/g, 'G');
+    filter = filter.replace(/Ħ/g, 'H');
+    filter = filter.replace(/Í/g, 'I');
+    filter = filter.replace(/Ī/g, 'I');
+    filter = filter.replace(/İ/g, 'I');
+    filter = filter.replace(/Î/g, 'I');
+    filter = filter.replace(/Ł/g, 'L');
+    filter = filter.replace(/Ń/g, 'N');
+    filter = filter.replace(/Ň/g, 'N');
+    filter = filter.replace(/Ó/g, 'O');
+    filter = filter.replace(/Ø/g, 'O');
+    filter = filter.replace(/Ö/g, 'O');
+    filter = filter.replace(/Š/g, 'S');
+    filter = filter.replace(/Ş/g, 'S');
+    filter = filter.replace(/Ș/g, 'S');
+    filter = filter.replace(/Ś/g, 'S');
+    filter = filter.replace(/Ț/g, 'T');
+    filter = filter.replace(/Ü/g, 'U');
+    filter = filter.replace(/Ū/g, 'U');
+    filter = filter.replace(/Ú/g, 'U');
+    filter = filter.replace(/Ž/g, 'Z');
+    filter = filter.replace(/Ż/g, 'Z');
+    return filter
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  filter = convertString(filter);
+
+  div = document.getElementById("dropdown_elementer");
+  a = div.getElementsByTagName("button");
+  for (i = 0; i < a.length; i++) {
+      txtValue = a[i].innerText || a[i].innerText;
+      txtValue = convertString(txtValue.toUpperCase());
+      // Skriver ut klubber med ugyldige bokstaver. Klubber som skrives ut må få alle sine bokstaver gyldige i "convertString()"
+      // for (r = 0; r < txtValue.length; r++) {
+      //     if (!bokstaver.includes(txtValue[r])) {
+      //         console.log(txtValue)
+      //         break
+      //     }
+      // }
+      if (txtValue.indexOf(filter) > -1) {
+          a[i].style.display = "";
+      }
+      else {
+          a[i].style.display = "none";
+      }
+  }
+}
