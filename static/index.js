@@ -936,15 +936,20 @@ function convertString(filter)
     return filter
 }
 
+let input_tekst = "";
+
 function filterFunction() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
-  filter = convertString(filter);
 
-  div = document.getElementById("dropdown_elementer");
-  a = div.getElementsByTagName("button");
-  for (i = 0; i < a.length; i++) {
+  if (filter != input_tekst) {
+    input_tekst = filter
+    filter = convertString(filter);
+
+    div = document.getElementById("dropdown_elementer");
+    a = div.getElementsByTagName("button");
+    for (i = 0; i < a.length; i++) {
       txtValue = a[i].innerText || a[i].innerText;
       txtValue = convertString(txtValue.toUpperCase());
       // Skriver ut klubber med ugyldige bokstaver. Klubber som skrives ut må få alle sine bokstaver gyldige i "convertString()"
@@ -960,5 +965,6 @@ function filterFunction() {
       else {
           a[i].style.display = "none";
       }
+    }
   }
 }
