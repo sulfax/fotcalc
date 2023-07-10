@@ -155,8 +155,8 @@ const norsk_kalkulator = [
     'Vunnet Super Cup:',
     'Inntjening per turnering:',
     'Total inntjening:',
-    '<p>*Kalkulasjonene tar ikke de mindre COVID-fradragene i betraktning.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
-    '<p>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
+    '<p>*Kalkulasjonene tar ikke de mindre COVID-fradragene i betraktning.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
+    '<p>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">din klubbs koeffisientpoeng</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign premiepenger med andre klubber</a>.</b>'
 ];
@@ -399,8 +399,8 @@ const english_kalkulator = [
     'Won Super Cup',
     'Income per competition:',
     'Total income:',
-    '<p>*Calculations do not take the small COVID deduction into consederation.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
-    '<p>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
+    '<p>*Calculations do not take the small COVID deduction into consederation.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
+    '<p>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
     'Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s coefficient points</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare prize money with other clubs</a>.</b>'
 ];

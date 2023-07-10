@@ -55,8 +55,11 @@ function language_standard(clicked_id) {
       if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
       }
-      if (aarstall >= 1) {
+      if (aarstall == 1) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
+      }
+      if (aarstall >= 2) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf');
       }
     }
     ja_språk = ja_nei[0][0];
@@ -169,8 +172,11 @@ function language_standard(clicked_id) {
       if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
       }
-      if (aarstall >= 1) {
+      if (aarstall == 1) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
+      }
+      if (aarstall >= 2) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf');
       }
     }
     ja_språk = ja_nei[1][0];
