@@ -722,7 +722,11 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
                 </tr>`
       if ((i == 4 && aar_etter_forste_periode > 0) || (i == 5 && aar_etter_forste_periode > 0) || (i == 3 && aar_etter_forste_periode <= 0) || (i == 5 && aar_etter_forste_periode <= 0) || i == 14 || i == 49) {
         rad_test = '<tr class="grense">' + rad_test
-      } else {
+      }
+      else if ((i == 9 && aar_etter_forste_periode > 0) || (i == 21 && aar_etter_forste_periode > 0) || (i == 32 && aar_etter_forste_periode > 0) || (i == 37 && aar_etter_forste_periode > 0)) {
+        rad_test = '<tr class="grense2">' + rad_test
+      }
+      else {
         rad_test = '<tr>' + rad_test
       }
       helTabellHTML += rad_test
