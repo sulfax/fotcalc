@@ -204,7 +204,7 @@ const norsk_koeffisient = [
     'spoeng til ',
     'Rangering',
     'Den nederste raden beregnes ved å dele assosiasjons-koeffisientpoengene på antallet klubber fra landet.',
-    '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFAs koeffisient-rangeringssystem</a>.</p>',
+    '<p>*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFAs koeffisient-rangeringssystem</a>.</p>',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">din klubbs premiepenger</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign koeffisientpoeng med andre klubber</a>.</b>',
     '<b>Ta en titt på <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">landskoeffisient-rangeringen</a>.</b>'
@@ -448,7 +448,7 @@ const english_koeffisient = [
     '&nbsppoints for ',
     'Ranking',
     'The bottom row is calculated by dividing the association points by the number of clubs representing the country.',
-    '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>',
+    '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>',
     'Check out <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">your club’s prize money</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare coefficient points with other clubs</a>.</b>',
     '<b>Take a look at the <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">country coefficient ranking</a>.</b>'

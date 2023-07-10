@@ -51,7 +51,7 @@ function language_standard(clicked_id) {
         null;
       }
     }
-    if (document.getElementById('uefa_distribution_link')) {
+    if (document.getElementById('uefa_distribution_link') && !overskrift_koeff_finnes) {
       if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
       }
@@ -168,7 +168,7 @@ function language_standard(clicked_id) {
         null;
       }
     }
-    if (document.getElementById('uefa_distribution_link')) {
+    if (document.getElementById('uefa_distribution_link') && !overskrift_koeff_finnes) {
       if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
       }

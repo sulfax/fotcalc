@@ -507,10 +507,13 @@ function endre_sessong(clicked_id) {
 function oppdater_sessong(aarstall) {
     document.getElementById("sessong_id").innerText = (parseInt(aarstall) + 21) + '/' + (parseInt(aarstall) + 22);
     if (aarstall == 0) {
-        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online');
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online');
     }
-    if (aarstall >= 1) {
-        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2022/23/Annex-D-Coefficient-Ranking-System-Online');
+    if (aarstall == 1) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online');
+    }
+    if (aarstall >= 2) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online');
     }
 };
 
