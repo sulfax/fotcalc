@@ -497,12 +497,12 @@ const totalt_antall_klubber = [
     [4, 4],// GEO
     [4, 3],// MKD
     [1, 1],// LIE
-    [4, 4],// WAL
+    [4, 4, 3],// WAL
     [3, 3],// GIB
     [3, 4],// ISL
-    [3, 3],// MNE
+    [3, 3, 3],// MNE
     [3, 3],// AND
-    [3, 3]    // SMR
+    [3, 3, 3]    // SMR
 ]
 
 
