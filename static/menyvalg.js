@@ -456,7 +456,7 @@ const totalt_antall_klubber = [
     [6, 5],// POR
     [5, 6],// NED
     [5, 5],// AUT
-    [5, 5],// SCO
+    [5, 5, 5],// SCO
     [0, 0],// RUS
     [5, 5],// SRB
     [5, 5],// UKR
@@ -468,13 +468,13 @@ const totalt_antall_klubber = [
     [4, 4],// DEN
     [4, 4],// CRO
     [4, 5],// TUR
-    [4, 4],// CYP
+    [4, 4, 4],// CYP
     [4, 4],// ISR
     [4, 4],// SWE
     [4, 4, 4],// BUL
-    [4, 4],// ROU
+    [4, 4 ,4],// ROU
     [4, 4, 4],// AZE
-    [4, 4],// HUN
+    [4, 4, 4],// HUN
     [4, 4],// POL
     [4, 4, 4],// KAZ
     [4, 4, 4],// SVK
