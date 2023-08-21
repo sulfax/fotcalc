@@ -418,6 +418,7 @@ const sprak_id_klubbkoeffisient = [
   'beskrivelse_klubbkoeffisient',
   'decisive_oversett',
   'legend',
+  'POENG_vs_NA',
   'premiepenger_reklame',
   'oversikt_reklame',
 ];
@@ -428,6 +429,8 @@ const sprak_id_ti_års = [
   'beskrivelse_ti_års',
   'decisive_oversett',
   'legend',
+  'POENG_vs_NA',
+  'Histiriske_poeng_legend',
   'premiepenger_reklame',
   'oversikt_reklame'
 ];
