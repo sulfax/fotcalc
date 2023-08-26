@@ -448,10 +448,10 @@ const landskoeffisienter = [
 
 // Forskyv data til venstre når ny landsrangerings-sesong starter
 const totalt_antall_klubber = [
-    [8, 7],// ENG
-    [8, 7],// ESP
-    [7, 7],// ITA
-    [7, 7],// GER
+    [8, 7, 7],// ENG
+    [8, 7, 7],// ESP
+    [7, 7, 7],// ITA
+    [7, 7, 7],// GER
     [6, 7],// FRA
     [6, 5],// POR
     [5, 6],// NED
@@ -460,17 +460,17 @@ const totalt_antall_klubber = [
     [0, 0],// RUS
     [5, 5],// SRB
     [5, 5],// UKR
-    [5, 5],// BEL
+    [5, 5, 5],// BEL
     [5, 5],// SUI
     [5, 4],// GRE
     [4, 5],// CZE
     [4, 4],// NOR
     [4, 4],// DEN
     [4, 4],// CRO
-    [4, 5],// TUR
+    [4, 5, 5],// TUR
     [4, 4, 4],// CYP
     [4, 4],// ISR
-    [4, 4],// SWE
+    [4, 4, 4],// SWE
     [4, 4, 4],// BUL
     [4, 4 ,4],// ROU
     [4, 4, 4],// AZE
