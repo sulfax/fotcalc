@@ -547,6 +547,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       for (i+=4; i >= i_mål; i--) {
         ranking_array.sort(sortFunction_tall_2_forskjellig);
       }
+      i+=1;
     }
     tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
@@ -592,33 +593,31 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
         kolonne4_lik = (kolonne1_4 == kolonne0_4)
         kolonne5_lik = (kolonne1_5 == kolonne0_5)
         // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
-        if (kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik || (kolonne1_1 == 0 && kolonne0_1 == 0) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p-1][i])) */) {
+        if ((kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) || (kolonne1_1 == 0 && kolonne0_1 == 0) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p-1][i])) */) {
           ranking_array[p].splice(15,1,ranking_array[p-1][15])
         }
       }
     }
     else {
-      for (p = ranking_array.length - 1; p >= 0; p--) {
-        if (p > 0) {
-          kolonne1_1 = ranking_array[p][i];
-          kolonne1_2 = ranking_array[p][i+1];
-          kolonne1_3 = ranking_array[p][i+2];
-          kolonne1_4 = ranking_array[p][i+3];
-          kolonne1_5 = ranking_array[p][i+4];
-          kolonne0_1 = ranking_array[p-1][i];
-          kolonne0_2 = ranking_array[p-1][i+1];
-          kolonne0_3 = ranking_array[p-1][i+2];
-          kolonne0_4 = ranking_array[p-1][i+3];
-          kolonne0_5 = ranking_array[p-1][i+4];
-          kolonne1_lik = (kolonne1_1 == kolonne0_1)
-          kolonne2_lik = (kolonne1_2 == kolonne0_2)
-          kolonne3_lik = (kolonne1_3 == kolonne0_3)
-          kolonne4_lik = (kolonne1_4 == kolonne0_4)
-          kolonne5_lik = (kolonne1_5 == kolonne0_5)
-          // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
-          if (kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik || (kolonne1_1 == 0 && kolonne0_1 == 0) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p+1][i])) */) {
-            ranking_array[p-1].splice(15,1,ranking_array[p][15])
-          }
+      for (p = ranking_array.length - 1; p > 0; p--) {
+        kolonne1_1 = ranking_array[p][i];
+        kolonne1_2 = ranking_array[p][i+1];
+        kolonne1_3 = ranking_array[p][i+2];
+        kolonne1_4 = ranking_array[p][i+3];
+        kolonne1_5 = ranking_array[p][i+4];
+        kolonne0_1 = ranking_array[p-1][i];
+        kolonne0_2 = ranking_array[p-1][i+1];
+        kolonne0_3 = ranking_array[p-1][i+2];
+        kolonne0_4 = ranking_array[p-1][i+3];
+        kolonne0_5 = ranking_array[p-1][i+4];
+        kolonne1_lik = (kolonne1_1 == kolonne0_1)
+        kolonne2_lik = (kolonne1_2 == kolonne0_2)
+        kolonne3_lik = (kolonne1_3 == kolonne0_3)
+        kolonne4_lik = (kolonne1_4 == kolonne0_4)
+        kolonne5_lik = (kolonne1_5 == kolonne0_5)
+        // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
+        if ((kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) || (kolonne1_1 == 0 && kolonne0_1 == 0) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p+1][i])) */) {
+          ranking_array[p-1].splice(15,1,ranking_array[p][15])
         }
       }
     }
