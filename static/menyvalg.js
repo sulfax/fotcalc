@@ -8,7 +8,7 @@ Kodebitene gir bonuspoeng til land hvor klubber direkte-kvalifiserer seg til UCL
 Denne poeng-givningen skal fjernes når vi vet hvilken klubb fra det aktuelle landet som tar
 den direkte UCL-plassen.
 
-Husk: -gi bonuspoeng når koeffisient-system for 24/25 sesongen kommer
+Husk: -gi bonuspoeng når koeffisient-system for 24/25 sesongen kommerr
 */
 const menyvalg = [
      ["1. FC Köln",                 "GER",,,,,,,,                                                                                                                                                        , "b15,b20",",,13",",,2,,,2",",,3",",,,,,,,,,,,,,,,,,,,,,1,,,3",                                                                          [5378901,,,],7,6.0],
