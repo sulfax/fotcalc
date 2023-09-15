@@ -191,7 +191,7 @@ th, td {
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
 .tabell_link {
-    color: rgb(86, 97, 255);
+    color: rgb(255, 86, 86);
     padding: 0px !important;
 }
 .tabell_link:hover {
