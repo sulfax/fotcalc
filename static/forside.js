@@ -1485,7 +1485,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
   let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
   let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   for (r = 0; r < landskoeffisienter.length; r++) {
-    if (landskoeffisienter[r][3] != 0 || (landskoeffisienter[r][2] != 0 && ((trykte_knapper == [] || trykte_knapper == '') && (filter_land_før == '' || filter_land_før == [] || filter_land_før.includes(landskoeffisienter[r][0]))))) {
+    if (landskoeffisienter[r][4] != 0 || (landskoeffisienter[r][2] != 0 && ((trykte_knapper == [] || trykte_knapper == '') && (filter_land_før == '' || filter_land_før == [] || filter_land_før.includes(landskoeffisienter[r][0]))))) {
       landskoeffisienter[r][4] = Math.floor((landskoeffisienter[r][2]) * 1000/landskoeffisienter[r][4]) / 1000
       land_array.push(landskoeffisienter[r])
     }

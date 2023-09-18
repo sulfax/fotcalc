@@ -712,7 +712,7 @@ function byggTabell_test(ranking_array, column, order) {
       if(ranking_array[i][1] != "" && ranking_array[i][1] != "0.0") {rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][11]}</b></td>`;}
       else {rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${""}</b></td>`;}
       let klubbnavn_HTML_start = '<td><nobr class="marign_venstre">';
-      if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
+      if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-22) {
         for (r = 0; r < menyvalg.length; r++) {
           if (menyvalg[r][0] == ranking_array[i][0]) {
             let knapper = "";
