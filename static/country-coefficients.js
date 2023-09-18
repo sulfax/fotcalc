@@ -1337,7 +1337,7 @@ function bygg_klubb_tabell() {
     }
     else {
       for (i = 0; i < menyvalg.length; i++) {
-        if (menyvalg[i][((p-6)*8)+1]) {
+        if (menyvalg[i][((p-6)*8)+1] || menyvalg[i][((p-6)*8)] == 0) {
           let legg_til_klubb = true
           for (j = 0; j < klubber.length; j++) {
             if (klubber[j][0] == menyvalg[i][0]) {
