@@ -935,19 +935,19 @@ function generer_lands_knapper() {
       }
       koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
     if (landskoeffisienter[i][0] == 'RUS') {
-      if (aarstall == 1) {
+      if ([1,2].includes(aarstall)) {
         enkelt_sesong1 = 4.333
       }
-      if (aarstall == 2) {
+      if ([2,3].includes(aarstall)) {
         koeff_sesong2 = 4.333
       }
-      if (aarstall == 3) {
+      if ([3,4].includes(aarstall)) {
         koeff_sesong3 = 4.333
       }
-      if (aarstall == 4) {
+      if ([4,5].includes(aarstall)) {
         koeff_sesong4 = 4.333
       }
-      if (aarstall == 5) {
+      if ([5,6].includes(aarstall)) {
         koeff_sesong5 = 4.333
       }
     }
@@ -1490,7 +1490,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
       land_array.push(landskoeffisienter[r])
     }
   }
-  if (trykte_knapper.length == 0 && trykte_knapper_exclude.length == 0 && aarstall == 1  && (filter_land_før.length == 0 || filter_land_før.includes('RUS'))) {
+  if (trykte_knapper.length == 0 && trykte_knapper_exclude.length == 0 && [1,2].includes(aarstall) && (filter_land_før.length == 0 || filter_land_før.includes('RUS'))) {
     land_array.push(['RUS', 0, '', '', 4.333, 0, 0, 0.166, 0.5, 0, 0.5, 'Russia'])
   }
   for (r = 0; r < land_array.length; r++) {
