@@ -1626,36 +1626,35 @@ function generer_lands_knapper() {
       }
       koeff_sesong10 = Math.floor(koeff_sesong10 * 1000/antall_klubber10) / 1000 || 0}
 
-
     if (landskoeffisienter[i][0] == 'RUS') {
-      if (aar_etter_forste_periode == 1) {
+      if ([1,2].includes(aar_etter_forste_periode)) {
         enkelt_sesong1 = 4.333
       }
-      if (aar_etter_forste_periode == 2) {
+      if ([2,3].includes(aar_etter_forste_periode)) {
         koeff_sesong2 = 4.333
       }
-      if (aar_etter_forste_periode == 3) {
+      if ([3,4].includes(aar_etter_forste_periode)) {
         koeff_sesong3 = 4.333
       }
-      if (aar_etter_forste_periode == 4) {
+      if ([4,5].includes(aar_etter_forste_periode)) {
         koeff_sesong4 = 4.333
       }
-      if (aar_etter_forste_periode == 5) {
+      if ([5,6].includes(aar_etter_forste_periode)) {
         koeff_sesong5 = 4.333
       }
-      if (aar_etter_forste_periode == 6) {
+      if ([6,7].includes(aar_etter_forste_periode)) {
         koeff_sesong6 = 4.333
       }
-      if (aar_etter_forste_periode == 7) {
+      if ([7,8].includes(aar_etter_forste_periode)) {
         koeff_sesong7 = 4.333
       }
-      if (aar_etter_forste_periode == 8) {
+      if ([8,9].includes(aar_etter_forste_periode)) {
         koeff_sesong8 = 4.333
       }
-      if (aar_etter_forste_periode == 9) {
+      if ([9,10].includes(aar_etter_forste_periode)) {
         koeff_sesong9 = 4.333
       }
-      if (aar_etter_forste_periode == 10) {
+      if ([10, 11].includes(aar_etter_forste_periode)) {
         koeff_sesong10 = 4.333
       }
     }
@@ -2045,34 +2044,34 @@ function regn_ut_NA_poeng() {
 
 
     if (landskoeffisienter[i][0] == 'RUS') {
-      if (aar_etter_forste_periode == 1) {
+      if ([1,2].includes(aar_etter_forste_periode)) {
         enkelt_sesong1 = 4.333
       }
-      if (aar_etter_forste_periode == 2) {
+      if ([2,3].includes(aar_etter_forste_periode)) {
         koeff_sesong2 = 4.333
       }
-      if (aar_etter_forste_periode == 3) {
+      if ([3,4].includes(aar_etter_forste_periode)) {
         koeff_sesong3 = 4.333
       }
-      if (aar_etter_forste_periode == 4) {
+      if ([4,5].includes(aar_etter_forste_periode)) {
         koeff_sesong4 = 4.333
       }
-      if (aar_etter_forste_periode == 5) {
+      if ([5,6].includes(aar_etter_forste_periode)) {
         koeff_sesong5 = 4.333
       }
-      if (aar_etter_forste_periode == 6) {
+      if ([6,7].includes(aar_etter_forste_periode)) {
         koeff_sesong6 = 4.333
       }
-      if (aar_etter_forste_periode == 7) {
+      if ([7,8].includes(aar_etter_forste_periode)) {
         koeff_sesong7 = 4.333
       }
-      if (aar_etter_forste_periode == 8) {
+      if ([8,9].includes(aar_etter_forste_periode)) {
         koeff_sesong8 = 4.333
       }
-      if (aar_etter_forste_periode == 9) {
+      if ([9,10].includes(aar_etter_forste_periode)) {
         koeff_sesong9 = 4.333
       }
-      if (aar_etter_forste_periode == 10) {
+      if ([10, 11].includes(aar_etter_forste_periode)) {
         koeff_sesong10 = 4.333
       }
     }

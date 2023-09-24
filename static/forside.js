@@ -935,19 +935,19 @@ function generer_lands_knapper() {
       }
       koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
     if (landskoeffisienter[i][0] == 'RUS') {
-      if (aarstall == 1) {
+      if ([1,2].includes(aarstall)) {
         enkelt_sesong1 = 4.333
       }
-      if (aarstall == 2) {
+      if ([2,3].includes(aarstall)) {
         koeff_sesong2 = 4.333
       }
-      if (aarstall == 3) {
+      if ([3,4].includes(aarstall)) {
         koeff_sesong3 = 4.333
       }
-      if (aarstall == 4) {
+      if ([4,5].includes(aarstall)) {
         koeff_sesong4 = 4.333
       }
-      if (aarstall == 5) {
+      if ([5,6].includes(aarstall)) {
         koeff_sesong5 = 4.333
       }
     }
@@ -1490,7 +1490,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
       land_array.push(landskoeffisienter[r])
     }
   }
-  if (trykte_knapper.length == 0 && trykte_knapper_exclude.length == 0 && aarstall == 1  && (filter_land_før.length == 0 || filter_land_før.includes('RUS'))) {
+  if (trykte_knapper.length == 0 && trykte_knapper_exclude.length == 0 && [1,2].includes(aarstall) && (filter_land_før.length == 0 || filter_land_før.includes('RUS'))) {
     land_array.push(['RUS', 0, '', '', 4.333, 0, 0, 0.166, 0.5, 0, 0.5, 'Russia'])
   }
   for (r = 0; r < land_array.length; r++) {
@@ -1589,10 +1589,10 @@ function bygg_tabell_2(land_array) {
       land_array[r][3] = land_array[r][3].toFixed(1)
     }
     if (land_array[r][4] == 0 || (land_array[r][2] == 0 && (filter_land_før.includes('RUS') == false && filter_land_før.length != 0 && aarstall == 1))) {
-      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode('ikke_klubb')">${"-&nbsp"}</a>`
+      land_array[r][4] = "-&nbsp";
     }
     else if (land_array[r][4] != "-&nbsp") {
-      land_array[r][4] = `<a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode('ikke_klubb')">${land_array[r][4].toFixed(3)}</a>`
+      land_array[r][4] = land_array[r][4].toFixed(3);
     }
     let spraak = localStorage.getItem("someVarKey");
     if (land_array[r][0] == 'NIR') {
@@ -1615,7 +1615,7 @@ function bygg_tabell_2(land_array) {
                 <td id="flagg_tabell2"><nobr class="marign_venstre">${flagg_ikon}</nobr></td>
                 <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_prize(${land_array[r][0]})"><nobr>${premiepenger}</nobr></a></span></td>
                 <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_ass(${land_array[r][0]})">${land_array[r][2]}</a></span></td>
-                <td class='premie_koeff'><span class="ass_coeff_span">${land_array[r][4]}</span></td>
+                <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../country-coefficients" onclick="landsranking_endre_periode(${land_array[r][0]})">${land_array[r][4]}</a></span></td>
                 <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../#" onclick="endre_lands_filter_club(${land_array[r][0]})">${land_array[r][3]}</a></span></td>
               </tr>`
     helTabellHTML += rad;
@@ -1680,6 +1680,7 @@ function endre_lands_filter(land) {
 
 
 function landsranking_endre_periode(klubb) {
+  klubb = klubb.innerHTML;
   if (klubb) {
     if (klubb.length > 20) {
       let id = 'NIR'
