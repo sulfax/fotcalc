@@ -332,11 +332,11 @@ function post_resultat(clicked_id) {
 
 function oppdater_trostepoeng() {
     if ((document.getElementById("b32").className) == 'btn btn-danger de1_UEL del') {
-        var aktuell_sum = Math.max(0, ((knapp_summer[6][0]) - (document.getElementById("i2__").innerText) - (document.getElementById("i5__").innerText) - (document.getElementById("i8__").innerText)));
+        var aktuell_sum = Math.max(0, ((knapp_summer[6][0]) - (document.getElementById("i2__").innerText) - (document.getElementById("i5__").innerText) /*- (document.getElementById("i8__").innerText)*/));
         document.getElementById("b32__").innerText = aktuell_sum;
     }
     if ((document.getElementById("b33").className) == 'btn btn-danger de1_UECL del') {
-        var aktuell_sum = Math.max(0, ((knapp_summer[7][0]) - (document.getElementById("i3__").innerText) - (document.getElementById("i6__").innerText) - (document.getElementById("i9__").innerText)));
+        var aktuell_sum = Math.max(0, ((knapp_summer[7][0]) - (document.getElementById("i3__").innerText) - (document.getElementById("i6__").innerText) /*- (document.getElementById("i9__").innerText)*/));
         document.getElementById("b33__").innerText = aktuell_sum;
     }
 }
