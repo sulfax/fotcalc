@@ -28,10 +28,10 @@ var UECL_seier_2122 = 2;
 var UCL_uavgjort_2122 = 1;
 var UEL_uavgjort_2122 = 1;
 var UECL_uavgjort_2122 = 1;
-var UCL_førsteplass_2122 = 5;
+var UCL_førsteplass_2122 = 6;
 var UEL_førsteplass_2122 = 4;
 var UECL_førsteplass_2122 = 2;
-var UCL_andreplass_2122 = 2;
+var UCL_andreplass_2122 = 3;
 var UEL_andreplass_2122 = 2;
 var UECL_andreplass_2122 = 1;
 
@@ -454,7 +454,7 @@ function oppdater_plassering(clicked_id, lagre_endring) {
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
         }
-        else if (input_felt_verdi <= 16) {
+        else if (input_felt_verdi <= 24) {
             var aktuell_sum = input_summer[felt_nummer+2][0];
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
