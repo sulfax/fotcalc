@@ -180,7 +180,7 @@ oppdater_sessong(aarstall)
 
 oppdater_ved_refresh_1()
 function paa_av(clicked_id){
-        if (((clicked_id == "b6" && document.getElementById('b1')) || (clicked_id == "b-1" && document.getElementById('b-6'))) || clicked_id == "b13" || ((clicked_id == "CLPO" && document.getElementById('b1')) || (clicked_id == "b-1" && document.getElementById('CL-PO'))) || clicked_id == "b18") {
+    if (((clicked_id == "b6" && document.getElementById('b1')) || (clicked_id == "b-1" && document.getElementById('b-6'))) || clicked_id == "b13" || ((clicked_id == "CLPO" && document.getElementById('b1')) || (clicked_id == "b-1" && document.getElementById('CL-PO'))) || clicked_id == "b18") {
         if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
             for (i=0;i<menyvalg.length;i++) {
                 if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
@@ -338,7 +338,6 @@ function paa_av(clicked_id){
             }
             else {
                 if (clicked_id == "b16" || clicked_id == "b18") {
-                    document.getElementById("b2_").innerText = "";
                     document.getElementById("b3_").innerText = "";
                     document.getElementById("b6_").innerText = "";
                     document.getElementById("b9_").innerText = "";
