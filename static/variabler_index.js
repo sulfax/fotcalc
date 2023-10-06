@@ -108,7 +108,7 @@ const norsk_klubbkoeffisient = [
     'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>Europakvalikk og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
     'Avgjørende for klubb-utplassering i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
-    'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Poeng" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
+    'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
 ];
@@ -119,7 +119,7 @@ const norsk_ti_års = [
     'Denne rangeringen benyttes kun til å finne 10 års koeffisient-bonusen (€)<br>til klubbene som deltar i europeisk gruppespill.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen</a>.</span>',
     'Avgjørende for gruppespills-bonus (€) i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
-    'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Poeng" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
+    'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
     'Historiske tittelpoeng tildeles tidligere Europeiske tittelvinnere og tillegges deres koeffisient.',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
