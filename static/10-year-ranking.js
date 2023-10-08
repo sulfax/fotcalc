@@ -565,10 +565,10 @@ function oppdater_ved_refresh() {
       }
 
 
-      if (ranking_array[i][1] <= ranking_array[i][4]) {
-        ranking_array.splice(i, 1);
-        i--;
-      }
+      // if (ranking_array[i][1] <= ranking_array[i][4]) {
+      //   ranking_array.splice(i, 1);
+      //   i--;
+      // }
     }
   }
   for (p = 0; p < landskoeffisienter.length; p++) {
@@ -585,6 +585,7 @@ function oppdater_ved_refresh() {
     if (ranking_array[p][1] == "0.000") {
       ranking_array[p][1] = 0.0001}
   }
+  console.log(ranking_array)
   ranking_array.sort(sortFunction_tall_1_flere_desimal_original);
   let rangering = 0;
   for (p = 0; p < ranking_array.length; p++) {
@@ -1176,6 +1177,8 @@ function sortFunction_tall_1_flere_desimal_original(a, b) {
   let sum_b = (Math.max(sum_b1, sum_b2))
   if (sum_a == sum_b && ((sum_a1 == "0.0001" && sum_b1 == 0)) && a[3] <= b[3]) {sum_a += 0.0001}
   else if (sum_a == sum_b && ((sum_a1 == 0 && sum_b1 == "0.0001")) && a[3] >= b[3]) {sum_b += 0.0001}
+  if (a[0] == '' && b[0] != '' && b[3] >= a[3] && sum_a == sum_b) {return 1}
+  if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return 1}
   if (sum_a === '' || !sum_a && sum_a !== 0) {sum_a = "0.0"}
   if (sum_b === '' || !sum_b && sum_b !== 0) {sum_b = "0.0"}
   if (parseFloat(sum_a) === parseFloat(sum_b)) {
