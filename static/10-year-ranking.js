@@ -1158,6 +1158,14 @@ function sortFunction_tall_1_flere_desimal(a, b) {
   }
   // if (a[i] == b[i] && ((a[i] == "0.000" && b[i] == 0)) && a[3] <= b[3]) {a[i] += 0.0001}
   // else if (a[i] == b[i] && ((a[i] == 0 && b[i] == "0.0001")) && a[3] >= b[3]) {b[i] += 0.0001}
+  let sum_a1 = a[1]
+  let sum_a2 = a[4]
+  let sum_a = (Math.max(sum_a1, sum_a2))
+  let sum_b1 = b[1]
+  let sum_b2 = b[4]
+  let sum_b = (Math.max(sum_b1, sum_b2))
+  if (a[0] == '' && b[0] != '' && b[3] >= a[3] && sum_a == sum_b) {return -1}
+  if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return 1}
   if (a[i] == '' || !a[i]) {
     a[i] = 0
   }
@@ -1178,7 +1186,7 @@ function sortFunction_tall_1_flere_desimal_original(a, b) {
   if (sum_a == sum_b && ((sum_a1 == "0.0001" && sum_b1 == 0)) && a[3] <= b[3]) {sum_a += 0.0001}
   else if (sum_a == sum_b && ((sum_a1 == 0 && sum_b1 == "0.0001")) && a[3] >= b[3]) {sum_b += 0.0001}
   if (a[0] == '' && b[0] != '' && b[3] >= a[3] && sum_a == sum_b) {return 1}
-  if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return 1}
+  if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return -1}
   if (sum_a === '' || !sum_a && sum_a !== 0) {sum_a = "0.0"}
   if (sum_b === '' || !sum_b && sum_b !== 0) {sum_b = "0.0"}
   if (parseFloat(sum_a) === parseFloat(sum_b)) {
@@ -1195,6 +1203,14 @@ function sortFunction_tall_2_flere_desimal(a, b) {
   }
   if (a[i] === '' || !a[i] && a[i] !== 0) {    a[i] = "0.0"}
   if (b[i] === '' || !b[i] && b[i] !== 0) {    b[i] = "0.0"}
+  let sum_a1 = a[1]
+  let sum_a2 = a[4]
+  let sum_a = (Math.max(sum_a1, sum_a2))
+  let sum_b1 = b[1]
+  let sum_b2 = b[4]
+  let sum_b = (Math.max(sum_b1, sum_b2))
+  if (a[0] == '' && b[0] != '' && b[3] >= a[3] && sum_a == sum_b) {return 1}
+  if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return -1}
   if (parseFloat(a[i]) === parseFloat(b[i])) {
     return 0;
   }
