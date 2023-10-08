@@ -378,9 +378,6 @@ a {
 .ikke_land:hover {
     width: calc(100% + 6px) !important;
 }
-/* .klubb_logo {
-    margin-bottom: calc(-0.14vw + 4px);
-} */
 @media (min-width:688px) {
     .klubb_logo {
         margin-bottom: 1.7px;

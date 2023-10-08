@@ -113,6 +113,17 @@ const norsk_klubbkoeffisient = [
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
 ];
 
+const norsk_fire_års = [
+    'UEFA 4 års klubb koeffisient-rangering',
+    '4 års koeffisient-rangering',
+    'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>Europakvalikk og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
+    'Avgjørende for klubb-utplassering i ',
+    'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
+    'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
+    'Sjekk ut',
+    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
+];
+
 const norsk_ti_års = [
     'UEFA 10 års Coefficient rangering',
     '10 års koeffisient-rangering',
@@ -354,6 +365,17 @@ const english_klubbkoeffisient = [
     'Club coefficient ranking',
     'This UEFA 5-year ranking decides seeding and pot-distribution in qualifying rounds<br>and the group stage. A higher ranking gives the club weaker opponents<br>in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
     'Decisive for club deployment in ',
+    'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
+    'UEFA will use whichever number is higher between a club’s total coefficient points (listed under "Points" in the table), or 20% of the national association’s coefficient points (listed under "NA").',
+    'Check out',
+    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
+];
+
+const english_fire_års = [
+    'UEFA 4-year Club Coefficient ranking',
+    '4-year coefficient ranking',
+    'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup.<br>The four UCL winners from this 4-year period also qualifies.<br>A cap of two clubs per country applies, except if more than two of the UCL winners<br>represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
+    'Determines spots for Club WC ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
     'UEFA will use whichever number is higher between a club’s total coefficient points (listed under "Points" in the table), or 20% of the national association’s coefficient points (listed under "NA").',
     'Check out',

@@ -60,7 +60,7 @@
 }
 
 
-#overskrift_klubbkoeffisient, #beskrivelse_klubbkoeffisient {
+#overskrift_klubbkoeffisient, #beskrivelse_klubbkoeffisient, #overskrift_fire_års, #beskrivelse_fire_års {
     text-align: center;
 }
 /* .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking
@@ -377,4 +377,20 @@ a {
     padding:0px !important;
     font-size: 0px !important;
     border-right: 1px solid rgba(0,0,0,0) !important;
+}
+@media (min-width:688px) {
+    .klubb_logo_4y {
+        margin-bottom: 1.7px;
+    }
+}
+.grense{
+    border-bottom: 2px solid rgba(52, 58, 64, 0.38) !important;
+}
+.uclMester .marign_venstre {
+    color:#2769AE !important;
+    font-weight: bold;
+}
+.fraLandMedOver2Mestere .marign_venstre {
+    color:#ff0000 !important;
+    font-weight: bold;
 }
