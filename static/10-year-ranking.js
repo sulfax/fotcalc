@@ -595,7 +595,7 @@ function oppdater_ved_refresh() {
   let rangering = 0;
   for (p = 0; p < ranking_array.length; p++) {
     let inaktiv_klubb = (ranking_array[p][5] == "0.0" && ranking_array[p][6] == "0.0" && ranking_array[p][7] == "0.0" && ranking_array[p][8] == "0.0" && ranking_array[p][9] == "0.0" && ranking_array[p][10] == "0.0" && ranking_array[p][11] == "0.0" && ranking_array[p][12] == "0.0" && ranking_array[p][13] == "0.0" && ranking_array[p][14] == "0.0")
-    if (ranking_array[p][1] != "" && !inaktiv_klubb) {
+    if (ranking_array[p][1] != "" && (!inaktiv_klubb/* Urangerte klubber med nok tittelpoeng blir rangert || ranking_array[p][1] > ranking_array[p][4]*/)) {
       rangering += 1;
     }
     ranking_array[p].push(p+1)
@@ -1047,7 +1047,7 @@ function sorter(column, order, tekst, ranking_array) {
     let land_over = 0;
     for (p = 0; p < ranking_array.length; p++) {
       let inaktiv_klubb = (ranking_array[p][5] == "0.0" && ranking_array[p][6] == "0.0" && ranking_array[p][7] == "0.0" && ranking_array[p][8] == "0.0" && ranking_array[p][9] == "0.0" && ranking_array[p][10] == "0.0" && ranking_array[p][11] == "0.0" && ranking_array[p][12] == "0.0" && ranking_array[p][13] == "0.0" && ranking_array[p][14] == "0.0")
-      if (ranking_array[p][1] == "" || ranking_array[p][1] == "0.0" || inaktiv_klubb) {
+      if (ranking_array[p][1] == "" || ranking_array[p][1] == "0.0" || (inaktiv_klubb/* Urangerte klubber med nok tittelpoeng blir rangert && ranking_array[p][1] <= ranking_array[p][4]*/)) {
         land_over += 1;
         if (ranking_array[p][18] || ranking_array[p][18] == 0) {
           ranking_array[p][18] = "";
@@ -1324,7 +1324,7 @@ function byggTabell_test(ranking_array, column, order) {
         ranking_array[i][18] = " "
         tr = '<tr class = "land_klubb_rank">'
       }
-      else if (inaktiv_klubb) {
+      else if (inaktiv_klubb/* Urangerte klubber med nok tittelpoeng blir rangert && ranking_array[i][1] <= ranking_array[i][4]*/) {
         ranking_array[i][18] = " "
         tr = '<tr class = "inaktiv_klubb">'
       }
@@ -1333,7 +1333,7 @@ function byggTabell_test(ranking_array, column, order) {
         nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][18] + '<img src="media/kolonnefjerner.png">';
       } else {nummer = ranking_array[i][18]}
       let rangering = "";
-      if(ranking_array[i][1] != "" && ranking_array[i][1] != "0.0" && !inaktiv_klubb) {rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;}
+      if(ranking_array[i][1] != "" && ranking_array[i][1] != "0.0" && (!inaktiv_klubb/* Urangerte klubber med nok tittelpoeng blir rangert || ranking_array[i][1] > ranking_array[i][4]*/)) {rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;}
       else {rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${""}</b></td>`;}
       let klubbnavn_HTML_start = '<td><nobr class="marign_venstre">';
       if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
