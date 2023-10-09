@@ -166,22 +166,28 @@ function oppdater_ved_refresh() {
             for (b = 0; b < (menyvalg[p].length - 2)/antall_MV_elem; b++) {
               if (menyvalg[p][2 + antall_MV_elem*b]) {
                 if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b33') && ((-b+aar_etter_forste_periode) >= 0)) {
-                  if ((-b+aar_etter_forste_periode) <= 4) {
+                  if (-b+aar_etter_forste_periode > aar_etter_forste_periode-5) {
                     tittel_poeng += 12
                   }
-                  else {
+                  else if (-b+aar_etter_forste_periode+2022 >= 1993) {
                     tittel_poeng += 8
+                  }
+                  else {
+                    tittel_poeng += 4
                   }
                 }
                 else if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b34') && ((-b+aar_etter_forste_periode) >= 0)) {
-                  if ((-b+aar_etter_forste_periode) <= 4) {
+                  if (-b+aar_etter_forste_periode > aar_etter_forste_periode-5) {
                     tittel_poeng += 3
                   }
-                  else {
+                  else if (-b+aar_etter_forste_periode+2022 >= 1993) {
                     tittel_poeng += 2
                   }
+                  else {
+                    tittel_poeng += 1
+                  }
                 }
-              } 
+              }
             }
           }
         }
@@ -324,10 +330,10 @@ function oppdater_ved_refresh() {
               for (b = 0; b < (menyvalg[p].length - 2)/antall_MV_elem; b++) {
                 if (menyvalg[p][2 + antall_MV_elem*b]) {
                   if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b33') && ((-b+aar_etter_forste_periode) >= 0)) {
-                    if ((-b+aar_etter_forste_periode) <= 4) {
+                    if (-b+aar_etter_forste_periode > aar_etter_forste_periode-5) {
                       tittel_poeng += 12
                     }
-                    else if ((-b+aar_etter_forste_periode) <= 25) {
+                    else if (-b+aar_etter_forste_periode+2022 >= 1993) {
                       tittel_poeng += 8
                     }
                     else {
@@ -335,17 +341,17 @@ function oppdater_ved_refresh() {
                     }
                   }
                   else if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b34') && ((-b+aar_etter_forste_periode) >= 0)) {
-                    if ((-b+aar_etter_forste_periode) <= 4) {
+                    if (-b+aar_etter_forste_periode > aar_etter_forste_periode-5) {
                       tittel_poeng += 3
                     }
-                    else if ((-b+aar_etter_forste_periode) <= 25) {
+                    else if (-b+aar_etter_forste_periode+2022 >= 1993) {
                       tittel_poeng += 2
                     }
                     else {
-                      tittel_poeng += 4
+                      tittel_poeng += 1
                     }
                   }
-                } 
+                }
               }
             }
           }
@@ -534,10 +540,10 @@ function oppdater_ved_refresh() {
           for (b = 0; b < (menyvalg[p].length - 2)/antall_MV_elem; b++) {
             if (menyvalg[p][2 + antall_MV_elem*b]) {
               if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b33')) {
-                if ((-b+aar_etter_forste_periode) <= 4) {
+                if (-b+aar_etter_forste_periode > aar_etter_forste_periode-5) {
                   tittel_poeng += 12
                 }
-                else if ((-b+aar_etter_forste_periode) <= 25) {
+                else if (-b+aar_etter_forste_periode+2022 >= 1993) {
                   tittel_poeng += 8
                 }
                 else {
@@ -545,14 +551,14 @@ function oppdater_ved_refresh() {
                 }
               }
               else if (menyvalg[p][2 + antall_MV_elem*b].split(',').includes('b34')) {
-                if ((-b+aar_etter_forste_periode) <= 4) {
+                if (-b+aar_etter_forste_periode > aar_etter_forste_periode-5) {
                   tittel_poeng += 3
                 }
-                else if ((-b+aar_etter_forste_periode) <= 25) {
+                else if (-b+aar_etter_forste_periode+2022 >= 1993) {
                   tittel_poeng += 2
                 }
                 else {
-                  tittel_poeng += 4
+                  tittel_poeng += 1
                 }
               }
             }
