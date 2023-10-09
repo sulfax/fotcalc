@@ -671,7 +671,7 @@ const uel_mestere = [
     [1984, "Tottenham Hotspur", "ENG"],
     [1983, "RSC Anderlecht", "BEL"],
     [1982, "IFK Göteborg", "SWE"],
-    [1981, "Ipswich Town", "ENG"],
+    [1981, "Ipswich Town F.C.", "ENG"],
     [1980, "Eintracht Frankfurt", "GER"],
     [1979, "Borussia Mönchengladbach", "GER"],
     [1978, "PSV Eindhoven", "NED"],
