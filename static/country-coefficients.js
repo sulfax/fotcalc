@@ -426,6 +426,12 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   for (p = 6; p > 1; p--) {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }
+  console.log(ranking_array)
+  for (i = 0; i < ranking_array.length; i++) {
+    for (p = 6; p > 1; p--) {
+      if (ranking_array[i][p] === "0.000") {ranking_array[i][p] = 0.0001}
+    }
+  }
   i = 1
   ranking_array.sort(sortFunction_tall_1_forskjellig);
 
@@ -445,16 +451,16 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       let kolonne0_4 = ranking_array[i-1][5];
       let kolonne0_5 = ranking_array[i-1][6];
       if (poeng1 == '-') {poeng0 = ''}
-      if (kolonne1_1 == '-') {kolonne1_1 = ''}
-      if (kolonne1_2 == '-') {kolonne1_2 = ''}
-      if (kolonne1_3 == '-') {kolonne1_3 = ''}
-      if (kolonne1_4 == '-') {kolonne1_4 = ''}
-      if (kolonne1_5 == '-') {kolonne1_5 = ''}
-      if (kolonne0_1 == '-') {kolonne0_1 = ''}
-      if (kolonne0_2 == '-') {kolonne0_2 = ''}
-      if (kolonne0_3 == '-') {kolonne0_3 = ''}
-      if (kolonne0_4 == '-') {kolonne0_4 = ''}
-      if (kolonne0_5 == '-') {kolonne0_5 = ''}
+      if (kolonne1_1 == '-' || kolonne1_1 == "0.0001") {kolonne1_1 = ''}
+      if (kolonne1_2 == '-' || kolonne1_2 == "0.0001") {kolonne1_2 = ''}
+      if (kolonne1_3 == '-' || kolonne1_3 == "0.0001") {kolonne1_3 = ''}
+      if (kolonne1_4 == '-' || kolonne1_4 == "0.0001") {kolonne1_4 = ''}
+      if (kolonne1_5 == '-' || kolonne1_5 == "0.0001") {kolonne1_5 = ''}
+      if (kolonne0_1 == '-' || kolonne0_1 == "0.0001") {kolonne0_1 = ''}
+      if (kolonne0_2 == '-' || kolonne0_2 == "0.0001") {kolonne0_2 = ''}
+      if (kolonne0_3 == '-' || kolonne0_3 == "0.0001") {kolonne0_3 = ''}
+      if (kolonne0_4 == '-' || kolonne0_4 == "0.0001") {kolonne0_4 = ''}
+      if (kolonne0_5 == '-' || kolonne0_5 == "0.0001") {kolonne0_5 = ''}
       // Gjør om linjene til kode dersom du ønsker at land uten deltagelse skal være rangert likt som land uten poeng.
       // if (kolonne1_1 == 0) {kolonne1_1 = 0.0001}
       // if (kolonne1_2 == 0) {kolonne1_2 = 0.0001}
@@ -593,7 +599,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
         kolonne4_lik = (kolonne1_4 == kolonne0_4)
         kolonne5_lik = (kolonne1_5 == kolonne0_5)
         // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
-        if ((kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) || (kolonne1_1 == 0 && kolonne0_1 == 0) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p-1][i])) */) {
+        if ((kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) || (kolonne1_lik) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p-1][i])) */) {
           ranking_array[p].splice(15,1,ranking_array[p-1][15])
         }
       }
@@ -616,7 +622,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
         kolonne4_lik = (kolonne1_4 == kolonne0_4)
         kolonne5_lik = (kolonne1_5 == kolonne0_5)
         // Gjør om linjen til kode dersom du ønsker at land uten deltagelse 1 sesong skal være rangert likt som land uten poeng 1 sesong.
-        if ((kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) || (kolonne1_1 == 0 && kolonne0_1 == 0) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p+1][i])) */) {
+        if ((kolonne1_lik && kolonne2_lik && kolonne3_lik && kolonne4_lik && kolonne5_lik) || (kolonne1_lik) /* || ([0,0.0001].includes(ranking_array[p][i]) && [0,0.0001].includes(ranking_array[p+1][i])) */) {
           ranking_array[p-1].splice(15,1,ranking_array[p][15])
         }
       }
@@ -703,8 +709,8 @@ function sortFunction_tall_2_forskjellig(a, b) {
 }
 
 function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-  if (a[p] == '-') {a[p] = 0.0001}
-  if (b[p] == '-') {b[p] = 0.0001}
+  if (a[p] == '-') {a[p] = "0.000"}
+  if (b[p] == '-') {b[p] = "0.000"}
   if (a[p] == '') {a[p] = 0}
   if (b[p] == '') {b[p] = 0}
   if (parseFloat(a[p]) === parseFloat(b[p])) {

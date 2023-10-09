@@ -1041,6 +1041,33 @@ function sorter(column, order, tekst, ranking_array) {
       if (ranking_array[k][j] == "0.0001") {ranking_array[k][j] = "0.000"}
     }
   }
+  let fortsett = true;
+  if  (order == "asc" && i == 16) {
+    while (fortsett) {
+      fortsett = false;
+      for (k = 0; k < ranking_array.length-1; k++) {
+        if (ranking_array[k+1][0] == "" && ranking_array[k][0] != "" && Math.max(ranking_array[k][1], ranking_array[k][4]) == Math.max(ranking_array[k+1][1], ranking_array[k+1][4]) && ranking_array[k+1][3] < ranking_array[k][3]) {
+          let klubb = ranking_array[k];
+          ranking_array[k] = ranking_array[k+1]
+          ranking_array[k+1] = klubb
+          fortsett = true;
+        }
+      }
+    }
+  }
+  else if (order == "desc" && i == 16) {
+    while (fortsett) {
+      fortsett = false;
+      for (k = 0; k < ranking_array.length-1; k++) {
+        if (ranking_array[k][0] == "" && ranking_array[k+1][0] != "" && Math.max(ranking_array[k+1][1], ranking_array[k+1][4]) == Math.max(ranking_array[k][1], ranking_array[k][4]) && ranking_array[k][3] < ranking_array[k+1][3]) {
+          let klubb = ranking_array[k+1];
+          ranking_array[k+1] = ranking_array[k]
+          ranking_array[k] = klubb
+          fortsett = true;
+        }
+      }
+    }
+  }
   sessionStorage.setItem('kolonne_ti_års', column)
   sessionStorage.setItem('rekkefølge_ti_års', order)
   document.getElementById(column).innerHTML = tekst;
