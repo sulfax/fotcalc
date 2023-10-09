@@ -585,7 +585,6 @@ function oppdater_ved_refresh() {
     if (ranking_array[p][1] == "0.000") {
       ranking_array[p][1] = 0.0001}
   }
-  console.log(ranking_array)
   ranking_array.sort(sortFunction_tall_1_flere_desimal_original);
   let rangering = 0;
   for (p = 0; p < ranking_array.length; p++) {

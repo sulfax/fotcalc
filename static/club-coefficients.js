@@ -571,8 +571,6 @@ function sorter(column, order, tekst, ranking_array) {
       }
     }
   }
-  console.log(ranking_array)
-
   byggTabell_test(ranking_array, column, order)
 }
 
