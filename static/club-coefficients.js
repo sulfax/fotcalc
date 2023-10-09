@@ -540,11 +540,13 @@ function sorter(column, order, tekst, ranking_array) {
   }
   if (column == 'sesong1' || column == 'sesong2' || column == 'sesong3' || column == 'sesong4' || column == 'sesong5' || column == 'na_poeng' || column == 'poeng') {
     if (order == 'desc') {
+      let land_over = 0;
       for (p = 0; p < ranking_array.length; p++) {
         if (p > 0) {
-          if (ranking_array[p-1][12] == "" && ranking_array[p][1] != "" && ranking_array[p][1] != "0.0") {
-            ranking_array[p-1][12] = p;
+          if (!(ranking_array[p-1][12] == "" && ranking_array[p][1] != "" && ranking_array[p][1] != "0.0")) {
+            land_over += 1;
           }
+          else {ranking_array[p-1][12] = p-land_over;}
           let sesong_koeff1 = ranking_array[p-1][i];
           let sesong_koeff2 = ranking_array[p][i];
           if (sesong_koeff1 == "0.000") {sesong_koeff1 = "0.0"}
@@ -569,7 +571,7 @@ function sorter(column, order, tekst, ranking_array) {
       }
     }
   }
-
+  console.log(ranking_array)
 
   byggTabell_test(ranking_array, column, order)
 }
