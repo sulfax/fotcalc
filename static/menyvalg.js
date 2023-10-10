@@ -690,7 +690,7 @@ const cup_vinner_cup_mestere = [
     [1995, "Real Zaragoza", "ESP"],
     [1994, "Arsenal FC", "ENG"],
     [1993, "Parma Calcio 1913", "ITA"],
-    [1992, "Werder Bremen", "GER"],
+    [1992, "SV Werder Bremen", "GER"],
     [1991, "Manchester United", "ENG"],
     [1990, "U.C. Sampdoria", "ITA"],
     [1989, "FC Barcelona", "ESP"],
