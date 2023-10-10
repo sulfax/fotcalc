@@ -426,7 +426,6 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   for (p = 6; p > 1; p--) {
     ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   }
-  console.log(ranking_array)
   for (i = 0; i < ranking_array.length; i++) {
     for (p = 6; p > 1; p--) {
       if (ranking_array[i][p] === "0.000") {ranking_array[i][p] = 0.0001}
