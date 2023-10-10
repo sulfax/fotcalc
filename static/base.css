@@ -505,6 +505,9 @@ a:hover {
 .land_klubb_rank {
     background-color: #fcffe4 !important;
 }
-.land_klubb_rank .id_nr, .inaktiv_klubb .id_nr {
+.land_klubb_rank .id_nr, .inaktiv_klubb .veldig_utydelig {
     border-right: none !important;
+}
+.inaktiv_klubb .id_nr:not(.veldig_utydelig) {
+    border-right: 1px solid rgba(0,0,0,0) !important;
 }
