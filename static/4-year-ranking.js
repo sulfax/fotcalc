@@ -858,10 +858,10 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
                 if (ranking_array[i][10].includes("uclMester")) {
                   rad_test_klasser = rad_test_klasser.slice(0, rad_test_klasser.length-2) + "uclMester " + rad_test_klasser.slice(rad_test_klasser.length-2);
                 }
-                if (ranking_array[i][10].includes("fraLandMedOver2Mestere")) {
+                else if (ranking_array[i][10].includes("fraLandMedOver2Mestere")) {
                   rad_test_klasser = rad_test_klasser.slice(0, rad_test_klasser.length-2) + "fraLandMedOver2Mestere " + rad_test_klasser.slice(rad_test_klasser.length-2);
                 }
-                if (ranking_array[i][10].includes("overstiger_maks_2_grense")) {
+                else if (ranking_array[i][10].includes("overstiger_maks_2_grense")) {
                   rad_test_klasser = rad_test_klasser.slice(0, rad_test_klasser.length-2) + "overstiger_maks_2_grense " + rad_test_klasser.slice(rad_test_klasser.length-2);
                 }
                 helTabellHTML += rad_test_klasser += rad_test
