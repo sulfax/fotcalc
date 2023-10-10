@@ -511,3 +511,6 @@ a:hover {
 .inaktiv_klubb .id_nr:not(.veldig_utydelig) {
     border-right: 1px solid rgba(0,0,0,0) !important;
 }
+.inaktiv_klubb .id_nr {
+    border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
+}
