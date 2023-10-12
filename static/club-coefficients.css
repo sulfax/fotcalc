@@ -4,6 +4,25 @@
         left: 30px;
         bottom: -2px;
     }
+    #abbr_bidrag:hover::after,
+    #abbr_bidrag:focus::after {
+        left: 100px !important;
+        bottom: 300px !important;
+    }
+}
+
+@media screen and (min-width: 0px) {
+    .flagg_div2 abbr[data_title]:hover::after,
+    .flagg_div2 abbr[data_title]:focus::after {
+        left: 30px;
+        bottom: -2px;
+    }
+    .abbr_klubb:hover::after,
+    .abbr_klubb:focus::after {
+        bottom: -6px !important;
+        left: calc(100% + 5px) !important;
+    }
+
 }
 @media (max-width:1745px) {
     .reaklame_sidene {
@@ -230,6 +249,9 @@ th {
 .marign_venstre {
     padding-left: 5px;
 }
+.marginleft {
+    margin-right: -20px !important;
+}
 
 .høyrestill {
     float: right;
@@ -390,11 +412,34 @@ a {
     color:#2769AE !important;
     /* font-weight: bold; */
 }
-.fraLandMedOver2Mestere .marign_venstre {
-    color:#ff0000 !important;
-    /* font-weight: bold; */
+.fraLandMedOver2Mestere .marign_venstre, .fraLandMedOver2Mestere .premie_koeff_3 {
+    color:rgba(52, 58, 64, 0.2) !important;
+    text-decoration: line-through;
 }
-.overstiger_maks_2_grense .marign_venstre {
-    color:#ff8000 !important;
-    /* font-weight: bold; */
+.fraLandMedOver2Mestere .marign_venstre img {
+    filter: grayscale(1);
+    opacity: 0.2;
+}
+.overstiger_maks_2_grense .marign_venstre, .overstiger_maks_2_grense .premie_koeff_3 {
+    color:rgba(52, 58, 64, 0.5) !important;
+}
+.overstiger_maks_2_grense .marign_venstre img {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+.topp8_nr {
+    font-weight: bold;
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-right: 1px solid rgba(0,0,0,0) !important;
+    padding: 0px !important;
+}
+#no_select {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
 }

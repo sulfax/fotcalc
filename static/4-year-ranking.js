@@ -271,7 +271,9 @@ function oppdater_ved_refresh() {
         VM_antallLand.push([ranking_array[i][2], 1])
       }
     }
-    if (godkjent && godkjente_klubber <= 8 && KjørLøkkeUnder) {godkjente_klubber++;}
+    if (godkjent && godkjente_klubber <= 8 && KjørLøkkeUnder) {
+      if (godkjente_klubber < 8) {ranking_array[i][10].push(godkjente_klubber+1)}
+      godkjente_klubber++;}
     if (godkjent && godkjente_klubber == 8 && KjørLøkkeUnder) {
       plass8 = ranking_array[i][9];
     }
@@ -324,8 +326,9 @@ $('th').on('click', function(){
   if (column == 'na_poeng') {
     tekst = '<abbr data_title="20% of country coefficient points for this period">NA</abbr>'
   }
-  for (o = 0; o < ranking_array.length; o++) {
-    ranking_array[o][0] = (ranking_array[o][0]).substring(ranking_array[o][0].indexOf(">") + 1);
+  for (i = 0; i < ranking_array.length; i++) {
+    ranking_array[i][0] = (ranking_array[i][0]).substring(ranking_array[i][0].indexOf(">") + 1);
+    if (ranking_array[i][0].includes("<")) {ranking_array[i][0] = ranking_array[i][0].split('<')[0]}
   }
   if (column != undefined) {
     sorter(column, order, tekst, ranking_array)
@@ -717,7 +720,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     }
     else {nummer = ranking_array[i][11]}
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;
-    let klubbnavn_HTML_start = '<td><nobr class="marign_venstre">';
+    let klubbnavn_HTML_start = '<td>';
     if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
       for (r = 0; r < menyvalg.length; r++) {
         if (menyvalg[r][0] == ranking_array[i][0]) {
@@ -735,7 +738,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
           plassering = plassering.split(",")
           if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
             if (gjennværende_land.includes(menyvalg[r][1])) {
-              klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
+              klubbnavn_HTML_start = '<td class="var_med">';
             }
           }
           // if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode && !(knapper).includes("KO")) {
@@ -761,7 +764,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
           // }
           if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
             if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
-              klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
+              klubbnavn_HTML_start = '<td class="fortsatt_med">';
             }
             if ((knapper).includes("b18")) {
               if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
@@ -786,10 +789,10 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
         }
       }
     }
-    if (klubbnavn_HTML_start == '<td><nobr class="marign_venstre">') {
+    if (klubbnavn_HTML_start == '<td>') {
       if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
         if (gjennværende_land.includes(ranking_array[i][2])) {
-          klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
+          klubbnavn_HTML_start = '<td class="var_med">';
         }
       }
     }
@@ -799,10 +802,10 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
     if (i == ranking_array.length - 1) {
-      if (klubbnavn_HTML_start == '<td class="fortsatt_med"><nobr class="marign_venstre">') {
-        klubbnavn_HTML_start = '<td class="fortsatt_med ramme_ikke_grønn"><nobr class="marign_venstre">'
-      } else if (klubbnavn_HTML_start == '<td class="var_med"><nobr class="marign_venstre">') {
-        klubbnavn_HTML_start = '<td class="var_med ramme_ikke_grønn"><nobr class="marign_venstre">'
+      if (klubbnavn_HTML_start == '<td class="fortsatt_med">') {
+        klubbnavn_HTML_start = '<td class="fortsatt_med ramme_ikke_grønn">'
+      } else if (klubbnavn_HTML_start == '<td class="var_med">') {
+        klubbnavn_HTML_start = '<td class="var_med ramme_ikke_grønn">'
       }
     }
     ranking_array[i][0] = '<img class="klubb_logo_4y" loading="lazy" data-sizes="auto" src="media/klubblogo/' + ranking_array[i][2] + "/" + klubbnavn_url + '2.png"' + 
@@ -823,7 +826,19 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `5.png 64w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `6.png 70w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
-    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w">` + ranking_array[i][0];
+    media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w">`;
+
+    if (ranking_array[i][10].includes("uclMester")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Qualifyied by winning UCL'>" + klubbnavn + "</abbr>"}
+    else if (ranking_array[i][10].includes("fraLandMedOver2Mestere")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Two clubs from country has already qualified'>" + klubbnavn + "</abbr>"}
+    else if (ranking_array[i][10].includes("overstiger_maks_2_grense")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Clubs per country cap reached'>" + klubbnavn + "</abbr>"}
+    else {ranking_array[i][0] += klubbnavn}
+
+    let topp8nr = ""
+    if (ranking_array[i][10][0] <= 8 && ranking_array[i][10][0] >= 1) {
+      ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
+      klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
+    }
+
     if (aar_etter_forste_periode == 3) {
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong4}</a>`
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong3}</a>`
@@ -837,10 +852,13 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong1}</a>`}
     else if (aar_etter_forste_periode == 6) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" class="utydelig_link">${sesong1}</a>`}
+
+    let marign_venstre = '<nobr class="marign_venstre">';
+    if (i == 0) {marign_venstre = '<nobr id="logo_navn" class="marign_venstre">'}
     var rad_test = `
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
                     ${rangering}
-                    ${klubbnavn_HTML_start + ranking_array[i][0]}</nobr></td>
+                    ${klubbnavn_HTML_start + marign_venstre + ranking_array[i][0]}</nobr></td>
                     <td id="tom_kolonne">${klubbnavn}</td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                     <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>
@@ -851,7 +869,11 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong1}</div></div></td>
                 </tr>`
                 let rad_test_klasser = '<tr class="">'
-                if (i < ranking_array.length-1 && ranking_array[i][9] <= plass8 && (ranking_array[i+1][9] > plass8) && utenfor_8 == false) {
+                if (column == "id_nr" && order == "asc" && i < ranking_array.length-1 && ranking_array[i][9] <= plass8 && ranking_array[i+1][9] > plass8 && utenfor_8 == false) {
+                  utenfor_8 = true;
+                  rad_test_klasser = rad_test_klasser.slice(0, rad_test_klasser.length-2) + "grense " + rad_test_klasser.slice(rad_test_klasser.length-2);
+                }
+                else if (column == "id_nr" && i < ranking_array.length-1 && ranking_array[i][9] > plass8 && ranking_array[i+1][9] <= plass8 && utenfor_8 == false) {
                   utenfor_8 = true;
                   rad_test_klasser = rad_test_klasser.slice(0, rad_test_klasser.length-2) + "grense " + rad_test_klasser.slice(rad_test_klasser.length-2);
                 }
@@ -867,6 +889,24 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
                 helTabellHTML += rad_test_klasser += rad_test
   }
   testTabell.innerHTML = helTabellHTML;
+
+  topp8_høyde = [];
+  for (i = 1; i <= 8; i++) {
+    if (document.getElementById('toppåtte' + i)) {topp8_høyde.push(document.getElementById('toppåtte' + i))}
+  }
+  if (høyest_rad(topp8_høyde) > 40) {
+    document.getElementById("logo_navn").innerHTML += "<nobr id='no_select'></nobr>"
+    while (høyest_rad(topp8_høyde) > 40) {
+      document.getElementById("no_select").innerHTML += "&nbsp";
+    }
+  }
+}
+function høyest_rad(topp8_høyde) {
+  topp8_høyde_verdi = [];
+  for (i = 0; i < topp8_høyde.length; i++) {
+    topp8_høyde_verdi.push((topp8_høyde[i]).offsetHeight);
+  }
+  return Math.max.apply(null, topp8_høyde_verdi);
 }
 
 function endre_klubbnavn(i, kolonne) {
