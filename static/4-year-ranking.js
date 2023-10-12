@@ -828,7 +828,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `7.png 100w,
     media/klubblogo/` + ranking_array[i][2] + "/" + klubbnavn_url + `8.png 140w">`;
 
-    if (ranking_array[i][10].includes("uclMester")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Qualifyied by winning UCL'>" + klubbnavn + "</abbr>"}
+    if (ranking_array[i][10].includes("uclMester")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Qualified by winning UCL'>" + klubbnavn + "</abbr>"}
     else if (ranking_array[i][10].includes("fraLandMedOver2Mestere")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Two clubs from country has already qualified'>" + klubbnavn + "</abbr>"}
     else if (ranking_array[i][10].includes("overstiger_maks_2_grense")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Clubs per country cap reached'>" + klubbnavn + "</abbr>"}
     else {ranking_array[i][0] += klubbnavn}
