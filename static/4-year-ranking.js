@@ -936,6 +936,14 @@ function endre_klubbnavn(i, kolonne) {
       value = value.split('reached">')[1];
       value = value.split('</abbr')[0];
     }
+    else if (value.includes('lified">')) {
+      value = value.split('lified">')[1];
+      value = value.split('</abbr')[0];
+    }
+    else if (value.includes('UCL">')) {
+      value = value.split('UCL">')[1];
+      value = value.split('</abbr')[0];
+    }
   }
   localStorage.setItem('Klubbnavn', value)
 }
