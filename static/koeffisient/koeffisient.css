@@ -6,7 +6,7 @@
     }
 }
 
-@media (max-width:1360px) {
+@media (max-width:1460px) {
     .reaklame_sidene {
         display: none;
     }
@@ -26,7 +26,7 @@
     width: 95.4%;
     margin: auto;
 }
-@media (min-width:930px) {
+@media (min-width:950px) {
     .container_ {
         width: 880px;
     }

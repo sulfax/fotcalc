@@ -1,4 +1,4 @@
-@media (max-width:1530px) {
+@media (max-width:1560px) {
     .reaklame_sidene {
         display: none;
     }
@@ -18,7 +18,7 @@
     width: 95.4%;
     margin: auto;
 }
-@media (min-width:900px) {
+@media (min-width:980px) {
     .container_ {
         width: 970px;
     }
