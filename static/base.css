@@ -94,7 +94,7 @@ body{
 #hjem {
     margin-right: 1rem !important;
 }
-#ti_års_rangering {
+#fire_års_rangering {
     margin-right: 2rem !important;
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -401,7 +401,7 @@ a:hover {
     width:fit-content;
     margin: auto;
 }
-.container_ {
+.container_, .container_4_aar {
     display: flex;
     min-height: 69vh;
     flex-direction: column;

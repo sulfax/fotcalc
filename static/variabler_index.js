@@ -4,9 +4,9 @@ const norsk = [
     'Landskoeffisient-rangering',
     'Klubbkoeffisient-rangering',
     '10 års rangering',
+    '4 års rangering (ikke bekreftet)',
     'Premiepenge-kalkulator',
     'Koeffisient-kalkulator',
-    'Billettsalg (utenfor tema)',
     'Kalkuler fra bunnen',
     '<input autocomplete="off" type="text" placeholder="Søk..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Tilbakestill',
@@ -114,8 +114,8 @@ const norsk_klubbkoeffisient = [
 ];
 
 const norsk_fire_års = [
-    'UEFA 4 års klubb koeffisient-rangering',
-    '4 års koeffisient-rangering',
+    'UEFA 4 års klubb koeffisient-rangering | Ikke bekreftet av UEFA',
+    '4 års koeffisient-rangering<br>(ikke brekreftet av UEFA)',
     'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>Europakvalikk og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
     'Avgjørende for klubb-utplassering i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
@@ -262,9 +262,9 @@ const english = [
     'Country coefficient ranking',
     'Club coefficient ranking',
     '10-year ranking',
+    '4-year ranking (not confirmed)',
     'Prize money calculator',
     'Coefficient calculator',
-    'Norwegian ticket sales (off topic)',
     'Calculate from scratch',
     '<input autocomplete="off" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()" spellcheck="false">',
     'Reset',
@@ -372,8 +372,8 @@ const english_klubbkoeffisient = [
 ];
 
 const english_fire_års = [
-    'UEFA 4-year Club Coefficient ranking',
-    '4-year coefficient ranking',
+    'UEFA 4-year Club Coefficient ranking | Not confirmed by UEFA',
+    '4-year coefficient ranking (not<br>confirmed by UEFA)',
     'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup.<br>The four UCL winners from this 4-year period also qualifies.<br>A cap of two clubs per country applies, except if more than two of the UCL winners<br>represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
@@ -483,7 +483,7 @@ const english_koeffisient = [
 ];
 
 const english_koeffisient_dokumentasjon = [
-    'UEFA Coefficient points, Explanation',
+    'UEFA Coefficient points Explained',
     'Coefficient Points explained',
     'Check out your club’s <a class="link_utydelig" href="https://www.fotcalc.com/" onclick="trykker_forside_deffinisjon()">prize money and coefficient points</a> too.',
     'What are coefficient points?',

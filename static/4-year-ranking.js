@@ -36,6 +36,7 @@ let aar_etter_forste_periode = "";
 
 let uclMestere = [];
 let uclMestereLand = [];
+let sammeUclMester = 0;
 let VM_antallLand = [];
 let plass8 = 0;
 
@@ -206,22 +207,31 @@ function oppdater_ved_refresh() {
     uclMestereLand.push([ucl_mestere[0][2], 1])
     b=0;
   }
+  sammeUclMester = 0;
   for (b; b < aar_etter_forste_periode; b++) {
     for (i = 0; i < ranking_array.length; i++) {
       if (menyvalg[i][2 + antall_MV_elem*b]) {
         if (menyvalg[i][2 + antall_MV_elem*b].split(',').includes('b33')) {
-          uclMestere.push([menyvalg[i][0], menyvalg[i][1]])
           let landRegistrert = false;
-          for (j = 0; j < uclMestereLand.length; j++) {
-            if (uclMestereLand[j][0] == menyvalg[i][1]) {
-              uclMestereLand[j][1] += 1;
-              landRegistrert = true;
+          let registrer = true;
+          for (j = 0; j < uclMestere.length; j++) {
+            if (uclMestere[j][0] == menyvalg[i][0]) {
+              registrer = false;
             }
           }
-          if (!landRegistrert) {
-            uclMestereLand.push([menyvalg[i][1], 1])
-          }
-          break;
+          if (registrer) {
+            uclMestere.push([menyvalg[i][0], menyvalg[i][1]])
+            for (j = 0; j < uclMestereLand.length; j++) {
+              if (uclMestereLand[j][0] == menyvalg[i][1]) {
+                uclMestereLand[j][1] += 1;
+                landRegistrert = true;
+              }
+            }
+            if (!landRegistrert) {
+              uclMestereLand.push([menyvalg[i][1], 1])
+            }
+            break;
+          } else {sammeUclMester++;}
         }
       }
       if (i == menyvalg.length-1) {break;}
@@ -271,10 +281,10 @@ function oppdater_ved_refresh() {
         VM_antallLand.push([ranking_array[i][2], 1])
       }
     }
-    if (godkjent && godkjente_klubber <= 8 && KjørLøkkeUnder) {
-      if (godkjente_klubber < 8) {ranking_array[i][10].push(godkjente_klubber+1)}
+    if (godkjent && godkjente_klubber <= 8+sammeUclMester && KjørLøkkeUnder) {
+      if (godkjente_klubber < 8+sammeUclMester) {ranking_array[i][10].push(godkjente_klubber+1)}
       godkjente_klubber++;}
-    if (godkjent && godkjente_klubber == 8 && KjørLøkkeUnder) {
+    if (godkjent && godkjente_klubber == 8+sammeUclMester && KjørLøkkeUnder) {
       plass8 = ranking_array[i][9];
     }
   }
@@ -328,7 +338,10 @@ $('th').on('click', function(){
   }
   for (i = 0; i < ranking_array.length; i++) {
     ranking_array[i][0] = (ranking_array[i][0]).substring(ranking_array[i][0].indexOf(">") + 1);
-    if (ranking_array[i][0].includes("<")) {ranking_array[i][0] = ranking_array[i][0].split('<')[0]}
+    if (ranking_array[i][0].includes("</abbr")) {
+      ranking_array[i][0] = ranking_array[i][0].split('</abbr')[0]
+      ranking_array[i][0] = ranking_array[i][0].split('>')[1]
+    }else if (ranking_array[i][0].includes("<")) {ranking_array[i][0] = ranking_array[i][0].split('<')[0]}
   }
   if (column != undefined) {
     sorter(column, order, tekst, ranking_array)
@@ -834,7 +847,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     else {ranking_array[i][0] += klubbnavn}
 
     let topp8nr = ""
-    if (ranking_array[i][10][0] <= 8 && ranking_array[i][10][0] >= 1) {
+    if (ranking_array[i][10][0] <= 8+sammeUclMester && ranking_array[i][10][0] >= 1) {
       ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
       klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
     }
@@ -891,7 +904,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
   testTabell.innerHTML = helTabellHTML;
 
   topp8_høyde = [];
-  for (i = 1; i <= 8; i++) {
+  for (i = 1; i <= 8+sammeUclMester; i++) {
     if (document.getElementById('toppåtte' + i)) {topp8_høyde.push(document.getElementById('toppåtte' + i))}
   }
   if (høyest_rad(topp8_høyde) > 40) {
