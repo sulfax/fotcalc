@@ -928,7 +928,15 @@ function endre_klubbnavn(i, kolonne) {
   var cell = last.cells[2];
   let aarstall = (rows[0].cells[kolonne].innerText[0] + rows[0].cells[kolonne].innerText[1] - 21)
   localStorage.setItem('sessong', aarstall)
-  var value = cell.innerText;
+  var value = cell.innerHTML;
+  if (value.includes('140w">')) {
+    value = value.split('w">')[1];
+    if (value.includes('<span')) {value = value.split('<span')[0]}
+    else if (value.includes('reached">')) {
+      value = value.split('reached">')[1];
+      value = value.split('</abbr')[0];
+    }
+  }
   localStorage.setItem('Klubbnavn', value)
 }
 

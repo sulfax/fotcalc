@@ -908,6 +908,33 @@ function endre_link_landskoeff() {
       document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
     }
   }
+  else if (overskrift_fire_års_finnes) {
+    let siste_ord_linktekst = document.getElementById('overskrift_fire_års').innerText;
+    if (siste_ord_linktekst == "Club coefficient ranking") {
+        siste_ord_linktekst = "prize money"
+    }
+    else {
+      siste_ord_linktekst = "premiepenger"
+    }
+    var Klubbnavn = localStorage.getItem('Klubbnavn') || 'Choose club';
+    if (Klubbnavn.slice(-1) == "s") {
+      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+    }
+    else {
+      if (siste_ord_linktekst == "premiepenger") {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
+      }
+      else {
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+      }
+    }
+    if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
+      document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;
+    }
+    else if (Klubbnavn == "Velg klubb" || Klubbnavn == eksperimentell_profil_n) {
+      document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_n;
+    }
+  }
 }
 
 // Koeffisient deffinisjon.
