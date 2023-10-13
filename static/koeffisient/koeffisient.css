@@ -26,18 +26,18 @@
     width: 95.4%;
     margin: auto;
 }
-@media (min-width:860px) {
+@media (min-width:930px) {
     .container_ {
-        width: 810px;
+        width: 880px;
     }
     @media (max-width:1790px) {
         .container_ {
-            width: 810px;
+            width: 880px;
         }
     }
     @media (max-width:1290px) {
         .container_ {
-            width: 810px;
+            width: 880px;
         }
     }
 }
@@ -228,7 +228,7 @@ tbody {
     vertical-align: middle !important;
 }
 .turnering {
-    width: 10.5%;
+    width: 12.5%;
 }
 .turnering_2_2 {
     width: 11%;
