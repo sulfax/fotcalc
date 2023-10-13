@@ -116,7 +116,7 @@ const norsk_klubbkoeffisient = [
 const norsk_fire_års = [
     'UEFA 4 års klubb koeffisient-rangering | Ikke bekreftet av UEFA',
     '4 års koeffisient-rangering (ikke<br>brekreftet av UEFA)',
-    'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>Europakvalikk og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
+    'De åtte høyest rangerte klubbene på denne rangeringen kvalifiserer seg til FIFA Club World Cup.<br>De fire UCL-vinnerne fra denne 4-årsperioden kvalifiserer seg også.<br>Maksimalt to klubber per land kan kvalifisere seg, med mindre mer enn to av UCL-vinnerne<br>representerer samme land.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen.</span>',
     'Avgjørende for klubb-utplassering i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
