@@ -18,18 +18,18 @@
     width: 95.4%;
     margin: auto;
 }
-@media (min-width:980px) {
+@media (min-width:1030px) {
     .container_ {
-        width: 970px;
+        width: 950px;
     }
     @media (max-width:1790px) {
         .container_ {
-            width: 970px;
+            width: 950px;
         }
     }
     @media (max-width:1290px) {
         .container_ {
-            width: 920px;
+            width: 950px;
         }
     }
 }
@@ -115,7 +115,7 @@ tbody {
     box-shadow:none !important;
 }
 .btn.btn-danger, td .form-control { /*Knappen fyller hele cellen*/
-    width: 29%;
+    width: 29.666%;
     padding:0px !important;
     transition-duration:.0s;
     height: 100%;
@@ -216,12 +216,12 @@ tbody {
     border-color:#c89600;
 }
 #b36, #b37{
-    width:64.5%;
+    width:64.83%;
     background-color:#929292;
     border-color:#777777;
 }
 #b-36, #b-37 {
-    width:64.5%;
+    width:64.83%;
     background-color:#2d2b56;
     border-color: #201F41;
 }
@@ -248,7 +248,7 @@ tbody {
     border-color:#155599;
 }
 #uelQ1, #uelQ2 ,#b10, #b14, #b19, #b22, #b25, #b28, #b31, #b34 {
-    margin-left: 6.5%;
+    margin-left: 5.5%;
     background-color:#929292;
     border-color:#777777;
 }
@@ -257,7 +257,7 @@ tbody {
     border-color:#777777;
 }
 #uel-Q1, #uel-Q2, #b-10, #b-14, #b-19, #b-22, #b-25, #b-28, #b-31, #b-34 {
-    margin-left: 6.5%;
+    margin-left: 5.5%;
     background-color:#FF6900;
     border-color:#df5d00;
 }
@@ -302,8 +302,8 @@ td .placeholder::placeholder {
     border-color:#FF6900;
     transition: color .5s ease-in;
     transition: none;
-    margin-left: 6.5%;
-    margin-right: 6.5%;
+    margin-left: 5.5%;
+    margin-right: 5.5%;
 }
 #i3, #i6, #i9, #i12, #i15 {
     color:#00BF0C;
@@ -330,7 +330,7 @@ td .placeholder::placeholder {
     color:#00BF0C;
 }
 .knapp_erstatning{
-    width:29%;
+    width:29.666%;
     height:100%;
     float:left;
 }

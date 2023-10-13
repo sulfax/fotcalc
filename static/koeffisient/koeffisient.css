@@ -28,16 +28,16 @@
 }
 @media (min-width:950px) {
     .container_ {
-        width: 880px;
+        width: 820px;
     }
     @media (max-width:1790px) {
         .container_ {
-            width: 880px;
+            width: 820px;
         }
     }
     @media (max-width:1290px) {
         .container_ {
-            width: 880px;
+            width: 820px;
         }
     }
 }
