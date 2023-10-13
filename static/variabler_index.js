@@ -115,7 +115,7 @@ const norsk_klubbkoeffisient = [
 
 const norsk_fire_års = [
     'UEFA 4 års klubb koeffisient-rangering | Ikke bekreftet av UEFA',
-    '4 års koeffisient-rangering<br>(ikke brekreftet av UEFA)',
+    '4 års koeffisient-rangering (ikke<br>brekreftet av UEFA)',
     'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>Europakvalikk og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en Europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
     'Avgjørende for klubb-utplassering i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
