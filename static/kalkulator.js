@@ -17,9 +17,9 @@ var UCL_utslåtte_lagene_PO_2122 = 30000000;
 // var UCL_deltagelsespenger_2122 = UCL_total_mengde_2122 * 0.25;
 // var UEL_deltagelsespenger_2122 = UEL_total_mengde_2122 * 0.25;
 // var UECL_deltagelsespenger_2122 = UECL_total_mengde_2122 * 0.40;
-var UCL_antall_deltagere_2122 = 32;
-var UEL_antall_deltagere_2122 = 32;
-var UECL_antall_deltagere_2122 = 32;
+var UCL_antall_deltakere_2122 = 32;
+var UEL_antall_deltakere_2122 = 32;
+var UECL_antall_deltakere_2122 = 32;
 var Spilt_SCUP_total_2122 = 7000000;
 /*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*21/22 knapper*/
@@ -476,10 +476,10 @@ function oppdater_b10_b14() {
     }
 };
 function forlat_input_felt_1(clicked_id, lagre_endring) {
-    const antall_deltagere = [
-        UCL_antall_deltagere_2122,
-        UEL_antall_deltagere_2122,
-        UECL_antall_deltagere_2122
+    const antall_deltakere = [
+        UCL_antall_deltakere_2122,
+        UEL_antall_deltakere_2122,
+        UECL_antall_deltakere_2122
     ];
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
     var input_felt_verdi = document.getElementById(clicked_id).value;
@@ -489,8 +489,8 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (document.getElementById(clicked_id).value != "") {
-        if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltagere[nummer_2 - 1] && input_felt_verdi % 1 == 0) {
-            var deltakere_i_turnering = antall_deltagere[nummer_2 - 1];
+        if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltakere[nummer_2 - 1] && input_felt_verdi % 1 == 0) {
+            var deltakere_i_turnering = antall_deltakere[nummer_2 - 1];
             var aktuell_sum = ((deltakere_i_turnering + 1 - input_felt_verdi) * input_summer[nummer_2 - 1][aarstall]);
             document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             if (nummer_2 == 1) {
