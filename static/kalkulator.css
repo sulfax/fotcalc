@@ -20,11 +20,11 @@
 }
 @media (min-width:1030px) {
     .container_ {
-        width: 1180px;
+        width: 970px;
     }
     @media (max-width:1790px) {
         .container_ {
-            width: 1000px;
+            width: 970px;
         }
     }
     @media (max-width:1290px) {
