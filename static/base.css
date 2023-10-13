@@ -94,6 +94,9 @@ body{
 #hjem {
     margin-right: 1rem !important;
 }
+#premiepenger_kalkulator, #koeffisient_kalkulator, #landskoeff_rangering, #klubbkoeff_rangering, #ti_års_rangering {
+    margin-right: .8rem !important;
+}
 #fire_års_rangering {
     margin-right: 2rem !important;
 }
