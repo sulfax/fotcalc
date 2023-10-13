@@ -26,18 +26,18 @@
     width: 95.4%;
     margin: auto;
 }
-@media (min-width:1030px) {
+@media (min-width:810px) {
     .container_ {
-        width: 1050px;
+        width: 810px;
     }
     @media (max-width:1790px) {
         .container_ {
-            width: 1000px;
+            width: 810px;
         }
     }
     @media (max-width:1290px) {
         .container_ {
-            width: 850px;
+            width: 810px;
         }
     }
 }
@@ -211,7 +211,7 @@ tbody {
     min-width:43px;
 }
 .mellomrom {
-    width: 20px;
+    width: 10px;
     border-right: 2px solid #b1b1b1 !important;
     border-left: 2px solid #b1b1b1 !important;
     background-color: #b1b1b1b7 !important;
@@ -228,10 +228,10 @@ tbody {
     vertical-align: middle !important;
 }
 .turnering {
-    width: 14%;
+    width: 10.5%;
 }
 .turnering_2_2 {
-    width: 15%;
+    width: 11%;
     padding:0px !important;
 }
 #assosiasjons_poeng_link {

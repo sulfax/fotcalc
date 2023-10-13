@@ -18,7 +18,7 @@
     width: 95.4%;
     margin: auto;
 }
-@media (min-width:1030px) {
+@media (min-width:900px) {
     .container_ {
         width: 970px;
     }
@@ -29,7 +29,7 @@
     }
     @media (max-width:1290px) {
         .container_ {
-            width: 850px;
+            width: 920px;
         }
     }
 }
