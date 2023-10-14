@@ -114,7 +114,7 @@ const norsk_klubbkoeffisient = [
 ];
 
 const norsk_fire_års = [
-    'UEFA 4 års klubb koeffisient-rangering | Ikke bekreftet av UEFA',
+    'UEFA 4 års Klubb Koeffisient-rangering (Klubb VM)',
     '4 års koeffisient-rangering (ikke<br>brekreftet av UEFA)',
     'De åtte høyest rangerte klubbene på denne rangeringen kvalifiserer seg til FIFA Club World Cup.<br>De fire UCL-vinnerne fra denne 4-årsperioden kvalifiserer seg også.<br>Maksimalt to klubber per land kan kvalifisere seg, med mindre mer enn to av UCL-vinnerne<br>representerer samme land.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen.</span>',
     'Bestemmer deltakere i Klubb-VM ',
@@ -372,7 +372,7 @@ const english_klubbkoeffisient = [
 ];
 
 const english_fire_års = [
-    'UEFA 4-year Club Coefficient ranking by UEFA',
+    'UEFA 4-year Club Coefficient ranking (World Cup)',
     '4-year coefficient ranking (not<br>confirmed by UEFA)',
     'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup.<br>The four UCL winners from this 4-year period also qualifies.<br>A cap of two clubs per country applies, except if more than two of the UCL winners<br>represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
