@@ -261,7 +261,6 @@ function oppdater_ved_refresh() {
           }
         }
       }
-
       let landRegistrert = false;
       for (j = 0; j < VM_antallLand.length; j++) {
         if (VM_antallLand[j][0] == ranking_array[i][2]) {
@@ -849,7 +848,12 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     let topp8nr = ""
     if (ranking_array[i][10][0] <= 8+sammeUclMester && ranking_array[i][10][0] >= 1) {
       ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
-      klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
+      if (klubbnavn_HTML_start == "<td>") {
+        klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "'>";
+      }
+      else {
+        klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
+      }
     }
 
     if (aar_etter_forste_periode == 3) {
