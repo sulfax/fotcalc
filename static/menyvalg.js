@@ -468,7 +468,7 @@ const totalt_antall_klubber = [
     [4, 5],// CZE
     [4, 4],// NOR
     [4, 4],// DEN
-    [4, 4],// CRO
+    [4, 4, 4],// CRO
     [4, 5, 5],// TUR
     [4, 4, 4],// CYP
     [4, 4],// ISR
