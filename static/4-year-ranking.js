@@ -948,6 +948,9 @@ function endre_klubbnavn(i, kolonne) {
       value = value.split('UCL">')[1];
       value = value.split('</abbr')[0];
     }
+    if (value.includes('</nobr>')) {
+      value = value.split('</nobr>')[0];
+    }
   }
   localStorage.setItem('Klubbnavn', value)
 }
