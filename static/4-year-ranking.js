@@ -137,7 +137,7 @@ function oppdater_ved_refresh() {
                   if (landskoeffisienter[j][0] == klubb_koeffisienter_1112_2021[i][1]) {
                     assos_ranking_array.push(NA_poeng_og_assosiasjon[j][0])
                     assos_ranking_array.push(NA_poeng_og_assosiasjon[j][2])
-                    assos_ranking_array.push((Math.floor(((NA_poeng_og_assosiasjon[j][1]*1000)/5))/1000).toFixed(3))
+                    assos_ranking_array.push((Math.floor(((NA_poeng_og_assosiasjon[j][1]*1000)/4))/1000).toFixed(3))
                   }
                 }
                 if (typeof(sesong4) == 'number') {
@@ -233,7 +233,7 @@ function oppdater_ved_refresh() {
               if (landskoeffisienter[p][0] == menyvalg[i][1]) {
                 assos_ranking_array.push(NA_poeng_og_assosiasjon[p][0])
                 assos_ranking_array.push(NA_poeng_og_assosiasjon[p][2])
-                assos_ranking_array.push((Math.floor(((NA_poeng_og_assosiasjon[p][1]*1000)/5))/1000).toFixed(3))
+                assos_ranking_array.push((Math.floor(((NA_poeng_og_assosiasjon[p][1]*1000)/4))/1000).toFixed(3))
               }
             }
             if (sesong4 !== "" || sesong3 !== "" || sesong2 !== "" || sesong1 !== "") {
@@ -972,6 +972,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong2}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong1}</div></div></td>
                 </tr>`
+                console.log(na_poeng);
                 // <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'>${na_poeng}</div></div></td>
                 let rad_test_klasser = '<tr class="">'
                 if (column == "id_nr" && order == "asc" && i < ranking_array.length-1 && ranking_array[i][9] <= plass8 && ranking_array[i+1][9] > plass8 && utenfor_8 == false) {

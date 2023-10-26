@@ -28,17 +28,11 @@
     margin: auto;
 }
 
-@media (min-width:1000px) {
+@media (min-width:900px) {
     .container_ {
         width: 922px;
     }
 }
-@media (min-width:1400px) {
-    .container_ {
-        width: 922px;
-    }
-}
-
 
 
 #overskrift_landskoeffisient, #beskrivelse_landskoeffisient {
