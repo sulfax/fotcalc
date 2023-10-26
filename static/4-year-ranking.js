@@ -972,7 +972,6 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong2}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong1}</div></div></td>
                 </tr>`
-                console.log(na_poeng);
                 // <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'>${na_poeng}</div></div></td>
                 let rad_test_klasser = '<tr class="">'
                 if (column == "id_nr" && order == "asc" && i < ranking_array.length-1 && ranking_array[i][9] <= plass8 && ranking_array[i+1][9] > plass8 && utenfor_8 == false) {
