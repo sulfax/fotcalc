@@ -377,10 +377,10 @@ const menyvalg = [
 // 3: Manøvrer bort til pengesummen og klikk (ctrl + d).
 
 const totale_uavgjorte_kamper = [
-    ["18,,",",26,",",,26"],
-    [ "19,,", ",16,", ",,25"],
-    [ "10,,", ",6,", ",,7"],
-    [ "0,,", ",0,", ",,0"],
+     ["18,,",",26,",",,26"],
+     [ "19,,", ",16,", ",,25"],
+     [ "10,,", ",6,", ",,7"],
+     [ "0,,", ",0,", ",,0"],
 ];
 
 const nyligste_poeng_rangering = [24, '/', 25]
