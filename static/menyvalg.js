@@ -12,7 +12,7 @@ Husk: -gi bonuspoeng når koeffisient-system for 24/25 sesongen kommer
 */
 const menyvalg = [
      ["1. FC Köln",                 "GER",,,,,,,,                                                                                                                                                        , "b15,b20",",,13",",,2,,,2",",,3",",,,,,,,,,,,,,,,,,,,,,1,,,3",                                                                          [5378901,,,],7,6.0],
-     ["1. FC Slovácko",             "CZE",    "b7,b8,",                   ",,",",,,,,",",,",              ",,,,,,,,1,,3",                                                      [450000,,,],1,1.5         , "b10,b15,b20",",,24",",,1,,,2",",,4",",,,,,,,,,,,,,1,,,2,,,,,3,,,3",                                                                    [4430951,,,],6.5,4.0],
+     ["1. FC Slovácko",             "CZE",    "b7,b8",                    ",,",",,,,,",",,",              ",,,,,,,,1,,3",                                                      [450000,,,],1,1.5         , "b10,b15,b20",",,24",",,1,,,2",",,4",",,,,,,,,,,,,,1,,,2,,,,,3,,,3",                                                                    [4430951,,,],6.5,4.0],
 /*C*/["1. FC Union Berlin",         "GER",    "b15,b20",                  ",,13",  ",,2,,,1",  ",,3",     ",,,,,,,,,,,,,,,,,,,,,3,,,2",                                        [5219314,,,3315000],6.5,5 , "b19,b22,KO",",20,",",4,,,0,",",2,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,3,,,,,2,,,1",                                                      [10284000,,,],15.0,12.0, "b18","30,,","0,,,0,,",,,        [19051000,,,],4.0,4.0],
      // ["A.C. Virtus Acquaviva",      "SMR",,,,,,,,                                                                                                                                                        ,,,,,,,,],
 /*R*/["Aberdeen FC",                "SCO",    "b7,b11,b15,b17",           ",,",",,,,,",",,",              ",,,,,,,,3,,1,,,,3,,,3,,,,1,,,1",                                    [1050000,,,],3,2.5        ,,,,,,,,                                                                                                                                                         , "b14,b20",",,24",",,0,,,1",,",,,,,,,,,,,,,,,,,,,,2,,,1",                 [3606500,,,],1.5,2.5],
@@ -141,7 +141,7 @@ const menyvalg = [
      ["FC Torpedo Kutaisi",         "GEO",,,,,,,,                                                                                                                                                        ,,,,,,,,                                                                                                                                                         , "b4,b7,b8",,,,",,,2,,2,,,1,,3",                  [550000,,,],2.0,1.5],
      ["FC Torpedo Zhodino",         "BLR",    "b7,b8",                    ",,",",,,,,",",,",              ",,,,,,,,1,,1",                                                      [450000,,,],0.0,1.5         ,,,,,,,,                                                                                                                                                         , "b7,b8",,,,",,,,,,,,1,,2",                [450000,,,],0.5,1.5],
      ["FC Twente",                  "NED",,,,,,,,                                                                                                                                                        , "b11,b15,b17",,,,",,,,,,,,,,,,,,3,,,3,,,,1,,,2",                                                                                        [950000,,,],2.5,2.5    , "b7,b11,b15,b17",,,,",,,,,,,,3,,2,,,,3,,,3,,,,1,,,1",                  [1050000,,,],3.5,2.5],
-     ["FC Swift Hesperange",        "LUX",    "b4,b5",                    ",,",",,,,,",",,",              ",,,1,,2",                                                           [250000,,,],0.5,1.0       ,,,,,,,,                                                                                                                                                         , "b1,b3,b7,b11,b12",,,,",,2,,1,,,,2,,3,,,,1,,,3",               [1160000,,,],3.0,2.0],
+     ["FC Swift Hesperange",        "LUX",    "b4,b5",                    ",,",",,,,,",",,",              ",,,1,,2",                                                           [250000,,,],0.5,1.0       ,,,,,,,,                                                                                                                                                         , "b1,b3,b7,b11,b12",,,,",,2,,1,,,,2,,3,,,,1,,,3",               [1110000,,,],3.0,2.0],
      ["FC Vaduz",                   "LIE",    "b7,b8",                    ",,",",,,,,",",,",              ",,,,,,,,1,,1",                                                      [450000,,,],0.0,1.5         , "b7,b11,b15,b20",",,28",",,0,,,2",",,4",",,,,,,,,3,,2,,,,2,,,3,,,,2,,,3",                                                             [3794500,,,],6.5,2.5   , "b4,b5",,,,",,,1,,2",                  [250000,,,],0.5,1.0],
 /*R*/["FC Viktoria Plzeň",          "CZE",    "b7,b11,b15,b17",           ",,",",,,,,",",,",              ",,,,,,,,3,,3,,,,1,,,3,,,,3,,,1",                                    [1050000,,,],4,2.5        , "b1,b6,b9,CLPO,b18","30,,","0,,,0,,","4,,",",,,,,,,3,,3,,,3,,,3,,,,2,,,3",                                                              [19051000,,,],9.5,4.0  , "b7,b11,b15,b20",",,9",",,3,,,0",,",,,,,,,,2,,3,,,,3,,,3,,,,3,,,3",                  [5853273,,,],11.5,6.0],
      ["FC Vorskla Poltava",         "UKR",    "b7,b8",                    ",,",",,,,,",",,",              ",,,,,,,,2,,1",                                                      [450000,,,],0.5,1.5       , "b7,b8",,,,",,,,,,,,3,,1",                                                                                                              [450000,,,],1,1.5      , "b7,b8",,,,",,,,,,,,3,,1",                  [450000,,,],1.0,1.5],
@@ -184,7 +184,7 @@ const menyvalg = [
      ["FK TransINVEST",             "LTU",,,,,,,,                                                                                                                                                        ,,,,,,,,                                                                                                                                                         ,,,,,,,,                                                                                                              , "b7",,,,,[0,,,],0.0,0.0],
 /*R*/["FK TSC Bačka Topola",        "SRB",,,,,,,,                                                                                                                                                        ,,,,,,,,                                                                                                                                                         , "b13,b19",",29,",",0,,,1,",,",,,,,,,,,,,,1,,,1",                 [4368000,,,],1.0,3.0],
      ["FK Tuzla City",              "BIH",,,,,,,,                                                                                                                                                        , "b4,b7,b8",,,,",,,3,,3,,,1,,1",                                                                                                         [550000,,,],2,1.5],
-     ["FK Valmiera",                "LVA",    "b4,b5",                    ",,",",,,,,",",,",              ",,,1,,2",                                                           [250000,,,],0.5,1         , "b7,b8",,,,",,,,,,,,1,,1",                                                                                                              [450000,,,],0.0,1.5      , "b1,b3,b7,b11,b12",,,,",,1,,1,,,,3,,3,,,,1,,,1",             [1160000,,,],2.0,2.0],
+     ["FK Valmiera",                "LVA",    "b4,b5",                    ",,",",,,,,",",,",              ",,,1,,2",                                                           [250000,,,],0.5,1         , "b7,b8",,,,",,,,,,,,1,,1",                                                                                                              [450000,,,],0.0,1.5      , "b1,b3,b7,b11,b12",,,,",,1,,1,,,,3,,3,,,,1,,,1",             [1110000,,,],2.0,2.0],
      ["FK Velež Mostar",            "BIH",    "b4,b7,b11,b12",            ",,",",,,,,",",,",              ",,,3,,3,,,3,,1,,,,2,,,1",                                           [850000,,,],3.5,2         , "b7,b8",,,,",,,,,,,,1,,1",                                                                                                              [450000,,,],0.0,1.5],
      ["FK Vojvodina",               "SRB",    "b7,b11,b12",               ",,",",,,,,",",,",              ",,,,,,,,3,,3,,,,1,,,1",                                             [750000,,,],2, 2          ,,,,,,,,                                                                                                                                                         , "b7,b8",,,,",,,,,,,,1,,1",                  [450000,,,],0.0,1.5],
      ["FK Žalgiris Vilnius",        "LTU",    "b1,b3,b6,b10,b15,b17",     ",,",",,,,,",",,",              ",,3,,3,,,1,,1,,,,2,,,1,,,,,2,,,1",                                  [1410000,,,],3,2.5        , "b1,b3,b6,b9,b14,b20",",,22",",,1,,,2",",,4",",,2,,3,,,3,,3,,,1,,,2,,,,,1,,,2",                                                         [4719951,,,],8.5,4.0   , "b1,b3,b6,b10,b15,b17",,,,",,2,,3,,,2,,1,,,,1,,,1,,,,,1,,,1",               [1410000,,,],2.0,2.5                    , "b4",,,,,[0,,,],0.0,0.0],
@@ -362,7 +362,7 @@ const menyvalg = [
      ["Zenit St. Petersburg",       "RUS",    "b1,b18,KO",                "17,,",  "1,,,2,,",  "3,,",     ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,2",                                 [39206615,2556000,1040000,],9,  8],
      ["Zirə FK",                    "AZE",,,,,,,,                                                                                                                                                        , "b7,b8",,,,",,,,,,,,1,,2",                                                                                                              [450000,,,],0.5,1.5],
      ["Újpest FC",                  "HUN",    "b7,b11,b12",               ",,",",,,,,",",,",              ",,,,,,,,3,,3,,,,1,,,1",                                             [750000,,,],2,  2],
-     ["Ħamrun Spartans FC",         "MLT",,,,,,,,                                                                                                                                                        , "b4,b7,b11,b15,b17",,,,",,,1,,3,,,3,,3,,,,1,,,3,,,,1,,,2",                                                                              [1150000,,,],4.5,2.5   , "b1,b3,b7,b11,b12",,,,",,1,,1,,,,3,,3,,,,1,,,1",               [1160000,,,],2.0,2.0],
+     ["Ħamrun Spartans FC",         "MLT",,,,,,,,                                                                                                                                                        , "b4,b7,b11,b15,b17",,,,",,,1,,3,,,3,,3,,,,1,,,3,,,,1,,,2",                                                                              [1150000,,,],4.5,2.5   , "b1,b3,b7,b11,b12",,,,",,1,,1,,,,3,,3,,,,1,,,1",               [1110000,,,],2.0,2.0],
      ["Şamaxı FK",                  "AZE",    "b7,b8",                    ",,",",,,,,",",,",              ",,,,,,,,1,,1",                                                      [450000,,,],0.0,1.5],
 /*R*/["ŠK Slovan Bratislava",       "SVK",    "b1,b3,b6,b10,b14,b20",     ",,18",  ",,2,,,2",  ",,3",     ",,3,,1,,,2,,1,,,,3,,,2,,,,1,,,2",                                   [5462814,,,101000],9.5,6  , "b1,b3,b6,b10,b15,b20,b23,KO",",,19",",,3,,,2",",,1",",,2,,3,,,3,,1,,,,2,,,2,,,,,1,,,3,,,,,,,,,,,,,2,,,2",                              [7220352,,,],16.5,12.0 , "b1,b3,b6,b9,b14,b20",",,18",",,2,,,0",,",,2,,3,,,3,,2,,,1,,,1,,,,,3,,,1",               [5037682,,,],8.0,4.0],
      // ["Johannes",                   "AZE",    "b5",                ",,",",,,,,",",,",              ",,,,,,,,1,,1",                                                             [450000,,,],0.0,1.5       ,"b19,b22,b25,b28,b31,KO",",3,",",3,,,1,",",2,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,3,,,,,3,,,2,,,,,1,,,3,,,,,,3,,,2,,,,,,2",                [7220352,,,],16.5,12.0 ,"b18,KO",                   "10,,",  "3,,,0,,",  "3,,",     "3,3,2,,,,,,,,,,,,,3,,,,,,,,,3,,,,,1,,2",                [7220352,,,],16.5,12.0                                                                                              ,"b18,KO",                   "10,,",  "3,,,0,,",  "3,,",     "3,3,2,,,,,,,,,,,,,,,,,3,,,,,,,,,3,,,,,1,,2",                [7220352,,,],16.5,12.0],
@@ -1793,12 +1793,12 @@ const UCL_klubb_poeng_20_21 = [
 
 // alert(regnUtKlubbKoeff(["b18,KO",                   "10,,",  "3,,,0,,",  "3,,",     ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,2"], 0))
 
-function regnUtKlubbKoeff(klubbKoeffdata, sesong) {
-	if (klubbKoeffdata != "") {
+function regnUtKlubbKoeff(data, sesong) {
+	if (data != "") {
 		let sum = 0;
           let knapper = ""
 		try {
-               knapper = (klubbKoeffdata[0]).split(",");
+               knapper = (data[0]).split(",");
           }
           catch {
                return undefined;
@@ -1808,7 +1808,7 @@ function regnUtKlubbKoeff(klubbKoeffdata, sesong) {
 		if (knapper.includes("b12")) {return 2.0}
 		if (knapper.includes("b17")) {return 2.5}
 		if (knapper.includes("b18") || knapper.includes("b19") || knapper.includes("b20")) {
-			let seiere = klubbKoeffdata[2].replace(",", '').replace(",", '');
+			let seiere = data[2].replace(",", '').replace(",", '');
 			let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", '');
 			seiere = seiere.split(',')[0];
 			sum += parseInt(seiere * 2);
@@ -1816,20 +1816,20 @@ function regnUtKlubbKoeff(klubbKoeffdata, sesong) {
 	
 			// Plassering
 			let poengPlasseringX = 0;
-			if (sesong >= 3 && klubbKoeffdata[3]) {
-				if (klubbKoeffdata[3].replaceAll(",","") <= 8) {
+			if (sesong >= 3 && data[3]) {
+				if (data[3].replaceAll(",","") <= 8) {
 					poengPlasseringX = 2
 				}
-				else if (klubbKoeffdata[3].replaceAll(",","") <= 24) {
+				else if (data[3].replaceAll(",","") <= 24) {
 					poengPlasseringX = 1
 				}
 			}
-			else if (klubbKoeffdata[3]) {
+			else if (data[3]) {
 				if (!knapper.includes("b18")) {
-					if (klubbKoeffdata[3].replaceAll(",","") == 1) {
+					if (data[3].replaceAll(",","") == 1) {
 						poengPlasseringX = 2
 					}
-					else if (klubbKoeffdata[3].replaceAll(",","") == 2) {
+					else if (data[3].replaceAll(",","") == 2) {
 						poengPlasseringX = 1
 					}
 				}
@@ -1862,15 +1862,15 @@ function regnUtKlubbKoeff(klubbKoeffdata, sesong) {
 					sum += 1;
 				}
 			}
-			if (klubbKoeffdata[4] && (((klubbKoeffdata[4].split(",").length - 1) >= 35 && sesong < 3) || ((klubbKoeffdata[4].split(",").length - 1) >= 39 && sesong >= 3))) {
+			if (data[4] && (((data[4].split(",").length - 1) >= 35 && sesong < 3) || ((data[4].split(",").length - 1) >= 39 && sesong >= 3))) {
 				if (sesong < 3) {
-					klubbKoeffdata[4] = klubbKoeffdata[4].replace(/([^\,]*\,){35}/, '').split(",").join('').split('');
+					data[4] = data[4].replace(/([^\,]*\,){35}/, '').split(",").join('').split('');
 				}
 				else {
-					klubbKoeffdata[4] = klubbKoeffdata[4].replace(/([^\,]*\,){39}/, '').split(",").join('').split('');
+					data[4] = data[4].replace(/([^\,]*\,){39}/, '').split(",").join('').split('');
 				}
-				for (let i = 0; i < klubbKoeffdata[4].length; i++) {
-					sum += parseInt(klubbKoeffdata[4][i]-1);
+				for (let i = 0; i < data[4].length; i++) {
+					sum += parseInt(data[4][i]-1);
 				}
 			}
 			return sum;
@@ -1898,18 +1898,18 @@ function regnUtKlubbKoeff(klubbKoeffdata, sesong) {
 
 // alert(regnUtAssosKoeff(["b1,b2,b3,b6,b10,b15,b20",",,31",",,0,,,0",,"3,3,3,,3,,,1,,1,,,,1,,,3,,,,,3,,,3"], 2));
 
-function regnUtAssosKoeff(klubbKoeffdata, sesong) {
-	if (klubbKoeffdata != "") {
+function regnUtAssosKoeff(data, sesong) {
+	if (data != "") {
 		let sum = 0;
           let knapper = ""
 		try {
-               knapper = (klubbKoeffdata[0]).split(",");
+               knapper = (data[0]).split(",");
           }
           catch {
                return undefined;
           }
-          if (klubbKoeffdata[4]) {
-               let seier_uav = klubbKoeffdata[4].split(",");
+          if (data[4]) {
+               let seier_uav = data[4].split(",");
                for (let i = 0; i < seier_uav.length; i++) {
                     if (seier_uav[i]) {
                          if ((sesong >= 3 && i < 2) || (sesong >= 3 && i >= 33) || (sesong < 3 && i >= 29)) {
@@ -1922,7 +1922,7 @@ function regnUtAssosKoeff(klubbKoeffdata, sesong) {
                }
           }
 		if (knapper.includes("b18") || knapper.includes("b19") || knapper.includes("b20")) {
-			let seiere = klubbKoeffdata[2].replace(",", '').replace(",", '');
+			let seiere = data[2].replace(",", '').replace(",", '');
 			let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", '');
 			seiere = seiere.split(',')[0];
 			sum += parseInt(seiere * 2);
@@ -1930,20 +1930,20 @@ function regnUtAssosKoeff(klubbKoeffdata, sesong) {
 	
 			// Plassering
 			let poengPlasseringX = 0;
-			if (sesong >= 3 && klubbKoeffdata[3]) {
-				if (klubbKoeffdata[3].replaceAll(",","") <= 8) {
+			if (sesong >= 3 && data[3]) {
+				if (data[3].replaceAll(",","") <= 8) {
 					poengPlasseringX = 2
 				}
-				else if (klubbKoeffdata[3].replaceAll(",","") <= 24) {
+				else if (data[3].replaceAll(",","") <= 24) {
 					poengPlasseringX = 1
 				}
 			}
-			else if (klubbKoeffdata[3]) {
+			else if (data[3]) {
 				if (!knapper.includes("b18")) {
-					if (klubbKoeffdata[3].replaceAll(",","") == 1) {
+					if (data[3].replaceAll(",","") == 1) {
 						poengPlasseringX = 2
 					}
-					else if (klubbKoeffdata[3].replaceAll(",","") == 2) {
+					else if (data[3].replaceAll(",","") == 2) {
 						poengPlasseringX = 1
 					}
 				}
