@@ -283,6 +283,9 @@ tbody {
     background-color:#00a70b;
     border-color:#00a70b;
 }
+#b-5, #b-8, #b-12, #b-17 {
+    border: 2px solid #343a40 !important;
+}
 td .form-control {
     text-align:center;
     display:inline;
@@ -346,7 +349,7 @@ td .placeholder::placeholder {
 .table .ingen_ramme_hoyre {
     border-right: 1px solid rgba(177, 177, 177, 0) !important;
 }
-#tabell_data_ramme, #gruppespill, #spilt_preliminary, #spilt_q1_post_24, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
+#tabell_data_ramme, #gruppespill, #ligaspill, #spilt_preliminary, #spilt_q1_post_24, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
     border-top: 1px solid #b1b1b1 !important;
 }
 #inntjening_turnering, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening {

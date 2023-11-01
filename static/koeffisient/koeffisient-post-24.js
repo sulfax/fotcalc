@@ -6,7 +6,7 @@
 	};
 })();
 
-var antall_MV_elem = 8;
+var antall_MV_elem = 6;
 
 /*21/22 knapper*/
 let Seier_kvalifisering_2122 = 1;
@@ -73,11 +73,11 @@ let deltakelse_eliminasjon_status = [];
 
 const UCL_assoskoeffisient_celler = ["b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "i7_", "b1_", "b2_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
 const UEL_assoskoeffisient_celler = ["b4_", "b7_", "b11_", "b14_", "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
-const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b69_", "b42_", "b45_", "b70_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
+const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_"/*, "b69_"*/, "b42_", "b45_"/*, "b70_"*/, "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
 
 const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "i7__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
-const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b69__", "b42__", "b45__", "b70__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
+const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__"/*, "b69__"*/, "b42__", "b45__"/*, "b70__"*/, "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 
 var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
@@ -122,135 +122,137 @@ function deltakelse_eliminasjon_pre(clicked_id) {
 }
 
 function deltakelse_eliminasjon(clicked_id) {
-    var klasse = (document.getElementById(clicked_id).className);
-    var knapp_status = 0;
-    if (klasse == "btn btn-danger de0_UCL ele") {
-        knapp_status = 1;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL ele";
-    }
-    if (klasse == "btn btn-danger de1_UCL ele") {
-        knapp_status = 0;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL ele";
-    }
-    if (klasse == "btn btn-danger de0_UEL ele") {
-        knapp_status = 1;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL ele";
-    }
-    if (klasse == "btn btn-danger de1_UEL ele") {
-        knapp_status = 0;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL ele";
-    }
-    if (klasse == "btn btn-danger de0_UECL ele") {
-        knapp_status = 1;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL ele";
-    }
-    if (klasse == "btn btn-danger de1_UECL ele") {
-        knapp_status = 0;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL ele";
-    }
-
-
-
-    if (klasse == "btn btn-danger de0_UCL del") {
-        knapp_status = 1;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL del";
-    }
-    if (klasse == "btn btn-danger de1_UCL del") {
-        knapp_status = 0;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL del";
-    }
-    if (klasse == "btn btn-danger de0_UEL del") {
-        knapp_status = 1;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL del";
-    }
-    if (klasse == "btn btn-danger de1_UEL del") {
-        knapp_status = 0;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL del";
-    }
-    if (klasse == "btn btn-danger de0_UECL del") {
-        knapp_status = 1;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL del";
-    }
-    if (klasse == "btn btn-danger de1_UECL del") {
-        knapp_status = 0;
-        document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL del";
-    }
-
-
-    if (klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele") {
-        var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
-        if (felt_nummer == 16) {
-            document.getElementById(clicked_id + "__").innerText = (knapp_summer[8][0]);
+    if (clicked_id != "b69" && !clicked_id != "b70") {
+        var klasse = (document.getElementById(clicked_id).className);
+        var knapp_status = 0;
+        if (klasse == "btn btn-danger de0_UCL ele") {
+            knapp_status = 1;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL ele";
         }
-        else if (felt_nummer == 23) {
-            document.getElementById(clicked_id + "__").innerText = (knapp_summer[9][0]);
+        if (klasse == "btn btn-danger de1_UCL ele") {
+            knapp_status = 0;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL ele";
         }
-        else if (felt_nummer == 30) {
-            document.getElementById(clicked_id + "__").innerText = (knapp_summer[10][0]);
+        if (klasse == "btn btn-danger de0_UEL ele") {
+            knapp_status = 1;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL ele";
         }
-        else {
-            var aktuell_sum = (knapp_summer[4][0]);
-            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+        if (klasse == "btn btn-danger de1_UEL ele") {
+            knapp_status = 0;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL ele";
         }
-    }
-    if (klasse == "btn btn-danger de1_UCL ele" || klasse == "btn btn-danger de1_UEL ele" || klasse == "btn btn-danger de1_UECL ele") {
-        document.getElementById(clicked_id + "__").innerText = "";
-    }
-    if (klasse == "btn btn-danger de0_UCL del") {
-        if (clicked_id == "b31") {
-            var aktuell_sum = (knapp_summer[5][0]);
+        if (klasse == "btn btn-danger de0_UECL ele") {
+            knapp_status = 1;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL ele";
         }
-        else {
-            var aktuell_sum = (knapp_summer[4][0]);
+        if (klasse == "btn btn-danger de1_UECL ele") {
+            knapp_status = 0;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL ele";
         }
-        document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-        document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-    }
-    if (klasse == "btn btn-danger de1_UCL del") {
-        document.getElementById(clicked_id + "_").innerText = "";
-        document.getElementById(clicked_id + "__").innerText = "";
-    }
-    if (klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
-        if (clicked_id == "b32" || clicked_id == "b33") {
-            oppdater_trostepoeng();
+    
+    
+    
+        if (klasse == "btn btn-danger de0_UCL del") {
+            knapp_status = 1;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL del";
         }
-        else {
-            var aktuell_sum = (knapp_summer[4][0]);
+        if (klasse == "btn btn-danger de1_UCL del") {
+            knapp_status = 0;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UCL del";
+        }
+        if (klasse == "btn btn-danger de0_UEL del") {
+            knapp_status = 1;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL del";
+        }
+        if (klasse == "btn btn-danger de1_UEL del") {
+            knapp_status = 0;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UEL del";
+        }
+        if (klasse == "btn btn-danger de0_UECL del") {
+            knapp_status = 1;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL del";
+        }
+        if (klasse == "btn btn-danger de1_UECL del") {
+            knapp_status = 0;
+            document.getElementById(clicked_id).className = "btn btn-danger de" + knapp_status + "_UECL del";
+        }
+    
+    
+        if (klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele") {
+            var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
+            if (felt_nummer == 16) {
+                document.getElementById(clicked_id + "__").innerText = (knapp_summer[8][0]);
+            }
+            else if (felt_nummer == 23) {
+                document.getElementById(clicked_id + "__").innerText = (knapp_summer[9][0]);
+            }
+            else if (felt_nummer == 30) {
+                document.getElementById(clicked_id + "__").innerText = (knapp_summer[10][0]);
+            }
+            else {
+                var aktuell_sum = (knapp_summer[4][0]);
+                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            }
+        }
+        if (klasse == "btn btn-danger de1_UCL ele" || klasse == "btn btn-danger de1_UEL ele" || klasse == "btn btn-danger de1_UECL ele") {
+            document.getElementById(clicked_id + "__").innerText = "";
+        }
+        if (klasse == "btn btn-danger de0_UCL del") {
+            if (clicked_id == "b31") {
+                var aktuell_sum = (knapp_summer[5][0]);
+            }
+            else {
+                var aktuell_sum = (knapp_summer[4][0]);
+            }
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
         }
-    }
-    if (klasse == "btn btn-danger de1_UEL del" || klasse == "btn btn-danger de1_UECL del") {
-        if (clicked_id == "b32" || clicked_id == "b33") {
-            document.getElementById(clicked_id + "__").innerText = "";
-        }
-        else {
+        if (klasse == "btn btn-danger de1_UCL del") {
             document.getElementById(clicked_id + "_").innerText = "";
             document.getElementById(clicked_id + "__").innerText = "";
         }
+        if (klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
+            if (clicked_id == "b32" || clicked_id == "b33") {
+                oppdater_trostepoeng();
+            }
+            else {
+                var aktuell_sum = (knapp_summer[4][0]);
+                document.getElementById(clicked_id + "_").innerText = aktuell_sum;
+                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            }
+        }
+        if (klasse == "btn btn-danger de1_UEL del" || klasse == "btn btn-danger de1_UECL del") {
+            if (clicked_id == "b32" || clicked_id == "b33") {
+                document.getElementById(clicked_id + "__").innerText = "";
+            }
+            else {
+                document.getElementById(clicked_id + "_").innerText = "";
+                document.getElementById(clicked_id + "__").innerText = "";
+            }
+        }
+    
+        var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
+        if (knapp_status == 1) {
+            deltakelse_eliminasjon_status[felt_nummer - 1] = 1;
+            knapper_som_må_oppdateres.push(clicked_id);
+    
+        }
+        else {
+            deltakelse_eliminasjon_status[felt_nummer - 1] = "";
+            knapper_som_må_oppdateres.splice((knapper_som_må_oppdateres.indexOf(clicked_id)), 1);
+        }
+    
+        if (klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele") {
+            document.getElementById(clicked_id).innerText = (eliminert_språk || "");
+        }
+        else if (klasse == "btn btn-danger de0_UCL del" || klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
+            document.getElementById(clicked_id).innerText = (spilt_språk || "");
+        }
+        else {
+            document.getElementById(clicked_id).innerText = "";
+        }
+        summer()
     }
-
-    var felt_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
-    if (knapp_status == 1) {
-        deltakelse_eliminasjon_status[felt_nummer - 1] = 1;
-        knapper_som_må_oppdateres.push(clicked_id);
-
-    }
-    else {
-        deltakelse_eliminasjon_status[felt_nummer - 1] = "";
-        knapper_som_må_oppdateres.splice((knapper_som_må_oppdateres.indexOf(clicked_id)), 1);
-    }
-
-    if (klasse == "btn btn-danger de0_UCL ele" || klasse == "btn btn-danger de0_UEL ele" || klasse == "btn btn-danger de0_UECL ele") {
-        document.getElementById(clicked_id).innerText = (eliminert_språk || "");
-    }
-    else if (klasse == "btn btn-danger de0_UCL del" || klasse == "btn btn-danger de0_UEL del" || klasse == "btn btn-danger de0_UECL del") {
-        document.getElementById(clicked_id).innerText = (spilt_språk || "");
-    }
-    else {
-        document.getElementById(clicked_id).innerText = "";
-    }
-    summer()
 }
 
 

@@ -8,7 +8,39 @@
 
 let sortering_land = [];
 
-let antall_MV_elem = 8;
+const penger = [
+  [260000,                        260000],
+  [100000,                        100000],
+  [5000000,                       5000000],
+  [150000,                        150000],
+  [350000,                        350000],
+  [550000,                        550000],
+  [750000,                        750000],
+  [[15640000, 3630000, 2940000], [15640000, 3630000, 2940000]],
+  [[2800000, 630000, 500000],    [2800000, 630000, 500000]],
+  [[930000, 210000, 166000],     [930000, 210000, 166000]],
+  [[1137000, 132000, 44500],     [1137000, 132000, 44500]],
+  [[[,,500000], [1100000, 1050000, 300000], [650000, 625000]], [[1100000,1000000],[650000,500000],[550000,300000]]],
+  [9600000,   9600000],
+  [1200000,   1200000],
+  [600000,    600000],
+  [10600000,  10600000],
+  [1800000,   1800000],
+  [1000000,   1000000],
+  [12500000,  12500000],
+  [2800000,   2800000],
+  [2000000,   2000000],
+  [15500000,  15500000],
+  [4600000,   4600000],
+  [3000000,   3000000],
+  [4500000,   4500000],
+  [4000000,   4000000],
+  [2000000,   2000000],
+  [3500000,   3500000],
+  [1000000,   1000000],
+]
+
+let antall_MV_elem = 6;
 let filter_land = []
 let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 if (filter_land_før == '') {
@@ -184,14 +216,14 @@ $('th').on('click', function(){
 
 
 function sorter_etter_sesong() {
-  var menyvalg_edit = menyvalg.slice(0);
+  menyvalg_edit = menyvalg.slice(0);
   const ucl_knapper = ['b2', 'b3', 'b6', 'b9', 'b13', 'CLPO', 'b16', 'b18'];
   const uel_knapper = ['uelQ1', 'uelQ2', 'b10', 'b14', 'b19'];
   const uecl_knapper = ['b4', 'b7', 'b11', 'b15', 'b20'];
   const scup_knapper = ['b36'];
   for (var i = 0; i < menyvalg_edit.length; i++) {
     let containsAll = false;
-    if (menyvalg_edit[i][7 + (aarstall*antall_MV_elem)] == null) {
+    if (menyvalg_edit[i][2 + (aarstall*antall_MV_elem)] == null) {
     }
     else {
       let klubb_knapp = [""];
@@ -416,10 +448,10 @@ function sorter_etter_sesong() {
       let Ny4 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
       let Ny5 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
       let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
-      let Ny7 = Ny[7 + (aarstall*antall_MV_elem)].slice(0,4)
+      let Ny7 = [regnUtPremiepenger([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)].concat(Ny[7 + (aarstall*antall_MV_elem)].slice(0,3));
       Ny7 = (Ny7[0] || 0) + (Ny7[1] || 0) + (Ny7[2] || 0) + (Ny7[3] || 0);
-      let Ny8 = parseFloat(Ny.slice(8 + (aarstall*antall_MV_elem),9 + (aarstall*antall_MV_elem)))
-      let Ny9 = parseFloat(Ny.slice(9 + (aarstall*antall_MV_elem),10 + (aarstall*antall_MV_elem)))
+      let Ny8 = regnUtAssosKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
+      let Ny9 = regnUtKlubbKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny10 = Ny.slice(1,2)
       let Ny11 = ''
       Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9, Ny10, Ny11)
@@ -435,26 +467,25 @@ function sorter_etter_sesong() {
       }
       else {
         for (let p = 0; p < menyvalg.length; p++) {
-          if (menyvalg[p][1] == menyvalg_edit[i][9] && menyvalg[p][(8 * ((aarstall+1)))] !== undefined) {
+          if (menyvalg[p][1] == menyvalg_edit[i][9] && menyvalg[p][(antall_MV_elem * ((aarstall+1)))-4] !== undefined) {
             antall_klubber_fra_land += 1
           }
         }
       }
       menyvalg_edit[i][10] = (menyvalg_edit[i][7]/antall_klubber_fra_land) || 0;
 
-
       let live_aarstall = nåværende_sesong_periode_valg[0] - 21
       if (aarstall == live_aarstall) {
         for (p = 0; p < menyvalg.length; p++) {
           if (menyvalg[p][0] == menyvalg_edit[i][0]) {
-            let gruppespillsplassering = (((menyvalg[p][(8 * ((aarstall+1))) - 3])))
+            let gruppespillsplassering = menyvalg[p][(antall_MV_elem * (aarstall+1))+(5-antall_MV_elem)]
             if (!gruppespillsplassering) {gruppespillsplassering = ","}
             if (((gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') && aarstall <= 2) || (gruppespillsplassering.replaceAll(',','') > 24 && aarstall >= 3)) {
               menyvalg_edit[i][0] = menyvalg_edit[i][0] + '0/0'
               break
             }
             else {
-              antall_knapper = (((menyvalg[p][(8 * ((aarstall+1))) - 6]).split(',')))
+              antall_knapper = (menyvalg[p][(antall_MV_elem * (aarstall+1))+(2-antall_MV_elem)]).split(',')
               for (s = 0; s < antall_knapper.length; s++) {
                 if (antall_knapper[s] == 'b5' || antall_knapper[s] == 'b8' || antall_knapper[s] == 'b12' || antall_knapper[s] == 'b17' || antall_knapper[s] == 'KO') {
                   menyvalg_edit[i][0] = menyvalg_edit[i][0] + '0/0'
@@ -883,10 +914,10 @@ function generer_lands_knapper() {
     let antall_klubber4 = indeks_klubb.length;
     let antall_klubber5 = indeks_klubb.length;
     for (p = 0; p < indeks_klubb.length; p++) {
-      if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall + 1)))] == undefined) {
+      if (menyvalg[(indeks_klubb[p])][(antall_MV_elem * ((aarstall + 1)))+2-antall_MV_elem] == undefined) {
         antall_klubber1 -= 1
       } else {
-        enkelt_sesong1 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall + 1)))]) || 0;
+        enkelt_sesong1 += regnUtAssosKoeff(menyvalg[(indeks_klubb[p])].slice(+2-antall_MV_elem + ((aarstall + 1) * antall_MV_elem), 7-antall_MV_elem + ((aarstall + 1) * antall_MV_elem)) , aarstall) || 0;
       }
     }
     enkelt_sesong1 = Math.floor(enkelt_sesong1/antall_klubber1 * 1000) / 1000 || 0
@@ -894,10 +925,10 @@ function generer_lands_knapper() {
       koeff_sesong2 = parseFloat(landskoeffisienter[i][10 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall)))] == undefined) {
+        if (menyvalg[(indeks_klubb[p])][(antall_MV_elem * ((aarstall)))+2-antall_MV_elem] == undefined) {
           antall_klubber2 -= 1
         } else {
-          koeff_sesong2 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall)))]) || 0
+          koeff_sesong2 += regnUtAssosKoeff(menyvalg[(indeks_klubb[p])].slice(+2-antall_MV_elem + ((aarstall) * antall_MV_elem), 7-antall_MV_elem + ((aarstall) * antall_MV_elem)) , aarstall - 1) || 0;
         }
       }
       koeff_sesong2 = Math.floor(koeff_sesong2 * 1000/antall_klubber2) / 1000 || 0}
@@ -905,10 +936,10 @@ function generer_lands_knapper() {
       koeff_sesong3 = parseFloat(landskoeffisienter[i][9 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 1)))] == undefined) {
+        if (menyvalg[(indeks_klubb[p])][(antall_MV_elem * ((aarstall - 1)))+2-antall_MV_elem] == undefined) {
           antall_klubber3 -= 1
         } else {
-          koeff_sesong3 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 1)))]) || 0;
+          koeff_sesong3 += regnUtAssosKoeff(menyvalg[(indeks_klubb[p])].slice(+2-antall_MV_elem + ((aarstall - 1) * antall_MV_elem), 7-antall_MV_elem + ((aarstall - 1) * antall_MV_elem)) , aarstall - 2) || 0;
         }
       }
       koeff_sesong3 = Math.floor(koeff_sesong3 * 1000/antall_klubber3) / 1000 || 0}
@@ -916,10 +947,10 @@ function generer_lands_knapper() {
       koeff_sesong4 = parseFloat(landskoeffisienter[i][8 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 2)))] == undefined) {
+        if (menyvalg[(indeks_klubb[p])][(antall_MV_elem * ((aarstall - 2)))+2-antall_MV_elem] == undefined) {
           antall_klubber4 -= 1
         } else {
-          koeff_sesong4 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 2)))]) || 0
+          koeff_sesong4 += regnUtAssosKoeff(menyvalg[(indeks_klubb[p])].slice(+2-antall_MV_elem + ((aarstall - 2) * antall_MV_elem), 7-antall_MV_elem + ((aarstall - 2) * antall_MV_elem)) , aarstall - 3) || 0;
         }
       }
       koeff_sesong4 = Math.floor(koeff_sesong4 * 1000/antall_klubber4) / 1000 || 0}
@@ -927,10 +958,10 @@ function generer_lands_knapper() {
       koeff_sesong5 = parseFloat(landskoeffisienter[i][7 + aarstall])
     }else {
       for (p = 0; p < indeks_klubb.length; p++) {
-        if (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 3)))] == undefined) {
+        if (menyvalg[(indeks_klubb[p])][(antall_MV_elem * ((aarstall - 3)))+2-antall_MV_elem] == undefined) {
           antall_klubber5 -= 1
         } else {
-          koeff_sesong5 += (menyvalg[(indeks_klubb[p])][(8 * ((aarstall - 3)))]) || 0
+          koeff_sesong5 += regnUtAssosKoeff(menyvalg[(indeks_klubb[p])].slice(+2-antall_MV_elem + ((aarstall - 3) * antall_MV_elem), 7-antall_MV_elem + ((aarstall - 3) * antall_MV_elem)) , aarstall - 4) || 0;
         }
       }
       koeff_sesong5 = Math.floor(koeff_sesong5 * 1000/antall_klubber5) / 1000 || 0}
@@ -1757,3 +1788,102 @@ function myFunction() {
 //   var value = cell.innerText;
 //   localStorage.setItem('Klubbnavn', value)
 // }
+
+
+function regnUtPremiepenger(data, sesong) {
+  if (sesong >= 3) {
+    return 0;
+  }
+  let sum = 0;
+  let knapper = "";
+  knapper = data[0].split(",");
+  let cycle = 0;
+  if (sesong >= 3) {
+    cycle = 1;
+  }
+  // Seriemester-penger
+  if (knapper.includes("b1")) {
+    let seriemesterPenger = true;
+    for (i = 0; i < knapper.length; i++) {
+      if (["b9","b13","b14","CLPO","b18","b19","b20"].includes(knapper[i])) {
+        seriemesterPenger = false;
+        break;
+      }
+    }
+    if (seriemesterPenger) {
+      sum += penger[0][cycle];
+    }
+  }
+  // Deltagelse i kvalikrunder
+  if (!knapper.includes("CLPO") && !knapper.includes("b18")) {
+    for (i = 0; i < knapper.length; i++) {
+      if (["b2","b3","uelQ1","b4","b6","uelQ2","b7","b9","b10","b11","b15"].includes(knapper[i])) {
+        sum += penger[1][cycle];
+      }
+    }
+    if (knapper.includes("b14") && !knapper.includes("b19")) {
+      sum += penger[1][cycle];
+    }
+  }
+  if (knapper.includes('b16')) {
+    sum += penger[2][cycle];
+  }
+  if (knapper.includes("b5")) {
+    return sum + penger[3][cycle];
+  }
+  else if (knapper.includes("b8")) {
+    return sum + penger[4][cycle];
+  }
+  else if (knapper.includes("b12")) {
+    return sum + penger[5][cycle];
+  }
+  else if (knapper.includes("b17")) {
+    return sum + penger[6][cycle];
+  }
+  for (i = 18; i <= 20; i++) {
+    if (knapper.includes("b" + i)) {
+      // Gruppespillsdeltagelse
+      sum += penger[7][cycle][i-18];
+      // Seire/uavgjort i gruppespill
+      let seiere = data[2].replace(",", "").replace(",", "");
+      let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
+      seiere = seiere.split(",")[cycle];
+      sum += seiere * penger[8][cycle][i-18];
+      sum += uavgjort * penger[9][cycle][i-18];
+      // 10-års koeffisientbonus og ufordelte ressurser
+      if (aarstall >= 3) {
+        if (i == 20) {
+          sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (108-finnTotaltUavgjort(aarstall,i-18,false))
+        }
+        else {
+          sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (144-finnTotaltUavgjort(aarstall,i-18,false))
+        }
+        if (data[1] != ",,") {
+          sum += (37-parseFloat(data[1].replaceAll(',',''))) * penger[10][cycle][i-18];
+        }
+      }
+      else {
+        sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (96-finnTotaltUavgjort(aarstall,i-18,false))
+        sum += (33-parseFloat(data[1].replaceAll(',',''))) * penger[10][cycle][i-18];
+      }
+      // Plassering og utslagsrunde-playoff
+      if (data[3] && data[3] != ",," && sesong < 3) {
+        sum += penger[11][cycle][i-18][data[3].replaceAll(',','')-1] || 0;
+      }
+      else if (data[3] && data[3] != ",,") {
+        sum += penger[11][cycle][i-18][0]*(37-data[3].replaceAll(',',''))
+        if (data[3].replaceAll(',','') > 8 && data[3].replaceAll(',','') <= 24) {
+          sum += penger[11][1][i-18][1]
+        }
+      }
+      break;
+    }
+  }
+  // 16-dels osv
+  for (i = 0; i < knapper.length; i++) {
+    if (knapper[i].substring(1) >= 21 && knapper[i].substring(1) <= 37) {
+      sum += penger[12-21+parseInt(knapper[i].substring(1))][cycle];
+    }
+  }
+  return Math.round(sum);
+}

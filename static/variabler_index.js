@@ -144,6 +144,7 @@ const norsk_kalkulator = [
     'Hjemlig seriemester',
     '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Innledende runde</abbr>',
     '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr>',
+    '<abbr data_title="Første kvalifiseringsrunde">Q1</abbr>',
     'Røk ut i Q1',
     '<abbr data_title="Andre kvalifiseringsrunde">Q2</abbr>',
     'Røk ut i Q2',
@@ -172,7 +173,13 @@ const norsk_kalkulator = [
     '<p>*Kalkulasjonene tar ikke de mindre COVID-fradragene i betraktning.<br><br><br>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
     '<p>Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFAs distribusjonsplan</a>.</p>',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">din klubbs koeffisientpoeng</a>.',
-    '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign premiepenger med andre klubber</a>.</b>'
+    '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign premiepenger med andre klubber</a>.</b>',
+    'Ligaspill',
+    'Ligaplassering',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering internt i ligaspillet (1-36). Følg lenke 1 for å finne ut.">Ti års koeff</abbr>: </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ti års koeffisient-rangering">1</abbr></a>',
+    '<abbr data_title="Totalt antall uavgjorte kamper i det aktuelle ligaspillet (0-144)">Uavgjort totalt</abbr>',
+    '<abbr data_title="Antall seiere i ligaspillet">Seiere</abbr>',
+    '<abbr data_title="Antall uavgjort i ligaspillet">Uavgjort</abbr>'
 ];
 
 const norsk_koeffisient = [
@@ -402,6 +409,7 @@ const english_kalkulator = [
     'Domestic champion',
     '<abbr data_title="Qualifying matches for the qualification itself">Preliminary round</abbr>',
     '<abbr data_title="First qualifying round">Q1</abbr>',
+    '<abbr data_title="First qualifying round">Q1</abbr>',
     'Eliminated in Q1',
     '<abbr data_title="Second qualifying round">Q2</abbr>',
     'Eliminated in Q2',
@@ -416,7 +424,7 @@ const english_kalkulator = [
     '<abbr data_title="Amount of draws in the group stage">Draws</abbr>',
     '<abbr data_title="Total number of drawn games in the relevant group stage (0-96)">Total draws</abbr>',
     '<abbr data_title="Redistributed amounts remaining from the matches ending in a draw">Undistributed amounts</abbr>',
-    'Group-placement',
+    'Group placement',
     '<abbr data_title="Qualification play-off for the knockout rounds">Knockout round play-off</abbr>',
     'Round of 16',
     'Quarter-final',
@@ -430,7 +438,13 @@ const english_kalkulator = [
     '<p>*Calculations do not take the small COVID deduction into consederation.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
     '<p>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
     'Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s coefficient points</a>.',
-    '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare prize money with other clubs</a>.</b>'
+    '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare prize money with other clubs</a>.</b>',
+    'League phase',
+    'League placement',
+    '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the league phase (1-36). Follow link 1 to figure out.">Ten-year coeff</abbr> </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten year coefficient ranking">1</abbr></a>',
+    '<abbr data_title="Total number of drawn games in the relevant league phase (0-144)">Total draws</abbr>',
+    '<abbr data_title="Amount of wins in the league phase">Wins</abbr>',
+    '<abbr data_title="Amount of draws in the league phase">Draws</abbr>'
 ];
 
 const english_koeffisient = [

@@ -23,19 +23,9 @@
     width: 95%;
     margin: auto;
 }
-@media (min-width:930px) {
+@media (min-width:862px) {
     .container_ {
-        width: 850px;
-    }
-    @media (max-width:1790px) {
-        .container_ {
-            width: 900px;
-        }
-    }
-    @media (max-width:1290px) {
-        .container_ {
-            width: 850px;
-        }
+        width: 808px;
     }
 }
 
@@ -51,7 +41,8 @@
     box-shadow:none !important;
 }
 .klubb_logo {
-    margin-bottom: calc(-0.14vw + 3.1px);
+    margin-bottom: 1.7px;
+    /* margin-bottom: calc(-0.14vw + 3.1px); */
 }
 .btn-secondary {
     display:inline;
@@ -133,7 +124,12 @@ th, td {
     user-select: none;
 }
 @media (min-width:800px) {
-    #ass_coeff, #ass_coeff_ø, #bidrag, #prize_money, #club_coeff, #prize_money_total, #ass_coeff_total, #club_coeff_total {
+    #ass_coeff, #ass_coeff_ø, #bidrag, #prize_money, #club_coeff, #ass_coeff_total, #club_coeff_total {
+        text-align: right;
+    }
+}
+@media (min-width:650px) {
+    #prize_money_total {
         text-align: right;
     }
 }
@@ -142,9 +138,30 @@ th, td {
         min-width: calc(70px) !important;
     }
 }
+@media (min-width:750px) {
+    #prize_money {
+        min-width: 120px;
+    }
+}
+#prize_money, #ass_coeff, #bidrag, #club_coeff, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
+    font-size: 14px;
+}
 /* #ass_coeff, #prize_money, #club_coeff, #bidrag {
     min-width: calc(5vw + 30px) !important;
 } */
+#club_coeff {
+    min-width: 55px;
+}
+@media (min-width:680px) {
+    #club_coeff {
+        min-width: 74px;
+    }
+}
+@media (min-width:880px) {
+    #prize_money_total {
+        min-width: 180px;
+    }
+}
 #club {
     padding-left: 9px;
 }
@@ -466,6 +483,9 @@ th, td {
     padding-right: 17px;
 }
 #ass_coeff_ø {
+    min-width: 75px;
+}
+#club_coeff_total {
     min-width: 75px;
 }
 .x_symbol {

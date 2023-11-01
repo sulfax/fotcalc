@@ -6,7 +6,7 @@
 	};
 })();
 
-var antall_MV_elem = 8;
+var antall_MV_elem = 6;
 
 /*Variabler som skal brukes i utregninger under*/
 /*21/22 variabler til utregning av noen summer*/
@@ -150,9 +150,10 @@ var UCL_ikke_avrundet = [0,0,0]
 var UEL_ikke_avrundet = [0,0,0]
 var UECL_ikke_avrundet = [0,0,0]
 
-var ja_språk = "Ja";
-var nei_språk = "Nei";
-var spilt_språk = "Spilt"
+var ja_språk = "Yes";
+var nei_språk = "No";
+var spilt_språk = "Played"
+let eliminert_språk = "Eliminated"
 
 
 for (let p = 1; p < 16; p++) {
@@ -187,15 +188,18 @@ function paa_av(clicked_id){
             for (i=0;i<menyvalg.length;i++) {
                 if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
                     if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)]) {}
-                    else if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]) {
-                        document.getElementById("mp1").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                    else if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][0] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][0]) {
+                        document.getElementById("mp1").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][0]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     }
-                    else if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1] && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1] != "0") {
+                    else if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][0] && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][0] != "0") {
                         document.getElementById("mp1").innerText = "€ ?";
                     }
                     else {document.getElementById("mp1").innerText = "€ 0";}
                 }
             }
+        }
+        else {
+            document.getElementById("mp1").innerText = "€ ?";
         }
     }
     if (clicked_id == "b19") {
@@ -203,15 +207,18 @@ function paa_av(clicked_id){
             for (i=0;i<menyvalg.length;i++) {
                 if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
                     if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)]) {}
-                    else if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]) {
-                        document.getElementById("mp2").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                    else if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]) {
+                        document.getElementById("mp2").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     }
-                    else if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]) {
+                    else if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]) {
                         document.getElementById("mp2").innerText = "€ ?";
                     }
                     else {document.getElementById("mp2").innerText = "";}
                 }
             }
+        }
+        else {
+            document.getElementById("mp2").innerText = "€ ?";
         }
     }
     if (clicked_id == "b20") {
@@ -219,15 +226,18 @@ function paa_av(clicked_id){
             for (i=0;i<menyvalg.length;i++) {
                 if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
                     if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)]) {}
-                    else if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][3] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][3]) {
-                        document.getElementById("mp3").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][3]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                    else if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]) {
+                        document.getElementById("mp3").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                     }
-                    else if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][3]) {
+                    else if (!menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]) {
                         document.getElementById("mp3").innerText = "€ ?";
                     }
                     else {document.getElementById("mp3").innerText = "";}
                 }
             }
+        }
+        else {
+            document.getElementById("mp3").innerText = "€ ?";
         }
     }
     if (clicked_id == 'b1' && (document.getElementById("b-6") || document.getElementById("CL-PO")) && document.getElementById("b13") && document.getElementById("b18")) {
@@ -265,6 +275,9 @@ function paa_av(clicked_id){
         if (nummer > 0)  {
             if (nummer == 2 || nummer == 3 || nummer == 4 || nummer == 6 || nummer == 7 || nummer == 9 || nummer == 10 || nummer == 11 || nummer == 13 || nummer == 14 || nummer == 15 || nummer == 36 || (nummer >= 21 && nummer <= 32)) {
                 document.getElementById(clicked_id).innerText = (spilt_språk || "");
+            }
+            else if (nummer == 5 || nummer == 8 || nummer == 12 || nummer == 17) {
+                document.getElementById(clicked_id).innerText = (eliminert_språk || "");
             }
             else {
                 document.getElementById(clicked_id).innerText = (ja_språk || "");
@@ -346,7 +359,7 @@ function paa_av(clicked_id){
              || (clicked_id == "b-20" && document.getElementById("b9") && document.getElementById("b13") && document.getElementById("b14") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO"))) {
                 oppdater_b1();
             }
-            if ((clicked_id == "b-16" && document.getElementById("b13") && document.getElementById("b18") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-18" && document.getElementById("b16") && document.getElementById("b19") && document.getElementById("CLPO")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("CLPO"))) {
+            if ((clicked_id == "b-16" /*&& document.getElementById("b13")*/ && document.getElementById("b18") /*&& document.getElementById("b19")*/ && document.getElementById("CLPO")) || (clicked_id == "b-18" && document.getElementById("b16") /*&& document.getElementById("b19")*/ && document.getElementById("CLPO")) || (clicked_id == "b-19" && document.getElementById("b18") && document.getElementById("b13") && document.getElementById("b16") && document.getElementById("CLPO"))) {
                 oppdater_b2_b3_b6_b9();
             }
             if ((clicked_id == "b-19")) {
@@ -614,6 +627,7 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
     var totalt_antall_uavgjorte_kamper = document.getElementById(clicked_id).value;
     if (document.getElementById(clicked_id).value != "") {
         var antall_uavgjorte_kamper = parseInt(document.getElementById("i" + (nummer_2 - 3)).value);
+        if (!antall_uavgjorte_kamper && antall_uavgjorte_kamper != 0) {antall_uavgjorte_kamper = 0}
         if ((totalt_antall_uavgjorte_kamper >= (antall_uavgjorte_kamper)) && ((totalt_antall_uavgjorte_kamper <= (96 - (6 - (antall_uavgjorte_kamper)) || 96))) && totalt_antall_uavgjorte_kamper % 1 == 0) {
             var totale_ufordelte_ressurser = (totalt_antall_uavgjorte_kamper * input_summer[nummer_2 - 4][aarstall]);
             var totalt_antall_kamper_med_vinner = (96 - document.getElementById(clicked_id).value);
@@ -738,6 +752,10 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                             }
                         }
                     }
+                    else {
+                        document.getElementById("mp2").innerText = "€ ?";
+                    }
+                    
                 }
                 else if (clicked_id == 'i14') {
                     if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
@@ -750,6 +768,9 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                                 else {document.getElementById("mp3").innerText = "";}
                             }
                         }
+                    }
+                    else {
+                        document.getElementById("mp3").innerText = "€ ?";
                     }
                 }
                 summer();
@@ -1094,7 +1115,7 @@ function oppdater_ved_refresh_1() {
                 let motak_7 = ",,";
                 try {
                     if (turnering != 'ingen') {
-                        motak_7 = (totale_uavgjorte_kamper[aarstall][turnering]);
+                        motak_7 = finnTotaltUavgjort(aarstall,turnering,true);
                     }
                 } catch {}
                 const motak_8 = "i13,i14,i15";
@@ -1235,9 +1256,9 @@ function oppdater_sessong(aarstall) {
     if (aarstall == null) {
         aarstall = 0;
     }
-    document.getElementById('i10').placeholder = totale_uavgjorte_kamper[aarstall][0].replace(/,/g,'');
-    document.getElementById('i11').placeholder = totale_uavgjorte_kamper[aarstall][1].replace(/,/g,'');
-    document.getElementById('i12').placeholder = totale_uavgjorte_kamper[aarstall][2].replace(/,/g,'');
+    document.getElementById('i10').placeholder = finnTotaltUavgjort(aarstall,0,false);
+    document.getElementById('i11').placeholder = finnTotaltUavgjort(aarstall,1,false);
+    document.getElementById('i12').placeholder = finnTotaltUavgjort(aarstall,2,false);
     if (document.getElementById('CL-PO')) {
         document.getElementById("b1_").innerText = "";
         document.getElementById("b2_").innerText = "";

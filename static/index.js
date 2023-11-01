@@ -297,6 +297,9 @@ function language_standard(clicked_id) {
             if (y == 2 || y == 3 || y == 4 || y == 6 || y == 7 || y == 9 || y == 10 || y == 11 || y == 13 || y == 14 || y == 15 || y == 36 || (y >= 21 && y <= 32)) {
               knapp_id_ja.innerText = spilt_språk;
             }
+            else if (y == 5 || y == 8 || y == 12 || y == 17) {
+              knapp_id_ja.innerText = eliminert_språk;
+            }
             else {
               knapp_id_ja.innerText = ja_språk;
             }
@@ -454,7 +457,8 @@ const sprak_id_kalkulator = [
   'progresjon',
   'hjemlig_seriemester', 
   'spilt_preliminary', 
-  'spilt_q1', 
+  'spilt_q1',
+  'spilt_q1_post_24',
   'røk_ut_q1',
   'spilt_q2',
   'røk_ut_q2',
@@ -483,7 +487,13 @@ const sprak_id_kalkulator = [
   'marketPool_id',
   'marketPool_id2',
   'koeff_reklame',
-  'oversikt_reklame'
+  'oversikt_reklame',
+  'ligaspill',
+  'tabellplassering_liga',
+  'ti_års_koeff_ligaspill',
+  'uavgjort_hele_liga',
+  'seiere_liga',
+  'uavgjort_liga'
 ];
 const sprak_id_koeffisient = [
   'title_koeffisient',

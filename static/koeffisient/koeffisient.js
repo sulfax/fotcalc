@@ -6,7 +6,7 @@
 	};
 })();
 
-var antall_MV_elem = 8;
+var antall_MV_elem = 6;
 
 /*21/22 knapper*/
 let Seier_kvalifisering_2122 = 1;
@@ -14,7 +14,7 @@ let Uavgjort_kvalifisering_2122 = 0.5;
 let Seier_utslagsrunde_2122 = 2;
 let Uavgjort_utslagsrunde_2122 = 1;
 let Eliminert_Deltatt_2122 = 1;
-let Åttendels_Deltatt_2122 = 5;
+let Åttendels_Deltatt_2122 = 1;
 let Gruppespill_UCL_2122 = 4;
 let Gruppespill_UEL_minimum_2122 = 3;
 let Gruppespill_UECL_minimum_2122 = 2.5;
@@ -32,6 +32,7 @@ var UEL_førsteplass_2122 = 4;
 var UECL_førsteplass_2122 = 2;
 var UEL_andreplass_2122 = 2; 
 var UECL_andreplass_2122 = 1;
+let UCL_første_andre_plass_2122 = 4;
 
 const knapp_summer = [
     [Seier_kvalifisering_2122],
@@ -55,21 +56,21 @@ const input_summer = [
     [UCL_uavgjort_2122],
     [UEL_uavgjort_2122],
     [UECL_uavgjort_2122],
-
     [UEL_førsteplass_2122],
     [UECL_førsteplass_2122],
     [UEL_andreplass_2122],
-    [UECL_andreplass_2122]
+    [UECL_andreplass_2122],
+    [UCL_første_andre_plass_2122]
 ];
 
 let resultat_status = [];
 let deltakelse_eliminasjon_status = [];
 
-const UCL_assoskoeffisient_celler = ["b1_", "b2_", "b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
+const UCL_assoskoeffisient_celler = ["b1_", "b2_", "b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "i7_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
 const UEL_assoskoeffisient_celler = [/*"b4_", "b7_", "b11_", "b14_",*/ "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
 const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b42_", "b45_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
 
-const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
+const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "i7__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b42__", "b45__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
@@ -436,8 +437,13 @@ function oppdater_plassering(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (input_felt_verdi >= 1 && input_felt_verdi <= 4 && document.getElementById(clicked_id).value != "" && input_felt_verdi % 1 == 0) {
-        if (felt_nummer == 8 || felt_nummer == 9) {
-            if (input_felt_verdi == 1) {
+        if (felt_nummer == 7 || felt_nummer == 8 || felt_nummer == 9) {
+            if ((input_felt_verdi == 1 || input_felt_verdi == 2) && felt_nummer == 7) {
+                var aktuell_sum = input_summer[10][0];
+                document.getElementById(clicked_id + "_").innerText = aktuell_sum;
+                document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+            }
+            else if (input_felt_verdi == 1) {
                 var aktuell_sum = input_summer[felt_nummer-2][0];
                 document.getElementById(clicked_id + "_").innerText = aktuell_sum;
                 document.getElementById(clicked_id + "__").innerText = aktuell_sum;
