@@ -997,14 +997,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" class="utydelig_link">${sesong4}</a>`
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong3}</a>`
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong2}</a>`}
-    else if (aar_etter_forste_periode == 4) {
-      sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong3}</a>`
-      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong2}</a>`
-      sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong1}</a>`}
-    else if (aar_etter_forste_periode == 5) {
-      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong2}</a>`
-      sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong1}</a>`}
-    else if (aar_etter_forste_periode == 6) {
+    else if (aar_etter_forste_periode == 7) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong1}</a>`}
     let marign_venstre = '<nobr class="marign_venstre">';
     if (i == 0) {marign_venstre = '<nobr id="logo_navn" class="marign_venstre">'}
