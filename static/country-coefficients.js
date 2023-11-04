@@ -746,6 +746,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
   testTabell.innerHTML = '';
   var helTabellHTML = '';
   let spraak = localStorage.getItem("someVarKey");
+  let twitterData = "";
   for (i = 0; i < ranking_array.length; i++) {
     for (p = 0; p < landskoeffisienter.length; p++) {
       if (landskoeffisienter[p][0] == ranking_array[i][0]) {
@@ -842,10 +843,11 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
         rad_test = '<tr>' + rad_test
       }
       helTabellHTML += rad_test
+      // twitterData += ('["' + ranking_array[i][0] + '", ' + ranking_array[i][2] + "],\n");
   }
+  // navigator.clipboard.writeText(twitterData);
   testTabell.innerHTML = helTabellHTML;
 }
-
 
 /*Dropdown meny start*/
 /* When the user clicks on the button,
@@ -1933,3 +1935,158 @@ function access_list(spraak) {
     }
   }
 }
+
+// let flaggEmoji = [
+//   ["ENG", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"],
+//   ["ESP", "🇪🇸"], 
+//   ["ITA", "🇮🇹"], 
+//   ["GER", "🇩🇪"], 
+//   ["NED", "🇳🇱"], 
+//   ["FRA", "🇫🇷"], 
+//   ["POR", "🇵🇹"], 
+//   ["BEL", "🇧🇪"], 
+//   ["TUR", "🇹🇷"], 
+//   ["SCO", "🏴󠁧󠁢󠁳󠁣󠁴󠁿"], 
+//   ["AUT", "🇦🇹"], 
+//   ["SUI", "🇨🇭"], 
+//   ["CZE", "🇨🇿"], 
+//   ["DEN", "🇩🇰"], 
+//   ["NOR", "🇳🇴"], 
+//   ["SRB", "🇷🇸"], 
+//   ["UKR", "🇺🇦"], 
+//   ["ISR", "🇮🇱"], 
+//   ["GRE", "🇬🇷"], 
+//   ["POL", "🇵🇱"], 
+//   ["CRO", "🇭🇷"], 
+//   ["RUS", "🇷🇺"], 
+//   ["CYP", "🇨🇾"], 
+//   ["SWE", "🇸🇪"], 
+//   ["ROU", "🇷🇴"], 
+//   ["HUN", "🇭🇺"], 
+//   ["SVK", "🇸🇰"], 
+//   ["BUL", "🇧🇬"], 
+//   ["AZE", "🇦🇿"], 
+//   ["MDA", "🇲🇩"], 
+//   ["SVN", "🇸🇮"], 
+//   ["KVX", "🇽🇰"], 
+//   ["KAZ", "🇰🇿"], 
+//   ["IRL", "🇮🇪"], 
+//   ["FIN", "🇫🇮"], 
+//   ["ARM", "🇦🇲"], 
+//   ["LVA", "🇱🇻"], 
+//   ["FRO", "🇫🇴"], 
+//   ["LIE", "🇱🇮"], 
+//   ["BIH", "🇧🇦"], 
+//   ["ISL", "🇮🇸"], 
+//   ["NIR", "#NIR"], 
+//   ["LUX", "🇱🇺"], 
+//   ["LTU", "🇱🇹"], 
+//   ["MLT", "🇲🇹"], 
+//   ["GEO", "🇬🇪"], 
+//   ["ALB", "🇦🇱"], 
+//   ["EST", "🇪🇪"], 
+//   ["BLR", "🇧🇾"], 
+//   ["MKD", "🇲🇰"], 
+//   ["AND", "🇦🇩"], 
+//   ["WAL", "🏴󠁧󠁢󠁷󠁬󠁳󠁿"], 
+//   ["MNE", "🇲🇪"], 
+//   ["GIB", "🇬🇮"], 
+//   ["SMR", "🇸🇲"],
+// ]
+
+// let forrigeUkeData = [
+//   ["ENG", 4.750],
+//   ["ESP", 5.062],
+//   ["ITA", 5.285],
+//   ["GER", 4.642],
+//   ["NED", 5.200],
+//   ["FRA", 4.250],
+//   ["POR", 4.000],
+//   ["BEL", 6.000],
+//   ["TUR", 8.250],
+//   ["SCO", 2.600],
+//   ["AUT", 3.000],
+//   ["SUI", 2.800],
+//   ["SRB", 1.400],
+//   ["DEN", 4.750],
+//   ["CZE", 5.000],
+//   ["NOR", 3.250],
+//   ["UKR", 2.700],
+//   ["ISR", 4.000],
+//   ["GRE", 5.200],
+//   ["CRO", 3.375],
+//   ["RUS", 4.333],
+//   ["POL", 4.375],
+//   ["CYP", 3.500],
+//   ["SWE", 1.875],
+//   ["ROU", 3.250],
+//   ["HUN", 3.000],
+//   ["SVK", 3.750],
+//   ["BUL", 2.375],
+//   ["AZE", 3.625],
+//   ["MDA", 1.750],
+//   ["SVN", 2.875],
+//   ["KVX", 2.750],
+//   ["IRL", 1.500],
+//   ["FIN", 1.500],
+//   ["KAZ", 2.375],
+//   ["ARM", 2.250],
+//   ["LVA", 1.625],
+//   ["LIE", 0.500],
+//   ["FRO", 2.250],
+//   ["BIH", 2.000],
+//   ["ISL", 3.833],
+//   ["NIR", 1.125],
+//   ["LUX", 2.250],
+//   ["LTU", 1.125],
+//   ["MLT", 1.500],
+//   ["GEO", 1.250],
+//   ["ALB", 2.125],
+//   ["EST", 0.125],
+//   ["BLR", 1.750],
+//   ["MKD", 1.500],
+//   ["AND", 1.666],
+//   ["WAL", 0.625],
+//   ["MNE", 1.333],
+//   ["GIB", 0.166],
+//   ["SMR", 0.333],
+// ]
+
+// let rader = document.getElementById('tabell_hoved').rows
+// let twitterLimInn = [];
+// for (i = 0; i < forrigeUkeData.length; i++) {
+//   for (let k = 0; k < 55; k++) {
+//     let fjernSVG = rader[1+k].cells[2].innerHTML.split('.svg')[0];
+//     let landskode = fjernSVG.substr(fjernSVG.length - 3);
+//     if (forrigeUkeData[i][0] == landskode) {
+//       for (let j = 0; j < flaggEmoji.length; j++) {
+//         if (flaggEmoji[j][0] == landskode) {
+//           twitterLimInn.push([flaggEmoji[j][1], parseFloat(rader[1+k].cells[5].innerText - forrigeUkeData[i][1])]);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// i = 1
+// twitterLimInn.sort(sortFunction_tall_1_forskjellig);
+// let plasserLand = 0;
+
+// for (i = 0; i < twitterLimInn.length-1; i++) {
+//   if (twitterLimInn[plasserLand][1] == twitterLimInn[i+1][1]) {
+//     twitterLimInn[plasserLand][0] += twitterLimInn[i+1][0]
+//     twitterLimInn.splice(i+1, 1)
+//     i--;
+//   }
+//   else {
+//     plasserLand = i+1;
+//   }
+// }
+// let twitterLimInn2 = "";
+// for (i = 0; i < twitterLimInn.length; i++) {
+//   if (twitterLimInn[i][1] != 0) {
+//     twitterLimInn2 += twitterLimInn[i][0] + " (+ " + (Math.round((twitterLimInn[i][1] + Number.EPSILON) * 1000) / 1000).toFixed(3) + ")\n";
+//   }
+// }
+
+// navigator.clipboard.writeText(twitterLimInn2)

@@ -180,7 +180,7 @@ const menyvalg = [
      ["FK Sileks",                  "MKD",    "b4,b5",                    ",,",",,,,,",",,",              ",,,2,,1",                                                           [,,]],
      ["FK Sūduva",                  "LTU",    "b4,b7,b8",                 ",,",",,,,,",",,",              ",,,3,,2,,,2,,2",                                                    [,,]                   , "b7,b8",,,,",,,,,,,,1,,1",                                                                                                          [,,]],
      ["FK Sutjeska Nikšić",         "MNE",    "b4,b7,b8",                 ",,",",,,,,",",,",              ",,,3,,2,,,2,,1",                                                    [,,]                   , "b1,b3,b7,b8",,,,",,1,,1,,,,2,,1",                                                                                                  [,,] , "b4,b7,b8",,,,",,,3,,2,,,3,,1",                                                 [,,]],
-     ["FK Tobol Kostanay",          "KAZ",    "b7,b11,b12",               ",,",",,,,,",",,",              ",,,,,,,,1,,3,,,,1,,,1",                                             [,,]                   , "b1,b3,b7,b11,b12",,,,",,2,,1,,,,3,,3,,,,1,,,2",                                                                                    [,,] , "b4,b7,b11,b15,b17",,,,",,,3,,2,,,3,,1,,,,3,,,1,,,,1,,,1",                      [,,]],
+     ["FK Tobol Kostanay",          "KAZ",    "b7,b11,b12",               ",,",",,,,,",",,",              ",,,,,,,,1,,3,,,,1,,,1",                                             [,,]                   , "b1,b3,b7,b11,b12",,,,",,2,,1,,,,3,,3,,,,1,,,2",                                                                                    [,,] , "b4,b7,b11,b15,b17",,,,",,,3,,2,,,3,,1,,,,3,,,1,,,,1,,,1",                      [,,] , "uelQ1",,,,,[,,]],
      ["FK TransINVEST",             "LTU",,,,,,                                                                                                                                                       ,,,,,,                                                                                                                                     ,,,,,,                                                                                 , "b7",,,,,[,,]],
 /*R*/["FK TSC Bačka Topola",        "SRB",,,,,,                                                                                                                                                       ,,,,,,                                                                                                                                     , "b13,b19",",29,",",0,,,1,",,",,,,,,,,,,,,1,,,1",                                [,,]],
      ["FK Tuzla City",              "BIH",,,,,,                                                                                                                                                       , "b4,b7,b8",,,,",,,3,,3,,,1,,1",                                                                                                     [,,]],
@@ -230,7 +230,7 @@ const menyvalg = [
      ["Kisvárda FC",                "HUN",,,,,,                                                                                                                                                       , "b7,b11,b12",,,,",,,,,,,,3,,3,,,,1,,,3",                                                                                            [,,]],
      ["KKS Lech Poznań",            "POL",,,,,,                                                                                                                                                       , "b1,b3,b7,b11,b15,b20,b23,b26,KO",",,23",",,2,,,3",",,2",",,3,,1,,,,3,,2,,,,1,,,3,,,,3,,,2,,,,,,2,,3,,,,,3,,,3,,,,,1,,,3",          [,,] , "b7,b11,b12",,,,",,,,,,,,3,,3,,,,3,,,1",                                        [,,]],
      ["Knattspyrnufélag Akureyrar", "ISL",,,,,,                                                                                                                                                       ,,,,,,                                                                                                                                     , "b4,b7,b11,b12",,,,",,,3,,3,,,3,,2,,,,1,,,1",                                   [,,]],
-     ["Knattspyrnufélagið Valur",   "ISL",    "b1,b3,b7,b8",              ",,",",,,,,",",,",              ",,1,,1,,,,1,,1",                                                    [,,]                   ,,,,,,                                                                                                                                     ,,,,,,,,                                                                               , "b4",,,,,[,,]],
+     ["Knattspyrnufélagið Valur",   "ISL",    "b1,b3,b7,b8",              ",,",",,,,,",",,",              ",,1,,1,,,,1,,1",                                                    [,,]                   ,,,,,,                                                                                                                                     ,,,,,,                                                                                 , "b4",,,,,[,,]],
      ["KR Reykjavík",               "ISL",,,,,,                                                                                                                                                       , "b4,b5",,,,",,,1,,3",                                                                                                               [,,]],
 /*R*/["KRC Genk",                   "BEL",    "b13,b19",                  ",13,",  ",1,,,2,",  ",4,",     ",,,,,,,,,,,,1,,,1",                                                 [198000,549000,]       ,,,,,,                                                                                                                                     , "b6,b10,b15,b20",",,13",",,1,,,2",,",,,,,,,2,,2,,,,1,,,2,,,,,3,,,1",            [,,]],
      ["Kuopion Palloseura",         "FIN",    "b4,b7,b11,b15,b17",        ",,",",,,,,",",,",              ",,,1,,3,,,2,,3,,,,2,,,3,,,,1,,,2",                                  [,,]                   , "b4,b7,b11,b12",,,,",,,3,,2,,,2,,3,,,,1,,,1",                                                                                       [,,] , "b7,b8",,,,",,,,,,,,1,,2",                                                      [,,] , "b4",,,,,[,,]],
@@ -336,7 +336,7 @@ const menyvalg = [
      ["St Patrick's Athletic FC",   "IRL",,,,,,                                                                                                                                                       , "b7,b11,b12",,,,",,,,,,,,2,,2,,,,3,,,1",                                                                                            [,,] , "b4,b5",,,,",,,1,,1",                                                           [,,]   , "b4",,,,,[,,]],
      ["St. Johnstone",              "SCO",    "b10,b15,b17",              ",,",",,,,,",",,",              ",,,,,,,,,,,,,2,,,1,,,,,2,,,1",                                      [,,]],
 /*R*/["Stade Rennais",              "FRA",    "b15,b20,b23,KO",           ",,15",  ",,4,,,2",  ",,1",     ",,,,,,,,,,,,,,,,,,,,,3,,,3,,,,,,,,,,,,,1,,,3",                      [,,976000]             , "b19,KO",",18,",",3,,,3,",",2,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,3",                                                                [,,] , "b19",",16,",",2,,,0,",,,                                                       [,,]],
-     ["Stjarnan FC",                "ISL",    "b4,b5",                    ",,",",,,,,",",,",              ",,,2,,1",                                                           [,,]                   ,,,,,,                                                                                                                                                           ,,,,,,,,                                                                             , "b4",,,,,[,,]],
+     ["Stjarnan FC",                "ISL",    "b4,b5",                    ",,",",,,,,",",,",              ",,,2,,1",                                                           [,,]                   ,,,,,,                                                                                                                                                           ,,,,,,                                                             , "b4",,,,,[,,]],
 /*R*/["Sturm Graz",                 "AUT",    "b14,b19",                  ",31,",  ",0,,,2,",  ",4,",     ",,,,,,,,,,,,,,,,,,,,3,,,3",                                         [,1462000,]            , "b13,b19",",30,",",2,,,2,",",4,",",,,,,,,,,,,,1,,,1",                                                                               [,,] , "b13,b19",",26,",",1,,,1,",,",,,,,,,,,,,,1,,,1",                                [,,]],
      ["Sumqayıt FK",                "AZE",    "b7,b8",                    ",,",",,,,,",",,",              ",,,,,,,,2,,1",                                                      [,,]],
      ["The New Saints FC",          "WAL",    "b4,b7,b11,b12",            ",,",",,,,,",",,",              ",,,2,,3,,,3,,3,,,,3,,,1",                                           [,,]                   , "b1,b3,b7,b8",,,,",,3,,1,,,,1,,2",                                                                                                  [,,] , "b1,b3,b7,b8",,,,",,1,,1,,,,2,,1",                                              [,,]],
@@ -1786,6 +1786,7 @@ const UCL_klubb_poeng_20_21 = [
 
 function regnUtKlubbKoeff(data, sesong) {
 	if (data != "") {
+          if (sesong >= 3) {return 0.0001}
 		let sum = 0;
           let knapper = ""
 		try {
@@ -1864,21 +1865,16 @@ function regnUtKlubbKoeff(data, sesong) {
 			return sum;
 		}
 		else {
-               if (sesong < 3) {
-                    if (knapper.includes("CLPO") || knapper.includes("b13")) {
-                         return 3.0;}
-                    else if (knapper.includes("b6") || knapper.includes("b9") || knapper.includes("b10") || knapper.includes("b14") || knapper.includes("b15")) {
-                         return 2.5;}
-                    else if (knapper.includes("uelQ2") || knapper.includes("b11")) {
-                         return 2.0;}
-                    else if (knapper.includes("b2") || knapper.includes("b3") || knapper.includes("uelQ1") || knapper.includes("b7")) {
-                         return 1.5;}
-                    else if (knapper.includes("b4")) {
-                         return 1.0;}
-               }
-               else {
-                    return 0;
-               }
+               if (knapper.includes("CLPO") || knapper.includes("b13")) {
+                    return 3.0;}
+               else if (knapper.includes("b6") || knapper.includes("b9") || knapper.includes("b10") || knapper.includes("b14") || knapper.includes("b15")) {
+                    return 2.5;}
+               else if (knapper.includes("uelQ2") || knapper.includes("b11")) {
+                    return 2.0;}
+               else if (knapper.includes("b2") || knapper.includes("b3") || knapper.includes("uelQ1") || knapper.includes("b7")) {
+                    return 1.5;}
+               else if (knapper.includes("b4")) {
+                    return 1.0;}
 		}
 	}
 	return undefined;
