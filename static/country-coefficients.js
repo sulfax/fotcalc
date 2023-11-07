@@ -134,7 +134,7 @@ let forrigeUkeData = [
   ["SWE", 1.875, 24, 25, 22, 23, 38],
   ["ROU", 3.250, 25, 26, 28, 17, 22],
   ["HUN", 3.250, 26, 24, 27, 18, 22],
-  ["SVK", 3.750, 26, 27, 21, 16, 18],
+  ["SVK", 3.750, 27, 27, 21, 16, 18],
   ["BUL", 2.375, 28, 29, 30, 27, 32],
   ["AZE", 3.625, 29, 28, 26, 25, 19],
   ["MDA", 2.000, 30, 30, 29, 32, 36],
@@ -883,7 +883,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
           rangeringEndring = "";
         }
         else if (klatring < 0) {
-          rangeringEndring = "<span class='negKlatring'>⇓" + klatring*(-1) + "</span>";
+          rangeringEndring = "<span class='negKlatring'>U+25B2" + klatring*(-1) + "</span>";
           ekstra_bredde = false;
         }
         else {
