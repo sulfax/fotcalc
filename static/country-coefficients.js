@@ -48,6 +48,65 @@ let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText
 // Skal legge landskoeffisientpoengene inn her:
 let landskoeffisienter_totalt = []
 
+let flaggEmoji = [
+  ["ENG", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"],
+  ["ESP", "🇪🇸"], 
+  ["ITA", "🇮🇹"], 
+  ["GER", "🇩🇪"], 
+  ["NED", "🇳🇱"], 
+  ["FRA", "🇫🇷"], 
+  ["POR", "🇵🇹"], 
+  ["BEL", "🇧🇪"], 
+  ["TUR", "🇹🇷"], 
+  ["SCO", "🏴󠁧󠁢󠁳󠁣󠁴󠁿"], 
+  ["AUT", "🇦🇹"], 
+  ["SUI", "🇨🇭"], 
+  ["CZE", "🇨🇿"], 
+  ["DEN", "🇩🇰"], 
+  ["NOR", "🇳🇴"], 
+  ["SRB", "🇷🇸"], 
+  ["UKR", "🇺🇦"], 
+  ["ISR", "🇮🇱"], 
+  ["GRE", "🇬🇷"], 
+  ["POL", "🇵🇱"], 
+  ["CRO", "🇭🇷"], 
+  ["RUS", "🇷🇺"], 
+  ["CYP", "🇨🇾"], 
+  ["SWE", "🇸🇪"], 
+  ["ROU", "🇷🇴"], 
+  ["HUN", "🇭🇺"], 
+  ["SVK", "🇸🇰"], 
+  ["BUL", "🇧🇬"], 
+  ["AZE", "🇦🇿"], 
+  ["MDA", "🇲🇩"], 
+  ["SVN", "🇸🇮"], 
+  ["KVX", "🇽🇰"], 
+  ["KAZ", "🇰🇿"], 
+  ["IRL", "🇮🇪"], 
+  ["FIN", "🇫🇮"], 
+  ["ARM", "🇦🇲"], 
+  ["LVA", "🇱🇻"], 
+  ["FRO", "🇫🇴"], 
+  ["LIE", "🇱🇮"], 
+  ["BIH", "🇧🇦"], 
+  ["ISL", "🇮🇸"], 
+  ["NIR", "#NIR"], 
+  ["LUX", "🇱🇺"], 
+  ["LTU", "🇱🇹"], 
+  ["MLT", "🇲🇹"], 
+  ["GEO", "🇬🇪"], 
+  ["ALB", "🇦🇱"], 
+  ["EST", "🇪🇪"], 
+  ["BLR", "🇧🇾"], 
+  ["MKD", "🇲🇰"], 
+  ["AND", "🇦🇩"], 
+  ["WAL", "🏴󠁧󠁢󠁷󠁬󠁳󠁿"], 
+  ["MNE", "🇲🇪"], 
+  ["GIB", "🇬🇮"], 
+  ["SMR", "🇸🇲"],
+]
+
+
 let forrigeUkeData = [
   ["ENG", 6.250,  1,  1,  1,  1,  5],
   ["ESP", 6.187,  2,  3,  3,  4,  6],
@@ -75,7 +134,7 @@ let forrigeUkeData = [
   ["SWE", 1.875, 24, 25, 22, 23, 38],
   ["ROU", 3.250, 25, 26, 28, 17, 22],
   ["HUN", 3.250, 26, 24, 27, 18, 22],
-  ["SVK", 3.750, 27, 27, 21, 16, 18],
+  ["SVK", 3.750, 26, 27, 21, 16, 18],
   ["BUL", 2.375, 28, 29, 30, 27, 32],
   ["AZE", 3.625, 29, 28, 26, 25, 19],
   ["MDA", 2.000, 30, 30, 29, 32, 36],
@@ -804,6 +863,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
   testTabell.innerHTML = '';
   var helTabellHTML = '';
   let spraak = localStorage.getItem("someVarKey");
+  let twitterDataTAB = [];
   let twitterData = "";
   for (i = 0; i < ranking_array.length; i++) {
     for (p = 0; p < landskoeffisienter.length; p++) {
@@ -823,11 +883,11 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
           rangeringEndring = "";
         }
         else if (klatring < 0) {
-          rangeringEndring = "<span class='negKlatring'> (" + klatring + ")</span>";
+          rangeringEndring = "<span class='negKlatring'>⇓" + klatring*(-1) + "</span>";
           ekstra_bredde = false;
         }
         else {
-          rangeringEndring = "<span class='posKlatring'> (+" + klatring + ")</span>";
+          rangeringEndring = "<span class='posKlatring'>(↑" + klatring + ")</span>";
           ekstra_bredde = false;
         }
       }
@@ -924,8 +984,15 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
         rad_test = '<tr>' + rad_test
       }
       helTabellHTML += rad_test
-      // twitterData += ('["' + ranking_array[i][0] + '", ' + ranking_array[i][2] + "],\n");
+      // twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2]]);
   }
+  // for (let i = 0; i < flaggEmoji.length; i++) {
+  //   for (let j = 0; j < twitterDataTAB.length; j++) {
+  //     if (flaggEmoji[i][0] == twitterDataTAB[j][0]) {
+  //       twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + "],\n");
+  //     }
+  //   }
+  // }
   // navigator.clipboard.writeText(twitterData);
   testTabell.innerHTML = helTabellHTML;
 }
@@ -2017,63 +2084,6 @@ function access_list(spraak) {
   }
 }
 
-// let flaggEmoji = [
-//   ["ENG", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"],
-//   ["ESP", "🇪🇸"], 
-//   ["ITA", "🇮🇹"], 
-//   ["GER", "🇩🇪"], 
-//   ["NED", "🇳🇱"], 
-//   ["FRA", "🇫🇷"], 
-//   ["POR", "🇵🇹"], 
-//   ["BEL", "🇧🇪"], 
-//   ["TUR", "🇹🇷"], 
-//   ["SCO", "🏴󠁧󠁢󠁳󠁣󠁴󠁿"], 
-//   ["AUT", "🇦🇹"], 
-//   ["SUI", "🇨🇭"], 
-//   ["CZE", "🇨🇿"], 
-//   ["DEN", "🇩🇰"], 
-//   ["NOR", "🇳🇴"], 
-//   ["SRB", "🇷🇸"], 
-//   ["UKR", "🇺🇦"], 
-//   ["ISR", "🇮🇱"], 
-//   ["GRE", "🇬🇷"], 
-//   ["POL", "🇵🇱"], 
-//   ["CRO", "🇭🇷"], 
-//   ["RUS", "🇷🇺"], 
-//   ["CYP", "🇨🇾"], 
-//   ["SWE", "🇸🇪"], 
-//   ["ROU", "🇷🇴"], 
-//   ["HUN", "🇭🇺"], 
-//   ["SVK", "🇸🇰"], 
-//   ["BUL", "🇧🇬"], 
-//   ["AZE", "🇦🇿"], 
-//   ["MDA", "🇲🇩"], 
-//   ["SVN", "🇸🇮"], 
-//   ["KVX", "🇽🇰"], 
-//   ["KAZ", "🇰🇿"], 
-//   ["IRL", "🇮🇪"], 
-//   ["FIN", "🇫🇮"], 
-//   ["ARM", "🇦🇲"], 
-//   ["LVA", "🇱🇻"], 
-//   ["FRO", "🇫🇴"], 
-//   ["LIE", "🇱🇮"], 
-//   ["BIH", "🇧🇦"], 
-//   ["ISL", "🇮🇸"], 
-//   ["NIR", "#NIR"], 
-//   ["LUX", "🇱🇺"], 
-//   ["LTU", "🇱🇹"], 
-//   ["MLT", "🇲🇹"], 
-//   ["GEO", "🇬🇪"], 
-//   ["ALB", "🇦🇱"], 
-//   ["EST", "🇪🇪"], 
-//   ["BLR", "🇧🇾"], 
-//   ["MKD", "🇲🇰"], 
-//   ["AND", "🇦🇩"], 
-//   ["WAL", "🏴󠁧󠁢󠁷󠁬󠁳󠁿"], 
-//   ["MNE", "🇲🇪"], 
-//   ["GIB", "🇬🇮"], 
-//   ["SMR", "🇸🇲"],
-// ]
 
 
 
