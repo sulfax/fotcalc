@@ -883,11 +883,11 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
           rangeringEndring = "";
         }
         else if (klatring < 0) {
-          rangeringEndring = "<span class='negKlatring'>U+25B2" + klatring*(-1) + "</span>";
+          rangeringEndring = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
           ekstra_bredde = false;
         }
         else {
-          rangeringEndring = "<span class='posKlatring'>(↑" + klatring + ")</span>";
+          rangeringEndring = "<span class='posKlatring'>⏶" + klatring + "</span>";
           ekstra_bredde = false;
         }
       }
