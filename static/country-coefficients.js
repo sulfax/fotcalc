@@ -48,6 +48,64 @@ let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText
 // Skal legge landskoeffisientpoengene inn her:
 let landskoeffisienter_totalt = []
 
+let forrigeUkeData = [
+  ["ENG", 6.250,  1,  1,  1,  1,  5],
+  ["ESP", 6.187,  2,  3,  3,  4,  6],
+  ["ITA", 6.571,  3,  2,  2,  2,  3],
+  ["GER", 6.357,  4,  4,  4,  3,  4],
+  ["NED", 5.800,  5,  5,  5,  7,  8],
+  ["FRA", 5.750,  6,  6,  6,  8,  9],
+  ["POR", 4.500,  7,  7,  7,  9,  13],
+  ["BEL", 7.400,  8,  8,  8,  5,  2],
+  ["TUR", 8.750,  9,  9,  9,  6,  1],
+  ["SCO", 3.000, 10, 16, 19, 31, 25],
+  ["AUT", 3.200, 11, 11, 13, 24, 24],
+  ["SUI", 3.000, 12, 12, 10, 12, 25],
+  ["CZE", 5.750, 13, 10, 11, 11, 9],
+  ["DEN", 5.250, 14, 15, 12, 13, 11],
+  ["NOR", 4.250, 15, 13, 14, 15, 15],
+  ["SRB", 1.400, 16, 17, 17, 29, 46],
+  ["UKR", 2.700, 17, 20, 25, 21, 31],
+  ["ISR", 4.000, 18, 14, 16, 14, 16],
+  ["GRE", 6.000, 19, 19, 18, 22, 7],
+  ["POL", 5.125, 20, 18, 15, 10, 12],
+  ["CRO", 3.375, 21, 21, 23, 30, 21],
+  ["RUS", 4.333, 22, 22, 20, 19, 14],
+  ["CYP", 3.500, 23, 23, 24, 20, 20],
+  ["SWE", 1.875, 24, 25, 22, 23, 38],
+  ["ROU", 3.250, 25, 26, 28, 17, 22],
+  ["HUN", 3.250, 26, 24, 27, 18, 22],
+  ["SVK", 3.750, 27, 27, 21, 16, 18],
+  ["BUL", 2.375, 28, 29, 30, 27, 32],
+  ["AZE", 3.625, 29, 28, 26, 25, 19],
+  ["MDA", 2.000, 30, 30, 29, 32, 36],
+  ["SVN", 2.875, 31, 31, 32, 34, 27],
+  ["KVX", 2.750, 32, 32, 33, 33, 29],
+  ["KAZ", 2.875, 33, 39, 38, 41, 27],
+  ["IRL", 1.500, 34, 33, 35, 36, 42],
+  ["FIN", 1.500, 35, 35, 34, 39, 42],
+  ["ARM", 2.250, 36, 40, 40, 37, 33],
+  ["LVA", 1.625, 37, 37, 36, 38, 41],
+  ["FRO", 2.750, 38, 34, 39, 35, 29],
+  ["LIE", 0.500, 39, 42, 37, 26, 52],
+  ["BIH", 2.000, 40, 38, 42, 42, 36],
+  ["ISL", 3.833, 41, 36, 31, 28, 17],
+  ["NIR", 1.125, 42, 44, 47, 49, 49],
+  ["LUX", 2.250, 43, 47, 45, 44, 33],
+  ["LTU", 1.125, 44, 43, 43, 43, 49],
+  ["MLT", 1.500, 45, 41, 41, 39, 42],
+  ["GEO", 1.250, 46, 49, 50, 48, 48],
+  ["ALB", 2.125, 47, 45, 46, 46, 35],
+  ["EST", 0.125, 48, 46, 44, 53, 55],
+  ["BLR", 1.750, 49, 53, 53, 47, 39],
+  ["MKD", 1.500, 50, 48, 49, 45, 42],
+  ["AND", 1.666, 51, 52, 48, 51, 40],
+  ["WAL", 0.625, 52, 50, 51, 52, 51],
+  ["MNE", 1.333, 53, 51, 52, 50, 47],
+  ["GIB", 0.166, 54, 54, 54, 55, 54],
+  ["SMR", 0.333, 55, 55, 55, 54, 53],
+]
+
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   landskoeffisienter_totalt = []
@@ -755,6 +813,28 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       }
     }
     let nummer = i+1
+    let rangeringEndring;
+    let ekstra_bredde = true;
+    let ekstra_bredde2 = "";
+    for (let j = 0; j < forrigeUkeData.length; j++) {
+      if (forrigeUkeData[j][0] == ranking_array[i][0]) {
+        let klatring = forrigeUkeData[j][2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2])]-ranking_array[i][14] || 0;
+        if (klatring == 0) {
+          rangeringEndring = "";
+        }
+        else if (klatring < 0) {
+          rangeringEndring = "<span class='negKlatring'> (" + klatring + ")</span>";
+          ekstra_bredde = false;
+        }
+        else {
+          rangeringEndring = "<span class='posKlatring'> (+" + klatring + ")</span>";
+          ekstra_bredde = false;
+        }
+      }
+    }
+    if (i == ranking_array.length-1 && ekstra_bredde) {
+      ekstra_bredde2 = "ekstra_bredde2"
+    }
     if (nummer <= 3) {
       nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][15] + '<img src="media/kolonnefjerner.png">';
     } else {nummer = ranking_array[i][15]}
@@ -821,7 +901,8 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
       var rad_test = `
                     <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${nummer}</td>
-                    <td class="id_nr">${ranking_array[i][14]}</td>
+                    <td class="id_nr"><span class="midt">${ranking_array[i][14]}</span></td>
+                    <td class="id_nr rangeringEndring ${ekstra_bredde2}">${rangeringEndring}</td>
                     <td class="grense_celle"><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne" class="grense_celle">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
@@ -1031,7 +1112,7 @@ function forside_ø_koeff(i, kolonne) {
   // $('#tabell_overordnet td').show()
   var rows = document.getElementsByTagName("table")[0].rows;
   var last = rows[i+1];
-  var cell = last.cells[2];
+  var cell = last.cells[3];
   let filter_land_før = [];
   let land = ''
   let str = (cell.innerHTML);
@@ -1994,63 +2075,7 @@ function access_list(spraak) {
 //   ["SMR", "🇸🇲"],
 // ]
 
-// let forrigeUkeData = [
-//   ["ENG", 4.750],
-//   ["ESP", 5.062],
-//   ["ITA", 5.285],
-//   ["GER", 4.642],
-//   ["NED", 5.200],
-//   ["FRA", 4.250],
-//   ["POR", 4.000],
-//   ["BEL", 6.000],
-//   ["TUR", 8.250],
-//   ["SCO", 2.600],
-//   ["AUT", 3.000],
-//   ["SUI", 2.800],
-//   ["SRB", 1.400],
-//   ["DEN", 4.750],
-//   ["CZE", 5.000],
-//   ["NOR", 3.250],
-//   ["UKR", 2.700],
-//   ["ISR", 4.000],
-//   ["GRE", 5.200],
-//   ["CRO", 3.375],
-//   ["RUS", 4.333],
-//   ["POL", 4.375],
-//   ["CYP", 3.500],
-//   ["SWE", 1.875],
-//   ["ROU", 3.250],
-//   ["HUN", 3.000],
-//   ["SVK", 3.750],
-//   ["BUL", 2.375],
-//   ["AZE", 3.625],
-//   ["MDA", 1.750],
-//   ["SVN", 2.875],
-//   ["KVX", 2.750],
-//   ["IRL", 1.500],
-//   ["FIN", 1.500],
-//   ["KAZ", 2.375],
-//   ["ARM", 2.250],
-//   ["LVA", 1.625],
-//   ["LIE", 0.500],
-//   ["FRO", 2.250],
-//   ["BIH", 2.000],
-//   ["ISL", 3.833],
-//   ["NIR", 1.125],
-//   ["LUX", 2.250],
-//   ["LTU", 1.125],
-//   ["MLT", 1.500],
-//   ["GEO", 1.250],
-//   ["ALB", 2.125],
-//   ["EST", 0.125],
-//   ["BLR", 1.750],
-//   ["MKD", 1.500],
-//   ["AND", 1.666],
-//   ["WAL", 0.625],
-//   ["MNE", 1.333],
-//   ["GIB", 0.166],
-//   ["SMR", 0.333],
-// ]
+
 
 // let rader = document.getElementById('tabell_hoved').rows
 // let twitterLimInn = [];

@@ -28,7 +28,7 @@
     margin: auto;
 }
 
-@media (min-width:900px) {
+@media (min-width:950px) {
     .container_ {
         width: 922px;
     }
@@ -324,11 +324,39 @@ th, td {
     font-family: "Noto Sans Math", monospace;
     text-align: right;
 }
-.id_nr {
-    max-width: 42px;
-    min-width: 42px;
-    width: 42px;
-    text-align: center;
+.id_nr:not(.rangeringEndring, #id_nr) {
+    padding-left: 12px;
+    padding-right: 0px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+}
+#id_nr {
+    padding-left: 8px;
+    text-align:left;
+}
+#land {
+    width: 20px !important;
+}
+.midt {
+    width: 18.66px;
+    display: inline-block;
+    text-align: center !important;
+}
+.rangeringEndring:not(.ekstra_bredde2) {
+    padding-right: 0px !important;
+    padding-left: 4px !important;
+    width: 0px;
+    padding-right: 1px !important;
+}
+.ekstra_bredde2 {
+    width: 27px !important;
+    min-width: 27px !important;
+}
+.posKlatring {
+    color: rgb(63, 159, 63);
+}
+.negKlatring {
+    color: rgb(255, 119, 119);
 }
 .id_nr_klubb {
     max-width: 42px;
