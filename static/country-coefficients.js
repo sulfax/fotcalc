@@ -65,9 +65,9 @@ let forrigeUkeData = [
   ["DEN", 5.250, 14, 15, 12, 13, 11],
   ["NOR", 4.250, 15, 13, 14, 15, 15],
   ["SRB", 1.400, 16, 17, 17, 29, 46],
-  ["UKR", 2.700, 17, 20, 25, 21, 31],
-  ["ISR", 4.000, 18, 14, 16, 14, 16],
-  ["GRE", 6.000, 19, 19, 18, 22, 7],
+  ["UKR", 3.700, 17, 20, 25, 21, 31],
+  ["ISR", 2.000, 18, 14, 16, 14, 16],
+  ["GRE", 6.030, 19, 19, 18, 22, 7],
   ["POL", 5.125, 20, 18, 15, 10, 12],
   ["CRO", 3.375, 21, 21, 23, 30, 21],
   ["RUS", 4.333, 22, 22, 20, 19, 14],
@@ -2081,12 +2081,12 @@ function access_list(spraak) {
 // let twitterLimInn = [];
 // for (i = 0; i < forrigeUkeData.length; i++) {
 //   for (let k = 0; k < 55; k++) {
-//     let fjernSVG = rader[1+k].cells[2].innerHTML.split('.svg')[0];
+//     let fjernSVG = rader[1+k].cells[3].innerHTML.split('.svg')[0];
 //     let landskode = fjernSVG.substr(fjernSVG.length - 3);
 //     if (forrigeUkeData[i][0] == landskode) {
 //       for (let j = 0; j < flaggEmoji.length; j++) {
 //         if (flaggEmoji[j][0] == landskode) {
-//           twitterLimInn.push([flaggEmoji[j][1], parseFloat(rader[1+k].cells[5].innerText - forrigeUkeData[i][1])]);
+//           twitterLimInn.push([flaggEmoji[j][1], parseFloat(rader[1+k].cells[6].innerText - forrigeUkeData[i][1])]);
 //         }
 //       }
 //     }
