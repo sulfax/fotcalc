@@ -889,14 +889,15 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     let rangeringEndring_ = "";
     let ekstra_bredde_ = true;
     let ekstra_bredde2_ = "";
+    let denne_sesongen = nåværende_sesong_periode_valg[2];
     if (column == "id_nr") {
       for (let j = 0; j < forrigeUkeData.length; j++) {
         if (forrigeUkeData[j][0] == ranking_array[i][0]) {
-          if (2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2]) < 2) {
+          if (2+(aar_etter_forste_periode+22-denne_sesongen) < 2) {
             rangeringEndring = "";
           }
           else {
-            let klatring = forrigeUkeData[j][2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2])]-ranking_array[i][14] || 0;
+            let klatring = forrigeUkeData[j][2+(aar_etter_forste_periode+22-denne_sesongen)]-ranking_array[i][14] || 0;
             if (klatring == 0) {
               rangeringEndring = "";
             }
@@ -924,7 +925,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     }else {
       for (let j = 0; j < forrigeUkeData.length; j++) {
         if (forrigeUkeData[j][0] == ranking_array[i][0]) {
-          if (aar_etter_forste_periode - column[6] != nåværende_sesong_periode_valg[2]-23) {
+          if (aar_etter_forste_periode - column[6] != denne_sesongen-23) {
             rangeringEndring_ = "";
           }
           else {
@@ -1040,17 +1041,39 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
                     ${tom_kolonne}
                     ${klubber_igjen}
                 </tr>`
-      if ((i == 4 && aar_etter_forste_periode > 0) || (i == 5 && aar_etter_forste_periode > 0) || (i == 3 && aar_etter_forste_periode <= 0) || (i == 5 && aar_etter_forste_periode <= 0) || i == 14 || i == 49) {
-        rad_test = '<tr class="grense">' + rad_test
+      if (column == "id_nr") {
+        if (order == "asc") {
+          if ((i == 4 && aar_etter_forste_periode > 0) || (i == 5 && aar_etter_forste_periode > 0) || (i == 3 && aar_etter_forste_periode <= 0) || (i == 5 && aar_etter_forste_periode <= 0) || i == 14 || i == 49) {
+            rad_test = '<tr class="grense">' + rad_test
+          }
+          else if (i == 9 || (i == 21 && aar_etter_forste_periode > 0) || (i == 32 && aar_etter_forste_periode > 0) || (i == 37 && aar_etter_forste_periode > 0) || (i == 28 && aar_etter_forste_periode <= 0) || (i == 50 && aar_etter_forste_periode <= 0)) {
+            rad_test = '<tr class="grense2">' + rad_test
+          }
+          else {
+            rad_test = '<tr>' + rad_test
+          }
+        }
+        else {
+          speilTall = ranking_array.length-2;
+          if ((i == speilTall-4 && aar_etter_forste_periode > 0) || (i == speilTall-5 && aar_etter_forste_periode > 0) || (i == speilTall-3 && aar_etter_forste_periode <= 0) || (i == speilTall-5 && aar_etter_forste_periode <= 0) || i == speilTall-14 || i == speilTall-49) {
+            rad_test = '<tr class="grense">' + rad_test
+          }
+          else if (i == speilTall-9 || (i == speilTall-21 && aar_etter_forste_periode > 0) || (i == speilTall-32 && aar_etter_forste_periode > 0) || (i == speilTall-37 && aar_etter_forste_periode > 0) || (i == speilTall-28 && aar_etter_forste_periode <= 0) || (i == speilTall-50 && aar_etter_forste_periode <= 0)) {
+            rad_test = '<tr class="grense2">' + rad_test
+          }
+          else {
+            rad_test = '<tr>' + rad_test
+          }
+        }
       }
-      else if (i == 9 || (i == 21 && aar_etter_forste_periode > 0) || (i == 32 && aar_etter_forste_periode > 0) || (i == 37 && aar_etter_forste_periode > 0) || (i == 28 && aar_etter_forste_periode <= 0) || (i == 50 && aar_etter_forste_periode <= 0)) {
-        rad_test = '<tr class="grense2">' + rad_test
+      else if ((i == 1 && order == "desc") || (i == 52 && order == "asc")) {
+        rad_test = '<tr class="grense">' + rad_test
       }
       else {
         rad_test = '<tr>' + rad_test
       }
       helTabellHTML += rad_test
-      // if (nåværende_sesong_periode_valg[2]-22 == aar_etter_forste_periode) {
+      // if (denne_sesongen-22 == aar_etter_forste_periode) {
       //   twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2], ranking_array[i][14]]);
       // }
       // else {
