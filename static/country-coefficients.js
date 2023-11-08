@@ -23,6 +23,7 @@ if (filter_land_før == '') {
 let antall_MV_elem = 6;
 let ranking_array = []
 let land_ranking = []
+let twitterDataTAB = [];
 
 const tilgangslister = ['https://kassiesa.net/uefa/AccessList2022.html',
                         'https://kassiesa.net/uefa/AccessList2023.html',
@@ -108,25 +109,25 @@ let flaggEmoji = [
 
 
 let forrigeUkeData = [
-  ["ENG", 6.250,  1,  1,  1,  1,  5],
-  ["ESP", 6.187,  2,  3,  3,  4,  6],
-  ["ITA", 6.571,  3,  2,  2,  2,  3],
-  ["GER", 6.357,  4,  4,  4,  3,  4],
-  ["NED", 5.800,  5,  5,  5,  7,  8],
-  ["FRA", 5.750,  6,  6,  6,  8,  9],
-  ["POR", 4.500,  7,  7,  7,  9,  13],
-  ["BEL", 7.400,  8,  8,  8,  5,  2],
-  ["TUR", 8.750,  9,  9,  9,  6,  1],
+  ["ENG", 6.250, 1, 1, 1, 1, 5],
+  ["ESP", 6.187, 2, 3, 3, 4, 6],
+  ["ITA", 6.571, 3, 2, 2, 2, 3],
+  ["GER", 6.357, 4, 4, 4, 3, 4],
+  ["NED", 5.800, 5, 5, 5, 7, 8],
+  ["FRA", 5.750, 6, 6, 6, 8, 9],
+  ["POR", 4.500, 7, 7, 7, 9, 13],
+  ["BEL", 7.400, 8, 8, 8, 5, 2],
+  ["TUR", 8.750, 9, 9, 9, 6, 1],
   ["SCO", 3.000, 10, 16, 19, 31, 25],
   ["AUT", 3.200, 11, 11, 13, 24, 24],
   ["SUI", 3.000, 12, 12, 10, 12, 25],
-  ["CZE", 5.750, 13, 10, 11, 11,  9],
+  ["CZE", 5.750, 13, 10, 11, 11, 9],
   ["DEN", 5.250, 14, 15, 12, 13, 11],
   ["NOR", 4.250, 15, 13, 14, 15, 15],
   ["SRB", 1.400, 16, 17, 17, 29, 46],
   ["UKR", 2.700, 17, 20, 25, 21, 31],
   ["ISR", 4.000, 18, 14, 16, 14, 16],
-  ["GRE", 6.000, 19, 19, 18, 22,  7],
+  ["GRE", 6.000, 19, 19, 18, 22, 7],
   ["POL", 5.125, 20, 18, 15, 10, 12],
   ["CRO", 3.375, 21, 21, 23, 30, 21],
   ["RUS", 4.333, 22, 22, 20, 19, 14],
@@ -164,6 +165,7 @@ let forrigeUkeData = [
   ["GIB", 0.166, 54, 54, 54, 55, 54],
   ["SMR", 0.333, 55, 55, 55, 54, 53],
 ]
+
 
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
@@ -863,7 +865,6 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
   testTabell.innerHTML = '';
   var helTabellHTML = '';
   let spraak = localStorage.getItem("someVarKey");
-  let twitterDataTAB = [];
   let twitterData = "";
   for (i = 0; i < ranking_array.length; i++) {
     for (p = 0; p < landskoeffisienter.length; p++) {
@@ -989,12 +990,21 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
         rad_test = '<tr>' + rad_test
       }
       helTabellHTML += rad_test
-      // twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2]]);
+      // if (nåværende_sesong_periode_valg[2]-22 == aar_etter_forste_periode) {
+      //   twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2], ranking_array[i][14]]);
+      // }
+      // else {
+      //   for(let p = 0; p < twitterDataTAB.length; p++) {
+      //     if(twitterDataTAB[p][0] == ranking_array[i][0]) {
+      //       twitterDataTAB[p].push(ranking_array[i][14]);
+      //     }
+      //   }
+      // }
   }
   // for (let i = 0; i < flaggEmoji.length; i++) {
   //   for (let j = 0; j < twitterDataTAB.length; j++) {
   //     if (flaggEmoji[i][0] == twitterDataTAB[j][0]) {
-  //       twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + "],\n");
+  //       twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + ', ' + twitterDataTAB[j][2] + ', ' + twitterDataTAB[j][3] + ', ' + twitterDataTAB[j][4] + ', ' + twitterDataTAB[j][5] + ', ' + twitterDataTAB[j][6] + "],\n");
   //     }
   //   }
   // }
