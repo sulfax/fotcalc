@@ -342,7 +342,7 @@ th, td {
     display: inline-block;
     text-align: center !important;
 }
-.id_nr_klubb:not(.rangeringEndring_) {
+#tabell_hoved .id_nr_klubb:not(.rangeringEndring_) {
     max-width: 30px;
     min-width: 30px;
     padding-left: 11px;
@@ -350,6 +350,13 @@ th, td {
     width: 30px;
     border-right: 0px solid rgba(177, 177, 177, 1) !important;
 }
+
+#tabell_klubb .id_nr_klubb {
+    max-width: 42px;
+    min-width: 42px;
+    text-align: center !important;
+}
+
 .rangeringEndring:not(.ekstra_bredde2) {
     padding-right: 0px !important;
     padding-left: 4px !important;
