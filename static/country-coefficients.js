@@ -862,6 +862,15 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 
 // Mange fine flaggikoner: https://github.com/HatScripts/circle-flags
 function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order) {
+  let ekstremt_utydelig = "";
+  let ekstremt_utydelig2 = "";
+  if (column == "id_nr") {
+    ekstremt_utydelig = "ekstremt_utydelig";
+  }
+  else {
+    ekstremt_utydelig = "ganske_utydelig";
+    ekstremt_utydelig2 = "ekstremt_utydelig2";
+  }
   testTabell.innerHTML = '';
   var helTabellHTML = '';
   let spraak = localStorage.getItem("someVarKey");
@@ -877,6 +886,9 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     let rangeringEndring = "";
     let ekstra_bredde = true;
     let ekstra_bredde2 = "";
+    let rangeringEndring_ = "";
+    let ekstra_bredde_ = true;
+    let ekstra_bredde2_ = "";
     if (column == "id_nr") {
       for (let j = 0; j < forrigeUkeData.length; j++) {
         if (forrigeUkeData[j][0] == ranking_array[i][0]) {
@@ -909,9 +921,44 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
           }
         }
       }
+    }else {
+      for (let j = 0; j < forrigeUkeData.length; j++) {
+        if (forrigeUkeData[j][0] == ranking_array[i][0]) {
+          if (aar_etter_forste_periode - column[6] != nåværende_sesong_periode_valg[2]-23) {
+            rangeringEndring_ = "";
+          }
+          else {
+            let klatring = forrigeUkeData[j][forrigeUkeData[j].length-1]-ranking_array[i][15] || 0;
+            if (klatring == 0) {
+              rangeringEndring_ = "";
+            }
+            else if (klatring < 0) {
+              if (order == "asc") {
+                rangeringEndring_ = "<span class='negKlatring'>⏶" + klatring*(-1) + "</span>";
+              }
+              else {
+                rangeringEndring_ = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
+              }
+              ekstra_bredde_ = false;
+            }
+            else {
+              if (order == "asc") {
+                rangeringEndring_ = "<span class='posKlatring'>⏷" + klatring + "</span>";
+              }
+              else {
+                rangeringEndring_ = "<span class='posKlatring'>⏶" + klatring + "</span>";
+              }
+              ekstra_bredde_ = false;
+            }
+          }
+        }
+      }
     }
     if (i == ranking_array.length-1 && ekstra_bredde) {
       ekstra_bredde2 = "ekstra_bredde2"
+    }
+    if (i == ranking_array.length-1 && ekstra_bredde_) {
+      ekstra_bredde2_ = "ekstra_bredde2"
     }
     if (nummer <= 3) {
       nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][15] + '<img src="media/kolonnefjerner.png">';
@@ -978,9 +1025,10 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
       if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
       var rad_test = `
-                    <td class="id_nr_klubb ekstremt_utydelig ramme_hoyre">${nummer}</td>
-                    <td class="id_nr"><span class="midt">${ranking_array[i][14]}</span></td>
-                    <td class="id_nr rangeringEndring ${ekstra_bredde2}">${rangeringEndring}</td>
+                    <td class="id_nr_klubb ${ekstremt_utydelig} ramme_hoyre"><span class="midt">${nummer}</span></td>
+                    <td class="id_nr_klubb rangeringEndring_ ${ekstremt_utydelig} ramme_hoyre ${ekstra_bredde2_}">${rangeringEndring_}</td>
+                    <td class="id_nr ${ekstremt_utydelig2}"><span class="midt">${ranking_array[i][14]}</span></td>
+                    <td class="id_nr ${ekstremt_utydelig2} rangeringEndring ${ekstra_bredde2}">${rangeringEndring}</td>
                     <td class="grense_celle"><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
                     <td id="tom_kolonne" class="grense_celle">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>

@@ -342,28 +342,44 @@ th, td {
     display: inline-block;
     text-align: center !important;
 }
+.id_nr_klubb:not(.rangeringEndring_) {
+    max-width: 30px;
+    min-width: 30px;
+    padding-left: 11px;
+    padding-right: 0px !important;
+    width: 30px;
+    border-right: 0px solid rgba(177, 177, 177, 1) !important;
+}
 .rangeringEndring:not(.ekstra_bredde2) {
     padding-right: 0px !important;
     padding-left: 4px !important;
     width: 0px;
     padding-right: 4px !important;
 }
+.rangeringEndring_:not(.ekstra_bredde2_) {
+    padding-right: 0px !important;
+    padding-left: 3px !important;
+    width: 0px;
+    padding-right: 8px !important;
+}
 .ekstra_bredde2 {
-    width: 27px !important;
-    min-width: 27px !important;
+    width: 11px !important;
+    min-width: 11px !important;
+}
+.ekstremt_utydelig {
+    color: rgba(135, 142, 150, 0.4) !important;
+}
+.ganske_utydelig {
+    color: #4e565e !important;
+}
+.ekstremt_utydelig2 {
+    color: rgba(135, 142, 150, 0.7) !important;
 }
 .posKlatring {
     color: rgb(63, 159, 63);
 }
 .negKlatring {
     color: rgb(255, 119, 119);
-}
-.id_nr_klubb {
-    max-width: 42px;
-    min-width: 42px;
-    width: 42px;
-    text-align: center;
-    border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
 .flagg {
     height:19px;
@@ -471,9 +487,6 @@ th, td {
 }
 .bindestrek {
     margin-right: 2px;
-}
-.ekstremt_utydelig {
-    color: rgba(135, 142, 150, 0.4);
 }
 .grense .premie_koeff, .grense .grense_celle, .grense .id_nr, .grense .id_nr_klubb{
     border-bottom: 2px solid rgba(52, 58, 64, 0.38) !important;
