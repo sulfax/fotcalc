@@ -754,7 +754,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       }
     }
   }
-  byggTabell_test(ranking_array, aar_etter_forste_periode)
+  byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
 }
 
 
@@ -861,7 +861,7 @@ function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 
 
 // Mange fine flaggikoner: https://github.com/HatScripts/circle-flags
-function byggTabell_test(ranking_array, aar_etter_forste_periode) {
+function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order) {
   testTabell.innerHTML = '';
   var helTabellHTML = '';
   let spraak = localStorage.getItem("someVarKey");
@@ -888,11 +888,21 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode) {
             rangeringEndring = "";
           }
           else if (klatring < 0) {
-            rangeringEndring = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
+            if (order == "desc") {
+              rangeringEndring = "<span class='negKlatring'>⏶" + klatring*(-1) + "</span>";
+            }
+            else {
+              rangeringEndring = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
+            }
             ekstra_bredde = false;
           }
           else {
-            rangeringEndring = "<span class='posKlatring'>⏶" + klatring + "</span>";
+            if (order == "desc") {
+              rangeringEndring = "<span class='posKlatring'>⏷" + klatring + "</span>";
+            }
+            else {
+              rangeringEndring = "<span class='posKlatring'>⏶" + klatring + "</span>";
+            }
             ekstra_bredde = false;
           }
         }
