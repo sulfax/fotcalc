@@ -874,36 +874,38 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
       }
     }
     let nummer = i+1
-    let rangeringEndring;
+    let rangeringEndring = "";
     let ekstra_bredde = true;
     let ekstra_bredde2 = "";
-    for (let j = 0; j < forrigeUkeData.length; j++) {
-      if (forrigeUkeData[j][0] == ranking_array[i][0]) {
-        if (2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2]) < 2) {
-          rangeringEndring = "";
-        }
-        else {
-          let klatring = forrigeUkeData[j][2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2])]-ranking_array[i][14] || 0;
-          if (klatring == 0) {
+    if (column == "id_nr") {
+      for (let j = 0; j < forrigeUkeData.length; j++) {
+        if (forrigeUkeData[j][0] == ranking_array[i][0]) {
+          if (2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2]) < 2) {
             rangeringEndring = "";
           }
-          else if (klatring < 0) {
-            if (order == "desc") {
-              rangeringEndring = "<span class='negKlatring'>⏶" + klatring*(-1) + "</span>";
-            }
-            else {
-              rangeringEndring = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
-            }
-            ekstra_bredde = false;
-          }
           else {
-            if (order == "desc") {
-              rangeringEndring = "<span class='posKlatring'>⏷" + klatring + "</span>";
+            let klatring = forrigeUkeData[j][2+(aar_etter_forste_periode+22-nåværende_sesong_periode_valg[2])]-ranking_array[i][14] || 0;
+            if (klatring == 0) {
+              rangeringEndring = "";
+            }
+            else if (klatring < 0) {
+              if (order == "desc") {
+                rangeringEndring = "<span class='negKlatring'>⏶" + klatring*(-1) + "</span>";
+              }
+              else {
+                rangeringEndring = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
+              }
+              ekstra_bredde = false;
             }
             else {
-              rangeringEndring = "<span class='posKlatring'>⏶" + klatring + "</span>";
+              if (order == "desc") {
+                rangeringEndring = "<span class='posKlatring'>⏷" + klatring + "</span>";
+              }
+              else {
+                rangeringEndring = "<span class='posKlatring'>⏶" + klatring + "</span>";
+              }
+              ekstra_bredde = false;
             }
-            ekstra_bredde = false;
           }
         }
       }
