@@ -381,6 +381,12 @@ th, td {
 .negKlatring {
     color: rgb(255, 119, 119);
 }
+.ganske_utydelig .posKlatring {
+    color: rgb(82, 160, 82);
+}
+.ganske_utydelig .negKlatring {
+    color: rgb(255, 142, 142);
+}
 .flagg {
     height:19px;
     margin-bottom: 8px;
