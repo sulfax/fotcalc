@@ -361,7 +361,7 @@ th, td {
     padding-right: 0px !important;
     padding-left: 4px !important;
     width: 0px;
-    padding-right: 7px !important;
+    padding-right: 9px !important;
 }
 .rangeringEndring_:not(.ekstra_bredde2_) {
     padding-right: 0px !important;
@@ -383,10 +383,10 @@ th, td {
     color: rgba(135, 142, 150, 0.7) !important;
 }
 .posKlatring {
-    color: rgb(63, 159, 63);
+    color: rgb(110, 179, 110);
 }
 .negKlatring {
-    color: rgb(255, 119, 119);
+    color: rgb(255, 139, 139);
 }
 .ganske_utydelig .posKlatring {
     color: rgb(129, 168, 129);
@@ -398,6 +398,12 @@ th, td {
     margin-right: 2.5px;
     margin-bottom: 2px;
     margin-left: -3px;
+    height: 5.4px;
+}
+.ned_pil_ {
+    margin-right: 2.5px;
+    margin-bottom: 2px;
+    margin-left: -4px;
     height: 5.4px;
 }
 .flagg {
