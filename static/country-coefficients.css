@@ -389,10 +389,16 @@ th, td {
     color: rgb(255, 119, 119);
 }
 .ganske_utydelig .posKlatring {
-    color: rgb(100, 160, 100);
+    color: rgb(129, 168, 129);
 }
 .ganske_utydelig .negKlatring {
     color: rgb(255, 162, 162);
+}
+.ned_pil {
+    margin-right: 2.5px;
+    margin-bottom: 2px;
+    margin-left: -3px;
+    height: 5.4px;
 }
 .flagg {
     height:19px;

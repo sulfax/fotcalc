@@ -903,19 +903,19 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
             }
             else if (klatring < 0) {
               if (order == "desc") {
-                rangeringEndring = "<span class='negKlatring'>⏶" + klatring*(-1) + "</span>";
+                rangeringEndring = "<span class='negKlatring'><img class='ned_pil' src='media/trekant/trekant_opp_speil.svg' alt='arrow up'>" + klatring*(-1) + "</span>";
               }
               else {
-                rangeringEndring = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
+                rangeringEndring = "<span class='negKlatring'><img class='ned_pil' src='media/trekant/trekant_ned.svg' alt='arrow down'>" + klatring*(-1) + "</span>";
               }
               ekstra_bredde = false;
             }
             else {
               if (order == "desc") {
-                rangeringEndring = "<span class='posKlatring'>⏷" + klatring + "</span>";
+                rangeringEndring = "<span class='posKlatring'><img class='ned_pil' src='media/trekant/trekant_ned_speil.svg' alt='arrow down'>" + klatring + "</span>";
               }
               else {
-                rangeringEndring = "<span class='posKlatring'>⏶" + klatring + "</span>";
+                rangeringEndring = "<span class='posKlatring'><img class='ned_pil' src='media/trekant/trekant_opp.svg' alt='arrow up'>" + klatring + "</span>";
               }
               ekstra_bredde = false;
             }
@@ -935,19 +935,19 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
             }
             else if (klatring < 0) {
               if (order == "asc") {
-                rangeringEndring_ = "<span class='negKlatring'>⏶" + klatring*(-1) + "</span>";
+                rangeringEndring_ = "<span class='negKlatring'><img class='ned_pil' src='media/trekant/trekant_opp_utyd_speil.svg' alt='arrow up'>" + klatring*(-1) + "</span>";
               }
               else {
-                rangeringEndring_ = "<span class='negKlatring'>⏷" + klatring*(-1) + "</span>";
+                rangeringEndring_ = "<span class='negKlatring'><img class='ned_pil' src='media/trekant/trekant_ned_utyd.svg' alt='arrow down'>" + klatring*(-1) + "</span>";
               }
               ekstra_bredde_ = false;
             }
             else {
               if (order == "asc") {
-                rangeringEndring_ = "<span class='posKlatring'>⏷" + klatring + "</span>";
+                rangeringEndring_ = "<span class='posKlatring'><img class='ned_pil' src='media/trekant/trekant_ned_utyd_speil.svg' alt='arrow down'>" + klatring + "</span>";
               }
               else {
-                rangeringEndring_ = "<span class='posKlatring'>⏶" + klatring + "</span>";
+                rangeringEndring_ = "<span class='posKlatring'><img class='ned_pil' src='media/trekant/trekant_opp_utyd.svg' alt='arrow up'>" + klatring + "</span>";
               }
               ekstra_bredde_ = false;
             }
