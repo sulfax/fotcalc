@@ -39,12 +39,12 @@ if (sessionStorage.getItem('rekkefølge_landskoeffisient') == 'undefined') {
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
 }
 try {if (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient').length > 10) {
-  sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
+  sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', 2000+nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
 }}
 catch {null;}
-document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
-document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
-let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
+document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (2000+nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (2000+nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(2,4) - 21;
 
 // Skal legge landskoeffisientpoengene inn her:
 let landskoeffisienter_totalt = []
@@ -170,9 +170,9 @@ let forrigeUkeData = [
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
   landskoeffisienter_totalt = []
-  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
-  document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
-  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (2000+nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (2000+nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(2,4) - 21;
   ranking_array = []
   testTabell = document.getElementById('minTest')
 
@@ -501,7 +501,7 @@ $('.tabell_div_landskoeffisient th').on('click', function(){
   else {
       $(this).data('order', "desc")
   }
-  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
+  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(2,4) - 21;
   if (column != undefined) {
     sorter(column, order, tekst, ranking_array, aar_etter_forste_periode)
   }
@@ -1205,8 +1205,8 @@ let valg_navn = document.getElementById('dropDownMeny').innerText.slice(0,-2);
 id = "dropDownMeny";
 for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
   let btn = document.createElement("button");
-  btn.innerHTML = (20 + i) + '/' + (21 + i);
-  if ((20 + i) + '/' + (21 + i) == valg_navn) {
+  btn.innerHTML = (2000+20 + i) + '/' + (21 + i);
+  if ((2000+20 + i) + '/' + (21 + i) == valg_navn) {
     btn.className = "meny_element valgt_element";}
   else {btn.className = "meny_element";}
   btnid = "valgt" + i;
@@ -1216,8 +1216,8 @@ for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
 }
 for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
   let btn = document.createElement("button");
-  btn.innerHTML = (20 + i) + '/' + (21 + i);
-  if ((20 + i) + '/' + (21 + i) == valg_navn) {
+  btn.innerHTML = (2000+20 + i) + '/' + (21 + i);
+  if ((2000+20 + i) + '/' + (21 + i) == valg_navn) {
     btn.className = "meny_element valgt_element2";}
   else {btn.className = "meny_element";}
   btnid = "valgt" + i;
@@ -2166,18 +2166,18 @@ function myFunction() {
 function access_list(spraak) {
   if (tilgangslister[aar_etter_forste_periode+1]) {
     if (spraak == 'norsk') {
-      document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">klubb-utplassering i ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+      document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">klubb-utplassering i ' + (2000+aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
     }
     else {
-      document.getElementById('decisive_sesong').innerHTML = 'Decisive for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">club deployment in ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+      document.getElementById('decisive_sesong').innerHTML = 'Decisive for <a class="graa_hover_link_decisive" href="' + tilgangslister[aar_etter_forste_periode+1] + '" target="_blank">club deployment in ' + (2000+aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
     }
   }
   else {
     if (spraak == 'norsk') {
-      document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for klubb-utplassering i ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+      document.getElementById('decisive_sesong').innerHTML = 'Avgjørende for klubb-utplassering i ' + (2000+aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
     }
     else {
-      document.getElementById('decisive_sesong').innerHTML = 'Decisive for club deployment in ' + (aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
+      document.getElementById('decisive_sesong').innerHTML = 'Decisive for club deployment in ' + (2000+aar_etter_forste_periode+23) + '/' + (aar_etter_forste_periode+24) + '</a>';
     }
   }
 }

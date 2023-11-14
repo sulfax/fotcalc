@@ -359,13 +359,13 @@ th, td {
 
 .rangeringEndring:not(.ekstra_bredde2) {
     padding-right: 0px !important;
-    padding-left: 4px !important;
+    padding-left: 5px !important;
     width: 0px;
     padding-right: 9px !important;
 }
 .rangeringEndring_:not(.ekstra_bredde2_) {
     padding-right: 0px !important;
-    padding-left: 3px !important;
+    padding-left: 4px !important;
     width: 0px;
     padding-right: 8px !important;
 }
@@ -512,6 +512,9 @@ th, td {
 }
 .bindestrek {
     margin-right: 2px;
+}
+.id_nr:not(.ekstremt_utydelig2) .midt {
+    color: #24272a;
 }
 .grense .premie_koeff, .grense .grense_celle, .grense .id_nr, .grense .id_nr_klubb{
     border-bottom: 2px solid rgba(52, 58, 64, 0.38) !important;

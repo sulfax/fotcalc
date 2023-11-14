@@ -46,11 +46,11 @@ function oppdater_ved_refresh() {
   ranking_array = []
   testTabell = document.getElementById('minTest')
   try {if (sessionStorage.getItem('dropdownmeny_valg_4aar_koeffisient').length > 10) {
-    sessionStorage.setItem('dropdownmeny_valg_4aar_koeffisient', nåværende_klubbvm[0] + '/' + nåværende_klubbvm[2]);
+    sessionStorage.setItem('dropdownmeny_valg_4aar_koeffisient', 2000+nåværende_klubbvm[0] + '/' + nåværende_klubbvm[2]);
   }} catch {null;}
-  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_4aar_koeffisient') || nåværende_klubbvm[0] + '/' + nåværende_klubbvm[2]) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_4aar_koeffisient') || 2000+nåværende_klubbvm[0] + '/' + nåværende_klubbvm[2]) + " <div class='opp_ned_pil'>&#10094</div>";
   var klubbers_assosiasjon = []
-  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(3,5) - 21;
+  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(5,7) - 21;
   let p = 17;
   let pilstatus = ''
   for (i = 0; i < 4; i++) {
@@ -1177,8 +1177,8 @@ id = "dropDownMeny";
 i = 4;
 while (i <= nyligste_poeng_rangering[0] - 16) {
   let btn = document.createElement("button");
-  btn.innerHTML = (19 + i) + '/' + (20 + i);
-  if ((19 + i) + '/' + (20 + i) == valg_navn) {
+  btn.innerHTML = (2000+19 + i) + '/' + (20 + i);
+  if ((2000+19 + i) + '/' + (20 + i) == valg_navn) {
     btn.className = "meny_element valgt_element";}
   else {btn.className = "meny_element";}
   btnid = "valgt" + i;
@@ -1476,7 +1476,7 @@ function regn_ut_NA_poeng() {
   for (i = 0; i < menyvalg.length; i++) {
     klubbers_assosiasjon.push(menyvalg[i][1])
   }
-  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(3,5) - 21;
+  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(5,7) - 21;
   let NA_poeng_og_assosiasjon = [];
   // Kanskje fjern
   let denne_NA_poeng_og_assos_skygge = [];
@@ -1646,7 +1646,7 @@ var Lag_premiepenger = {
 }
 var Lag_koeff = {
   "@type": "Question",
-  "name": "How many coefficient points has earned in 23/24?",
+  "name": "How many coefficient points has earned in 2023/24?",
   "acceptedAnswer": {
     "@type": "Answer",
     "text": " association coefficient ",

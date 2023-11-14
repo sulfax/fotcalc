@@ -513,7 +513,7 @@ function endre_sessong(clicked_id) {
 };
 
 function oppdater_sessong(aarstall) {
-    document.getElementById("sessong_id").innerText = (parseInt(aarstall) + 21) + '/' + (parseInt(aarstall) + 22);
+    document.getElementById("sessong_id").innerText = (2000+parseInt(aarstall) + 21) + '/' + (parseInt(aarstall) + 22);
     if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online');
     }
@@ -947,19 +947,19 @@ function endre_land(land) {
     sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
     sessionStorage.setItem('rekkefølge_landskoeffisient2', 'asc')
     try {if (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient').length > 10) {
-        sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
+        sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', 2000+nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
       }}
     catch {null;}
-    let perioden_valgt = parseInt((sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2])).slice(0, 2)) - 4;
+    let perioden_valgt = parseInt((sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (2000+nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2])).slice(2, 4)) - 4;
     let aarstall_her = parseInt(21 + aarstall)
     let differanse = perioden_valgt - aarstall_her
     if (perioden_valgt <= aarstall_her && perioden_valgt + 4 >= aarstall_her) {
     }
     else if (differanse > 0) {
-      sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (perioden_valgt + 4 - differanse) + '/' + (perioden_valgt + 5 - differanse))
+      sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (2000+perioden_valgt + 4 - differanse) + '/' + (perioden_valgt + 5 - differanse))
     }
     else {
-      sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (21 + aarstall) + '/' + (22 + aarstall))
+      sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (2000+21 + aarstall) + '/' + (22 + aarstall))
     }
 }
 

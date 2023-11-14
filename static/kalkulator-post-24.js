@@ -246,14 +246,14 @@ function paa_av(clicked_id){
             document.getElementById(clicked_id).innerText = 'Played';
         } else {document.getElementById(clicked_id).innerText = 'Spilt';}
         // Midlertidig
-        // document.getElementById(clicked_id + "_").innerText = "€ " + knapp_summer[2][aarstall-3].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        // document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)
-        // summer();
-        if (document.getElementById('b19')) {
-            document.getElementById(clicked_id + "_").innerText = "€ " + knapp_summer[2][aarstall-3].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)
-            summer();
-        } else {document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)}
+        // if (document.getElementById('b19')) {
+        //     document.getElementById(clicked_id + "_").innerText = "€ " + knapp_summer[2][aarstall-3].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        //     document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)
+        //     summer();
+        // } else {document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)}
+        document.getElementById(clicked_id + "_").innerText = "€ " + knapp_summer[2][aarstall-3].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        document.getElementById(clicked_id).id = clicked_id.slice(0, 3) + '-' + clicked_id.slice(3, 5)
+        summer();
         flytt_SCUP_sum_hoyre(clicked_id)
     }
     else if (clicked_id == 'uel-Q1' || clicked_id == 'uel-Q2') {
@@ -1192,7 +1192,7 @@ function oppdater_sessong(aarstall) {
     if (spraak == 'norsk') {
         document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil april ' + (2023 + aarstall) + '">TV-penger</abbr>';
     } else {document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until April ' + (2023 + aarstall) + '">Market pool</abbr>';}
-    document.getElementById("sessong_id").innerText = (parseInt(aarstall) + 21) + '/' + (parseInt(aarstall) + 22);
+    document.getElementById("sessong_id").innerText = (2000+parseInt(aarstall) + 21) + '/' + (parseInt(aarstall) + 22);
       if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
       }
@@ -1350,6 +1350,6 @@ function endre_ti_års_periode() {
     localStorage.setItem('filter_land', JSON.stringify([]))
     sessionStorage.setItem('kolonne_ti_års', 'id_nr')
     sessionStorage.setItem('rekkefølge_ti_års', 'asc')
-    localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (20 + aarstall) + '/' + (21 + aarstall))
-    sessionStorage.setItem('dropdownmeny_valg_ti_års', (20 + aarstall) + '/' + (21 + aarstall))
+    localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (2000+20 + aarstall) + '/' + (21 + aarstall))
+    sessionStorage.setItem('dropdownmeny_valg_ti_års', (2000+20 + aarstall) + '/' + (21 + aarstall))
 }

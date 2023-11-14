@@ -42,11 +42,11 @@ function oppdater_ved_refresh() {
   ranking_array = []
   testTabell = document.getElementById('minTest')
   try {if (sessionStorage.getItem('dropdownmeny_valg_klubbkoeffisient').length > 10) {
-    sessionStorage.setItem('dropdownmeny_valg_klubbkoeffisient', nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
+    sessionStorage.setItem('dropdownmeny_valg_klubbkoeffisient', 2000+nåværende_sesong_periode_valg[0] + '/' + nåværende_sesong_periode_valg[2]);
   }} catch {null;}
-  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_klubbkoeffisient') || (nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
+  document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_klubbkoeffisient') || (2000+nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
   var klubbers_assosiasjon = []
-  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
+  aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(2,4) - 21;
   let p = 17;
   let pilstatus = ''
   for (i = 0; i < 5; i++) {
@@ -54,7 +54,7 @@ function oppdater_ved_refresh() {
     document.getElementById('sesong' + (5 - i)).innerHTML = (p + aar_etter_forste_periode) + '/' + ((p + 1) + aar_etter_forste_periode) + pilstatus
     p += 1;
   }
-  document.getElementById('decisive_sesong').innerText = (p + aar_etter_forste_periode) + '/' + ((p + 1) + aar_etter_forste_periode)
+  document.getElementById('decisive_sesong').innerText = (2000+p + aar_etter_forste_periode) + '/' + ((p + 1) + aar_etter_forste_periode)
   for (i = 0; i < menyvalg.length; i++) {
     klubbers_assosiasjon.push(menyvalg[i][1])
   }
@@ -1036,8 +1036,8 @@ let valg_navn = document.getElementById('dropDownMeny').innerText.slice(0,-2);
 id = "dropDownMeny";
 for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
   let btn = document.createElement("button");
-  btn.innerHTML = (20 + i) + '/' + (21 + i);
-  if ((20 + i) + '/' + (21 + i) == valg_navn) {
+  btn.innerHTML = (2000+20 + i) + '/' + (21 + i);
+  if ((2000+20 + i) + '/' + (21 + i) == valg_navn) {
     btn.className = "meny_element valgt_element";}
   else {btn.className = "meny_element";}
   btnid = "valgt" + i;
@@ -1374,7 +1374,7 @@ function regn_ut_NA_poeng() {
   for (i = 0; i < menyvalg.length; i++) {
     klubbers_assosiasjon.push(menyvalg[i][1])
   }
-  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(0,2) - 21;
+  let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(2,4) - 21;
   let NA_poeng_og_assosiasjon = [];
   // Kanskje fjern
   let denne_NA_poeng_og_assos_skygge = [];

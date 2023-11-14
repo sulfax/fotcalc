@@ -188,7 +188,7 @@ body{
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    min-width: 70px;
+    min-width: 113px;
     overflow: auto;
     border: 1px solid rgb(200, 200, 200);
     z-index: 1;
