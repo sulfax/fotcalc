@@ -197,13 +197,13 @@ th, td {
     text-align: right;
 }
 #prosent_NA {
-    min-width: 75px;
+    min-width: 65px;
     text-align: right;
 }
 .senter_prosent_NA {
-    width:65px !important;
+    width:50px !important;
     float: right;
-    margin-right: 5px;
+    margin-right: 8px;
 }
 .senter_klubb_poeng {
     width: 56px !important;

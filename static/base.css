@@ -335,17 +335,23 @@ a:hover {
 .btn-secondary:hover:enabled {
     background-color: rgba(255,255,255,0);
     border-color: rgba(255,255,255,0);
-    color: rgb(154, 176, 218) !important;
+    color: #4a56ff !important;
 }
 .btn-secondary:active:enabled, .btn.btn-secondary:active:enabled {
     background-color: white !important;
     border-color: white !important;
-    color: #4a56ff !important;
+    color: #2130ff !important;
+}
+#sessong_kontroller_1 {
+    margin-right: 0px !important;
+}
+#sessong_kontroller_2 {
+    margin-left: -1px !important;
 }
 .btn-secondary.dropdown-toggle:focus:enabled, .btn-secondary.focus:enabled, .btn-secondary:focus:enabled {
     background-color: white !important;
     border-color: white !important;
-    color: rgb(196, 217, 255) !important;
+    color: rgb(154, 176, 218) !important;
 }
 .nav-link {
     padding-right: 16px !important;

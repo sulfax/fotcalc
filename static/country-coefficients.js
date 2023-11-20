@@ -1792,7 +1792,7 @@ function utplasser_klubb_tabell(klubber) {
                     ${klubbnavn_HTML_start + klubbnavn}</nobr></td>
                     <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${klubber[i][1]}</div></div></td>
                     <td class='premie_koeff'><div class='senter_klubb_poeng'><div class='premie_koeff'><b>${(klubber[i][7]).toFixed(3)}</b></div></td>
-                    <td class='premie_koeff ramme_hoyre'><div class='senter_prosent_NA'><div class='premie_koeff'><b>${klubber[i][8].toFixed(1) + ' %'}</b></div></div></td>
+                    <td class='premie_koeff ramme_hoyre'><div class='senter_prosent_NA'><div class='premie_koeff'><b>${klubber[i][8].toFixed(1) + '%'}</b></div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter_klubb_sesong'><div class='premie_koeff utydelig'>${sesong5}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter_klubb_sesong'><div class='premie_koeff utydelig'>${sesong4}</div></div></td>
                     <td class='premie_koeff mørk_bakgrunn'><div class='senter_klubb_sesong'><div class='premie_koeff utydelig'>${sesong3}</div></div></td>
