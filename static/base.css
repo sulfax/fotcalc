@@ -351,7 +351,7 @@ a:hover {
 .btn-secondary.dropdown-toggle:focus:enabled, .btn-secondary.focus:enabled, .btn-secondary:focus:enabled {
     background-color: white !important;
     border-color: white !important;
-    color: rgb(154, 176, 218) !important;
+    color: rgb(154, 176, 218);
 }
 .nav-link {
     padding-right: 16px !important;
