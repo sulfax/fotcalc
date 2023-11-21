@@ -1930,6 +1930,18 @@ function generer_lands_knapper() {
         koeff_sesong10 = 4.333
       }
     }
+    //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+    // if (['NOR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.666}
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.666}
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.666}
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.666}
+    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.666}
+    //   if (aar_etter_forste_periode == 7) {koeff_sesong6 += 1.666}
+    //   if (aar_etter_forste_periode == 8) {koeff_sesong7 += 1.666}
+    //   if (aar_etter_forste_periode == 9) {koeff_sesong8 += 1.666}
+    //   if (aar_etter_forste_periode == 10) {koeff_sesong9 += 1.666}
+    //   if (aar_etter_forste_periode == 11) {koeff_sesong10 += 1.666}}
     // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
     //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
@@ -2347,6 +2359,18 @@ function regn_ut_NA_poeng() {
         koeff_sesong10 = 4.333
       }
     }
+    //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+    // if (['NOR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.666}
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.666}
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.666}
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.666}
+    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.666}
+    //   if (aar_etter_forste_periode == 7) {koeff_sesong6 += 1.666}
+    //   if (aar_etter_forste_periode == 8) {koeff_sesong7 += 1.666}
+    //   if (aar_etter_forste_periode == 9) {koeff_sesong8 += 1.666}
+    //   if (aar_etter_forste_periode == 10) {koeff_sesong9 += 1.666}
+    //   if (aar_etter_forste_periode == 11) {koeff_sesong10 += 1.666}}
     // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
     //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}

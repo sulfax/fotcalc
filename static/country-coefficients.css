@@ -310,8 +310,12 @@ th, td {
 .marign_venstre {
     padding-left: 5px;
 }
+/*Skal stå "float:left;" dersom land har internt fremtidig oppgjør og er garantert koeffisientpoeng.*/
 .flagg_hoyre {
     float:right;
+}
+#internt_oppgjør_asterisk {
+    padding-top: 8px;
 }
 
 .høyrestill {

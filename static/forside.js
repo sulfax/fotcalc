@@ -982,6 +982,13 @@ function generer_lands_knapper() {
         koeff_sesong5 = 4.333
       }
     }
+    //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+    // if (['NOR'].includes(landskoeffisienter[i][0])) {
+    //   if (aarstall == 2) {enkelt_sesong1 += 1.666}
+    //   if (aarstall == 3) {koeff_sesong2 += 1.666}
+    //   if (aarstall == 4) {koeff_sesong3 += 1.666}
+    //   if (aarstall == 5) {koeff_sesong4 += 1.666}
+    //   if (aarstall == 6) {koeff_sesong5 += 1.666}}
     // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
     //   if (aarstall == 2) {enkelt_sesong1 = 0.8}
     //   if (aarstall == 3) {koeff_sesong2 = 0.8}

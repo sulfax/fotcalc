@@ -373,6 +373,13 @@ function oppdater_ved_refresh() {
         koeff_sesong5 = 4.333
       }
     }
+    //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+    // if (['NOR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.666}
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.666}
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.666}
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.666}
+    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.666}}
     // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
     //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
@@ -875,6 +882,9 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
   var helTabellHTML = '';
   let spraak = localStorage.getItem("someVarKey");
   let twitterData = "";
+  // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng. ENDRE AARET UNDER!:
+  let internt_oppgjor_aar = 2;
+  let internt_oppgjør_bool = false;
   for (i = 0; i < ranking_array.length; i++) {
     for (p = 0; p < landskoeffisienter.length; p++) {
       if (landskoeffisienter[p][0] == ranking_array[i][0]) {
@@ -992,14 +1002,24 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     if (sesong3 == '-') {sesong3 = '<span class="bindestrek">-</span>'}
     if (sesong4 == '-') {sesong4 = '<span class="bindestrek">-</span>'}
     if (sesong5 == '-') {sesong5 = '<span class="bindestrek">-</span>'}
+    let internt_oppgjør = "";
+    // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+    // if (['NOR'].includes(ranking_array[i][0]) && aar_etter_forste_periode >= internt_oppgjor_aar && aar_etter_forste_periode <= internt_oppgjor_aar+4) {
+    //   internt_oppgjør = "&nbsp*";
+    //   internt_oppgjør_bool = true;
+    //   if (aar_etter_forste_periode == internt_oppgjor_aar) {
+    //     ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
+    //   }
+    // }
+    
     let klubber_igjen = ""
     let tom_kolonne = `<td class='tom'>${""}</td>`
     if (i == 54) {
       tom_kolonne = `<td class='tom ingen_ramme_under'>${""}</td>`
     }
-    if ((ranking_array[i][13])[0] == '0' && ranking_array[i][13] != '0/?') {
+    if ((ranking_array[i][13]).split('/')[0] == '0' && ranking_array[i][13] != '0/?') {
       klubber_igjen = `<td class='premie_koeff klubb rød'>${ranking_array[i][13]}</td>`
-    } else if (((ranking_array[i][13])[0] - (ranking_array[i][13])[2]) == 0) {
+    } else if (((ranking_array[i][13]).split('/')[0] - (ranking_array[i][13]).split('/')[1]) == 0) {
       klubber_igjen = `<td class='premie_koeff klubb grønn'>${ranking_array[i][13]}</td>`
     }
     else if (ranking_array[i][13] == '0/?') {
@@ -1030,7 +1050,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
                     <td class="id_nr_klubb rangeringEndring_ ${ekstremt_utydelig} ramme_hoyre ${ekstra_bredde2_}">${rangeringEndring_}</td>
                     <td class="id_nr ${ekstremt_utydelig2}"><span class="midt">${ranking_array[i][14]}</span></td>
                     <td class="id_nr ${ekstremt_utydelig2} rangeringEndring ${ekstra_bredde2}">${rangeringEndring}</td>
-                    <td class="grense_celle"><nobr class="flagg_hoyre">${flagg_ikon}</nobr></td>
+                    <td class="grense_celle"><nobr class="flagg_hoyre">${flagg_ikon}</nobr><span class="land_ikon_asterisk">${internt_oppgjør}</span></td>
                     <td id="tom_kolonne" class="grense_celle">${land}</td>
                     <td class='premie_koeff'><b>${ranking_array[i][1]}</b></td>
                     <td class='premie_koeff'>${sesong1}</td>
@@ -1093,6 +1113,19 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
   // }
   // navigator.clipboard.writeText(twitterData);
   testTabell.innerHTML = helTabellHTML;
+
+  // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+  if (internt_oppgjør_bool) {
+    if (aar_etter_forste_periode == internt_oppgjor_aar) {
+      document.getElementById("internt_oppgjør_asterisk").innerText = "*Secured coefficient points from future internal match is included for this country. Consequently, the club count is reduced to 1/4."
+    }
+    else {
+      document.getElementById("internt_oppgjør_asterisk").innerText = "*Secured coefficient points from future internal match is included for this country."
+    }
+  }
+  else {
+    document.getElementById("internt_oppgjør_asterisk").innerText = ""
+  }
 }
 
 /*Dropdown meny start*/
@@ -1961,6 +1994,13 @@ function generer_lands_knapper() {
         koeff_sesong5 = 4.333
       }
     }
+    //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
+    // if (['NOR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.666}
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.666}
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.666}
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.666}
+    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.666}}
     // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 = 0.8}
     //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}

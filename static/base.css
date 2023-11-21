@@ -109,7 +109,7 @@ body{
 #overskrift_klubbkoeffisient, #overskrift_landskoeffisient, #overskrift_forside, th, #overskrift_premiepenger, #overskrift_koeffisient, #overskrift_ti_års, #overskrift_fire_års {
     color: rgba(52, 58, 64, 1);
 }
-#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #beskrivelse_landskoeffisient_klubb, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient, #beskrivelse_ti_års, #beskrivelse_fire_års, #premiepenger_land_beskrivelse {
+#beskrivelse_klubbkoeffisient, #beskrivelse_landskoeffisient, #beskrivelse_landskoeffisient_klubb, #internt_oppgjør_asterisk, #beskrivelse_forside, #beskrivelse_premiepenger,  #beskrivelse_koeffisient, #beskrivelse_ti_års, #beskrivelse_fire_års, #premiepenger_land_beskrivelse {
     color: rgba(52, 58, 64, 0.9);
 }
 .ytterst_tabell_div {
@@ -451,7 +451,7 @@ a:hover {
 .ramme_ikke_grønn {
     border-bottom: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
-.reklame_bunn_margin, #beskrivelse_landskoeffisient, #beskrivelse_landskoeffisient_klubb, #beskrivelse_koeffisient {
+.reklame_bunn_margin, #beskrivelse_landskoeffisient, #beskrivelse_landskoeffisient_klubb, #internt_oppgjør_asterisk, #beskrivelse_koeffisient {
     margin-left: 15px !important;
     margin-right: 15px !important;
 }
