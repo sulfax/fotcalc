@@ -28,9 +28,9 @@
     margin: auto;
 }
 
-@media (min-width:950px) {
+@media (min-width:890px) {
     .container_ {
-        width: 922px;
+        width: 859px;
     }
 }
 
@@ -166,7 +166,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
-    min-width: 74px;
+    min-width: 64px;
 }
 #id_nr {
     -webkit-touch-callout: none;
@@ -192,18 +192,18 @@ th, td {
     user-select: none;
 }
 #sesong1_klubb, #sesong2_klubb, #sesong3_klubb, #sesong4_klubb, #sesong5_klubb {
-    min-width: 74px;
+    min-width: 64px;
     padding-right: 1%;
     text-align: right;
 }
 #prosent_NA {
-    min-width: 65px;
+    min-width: 67px;
     text-align: right;
 }
 .senter_prosent_NA {
     width:50px !important;
     float: right;
-    margin-right: 8px;
+    margin-right: 4px;
 }
 .senter_klubb_poeng {
     width: 56px !important;
