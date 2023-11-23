@@ -42,12 +42,12 @@
 
 @media (min-width:1400px) {
     .container_ {
-        width: 1376px;
+        width: 1364px;
     }
 }
 @media (min-width:1921px) {
     .container_ {
-        width: 1380px;
+        width: 1364px;
     }
 }
 /* @media (min-width:1437px) {
@@ -256,9 +256,9 @@ th {
     margin: 0 auto;
 }
 .id_nr {
-    max-width: 60px;
+    max-width: 42px;
     min-width: 42px;
-    width: 60px;
+    width: 42px;
     text-align: center;
 }
 .link, .link_2 {
