@@ -365,11 +365,11 @@ th, td {
     padding-right: 0px !important;
     padding-left: 5px !important;
     width: 0px;
-    padding-right: 9px !important;
+    padding-right: 5px !important;
 }
 .rangeringEndring_:not(.ekstra_bredde2_) {
     padding-right: 0px !important;
-    padding-left: 4px !important;
+    padding-left: 5px !important;
     width: 0px;
     padding-right: 8px !important;
 }
@@ -381,7 +381,7 @@ th, td {
     color: rgba(135, 142, 150, 0.4) !important;
 }
 .ganske_utydelig {
-    color: #4e565e !important;
+    color: #343a40 !important;
 }
 .ekstremt_utydelig2 {
     color: rgba(135, 142, 150, 0.7) !important;
