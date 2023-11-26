@@ -28,9 +28,9 @@
     margin: auto;
 }
 
-@media (min-width:890px) {
+@media (min-width:876px) {
     .container_ {
-        width: 859px;
+        width: 848px;
     }
 }
 
@@ -166,7 +166,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
-    min-width: 64px;
+    min-width: 5px;
 }
 #id_nr {
     -webkit-touch-callout: none;
@@ -192,7 +192,7 @@ th, td {
     user-select: none;
 }
 #sesong1_klubb, #sesong2_klubb, #sesong3_klubb, #sesong4_klubb, #sesong5_klubb {
-    min-width: 64px;
+    min-width: 5px;
     padding-right: 1%;
     text-align: right;
 }
