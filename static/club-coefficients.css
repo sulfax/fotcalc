@@ -51,14 +51,9 @@
     margin: auto;
 }
 
-@media (min-width:1000px) {
+@media (min-width:920px) {
     .container_ {
-        width: 960px;
-    }
-}
-@media (min-width:1400px) {
-    .container_ {
-        width: 960px;
+        width: 890px;
     }
 }
 
@@ -67,9 +62,9 @@
     margin: auto;
 }
 
-@media (min-width:900px) {
+@media (min-width:780px) {
     .container_4_aar {
-        width: 800px;
+        width: 749px;
     }
 }
 
@@ -201,7 +196,7 @@ th, td {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    min-width: 73px;
+    min-width: 68px;
 }
 #na_poeng {
     text-align: center;

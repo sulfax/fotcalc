@@ -40,14 +40,9 @@
     margin: auto;
 }
 
-@media (min-width:1400px) {
+@media (min-width:1350px) {
     .container_ {
-        width: 1364px;
-    }
-}
-@media (min-width:1921px) {
-    .container_ {
-        width: 1364px;
+        width: 1314px;
     }
 }
 /* @media (min-width:1437px) {
@@ -184,7 +179,7 @@ th, td {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    min-width: 73px;
+    min-width: 69px;
 }
 #tittel_poeng, #na_poeng {
     text-align: center;
