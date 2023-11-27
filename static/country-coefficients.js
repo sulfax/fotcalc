@@ -2222,6 +2222,16 @@ function access_list(spraak) {
   }
 }
 
+var OSName="Unknown OS";
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+var isSafari2 = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') == -1 &&
+               navigator.userAgent.indexOf('FxiOS') == -1;
+if (navigator.appVersion.indexOf("Mac")!=-1 && (isSafari || isSafari2)) {
+  document.getElementById("container_").className += " container_Mac";
+}
+
 
 
 

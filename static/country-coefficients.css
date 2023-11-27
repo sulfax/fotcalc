@@ -28,12 +28,18 @@
     margin: auto;
 }
 
+/*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
 @media (min-width:876px) {
-    .container_ {
+    .container_:not(.container_Mac) {
         width: 848px;
     }
 }
 
+@media (min-width:910px) {
+    .container_Mac {
+        width: 878px !important;
+    }    
+}
 
 #overskrift_landskoeffisient, #beskrivelse_landskoeffisient {
     text-align: center;
