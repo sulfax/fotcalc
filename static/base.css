@@ -438,13 +438,13 @@ a:hover {
     z-index: 1001;
 }
 .fortsatt_med {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(193, 215, 255) 25%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(193, 215, 255) 25%, rgba(255,255,255,0) 100%);
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
     /* display:inline-table !important; */
 }
 .var_med {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(192, 255, 214) 25%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(192, 255, 214) 25%, rgba(255,255,255,0) 100%);
     border-bottom: 1px solid rgba(177, 177, 177, 0.2) !important;
     border-top: 1px solid rgba(177, 177, 177, 0.2) !important;
 }
