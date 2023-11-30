@@ -1450,7 +1450,12 @@ function byggTabell_test(ranking_array, column, order) {
                 }
               }
               else if ((knapper).includes("b20")) {
-                rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
+                if (rangering.includes("<b></b>")) {
+                  rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b></b></td>`;
+                }
+                else {
+                  rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
+                }
               }
             }
           }
