@@ -1429,33 +1429,32 @@ function byggTabell_test(ranking_array, column, order) {
             //     rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][15] + 1}</b></td>`;
             //   }
             // }
+            let rangering_tall = ranking_array[i][17];
+            if (rangering.includes("<b></b>")) {
+              rangering_tall = "";
+            }
             if (nåværende_sesong_periode_valg[0]-11 != aar_etter_forste_periode) {
               if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (nåværende_sesong_periode_valg[0] - aar_etter_forste_periode != 22)) {
                 klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
               }
               if ((knapper).includes("b18")) {
                 if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
-                  rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
+                  rangering = `<td class="ucl_gs_uel id_nr utydelig ramme_hoyre_tynn"><b>${rangering_tall}</b></td>`;
                 }
                 else {
-                  rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
+                  rangering = `<td class="ucl_gs id_nr utydelig ramme_hoyre_tynn"><b>${rangering_tall}</b></td>`;
                 }
               }
               else if ((knapper).includes("b19")) {
                 if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
-                  rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
+                  rangering = `<td class="uel_gs_uecl id_nr utydelig ramme_hoyre_tynn"><b>${rangering_tall}</b></td>`;
                 }
                 else {
-                  rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
+                  rangering = `<td class="uel_gs id_nr utydelig ramme_hoyre_tynn"><b>${rangering_tall}</b></td>`;
                 }
               }
               else if ((knapper).includes("b20")) {
-                if (rangering.includes("<b></b>")) {
-                  rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b></b></td>`;
-                }
-                else {
-                  rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][17]}</b></td>`;
-                }
+                rangering = `<td class="uecl_gs id_nr utydelig ramme_hoyre_tynn"><b>${rangering_tall}</b></td>`;
               }
             }
           }
