@@ -1067,7 +1067,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
           if ((i == 4 && aar_etter_forste_periode > 0) || (i == 5 && aar_etter_forste_periode > 0) || (i == 3 && aar_etter_forste_periode <= 0) || (i == 5 && aar_etter_forste_periode <= 0) || i == 14 || i == 49) {
             rad_test = '<tr class="grense">' + rad_test
           }
-          else if (i == 9 || (i == 21 && aar_etter_forste_periode > 0) || (i == 32 && aar_etter_forste_periode > 0) || (i == 37 && aar_etter_forste_periode > 0) || (i == 28 && aar_etter_forste_periode <= 0) || (i == 50 && aar_etter_forste_periode <= 0)) {
+          else if (i == 9 /*|| (i == 11 && aar_etter_forste_periode > 0)*/ || (i == 21 && aar_etter_forste_periode > 0) || (i == 32 && aar_etter_forste_periode > 0) || (i == 37 && aar_etter_forste_periode > 0) || (i == 28 && aar_etter_forste_periode <= 0) || (i == 50 && aar_etter_forste_periode <= 0)) {
             rad_test = '<tr class="grense2">' + rad_test
           }
           else {
@@ -1079,7 +1079,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
           if ((i == speilTall-4 && aar_etter_forste_periode > 0) || (i == speilTall-5 && aar_etter_forste_periode > 0) || (i == speilTall-3 && aar_etter_forste_periode <= 0) || (i == speilTall-5 && aar_etter_forste_periode <= 0) || i == speilTall-14 || i == speilTall-49) {
             rad_test = '<tr class="grense">' + rad_test
           }
-          else if (i == speilTall-9 || (i == speilTall-21 && aar_etter_forste_periode > 0) || (i == speilTall-32 && aar_etter_forste_periode > 0) || (i == speilTall-37 && aar_etter_forste_periode > 0) || (i == speilTall-28 && aar_etter_forste_periode <= 0) || (i == speilTall-50 && aar_etter_forste_periode <= 0)) {
+          else if (i == speilTall-9 || /*(i == speilTall-11 && aar_etter_forste_periode > 0) ||*/ (i == speilTall-21 && aar_etter_forste_periode > 0) || (i == speilTall-32 && aar_etter_forste_periode > 0) || (i == speilTall-37 && aar_etter_forste_periode > 0) || (i == speilTall-28 && aar_etter_forste_periode <= 0) || (i == speilTall-50 && aar_etter_forste_periode <= 0)) {
             rad_test = '<tr class="grense2">' + rad_test
           }
           else {
