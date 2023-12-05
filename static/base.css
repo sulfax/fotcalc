@@ -112,7 +112,7 @@ body{
     padding-left: 0rem !important;
     padding-right: 20px !important;
 }
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1300px) {
     .en_to_rader {
         display: flex;
     }
