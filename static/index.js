@@ -319,6 +319,7 @@ const sprak_id = [
   'klubbkoeff_rangering',
   'ti_års_rangering',
   'fire_års_rangering',
+  'women_access_list',
   'premiepenger_kalkulator',
   'koeffisient_kalkulator',
   'eksperimentell_profil_meny_element',

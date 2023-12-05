@@ -23,9 +23,9 @@
     width: 95%;
     margin: auto;
 }
-@media (min-width:862px) {
+@media (min-width:855px) {
     .container_ {
-        width: 808px;
+        width: 801px;
     }
 }
 
@@ -166,7 +166,7 @@ th, td {
     padding-left: 9px;
 }
 .marign_venstre {
-    padding-left: 5px;
+    padding-left: 3px;
 }
 #flagg_tabell2 {
     min-width: 41px;
@@ -490,11 +490,13 @@ th, td {
 }
 .x_symbol {
     margin-left: -5px;
+    margin-right: 2px !important;
     padding-right: 3px;
     padding-bottom: 2px;
 }
 .check {
     margin-left: -3px;
+    margin-right: 2px !important;
     padding-right: 4px;
     padding-bottom: 2px;
 }
