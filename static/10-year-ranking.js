@@ -11,7 +11,7 @@ let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" al
 let opp_ned_pil_midten = '<span><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
-var din_klubbs_premi_koef_e = "your club’s prize money";
+var din_klubbs_premi_koef_e = "your club's prize money";
 var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 let antall_MV_elem = 6;
 let filter_land = []

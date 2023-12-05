@@ -138,7 +138,7 @@ const input_summer = [
 ];
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
-var din_klubbs_premi_koef_e = "your club’s coefficient points";
+var din_klubbs_premi_koef_e = "your club's coefficient points";
 var din_klubbs_premi_koef_n = "din klubbs koeffisientpoeng";
 
 const UCL_inntjening_celler = ["b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_", "i13_", "i13__", "mp1"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
@@ -1001,10 +1001,10 @@ function oppdater_ved_refresh_1() {
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || "Choose club";
     if (Klubbnavn.slice(-1) == "s" || Klubbnavn.slice(-1) == "z" || Klubbnavn.slice(-1) == "x") {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "' " + siste_ord_linktekst;
     }
     else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s " + siste_ord_linktekst;
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
         document.getElementById("klubb_link").innerHTML = din_klubbs_premi_koef_e;

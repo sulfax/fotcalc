@@ -632,14 +632,14 @@ function oppdater_ved_refresh_koeff_1() {
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn');
     if (Klubbnavn.slice(-1) == "s") {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "' " + siste_ord_linktekst;
     }
     else {
         if (siste_ord_linktekst == "premiepenger") {
             document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
           }
           else {
-            document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+            document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s " + siste_ord_linktekst;
           }
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {

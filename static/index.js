@@ -11,11 +11,11 @@ var overskrift_koeff_finnes = document.getElementById('overskrift_koeffisient');
 var overskrift_koeff_deff_finnes = document.getElementById('overskrift_koeffisient_dokumentasjon');
 
 if (overskrift_koeff_finnes) {
-  var din_klubbs_premi_koef_e = "your club’s prize money";
+  var din_klubbs_premi_koef_e = "your club's prize money";
   var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 }
 else if (overskrift_finnes) {
-  var din_klubbs_premi_koef_e = "your club’s coefficient points";
+  var din_klubbs_premi_koef_e = "your club's coefficient points";
   var din_klubbs_premi_koef_n = "din klubbs koeffisientpoeng";
 }
 
@@ -248,7 +248,7 @@ function language_standard(clicked_id) {
         localStorage.setItem("Klubbnavn", Klubbnavn);
       }
       if (Klubbnavn == "Choose club" && overskrift_finnes) {
-        document.getElementById("klubb_link").innerHTML = "your club’s";
+        document.getElementById("klubb_link").innerHTML = "your club's";
       }
       if (overskrift_forside_finnes || overskrift_koeff_deff_finnes || overskrift_landskoeffisient_finnes || overskrift_klubbkoeffisient_finnes || overskrift_ti_års_finnes || overskrift_fire_års_finnes) {}
       else {
@@ -260,16 +260,16 @@ function language_standard(clicked_id) {
         }
       }
       if (Klubbnavn.slice(-1) == "s" && overskrift_finnes) {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ coefficient points";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "' coefficient points";
       }
       else if (overskrift_finnes) {
-          document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s coefficient points";
+          document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s coefficient points";
       }
       else if (Klubbnavn.slice(-1) == "s" && overskrift_koeff_finnes) {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ prize money";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "' prize money";
       }
       else if (overskrift_koeff_finnes) {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s prize money";
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s prize money";
       }
     }
   }
@@ -847,14 +847,14 @@ function endre_link_landskoeff() {
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || 'Choose club';
     if (Klubbnavn.slice(-1) == "s") {
-      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+      document.getElementById("klubb_link").innerHTML = Klubbnavn + "' " + siste_ord_linktekst;
     }
     else {
       if (siste_ord_linktekst == "premiepenger") {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
       }
       else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s " + siste_ord_linktekst;
       }
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
@@ -874,14 +874,14 @@ function endre_link_landskoeff() {
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || 'Choose club';
     if (Klubbnavn.slice(-1) == "s") {
-      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+      document.getElementById("klubb_link").innerHTML = Klubbnavn + "' " + siste_ord_linktekst;
     }
     else {
       if (siste_ord_linktekst == "premiepenger") {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
       }
       else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s " + siste_ord_linktekst;
       }
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
@@ -901,14 +901,14 @@ function endre_link_landskoeff() {
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || 'Choose club';
     if (Klubbnavn.slice(-1) == "s") {
-      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+      document.getElementById("klubb_link").innerHTML = Klubbnavn + "' " + siste_ord_linktekst;
     }
     else {
       if (siste_ord_linktekst == "premiepenger") {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
       }
       else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s " + siste_ord_linktekst;
       }
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {
@@ -928,14 +928,14 @@ function endre_link_landskoeff() {
     }
     var Klubbnavn = localStorage.getItem('Klubbnavn') || 'Choose club';
     if (Klubbnavn.slice(-1) == "s") {
-      document.getElementById("klubb_link").innerHTML = Klubbnavn + "’ " + siste_ord_linktekst;
+      document.getElementById("klubb_link").innerHTML = Klubbnavn + "' " + siste_ord_linktekst;
     }
     else {
       if (siste_ord_linktekst == "premiepenger") {
         document.getElementById("klubb_link").innerHTML = Klubbnavn + "s " + siste_ord_linktekst;
       }
       else {
-        document.getElementById("klubb_link").innerHTML = Klubbnavn + "’s " + siste_ord_linktekst;
+        document.getElementById("klubb_link").innerHTML = Klubbnavn + "'s " + siste_ord_linktekst;
       }
     }
     if (Klubbnavn == "Choose club" || Klubbnavn == eksperimentell_profil_e) {

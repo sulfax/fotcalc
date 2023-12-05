@@ -253,11 +253,11 @@ const norsk_koeffisient_dokumentasjon = [
     '<span class="bold">Klubb-koeffisientpoeng</span> er poeng deltakende klubber i Europa samler inn til egen klubb. Disse poengene har innvirkning på blant annet klubbens seeding i kvalikken og ekstra premiepenger i gruppespill. Disse poengene er ikke helt identiske med forbundspoengene. Mens Bodø/Glimt fikk 23,5 forbundspoeng i 2021/22-sesongen, fikk dem kun 15 klubb-koeffisientpoeng:',
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Klubb-koeffisientpoeng</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Bodø/Glimt</span></th><td class="sentrert_tall"><span class="italic">15</span></td></tr></tbody>',
     '(Verdien refererer til klubb-koeffisientpoeng som regnes ut med kalkulatoren)',
-    'Klubb-koeffisientpoeng fra en enkelt sesong brukes ikke direkte til noe. På den andre siden benyttes <span class="bold">klubbens klubb-koeffisientpoeng over de siste fem sesongene</span> til flere ting. Disse bestemmer for eksempel seeding i kvaliken og fordelingen av lag på de ulike pot’ene til trekningen av gruppene i gruppespillet.',
+    "Klubb-koeffisientpoeng fra en enkelt sesong brukes ikke direkte til noe. På den andre siden benyttes <span class='bold'>klubbens klubb-koeffisientpoeng over de siste fem sesongene</span> til flere ting. Disse bestemmer for eksempel seeding i kvaliken og fordelingen av lag på de ulike pot'ene til trekningen av gruppene i gruppespillet.",
     'Eksempel på en klubbs klubb-koeffisientpoeng over de fem foregående sesongene:',
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">"Fem-års-klubb-koeffisientpoeng"</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Bodø/Glimt</span></th><td class="sentrert_tall"><span class="italic">17</span></td></tr></tbody>',
     'Denne "fem-års-klubb-koeffisientpoengsummen" blir eksempelvis benyttet til å bestemme seeding i kvalikken til gruppespill:',
-    '<thead class="thead-light"><tr class="head_tr"><th scope="col"><span class="italic">Seedet</span></th><th scope="col"><span class="italic">Koeffpoeng</span></th><th scope="col"><span class="italic">Useedet</span></th><th scope="col"><span class="italic">Koeffpoeng</span></th></tr></thead><tbody class="litt_padding"><tr><td scope="row"><span class="italic">Slovan Bratislava</span></th><td class="sentrert_tall"><span class="italic">7.500</span></td><td scope="row"><span class="italic">Connah’s Quay</span></td><td class="sentrert_tall"><span class="italic">4.750</span></td></tr><tr class="litt_padding"><td scope="row"><span class="italic">Dinamo Tbilisi</span></td><td class="sentrert_tall"><span class="italic">6.500</span></td><td scope="row"><span class="italic">Valur Reykjavik</span></td><td class="sentrert_tall"><span class="italic">4.250</span></td></tr><tr><td scope="row"><span class="italic">Zalgiris Vilnius</span></td><td class="sentrert_tall"><span class="italic">6.500</span></td><td scope="row"><span class="italic">Bodø/Glimt</span></td><td class="sentrert_tall"><span class="italic">4.200</span></td></tr></tbody>',
+    "<thead class='thead-light'><tr class='head_tr'><th scope='col'><span class='italic'>Seedet</span></th><th scope='col'><span class='italic'>Koeffpoeng</span></th><th scope='col'><span class='italic'>Useedet</span></th><th scope='col'><span class='italic'>Koeffpoeng</span></th></tr></thead><tbody class='litt_padding'><tr><td scope='row'><span class='italic'>Slovan Bratislava</span></th><td class='sentrert_tall'><span class='italic'>7.500</span></td><td scope='row'><span class='italic'>Connah's Quay</span></td><td class='sentrert_tall'><span class='italic'>4.750</span></td></tr><tr class='litt_padding'><td scope='row'><span class='italic'>Dinamo Tbilisi</span></td><td class='sentrert_tall'><span class='italic'>6.500</span></td><td scope='row'><span class='italic'>Valur Reykjavik</span></td><td class='sentrert_tall'><span class='italic'>4.250</span></td></tr><tr><td scope='row'><span class='italic'>Zalgiris Vilnius</span></td><td class='sentrert_tall'><span class='italic'>6.500</span></td><td scope='row'><span class='italic'>Bodø/Glimt</span></td><td class='sentrert_tall'><span class='italic'>4.200</span></td></tr></tbody>",
     '(Utsnitt fra første kvalikkrunde i Champions League 2021/22)',
     'Ovenfor blir altså den halvparten av klubber med den høyeste "fem-års-klubb-koeffisientpoengsummen" seedet, mens resten blir useedet. Det vil si at en seedet klubb altid vil møte en useedet klubb i den spesifikke kvalikkrunden.',
     'Alle kvalikkrundene til gruppespillene fungerer på denne måten med seeding. Samme prinsippet tas også i bruk i ulik grad når det kommer til fordeling av klubber på de ulike gruppene i gruppespillene.'
@@ -335,7 +335,7 @@ const english = [
 ];
 
 const english_forside = [
-    'Your club’s Prize money & UEFA Coefficient points',
+    `Your club's Prize money & UEFA Coefficient points`,
     'UEFA income and coefficient overview',
     'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.<br><br><span class="reklame_landskoeff">Check out the <a class="link_utydelig" href="/country-coefficients">country coefficient ranking</a> too.</span>',
     'Club',
@@ -343,7 +343,7 @@ const english_forside = [
     'Association points',
     'Contribution',
     'Club points',
-    'The "contribution" column is calculated by dividing the association points by the number of clubs representing the club’s country.',
+    `The "contribution" column is calculated by dividing the association points by the number of clubs representing the club's country.`,
     'The figures in the table above if distributed on the associations:',
     'Prize money',
     'Association points',
@@ -364,7 +364,7 @@ const english_landskoeffisient = [
     'The ranking is decisive for the distribution of European spots (',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
     'Check out',
-    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>',
+    "<span class='marketPool' id='oversikt_reklame'><b><a class='graa_hover_link' id='klubb_link' href='https://www.fotcalc.com/' onclick='endre_sort_kolonne()'>Compare clubs' coefficient points</a>.</b></span>",
 ];
 
 const english_klubbkoeffisient = [
@@ -373,9 +373,9 @@ const english_klubbkoeffisient = [
     'This UEFA 5-year ranking decides seeding and pot-distribution in qualifying rounds<br>and the group stage. A higher ranking gives the club weaker opponents<br>in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
     'Decisive for seeding and pot distribution in ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
-    'UEFA will use whichever number is higher between a club’s total coefficient points (listed under "Points" in the table), or 20% of the national association’s coefficient points (listed under "NA").',
+    `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
     'Check out',
-    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
+    `<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs' coefficient points</a>.</b></span>`
 ];
 
 const english_fire_års = [
@@ -384,21 +384,21 @@ const english_fire_års = [
     'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup.<br>The four UCL winners from this 4-year period also qualifies.<br>A cap of two clubs per country applies, except if more than two of the UCL winners<br>represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
-    'UEFA will use whichever number is higher between a club’s total coefficient points (listed under "Points" in the table), or 20% of the national association’s coefficient points (listed under "NA").',
+    `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
     'Check out',
-    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
+    `<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs' coefficient points</a>.</b></span>`
 ];
 
 const english_ti_års = [
     'UEFA 10-year Club Coefficient ranking',
     '10-year coefficient ranking',
-    'This ranking is used solely to find the clubs’ 10-year coefficient bonus (€)<br>for participating in European group stages.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
+    "This ranking is used solely to find the clubs' 10-year coefficient bonus (€)<br>for participating in European group stages.<br><br><span class='gjennomsiktighet'>The ranking is based on <a class='link_utydelig' href='coefficient-definition#club'>club coefficient points</a>.<br>See also the <a class='link_utydelig' href='club-coefficients'>5-year coefficient ranking</a>.</span>",
     'Decisive for group stage bonus (€) for ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
-    'UEFA will use whichever number is higher between a club’s total coefficient points (listed under "Points" in the table), or 20% of the national association’s coefficient points (listed under "NA").',
+    `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
     'Historic title points are points awarded for winning past European cups, and are added to the coefficient.',
     'Check out',
-    '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs’ coefficient points</a>.</b></span>'
+    `<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs' coefficient points</a>.</b></span>`
 ]
 
 const english_kalkulator = [
@@ -435,9 +435,9 @@ const english_kalkulator = [
     'Won Super Cup',
     'Income per competition',
     'Total income',
-    '<p>*Calculations do not take the small COVID deduction into consederation.<br><br><br>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
-    '<p>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA’s distribution plan</a>.</p>',
-    'Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club’s coefficient points</a>.',
+    "<p>*Calculations do not take the small COVID deduction into consederation.<br><br><br>The calculator is based on <a class='graa_hover_link' id='uefa_distribution_link' href='https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf' target='_blank'>UEFA's distribution plan</a>.</p>",
+    `<p>The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA's distribution plan</a>.</p>`,
+    "Check out <a class='graa_hover_link' id='klubb_link' href='coefficient-calculator'>your club's coefficient points</a>.",
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare prize money with other clubs</a>.</b>',
     'League phase',
     'League placement',
@@ -490,8 +490,8 @@ const english_koeffisient = [
     '&nbsppoints for ',
     'Ranking',
     'The bottom row is calculated by dividing the association points by the number of clubs representing the country.',
-    '<p>*The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFA’s coefficient ranking system</a>.</p>',
-    'Check out <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">your club’s prize money</a>.',
+    "<p>*The calculator is based on <a class='graa_hover_link' id='uefa_distribution_link' href='https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online' target='_blank'>UEFA's coefficient ranking system</a>.</p>",
+    "Check out <a class='graa_hover_link' id='klubb_link' href='prize-money-calculator'>your club's prize money</a>.",
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare coefficient points with other clubs</a>.</b>',
     '<b>Take a look at the <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">country coefficient ranking</a>.</b>'
 ];
@@ -499,9 +499,9 @@ const english_koeffisient = [
 const english_koeffisient_dokumentasjon = [
     'UEFA Coefficient points Explained',
     'Coefficient Points explained',
-    'Check out your club’s <a class="link_utydelig" href="https://www.fotcalc.com/" onclick="trykker_forside_deffinisjon()">prize money and coefficient points</a> too.',
+    "Check out your club's <a class='link_utydelig' href='https://www.fotcalc.com/' onclick='trykker_forside_deffinisjon()'>prize money and coefficient points</a> too.",
     'What are coefficient points?',
-    '<span class="bold">Coefficient points</span> are points that all participating clubs in Europe earn each season. The better a club does in Europe, the more coefficient points the club will earn. These points carry multiple advantages, both for the club and the club’s association. A higher coefficient point sum can, among other, make the road into the group stages easier for the specific club and for other clubs from their association. <br><br> There are two kinds of coefficient points: association coefficient points and club coefficient points.',
+    "<span class='bold'>Coefficient points</span> are points that all participating clubs in Europe earn each season. The better a club does in Europe, the more coefficient points the club will earn. These points carry multiple advantages, both for the club and the club's association. A higher coefficient point sum can, among other, make the road into the group stages easier for the specific club and for other clubs from their association. <br><br> There are two kinds of coefficient points: association coefficient points and club coefficient points.",
     'Association coefficient points',
     '<span class="bold">Association points</span> are points that all clubs in Europe each season earn for their association. For example, here are the points earned by Scottish clubs in the 2021/22 season:<br>',
     'Association points',
@@ -509,17 +509,17 @@ const english_koeffisient_dokumentasjon = [
     '(The values refer to association points that are calculated with the calculator)',
     'The <span class="bold">"yearly country coefficient"</span> for that association  is the total points earned divided by the number of teams - in this case, 39.5 points divided by five teams:<br>',
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Yearly country coefficient (2021/22)</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Scotland</span></th><td class="sentrert_tall"><span class="italic">7.900</span></td></tr></tbody>',
-    'For the purposes of UEFA’s tournaments, an association’s <span class="bold">"country coefficient"</span> considers the previous five years of yearly coefficient points. In this example, at the end of the 2021/22 season, Scotland’s total would have combined 21/22 (7.9), 20/21 (8.5), 19/20 (9.75), 18/19 (6.75), and 17/18 (4.0), totaling 36.9 points.<br>',
+    "For the purposes of UEFA's tournaments, an association's <span class='bold'>'country coefficient'</span> considers the previous five years of yearly coefficient points. In this example, at the end of the 2021/22 season, Scotland's total would have combined 21/22 (7.9), 20/21 (8.5), 19/20 (9.75), 18/19 (6.75), and 17/18 (4.0), totaling 36.9 points.<br>",
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Country coefficient (2021/22)</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Scotland</span></th><td class="sentrert_tall"><span class="italic">36.900</span></td></tr></tbody>',
     '(Country coefficient points from 17/18 - 2021/22)',
     'This number informs the <span class="bold">ranking of associations</span>, which decides how many spots in each European tournament each association gets, and how easy it is for their clubs to qualify for the group stages. For example:',
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic"><a class="graa_hover_link_tabell_header" href="country-coefficients" onclick="trykker_lands_rank_deffinisjon()">Country coefficient ranking</a> (2021/22)</span></th><th scope="col"><span class="italic">European spots (2023/24)</span></th></tr></thead><tbody><tr><th scope="row" class="sentrert_vertikalt_tall"><span class="italic">Scotland</span></th><td class="sentrert_tall sentrert_vertikalt_tall"><span class="italic">9</span></td><td><span class="italic">UCL qualifying: 2 clubs<br> UEL qualifying: 1 club<br> UECL qualifying: 2 clubs</span></td></tr></tbody>',
     'Club coefficient points',
-    '<span class="bold">Club coefficient points</span> are points participating clubs in Europe earn for their own club. These points have an impact on, among other things, the club’s seeding in the qualifying rounds and additional prize money in the group stage. These do not match up exactly with association coefficient points. In our example, while Rangers earned 23.5 association points in 2021/22, they earned 19 club points:',
+    "<span class='bold'>Club coefficient points</span> are points participating clubs in Europe earn for their own club. These points have an impact on, among other things, the club's seeding in the qualifying rounds and additional prize money in the group stage. These do not match up exactly with association coefficient points. In our example, while Rangers earned 23.5 association points in 2021/22, they earned 19 club points:",
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">Club coefficient points</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Rangers</span></th><td class="sentrert_tall"><span class="italic">19</span></td></tr></tbody>',
     '(The value refers to club coefficient points as calculated with the calculator)',
-    'Club coefficient points from a single season are not used for anything directly. On the other hand <span class="bold">the clubs’ club coefficient points over the last five seasons</span> are used for multiple things. For example, they are used to decide seeding in the qualifying rounds for the group stages and the distribution of clubs in the group stages.',
-    'Example on a club’s club coefficient points over the prior five seasons:',
+    "Club coefficient points from a single season are not used for anything directly. On the other hand <span class='bold'>the clubs' club coefficient points over the last five seasons</span> are used for multiple things. For example, they are used to decide seeding in the qualifying rounds for the group stages and the distribution of clubs in the group stages.",
+    "Example on a club's club coefficient points over the prior five seasons:",
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"></th><th scope="col"><span class="italic">"Five year club coefficient points"</span></th></tr></thead><tbody><tr><th scope="row"><span class="italic">Rangers</span></th><td class="sentrert_tall"><span class="italic">50.250</span></td></tr></tbody>',
     'This "five year club coefficient" is, for example, used to decide seeding in the qualifying rounds for the group stages:',
     '<thead class="thead-light"><tr class="head_tr"><th scope="col"><span class="italic">Seeded</span></th><th scope="col"><span class="italic">Coeff. points</span></th><th scope="col"><span class="italic">Unseeded</span></th><th scope="col"><span class="italic">Coeff. points</span></th></tr></thead><tbody class="litt_padding"><tr><td scope="row"><span class="italic">Young Boys</span></th><td class="sentrert_tall"><span class="italic">35.000</span></td><td scope="row"><span class="italic">Legia Warszawa</span></td><td class="sentrert_tall"><span class="italic">16.500</span></td></tr><tr class="litt_padding"><td scope="row"><span class="italic">Crvena Zvezda</span></td><td class="sentrert_tall"><span class="italic">32.500</span></td><td scope="row"><span class="italic">Sheriff Tiraspol</span></td><td class="sentrert_tall"><span class="italic">14.500</span></td></tr><tr><td scope="row"><span class="italic">Rangers</span></td><td class="sentrert_tall"><span class="italic">31.250</span></td><td scope="row"><span class="italic">Ferencváros</span></td><td class="sentrert_tall"><span class="italic">13.500</span></td></tr></tbody>',

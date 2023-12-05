@@ -11,7 +11,7 @@ let opp_ned_pil_margin = '<span class="margin"><img src="media/opp_ned_pil.svg" 
 let opp_ned_pil_midten = '<span><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
-var din_klubbs_premi_koef_e = "your club’s prize money";
+var din_klubbs_premi_koef_e = "your club's prize money";
 var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 let filter_land = []
 let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
@@ -775,7 +775,7 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
   }
   else if (kolonne == 'prosent_NA') {
     if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
-      document.getElementById(kolonne).innerHTML = '<abbr id="NA_prosent" data_title="% of country’s coefficient points coming from club">NA %</abbr>' + opp_ned_pil
+      document.getElementById(kolonne).innerHTML = `<abbr id="NA_prosent" data_title="% of country's coefficient points coming from club">NA %</abbr>` + opp_ned_pil
     }
   }
   else if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil) {
