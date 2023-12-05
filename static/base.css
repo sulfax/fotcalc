@@ -101,6 +101,7 @@ body{
     color: rgb(196, 217, 255);
     font-size: 14px !important;
     padding-bottom: 4px !important;
+    padding-right: 0px !important;
 }
 #english {
     padding-right: 1rem !important;
@@ -110,8 +111,12 @@ body{
     padding-bottom: 4px !important;
     color:rgba(250, 250, 250, 0.7);
     padding-left: 0rem !important;
-    padding-right: 20px !important;
+    padding-right: 18px !important;
 }
+.norsk_engelsk_en_to {
+    padding-right: 0px !important;
+}
+
 @media screen and (min-width:1300px) {
     .en_to_rader {
         display: flex;
