@@ -23,9 +23,9 @@
     width: 95%;
     margin: auto;
 }
-@media (min-width:855px) {
+@media (min-width:868px) {
     .container_ {
-        width: 801px;
+        width: 805px;
     }
 }
 
