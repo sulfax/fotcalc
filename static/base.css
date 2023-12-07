@@ -93,7 +93,7 @@ body{
 #premiepenger_kalkulator, #koeffisient_kalkulator, #landskoeff_rangering, #klubbkoeff_rangering, #ti_års_rangering, #fire_års_rangering, #women_access_list {
     margin-right: .65rem !important;
 }
-#women_access_list {
+#fire_års_rangering {
     margin-right: 2rem !important;
 }
 #norsk, #english {
@@ -113,13 +113,16 @@ body{
     padding-left: 0rem !important;
     padding-right: 18px !important;
 }
-.norsk_engelsk_en_to {
-    padding-right: 0px !important;
-}
 
-@media screen and (min-width:1300px) {
+@media screen and (min-width:1100px) {
     .en_to_rader {
         display: flex;
+    }
+}
+@media screen and (max-width:1099px) {
+    #fire_års_rangering {
+        padding-right: 0px !important;
+        margin-right: 0px !important;
     }
 }
 
