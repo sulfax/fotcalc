@@ -406,7 +406,7 @@ const english_ti_års = [
 const english_kalkulator = [
     'UEFA Prize money Calculator UCL, UEL, UECL',
     'UEFA Prize money Calculator',
-    'Calculate your clubs income and revenue distribution in UEFA competitions.<br>Calculations include all exact prize money sums and<br>undistributed amounts.',
+    "Calculate your club's income and revenue distribution in UEFA competitions.<br>Calculations include all exact prize money sums and<br>undistributed amounts.",
     '<br> Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Domestic champion',
     '<abbr data_title="Qualifying matches for the qualification itself">Preliminary round</abbr>',
