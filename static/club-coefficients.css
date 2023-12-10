@@ -390,10 +390,8 @@ a {
     font-size: 0px !important;
     border-right: 1px solid rgba(0,0,0,0) !important;
 }
-@media (min-width:688px) {
-    .klubb_logo_4y {
-        margin-bottom: 1.7px;
-    }
+.klubb_logo_4y {
+    margin-bottom: 1.7px;
 }
 .klubb_logo {
     margin-bottom: 1.7px;
