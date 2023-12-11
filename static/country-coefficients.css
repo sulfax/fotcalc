@@ -29,9 +29,9 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:869px) {
+@media (min-width:873px) {
     .container_:not(.container_Mac) {
-        width: 841px;
+        width: 843px;
     }
 }
 
