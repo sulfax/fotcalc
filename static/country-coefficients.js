@@ -46,7 +46,7 @@ document.getElementById("dropDownMeny").innerHTML = (sessionStorage.getItem('dro
 document.getElementById("dropDownMeny2").innerHTML = (sessionStorage.getItem('dropdownmeny_valg_landskoeffisient') || (2000+nåværende_sesong_periode_valg[0]) + '/' + (nåværende_sesong_periode_valg[2])) + " <div class='opp_ned_pil'>&#10094</div>";
 let aar_etter_forste_periode = document.getElementById("dropDownMeny").innerText.slice(2,4) - 21;
 
-// Skal legge landskoeffisientpoengene inn her:
+// Skal legge lands-koeffisientpoengene inn her:
 let landskoeffisienter_totalt = []
 
 let flaggEmoji = [
