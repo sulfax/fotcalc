@@ -188,6 +188,9 @@ th, td {
     user-select: none;
     text-align: right;
 }
+/* #sesong1, #sesong2, #sesong3, #sesong4 {
+    border-right: 1px solid rgba(255, 0, 0, 0) !important;
+} */
 #poeng2 {
     text-align: center;
     padding-left: 8px;
