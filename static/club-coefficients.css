@@ -51,9 +51,9 @@
     margin: auto;
 }
 
-@media (min-width:913px) {
+@media (min-width:900px) {
     .container_ {
-        width: 883px;
+        width: 868px;
     }
 }
 
@@ -62,9 +62,9 @@
     margin: auto;
 }
 
-@media (min-width:773px) {
+@media (min-width:757px) {
     .container_4_aar {
-        width: 742px;
+        width: 729px;
     }
 }
 
@@ -203,6 +203,9 @@ th, td {
 }
 #sesong1, #sesong2, #sesong3, #sesong4, #sesong5, #poeng {
     text-align: right;
+    min-width: 55px;
+    padding-left: 3.8px !important;
+    padding-right: 3.8px !important;
 }
 #klubb {
     padding-left: 8px;

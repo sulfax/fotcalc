@@ -40,9 +40,9 @@
     margin: auto;
 }
 
-@media (min-width:1343px) {
+@media (min-width:1294px) {
     .container_ {
-        width: 1307px;
+        width: 1260px;
     }
 }
 /* @media (min-width:1437px) {
@@ -186,6 +186,9 @@ th, td {
 }
 #sesong1, #sesong2, #sesong3, #sesong4, #sesong5, #sesong6, #sesong7, #sesong8, #sesong9, #sesong10, #poeng {
     text-align: right;
+    min-width: 55px;
+    padding-left: 3.55px !important;
+    padding-right: 3.55px !important;
 }
 #klubb {
     padding-left: 8px;
