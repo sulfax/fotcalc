@@ -893,12 +893,12 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
         landskoeffisienter_totalt[p].push(i)
       }
     }
+    let ekstra_bredde = true;
+    let ekstra_bredde_ = true;
     let nummer = i+1
     let rangeringEndring = "";
-    let ekstra_bredde = true;
     let ekstra_bredde2 = "";
     let rangeringEndring_ = "";
-    let ekstra_bredde_ = true;
     let ekstra_bredde2_ = "";
     let denne_sesongen = nåværende_sesong_periode_valg[2];
     if (column == "id_nr") {
@@ -966,11 +966,11 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
         }
       }
     }
-    if (i == ranking_array.length-1 && ekstra_bredde) {
+    if (ekstra_bredde) {
       ekstra_bredde2 = "ekstra_bredde2"
     }
-    if (i == ranking_array.length-1 && ekstra_bredde_) {
-      ekstra_bredde2_ = "ekstra_bredde2"
+    if (ekstra_bredde_) {
+      ekstra_bredde2_ = "ekstra_bredde2_"
     }
     if (nummer <= 3) {
       nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][15] + '<img src="media/kolonnefjerner.png">';

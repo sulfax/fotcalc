@@ -29,15 +29,15 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:654px) {
+@media (min-width:655px) {
     .container__:not(.container__Mac) {
-        width: 626px;
+        width: 623px;
     }
 }
 
-@media (min-width:704px) {
+@media (min-width:705px) {
     .container__Mac {
-        width: 674px !important;
+        width: 671px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
@@ -187,16 +187,6 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
-}
-#id_nr {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-align: right;
-    padding-right: 8px;
 }
 #poeng2 {
     text-align: center;
@@ -362,8 +352,18 @@ th, td {
     min-width: 30px !important;
 }
 #id_nr {
-    padding-left: 8px;
+    padding-left: 6px;
     text-align:left;
+}
+#id_nr {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: right;
+    padding-right: 4px;
 }
 #land {
     width: 20px !important;
@@ -374,11 +374,11 @@ th, td {
     text-align: center !important;
 }
 #tabell_hoved .id_nr_klubb:not(.rangeringEndring_) {
-    max-width: 25px;
-    min-width: 25px;
+    max-width: 30px;
+    min-width: 30px;
     padding-left: 10px;
     padding-right: 0px !important;
-    width: 30px;
+    width: 25px !important;
     border-right: 0px solid rgba(177, 177, 177, 1) !important;
 }
 
@@ -387,22 +387,24 @@ th, td {
     min-width: 42px;
     text-align: center !important;
 }
-
+.ekstra_bredde2 {
+    padding-left: 0px !important;
+}
 .rangeringEndring:not(.ekstra_bredde2) {
-    padding-right: 0px !important;
     padding-left: 4px !important;
     width: 0px;
-    padding-right: 5px !important;
+    padding-right: 0px !important;
 }
 .rangeringEndring_:not(.ekstra_bredde2_) {
     padding-right: 0px !important;
-    padding-left: 7px !important;
+    padding-left: 4px !important;
     width: 0px;
     padding-right: 7px !important;
 }
 .ekstra_bredde2 {
-    width: 11px !important;
-    min-width: 11px !important;
+    width: 0px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 .ekstremt_utydelig {
     color: rgba(135, 142, 150, 0.4) !important;
