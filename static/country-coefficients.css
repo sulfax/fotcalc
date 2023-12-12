@@ -29,27 +29,27 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:656px) {
+@media (min-width:655px) {
     .container__:not(.container__Mac) {
-        width: 624px;
+        width: 623px;
     }
 }
 
-@media (min-width:706px) {
+@media (min-width:705px) {
     .container__Mac {
-        width: 672px !important;
+        width: 671px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:873px) {
+@media (min-width:872px) {
     .container_:not(.container_Mac) {
-        width: 843px;
+        width: 842px;
     }
 }
 
-@media (min-width:923px) {
+@media (min-width:922px) {
     .container_Mac {
-        width: 891px !important;
+        width: 890px !important;
     }    
 }
 
@@ -561,4 +561,5 @@ th, td {
 }
 .klubb_logo {
     margin-bottom: 1.7px;
+    margin-right: 5px;
 }

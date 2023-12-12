@@ -51,9 +51,9 @@
     margin: auto;
 }
 
-@media (min-width:900px) {
+@media (min-width:899px) {
     .container_ {
-        width: 868px;
+        width: 867px;
     }
 }
 
@@ -62,9 +62,9 @@
     margin: auto;
 }
 
-@media (min-width:757px) {
+@media (min-width:756px) {
     .container_4_aar {
-        width: 729px;
+        width: 728px;
     }
 }
 
@@ -398,6 +398,7 @@ a {
 }
 .klubb_logo {
     margin-bottom: 1.7px;
+    margin-right: 5px;
 }
 .grense{
     border-bottom: 2px solid rgba(52, 58, 64, 0.38) !important;

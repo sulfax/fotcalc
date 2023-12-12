@@ -23,14 +23,14 @@
     width: 95%;
     margin: auto;
 }
-@media (min-width:829px) {
+@media (min-width:820px) {
     .container_ {
-        width: 765px !important;
+        width: 755px !important;
     }
 }
-@media (min-width:654px) {
+@media (min-width:655px) {
     .container__ {
-        width: 584px;
+        width: 585px;
     }
 }
 .høyrestill {
@@ -49,6 +49,7 @@
 }
 .klubb_logo {
     margin-bottom: 1.7px;
+    margin-right: 5px;
     /* margin-bottom: calc(-0.14vw + 3.1px); */
 }
 .btn-secondary {
@@ -195,9 +196,9 @@ th, td {
 }
 
 .id_nr {
-    max-width: 60px !important;
+    max-width: 50px !important;
     min-width: 42px;
-    width: 60px;
+    width: 50px;
     text-align: center;
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }

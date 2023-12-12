@@ -40,9 +40,9 @@
     margin: auto;
 }
 
-@media (min-width:1294px) {
+@media (min-width:1293px) {
     .container_ {
-        width: 1260px;
+        width: 1259px;
     }
 }
 /* @media (min-width:1437px) {
@@ -378,4 +378,5 @@ a {
 }
 .klubb_logo {
     margin-bottom: 1.7px;
+    margin-right: 5px;
 }
