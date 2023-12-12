@@ -23,20 +23,19 @@
     width: 95%;
     margin: auto;
 }
-@media (min-width:868px) {
+@media (min-width:829px) {
     .container_ {
-        width: 779px !important;
+        width: 765px !important;
     }
 }
 @media (min-width:654px) {
     .container__ {
-        width: 599px;
+        width: 584px;
     }
 }
-.container__ {
-    margin-top: 0px !important;
+.høyrestill {
+    margin: 0px !important;
 }
-
 
 
 
@@ -131,7 +130,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
 }
-@media (min-width:800px) {
+@media (min-width:900px) {
     #ass_coeff, #bidrag, #prize_money, #club_coeff {
         text-align: right;
     }
@@ -152,9 +151,9 @@ th, td {
 #club_coeff {
     min-width: 55px;
 }
-@media (min-width:680px) {
+@media (min-width:580px) {
     #club_coeff {
-        min-width: 74px;
+        min-width: 65px;
     }
 }
 #club {

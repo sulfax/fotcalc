@@ -29,15 +29,15 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:694px) {
+@media (min-width:652px) {
     .container__:not(.container__Mac) {
-        width: 664px;
+        width: 623px;
     }
 }
 
-@media (min-width:744px) {
+@media (min-width:702px) {
     .container__Mac {
-        width: 712px !important;
+        width: 671px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
@@ -184,7 +184,6 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
-    min-width: 5px;
 }
 #id_nr {
     -webkit-touch-callout: none;
@@ -333,6 +332,12 @@ th, td {
 .flagg_hoyre {
     float:right;
 }
+.grense_celle:not(#tom_kolonne) {
+    padding-right: 5.8px !important;
+    padding-left: 0px !important;
+    width: fit-content !important;
+}
+
 #internt_oppgjør_asterisk {
     padding-top: 8px;
 }
@@ -382,7 +387,7 @@ th, td {
 
 .rangeringEndring:not(.ekstra_bredde2) {
     padding-right: 0px !important;
-    padding-left: 5px !important;
+    padding-left: 4px !important;
     width: 0px;
     padding-right: 5px !important;
 }
