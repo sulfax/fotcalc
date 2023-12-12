@@ -29,15 +29,15 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:652px) {
+@media (min-width:654px) {
     .container__:not(.container__Mac) {
-        width: 623px;
+        width: 626px;
     }
 }
 
-@media (min-width:702px) {
+@media (min-width:704px) {
     .container__Mac {
-        width: 671px !important;
+        width: 674px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
