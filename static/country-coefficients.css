@@ -29,15 +29,15 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:655px) {
+@media (min-width:656px) {
     .container__:not(.container__Mac) {
-        width: 623px;
+        width: 624px;
     }
 }
 
-@media (min-width:705px) {
+@media (min-width:706px) {
     .container__Mac {
-        width: 671px !important;
+        width: 672px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
@@ -352,7 +352,7 @@ th, td {
     min-width: 30px !important;
 }
 #id_nr {
-    padding-left: 6px;
+    padding-left: 7px;
     text-align:left;
 }
 #id_nr {
