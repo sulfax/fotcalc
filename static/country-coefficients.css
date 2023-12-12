@@ -150,6 +150,9 @@ th, td {
     margin-right:1%;
     margin-bottom: 1.1%;
 }
+#tabell_hoved {
+    margin-left:1.12%;
+}
 .btn.btn-primary:focus, .btn.btn-primary:active, .btn-primary.dropdown-toggle:focus, .btn-primary.focus {  /*Fjerner irriterende ramme på knapp ved trykking*/
     box-shadow:none !important;
 }
