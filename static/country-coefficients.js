@@ -2234,6 +2234,7 @@ var isSafari2 = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                navigator.userAgent.indexOf('FxiOS') == -1;
 if (navigator.appVersion.indexOf("Mac")!=-1 && (isSafari || isSafari2)) {
   document.getElementById("container_").className += " container_Mac";
+  document.getElementById("container__").className += " container__Mac";
 }
 
 

@@ -5,7 +5,7 @@
         bottom: -2px;
     }
 }
-@media (max-width:1700px) {
+@media (max-width:1600px) {
     .reaklame_sidene {
         display: none;
     }
@@ -23,11 +23,23 @@
     padding-top:300px;
 }
 
-.container_ {
+.container_, .container__ {
     width: 99.3%;
     margin: auto;
 }
 
+/*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
+@media (min-width:694px) {
+    .container__:not(.container__Mac) {
+        width: 664px;
+    }
+}
+
+@media (min-width:744px) {
+    .container__Mac {
+        width: 712px !important;
+    }    
+}
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
 @media (min-width:873px) {
     .container_:not(.container_Mac) {
@@ -220,9 +232,10 @@ th, td {
     margin: auto;
 }
 #poeng {
-    min-width: 82px;
+    min-width: 62px;
     text-align: right;
-    padding: 10px;
+    padding-left: 12px;
+    padding-right: 8px;
 }
 .jordklode {
     margin-bottom: 1px;
@@ -335,7 +348,7 @@ th, td {
     text-align: right;
 }
 .id_nr:not(.rangeringEndring, #id_nr) {
-    padding-left: 12px;
+    padding-left: 10px;
     padding-right: 0px !important;
     width: 30px !important;
     min-width: 30px !important;
@@ -353,9 +366,9 @@ th, td {
     text-align: center !important;
 }
 #tabell_hoved .id_nr_klubb:not(.rangeringEndring_) {
-    max-width: 30px;
-    min-width: 30px;
-    padding-left: 11px;
+    max-width: 25px;
+    min-width: 25px;
+    padding-left: 9px;
     padding-right: 0px !important;
     width: 30px;
     border-right: 0px solid rgba(177, 177, 177, 1) !important;
@@ -375,7 +388,7 @@ th, td {
 }
 .rangeringEndring_:not(.ekstra_bredde2_) {
     padding-right: 0px !important;
-    padding-left: 5px !important;
+    padding-left: 7px !important;
     width: 0px;
     padding-right: 8px !important;
 }
@@ -464,6 +477,7 @@ th, td {
     font-style: italic;
 }
 .utydelig_link {
+    padding-left: 0px !important;
     color: rgb(86, 97, 255) !important;
 }
 .utydelig_link_klubb {
@@ -498,7 +512,7 @@ th, td {
     border-bottom: 1px solid white !important;
 }
 .tom {
-    width: 3.9%;
+    width: 1px;
     border-left: 1px solid rgba(177, 177, 177, 0.8) !important;
     background-color: white !important;
     border-top: white !important;

@@ -1,4 +1,4 @@
-.container_ {
+.container_, .container__ {
     display: block;
 }
 .reklame_øverst {
@@ -432,7 +432,7 @@ a:hover {
     width:fit-content;
     margin: auto;
 }
-.container_, .container_4_aar {
+.container_, .container_4_aar, .container__ {
     display: flex;
     min-height: 69vh;
     flex-direction: column;
