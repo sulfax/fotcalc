@@ -373,7 +373,7 @@ th, td {
 #tabell_hoved .id_nr_klubb:not(.rangeringEndring_) {
     max-width: 25px;
     min-width: 25px;
-    padding-left: 9px;
+    padding-left: 10px;
     padding-right: 0px !important;
     width: 30px;
     border-right: 0px solid rgba(177, 177, 177, 1) !important;
