@@ -2249,7 +2249,7 @@ if (navigator.appVersion.indexOf("Mac")!=-1 && (isSafari || isSafari2)) {
 //     if (forrigeUkeData[i][0] == landskode) {
 //       for (let j = 0; j < flaggEmoji.length; j++) {
 //         if (flaggEmoji[j][0] == landskode) {
-//           twitterLimInn.push([flaggEmoji[j][1], parseFloat(rader[1+k].cells[7].innerText - forrigeUkeData[i][1])]);
+//           twitterLimInn.push([flaggEmoji[j][1], parseFloat((rader[1+k].cells[7].innerText - forrigeUkeData[i][1]).toFixed(3))]);
 //         }
 //       }
 //     }
