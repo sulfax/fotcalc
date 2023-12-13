@@ -355,7 +355,7 @@ th, td {
     min-width: 30px !important;
 }
 #id_nr {
-    padding-left: 7px;
+    padding-left: 6px;
     text-align:left;
 }
 #id_nr {
@@ -365,8 +365,8 @@ th, td {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    text-align: right;
-    padding-right: 4px;
+    text-align: left;
+    padding-right: 5px;
 }
 #land {
     width: 20px !important;
