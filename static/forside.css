@@ -29,7 +29,7 @@
     }
 }
 @media (min-width:655px) {
-    .container__ {
+    .container__, .reklame_topp {
         width: 585px;
     }
 }
