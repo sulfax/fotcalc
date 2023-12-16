@@ -1,4 +1,4 @@
-MinstAntallUnikeUCL_Mestere = [3,1];
+MinstAntallUnikeUCL_Mestere = [3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 
 (function () {
 	window.onpageshow = function(event) {
