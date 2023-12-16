@@ -1,3 +1,5 @@
+MinstAntallUnikeUCL_Mestere = [3,1];
+
 (function () {
 	window.onpageshow = function(event) {
 		if (event.persisted) {
@@ -398,7 +400,7 @@ function oppdater_ved_refresh() {
       let landRegistrert = false;
       for (j = 0; j < VM_antallLand.length; j++) {
         if (VM_antallLand[j][0] == ranking_array[i][2]) {
-          if (godkjente_klubber < 12-uclMestere.length-sammeUclMester) {
+          if (godkjente_klubber < 12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4]-sammeUclMester) {
             VM_antallLand[j][1] += 1;
             landRegistrert = true;
           }
@@ -410,12 +412,12 @@ function oppdater_ved_refresh() {
           }
         }
       }
-      if (!landRegistrert && godkjente_klubber <  12-uclMestere.length-sammeUclMester) {
+      if (!landRegistrert && godkjente_klubber <  12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4]-sammeUclMester) {
         VM_antallLand.push([ranking_array[i][2], 1])
       }
     }
-    if (godkjent && godkjente_klubber <= 12-uclMestere.length && KjørLøkkeUnder) {
-      if (godkjente_klubber < 12-uclMestere.length) {ranking_array[i][10].push(godkjente_klubber+1)}
+    if (godkjent && godkjente_klubber <= 12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4] && KjørLøkkeUnder) {
+      if (godkjente_klubber < 12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4]) {ranking_array[i][10].push(godkjente_klubber+1)}
       godkjente_klubber++;}
     if (godkjent && godkjente_klubber == 8+sammeUclMester && KjørLøkkeUnder) {
       plass8 = ranking_array[i][9];
@@ -983,7 +985,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     else {ranking_array[i][0] += klubbnavn}
 
     let topp8nr = ""
-    if (ranking_array[i][10][0] <=  12+uclMestere.length && ranking_array[i][10][0] >= 1) {
+    if (ranking_array[i][10][0] <=  12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4] && ranking_array[i][10][0] >= 1) {
       ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
       if (klubbnavn_HTML_start == "<td>") {
         klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "'>";
