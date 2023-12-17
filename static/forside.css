@@ -149,6 +149,9 @@ th, td {
 /* #ass_coeff, #prize_money, #club_coeff, #bidrag {
     min-width: calc(5vw + 30px) !important;
 } */
+#bidrag {
+    min-width: 72px !important;
+}
 #club_coeff {
     min-width: 55px;
 }
