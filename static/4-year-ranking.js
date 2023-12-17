@@ -109,24 +109,6 @@ function oppdater_ved_refresh() {
               for (let l = 0; l < 3; l++) {
                 let knapper_ = ((menyvalg[p][2 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").split(",");
                 if (knapper_.includes("b18")) {
-                  // Hvis FIFA-modell brukes:
-                  // deltattUCL = true;
-                  // sesonger[l] = 5;
-                  // sesonger[l] += parseInt(((menyvalg[p][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[0] * 3);
-                  // sesonger[l] += parseInt(((menyvalg[p][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[3]);
-                  // if (knapper_.includes("b21")) {
-                  //   let seier_uav = ((menyvalg[p][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replace(/([^\,]*\,){35}/, '').split(",");
-                  //   for (j = 0; j < seier_uav.length; j++) {
-                  //     if (seier_uav[j] && [0,3,8,11,17,20,26].includes(j)) {
-                  //       if (seier_uav[j] == 3) {
-                  //         sesonger[l] += 3;
-                  //       }
-                  //       if (seier_uav[j] == 2) {
-                  //         sesonger[l] += 1
-                  //       }
-                  //     }
-                  //   }
-                  // }
                   deltattUCL = true;
                   sesonger[l] = 4;
                   sesonger[l] += parseInt(((menyvalg[p][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[0] * 2);
@@ -203,52 +185,33 @@ function oppdater_ved_refresh() {
       for (; l < 3; l++) {
         let knapper_ = ((menyvalg[i][2 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").split(",");
         if (knapper_.includes("b18")) {
-          // Hvis FIFA-modell brukes:
-          // sesonger[l+1] = 5;
-          // sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[0] * 3);
-          // sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[3]);
-          // if (knapper_.includes("b21")) {
-          //   let seier_uav = [];
-          //   if (menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)] && (((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)].split(",").length - 1) >= 35 && aar_etter_forste_periode - 3+l < 3) || ((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)].split(",").length - 1) >= 39 && aar_etter_forste_periode - 3+l >= 3))) {
-          //     if (aar_etter_forste_periode - 3+l < 3) {
-          //       seier_uav = ((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replace(/([^\,]*\,){35}/, '').split(",");
-          //     }
-          //     else {
-          //       seier_uav = ((menyvalg[i][6 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replace(/([^\,]*\,){39}/, '').split(",");
-          //     }
-          //     for (j = 0; j < seier_uav.length; j++) {
-          //       if (seier_uav[j] && [0,3,8,11,17,20,26].includes(j)) {
-          //         if (seier_uav[j] == 3) {
-          //           sesonger[l+1] += 3;
-          //         }
-          //         if (seier_uav[j] == 2) {
-          //           sesonger[l+1] += 1
-          //         }
-          //       }
-          //     }
-          //   }
-          // }
-          sesonger[l+1] = 4;
-          sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[0] * 2);
+          let seierPoeng = 3;
+          if (aar_etter_forste_periode - 3+l < 3) {
+            sesonger[l+1] = 4;
+            seierPoeng = 2;
+          }
+          else {
+            sesonger[l+1] = 0;
+          }
+          sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[0] * seierPoeng);
           sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[3]);
           if (knapper_.includes("b21")) {
             sesonger[l+1] += 1
             if (aar_etter_forste_periode - 3+l < 3) {
               if (["1","2"].includes(menyvalg[i][5 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)].replaceAll(",",""))) {
                 sesonger[l+1] += 4;
+                for (j = 0; j < knapper_.length; j++) {
+                  if (["b24","b27","b30"].includes(knapper_[j])) {
+                    sesonger[l+1] += 1;
+                  }
+                }
               }
             }
             else {
-              if (((menyvalg[i][5 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replaceAll(",","") <= 8) {
-                sesonger[l+1] += 6;
-              }
-              else if (((menyvalg[i][5 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "").replaceAll(",","") <= 24) {
-                sesonger[l+1] += 3;
-              }
-            }
-            for (j = 0; j < knapper_.length; j++) {
-              if (["b24","b27","b30"].includes(knapper_[j])) {
-                sesonger[l+1] += 1;
+              for (j = 0; j < knapper_.length; j++) {
+                if (["b21","b24","b27","b30"].includes(knapper_[j])) {
+                  sesonger[l+1] += 3;
+                }
               }
             }
             let seier_uav = [];
@@ -261,7 +224,17 @@ function oppdater_ved_refresh() {
               }
               for (j = 0; j < seier_uav.length; j++) {
                 if (seier_uav[j] && [0,3,8,11,17,20,26].includes(j)) {
-                  sesonger[l+1] += seier_uav[j]-1;
+                  if (aar_etter_forste_periode - 3+l < 3) {
+                    sesonger[l+1] += seier_uav[j]-1;
+                  }
+                  else {
+                    if (seier_uav[j] == 3) {
+                      sesonger[l+1] += 3;
+                    }
+                    if (seier_uav[j] == 2) {
+                      sesonger[l+1] += 1
+                    }
+                  }
                 }
               }
             }
@@ -984,9 +957,9 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     else if (ranking_array[i][10].includes("overstiger_maks_2_grense")) {ranking_array[i][0] += "<abbr class='abbr_klubb' data_title='Clubs per country cap reached'>" + klubbnavn + "</abbr>"}
     else {ranking_array[i][0] += klubbnavn}
 
-    let topp8nr = ""
+    let topp8nr = "";
     if (ranking_array[i][10][0] <=  12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4] && ranking_array[i][10][0] >= 1) {
-      if (["FC Bayern München","Paris Saint-Germain","Internazionale Milano","FC Porto","SL Benfica"].includes(klubbnavn)) {
+      if (aar_etter_forste_periode == 3 && ["FC Bayern München","Paris Saint-Germain","Internazionale Milano","FC Porto","SL Benfica"].includes(klubbnavn)) {
         ranking_array[i][0] += "<span class='topp8_nr topp8_nr_farge'>" + ranking_array[i][10][0] + "</span>";
       }
       else {
