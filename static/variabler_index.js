@@ -119,7 +119,7 @@ const norsk_fire_års = [
     '4 års koeffisient-rangering (ikke<br>brekreftet av UEFA)',
     'De åtte høyest rangerte klubbene på denne rangeringen kvalifiserer seg til FIFA Club World Cup.<br>De fire UCL-vinnerne fra denne 4-årsperioden kvalifiserer seg også.<br>Maksimalt to klubber per land kan kvalifisere seg, med mindre mer enn to av UCL-vinnerne<br>representerer samme land.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a> (kun fra Champions League).<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen.</span>',
     'Bestemmer deltakere i Klubb-VM ',
-    'Klubber merket med tall til høyre for klubbnavnet sitt, er i posisjon til å kvalifisere seg. Hvis tallet er grønt er dem kvalifisert.',
+    'Klubber merket med tall til høyre for klubbnavnet sitt, er i posisjon til å kvalifisere seg. Grønne tall indikerer at deltagelse er sikret.',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
     'Sjekk ut',
