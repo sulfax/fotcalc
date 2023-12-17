@@ -387,10 +387,10 @@ td .placeholder::placeholder {
 .table .resultat_celle_1 {
     border: 1px solid rgba(177, 177, 177, 0.3);
 }
-#tabell_data_ramme, #prelim_semifinale, #gruppespill, #q1_kamp1, #q2_kamp1, #q3_kamp1, #po_kamp1, #gruppespill_del, #knock_po_kamp1, #åtten, #kvart, #semi, #finale {
+#tabell_data_ramme, #prelim_semifinale, #gruppespill, #q1_kamp1, #q2_kamp1, #q3_kamp1, #po_kamp1, #ligaspill_del, #gruppespill_del, #knock_po_kamp1, #åtten, #kvart, #semi, #finale {
     border-top: 1px solid rgba(177, 177, 177, 0.3);
 }
-#prelim_semifinale, #gruppespill_del, #knock_po_kamp1, .tydelig_ramme, .tydelig_ramme_hoyre_under_over, .q1_kamp1_post_24 {
+#prelim_semifinale, #gruppespill_del, #ligaspill_del, #knock_po_kamp1, .tydelig_ramme, .tydelig_ramme_hoyre_under_over, .q1_kamp1_post_24 {
     border-top: 1px solid rgb(177, 177, 177) !important;
 }
 .tydelig_ramme_under, #total_inntjening_klubb, .tydelig_ramme_hoyre_under_over, .bånn {
