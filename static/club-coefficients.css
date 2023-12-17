@@ -430,6 +430,9 @@ a {
     border-right: 1px solid rgba(0,0,0,0) !important;
     padding: 0px !important;
 }
+.topp8_nr_farge {
+    color: rgb(0, 172, 0) !important;
+}
 #no_select {
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;

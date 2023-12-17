@@ -986,7 +986,12 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
 
     let topp8nr = ""
     if (ranking_array[i][10][0] <=  12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4] && ranking_array[i][10][0] >= 1) {
-      ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
+      if (ranking_array[i][10][0] < 1) {
+        ranking_array[i][0] += "<span class='topp8_nr topp8_nr_farge'>" + ranking_array[i][10][0] + "</span>";
+      }
+      else {
+        ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
+      }
       if (klubbnavn_HTML_start == "<td>") {
         klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "'>";
       }
