@@ -4,7 +4,7 @@ const norsk = [
     'Landskoeffisient-rangering',
     'Klubbkoeffisient-rangering',
     '10 års rangering',
-    '4 års rangering (ikke bekreftet)',
+    '4 års rangering',
     'Tilgangsliste (kvinner) 2025/26',
     'Premiepenge-kalkulator',
     'Koeffisient-kalkulator',
@@ -271,7 +271,7 @@ const english = [
     'Country coefficient ranking',
     'Club coefficient ranking',
     '10-year ranking',
-    '4-year ranking (not confirmed)',
+    '4-year ranking',
     'Women access list 2025/26',
     'Prize money calculator',
     'Coefficient calculator',
@@ -383,7 +383,7 @@ const english_klubbkoeffisient = [
 
 const english_fire_års = [
     'UEFA 4-year Club Coefficient ranking (World Cup)',
-    '4-year coefficient ranking (not<br>confirmed by UEFA)',
+    '4-year coefficient ranking',
     'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup.<br>The four UCL winners from this 4-year period also qualifies.<br>A cap of two clubs per country applies, except if more than two of the UCL winners<br>represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with numbers to the right of their club names are in position to qualify. Green numbers indicate that participation is guaranteed.',
