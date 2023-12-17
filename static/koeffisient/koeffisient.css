@@ -10,7 +10,7 @@
     #abbrCWC abbr:hover::after,
     #abbrCWC abbr:focus::after {
         bottom: -29px !important;
-        left: -120px !important;
+        left: -230px !important;
     }
 }
 
