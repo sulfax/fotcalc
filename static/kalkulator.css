@@ -18,19 +18,9 @@
     width: 95.6%;
     margin: auto;
 }
-@media (min-width:1030px) {
+@media (min-width:970px) {
     .container_ {
-        width: 950px;
-    }
-    @media (max-width:1790px) {
-        .container_ {
-            width: 950px;
-        }
-    }
-    @media (max-width:1290px) {
-        .container_ {
-            width: 950px;
-        }
+        width: 891px;
     }
 }
 
@@ -102,10 +92,11 @@
     background-color:rgba(151, 151, 151, 0.575);
 }
 .table.table-sm{
-    width:98%;
-    margin-left:1%;
-    margin-right:1%;
-    margin-bottom: 1.1%;
+    width:98.4%;
+    margin-left:.8%;
+    margin-right:.8%;
+    margin-bottom: .8%;
+    margin-top: -.2% !important;
 }
 tbody {
     border-top: 4px !important;
@@ -150,7 +141,7 @@ tbody {
 .turnering, .turnering_2 {
     text-align: center;
     padding: 0px !important;
-    padding-top: 12px !important;
+    padding-top: 0px !important;
     vertical-align: middle !important;
 }
 .turnering {
@@ -158,6 +149,9 @@ tbody {
 }
 .turnering_2 {
     width: 9.9%;
+}
+.turnering, .turnering_2 {
+    padding-top: 0px !important;
 }
 .btn-secondary {
     display:inline;
@@ -315,6 +309,12 @@ td .placeholder::placeholder {
     transition: none;
     float:right;
 }
+#UCL, #UEL, #UECL {
+    margin-bottom: 0px !important;
+}
+#UCL_2, #UCL_2_CWC, #UEL_2, #UECL_2 {
+    margin-bottom: 0px !important;
+}
 #UCL {
     color:#2769AE;
     margin-right: 11%;
@@ -349,7 +349,7 @@ td .placeholder::placeholder {
 .table .ingen_ramme_hoyre {
     border-right: 1px solid rgba(177, 177, 177, 0) !important;
 }
-#tabell_data_ramme, #gruppespill, #ligaspill, #spilt_preliminary, #spilt_q1_post_24, #spilt_åttendelsfinale, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
+#tabell_data_ramme, #gruppespill, #ligaspill, #spilt_preliminary, #spilt_q1_post_24, #spilt_utslagsrunde_playoff, #spilt_scup, #hjemlig_seriemester, .tydelig_ramme_hoyre_under_over {
     border-top: 1px solid #b1b1b1 !important;
 }
 #inntjening_turnering, #UCL_inntjening, #UEL_inntjening, #UECL_inntjening {
@@ -385,8 +385,8 @@ td .placeholder::placeholder {
 #progresjon {
     width:calc(11rem - 30px);
     height:72px;
-    margin-top: -13px;
-    margin-bottom: 31px !important;
+    margin-top: 0px;
+    margin-bottom: 0px !important;
 }
 .tekst_margin_hoyre {
     margin-right: 1.2rem !important;

@@ -154,14 +154,14 @@
         <table class="table table-sm table-hover">
           <thead class="thead-light">
             <tr class="head_tr">
-              <th scope="col"><p id="progresjon"></p></th>
+              <th scope="col"><p id="progresjon">Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards"></p></th>
               <th class="mellomrom_2"></th>
               <th scope="col" class="turnering"><p id="UCL">Champions League</p></th>
               <th scope="col" class="turnering"><p id="UEL">Europa League</p></th>
               <th scope="col" class="turnering"><p id="UECL">Europa Conference League</p></th>
               <th class="mellomrom"></th>
               <th scope="col" class="turnering_2_2" colspan="3">
-                <p class="sentrer"><a id="assosiasjons_poeng_link" class="poengtype_overskrift" href="coefficient-definition#association">Association points</a></p>
+                <p class="sentrer margin_bunn_poeng"><a id="assosiasjons_poeng_link" class="poengtype_overskrift" href="coefficient-definition#association">Association points</a></p>
                 <div class="Turnerings_oversikt">
                   <p id="UCL_2">UCL</p>
                   <p id="UEL_2">UEL</p>
@@ -170,7 +170,7 @@
               </th>
               <td class="mellomrom_2"></td>
               <th scope="col" class="turnering_2_2" colspan="3">
-                <p class="sentrer"><a id="klubb_poeng" class="poengtype_overskrift" href="coefficient-definition#club">Club points</a></p>
+                <p class="sentrer margin_bunn_poeng"><a id="klubb_poeng" class="poengtype_overskrift" href="coefficient-definition#club">Club points</a></p>
                 <div class="Turnerings_oversikt">
                   <p id="UCL_2">UCL</p>
                   <p id="UEL_2">UEL</p>
@@ -181,7 +181,7 @@
           </thead>
           <tbody>
             <tr class="Kvalifisering">
-              <th scope="row" id="prelim_semifinale">Preliminary round | Semi-final</th>
+              <th scope="row" id="prelim_semifinale"><abbr data_title="Preliminary round before the qualification itself">PR</abbr> | semi-final</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
                 <button id="b1" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
@@ -196,7 +196,7 @@
               <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_utenom_oppe"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="prelim_finale">Preliminary round | Final</th>
+              <th scope="row" id="prelim_finale">PR | final</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <button id="b2" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
@@ -211,7 +211,7 @@
               <td class="tom_celle tydelig_ramme_hoyre" id="tom_celle_ramme_bottom"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="q1_kamp1">Q1 | match 1</th>
+              <th scope="row" id="q1_kamp1"><abbr data_title="First qualifying round">Q1</abbr> | match 1</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b3" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
@@ -262,7 +262,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre_under_over" id="b9__"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="q2_kamp1">Q2 | match 1</th>
+              <th scope="row" id="q2_kamp1"><abbr data_title="Second qualifying round">Q2</abbr> | match 1</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b10" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
@@ -313,7 +313,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre_under_over" id="b16__"></td>
             </tr>
             <tr class="Kvalifisering">
-              <th scope="row" id="q3_kamp1">Q3 | match 1</th>
+              <th scope="row" id="q3_kamp1"><abbr data_title="Third qualifying round">Q3</abbr> | match 1</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle" id="tabell_data_ramme">
                 <button id="b17" type="button" class="btn btn-danger r0" onclick="fordeling_resultat(this.id)"></button>
@@ -432,7 +432,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b33__"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="seiere_antall">Wins</th>
+              <th scope="row" id="seiere_antall"><abbr data_title="Amount of wins in the group stage">Wins</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
@@ -449,7 +449,7 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i3__"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="uavgjort_antall">Draws</th>
+              <th scope="row" id="uavgjort_antall"><abbr data_title="Amount of draws in the group stage">Draws</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i4" name="4" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
@@ -483,7 +483,7 @@
               <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="i9__"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="knock_po_kamp1">Knockout round play-off | match 1</th>
+              <th scope="row" id="knock_po_kamp1"><abbr data_title="Knockout play-off for the knockout rounds">KO round play-off</abbr> | match 1</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle tydelig_ramme" id="tabell_data_ramme">
                 <div class="knapp_erstatning"></div>
@@ -500,7 +500,7 @@
               <td class="tom_celle tydelig_ramme_hoyre" id="b35__"></td>
             </tr>
             <tr class="Utslagsrunde">
-              <th scope="row" id="knock_po_kamp2">Knockout round play-off | match 2</th>
+              <th scope="row" id="knock_po_kamp2">KO round play-off | match 2</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
@@ -752,9 +752,9 @@
               <td class="mellomrom"></td>
               <td colspan="3" class="resultat_celle_1 bånn" id="koeffisienter_bidrag_sum"></td>
               <td class="mellomrom_2" id=""></td>
-              <td class="tom_celle"></td>
-              <td class="tom_celle"></td>
-              <td class="tom_celle"></td>
+              <td class="tom_celle" id="bidrag_sum"></td>
+              <td class="tom_celle" id="bidrag_sum"></td>
+              <td class="tom_celle" id="bidrag_sum"></td>
             </tr>
           </tbody>
         </table>
