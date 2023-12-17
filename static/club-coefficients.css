@@ -431,7 +431,7 @@ a {
     padding: 0px !important;
 }
 .topp8_nr_farge {
-    color: rgb(0, 172, 0) !important;
+    color: rgb(0, 172, 0);
 }
 #no_select {
     -webkit-touch-callout: none !important;
