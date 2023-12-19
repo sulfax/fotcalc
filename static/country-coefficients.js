@@ -561,7 +561,7 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   ranking_array.sort(sortFunction_tall_1_forskjellig);
 
   for (i = 0; i < ranking_array.length; i++) {
-    ranking_array[i].push(i+1)
+    ranking_array[i][14] = i+1;
     if (i > 0) {
       let poeng1 = ranking_array[i][1];
       let kolonne1_1 = ranking_array[i][2];
@@ -658,10 +658,11 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
   }
   if(order == 'desc') {
     if (column == 'id_nr') {
-      for (p = 2; p <= 6; p++) {
-        ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste2);
-      }
-      ranking_array.sort(sortFunction_tall_2_forskjellig);
+      // for (p = 2; p <= 6; p++) {
+      //   ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste2);
+      // }
+      i=14
+      ranking_array.sort(sortFunction_tall_1_forskjellig);
     }
     else {
       let i_mål = i;
