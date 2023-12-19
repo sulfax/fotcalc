@@ -974,7 +974,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
       ekstra_bredde2_ = "ekstra_bredde2_"
     }
     if (nummer <= 3) {
-      nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][15] + '<img src="media/kolonnefjerner.png">';
+      nummer = '<span data-nosnippet>' + ranking_array[i][15] + '</span>';
     } else {nummer = ranking_array[i][15]}
     land_ranking.push(ranking_array[i][11])
     let land = ""

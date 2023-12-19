@@ -840,7 +840,8 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
 
     let nummer = i+1;
     if (nummer <= 3) {
-      nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][11] + '<img src="media/kolonnefjerner.png">';
+      //nummer = '<img src="media/kolonnefjerner.png"> ' + ranking_array[i][11] + '<img src="media/kolonnefjerner.png"></span>';
+      nummer = '<span data-nosnippet>' + ranking_array[i][11] + '</span>';
     }
     else {nummer = ranking_array[i][11]}
     let rangering = `<td class="id_nr utydelig ramme_hoyre_tynn"><b>${ranking_array[i][9] + 1}</b></td>`;

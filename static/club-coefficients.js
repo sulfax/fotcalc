@@ -744,7 +744,7 @@ function byggTabell_test(ranking_array, column, order) {
       }
       let nummer = i+1;
       if (nummer <= 3) {
-        nummer = '<img src="media/kolonnefjerner.png">' + (ranking_array[i][12]) + '<img src="media/kolonnefjerner.png">';
+        nummer = '<span data-nosnippet>' + (ranking_array[i][12]) + '</span>';
       } else {
         nummer = ranking_array[i][12]
       }

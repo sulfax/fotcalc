@@ -1380,7 +1380,7 @@ function byggTabell_test(ranking_array, column, order) {
       }
       let nummer = i+1
       if (nummer <= 3) {
-        nummer = '<img src="media/kolonnefjerner.png">' + ranking_array[i][18] + '<img src="media/kolonnefjerner.png">';
+        nummer = '<span data-nosnippet>' + ranking_array[i][18] + '</span>';
       } else {nummer = ranking_array[i][18]}
       let rangering = "";
       /* Kommenter ut " || parseFloat(ranking_array[i][1]) > parseFloat(ranking_array[i][4])" dersom du ønsker at urangerte klubber med nok tittelpoeng IKKE skal være rangert */
