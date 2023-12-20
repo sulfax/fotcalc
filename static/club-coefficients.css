@@ -70,8 +70,6 @@
 
 
 #overskrift_klubbkoeffisient, #beskrivelse_klubbkoeffisient, #overskrift_fire_års, #beskrivelse_fire_års {
-    /* margin-left: calc(10% - 33px) !important;
-    margin-right: calc(10% - 33px) !important; */
     margin-left: 15px !important;
     margin-right: 15px !important;
 }

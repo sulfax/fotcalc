@@ -29,7 +29,11 @@
 
 
 #overskrift_data, #beskrivelse_data {
-    text-align: center;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+.radTitler {
+    background-color: rgb(233, 236, 239) !important;
 }
 .tabell_div_landskoeffisient{
     background-color:white;
@@ -51,12 +55,23 @@ th {
     border: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
 th, td {
-    color: #343a40;
-    height: 20px !important;
+    color: #343a40 !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     white-space: nowrap !important;
+    vertical-align: middle !important;
 }
+
+tr {
+    height: 40px !important;
+    margin-bottom: auto !important;
+}
+td {
+    text-align: center;
+    border: 1px solid rgba(177, 177, 177, 0.8);
+    width: 11.11%;
+}
+
 .table.table-sm{
     width:98.1%;
     margin-left:1%;
