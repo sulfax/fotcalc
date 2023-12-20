@@ -1,0 +1,65 @@
+@media (max-width:1745px) {
+    .reaklame_sidene {
+        display: none;
+    }
+}
+#ad_venstre {
+    float: left;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    padding-top:300px;
+}
+#ad_hoyre {
+    float: right;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    padding-top:300px;
+}
+
+.container_ {
+    width: 99.3%;
+    margin: auto;
+}
+
+@media (min-width:899px) {
+    .container_ {
+        width: 867px;
+    }
+}
+
+
+#overskrift_data, #beskrivelse_data {
+    text-align: center;
+}
+.tabell_div_landskoeffisient{
+    background-color:white;
+    border-radius: .5rem;
+    border-top-left-radius: 0;
+    padding-bottom: .1%;
+    padding-top: calc(0.6% + 4px);
+    overflow-x:auto
+}
+table {
+    border-top: 4px !important;
+    border: 1px solid rgba(177, 177, 177, 0.8);
+}
+thead {
+    border-top: 4px !important;
+    border: 1px solid rgba(177, 177, 177, 0.8);
+}
+th {
+    border: 1px solid rgba(177, 177, 177, 0.8) !important;
+}
+th, td {
+    color: #343a40;
+    height: 20px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    white-space: nowrap !important;
+}
+.table.table-sm{
+    width:98.1%;
+    margin-left:1%;
+    margin-right:0.9%;
+    margin-bottom: 1%;
+}

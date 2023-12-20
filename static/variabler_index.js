@@ -73,7 +73,7 @@ const norsk = [
 const norsk_forside = [
     'Din Klubbs Premiepenger & UEFA Koeffisientpoeng',
     'UEFA premiepenge- og koeffisient-oversikt',
-    'UEFAs inntekstfordeling til alle klubbene.<br>Finn hver klubbs premiepenger og koeffisientpoeng i alle klubbturneringer.<br><br><span class="reklame_landskoeff">Sjekk også ut <a class="link_utydelig" href="/country-coefficients">landskoeffisient-rangeringen</a>.</span>',
+    'UEFAs inntekstfordeling til alle klubber. Finn hver klubbs premiepenger og koeffisientpoeng i alle klubbturneringer.<br><br><span class="reklame_landskoeff">Sjekk også ut <a class="link_utydelig" href="/country-coefficients">landskoeffisient-rangeringen</a>.</span>',
     'Klubb',
     'Premiepenger',
     'Forbundspoeng',
@@ -95,7 +95,7 @@ const norsk_forside = [
 const norsk_landskoeffisient = [
     'UEFA Landskoeffisient-Rangering',
     'Landskoeffisient-rangering',
-    'UEFA Rangeringen av et land bestemmer hvor mange<br>Europa-plasser dem vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "forbunds-klubbkoeffisient".</span>',
+    'UEFA Rangeringen av et land bestemmer hvor mange europaplasser dem vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "forbunds-klubbkoeffisient".</span>',
     'Rangering av klubber basert på bidratte landskoeffisientpoeng til eget land:',
     'Rangeringen styrer fordelingen av Europa-plasser (',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
@@ -106,7 +106,7 @@ const norsk_landskoeffisient = [
 const norsk_klubbkoeffisient = [
     'UEFA 5 års Klubbkoeffisient-Rangering',
     'Klubbkoeffisient-rangering',
-    'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i<br>europakvalik og gruppespill. En høyere rangering gir lettere<br>motstand i de fasene av en europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient rangeringen</a>.</span><br>',
+    'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i europakvalik og gruppespill. En høyere rangering gir lettere motstand i de fasene av en europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>. Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient-rangeringen</a>.</span><br>',
     'Avgjørende for seeding(grupper) i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
@@ -117,7 +117,7 @@ const norsk_klubbkoeffisient = [
 const norsk_fire_års = [
     'UEFA 4 års Klubbkoeffisient-Rangering (FIFA Klubb-VM)',
     '4 års koeffisient-rangering',
-    'De åtte høyest rangerte klubbene på denne rangeringen kvalifiserer seg til FIFA<br>Club World Cup. De fire UCL-vinnerne fra denne 4-årsperioden kvalifiserer seg også.<br>Maksimalt to klubber per land kan kvalifisere seg, med mindre mer enn<br>to av UCL-vinnerne representerer samme land.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a> (kun fra Champions League).<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen.</span>',
+    'De åtte høyest rangerte klubbene på denne rangeringen kvalifiserer seg til FIFA Club World Cup. De fire UCL-vinnerne fra denne 4-årsperioden kvalifiserer seg også. Maksimalt to klubber per land kan kvalifisere seg, med mindre mer enn to av UCL-vinnerne representerer samme land.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a> (kun fra Champions League).<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffisient-rangeringen.</span>',
     'Bestemmer deltakere i Klubb-VM ',
     'Klubber merket med tall til høyre for klubbnavnet sitt, er i posisjon til å kvalifisere seg. <span class="topp8_nr_farge">Grønne</span> tall indikerer at deltagelse er sikret.',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
@@ -129,7 +129,7 @@ const norsk_fire_års = [
 const norsk_ti_års = [
     'UEFA 10 års Koeffisient-Rangering',
     '10 års koeffisient-rangering',
-    'Denne rangeringen benyttes kun til å finne 10 års koeffisient-bonusen (€)<br>til klubbene som deltar i europeisk gruppespill.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>.<br>Se også <a class="link_utydelig" href="club-coefficients">5 års koeffiesient rangeringen</a>.</span>',
+    'Denne rangeringen benyttes kun til å finne 10 års koeffisient-bonusen (€) til klubbene som deltar i europeisk gruppespill.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>. Se også <a class="link_utydelig" href="club-coefficients">5 års koeffisient-rangeringen</a>.</span>',
     'Avgjørende for gruppespills-bonus (€) i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
@@ -141,7 +141,7 @@ const norsk_ti_års = [
 const norsk_kalkulator = [
     'UEFA Premiepenge-Kalkulator UCL, UEL, UECL',
     'UEFA Premiepenge-kalkulator',
-    'Kalkuler din klubbs inntekter i UEFA turneringer. <br>Kalkulasjonene innkluderer alle kalkulerbare premiepenger og ufordelte ressurser.',
+    'Kalkuler din klubbs inntekter i UEFA turneringer. Kalkulasjonene innkluderer alle kalkulerbare premiepenger og ufordelte ressurser.',
     'Klubbens<br>progresjon? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Hjemlig seriemester',
     '<abbr data_title="Kvalifiseringskamper til selve kvalifiseringen">Innledende runde</abbr>',
@@ -344,7 +344,7 @@ const english = [
 const english_forside = [
     `Your Club's Prize Money & UEFA Coefficient points`,
     'UEFA income and coefficient overview',
-    'UEFA Revenue distribution to all clubs.<br>Find every clubs prize money and coefficient points across all competitions.<br><br><span class="reklame_landskoeff">Check out the <a class="link_utydelig" href="/country-coefficients">country coefficient ranking</a> too.</span>',
+    'UEFA Revenue distribution to all clubs. Find every clubs prize money and coefficient points across all competitions.<br><br><span class="reklame_landskoeff">Check out the <a class="link_utydelig" href="/country-coefficients">country coefficient ranking</a> too.</span>',
     'Club',
     'Prize money',
     'Association points',
@@ -366,7 +366,7 @@ const english_forside = [
 const english_landskoeffisient = [
     'UEFA Country Coefficient Ranking',
     'Country coefficient ranking',
-    'The UEFA ranking of a country decides how many European places they are going to<br>get and how far into the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficients</a> are also known as "association club coefficients".</span>',
+    'The UEFA ranking of a country decides how many European places they are going to get and how far into the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficients</a> are also known as "association club coefficients".</span>',
     'Ranking of clubs based on scored country coefficient points for their country:',
     'The ranking is decisive for the distribution of European spots (',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
@@ -377,7 +377,7 @@ const english_landskoeffisient = [
 const english_klubbkoeffisient = [
     'UEFA 5-year Club Coefficient Ranking',
     'Club coefficient ranking',
-    'This UEFA 5-year ranking decides seeding and pot-distribution in qualifying rounds<br>and the group stage. A higher ranking gives the club weaker opponents<br>in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>.<br>See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
+    'This UEFA 5-year ranking decides seeding and pot-distribution in qualifying rounds and the group stage. A higher ranking gives the club weaker opponents in the mentioned phases.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a>. See also the <a class="link_utydelig" href="10-year-ranking">10-year coefficient ranking</a>.</span>',
     'Decisive for seeding and pot distribution in ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
     `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
@@ -388,7 +388,7 @@ const english_klubbkoeffisient = [
 const english_fire_års = [
     'UEFA 4-year Club Coefficient Ranking (FIFA World Cup)',
     '4-year coefficient ranking',
-    'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup.<br>The four UCL winners from this 4-year period also qualifies. A cap of two clubs per country applies, except if more than two of the UCL winners represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
+    'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup. The four UCL winners from this 4-year period also qualifies. A cap of two clubs per country applies, except if more than two of the UCL winners represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with numbers to the right of their club names are in position to qualify. <span class="topp8_nr_farge">Green</span> numbers indicate that participation is guaranteed.',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
@@ -400,7 +400,7 @@ const english_fire_års = [
 const english_ti_års = [
     'UEFA 10-year Club Coefficient Ranking',
     '10-year coefficient ranking',
-    "This ranking is used solely to find the clubs' 10-year coefficient bonus (€)<br>for participating in European group stages.<br><br><span class='gjennomsiktighet'>The ranking is based on <a class='link_utydelig' href='coefficient-definition#club'>club coefficient points</a>.<br>See also the <a class='link_utydelig' href='club-coefficients'>5-year coefficient ranking</a>.</span>",
+    "This ranking is used solely to find the clubs' 10-year coefficient bonus (€) for participating in European group stages.<br><br><span class='gjennomsiktighet'>The ranking is based on <a class='link_utydelig' href='coefficient-definition#club'>club coefficient points</a>. See also the <a class='link_utydelig' href='club-coefficients'>5-year coefficient ranking</a>.</span>",
     'Decisive for group stage bonus (€) for ',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
     `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
@@ -412,7 +412,7 @@ const english_ti_års = [
 const english_kalkulator = [
     'UEFA Prize Money Calculator UCL, UEL, UECL',
     'UEFA Prize money Calculator',
-    "Calculate your club's income and revenue distribution in UEFA competitions.<br>Calculations include all exact prize money sums and<br>undistributed amounts.",
+    "Calculate your club's income and revenue distribution in UEFA competitions. Calculations include all exact prize money sums and undistributed amounts.",
     'Clubs<br>progression? <br> <img src="media/reshot-icon-arrow-down-QUF8YZRG63.svg" alt="arrow pointing downwards">',
     'Domestic champion',
     '<abbr data_title="Preliminary round before the qualification itself">Preliminary round</abbr>',

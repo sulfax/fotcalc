@@ -70,7 +70,10 @@
 
 
 #overskrift_klubbkoeffisient, #beskrivelse_klubbkoeffisient, #overskrift_fire_års, #beskrivelse_fire_års {
-    text-align: center;
+    /* margin-left: calc(10% - 33px) !important;
+    margin-right: calc(10% - 33px) !important; */
+    margin-left: 15px !important;
+    margin-right: 15px !important;
 }
 /* .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking
     box-shadow:none !important;

@@ -54,7 +54,8 @@
 }
 
 #overskrift_landskoeffisient, #beskrivelse_landskoeffisient {
-    text-align: center;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
 }
 /* .btn.btn-secondary:focus, .btn.btn-secondary:active, .btn-secondary.dropdown-toggle:focus, .btn-secondary.focus, td .form-control {  /*Fjerner irriterende ramme på knapp ved trykking
     box-shadow:none !important;

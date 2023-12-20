@@ -60,6 +60,11 @@
     float: right;
     z-index: 0;
 }
+#overskrift_koeffisient, #beskrivelse_koeffisient {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    max-width: 700px;
+}
 .table-hover {
     background-color: rgb(255, 255, 255)
 }
