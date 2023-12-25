@@ -388,7 +388,7 @@ const english_klubbkoeffisient = [
 const english_fire_års = [
     'UEFA 4-year Club Coefficient Ranking (FIFA World Cup)',
     '4-year coefficient ranking',
-    'The eight highest ranked clubs on this ranking, qualifies for the FIFA Club World Cup. The four UCL winners from this 4-year period also qualifies. A cap of two clubs per country applies, except if more than two of the UCL winners represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
+    'The eight highest ranked clubs on this UEFA ranking (European qualification pathway), qualifies for the FIFA Club World Cup. The four UCL winners from this 4-year period also qualifies. A cap of two clubs per country applies, except if more than two of the UCL winners represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with numbers to the right of their club names are in position to qualify. <span class="topp8_nr_farge">Green</span> numbers indicate that participation is guaranteed.',
     'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
