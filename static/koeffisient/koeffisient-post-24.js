@@ -79,7 +79,7 @@ const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "i7__", "b38__", "
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
 const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__"/*, "b69__"*/, "b42__", "b45__"/*, "b70__"*/, "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
-const CWC_klubbkoeffisient_celler = ["i1___", "i4___", "b38___", "b40___", "b43___", "b46___", "b48___", "b51___", "b54___", "b57___", "b60___", "b63___", "b66___"];
+const CWC_klubbkoeffisient_celler = ["i1___", "i4___", "b31___", "b38___", "b40___", "b43___", "b46___", "b48___", "b51___", "b54___", "b57___", "b60___", "b63___", "b66___"];
 
 
 var aarstall = parseInt(((localStorage.getItem('sessong'))) || nåværende_sesong_forside[0] - 21);
@@ -208,14 +208,14 @@ function deltakelse_eliminasjon(clicked_id) {
             }
             document.getElementById(clicked_id + "_").innerText = aktuell_sum;
             document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-            if (clicked_id == "b38" || clicked_id == "b46" || clicked_id == "b54" || clicked_id == "b63") {
+            if (clicked_id == "b31" || clicked_id == "b38" || clicked_id == "b46" || clicked_id == "b54" || clicked_id == "b63") {
                 document.getElementById(clicked_id + "___").innerText = 3;
             }
         }
         if (klasse == "btn btn-danger de1_UCL del") {
             document.getElementById(clicked_id + "_").innerText = "";
             document.getElementById(clicked_id + "__").innerText = "";
-            if (clicked_id == "b38" || clicked_id == "b46" || clicked_id == "b54" || clicked_id == "b63") {
+            if (clicked_id == "b31" || clicked_id == "b38" || clicked_id == "b46" || clicked_id == "b54" || clicked_id == "b63") {
                 document.getElementById(clicked_id + "___").innerText = "";
             }
         }
