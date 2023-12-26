@@ -34,7 +34,12 @@
         width: 200px !important;
     }
 }
-@media (max-width:1180px) {
+@media (max-width:1100px) {
+    .reaklame_sidene_4aar {
+        display: none;
+    }
+}
+/* @media (max-width:1180px) {
     .reaklame_sidene_4aar {
         display: none;
     }
@@ -48,20 +53,20 @@
     .reaklame_sidene_4aar {
         width: 200px !important;
     }
-}
+} */
 #ad_venstre {
     float: left;
     position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
-    height: 105vh;
+    width: 320px;
 }
 #ad_hoyre {
     float: right;
     position: -webkit-sticky;
     position: sticky;
     padding-top: 300px;
-    height: 105vh;
+    width: 320px;
 }
 #land {
     width: 52px;
