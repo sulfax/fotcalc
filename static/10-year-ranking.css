@@ -9,7 +9,7 @@
     max-width: 1259px !important;
 }
 
-/* @media (max-width:1720px) {
+@media (max-width:1720px) {
     .reaklame_sidene {
         display: none;
     }
@@ -38,7 +38,7 @@
     position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
-} */
+}
 #land {
     width: 52px;
     min-width: 52px;

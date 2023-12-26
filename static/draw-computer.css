@@ -1,4 +1,4 @@
-/* @media (max-width:1745px) {
+@media (max-width:1745px) {
     .reaklame_sidene {
         display: none;
     }
@@ -14,7 +14,7 @@
     position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
-} */
+}
 
 .container_ {
     width: 99.3%;

@@ -5,7 +5,7 @@
         bottom: -2px;
     }
 }
-/* @media (max-width:1310px) {
+@media (max-width:1310px) {
     .reaklame_sidene {
         display: none;
     }
@@ -26,7 +26,7 @@
     position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
-} */
+}
 
 .container_, .container__ {
     width: 99.3%;

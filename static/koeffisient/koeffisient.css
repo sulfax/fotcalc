@@ -14,7 +14,7 @@
     }
 }
 
-/* @media (max-width:1213px) {
+@media (max-width:1213px) {
     .reaklame_sidene {
         display: none;
     }
@@ -48,7 +48,7 @@
 }
 #ad_hoyre {
     float: right;
-} */
+}
 
 .container_, .container__ {
     width: 95.6%;
