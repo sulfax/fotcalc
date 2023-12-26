@@ -8,7 +8,7 @@
 .reklame_øverst {
     width:calc(100%);
 }
-@media (max-width:1310px) {
+/* @media (max-width:1310px) {
     .reaklame_sidene {
         display: none;
     }
@@ -20,16 +20,16 @@
 }
 #ad_venstre {
     float: left;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
 }
 #ad_hoyre {
     float: right;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
-}
+} */
 
 .container_, .container__ {
     width: 99.3%;
