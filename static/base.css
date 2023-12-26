@@ -3,7 +3,7 @@
 }
 .reklame_øverst {
     /* background-color: #343a40; */
-    width: 100% !important;
+    width: fit-content !important;
     padding: 0px !important;
     margin: 0px !important;
 }
