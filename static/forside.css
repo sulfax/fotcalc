@@ -8,9 +8,6 @@
         width: 200px !important;
     }
 }
-.reaklame_sidene {
-    padding-top:370px !important;
-}
 .dropdown_adva {
     z-index: 999;
 }
@@ -18,15 +15,13 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:370px;
-    height: 105vh;
+    padding-top:300px;
 }
 #ad_hoyre {
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:370px;
-    height: 105vh;
+    padding-top:300px;
 }
 
 .container_ {

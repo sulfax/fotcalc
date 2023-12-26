@@ -18,11 +18,9 @@
 }
 #ad_venstre {
     float: left;
-    height: 105vh;
 }
 #ad_hoyre {
     float: right;
-    height: 105vh;
 }
 .reklame_sidene_under {
     padding: 0px !important;
