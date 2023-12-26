@@ -20,9 +20,10 @@
     z-index: 1000;
 }
 .reaklame_sidene, .reaklame_sidene_4aar, .reaklame_sidene_kpost24 {
+    /* background-color: #2130ff; */
     /* background-color: #343a40; */
     width: 300px;
-    margin-top: 903px;
+    margin-top: 603px;
     padding: 0px !important;
     padding-top: 300px !important;
 }
