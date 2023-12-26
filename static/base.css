@@ -19,19 +19,11 @@
 .dropdown_land {
     z-index: 1000;
 }
-.reaklame_sidene, .reaklame_sidene_kpost24 {
+.reaklame_sidene, .reaklame_sidene_4aar, .reaklame_sidene_kpost24 {
     /* background-color: #343a40; */
     width: 300px;
     margin-top: 903px;
     padding: 0px !important;
-}
-.reaklame_sidene_4aar {
-    float: left;
-    /* background-color: #2130ff; */
-    width: 160px;
-}
-.ad_venstre, .ad_hoyre {
-    margin-top: 903px;
 }
 @media screen and (min-width: 0px) {
     .abbr_bidrag:hover::after,
