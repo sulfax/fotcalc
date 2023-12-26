@@ -11,10 +11,6 @@
     }
 }
 
-.reklame_øverst {
-    width:calc(100%);
-}
-
 @media screen and (min-width: 0px) {
     .flagg_div2 abbr[data_title]:hover::after,
     .flagg_div2 abbr[data_title]:focus::after {
