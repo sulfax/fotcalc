@@ -40,6 +40,7 @@
 }
 .reklame_øverst {
     width: calc(100%+10px) !important;
+    margin-left: -10px !important;
 }
 .høyrestill {
     margin: 0px !important;
