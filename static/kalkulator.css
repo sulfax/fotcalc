@@ -13,9 +13,11 @@
 }
 #ad_venstre {
     float: left;
+    height: 105vh;
 }
 #ad_hoyre {
     float: right;
+    height: 105vh;
 }
 
 .container_ {

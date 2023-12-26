@@ -42,12 +42,15 @@
 .reklame_sidene_under {
     margin-top: 200px;
     padding: 0px !important;
+    height: 105vh !important;
 }
 #ad_venstre {
     float: left;
+    height: 210vh !important;
 }
 #ad_hoyre {
     float: right;
+    height: 210vh !important;
 }
 
 .container_, .container__ {

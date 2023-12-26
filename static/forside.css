@@ -16,12 +16,14 @@
     position: -webkit-sticky;
     position: sticky;
     padding-top:370px;
+    height: 105vh;
 }
 #ad_hoyre {
     float: right;
     position: -webkit-sticky;
     position: sticky;
     padding-top:370px;
+    height: 105vh;
 }
 
 .container_ {
