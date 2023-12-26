@@ -22,8 +22,9 @@
 .reaklame_sidene, .reaklame_sidene_4aar, .reaklame_sidene_kpost24 {
     /* background-color: #343a40; */
     width: 300px;
-    margin-top: 1203px;
+    margin-top: 903px;
     padding: 0px !important;
+    padding-top: 300px !important;
 }
 @media screen and (min-width: 0px) {
     .abbr_bidrag:hover::after,
