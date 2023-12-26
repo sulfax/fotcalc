@@ -443,7 +443,7 @@ a:hover {
 }
 .container_, .container_4_aar, .container__ {
     display: flex;
-    min-height: 69vh;
+    /* min-height: 69vh; */
     flex-direction: column;
 }
 .ucl_gs {
