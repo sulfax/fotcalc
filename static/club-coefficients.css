@@ -11,6 +11,10 @@
     }
 }
 
+.reklame_øverst {
+    width:calc(100%);
+}
+
 @media screen and (min-width: 0px) {
     .flagg_div2 abbr[data_title]:hover::after,
     .flagg_div2 abbr[data_title]:focus::after {
@@ -24,9 +28,24 @@
     }
 
 }
-@media (max-width:1745px) {
+@media (max-width:1330px) {
     .reaklame_sidene {
         display: none;
+    }
+}
+@media (max-width:1530px) {
+    .reaklame_sidene {
+        width: 200px !important;
+    }
+}
+@media (max-width:1200px) {
+    .reaklame_sidene_4aar {
+        display: none;
+    }
+}
+@media (max-width:1400px) {
+    .reaklame_sidene_4aar {
+        width: 200px !important;
     }
 }
 #ad_venstre {

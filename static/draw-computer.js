@@ -1,93 +1,117 @@
 let testTabell = document.getElementById('minTest');
 let testTabell_titler = document.getElementById('minTest_titler');
 
+// const seededClubs = [
+//   ["Bayern",   "GER", 'A'],
+//   ["Arsenal",  "ENG", 'B'],
+//   ["Real M.",  "ESP", 'C'],
+//   ["Sociedad", "ESP", 'D'],
+//   ["Atlético", "ESP", 'E'],
+//   ["BVB",      "GER", 'F'],
+//   ["M. City",  "ENG", 'G'],
+//   ["Barcelona","ESP", 'H'],
+// ]
+
+// const unseededClubs = [
+//   ["FCK",    "DEN", 'A', ],
+//   ["PSV",    "NED", 'B', "BVB"],
+//   ["Napoli", "ITA", 'C', "Barcelona"],
+//   ["Inter",  "ITA", 'D', "Atlético"],
+//   ["Lazio",  "ITA", 'E', ],
+//   ["PSG",    "FRA", 'F', "Sociedad"],
+//   ["RBL",    "GER", 'G', ],
+//   ["Porto",  "POR", 'H', "Arsenal"]
+// ]
+
+// const seededClubs = [
+//   ["Freiburg",    "GER",,],
+//   ["Marseille",   "FRA",,],
+//   ["Sparta P.",   "CZE",,],
+//   ["Sporting C.", "POR",,],
+//   ["Toulouse",    "FRA",,],
+//   ["Stade R.",    "FRA",,],
+//   ["AS Roma",     "ITA",,],
+//   ["Qarabağ",     "AZE",,],
+// ]
+
+// const unseededClubs = [
+//   ["Gala.",     "TUR",,"Sparta P."],
+//   ["RC Lens",   "FRA",,"Freiburg"],
+//   ["Braga",     "POR",,"Qarabağ"],
+//   ["Benfica",   "POR",,"Toulouse"],
+//   ["Feyenoord", "NED",,"AS Roma"],
+//   ["AC Milan",  "ITA",,"Stade R."],
+//   ["Young B.",  "SUI",,"Sporting C."],
+//   ["Shakhtar",  "UKR",,]
+// ]
+
 const seededClubs = [
-  ["Bayern",   "GER", 'A'],
-  ["Arsenal",  "ENG", 'B'],
-  ["Real M.",  "ESP", 'C'],
-  ["Sociedad", "ESP", 'D'],
-  ["Atlético", "ESP", 'E'],
-  ["BVB",      "GER", 'F'],
-  ["M. City",  "ENG", 'G'],
-  ["Barcelona","ESP", 'H'],
+  ["Slovan",    "SVK",,],
+  ["Gent",      "BEL",,],
+  ["Dinamo",    "CRO",,],
+  ["Glimt",     "NOR",,],
+  ["Legia",     "POL",,],
+  ["Fradi",     "HUN",,],
+  ["Eintracht", "GER",,],
+  ["Ludo",      "BUL",,],
 ]
 
 const unseededClubs = [
-  ["FCK",    "DEN", 'A'],
-  ["PSV",    "NED", 'B'],
-  ["Napoli", "ITA", 'C'],
-  ["Inter",  "ITA", 'D'],
-  ["Lazio",  "ITA", 'E'],
-  ["PSG",    "FRA", 'F'],
-  ["RBL",    "GER", 'G'],
-  ["Porto",  "POR", 'H']
+  ["Olympiakos", "GRE",,"Fradi"],
+  ["Ajax",       "NED",,"Glimt"],
+  ["Real B.",    "ESP",,"Dinamo"],
+  ["Sturm",      "AUT",,"Slovan"],
+  ["R. USG",     "BEL",,"Eintracht"],
+  ["M. Haifa",   "ISR",,],
+  ["Servette",   "SUI",,"Ludo"],
+  ["Molde",      "NOR",,"Legia"]
 ]
 
-// const seededClubs = [
-//   ["Slovan",    "SVK"],
-//   ["Gent",      "BEL"],
-//   ["Dinamo",    "CRO"],
-//   ["Glimt",     "NOR"],
-//   ["Legia",     "POL"],
-//   ["Fradi",     "HUN"],
-//   ["Eintracht", "GER"],
-//   ["Ludo",      "BUL"],
-// ]
-
-// const unseededClubs = [
-//   ["Olympiakos", "GRE"],
-//   ["Ajax",       "NED"],
-//   ["Real B.",    "ESP"],
-//   ["Sturm",      "AUT"],
-//   ["R. USG",     "BEL"],
-//   ["M. Haifa",   "ISR"],
-//   ["Servette",   "SUI"],
-//   ["Molde",      "NOR"]
-// ]
-
-// const seededClubs = [
-//   ["Bayern",  "GER", 'A'],
-//   ["Real M.", "ESP", 'C'],
-//   ["BVB",     "GER", 'F'],
-//   ["M. City", "ENG", 'G'],
-// ]
-
-// const unseededClubs = [
-//   ["FCK",   "DEN", 'A'],
-//   ["PSV",   "NED", 'B'],
-//   ["Lazio", "ITA", 'E'],
-//   ["RBL",   "GER", 'G']
-// ]
-
-const feunseededClubs = [
-  [["FCK", 0],  ["DEN",0], ['A',0]],
-  [["PSV",0],   ["NED",0], ['B',0]],
-  [["Lazio",0], ["ITA",0], ['E',0]],
-  [["RBL",0],   ["GER",0], ['G',0]]
-]
-
-// Kolonnetitler
-for(let i = 0; i < seededClubs.length; i++) {
-  testTabell_titler.innerHTML += "<th>" + seededClubs[i][0] + "</th>";
-}
 
 // Opprett matchCombinen med permutasjoner
 let matchCombin = [];
 genPermutations();
 
-exportToExcel(matchCombin);
+// exportToExcel(matchCombin);
 
-fjernUlovligeTrekninger(1);
-fjernUlovligeTrekninger(2);
+fjernUlovligeTrekninger();
+trukketOppgjor()
+
+console.log(matchCombin.length)
+
 let dataTabell = [];
 genererForekomster();
 registrerForekomster();
 
-for(let i = 0; i < unseededClubs.length; i++) {
-  let radHTML = "<tr><th class='radTitler'>" + unseededClubs[i][0] + "</th>";
-  for(let j = 0; j < seededClubs.length; j++) {
-    radHTML += "<td id='" + i+j + "'>" + (dataTabell[i][j]*100/matchCombin.length).toFixed(2) + "%" + "</td>"
+
+// Kolonnetitler
+for(let i = 0; i < seededClubs.length; i++) {
+  kolonneTittel = "<th>" + seededClubs[i][0] + "</th>";
+  for(let j = 0; j < unseededClubs.length; j++) {
+    if (unseededClubs[j][3] == seededClubs[i][0]) {
+      kolonneTittel = "<th class='trukket'>" + seededClubs[i][0] + "</th>";
+    }
   }
+  testTabell_titler.innerHTML += kolonneTittel;
+}
+for(let i = 0; i < unseededClubs.length; i++) {
+  let radHTML = "";
+  let trukketKlubb = false;
+  for(let j = 0; j < seededClubs.length; j++) {
+    let oppgjorProsent = (dataTabell[i][j]*100/matchCombin.length).toFixed(2) + "%";
+    if (unseededClubs[i][3] == seededClubs[j][0]) {
+      trukketKlubb = true;
+    }
+    else if (dataTabell[i][j] == 0) {
+      oppgjorProsent = "-";
+    }
+    radHTML += "<td id='" + i+j + "'>" + oppgjorProsent + "</td>"
+  }
+  let radTittel = "<th class='radTitler'>" + unseededClubs[i][0] + "</th>";
+  if (trukketKlubb) {
+    radTittel = "<th class='radTitler trukket2'>" + unseededClubs[i][0] + "</th>";
+  }
+  radHTML = "<tr>" + radTittel + radHTML;
   testTabell.innerHTML += radHTML + "</tr>";
 }
 
@@ -116,22 +140,42 @@ function genPermutations() {
   permute([], unseededClubs);
 }
 
-
-
 // Fjerner alle rader i matchCombinen som involverer hjemlig oppgjør
-function fjernUlovligeTrekninger(egenskap) {
-  for(let i = 0; i < seededClubs.length; i++) {
-    for(let j = 0; j < unseededClubs.length; j++) {
-      if (unseededClubs[j][egenskap] == seededClubs[i][egenskap]) {
-        for(let k = 0; k < matchCombin.length; k++) {
-          if (matchCombin[k][i][egenskap] == seededClubs[i][egenskap]) {
-            matchCombin.splice(k,1);
-            k--;
+function fjernUlovligeTrekninger() {
+  for(let i = 1; i <= 2; i++) {
+    if (unseededClubs[0][i]) {
+      for(let j = 0; j < seededClubs.length; j++) {
+        for(let k = 0; k < unseededClubs.length; k++) {
+          if (unseededClubs[k][i] == seededClubs[j][i]) {
+            for(let l = 0; l < matchCombin.length; l++) {
+              if (matchCombin[l][j][i] == seededClubs[j][i]) {
+                matchCombin.splice(l,1);
+                l--;
+              }
+            }
           }
         }
       }
     }
   }
+}
+
+// Kobler sammen klubber som er trukket mot hverandre
+function trukketOppgjor() {
+  for(let i = 0; i < unseededClubs.length; i++) {
+    if (unseededClubs[i][3]) {
+      for(let j = 0; j < seededClubs.length; j++) {
+        if (seededClubs[j][0] == unseededClubs[i][3]) {
+          for(let k = 0; k < matchCombin.length; k++) {
+            if (matchCombin[k][j][0] != unseededClubs[i][0]) {
+              matchCombin.splice(k,1);
+              k--;
+            }
+          }
+        }
+      }
+    }
+  } 
 }
 
 // Generer tom tabell som skal inneholde forekomstene
@@ -168,7 +212,7 @@ function fargelegg() {
   // }
   for(let i = 0; i < unseededClubs.length; i++) {
     for(let j = 0; j < seededClubs.length; j++) {
-      let gb = parseInt(255-(parseFloat(document.getElementById("" + i+j).innerText)*2.55))
+      let gb = parseInt(255-(parseFloat(document.getElementById("" + i+j).innerText)*2.55)) || 255;
       document.getElementById("" + i+j).style.backgroundColor = "rgb(255,"+gb+","+gb+")";
     }
   }

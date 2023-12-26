@@ -5,13 +5,22 @@
         bottom: -2px;
     }
 }
-@media (max-width:1919px) {
+.reklame_øverst {
+    width:calc(100%);
+}
+
+@media (max-width:1720px) {
     .reaklame_sidene {
         display: none;
     }
 }
 .reaklame_sidene {
-    width: 170px !important;
+    width: 200px !important;
+}
+@media (min-width:1800px) {
+    .reaklame_sidene {
+        width: 250px !important;
+    }
 }
 @media (min-width:2270px) {
     .reaklame_sidene {

@@ -14,14 +14,33 @@
     }
 }
 
-@media (max-width:1460px) {
+@media (max-width:1213px) {
     .reaklame_sidene {
         display: none;
     }
 }
-.reaklame_sidene {
-    width: 210px !important;
-    margin-top: 860px !important;
+@media (max-width:1413px) {
+    .reaklame_sidene {
+        width: 200px !important;
+    }
+}
+
+@media (max-width:1254px) {
+    .reaklame_sidene_kpost24 {
+        display: none;
+    }
+}
+@media (max-width:1454px) {
+    .reaklame_sidene_kpost24 {
+        width: 200px !important;
+    }
+}
+
+.reaklame_sidene, .reaklame_sidene_kpost24 {
+    margin-top: 600px !important;
+}
+.reklame_sidene_under {
+    margin-top: 200px;
 }
 #ad_venstre {
     float: left;

@@ -3,20 +3,24 @@
         display: block !important;
     }
 }
-@media (max-width:1850px) {
+@media (max-width:1307px) {
     .reaklame_sidene {
         display: none;
     }
+}
+@media (max-width:1507px) {
+    .reaklame_sidene {
+        width: 200px !important;
+    }
+}
+.reaklame_sidene {
+    margin-top: 600px;
 }
 #ad_venstre {
     float: left;
 }
 #ad_hoyre {
     float: right;
-}
-.reaklame_sidene {
-    width: 220px !important;
-    margin-top: 1200px !important;
 }
 .reklame_sidene_under {
     margin-top: 580px;

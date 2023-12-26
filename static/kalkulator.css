@@ -1,11 +1,15 @@
-@media (max-width:1560px) {
+@media (max-width:1410px) {
     .reaklame_sidene {
         display: none;
     }
 }
+@media (max-width:1610px) {
+    .reaklame_sidene {
+        width: 200px !important;
+    }
+}
 .reaklame_sidene {
-    width: 210px !important;
-    margin-top: 800px !important;
+    margin-top: 600px !important;
 }
 #ad_venstre {
     float: left;

@@ -32,9 +32,6 @@
     margin-left: 15px !important;
     margin-right: 15px !important;
 }
-.radTitler {
-    background-color: rgb(233, 236, 239) !important;
-}
 .tabell_div_landskoeffisient{
     background-color:white;
     border-radius: .5rem;
@@ -50,9 +47,6 @@ table {
 thead {
     border-top: 4px !important;
     border: 1px solid rgba(177, 177, 177, 0.8);
-}
-th {
-    border: 1px solid rgba(177, 177, 177, 0.8) !important;
 }
 th, td {
     color: #343a40 !important;
@@ -77,4 +71,23 @@ td {
     margin-left:1%;
     margin-right:0.9%;
     margin-bottom: 1%;
+}
+.svartTekst {
+    color: black !important;
+}
+th {
+    border: 1px solid rgba(177, 177, 177, 0.8) !important;
+    background-color: rgb(212, 218, 237) !important;
+}
+.overTittel {
+    background-color: rgb(233, 236, 239) !important;
+}
+.radTitler {
+    background-color: rgb(215, 237, 212) !important;
+}
+.trukket {
+    background-color: rgb(157, 176, 241) !important;
+}
+.trukket2 {
+    background-color: rgb(164, 240, 154) !important;
 }

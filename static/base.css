@@ -2,21 +2,26 @@
     display: block;
 }
 .reklame_øverst {
+    /* background-color: #343a40; */
     margin:auto;
-    padding: auto;
-    width:calc(100% - 90px);
+    width: 100%;
 }
 .reklame_nederst {
+    /* background-color: #343a40; */
     margin:auto;
     padding: auto;
-    width:calc(100% - 30px);
+    width: 100%;
 }
+/* .reklame_hoyde {
+    background-color: #343a40;
+} */
 .dropdown_land {
     z-index: 1000;
 }
-.reaklame_sidene {
-    width: 220px;
-    margin-top: 1000px;
+.reaklame_sidene, .reaklame_sidene_4aar, .reaklame_sidene_kpost24 {
+    /* background-color: #343a40; */
+    width: 300px;
+    margin-top: 903px;
 }
 @media screen and (min-width: 0px) {
     .abbr_bidrag:hover::after,
@@ -506,6 +511,7 @@ a:hover {
     padding-left: 13px;
 }
 .reklame_topp {
+    background-color:#343a40;
     padding-left: 11%;
     padding-right: 11%;
 }

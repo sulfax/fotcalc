@@ -1,6 +1,11 @@
-@media (max-width:1625px) {
+@media (max-width:1290px) {
     .reaklame_sidene {
         display: none;
+    }
+}
+@media (max-width:1490px) {
+    .reaklame_sidene {
+        width: 200px !important;
     }
 }
 .dropdown_adva {
