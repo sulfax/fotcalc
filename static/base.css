@@ -26,8 +26,9 @@
     padding: 0px !important;
 }
 .reaklame_sidene_4aar {
+    float: left;
     /* background-color: #2130ff; */
-    width: 320px;
+    width: 160px;
 }
 .ad_venstre, .ad_hoyre {
     margin-top: 903px;
