@@ -2,14 +2,12 @@
     display: block;
 }
 .reklame_øverst {
-    /* background-color: #343a40; */
-    margin:auto;
+    background-color: #343a40;
     width: 100%;
     padding: 0px !important;
 }
 .reklame_nederst {
     background-color: #343a40;
-    margin:auto;
     padding: 0px !important;
     width: 100%;
 }
