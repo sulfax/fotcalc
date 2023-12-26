@@ -23,6 +23,7 @@
     float: right;
 }
 .reklame_sidene_under {
+    padding: 0px !important;
     margin-top: 580px;
 }
 

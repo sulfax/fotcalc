@@ -7,6 +7,7 @@
 }
 .reklame_øverst {
     width:calc(100%);
+    padding: 0px !important;
 }
 
 @media (max-width:1720px) {

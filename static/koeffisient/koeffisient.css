@@ -41,6 +41,7 @@
 }
 .reklame_sidene_under {
     margin-top: 200px;
+    padding: 0px !important;
 }
 #ad_venstre {
     float: left;
