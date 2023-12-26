@@ -34,9 +34,14 @@
         width: 200px !important;
     }
 }*/
-@media (max-width:1200px) {
+@media (max-width:1180px) {
     .reaklame_sidene_4aar {
         display: none;
+    }
+}
+@media (max-width:1600px) {
+    .reaklame_sidene_4aar {
+        width: 300px !important;
     }
 }
 @media (max-width:1400px) {
