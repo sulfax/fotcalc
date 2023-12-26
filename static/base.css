@@ -8,9 +8,10 @@
 }
 .reklame_nederst {
     /* background-color: #343a40; */
-    padding: 0px !important;
-    width: 100%;
+    width: fit-content !important;
+    min-width: fit-content !important;
     margin:auto !important;
+    padding:auto !important;
 }
 /* .reklame_hoyde {
     background-color: #343a40;
