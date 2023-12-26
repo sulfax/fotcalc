@@ -33,7 +33,7 @@
     .reaklame_sidene {
         width: 200px !important;
     }
-}
+}*/
 @media (max-width:1200px) {
     .reaklame_sidene_4aar {
         display: none;
@@ -49,13 +49,15 @@
     position: -webkit-sticky;
     position: sticky;
     padding-top:300px;
+    height: 105vh;
 }
 #ad_hoyre {
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:300px;
-} */
+    padding-top: 300px;
+    height: 105vh;
+}
 #land {
     width: 52px;
     min-width: 52px;
