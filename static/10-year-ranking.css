@@ -9,6 +9,9 @@
     width: 100%;
     padding: 0px !important;
 }
+.reklame_nederst {
+    max-width: 1259px !important;
+}
 
 /* @media (max-width:1720px) {
     .reaklame_sidene {

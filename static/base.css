@@ -10,8 +10,8 @@
 }
 .reklame_nederst {
     /* background-color: #343a40; */
+    max-width: 1200px !important;
     padding: 0px !important;
-    width: 100%;
 }
 /* .reklame_hoyde {
     background-color: #343a40;
