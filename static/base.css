@@ -24,7 +24,7 @@
     width: 300px;
     margin-top: 603px;
     padding: 0px !important;
-    padding-top: 300px !important;
+    padding-top: 150px !important;
 }
 @media screen and (min-width: 0px) {
     .abbr_bidrag:hover::after,

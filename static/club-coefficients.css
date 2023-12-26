@@ -53,13 +53,13 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:300px;
+    padding-top:150px;
 }
 #ad_hoyre {
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    padding-top: 300px;
+    padding-top: 150px;
 }
 #land {
     width: 52px;
