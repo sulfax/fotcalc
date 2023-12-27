@@ -28,6 +28,7 @@
     /* background-color: #343a40; */
     width: 100% !important;
     margin: 0px !important;
+    padding-left: 0px !important;
 }
 @media (max-width:1330px) {
     .reaklame_sidene {
