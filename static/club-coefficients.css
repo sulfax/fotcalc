@@ -30,7 +30,8 @@
     margin: 0px !important;
 }
 .floatVenstre {
-    float:left;
+    float:left !important;
+    padding-left: 0px !important;
 }
 @media (max-width:1330px) {
     .reaklame_sidene {
