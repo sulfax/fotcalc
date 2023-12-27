@@ -29,10 +29,6 @@
     width: 100% !important;
     margin: 0px !important;
 }
-.floatVenstre {
-    float:left !important;
-    padding-left: 0px !important;
-}
 @media (max-width:1330px) {
     .reaklame_sidene {
         display: none;
