@@ -24,6 +24,11 @@
     }
 
 }
+.reklame_øverst {
+    /* background-color: #343a40; */
+    width: 100% !important;
+    margin: 0px !important;
+}
 @media (max-width:1330px) {
     .reaklame_sidene {
         display: none;

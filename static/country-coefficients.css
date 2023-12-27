@@ -15,6 +15,11 @@
         width: 200px !important;
     }
 }
+.reklame_øverst {
+    /* background-color: #343a40; */
+    width: 100% !important;
+    margin: 0px !important;
+}
 #ad_venstre {
     float: left;
     position: -webkit-sticky;
