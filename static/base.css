@@ -286,10 +286,10 @@ body{
     margin-left:-1.99%;
     overflow-x:auto
 }
-footer div{
+/* footer div{
     height: 24rem;
     min-height: 24.87vh !important;
-}
+} */
 footer {
     background-color: #343a40;
 }
