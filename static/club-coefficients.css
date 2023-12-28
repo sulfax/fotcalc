@@ -26,8 +26,8 @@
 }
 .reklame_øverst {
     /* background-color: #343a40; */
-    width: 100% !important;
-    margin: 0px !important;
+    width: calc(100% - 19px) !important;
+    margin-left: 9px !important;
 }
 @media (max-width:1330px) {
     .reaklame_sidene {
