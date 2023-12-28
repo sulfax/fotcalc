@@ -1,13 +1,12 @@
-@media (max-width:1260px) {
+@media (max-width:1265px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
     --container_: 755px;
-    --sideReklame: 1490px;
 }
-@media (max-width: 1470px) {
+@media (max-width: 1465px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -29,7 +28,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
-@media (max-width: 1470px) {
+@media (max-width: 1465px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
     }

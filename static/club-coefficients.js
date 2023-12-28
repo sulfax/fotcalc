@@ -1579,14 +1579,14 @@ function regn_ut_NA_poeng() {
   return NA_poeng_og_assosiasjon
 }
 
-window.onscroll = function() {myFunction()};
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("ad_venstre").style.top = -1.5*scrolled + "px";
-  document.getElementById("ad_hoyre").style.top = -1.5*scrolled + "px";
-}
+// window.onscroll = function() {myFunction()};
+// function myFunction() {
+//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   var scrolled = (winScroll / height) * 100;
+//   document.getElementById("ad_venstre").style.top = -1.5*scrolled + "px";
+//   document.getElementById("ad_hoyre").style.top = -1.5*scrolled + "px";
+// }
 
 
 function trykker_na_poeng(land) {

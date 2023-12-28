@@ -5,12 +5,16 @@
         bottom: -2px;
     }
 }
-@media (max-width:1310px) {
+@media (max-width:1360px) {
     .reaklame_sidene {
         display: none;
     }
 }
-@media (max-width:1510px) {
+:root {
+    --container_: 842px;
+    --container_Mac: 890px;
+}
+@media (max-width:1550px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -21,16 +25,26 @@
     margin: 0px !important;
 }
 #ad_venstre {
+    top:150px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:150px;
+    margin-left: calc((100% - var(--container_Mac)) / 2 - 300px - 5px) !important;
 }
 #ad_hoyre {
+    top:150px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:150px;
+    margin-right: calc((100% - var(--container_Mac)) / 2 - 300px - 5px) !important;
+}
+@media (max-width: 1550px) {
+    #ad_venstre {
+        margin-left: calc((100% - var(--container_Mac)) / 2 - 200px - 5px) !important;
+    }
+    #ad_hoyre {
+        margin-right: calc((100% - var(--container_Mac)) / 2 - 200px - 5px) !important;
+    }
 }
 
 .container_, .container__ {

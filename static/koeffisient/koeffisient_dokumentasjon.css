@@ -3,6 +3,9 @@
         display: block !important;
     }
 }
+:root {
+    --container_: 800px;
+}
 @media (max-width:1307px) {
     .reaklame_sidene {
         display: none;
@@ -18,9 +21,19 @@
 }
 #ad_venstre {
     float: left;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 #ad_hoyre {
     float: right;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+}
+@media (max-width: 1507px) {
+    #ad_venstre {
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+    }
+    #ad_hoyre {
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+    }
 }
 .reklame_sidene_under {
     padding: 0px !important;

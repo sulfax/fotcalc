@@ -29,24 +29,23 @@
     width: 100% !important;
     margin: 0px !important;
 }
-@media (max-width:1330px) {
+@media (max-width:1335px) {
     .reaklame_sidene {
         display: none;
     }
+}
+:root {
+    --container_: 867px;
+    --container_4_aar: 728px;
 }
 @media (max-width:1530px) {
     .reaklame_sidene {
         width: 200px !important;
     }
 }
-@media (max-width:1180px) {
+@media (max-width:1190px) {
     .reaklame_sidene_4aar {
         display: none;
-    }
-}
-@media (max-width:1600px) {
-    .reaklame_sidene_4aar {
-        width: 300px !important;
     }
 }
 @media (max-width:1400px) {
@@ -54,18 +53,53 @@
         width: 200px !important;
     }
 }
-#ad_venstre {
+
+.rekV_klubb {
+    top: 150px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    padding-top:150px;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
 }
-#ad_hoyre {
+.rekH_klubb {
+    top: 150px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    padding-top: 150px;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
 }
+.rekV_4aar {
+    top: 150px;
+    float: left;
+    position: -webkit-sticky;
+    position: sticky;
+    margin-left: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
+}
+.rekH_4aar {
+    top: 150px;
+    float: right;
+    position: -webkit-sticky;
+    position: sticky;
+    margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
+}
+@media (max-width: 1530px) {
+    .rekV_klubb {
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
+    }
+    .rekH_klubb {
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
+    }
+}
+@media (max-width: 1400px) {
+    .rekV_4aar {
+        margin-left: calc((100% - var(--container_4_aar)) / 2 - 200px - 18px) !important;
+    }
+    .rekH_4aar {
+        margin-right: calc((100% - var(--container_4_aar)) / 2 - 200px - 18px) !important;
+    }
+}
+
+
 #land {
     width: 52px;
     min-width: 52px;

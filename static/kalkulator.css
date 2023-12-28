@@ -1,9 +1,12 @@
-@media (max-width:1410px) {
+@media (max-width:1400px) {
     .reaklame_sidene {
         display: none;
     }
 }
-@media (max-width:1610px) {
+:root {
+    --container_: 891px;
+}
+@media (max-width:1600px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -13,9 +16,19 @@
 }
 #ad_venstre {
     float: left;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 #ad_hoyre {
     float: right;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+}
+@media (max-width: 1600px) {
+    #ad_venstre {
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+    }
+    #ad_hoyre {
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+    }
 }
 
 .container_ {
