@@ -17,8 +17,8 @@
 }
 .reklame_øverst {
     /* background-color: #343a40; */
-    width: calc(100% - 19px) !important;
-    margin-left: 9px !important;
+    width: 100% !important;
+    margin: 0px !important;
 }
 #ad_venstre {
     float: left;
