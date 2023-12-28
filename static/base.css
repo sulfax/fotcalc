@@ -10,7 +10,7 @@
     padding: 0px !important;
 }
 .reklame_nederst {
-    /* background-color: #343a40; */
+    background-color: rgb(196, 217, 255);
     padding: 0px !important;
     padding-left: calc((100vw - 1200px) / 2) !important;
     padding-right: calc((100vw - 1200px) / 2);
