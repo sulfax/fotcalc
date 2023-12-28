@@ -1777,14 +1777,14 @@ if (sessionStorage.getItem('spoiler') == 'synlig' || sessionStorage.getItem('spo
 }
 
 
-window.onscroll = function() {myFunction()};
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("ad_venstre").style.top = 0*scrolled + "px";
-  document.getElementById("ad_hoyre").style.top = 0*scrolled + "px";
-}
+// window.onscroll = function() {myFunction()};
+// function myFunction() {
+//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   var scrolled = (winScroll / height) * 100;
+//   document.getElementById("ad_venstre").style.top = -1.5*scrolled + "px";
+//   document.getElementById("ad_hoyre").style.top = -1.5*scrolled + "px";
+// }
 
 // function endre_klubbnavn(i, kolonne) {
 //   var rows = document.getElementsByTagName("table")[0].rows;
