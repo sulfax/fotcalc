@@ -6,31 +6,31 @@
     }
 }
 .reklame_nederst {
-    max-width: 1259px !important;
+    max-width: 1247px !important;
 }
 
-@media (max-width:1725px) {
+@media (max-width:1713px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 1259px;
+    --container_: 1247px;
 }
 .reaklame_sidene {
     width: 200px !important;
 }
-@media (min-width:1825px) {
+@media (min-width:1813px) {
     .reaklame_sidene {
         width: 250px !important;
     }
 }
-@media (min-width:1918px) {
+@media (min-width:1906px) {
     .reaklame_sidene {
         width: 300px !important;
     }
 }
-@media (min-width:2140px) {
+@media (min-width:2128px) {
     .reaklame_sidene {
         width: 400px !important;
     }
@@ -49,7 +49,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
 }
-@media (min-width:1825px) {
+@media (min-width:1813px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 250px - 18px) !important;
     }
@@ -57,7 +57,7 @@
         margin-right: calc((100% - var(--container_)) / 2 - 250px - 18px) !important;
     }
 }
-@media (min-width:1918px) {
+@media (min-width:1906px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
     }
@@ -65,7 +65,7 @@
         margin-right: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
     }
 }
-@media (min-width:2140px) {
+@media (min-width:2128px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 400px - 18px) !important;
     }
@@ -83,9 +83,9 @@
     margin: auto;
 }
 
-@media (min-width:1293px) {
+@media (min-width:1281px) {
     .container_ {
-        width: 1259px;
+        width: 1247px;
     }
 }
 /* @media (min-width:1437px) {
@@ -305,9 +305,10 @@ th {
     margin: 0 auto;
 }
 .id_nr {
-    max-width: 42px;
-    min-width: 42px;
-    width: 42px;
+    max-width: 36px !important;
+    min-width: 36px !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
     text-align: center;
 }
 .link, .link_2 {

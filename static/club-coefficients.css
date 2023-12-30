@@ -29,26 +29,26 @@
     width: 100% !important;
     margin: 0px !important;
 }
-@media (max-width:1335px) {
+@media (max-width:1318px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 867px;
-    --container_4_aar: 728px;
+    --container_: 855px;
+    --container_4_aar: 716px;
 }
-@media (max-width:1530px) {
+@media (max-width:1518px) {
     .reaklame_sidene {
         width: 200px !important;
     }
 }
-@media (max-width:1190px) {
+@media (max-width:1178px) {
     .reaklame_sidene_4aar {
         display: none;
     }
 }
-@media (max-width:1400px) {
+@media (max-width:1388px) {
     .reaklame_sidene_4aar {
         width: 200px !important;
     }
@@ -82,7 +82,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
 }
-@media (max-width: 1530px) {
+@media (max-width: 1518px) {
     .rekV_klubb {
         margin-left: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
     }
@@ -90,7 +90,7 @@
         margin-right: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
     }
 }
-@media (max-width: 1400px) {
+@media (max-width: 1388px) {
     .rekV_4aar {
         margin-left: calc((100% - var(--container_4_aar)) / 2 - 200px - 18px) !important;
     }
@@ -110,9 +110,9 @@
     margin: auto;
 }
 
-@media (min-width:899px) {
+@media (min-width:885px) {
     .container_ {
-        width: 867px;
+        width: 855px;
     }
 }
 
@@ -121,9 +121,9 @@
     margin: auto;
 }
 
-@media (min-width:756px) {
+@media (min-width:744px) {
     .container_4_aar {
-        width: 728px;
+        width: 716px;
     }
 }
 
@@ -334,9 +334,12 @@ th {
     margin: 0 auto;
 }
 .id_nr {
-    max-width: 50px;
-    min-width: 42px;
-    width: 50px;
+    /* max-width: 50px; */
+    max-width: 36px !important;
+    min-width: 36px !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    /* width: 50px; */
     text-align: center;
 }
 .link, .link_2 {

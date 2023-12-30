@@ -5,16 +5,16 @@
         bottom: -2px;
     }
 }
-@media (max-width:1360px) {
+@media (max-width:1349px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 842px;
-    --container_Mac: 890px;
+    --container_: 831px;
+    --container_Mac: 879px;
 }
-@media (max-width:1550px) {
+@media (max-width:1539px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -29,21 +29,21 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_Mac)) / 2 - 300px - 5px) !important;
+    margin-left: calc((100% - var(--container_Mac)) / 2 - 300px - 4px) !important;
 }
 #ad_hoyre {
     top:150px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_Mac)) / 2 - 300px - 5px) !important;
+    margin-right: calc((100% - var(--container_Mac)) / 2 - 300px - 4px) !important;
 }
-@media (max-width: 1550px) {
+@media (max-width: 1539px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_Mac)) / 2 - 200px - 5px) !important;
+        margin-left: calc((100% - var(--container_Mac)) / 2 - 200px - 4px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_Mac)) / 2 - 200px - 5px) !important;
+        margin-right: calc((100% - var(--container_Mac)) / 2 - 200px - 4px) !important;
     }
 }
 
@@ -53,27 +53,27 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:655px) {
+@media (min-width:636px) {
     .container__:not(.container__Mac) {
-        width: 623px;
+        width: 609px;
     }
 }
 
-@media (min-width:705px) {
+@media (min-width:686px) {
     .container__Mac {
-        width: 671px !important;
+        width: 657px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:872px) {
+@media (min-width:860px) {
     .container_:not(.container_Mac) {
-        width: 842px;
+        width: 831px;
     }
 }
 
-@media (min-width:922px) {
+@media (min-width:910px) {
     .container_Mac {
-        width: 890px !important;
+        width: 879px !important;
     }    
 }
 
@@ -374,10 +374,10 @@ th, td {
     text-align: right;
 }
 .id_nr:not(.rangeringEndring, #id_nr) {
-    padding-left: 10px;
-    padding-right: 0px !important;
-    width: 30px !important;
-    min-width: 30px !important;
+    padding-left: 8px;
+    padding-right: 1px !important;
+    width: 25px !important;
+    min-width: 25px !important;
 }
 #id_nr {
     padding-left: 6px;
@@ -402,19 +402,27 @@ th, td {
     text-align: center !important;
 }
 #tabell_hoved .id_nr_klubb:not(.rangeringEndring_) {
-    max-width: 30px;
-    min-width: 30px;
-    padding-left: 10px;
+    max-width: 20px;
+    min-width: 20px;
+    padding-left: 5.2px;
     padding-right: 0px !important;
-    width: 25px !important;
+    width: 20px !important;
     border-right: 0px solid rgba(177, 177, 177, 1) !important;
 }
 
 #tabell_klubb .id_nr_klubb {
-    max-width: 42px;
-    min-width: 42px;
+    max-width: 36px !important;
+    min-width: 36px !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
     text-align: center !important;
 }
+/* .veldig_utydelig {
+    max-width: 35px !important;
+    min-width: 35px !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+} */
 .ekstra_bredde2 {
     padding-left: 0px !important;
 }
@@ -425,7 +433,7 @@ th, td {
 }
 .rangeringEndring_:not(.ekstra_bredde2_) {
     padding-right: 0px !important;
-    padding-left: 5px !important;
+    padding-left: 10px !important;
     width: 0px;
     padding-right: 7px !important;
 }

@@ -4,9 +4,9 @@
     }
 }
 :root {
-    --container_: 755px;
+    --container_: 749px;
 }
-@media (max-width: 1465px) {
+@media (max-width: 1459px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -28,7 +28,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
-@media (max-width: 1465px) {
+@media (max-width: 1459px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
     }
@@ -41,12 +41,12 @@
     width: 95.5%;
     margin: auto;
 }
-@media (min-width:820px) {
+@media (min-width:811px) {
     .container_ {
         width: var(--container_) !important;
     }
 }
-@media (min-width:655px) {
+@media (min-width:649px) {
     .container__, .reklame_topp {
         width: 585px;
     }
@@ -223,9 +223,9 @@ th, td {
 }
 
 .id_nr {
-    max-width: 50px !important;
+    max-width: 42px !important;
     min-width: 42px;
-    width: 50px;
+    width: 42px;
     text-align: center;
     border-right: 1px solid rgba(177, 177, 177, 1) !important;
 }
