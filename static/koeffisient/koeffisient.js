@@ -988,3 +988,19 @@ function endre_sort_kolonne() {
     localStorage.setItem('filter_land', JSON.stringify([]))
     sessionStorage.setItem('spoiler', 'synlig')
 }
+
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+$(window).resize(function() {
+  if (vinduBredde > 1413) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1413) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+})

@@ -1353,3 +1353,19 @@ function endre_ti_års_periode() {
     localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (2000+20 + aarstall) + '/' + (21 + aarstall))
     sessionStorage.setItem('dropdownmeny_valg_ti_års', (2000+20 + aarstall) + '/' + (21 + aarstall))
 }
+
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+$(window).resize(function() {
+  if (vinduBredde > 1600) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1600) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+})

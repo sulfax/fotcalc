@@ -1654,3 +1654,19 @@ const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
 script.textContent = JSON.stringify(schema);
 document.head.appendChild(script);*/
+
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+$(window).resize(function() {
+  if (vinduBredde > 1400) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1400) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+})

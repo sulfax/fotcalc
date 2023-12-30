@@ -2496,3 +2496,43 @@ function regn_ut_NA_poeng() {
 //   document.getElementById("ad_venstre").style.top = -1.5*scrolled + "px";
 //   document.getElementById("ad_hoyre").style.top = -1.5*scrolled + "px";
 // }
+
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+$(window).resize(function() {
+  if (vinduBredde >= 2140) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 2140) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+  else if (vinduBredde >= 1918) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 1918) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+  else if (vinduBredde >= 1825) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 1825) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+})
