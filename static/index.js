@@ -1055,7 +1055,11 @@ function filterFunction() {
   }
 }
 
-$(window).resize(function() { 
-  document.getElementById("ad_venstre").innerHTML = "";
-  document.getElementById("ad_hoyre").innerHTML = "";
+let pixelRatio = window.devicePixelRatio;
+
+$(window).resize(function() {
+  if (window.devicePixelRatio > pixelRatio) {
+    document.getElementById("ad_venstre").innerHTML = "";
+    document.getElementById("ad_hoyre").innerHTML = "";
+  }
 });
