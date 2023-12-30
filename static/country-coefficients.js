@@ -2238,11 +2238,6 @@ if (navigator.appVersion.indexOf("Mac")!=-1 && (isSafari || isSafari2)) {
   document.getElementById("container__").className += " container__Mac";
 }
 
-$(window).resize(function() { 
-  document.getElementById("ad_venstre").innerHTML = "";
-  document.getElementById("ad_hoyre").innerHTML = "";
-});
-
 
 // let rader = document.getElementById('tabell_hoved').rows
 // let twitterLimInn = [];

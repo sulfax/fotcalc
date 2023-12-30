@@ -1054,3 +1054,8 @@ function filterFunction() {
     }
   }
 }
+
+$(window).resize(function() { 
+  document.getElementById("ad_venstre").innerHTML = "";
+  document.getElementById("ad_hoyre").innerHTML = "";
+});
