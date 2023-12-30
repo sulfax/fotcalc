@@ -1894,3 +1894,28 @@ function regnUtPremiepenger(data, sesong) {
   }
   return Math.round(sum);
 }
+
+// let pixelRatio = window.devicePixelRatio;
+
+// $(window).resize(function() {
+//   if (window.devicePixelRatio > pixelRatio) {
+//     document.getElementById("ad_venstre").innerHTML = "";
+//     document.getElementById("ad_hoyre").innerHTML = "";
+//   }
+// });
+
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+$(window).resize(function() {
+  if (vinduBredde > 1465) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1465) {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      }
+    }
+    else {
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
+        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      }
+    }
+  }
+})
