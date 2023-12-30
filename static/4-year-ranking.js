@@ -209,7 +209,7 @@ function oppdater_ved_refresh() {
             }
             else {
               for (j = 0; j < knapper_.length; j++) {
-                if (["b21","b24","b27","b30"].includes(knapper_[j])) {
+                if (["b18,b21","b24","b27","b30"].includes(knapper_[j])) {
                   sesonger[l+1] += 3;
                 }
               }
