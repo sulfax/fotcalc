@@ -55,28 +55,28 @@
 }
 
 .rekV_klubb {
-    top: 150px;
+    top: 130px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
     margin-left: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
 }
 .rekH_klubb {
-    top: 150px;
+    top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
 }
 .rekV_4aar {
-    top: 150px;
+    top: 130px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
     margin-left: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
 }
 .rekH_4aar {
-    top: 150px;
+    top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;

@@ -15,14 +15,14 @@
     z-index: 999;
 }
 #ad_venstre {
-    top: 150px;
+    top: 130px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
     margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 #ad_hoyre {
-    top: 150px;
+    top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
