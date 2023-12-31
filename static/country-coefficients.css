@@ -5,16 +5,16 @@
         bottom: -2px;
     }
 }
-@media (max-width:1349px) {
+@media (max-width:1353px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 831px;
-    --container_Mac: 879px;
+    --container_: 835px;
+    --container_Mac: 883px;
 }
-@media (max-width:1539px) {
+@media (max-width:1543px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -38,7 +38,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_Mac)) / 2 - 300px - 4px) !important;
 }
-@media (max-width: 1539px) {
+@media (max-width: 1543px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_Mac)) / 2 - 200px - 4px) !important;
     }
@@ -53,27 +53,27 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:636px) {
+@media (min-width:640px) {
     .container__:not(.container__Mac) {
-        width: 609px;
+        width: 613px;
     }
 }
 
-@media (min-width:686px) {
+@media (min-width:690px) {
     .container__Mac {
-        width: 657px !important;
+        width: 661px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:860px) {
+@media (min-width:864px) {
     .container_:not(.container_Mac) {
-        width: 831px;
+        width: 835px;
     }
 }
 
-@media (min-width:910px) {
+@media (min-width:914px) {
     .container_Mac {
-        width: 879px !important;
+        width: 883px !important;
     }    
 }
 
@@ -380,7 +380,7 @@ th, td {
     min-width: 25px !important;
 }
 #id_nr {
-    padding-left: 6px;
+    padding-left: 3px;
     text-align:left;
 }
 #id_nr {
@@ -391,7 +391,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: left;
-    padding-right: 5px;
+    padding-right: 0px;
 }
 #land {
     width: 20px !important;
