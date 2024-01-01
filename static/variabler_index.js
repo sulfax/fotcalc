@@ -475,7 +475,7 @@ const english_koeffisient = [
     'Play-off | match 2',
     'Play-off | eliminated',
     'Group stage',
-    'League Phase',
+    'League phase',
     '<abbr data_title="Amount of wins in the group stage">Wins</abbr>',
     '<abbr data_title="Amount of draws in the group stage">Draws</abbr>',
     '<abbr data_title="Amount of wins in the league phase">Wins</abbr>',
