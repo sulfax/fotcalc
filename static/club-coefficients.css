@@ -163,7 +163,8 @@
     border-top-left-radius: 0;
     padding-bottom: .1%;
     padding-top: calc(0.6% + 4px);
-    overflow-x:auto
+    overflow-x:auto;
+    overflow-y:hidden;
 }
 .dropdown {
     margin-bottom: 8px;
