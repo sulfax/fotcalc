@@ -151,6 +151,7 @@ body{
     flex-wrap:wrap;
     height: fit-content;
     margin-left: -2%;
+    margin-right: -2% !important;
     background-color: white;
     width:fit-content;
     margin-bottom: calc(-0.4% - 5px);
@@ -166,7 +167,7 @@ body{
     border-bottom-right-radius: 0;
     display:inline-flex;
     margin-right: -1.5%;
-    margin-left: 1.5%;
+    margin-left: 0.5%;
 }
 .sesong{
     color: #4a56ff;
@@ -214,7 +215,7 @@ body{
     float: left;
     height: 3,4rem;
     margin-top: 9px;
-    margin-right: 12px;
+    margin-right: 10px;
     border-top-right-radius: 5px;
     margin-left: .75rem;
 }
@@ -378,10 +379,10 @@ a:hover {
     color: #2130ff !important;
 }
 #sessong_kontroller_1 {
-    margin-right: 0px !important;
+    margin-right: -1px !important;
 }
 #sessong_kontroller_2 {
-    margin-left: -1px !important;
+    margin-left: -2px !important;
 }
 .btn-secondary.dropdown-toggle:focus:enabled, .btn-secondary.focus:enabled, .btn-secondary:focus:enabled {
     background-color: white !important;
@@ -494,7 +495,7 @@ a:hover {
     height: 38px;
     width: 29px;
     margin-top: 9px;
-    margin-left: 19px;
+    margin-left: 10px;
     margin-right: 9px;
     margin-bottom: 5px;
     padding-right: -1px !important;
