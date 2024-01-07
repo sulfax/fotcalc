@@ -151,7 +151,7 @@ body{
     flex-wrap:wrap;
     height: fit-content;
     margin-left: -2%;
-    margin-right: -2% !important;
+    margin-right: -0.1% !important;
     background-color: white;
     width:fit-content;
     margin-bottom: calc(-0.4% - 5px);
@@ -215,7 +215,7 @@ body{
     float: left;
     height: 3,4rem;
     margin-top: 9px;
-    margin-right: 10px;
+    margin-right: 12px;
     border-top-right-radius: 5px;
     margin-left: .75rem;
 }
