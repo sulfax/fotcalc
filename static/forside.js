@@ -1906,8 +1906,8 @@ function regnUtPremiepenger(data, sesong) {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1459) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1459) {
+  if (vinduBredde > 1439) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1439) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }
