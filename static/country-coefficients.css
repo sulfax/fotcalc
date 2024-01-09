@@ -11,8 +11,8 @@
     }
 }
 :root {
-    --container_: 821px;
-    --container_Mac: 869px;
+    --container_: 822px;
+    --container_Mac: 870px;
 }
 @media (max-width:1514px) {
     .reaklame_sidene {
@@ -53,27 +53,27 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:632px) {
+@media (min-width:633px) {
     .container__:not(.container__Mac) {
-        width: 605px;
+        width: 606px;
     }
 }
 
-@media (min-width:682px) {
+@media (min-width:683px) {
     .container__Mac {
-        width: 653px !important;
+        width: 654px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:850px) {
+@media (min-width:851px) {
     .container_:not(.container_Mac) {
-        width: 821px;
+        width: 822px;
     }
 }
 
-@media (min-width:900px) {
+@media (min-width:901px) {
     .container_Mac {
-        width: 869px !important;
+        width: 870px !important;
     }    
 }
 
