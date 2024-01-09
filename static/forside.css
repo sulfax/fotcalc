@@ -1,4 +1,4 @@
-@media (max-width:1265px) {
+@media (max-width:1245px) {
     .reaklame_sidene {
         display: none;
     }
@@ -6,7 +6,7 @@
 :root {
     --container_: 749px;
 }
-@media (max-width: 1459px) {
+@media (max-width: 1445px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -19,21 +19,21 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
 }
 #ad_hoyre {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
 }
-@media (max-width: 1459px) {
+@media (max-width: 1445px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
     }
 }
 
@@ -546,4 +546,13 @@ th, td {
 }
 .halv_br {
     margin:5px;
+}
+.dropdown {
+    margin-right: 7px;
+}
+.dropdown_adva {
+    margin-left: 7px;
+}
+#spoiler {
+    margin-left: 7px;
 }

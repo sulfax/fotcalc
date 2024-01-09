@@ -4,7 +4,7 @@
     }
 }
 :root {
-    --container_: 891px;
+    --container_: 894px;
 }
 @media (max-width:1600px) {
     .reaklame_sidene {
@@ -37,7 +37,7 @@
 }
 @media (min-width:970px) {
     .container_ {
-        width: 891px;
+        width: 894px;
     }
 }
 
