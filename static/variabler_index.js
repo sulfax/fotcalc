@@ -344,7 +344,7 @@ const english = [
 const english_forside = [
     `Your Club's Prize Money & UEFA Coefficient points`,
     'UEFA income and coefficient overview',
-    'UEFA Revenue distribution to all clubs. Find every clubs prize money and coefficient points across all competitions.<br><br><span class="reklame_landskoeff">Check out the <a class="link_utydelig" href="/country-coefficients">country coefficient ranking</a> too.</span>',
+    'UEFA Revenue distribution for all clubs. Find every clubs prize money and coefficient points across all competitions.<br><br><span class="reklame_landskoeff">Check out the <a class="link_utydelig" href="/country-coefficients">country coefficient ranking</a> too.</span>',
     'Club',
     'Prize money',
     'Association points',
