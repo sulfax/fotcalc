@@ -232,9 +232,13 @@ function oppdater_ved_refresh() {
   }
   i = 3
   ranking_array.sort(sortFunction_tall_2_flere_desimal);
-  for (x = 9; x >= 5; x--) {
-    ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
-  }
+
+	for (let x = 0; x < ranking_array.length; x++) {
+		for (let y = 5; y <= 9; y++) {
+			if (((ranking_array[x][y] === '' || !ranking_array[x][y])) && ranking_array[x][y] !== 0) {ranking_array[x][y] = "0.0"}
+		}
+	}
+	ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   for (p = 0; p < ranking_array.length; p++) {
     if (ranking_array[p][1] == "0.000") {
       ranking_array[p][1] = 0.0001}
@@ -469,12 +473,11 @@ function sorter(column, order, tekst, ranking_array) {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
       if (column == 'poeng') {
-        for (i = 9; i >= 5; i--) {
-          ranking_array.sort(sortFunction_tall_1_flere_desimal);
-        }
+				ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
         i = 1;
+				ranking_array.sort(sortFunction_tall_1_flere_desimal_land);
       }
-      if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
+			else if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
       else {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
     }
     else {
@@ -486,12 +489,11 @@ function sorter(column, order, tekst, ranking_array) {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
       if (column == 'poeng') {
-        for (i = 9; i >= 5; i--) {
-          ranking_array.sort(sortFunction_tall_2_flere_desimal);
-        }
+				ranking_array.sort(sortFunction_tall_2_flere_desimal_nyligste);
         i = 1;
+				ranking_array.sort(sortFunction_tall_2_flere_desimal_land);
       }
-      if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
+      else if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
       else {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
     }
     else {
@@ -663,14 +665,28 @@ function sortFunction_tall_2_flere_desimal(a, b) {
 }
 
 function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-  if (((a[x] === '' || !a[x])) && a[x] !== 0) {a[x] = "0.0"}
-  if (((b[x] === '' || !b[x])) && b[x] !== 0) {b[x] = "0.0"}
-  if (parseFloat(a[x]) === parseFloat(b[x])) {
-    return 0;
-  }
-  else {
-    return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
-  }
+	for (x = 5; x <= 9; x++) {
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == 9) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+		}
+	}
+}
+function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
+	for (x = 5; x <= 9; x++) {
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == 9) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) < parseFloat(b[x])) ? -1 : 1;
+		}
+	}
 }
 
 
@@ -1060,6 +1076,8 @@ function endreMenyTittel(innerHTML,id,btnid) {
 
 
 function sortFunction_tall_1_flere_desimal_land(a, b) {
+	if (a[1] == "") {a[1] = 0}
+	if (b[1] == "") {b[1] = 0}
   if (parseFloat(a[1]) === parseFloat(b[1])) {
     return 0;
   }
@@ -1067,12 +1085,24 @@ function sortFunction_tall_1_flere_desimal_land(a, b) {
     return (parseFloat(a[1]) > parseFloat(b[1])) ? -1 : 1;
   }
 }
-function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
-  if (parseFloat(a[p]) === parseFloat(b[p])) {
+function sortFunction_tall_2_flere_desimal_land(a, b) {
+	if (a[1] == "") {a[1] = 0}
+	if (b[1] == "") {b[1] = 0}
+  if (parseFloat(a[1]) === parseFloat(b[1])) {
     return 0;
   }
   else {
-    return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+    return (parseFloat(a[1]) < parseFloat(b[1])) ? -1 : 1;
+  }
+}
+function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
+	for (p = 1; p <= 6; p++) {
+		if (parseFloat(a[p]) === parseFloat(b[p])) {
+			if (p == 6) {return 0};
+		}
+		else {
+			return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+		}
   }
 }
 
@@ -1225,10 +1255,7 @@ function generer_lands_knapper() {
   
     ranking_array_2.push(assos_ranking_array)
   }
-  for (p = 6; p > 1; p--) {
-    ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
-  }
-  ranking_array_2.sort(sortFunction_tall_1_flere_desimal_land);
+	ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
 
   var landskode = []
   for (i = 0; i < ranking_array_2.length; i++) {
@@ -1552,9 +1579,7 @@ function regn_ut_NA_poeng() {
     
   }
   // Kanskje fjern
-  for (i = 6; i >= 1; i--) {
-    denne_NA_poeng_og_assos_skygge2.sort(sortFunction_tall_1_flere_desimal);
-  }
+	denne_NA_poeng_og_assos_skygge2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
 
   for (i = 0; i < denne_NA_poeng_og_assos_skygge2.length; i++) {
     denne_NA_poeng_og_assos_skygge2[i].push(i+1);

@@ -604,9 +604,12 @@ function oppdater_ved_refresh() {
   ranking_array.sort(sortFunction_2);
   i = 3
   ranking_array.sort(sortFunction_tall_2_flere_desimal);
-  for (x = 14; x >= 5; x--) {
-    ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
-  }
+	for (let x = 0; x < ranking_array.length; x++) {
+		for (let y = 5; y <= 14; y++) {
+			if (((ranking_array[x][y] === '' || !ranking_array[x][y])) && ranking_array[x][y] !== 0) {ranking_array[x][y] = "0.0"}
+		}
+	}
+	ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   for (p = 0; p < ranking_array.length; p++) {
     if (ranking_array[p][1] == "0.000") {
       ranking_array[p][1] = 0.0001}
@@ -1024,15 +1027,12 @@ function sorter(column, order, tekst, ranking_array) {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
       if (column == 'poeng') {
-        for (i = 14; i >= 5; i--) {
-          ranking_array.sort(sortFunction_tall_1_flere_desimal);
-        }
+				ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
         i = 1;
+				ranking_array.sort(sortFunction_tall_1_flere_desimal_land);
       }
-      if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
-      else {
-        ranking_array.sort(sortFunction_tall_1_flere_desimal);
-      }
+			else if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
+      else {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
     }
     else {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
@@ -1043,12 +1043,11 @@ function sorter(column, order, tekst, ranking_array) {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
       if (column == 'poeng') {
-        for (i = 14; i >= 5; i--) {
-          ranking_array.sort(sortFunction_tall_2_flere_desimal);
-        }
+				ranking_array.sort(sortFunction_tall_2_flere_desimal_nyligste);
         i = 1;
+				ranking_array.sort(sortFunction_tall_2_flere_desimal_land);
       }
-      if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
+      else if (column == 'na_poeng') {ranking_array.sort(sortFunction_tall_1_flere_desimal);}
       else {ranking_array.sort(sortFunction_tall_2_flere_desimal);}
     }
     else {
@@ -1216,7 +1215,7 @@ function sortFunction_tall_1_flere_desimal(a, b) {
     if (a[i] == "0.000") {a[i] = 0.0001}
     if (b[i] == "0.000") {b[i] = 0.0001}
   }
-  else {
+  else if (i != 15) {
     if (a[0] == '' && b[0] != '' && b[3] >= a[3] && sum_a == sum_b) {return -1}
     if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return 1}
     if (a[5] == "0.0" && a[6] == "0.0" && a[7] == "0.0" && a[8] == "0.0" && a[9] == "0.0" && a[10] == "0.0" && a[11] == "0.0" && a[12] == "0.0" && a[13] == "0.0" && a[14] == "0.0" && b[5] == "0.0" && b[6] == "0.0" && b[7] == "0.0" && b[8] == "0.0" && b[9] == "0.0" && b[10] == "0.0" && b[11] == "0.0" && b[12] == "0.0" && b[13] == "0.0" && b[14] == "0.0" && a[0] != "" && b[0] != "" && a[1] > b[1] && a[3] <= b[3]) {return 1}
@@ -1284,14 +1283,28 @@ function sortFunction_tall_2_flere_desimal(a, b) {
 }
 
 function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-  if (((a[x] === '' || !a[x])) && a[x] !== 0) {a[x] = "0.0"}
-  if (((b[x] === '' || !b[x])) && b[x] !== 0) {b[x] = "0.0"}
-  if (parseFloat(a[x]) === parseFloat(b[x])) {
-    return 0;
-  }
-  else {
-    return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
-  }
+	for (x = 5; x <= 14; x++) {
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == 14) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+		}
+	}
+}
+function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
+	for (x = 5; x <= 14; x++) {
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == 14) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) < parseFloat(b[x])) ? -1 : 1;
+		}
+	}
 }
 
 
@@ -1736,6 +1749,8 @@ function endreMenyTittel(innerHTML,id,btnid) {
 
 
 function sortFunction_tall_1_flere_desimal_land(a, b) {
+	if (a[1] == "") {a[1] = 0}
+	if (b[1] == "") {b[1] = 0}
   if (parseFloat(a[1]) === parseFloat(b[1])) {
     return 0;
   }
@@ -1743,12 +1758,24 @@ function sortFunction_tall_1_flere_desimal_land(a, b) {
     return (parseFloat(a[1]) > parseFloat(b[1])) ? -1 : 1;
   }
 }
-function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
-  if (parseFloat(a[p]) === parseFloat(b[p])) {
+function sortFunction_tall_2_flere_desimal_land(a, b) {
+	if (a[1] == "") {a[1] = 0}
+	if (b[1] == "") {b[1] = 0}
+  if (parseFloat(a[1]) === parseFloat(b[1])) {
     return 0;
   }
   else {
-    return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+    return (parseFloat(a[1]) < parseFloat(b[1])) ? -1 : 1;
+  }
+}
+function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
+	for (p = 1; p <= 11; p++) {
+		if (parseFloat(a[p]) === parseFloat(b[p])) {
+			if (p == 11) {return 0};
+		}
+		else {
+			return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+		}
   }
 }
 
@@ -2016,10 +2043,7 @@ function generer_lands_knapper() {
 
     ranking_array_2.push(assos_ranking_array)
   }
-  for (p = 11; p > 1; p--) {
-    ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
-  }
-  ranking_array_2.sort(sortFunction_tall_1_flere_desimal_land);
+	ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
 
   var landskode = []
   for (i = 0; i < ranking_array_2.length; i++) {
@@ -2456,9 +2480,7 @@ function regn_ut_NA_poeng() {
     // -------------------
   }
   // Kanskje fjern
-  for (i = 11; i >= 1; i--) {
-    denne_NA_poeng_og_assos_skygge2.sort(sortFunction_tall_1_flere_desimal);
-  }
+	denne_NA_poeng_og_assos_skygge2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
 
   for (i = 0; i < denne_NA_poeng_og_assos_skygge2.length; i++) {
     denne_NA_poeng_og_assos_skygge2[i].push(i+1);

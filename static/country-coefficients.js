@@ -549,9 +549,12 @@ var link = document.createElement('meta');  link.setAttribute('name', 'descripti
 
 
 function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
-  for (p = 6; p > 1; p--) {
-    ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
-  }
+	for (let x = 0; x < ranking_array.length; x++) {
+		for (let y = 2; y <= 6; y++) {
+			if (((ranking_array[x][y] === '' || !ranking_array[x][y])) && ranking_array[x][y] !== 0) {ranking_array[x][y] = "0.0"}
+		}
+	}
+	ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   for (i = 0; i < ranking_array.length; i++) {
     for (p = 6; p > 1; p--) {
       if (ranking_array[i][p] === "0.000") {ranking_array[i][p] = 0.0001}
@@ -665,21 +668,13 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       ranking_array.sort(sortFunction_tall_1_forskjellig);
     }
     else {
-      let i_mål = i;
-      for (i+=4; i >= i_mål; i--) {
-        ranking_array.sort(sortFunction_tall_1_forskjellig);
-      }
-      i+=1;
+			ranking_array.sort(sortFunction_tall_1_forskjellig2);
     }
     tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
   }
   else {
     if (column != 'id_nr') {
-      let i_mål = i;
-      for (i+=4; i >= i_mål; i--) {
-        ranking_array.sort(sortFunction_tall_2_forskjellig);
-      }
-      i+=1;
+			ranking_array.sort(sortFunction_tall_2_forskjellig2);
     }
     tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
   }
@@ -797,6 +792,34 @@ function sortFunction_tall_1_flere_desimal(a, b) {
     return (parseFloat(a[i]) > parseFloat(b[i])) ? -1 : 1;
   }
 }
+function sortFunction_tall_1_flere_desimal1(a, b) {
+	for (i = 6; i >= 2; i--) {
+		if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
+		if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
+		if (parseFloat(a[i]) === parseFloat(b[i])) {
+			if (i == 2) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[i]) > parseFloat(b[i])) ? -1 : 1;
+		}
+	}
+}
+function sortFunction_tall_1_flere_desimal2(a, b) {
+	for (i = 6; i >= 2; i--) {
+		if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
+		if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
+		if (parseFloat(a[i]) === parseFloat(b[i])) {
+			if (i == 2) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[i]) < parseFloat(b[i])) ? -1 : 1;
+		}
+	}
+}
 function sortFunction_tall_2_flere_desimal(a, b) {
   if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
   if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
@@ -820,6 +843,39 @@ function sortFunction_tall_1_forskjellig(a, b) {
     return (parseFloat(a[i]) > parseFloat(b[i])) ? -1 : 1;
   }
 }
+function sortFunction_tall_1_forskjellig2(a, b) {
+	for (let x = i; x <= i+4; x++) {
+		if (a[x] == '') {a[x] = 0.000}
+		else if (a[x] == '-') {a[x] = 0.0001}
+		if (b[x] == '') {b[x] = 0.000}
+		else if (b[x] == '-') {b[x] = 0.0001}
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == i+4) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+		}
+	}
+}
+function sortFunction_tall_2_forskjellig2(a, b) {
+	for (let x = i; x <= i+4; x++) {
+		if (a[x] == '') {a[x] = 0.000}
+		else if (a[x] == '-') {a[x] = 0.0001}
+		if (b[x] == '') {b[x] = 0.000}
+		else if (b[x] == '-') {b[x] = 0.0001}
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == i+4) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) < parseFloat(b[x])) ? -1 : 1;
+		}
+	}
+}
+
 
 function sortFunction_tall_2_forskjellig(a, b) {
   if (a[i] == '') {a[i] = 0.000}
@@ -835,37 +891,41 @@ function sortFunction_tall_2_forskjellig(a, b) {
 }
 
 function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-  if (a[p] == '-') {a[p] = "0.000"}
-  if (b[p] == '-') {b[p] = "0.000"}
-  if (a[p] == '') {a[p] = 0}
-  if (b[p] == '') {b[p] = 0}
-  if (parseFloat(a[p]) === parseFloat(b[p])) {
-    return 0;
-  }
-  else {
-    return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
-  }
-}
-function sortFunction_tall_1_flere_desimal_nyligste2(a, b) {
-  if (a[p] == '-') {a[p] = 0.0001}
-  if (b[p] == '-') {b[p] = 0.0001}
-  if (a[p] == '') {a[p] = 0}
-  if (b[p] == '') {b[p] = 0}
-  if (parseFloat(a[p]) === parseFloat(b[p])) {
-    return 0;
-  }
-  else {
-    return (parseFloat(a[p]) < parseFloat(b[p])) ? -1 : 1;
-  }
+	for (x = 2; x <= 6; x++) {
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == 6) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+		}
+	}
 }
 function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
-  if (parseFloat(a[p]) === parseFloat(b[p])) {
-    return 0;
-  }
-  else {
-    return (parseFloat(a[p]) < parseFloat(b[p])) ? -1 : 1;
-  }
+	for (x = 2; x <= 6; x++) {
+		if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (x == 6) {
+				return 0;
+			}
+		}
+		else {
+			return (parseFloat(a[x]) < parseFloat(b[x])) ? -1 : 1;
+		}
+	}
 }
+// function sortFunction_tall_1_flere_desimal_nyligste2(a, b) {
+//   if (a[p] == '-') {a[p] = 0.0001}
+//   if (b[p] == '-') {b[p] = 0.0001}
+//   if (a[p] == '') {a[p] = 0}
+//   if (b[p] == '') {b[p] = 0}
+//   if (parseFloat(a[p]) === parseFloat(b[p])) {
+//     return 0;
+//   }
+//   else {
+//     return (parseFloat(a[p]) < parseFloat(b[p])) ? -1 : 1;
+//   }
+// }
 
 
 
@@ -1392,9 +1452,7 @@ function sorter_klubb(column, order, tekst) {
   if (column == 'id_nr_klubb' && order == "asc") {
     i = 0;
     klubber.sort(sortFunction_1);
-    for (i = 2; i < 7; i++) {
-      klubber.sort(sortFunction_tall_1_flere_desimal)
-    }
+		klubber.sort(sortFunction_tall_1_flere_desimal1)
   }
 
   i = 7
@@ -1524,9 +1582,7 @@ function sorter_klubb(column, order, tekst) {
   klubber = ranking_array_land_filter;
   if(order == 'desc') {
     if (column == 'id_nr_klubb') {
-      for (i = 2; i < 7; i++) {
-        klubber.sort(sortFunction_tall_2_flere_desimal)
-      }
+			klubber.sort(sortFunction_tall_1_flere_desimal2)
       i = 9
     }
     if (column != 'club' && column != 'land2') {
@@ -2054,10 +2110,7 @@ function generer_lands_knapper() {
 
 
 
-  for (p = 6; p > 1; p--) {
-    ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
-  }
-  ranking_array_2.sort(sortFunction_tall_1_flere_desimal_land);
+	ranking_array_2.sort(sortFunction_tall_1_flere_desimal_nyligste_land);
 
 
   var landskode = []
@@ -2190,11 +2243,13 @@ function sortFunction_tall_1_flere_desimal_land(a, b) {
   }
 }
 function sortFunction_tall_1_flere_desimal_nyligste_land(a, b) {
-  if (parseFloat(a[p]) === parseFloat(b[p])) {
-    return 0;
-  }
-  else {
-    return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+	for (p = 1; p <= 6; p++) {
+		if (parseFloat(a[p]) === parseFloat(b[p])) {
+			if (p == 6) {return 0};
+		}
+		else {
+			return (parseFloat(a[p]) > parseFloat(b[p])) ? -1 : 1;
+		}
   }
 }
 

@@ -77,7 +77,7 @@ genPermutations();
 fjernUlovligeTrekninger();
 trukketOppgjor()
 
-console.log(matchCombin.length)
+// console.log(matchCombin.length)
 
 let dataTabell = [];
 genererForekomster();
@@ -220,7 +220,7 @@ function fargelegg() {
 
 function print2DArray(array) {
   for (var i = 0; i < array.length; i++) {
-    console.log(array[i].join(' '));
+    // console.log(array[i].join(' '));
   }
 }
 
