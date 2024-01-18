@@ -560,8 +560,6 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       if (ranking_array[i][p] === "0.000") {ranking_array[i][p] = 0.0001}
     }
   }
-  i = 1
-  ranking_array.sort(sortFunction_tall_1_forskjellig);
 
   for (i = 0; i < ranking_array.length; i++) {
     ranking_array[i][14] = i+1;
@@ -798,7 +796,12 @@ function sortFunction_tall_1_flere_desimal1(a, b) {
 		if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
 		if (parseFloat(a[i]) === parseFloat(b[i])) {
 			if (i == 2) {
-				return 0;
+				if (a[0].toLowerCase() === b[0].toLowerCase()) {
+					return 0;
+				}
+				else {
+					return (a[0].toLowerCase() > b[0].toLowerCase()) ? -1 : 1;
+				}
 			}
 		}
 		else {
@@ -891,16 +894,25 @@ function sortFunction_tall_2_forskjellig(a, b) {
 }
 
 function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-	for (x = 2; x <= 6; x++) {
-		if (parseFloat(a[x]) === parseFloat(b[x])) {
-			if (x == 6) {
-				return 0;
+	if (a[1] == '') {a[1] = 0.000}
+  else if (a[1] == '-') {a[1] = 0.0001}
+  if (b[1] == '') {b[1] = 0.000}
+  else if (b[1] == '-') {b[1] = 0.0001}
+  if (parseFloat(a[1]) === parseFloat(b[1])) {
+		for (x = 2; x <= 6; x++) {
+			if (parseFloat(a[x]) === parseFloat(b[x])) {
+				if (x == 6) {
+					return 0;
+				}
+			}
+			else {
+				return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
 			}
 		}
-		else {
-			return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
-		}
-	}
+  }
+  else {
+    return (parseFloat(a[1]) > parseFloat(b[1])) ? -1 : 1;
+  }
 }
 function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
 	for (x = 2; x <= 6; x++) {
@@ -1450,8 +1462,6 @@ function sorter_etter_sesong2() {
 function sorter_klubb(column, order, tekst) {
 
   if (column == 'id_nr_klubb' && order == "asc") {
-    i = 0;
-    klubber.sort(sortFunction_1);
 		klubber.sort(sortFunction_tall_1_flere_desimal1)
   }
 
