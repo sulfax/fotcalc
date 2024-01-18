@@ -600,17 +600,12 @@ function oppdater_ved_refresh() {
   for (p = 0; p < landskoeffisienter.length; p++) {
     ranking_array.push(["","",NA_poeng_og_assosiasjon[p][0],NA_poeng_og_assosiasjon[p][2],(Math.floor(((NA_poeng_og_assosiasjon[p][1]*1000)/5))/1000).toFixed(3),"","","","","","","","","","",0])
   }
-  i = 0
-  ranking_array.sort(sortFunction_2);
-  i = 3
-  ranking_array.sort(sortFunction_tall_2_flere_desimal);
 	for (let x = 0; x < ranking_array.length; x++) {
 		for (let y = 5; y <= 14; y++) {
 			if (((ranking_array[x][y] === '' || !ranking_array[x][y])) && ranking_array[x][y] !== 0) {ranking_array[x][y] = "0.0"}
 		}
 	}
-	ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
-  for (p = 0; p < ranking_array.length; p++) {
+	for (p = 0; p < ranking_array.length; p++) {
     if (ranking_array[p][1] == "0.000") {
       ranking_array[p][1] = 0.0001}
   }
@@ -1249,7 +1244,45 @@ function sortFunction_tall_1_flere_desimal_original(a, b) {
   if (sum_a === '' || !sum_a && sum_a !== 0) {sum_a = "0.0"}
   if (sum_b === '' || !sum_b && sum_b !== 0) {sum_b = "0.0"}
   if (parseFloat(sum_a) === parseFloat(sum_b)) {
-    return 0;
+		for (x = 5; x <= 14; x++) {
+			if (parseFloat(a[x]) === parseFloat(b[x])) {
+				if (x == 14) {
+					i = 3
+					let sum_a1 = a[1]
+					let sum_a2 = a[4]
+					let sum_a = (Math.max(sum_a1, sum_a2))
+					let sum_b1 = b[1]
+					let sum_b2 = b[4]
+					let sum_b = (Math.max(sum_b1, sum_b2))
+					if (i >= 5 && i <= 14) {
+						if (a[i] == "0.000") {a[i] = 0.0001}
+						if (b[i] == "0.000") {b[i] = 0.0001}
+					}
+					else {
+						if (a[0] == '' && b[0] != '' && b[3] >= a[3] && sum_a == sum_b) {return 1}
+						if (b[0] == '' && a[0] != '' && a[3] >= b[3] && sum_b == sum_a) {return -1}
+						if (a[5] == "0.0" && a[6] == "0.0" && a[7] == "0.0" && a[8] == "0.0" && a[9] == "0.0" && a[10] == "0.0" && a[11] == "0.0" && a[12] == "0.0" && a[13] == "0.0" && a[14] == "0.0" && b[5] == "0.0" && b[6] == "0.0" && b[7] == "0.0" && b[8] == "0.0" && b[9] == "0.0" && b[10] == "0.0" && b[11] == "0.0" && b[12] == "0.0" && b[13] == "0.0" && b[14] == "0.0" && a[0] != "" && b[0] != "" && a[1] > b[1] && a[3] <= b[3]) {return -1}
+						if (a[5] == "0.0" && a[6] == "0.0" && a[7] == "0.0" && a[8] == "0.0" && a[9] == "0.0" && a[10] == "0.0" && a[11] == "0.0" && a[12] == "0.0" && a[13] == "0.0" && a[14] == "0.0" && b[5] == "0.0" && b[6] == "0.0" && b[7] == "0.0" && b[8] == "0.0" && b[9] == "0.0" && b[10] == "0.0" && b[11] == "0.0" && b[12] == "0.0" && b[13] == "0.0" && b[14] == "0.0" && a[0] != "" && b[0] != "" && b[1] > a[1] && b[3] <= a[3]) {return 1}
+					}
+					if (a[i] === '' || !a[i] && a[i] !== 0) {    a[i] = "0.0"}
+					if (b[i] === '' || !b[i] && b[i] !== 0) {    b[i] = "0.0"}
+					if (parseFloat(a[i]) === parseFloat(b[i])) {
+						if (a[0].toLowerCase() === b[0].toLowerCase()) {
+							return 0;
+						}
+						else {
+							return (a[0].toLowerCase() < b[0].toLowerCase()) ? -1 : 1;
+						}
+					}
+					else {
+						return (parseFloat(a[i]) < parseFloat(b[i])) ? -1 : 1;
+					}
+				}
+			}
+			else {
+				return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+			}
+		}
   }
   else {
     return (parseFloat(sum_a) > parseFloat(sum_b)) ? -1 : 1;

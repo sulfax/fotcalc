@@ -283,17 +283,11 @@ function oppdater_ved_refresh() {
       }
     }
   }
-  i = 0
-  ranking_array.sort(sortFunction_2);
-  i = 3
-  ranking_array.sort(sortFunction_tall_2_flere_desimal);
-
 	for (let x = 0; x < ranking_array.length; x++) {
-		for (let y = 5; y <= 9; y++) {
+		for (let y = 5; y <= 8; y++) {
 			if (((ranking_array[x][y] === '' || !ranking_array[x][y])) && ranking_array[x][y] !== 0) {ranking_array[x][y] = "0.0"}
 		}
 	}
-	ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
   ranking_array.sort(sortFunction_tall_1_flere_desimal_original);
   for (p = 0; p < ranking_array.length; p++) {
     let rangering = p
@@ -585,7 +579,6 @@ function sorter(column, order, tekst, ranking_array) {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/opp_NEDpil.svg" alt="Sorting arrows"></span>'
       if (column == 'poeng') {
-				ranking_array.sort(sortFunction_tall_1_flere_desimal_nyligste);
         i = 1;
 				ranking_array.sort(sortFunction_tall_1_flere_desimal_land);
       }
@@ -601,7 +594,6 @@ function sorter(column, order, tekst, ranking_array) {
     if (column != 'klubb' && column != 'land') {
       tekst += '<span><img src="media/OPPned_pil.svg" alt="Sorting arrows"></span>'
       if (column == 'poeng') {
-				ranking_array.sort(sortFunction_tall_2_flere_desimal_nyligste);
         i = 1;
 				ranking_array.sort(sortFunction_tall_2_flere_desimal_land);
       }
@@ -753,7 +745,33 @@ function sortFunction_tall_1_flere_desimal_original(a, b) {
   if (sum_a === '' || !sum_a && sum_a !== 0) {sum_a = "0.0"}
   if (sum_b === '' || !sum_b && sum_b !== 0) {sum_b = "0.0"}
   if (parseFloat(sum_a) === parseFloat(sum_b)) {
-    return 0;
+		for (x = 5; x <= 8; x++) {
+			if (parseFloat(a[x]) === parseFloat(b[x])) {
+				if (x == 8) {
+					i = 3
+					if (i >= 5 && i <= 8) {
+						if (a[i] == "0.000") {a[i] = 0.0001}
+						if (b[i] == "0.000") {b[i] = 0.0001}
+					}
+					if (a[i] === '' || !a[i] && a[i] !== 0) {    a[i] = "0.0"}
+					if (b[i] === '' || !b[i] && b[i] !== 0) {    b[i] = "0.0"}
+					if (parseFloat(a[i]) === parseFloat(b[i])) {
+						if (a[0].toLowerCase() === b[0].toLowerCase()) {
+							return 0;
+						}
+						else {
+							return (a[0].toLowerCase() < b[0].toLowerCase()) ? -1 : 1;
+						}
+					}
+					else {
+						return (parseFloat(a[i]) < parseFloat(b[i])) ? -1 : 1;
+					}
+				}
+			}
+			else {
+				return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+			}
+		}
   }
   else {
     return (parseFloat(sum_a) > parseFloat(sum_b)) ? -1 : 1;
@@ -774,30 +792,6 @@ function sortFunction_tall_2_flere_desimal(a, b) {
   }
 }
 
-function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
-	for (x = 5; x <= 8; x++) {
-		if (parseFloat(a[x]) === parseFloat(b[x])) {
-			if (x == 8) {
-				return 0;
-			}
-		}
-		else {
-			return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
-		}
-	}
-}
-function sortFunction_tall_2_flere_desimal_nyligste(a, b) {
-	for (x = 5; x <= 8; x++) {
-		if (parseFloat(a[x]) === parseFloat(b[x])) {
-			if (x == 8) {
-				return 0;
-			}
-		}
-		else {
-			return (parseFloat(a[x]) < parseFloat(b[x])) ? -1 : 1;
-		}
-	}
-}
 
 
 
@@ -990,7 +984,6 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
         klubbnavn_HTML_start = "<td id='toppåtte" + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
       }
     }
-
     if (aar_etter_forste_periode == 3) {
       sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" class="utydelig_link">${sesong4}</a>`
       sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" class="utydelig_link">${sesong3}</a>`
@@ -1203,7 +1196,16 @@ function sortFunction_tall_1_flere_desimal_land(a, b) {
 	if (a[1] == "") {a[1] = 0}
 	if (b[1] == "") {b[1] = 0}
   if (parseFloat(a[1]) === parseFloat(b[1])) {
-    return 0;
+		for (x = 5; x <= 8; x++) {
+			if (parseFloat(a[x]) === parseFloat(b[x])) {
+				if (x == 8) {
+					return 0;
+				}
+			}
+			else {
+				return (parseFloat(a[x]) > parseFloat(b[x])) ? -1 : 1;
+			}
+		}
   }
   else {
     return (parseFloat(a[1]) > parseFloat(b[1])) ? -1 : 1;
@@ -1213,7 +1215,16 @@ function sortFunction_tall_2_flere_desimal_land(a, b) {
 	if (a[1] == "") {a[1] = 0}
 	if (b[1] == "") {b[1] = 0}
   if (parseFloat(a[1]) === parseFloat(b[1])) {
-    return 0;
+		for (x = 5; x <= 8; x++) {
+			if (parseFloat(a[x]) === parseFloat(b[x])) {
+				if (x == 8) {
+					return 0;
+				}
+			}
+			else {
+				return (parseFloat(a[x]) < parseFloat(b[x])) ? -1 : 1;
+			}
+		}
   }
   else {
     return (parseFloat(a[1]) < parseFloat(b[1])) ? -1 : 1;
