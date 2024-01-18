@@ -29,16 +29,16 @@
     width: 100% !important;
     margin: 0px !important;
 }
-@media (max-width:1318px) {
+@media (max-width:1312px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 855px;
+    --container_: 850px;
     --container_4_aar: 716px;
 }
-@media (max-width:1518px) {
+@media (max-width:1512px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -59,14 +59,14 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 15px) !important;
 }
 .rekH_klubb {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 15px) !important;
 }
 .rekV_4aar {
     top: 130px;
@@ -82,12 +82,12 @@
     position: sticky;
     margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
 }
-@media (max-width: 1518px) {
+@media (max-width: 1512px) {
     .rekV_klubb {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 15px) !important;
     }
     .rekH_klubb {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 15px) !important;
     }
 }
 @media (max-width: 1388px) {
@@ -110,9 +110,9 @@
     margin: auto;
 }
 
-@media (min-width:885px) {
+@media (min-width:880px) {
     .container_ {
-        width: 855px;
+        width: 850px;
     }
 }
 
@@ -247,6 +247,16 @@ th, td {
     border-color: rgb(154, 176, 218) !important;
     color: #4a56ff !important;
 }
+.NAp {
+	padding-left: 2px !important;
+	padding-right: 10px !important;
+}
+.ramme_hoyre .senter .premie_koeff a {
+	color: rgb(63, 76, 255) !important;
+}
+.ramme_hoyre .senter .premie_koeff a:hover {
+	color: rgb(0, 17, 255) !important;
+}
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
 }
@@ -273,7 +283,7 @@ th, td {
     text-align: right;
 }
 #na_poeng {
-    padding-left: 20px;
+    padding-left: 5px;
 }
 .padding_høyre {
     padding-right: 8px !important;
@@ -298,7 +308,10 @@ th {
     text-align: left;
 }
 #poeng {
-    min-width: 82px;
+    min-width: 78px;
+		padding-left: 0px !important;
+		margin-left: -10px !important;
+		padding-right: 6px !important;
 }
 .marign_venstre {
     padding-left: 3px;
@@ -318,7 +331,7 @@ th {
     color: rgb(81, 89, 97);
 }
 .utydelig_link {
-    color: rgb(112, 122, 255);
+    color: rgb(82, 93, 255);;
 }
 .premie_koeff {
     vertical-align:middle;
@@ -333,6 +346,9 @@ th {
     text-align: right;
     min-width: 61px;
     margin: 0 auto;
+		padding-left: 0px !important;
+		padding-right: 2px !important;
+		margin-left: 0px !important;
 }
 .id_nr {
     /* max-width: 50px; */

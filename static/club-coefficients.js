@@ -226,12 +226,13 @@ function oppdater_ved_refresh() {
   for (p = 0; p < landskoeffisienter.length; p++) {
     ranking_array.push(["","",NA_poeng_og_assosiasjon[p][0],NA_poeng_og_assosiasjon[p][2],(Math.floor(((NA_poeng_og_assosiasjon[p][1]*1000)/5))/1000).toFixed(3),"","","","",""])
   }
+	i = 3
   if (ingen_poeng+landskoeffisienter.length != ranking_array.length) {
-    i = 0
-    ranking_array.sort(sortFunction_2);
+    ranking_array.sort(sortFunction_3);
   }
-  i = 3
-  ranking_array.sort(sortFunction_tall_2_flere_desimal);
+	else {
+		ranking_array.sort(sortFunction_tall_2_flere_desimal);
+	}
 
 	for (let x = 0; x < ranking_array.length; x++) {
 		for (let y = 5; y <= 9; y++) {
@@ -613,6 +614,25 @@ function sortFunction_2(a, b) {
     return (a[i].toLowerCase() < b[i].toLowerCase()) ? -1 : 1;
   }
 }
+function sortFunction_3(a, b) {
+	if (i >= 5 && i <= 9) {
+    if (a[i] == "0.000") {a[i] = 0.0001}
+    if (b[i] == "0.000") {b[i] = 0.0001}
+  }
+  if (a[i] === '' || !a[i] && a[i] !== 0) {    a[i] = "0.0"}
+  if (b[i] === '' || !b[i] && b[i] !== 0) {    b[i] = "0.0"}
+  if (parseFloat(a[i]) === parseFloat(b[i])) {
+		if (a[0].toLowerCase() === b[0].toLowerCase()) {
+			return 0;
+		}
+		else {
+			return (a[0].toLowerCase() < b[0].toLowerCase()) ? -1 : 1;
+		}
+  }
+  else {
+    return (parseFloat(a[i]) < parseFloat(b[i])) ? -1 : 1;
+  }
+}
 function sortFunction_tall_1_flere_desimal(a, b) {
   if (i >= 5 && i <= 9) {
     if (a[i] == "0.000") {a[i] = 0.0001}
@@ -919,7 +939,7 @@ function byggTabell_test(ranking_array, column, order) {
                       <td id="tom_kolonne">${klubbnavn}</td>
                       <td class='premie_koeff_3 ramme_hoyre'><div class='senter'><div class='premie_koeff_3 utydelig'>${ranking_array[i][2]}</div></div></td>
                       <td class='premie_koeff_2'><div class='senter'><div class='premie_koeff_2'>${poeng}</div></div></td>
-                      <td class='premie_koeff ramme_hoyre'><div class='senter'><div class='premie_koeff'><a href="country-coefficients" onclick="trykker_na_poeng(${ranking_array[i][2]})">${na_poeng}</a></div></div></td>
+                      <td class='premie_koeff ramme_hoyre NAp'><div class='senter'><div class='premie_koeff'><a href="country-coefficients" onclick="trykker_na_poeng(${ranking_array[i][2]})">${na_poeng}</a></div></div></td>
                       <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong5}</div></div></td>
                       <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong4}</div></div></td>
                       <td class='premie_koeff mørk_bakgrunn'><div class='senter'><div class='premie_koeff utydelig'>${sesong3}</div></div></td>
@@ -1657,8 +1677,8 @@ document.head.appendChild(script);*/
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1518) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1518) {
+  if (vinduBredde > 1512) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1512) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }
