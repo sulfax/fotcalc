@@ -19,7 +19,7 @@
     }
     .abbr_klubb:hover::after,
     .abbr_klubb:focus::after {
-        bottom: -6px !important;
+        bottom: -5px !important;
         left: calc(100% + 5px) !important;
     }
 
@@ -489,7 +489,7 @@ a {
 }
 .fraLandMedOver2Mestere .marign_venstre, .fraLandMedOver2Mestere .premie_koeff_3 {
     color:rgba(52, 58, 64, 0.2) !important;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
 }
 .fraLandMedOver2Mestere .marign_venstre img {
     filter: grayscale(1);
