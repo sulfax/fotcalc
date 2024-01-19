@@ -335,6 +335,10 @@ a:hover {
 #koeff_reklame {
     font-weight: bold;
 }
+#kilde_koeff_id, #marketPool_id2, #covid_id {
+	margin: 0px !important;
+	height: 19.5px
+}
 #legend, #access_list {
     font-style: italic;
 }
@@ -350,8 +354,8 @@ a:hover {
 .sentrer {
     text-align: center;
 }
-.marketPool {
-    font-size: 13px;
+.marketPool, #koeff_bidrag_beskrivelse, #etter120_beskrivelse {
+    font-size: 13px !important;
     color: rgba(52, 58, 64, 0.658);
 }
 #uefa_distribution_link,#klubb_link {
@@ -392,10 +396,14 @@ a:hover {
 .nav-link {
     padding-right: 16px !important;
 }
-.reklame_landskoeff, #premiepenger_bidrag_beskrivelse, #koeff_bidrag_beskrivelse {
+.reklame_landskoeff, #premiepenger_bidrag_beskrivelse, #koeff_bidrag_beskrivelse, #etter120_beskrivelse {
     color: rgba(52, 58, 64, 0.6);
     font-size: 14px;
     font-style: italic;
+}
+#kilde_koeff_id {
+	color: rgba(52, 58, 64, 0.6);
+	font-size: 14px;
 }
 .landskoeff_link {
     padding-left: 0px !important;
