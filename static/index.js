@@ -1082,3 +1082,29 @@ if (overskrift_koeff_deff_finnes) {
     }
   }) 
 }
+if (overskrift_landskoeffisient_finnes || overskrift_klubbkoeffisient_finnes || overskrift_fire_års_finnes || overskrift_ti_års_finnes) {
+	if (window.devicePixelRatio < 0.85) {
+		document.getElementById("myDropdown_2").classList.add("utzoom_landDrop");
+	}
+	$(window).resize(function() {
+		if (window.devicePixelRatio < 0.85) {
+			document.getElementById("myDropdown_2").classList.add("utzoom_landDrop");
+		}
+		else {
+			document.getElementById("myDropdown_2").classList.remove("utzoom_landDrop");
+		}
+	});
+}
+else if (overskrift_forside_finnes) {
+	if (window.devicePixelRatio < 0.85) {
+		document.getElementById("myDropdown").classList.add("utzoom_landDrop");
+	}
+	$(window).resize(function() {
+		if (window.devicePixelRatio < 0.85) {
+			document.getElementById("myDropdown").classList.add("utzoom_landDrop");
+		}
+		else {
+			document.getElementById("myDropdown").classList.remove("utzoom_landDrop");
+		}
+	});
+}
