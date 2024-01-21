@@ -50,18 +50,30 @@
 }
 .rekV {
     float: left;
+		top: 130px;
+    position: -webkit-sticky;
+    position: sticky;
     margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 .rekH {
     float: right;
+		top: 130px;
+    position: -webkit-sticky;
+    position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 .rekV_post {
     float: left;
+		top: 130px;
+    position: -webkit-sticky;
+    position: sticky;
     margin-left: calc((100% - var(--container__)) / 2 - 300px - 40px) !important;
 }
 .rekH_post {
     float: right;
+		top: 130px;
+    position: -webkit-sticky;
+    position: sticky;
     margin-right: calc((100% - var(--container__)) / 2 - 300px - 40px) !important;
 }
 @media (max-width: 1413px) {
