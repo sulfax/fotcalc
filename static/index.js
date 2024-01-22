@@ -1066,9 +1066,9 @@ function filterFunction() {
 // });
 
 if (overskrift_koeff_deff_finnes) {
-  let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  let ((window.innerWidth > 0) ? window.innerWidth : screen.width) = (window.innerWidth > 0) ? window.innerWidth : screen.width;
   $(window).resize(function() {
-    if (vinduBredde > 1507) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) > 1507) {
       if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1507) {
         for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
           document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";

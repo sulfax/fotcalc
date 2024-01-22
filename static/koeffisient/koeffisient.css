@@ -31,7 +31,7 @@
 
 @media (max-width:1268px) {
     .reaklame_sidene_kpost24 {
-        display: none;
+        display: none !important;
     }
 }
 @media (max-width:1468px) {
@@ -53,43 +53,43 @@
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 36px) !important;
 }
 .rekH {
     float: right;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 36px) !important;
 }
 .rekV_post {
     float: left;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container__)) / 2 - 300px - 40px) !important;
+    margin-left: calc((100% - var(--container__)) / 2 - 300px - 36px) !important;
 }
 .rekH_post {
     float: right;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container__)) / 2 - 300px - 40px) !important;
+    margin-right: calc((100% - var(--container__)) / 2 - 300px - 36px) !important;
 }
 @media (max-width: 1413px) {
     .rekV {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 36px) !important;
     }
     .rekH {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 36px) !important;
     }
 }
 @media (max-width: 1468px) {
     .rekV_post {
-        margin-left: calc((100% - var(--container__)) / 2 - 200px - 40px) !important;
+        margin-left: calc((100% - var(--container__)) / 2 - 200px - 36px) !important;
     }
     .rekH_post {
-        margin-right: calc((100% - var(--container__)) / 2 - 200px - 40px) !important;
+        margin-right: calc((100% - var(--container__)) / 2 - 200px - 36px) !important;
     }
 }
 
