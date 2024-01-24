@@ -1675,9 +1675,9 @@ script.setAttribute('type', 'application/ld+json');
 script.textContent = JSON.stringify(schema);
 document.head.appendChild(script);*/
 
-let ((window.innerWidth > 0) ? window.innerWidth : screen.width) = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (((window.innerWidth > 0) ? window.innerWidth : screen.width) > 1512) {
+  if (vinduBredde > 1512) {
     if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1512) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";

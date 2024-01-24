@@ -1014,7 +1014,7 @@ function endre_sort_kolonne() {
 
 $(window).resize(function() {
 	console.log(((window.innerWidth > 0) ? window.innerWidth : screen.width))
-  if (((window.innerWidth > 0) ? window.innerWidth : screen.width) > 1468) {
+  if (vinduBredde > 1468) {
     if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1468) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene_kpost24").length; i++) {
         document.getElementsByClassName("reaklame_sidene_kpost24")[i].style.display = "none";
