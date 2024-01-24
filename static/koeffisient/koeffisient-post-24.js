@@ -1011,13 +1011,12 @@ function endre_sort_kolonne() {
     sessionStorage.setItem('spoiler', 'synlig')
 }
 
-
+let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-	console.log(((window.innerWidth > 0) ? window.innerWidth : screen.width))
   if (vinduBredde > 1468) {
     if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1468) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene_kpost24").length; i++) {
-        document.getElementsByClassName("reaklame_sidene_kpost24")[i].style.display = "none";
+        document.getElementsByClassName("reaklame_sidene_kpost24")[i].style.display = "none !important";
       }
     }
     else {
