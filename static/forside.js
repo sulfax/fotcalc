@@ -724,9 +724,9 @@ function byggTabell_test(data) {
     }
     var rad = `<tr>
                   ${nummer}
-                  <td><nobr class="marign_venstre">${data[i][0]}</nobr></td>
+                  <td class="klubbene"><nobr class="marign_venstre">${data[i][0]}</nobr></td>
                   <td id="tom_kolonne">${klubbnavn}</td>
-                  <td class='premie_koeff'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
+                  <td class='premie_koeff penger'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>
                   <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${data[i][10]}</a></span></td>
                   <td class='premie_koeff'><span class="club_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${klubb_koeff}</a></span></td>
@@ -1906,8 +1906,8 @@ function regnUtPremiepenger(data, sesong) {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1445) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1445) {
+  if (vinduBredde > 1429) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1429) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }
