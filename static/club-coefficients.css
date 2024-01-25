@@ -59,43 +59,43 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 15px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 11px) !important;
 }
 .rekH_klubb {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 15px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 11px) !important;
 }
 .rekV_4aar {
     top: 130px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
+    margin-left: calc((100% - var(--container_4_aar)) / 2 - 300px - 14px) !important;
 }
 .rekH_4aar {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 18px) !important;
+    margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 14px) !important;
 }
 @media (max-width: 1506px) {
     .rekV_klubb {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 15px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 11px) !important;
     }
     .rekH_klubb {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 15px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 11px) !important;
     }
 }
 @media (max-width: 1382px) {
     .rekV_4aar {
-        margin-left: calc((100% - var(--container_4_aar)) / 2 - 200px - 18px) !important;
+        margin-left: calc((100% - var(--container_4_aar)) / 2 - 200px - 14px) !important;
     }
     .rekH_4aar {
-        margin-right: calc((100% - var(--container_4_aar)) / 2 - 200px - 18px) !important;
+        margin-right: calc((100% - var(--container_4_aar)) / 2 - 200px - 14px) !important;
     }
 }
 
