@@ -471,6 +471,7 @@ const sprak_id_kalkulator = [
   'røk_ut_playoff',
   'gruppespill',
   'ti_års_koeff',
+	'market_pool_post',
   'seiere',
   'uavgjort',
   'uavgjort_hele',
@@ -493,6 +494,7 @@ const sprak_id_kalkulator = [
   'ligaspill',
   'tabellplassering_liga',
   'ti_års_koeff_ligaspill',
+	'fem_års_koeff_ligaspill',
   'uavgjort_hele_liga',
   'seiere_liga',
   'uavgjort_liga'

@@ -252,10 +252,10 @@ th, td {
 	padding-right: 10px !important;
 }
 .ramme_hoyre .senter .premie_koeff a {
-	color: rgb(63, 76, 255) !important;
+	color: rgb(80, 91, 255) !important;
 }
 .ramme_hoyre .senter .premie_koeff a:hover {
-	color: rgb(0, 17, 255) !important;
+	color: rgb(17, 33, 255) !important;
 }
 .table-hover tbody tr:hover{
     background-color:rgba(151, 151, 151, 0.275);
@@ -331,7 +331,7 @@ th {
     color: rgb(81, 89, 97);
 }
 .utydelig_link {
-	color: rgb(70, 82, 255);
+	color: rgb(97, 108, 255);
 }
 .premie_koeff {
     vertical-align:middle;

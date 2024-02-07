@@ -309,12 +309,12 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b20_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="ti_års_koeff_ligaspill"><div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the league phase (1-36). Follow link 1 to figure out.">Ten-year coeff</abbr> </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten year coefficient ranking">1</abbr></a></th>
+              <th scope="row" id="ti_års_koeff_ligaspill"><div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the league phase (1-36). Follow link 1 to figure out.">Ten-year coeff</abbr> </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten-year coefficient ranking">1</abbr></a></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Antall" onblur="forlat_input_felt_1(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i2" name="2" placeholder="Antall" onblur="forlat_input_felt_1(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i3" name="3" placeholder="Antall" onblur="forlat_input_felt_1(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Ranking" onblur="forlat_input_felt_1(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i2" name="2" placeholder="Ranking" onblur="forlat_input_felt_1(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i3" name="3" placeholder="Ranking" onblur="forlat_input_felt_1(this.id)">
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="i1_"></td>
@@ -322,25 +322,34 @@
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i3_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="market_pool"><abbr data_title="The figure is unknown until April">Market pool</abbr></th>
+              <th scope="row" id="market_pool_post"><div class="tekst_margin_hoyre2"><abbr data_title="Ranking based on national market pool (1-36). The figure is unknown until April.">Market pool ranking</abbr> </div> <a class="graa_hover_link" href="#" target="_blank"><abbr data_title="Market pool ranking">2</abbr></a></th>
               <td class="mellomrom_2"></td>
-              <td colspan="3" class="knapp_celle" id="knapp_celle">
-                <div class="knapp_erstatning"></div>
-                <div class="knapp_erstatning"></div>
-                <div class="knapp_erstatning"></div>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i16" name="16" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i17" name="17" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i18" name="18" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
               </td>
-              <td class="mellomrom"></td>
-              <td class="resultat_celle_1" id="mp1"></td>
-              <td class="resultat_celle_1" id="mp2"></td>
-              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="mp3"></td>
+              <td rowspan="2" class="mellomrom"></td>
+              <td rowspan="2" class="resultat_celle_1" id="i16_"></td>
+              <td rowspan="2" class="resultat_celle_1" id="i17_"></td>
+              <td rowspan="2" class="resultat_celle_1 tydelig_ramme_hoyre" id="i18_"></td>
+            </tr>
+						<tr class="Gruppespill">
+              <th scope="row" id="fem_års_koeff_ligaspill"><div class="tekst_margin_hoyre"><abbr data_title="Club coefficient ranking internally in the league phase (1-36). Follow link 3 to figure out.">Five-year coeff</abbr></div><a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">3</abbr></a></th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i19" name="19" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i20" name="20" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i21" name="21" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
+              </td>
             </tr>
             <tr class="Gruppespill">
               <th scope="row" id="seiere_liga"><abbr data_title="Amount of wins in the league phase">Wins</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i4" name="4" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i5" name="5" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i6" name="6" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i4" name="4" placeholder="Amount" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i5" name="5" placeholder="Amount" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i6" name="6" placeholder="Amount" onblur="gjennomfør_1_gang_per_knapp(this.id)">
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="i4_"></td>
@@ -351,9 +360,9 @@
               <th scope="row" id="uavgjort_liga"><abbr data_title="Amount of draws in the league phase">Draws</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i7" name="7" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i8" name="8" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i9" name="9" placeholder="Antall" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i7" name="7" placeholder="Amount" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i8" name="8" placeholder="Amount" onblur="gjennomfør_1_gang_per_knapp(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i9" name="9" placeholder="Amount" onblur="gjennomfør_1_gang_per_knapp(this.id)">
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="i7_"></td>
@@ -361,7 +370,7 @@
               <td class="resultat_celle_1 tydelig_ramme_under tydelig_ramme_hoyre" id="i9_"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="uavgjort_hele_liga"><abbr data_title="Total number of drawn games in the relevant league phase (0-144)">Total draws</abbr></th>
+              <th scope="row" id="uavgjort_hele_liga"><abbr data_title="Total number of drawn games in the competition's league phase (0-144)">Total draws</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i10" name="10" placeholder="18" onblur="forlat_input_felt_3(this.id)">

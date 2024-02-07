@@ -1,3 +1,10 @@
+@media screen and (min-width: 0px) {
+	abbr:hover::after,
+	abbr:focus::after {
+			bottom: -30px !important;
+			left: -2px !important;
+	}
+}
 @media (max-width:1400px) {
     .reaklame_sidene {
         display: none;
@@ -312,14 +319,14 @@ td .form-control {
 td .placeholder::placeholder {
     color: rgb(207, 207, 207);
 }
-#i1, #i4, #i7, #i10, #i13 {
+#i1, #i4, #i7, #i10, #i13, #i16, #i19 {
     color:#2769AE;
     border-color:#2769AE;
     transition: color .5s ease-in;
     transition: none;
     float:left;
 }
-#i2, #i5, #i8, #i11, #i14 {
+#i2, #i5, #i8, #i11, #i14, #i17, #i20 {
     color:#FF6900;
     border-color:#FF6900;
     transition: color .5s ease-in;
@@ -327,7 +334,7 @@ td .placeholder::placeholder {
     margin-left: 5.5%;
     margin-right: 5.5%;
 }
-#i3, #i6, #i9, #i12, #i15 {
+#i3, #i6, #i9, #i12, #i15, #i18, #i21 {
     color:#00BF0C;
     border-color:#00BF0C;
     transition: color .5s ease-in;
@@ -416,6 +423,10 @@ td .placeholder::placeholder {
 .tekst_margin_hoyre {
     margin-right: 1.2rem !important;
     display:inline;
+}
+.tekst_margin_hoyre2 {
+	margin-right: 0.8rem !important;
+	display:inline;
 }
 .graa_hover_link_2 {
     margin-left: 1rem !important;
