@@ -1762,7 +1762,7 @@ function utplasser_klubb_tabell(klubber) {
   }
   for (i = 0; i < klubber.length; i++) {
     let rangering = `<td class="id_nr_klubb utydelig ramme_hoyre_tynn"><b>${klubber[i][9]}</b></td>`;
-    let klubbnavn_HTML_start = '<td><nobr class="marign_venstre">';
+    let klubbnavn_HTML_start = '<td class="klubbene"><nobr class="marign_venstre">';
     if (aar_etter_forste_periode == nåværende_sesong_periode_valg[0]-22 || aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21) {
       for (r = 0; r < menyvalg.length; r++) {
         if (menyvalg[r][0] == klubber[i][0]) {
@@ -1780,12 +1780,12 @@ function utplasser_klubb_tabell(klubber) {
           plassering = plassering.split(",")
           if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
             if (gjennværende_land.includes(menyvalg[r][1])) {
-              klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
+              klubbnavn_HTML_start = '<td class="klubbene var_med"><nobr class="marign_venstre">';
             }
           }
           if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
             if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (nåværende_sesong_periode_valg[0] - aar_etter_forste_periode != 22)) {
-              klubbnavn_HTML_start = '<td class="fortsatt_med"><nobr class="marign_venstre">';
+              klubbnavn_HTML_start = '<td class="klubbene fortsatt_med"><nobr class="marign_venstre">';
             }
             if ((knapper).includes("b18")) {
               if ((plassering).includes("3") && nåværende_sesong_periode_valg[0] < 24) {
@@ -1810,10 +1810,10 @@ function utplasser_klubb_tabell(klubber) {
         }
       }
     }
-    if (klubbnavn_HTML_start == '<td><nobr class="marign_venstre">') {
+    if (klubbnavn_HTML_start == '<td class="klubbene"><nobr class="marign_venstre">') {
       if (aar_etter_forste_periode >= nåværende_sesong_periode_valg[0]-21 && aar_etter_forste_periode < nåværende_sesong_periode_valg[0]-16) {
         if (gjennværende_land.includes(klubber[i][1])) {
-          klubbnavn_HTML_start = '<td class="var_med"><nobr class="marign_venstre">';
+          klubbnavn_HTML_start = '<td class="klubbene var_med"><nobr class="marign_venstre">';
         }
       }
     }
@@ -1826,10 +1826,10 @@ function utplasser_klubb_tabell(klubber) {
       }
     }
     if (i == klubber.length - 1) {
-      if (klubbnavn_HTML_start == '<td class="fortsatt_med"><nobr class="marign_venstre">') {
-        klubbnavn_HTML_start = '<td class="fortsatt_med ramme_ikke_grønn"><nobr class="marign_venstre">'
-      } else if (klubbnavn_HTML_start == '<td class="var_med"><nobr class="marign_venstre">') {
-        klubbnavn_HTML_start = '<td class="var_med ramme_ikke_grønn"><nobr class="marign_venstre">'
+      if (klubbnavn_HTML_start == '<td class="klubbene fortsatt_med"><nobr class="marign_venstre">') {
+        klubbnavn_HTML_start = '<td class="klubbene fortsatt_med ramme_ikke_grønn"><nobr class="marign_venstre">'
+      } else if (klubbnavn_HTML_start == '<td class="klubbene var_med"><nobr class="marign_venstre">') {
+        klubbnavn_HTML_start = '<td class="klubbene var_med ramme_ikke_grønn"><nobr class="marign_venstre">'
       }
     }
 
@@ -2305,8 +2305,8 @@ if (navigator.appVersion.indexOf("Mac")!=-1 && (isSafari || isSafari2)) {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1530) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1530) {
+  if (vinduBredde > 1524) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1524) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }

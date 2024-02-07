@@ -6,7 +6,7 @@
     }
 }
 .reklame_nederst {
-    max-width: 1247px !important;
+    max-width: 1240px !important;
 }
 
 @media (max-width:1713px) {
@@ -15,22 +15,22 @@
     }
 }
 :root {
-    --container_: 1247px;
+    --container_: 1240px;
 }
 .reaklame_sidene {
     width: 200px !important;
 }
-@media (min-width:1813px) {
+@media (min-width:1806px) {
     .reaklame_sidene {
         width: 250px !important;
     }
 }
-@media (min-width:1906px) {
+@media (min-width:1899px) {
     .reaklame_sidene {
         width: 300px !important;
     }
 }
-@media (min-width:2128px) {
+@media (min-width:2121px) {
     .reaklame_sidene {
         width: 400px !important;
     }
@@ -40,37 +40,37 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 200px - 13px) !important;
 }
 #ad_hoyre {
     top:130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 200px - 18px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 200px - 13px) !important;
 }
-@media (min-width:1813px) {
+@media (min-width:1806px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 250px - 18px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 250px - 13px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 250px - 18px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 250px - 13px) !important;
     }
 }
-@media (min-width:1906px) {
+@media (min-width:1899px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 300px - 13px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 300px - 18px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 300px - 13px) !important;
     }
 }
-@media (min-width:2128px) {
+@media (min-width:2121px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 400px - 18px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 400px - 13px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 400px - 18px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 400px - 13px) !important;
     }
 }
 #land {
@@ -83,9 +83,9 @@
     margin: auto;
 }
 
-@media (min-width:1281px) {
+@media (min-width:1274px) {
     .container_ {
-        width: 1247px;
+        width: 1240px;
     }
 }
 /* @media (min-width:1437px) {
@@ -288,7 +288,7 @@ th {
     color: rgb(81, 89, 97);
 }
 .utydelig_link {
-    color: rgb(82, 93, 255);;;
+	color: rgb(70, 82, 255);
 }
 .premie_koeff {
     vertical-align:middle;
@@ -382,7 +382,12 @@ a {
     overflow-y: hidden;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:373px) {
+@media (min-width:390px) {
+	.utzoom_landDrop {
+		width: 243px;
+	}
+}
+@media (max-width:389px) {
     .content_land {
         width: 120px;
         height: 384px;
@@ -431,4 +436,10 @@ a {
 .klubb_logo {
     margin-bottom: 1.7px;
     margin-right: 5px;
+}
+.klubbene, #klubb {
+	padding-right: 0px !important;
+}
+.klubbene {
+	padding-left: 3px !important;
 }

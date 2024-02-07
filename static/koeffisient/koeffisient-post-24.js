@@ -1015,13 +1015,13 @@ let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
   if (vinduBredde > 1468) {
     if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1468) {
-      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
-        document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene_kpost24").length; i++) {
+        document.getElementsByClassName("reaklame_sidene_kpost24")[i].style.display = "none";
       }
     }
     else {
-      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
-        document.getElementsByClassName("reaklame_sidene")[i].style.display = "block";
+      for (let i = 0; i < document.getElementsByClassName("reaklame_sidene_kpost24").length; i++) {
+        document.getElementsByClassName("reaklame_sidene_kpost24")[i].style.display = "block";
       }
     }
   }

@@ -1,12 +1,12 @@
-@media (max-width:1245px) {
+@media (max-width:1229px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 749px;
+    --container_: 733px;
 }
-@media (max-width: 1445px) {
+@media (max-width: 1429px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -28,7 +28,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
 }
-@media (max-width: 1445px) {
+@media (max-width: 1429px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
     }
@@ -41,7 +41,7 @@
     width: 95.5%;
     margin: auto;
 }
-@media (min-width:811px) {
+@media (min-width:795px) {
     .container_ {
         width: var(--container_) !important;
     }
@@ -170,9 +170,13 @@ th, td {
 #prize_money, #ass_coeff, #bidrag, #club_coeff, #ass_coeff_total, #ass_coeff_ø, #club_coeff_total {
     font-size: 14px;
 }
-/* #ass_coeff, #prize_money, #club_coeff, #bidrag {
-    min-width: calc(5vw + 30px) !important;
-} */
+#prize_money, #ass_coeff, #bidrag, #club_coeff {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+#club {
+	padding-right: 0px;
+}
 #bidrag {
     min-width: 75px !important;
 }
@@ -285,7 +289,12 @@ th, td {
     overflow-y: hidden;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:425px) {
+@media (min-width:449px) {
+	.utzoom_landDrop {
+		width: 243px;
+	}
+}
+@media (max-width:448px) {
     .content_land {
         width: 120px;
         height: 384px;
@@ -348,7 +357,7 @@ th, td {
     overflow-y: auto !important;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:807px) {
+@media (max-width:854px) {
     .adva {
         width: 247px;
     }
@@ -555,4 +564,10 @@ th, td {
 }
 #spoiler {
     margin-left: 7px;
+}
+.klubbene {
+	padding-right: 0px !important;
+}
+.penger {
+	padding-right: 0px !important;
 }

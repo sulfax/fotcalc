@@ -16,10 +16,16 @@
 }
 #ad_venstre {
     float: left;
+		top: 130px;
+    position: -webkit-sticky;
+    position: sticky;
     margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 #ad_hoyre {
     float: right;
+		top: 130px;
+    position: -webkit-sticky;
+    position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
 }
 @media (max-width: 1600px) {

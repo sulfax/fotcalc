@@ -5,16 +5,16 @@
         bottom: -2px;
     }
 }
-@media (max-width:1330px) {
+@media (max-width:1324px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 831px;
-    --container_Mac: 879px;
+    --container_: 825px;
+    --container_Mac: 873px;
 }
-@media (max-width:1530px) {
+@media (max-width:1524px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -29,21 +29,21 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_Mac)) / 2 - 300px - 4px) !important;
+    margin-left: calc((100% - var(--container_Mac)) / 2 - 300px + 2px) !important;
 }
 #ad_hoyre {
     top:130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_Mac)) / 2 - 300px - 4px) !important;
+    margin-right: calc((100% - var(--container_Mac)) / 2 - 300px + 2px) !important;
 }
-@media (max-width: 1530px) {
+@media (max-width: 1524px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_Mac)) / 2 - 200px - 4px) !important;
+        margin-left: calc((100% - var(--container_Mac)) / 2 - 200px + 2px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_Mac)) / 2 - 200px - 4px) !important;
+        margin-right: calc((100% - var(--container_Mac)) / 2 - 200px + 2px) !important;
     }
 }
 
@@ -65,15 +65,15 @@
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:860px) {
+@media (min-width:854px) {
     .container_:not(.container_Mac) {
-        width: 831px;
+        width: 825px;
     }
 }
 
-@media (min-width:910px) {
+@media (min-width:904px) {
     .container_Mac {
-        width: 879px !important;
+        width: 873px !important;
     }    
 }
 
@@ -276,7 +276,12 @@ th, td {
     overflow-y: hidden;
     border: 2px solid rgb(164, 164, 164);
 }
-@media (max-width:373px) {
+@media (min-width:390px) {
+	.utzoom_landDrop {
+		width: 243px;
+	}
+}
+@media (max-width:389px) {
     .content_land {
         width: 120px;
         height: 384px;
@@ -526,10 +531,10 @@ th, td {
 }
 .utydelig_link {
     padding-left: 0px !important;
-    color: rgb(86, 97, 255) !important;
+    color: rgb(61, 74, 255) !important;
 }
 .utydelig_link_klubb {
-    color: rgb(82, 93, 255);
+    color: rgb(70, 82, 255);
 }
 .utydelig_link:hover, .utydelig_link_klubb:hover {
     color:#343a40 !important;
@@ -597,4 +602,10 @@ th, td {
 .klubb_logo {
     margin-bottom: 1.7px;
     margin-right: 5px;
+}
+.klubbene, #club {
+	padding-right: 0px !important;
+}
+.klubbene {
+	padding-left: 3px !important;
 }
