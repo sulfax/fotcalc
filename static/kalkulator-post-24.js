@@ -66,7 +66,7 @@ var UCL_uavgjort_2122 = 700000;
 var UEL_uavgjort_2122 = 210000;
 var UECL_uavgjort_2122 = 166000;
 var påfyll_ingen_funksjon_2122 = 0;
-let UCL_sisteplass = 1100000;
+let UCL_sisteplass = 1000000;
 let UEL_sisteplass = 650000;
 let UECL_sisteplass = 550000;
 let UCL_spilt_utslagsrunde_PO_2122 = 1000000;
@@ -767,12 +767,17 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     }
     if (document.getElementById(clicked_id).value != "") {
         if ((tabellplassering >= 1) && (tabellplassering <= 36) && tabellplassering % 1 == 0) {
-            let aktuell_sum = input_summer[nummer_2][0] * (37-tabellplassering);
-            document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            aktuell_sum = input_summer[nummer_2 + 3][0];
-            if (tabellplassering <= 24 && tabellplassering > 8) {
-                document.getElementById(clicked_id + "__").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            // let aktuell_sum = input_summer[nummer_2][0] * (37-tabellplassering);
+            // document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            // aktuell_sum = input_summer[nummer_2 + 3][0];
+            // if (tabellplassering <= 24 && tabellplassering > 8) {
+            //     document.getElementById(clicked_id + "__").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            // }
+						let aktuell_sum = input_summer[nummer_2][0];
+						if (tabellplassering <= 8) {
+							aktuell_sum = aktuell_sum*2;
             }
+            document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             flytt_SCUP_sum_hoyre(clicked_id)
         }
