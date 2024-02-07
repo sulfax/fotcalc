@@ -21,7 +21,7 @@ var UCL_utslåtte_lagene_PO_2122 = 35000000;
 var UCL_antall_deltakere_2122 = 36;
 var UEL_antall_deltakere_2122 = 36;
 var UECL_antall_deltakere_2122 = 36;
-var Spilt_SCUP_total_2122 = 7000000;
+var Spilt_SCUP_total_2122 = 8000000;
 /*Premiepenger ved ulike situasjoner uavhengig av turnering*/
 /*21/22 knapper*/
 
@@ -33,22 +33,22 @@ var UECL_Slått_ut_Q3_2122 = 550000;
 var Spilt_Q3_league_path_2122 = "";
 var UCL_utslått_lag_PO_2122 = UCL_utslåtte_lagene_PO_2122 / 7;
 var UECL_Slått_ut_PO_2122 = 750000;
-var UCL_deltaker_gruppespillet_2122 = 15640000;
+var UCL_deltaker_gruppespillet_2122 = 18600000;
 var UEL_deltaker_gruppespillet_2122 = 3630000;
 var UECL_deltaker_gruppespillet_2122 = 2940000;
-var UCL_spilt_åttendedelsfinale_2122 = 9600000;
+var UCL_spilt_åttendedelsfinale_2122 = 11000000;
 var UEL_spilt_åttendedelsfinale_2122 = 1200000;
 var UECL_spilt_åttendedelsfinale_2122 = 600000;
-var UCL_spilt_kvartfinale_2122 = 10600000;
+var UCL_spilt_kvartfinale_2122 = 12500000;
 var UEL_spilt_kvartfinale_2122 = 1800000;
 var UECL_spilt_kvartfinale_2122 = 1000000;
-var UCL_spilt_semifinale_2122 = 12500000;
+var UCL_spilt_semifinale_2122 = 15000000;
 var UEL_spilt_semifinale_2122 = 2800000;
 var UECL_spilt_semifinale_2122 = 2000000;
-var UCL_spilt_finale_2122 = 15500000;
+var UCL_spilt_finale_2122 = 18500000;
 var UEL_spilt_finale_2122 = 4600000;
 var UECL_spilt_finale_2122 = 3000000;
-var UCL_vinner_2122 = 4500000;
+var UCL_vinner_2122 = 6500000;
 var UEL_vinner_2122 = 4000000;
 var UECL_vinner_2122 = 2000000;
 var Spilt_SCUP_2122 = Spilt_SCUP_total_2122 / 2;
@@ -56,13 +56,13 @@ var Vunnet_SCUP_2122 = 1000000;
 
 
 /*21/22 input felt*/
-var UCL_ti_års_kr_2122 = 1137000;
+var UCL_ti_års_kr_2122 = 278000;
 var UEL_ti_års_kr_2122 = 132000;
 var UECL_ti_års_kr_2122 = 44500;
-var UCL_seier_2122 = 2800000;
+var UCL_seier_2122 = 2100000;
 var UEL_seier_2122 = 630000;
 var UECL_seier_2122 = 500000;
-var UCL_uavgjort_2122 = 930000;
+var UCL_uavgjort_2122 = 700000;
 var UEL_uavgjort_2122 = 210000;
 var UECL_uavgjort_2122 = 166000;
 var påfyll_ingen_funksjon_2122 = 0;
