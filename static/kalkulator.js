@@ -1225,15 +1225,18 @@ function oppdater_sessong(aarstall) {
     let spraak = localStorage.getItem("someVarKey");
     if (spraak == 'norsk') {
 			if (aarstall == 1) {
-				document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil februar ' + (2023 + aarstall) + '">TV-penger</abbr>';
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil 8. februar ' + (2023 + aarstall) + '">TV-penger</abbr>';
+			} else if (aarstall == 2) {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil 3. april ' + (2023 + aarstall) + '">TV-penger</abbr>';
 			} else {
 				document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil april ' + (2023 + aarstall) + '">TV-penger</abbr>';
 			}
     } else {
 			if (aarstall == 1) {
-				document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until February ' + (2023 + aarstall) + '">Market pool</abbr>';
-			}
-			else {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until February 8 ' + (2023 + aarstall) + '">Market pool</abbr>';
+			} else if (aarstall == 2) {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until April 3 ' + (2023 + aarstall) + '">Market pool</abbr>';
+			} else {
 				document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until April ' + (2023 + aarstall) + '">Market pool</abbr>';
 			}
 		}
