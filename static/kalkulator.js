@@ -1224,8 +1224,19 @@ function endre_sessong(clicked_id) {
 function oppdater_sessong(aarstall) {
     let spraak = localStorage.getItem("someVarKey");
     if (spraak == 'norsk') {
-        document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil april ' + (2023 + aarstall) + '">TV-penger</abbr>';
-    } else {document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until April ' + (2023 + aarstall) + '">Market pool</abbr>';}
+			if (aarstall == 1) {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil februar ' + (2023 + aarstall) + '">TV-penger</abbr>';
+			} else {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="Summen er ukjent inntil april ' + (2023 + aarstall) + '">TV-penger</abbr>';
+			}
+    } else {
+			if (aarstall == 1) {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until February ' + (2023 + aarstall) + '">Market pool</abbr>';
+			}
+			else {
+				document.getElementById('market_pool').innerHTML = '<abbr data_title="The figure is unknown until April ' + (2023 + aarstall) + '">Market pool</abbr>';
+			}
+		}
     document.getElementById("sessong_id").innerText = (2000+parseInt(aarstall) + 21) + '/' + (parseInt(aarstall) + 22);
     if (aarstall == 0) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0269-125fde34ba54-30a4c9aeea13-1000/20210520_circular_2021_35_en.pdf');
