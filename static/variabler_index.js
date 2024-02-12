@@ -107,7 +107,7 @@ const norsk_klubbkoeffisient = [
     'UEFA 5 års Klubbkoeffisient-Rangering',
     'Klubbkoeffisient-rangering',
     'Denne UEFA 5 års rangeringen bestemmer seeding og pot-fordeling i europakvalik og gruppespill. En høyere rangering gir lettere motstand i de fasene av en europasesong.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a>. Se også <a class="link_utydelig" href="10-year-ranking">10 års koeffisient-rangeringen</a>.</span><br>',
-    'Avgjørende for seeding(grupper) i ',
+    'Avgjørende for seeding(-grupper) i ',
     'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
     'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
     'Sjekk ut',
