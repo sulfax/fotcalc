@@ -214,7 +214,7 @@ const norsk_koeffisient = [
     'Gruppeplassering',
     'Ligaplassering',
     '<abbr data_title="Kvalifiserings-playoff til utslagsrundene">Utslagsrunde-playoff</abbr> | kamp 1',
-    '<abbr data_title="Kvalifiserings-playoff til utslagsrundene">Utslagsrunde-playoff</abbr> | kamp 2',
+    'Utslagsrunde-playoff | kamp 2',
     'Åttendelsfinale',
     'Åttendelsfinale | kamp 1',
     'Åttendelsfinale | kamp 2',
