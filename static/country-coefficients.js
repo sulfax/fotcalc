@@ -150,15 +150,15 @@ let forrigeUkeData = [
 	["LIE", 0.500, 40, 42, 38, 29, 52],
 	["BIH", 2.250, 39, 37, 42, 41, 33],
 	["ISL", 3.833, 41, 36, 32, 30, 26],
-	["NIR", 1.125, 42, 44, 47, 48, 50],
+	["NIR", 1.125, 42, 44, 47, 49, 49],
 	["LUX", 2.250, 43, 47, 45, 44, 33],
 	["LTU", 1.125, 44, 43, 43, 43, 49],
-	["MLT", 1.500, 45, 41, 41, 42, 44],
-	["GEO", 1.250, 46, 49, 50, 49, 48],
+	["MLT", 1.500, 45, 41, 41, 42, 43],
+	["GEO", 1.250, 46, 49, 50, 48, 48],
 	["ALB", 2.125, 47, 45, 46, 46, 36],
 	["EST", 0.125, 48, 46, 44, 53, 55],
 	["BLR", 1.750, 49, 53, 53, 47, 39],
-	["MKD", 1.500, 50, 48, 49, 45, 44],
+	["MKD", 1.500, 50, 48, 49, 45, 43],
 	["AND", 1.666, 51, 52, 48, 51, 41],
 	["WAL", 0.625, 52, 50, 51, 52, 51],
 	["MNE", 1.333, 53, 51, 52, 50, 47],
@@ -577,16 +577,16 @@ function sorter(column, order, tekst, ranking_array, aar_etter_forste_periode) {
       let kolonne0_4 = ranking_array[i-1][5];
       let kolonne0_5 = ranking_array[i-1][6];
       if (poeng1 == '-') {poeng0 = ''}
-      if (kolonne1_1 == '-' || kolonne1_1 == "0.0001") {kolonne1_1 = ''}
-      if (kolonne1_2 == '-' || kolonne1_2 == "0.0001") {kolonne1_2 = ''}
-      if (kolonne1_3 == '-' || kolonne1_3 == "0.0001") {kolonne1_3 = ''}
-      if (kolonne1_4 == '-' || kolonne1_4 == "0.0001") {kolonne1_4 = ''}
-      if (kolonne1_5 == '-' || kolonne1_5 == "0.0001") {kolonne1_5 = ''}
-      if (kolonne0_1 == '-' || kolonne0_1 == "0.0001") {kolonne0_1 = ''}
-      if (kolonne0_2 == '-' || kolonne0_2 == "0.0001") {kolonne0_2 = ''}
-      if (kolonne0_3 == '-' || kolonne0_3 == "0.0001") {kolonne0_3 = ''}
-      if (kolonne0_4 == '-' || kolonne0_4 == "0.0001") {kolonne0_4 = ''}
-      if (kolonne0_5 == '-' || kolonne0_5 == "0.0001") {kolonne0_5 = ''}
+      if (kolonne1_1 == '-' || kolonne1_1 == "0.0001" || kolonne1_1 == "0.0") {kolonne1_1 = ''}
+      if (kolonne1_2 == '-' || kolonne1_2 == "0.0001" || kolonne1_2 == "0.0") {kolonne1_2 = ''}
+      if (kolonne1_3 == '-' || kolonne1_3 == "0.0001" || kolonne1_3 == "0.0") {kolonne1_3 = ''}
+      if (kolonne1_4 == '-' || kolonne1_4 == "0.0001" || kolonne1_4 == "0.0") {kolonne1_4 = ''}
+      if (kolonne1_5 == '-' || kolonne1_5 == "0.0001" || kolonne1_5 == "0.0") {kolonne1_5 = ''}
+      if (kolonne0_1 == '-' || kolonne0_1 == "0.0001" || kolonne0_1 == "0.0") {kolonne0_1 = ''}
+      if (kolonne0_2 == '-' || kolonne0_2 == "0.0001" || kolonne0_2 == "0.0") {kolonne0_2 = ''}
+      if (kolonne0_3 == '-' || kolonne0_3 == "0.0001" || kolonne0_3 == "0.0") {kolonne0_3 = ''}
+      if (kolonne0_4 == '-' || kolonne0_4 == "0.0001" || kolonne0_4 == "0.0") {kolonne0_4 = ''}
+      if (kolonne0_5 == '-' || kolonne0_5 == "0.0001" || kolonne0_5 == "0.0") {kolonne0_5 = ''}
       // Gjør om linjene til kode dersom du ønsker at land uten deltagelse skal være rangert likt som land uten poeng.
       // if (kolonne1_1 == 0) {kolonne1_1 = 0.0001}
       // if (kolonne1_2 == 0) {kolonne1_2 = 0.0001}
@@ -900,7 +900,7 @@ function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
   else if (b[1] == '-') {b[1] = 0.0001}
   if (parseFloat(a[1]) === parseFloat(b[1])) {
 		for (x = 2; x <= 6; x++) {
-			if (parseFloat(a[x]) === parseFloat(b[x])) {
+			if (parseFloat(a[x]) === parseFloat(b[x]) || (a[x] == "-" && b[x] == 0) || (b[x] == "-" && a[x] == 0)) {
 				if (x == 6) {
 					return 0;
 				}
