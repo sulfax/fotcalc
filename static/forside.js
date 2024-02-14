@@ -20,24 +20,25 @@ const penger = [
   [[2800000, 630000, 500000],    [2100000, 630000, 500000]],
   [[930000, 210000, 166000],     [700000, 210000, 166000]],
   [[1137000, 132000, 44500],     [278000, 132000, 44500]],
-  [[[,,500000], [1100000, 1050000, 300000], [650000, 625000]], [[1100000,1000000],[650000,500000],[550000,300000]]],
-  [9600000,   9600000],
+  [[[,,500000], [1100000, 1050000, 300000], [650000, 625000]], [[1000000,1000000],[650000,500000],[550000,300000]]],
+  [9600000,   11000000],
   [1200000,   1200000],
   [600000,    600000],
-  [10600000,  10600000],
+  [10600000,  12500000],
   [1800000,   1800000],
   [1000000,   1000000],
-  [12500000,  12500000],
+  [12500000,  15000000],
   [2800000,   2800000],
   [2000000,   2000000],
-  [15500000,  15500000],
+  [15500000,  18500000],
   [4600000,   4600000],
   [3000000,   3000000],
-  [4500000,   4500000],
+  [4500000,   6500000],
   [4000000,   4000000],
   [2000000,   2000000],
-  [3500000,   3500000],
+  [3500000,   4000000],
   [1000000,   1000000],
+	[[],                           [1112000, 312000, 212000]],
 ]
 
 let antall_MV_elem = 6;
@@ -1854,7 +1855,7 @@ function regnUtPremiepenger(data, sesong) {
       // Seire/uavgjort i gruppespill
       let seiere = data[2].replace(",", "").replace(",", "");
       let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
-      seiere = seiere.split(",")[cycle];
+      seiere = seiere.split(",")[0];
       sum += seiere * penger[8][cycle][i-18];
       sum += uavgjort * penger[9][cycle][i-18];
       // 10-års koeffisientbonus og ufordelte ressurser
@@ -1865,12 +1866,16 @@ function regnUtPremiepenger(data, sesong) {
         else {
           sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (144-finnTotaltUavgjort(aarstall,i-18,false))
         }
-        if (data[1] != ",,") {
-          sum += (37-parseFloat(data[1].replaceAll(',',''))) * penger[10][cycle][i-18];
+        if (data[1] != ",,,,,,,,") {
+					// 10-års
+          sum += (37-(data[1].split(",")[i-18]||37)) * penger[10][cycle][i-18];
+					// TV-penger & five-års
+					if (data[1].split(",")[i-15] || data[1].split(",")[i-12]) {
+						sum += (37-(parseInt(data[1].split(",")[i-15]||36) + parseInt(data[1].split(",")[i-12]||36))/2) * penger[29][cycle][i-18];
+					}
         }
       }
       else {
-				// alert(data[1])
         sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (96-finnTotaltUavgjort(aarstall,i-18,false))
         sum += (33-parseFloat(data[1].replaceAll(',',''))) * penger[10][cycle][i-18];
       }
