@@ -1798,9 +1798,9 @@ if (sessionStorage.getItem('spoiler') == 'synlig' || sessionStorage.getItem('spo
 
 
 function regnUtPremiepenger(data, sesong) {
-  // if (sesong >= 3) {
-  //   return 0;
-  // }
+  if (sesong >= 3) {
+    return 0;
+  }
   let sum = 0;
   let knapper = "";
   knapper = data[0].split(",");
@@ -1870,6 +1870,7 @@ function regnUtPremiepenger(data, sesong) {
         }
       }
       else {
+				// alert(data[1])
         sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (96-finnTotaltUavgjort(aarstall,i-18,false))
         sum += (33-parseFloat(data[1].replaceAll(',',''))) * penger[10][cycle][i-18];
       }
@@ -1878,7 +1879,6 @@ function regnUtPremiepenger(data, sesong) {
         sum += penger[11][cycle][i-18][data[3].replaceAll(',','')-1] || 0;
       }
       else if (data[3] && data[3] != ",,") {
-				alert(data[3])
         sum += penger[11][cycle][i-18][0]*(37-data[3].replaceAll(',',''))
         if (data[3].replaceAll(',','') > 8 && data[3].replaceAll(',','') <= 24) {
           sum += penger[11][1][i-18][1]
