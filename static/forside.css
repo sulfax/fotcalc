@@ -1,4 +1,4 @@
-@media (max-width:1229px) {
+@media (max-width:1265px) {
     .reaklame_sidene {
         display: none;
     }
@@ -6,7 +6,7 @@
 :root {
     --container_: 733px;
 }
-@media (max-width: 1429px) {
+@media (max-width: 1465px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -19,21 +19,21 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 51px) !important;
 }
 #ad_hoyre {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 51px) !important;
 }
-@media (max-width: 1429px) {
+@media (max-width: 1465px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 51px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 51px) !important;
     }
 }
 

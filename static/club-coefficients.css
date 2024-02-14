@@ -29,7 +29,7 @@
     width: 100% !important;
     margin: 0px !important;
 }
-@media (max-width:1306px) {
+@media (max-width:1350px) {
     .reaklame_sidene {
         display: none;
     }
@@ -38,17 +38,17 @@
     --container_: 849px;
     --container_4_aar: 710px;
 }
-@media (max-width:1506px) {
+@media (max-width:1550px) {
     .reaklame_sidene {
         width: 200px !important;
     }
 }
-@media (max-width:1172px) {
+@media (max-width:1216px) {
     .reaklame_sidene_4aar {
         display: none;
     }
 }
-@media (max-width:1382px) {
+@media (max-width:1419px) {
     .reaklame_sidene_4aar {
         width: 200px !important;
     }
@@ -59,43 +59,43 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 11px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
 }
 .rekH_klubb {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 11px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 33px) !important;
 }
 .rekV_4aar {
     top: 130px;
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_4_aar)) / 2 - 300px - 14px) !important;
+    margin-left: calc((100% - var(--container_4_aar)) / 2 - 300px - 36px) !important;
 }
 .rekH_4aar {
     top: 130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 14px) !important;
+    margin-right: calc((100% - var(--container_4_aar)) / 2 - 300px - 36px) !important;
 }
-@media (max-width: 1506px) {
+@media (max-width: 1550px) {
     .rekV_klubb {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 11px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
     }
     .rekH_klubb {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 11px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 33px) !important;
     }
 }
-@media (max-width: 1382px) {
+@media (max-width: 1419px) {
     .rekV_4aar {
-        margin-left: calc((100% - var(--container_4_aar)) / 2 - 200px - 14px) !important;
+        margin-left: calc((100% - var(--container_4_aar)) / 2 - 200px - 36px) !important;
     }
     .rekH_4aar {
-        margin-right: calc((100% - var(--container_4_aar)) / 2 - 200px - 14px) !important;
+        margin-right: calc((100% - var(--container_4_aar)) / 2 - 200px - 36px) !important;
     }
 }
 

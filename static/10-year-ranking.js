@@ -2554,8 +2554,8 @@ function regn_ut_NA_poeng() {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde >= 2121) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 2121) {
+  if (vinduBredde >= 2151) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 2151) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }
@@ -2566,8 +2566,8 @@ $(window).resize(function() {
       }
     }
   }
-  else if (vinduBredde >= 1899) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 1899) {
+  else if (vinduBredde >= 1915) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 1915) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }
@@ -2578,8 +2578,8 @@ $(window).resize(function() {
       }
     }
   }
-  else if (vinduBredde >= 1806) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 1806) {
+  else if (vinduBredde >= 1836) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 1836) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }

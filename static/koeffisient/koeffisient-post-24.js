@@ -1013,8 +1013,8 @@ function endre_sort_kolonne() {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1468) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1468) {
+  if (vinduBredde > 1496) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1496) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene_kpost24").length; i++) {
         document.getElementsByClassName("reaklame_sidene_kpost24")[i].style.display = "none";
       }

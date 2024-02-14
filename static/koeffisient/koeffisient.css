@@ -14,7 +14,7 @@
     }
 }
 
-@media (max-width:1213px) {
+@media (max-width:1241px) {
     .reaklame_sidene {
         display: none;
     }
@@ -23,18 +23,18 @@
     --container_: 705px;
     --container__: 760px;
 }
-@media (max-width:1413px) {
+@media (max-width:1441px) {
     .reaklame_sidene {
         width: 200px !important;
     }
 }
 
-@media (max-width:1268px) {
+@media (max-width:1296px) {
     .reaklame_sidene_kpost24 {
         display: none !important;
     }
 }
-@media (max-width:1468px) {
+@media (max-width:1496px) {
     .reaklame_sidene_kpost24 {
         width: 200px !important;
     }
@@ -53,43 +53,43 @@
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 36px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 50px) !important;
 }
 .rekH {
     float: right;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 36px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 50px) !important;
 }
 .rekV_post {
     float: left;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container__)) / 2 - 300px - 36px) !important;
+    margin-left: calc((100% - var(--container__)) / 2 - 300px - 50px) !important;
 }
 .rekH_post {
     float: right;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container__)) / 2 - 300px - 36px) !important;
+    margin-right: calc((100% - var(--container__)) / 2 - 300px - 50px) !important;
 }
-@media (max-width: 1413px) {
+@media (max-width: 1441px) {
     .rekV {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 36px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 50px) !important;
     }
     .rekH {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 36px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 50px) !important;
     }
 }
-@media (max-width: 1468px) {
+@media (max-width: 1496px) {
     .rekV_post {
-        margin-left: calc((100% - var(--container__)) / 2 - 200px - 36px) !important;
+        margin-left: calc((100% - var(--container__)) / 2 - 200px - 50px) !important;
     }
     .rekH_post {
-        margin-right: calc((100% - var(--container__)) / 2 - 200px - 36px) !important;
+        margin-right: calc((100% - var(--container__)) / 2 - 200px - 50px) !important;
     }
 }
 

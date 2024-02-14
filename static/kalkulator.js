@@ -1408,8 +1408,8 @@ function endre_ti_års_periode() {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1600) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1600) {
+  if (vinduBredde > 1628) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1628) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }

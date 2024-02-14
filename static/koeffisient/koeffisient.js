@@ -991,8 +991,8 @@ function endre_sort_kolonne() {
 
 let vinduBredde = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $(window).resize(function() {
-  if (vinduBredde > 1413) {
-    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1413) {
+  if (vinduBredde > 1441) {
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 1441) {
       for (let i = 0; i < document.getElementsByClassName("reaklame_sidene").length; i++) {
         document.getElementsByClassName("reaklame_sidene")[i].style.display = "none";
       }

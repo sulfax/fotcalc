@@ -5,7 +5,7 @@
 			left: -2px !important;
 	}
 }
-@media (max-width:1400px) {
+@media (max-width:1428px) {
     .reaklame_sidene {
         display: none;
     }
@@ -13,7 +13,7 @@
 :root {
     --container_: 894px;
 }
-@media (max-width:1600px) {
+@media (max-width:1628px) {
     .reaklame_sidene {
         width: 200px !important;
     }
@@ -26,21 +26,21 @@
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 300px - 54px) !important;
 }
 #ad_hoyre {
     float: right;
 		top: 130px;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 300px - 40px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 300px - 54px) !important;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1628px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 200px - 54px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 200px - 40px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 200px - 54px) !important;
     }
 }
 

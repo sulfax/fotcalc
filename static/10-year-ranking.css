@@ -9,7 +9,7 @@
     max-width: 1240px !important;
 }
 
-@media (max-width:1713px) {
+@media (max-width:1773px) {
     .reaklame_sidene {
         display: none;
     }
@@ -20,17 +20,17 @@
 .reaklame_sidene {
     width: 200px !important;
 }
-@media (min-width:1806px) {
+@media (min-width:1836px) {
     .reaklame_sidene {
         width: 250px !important;
     }
 }
-@media (min-width:1899px) {
+@media (min-width:1915px) {
     .reaklame_sidene {
         width: 300px !important;
     }
 }
-@media (min-width:2121px) {
+@media (min-width:2151px) {
     .reaklame_sidene {
         width: 400px !important;
     }
@@ -40,37 +40,37 @@
     float: left;
     position: -webkit-sticky;
     position: sticky;
-    margin-left: calc((100% - var(--container_)) / 2 - 200px - 13px) !important;
+    margin-left: calc((100% - var(--container_)) / 2 - 200px - 28px) !important;
 }
 #ad_hoyre {
     top:130px;
     float: right;
     position: -webkit-sticky;
     position: sticky;
-    margin-right: calc((100% - var(--container_)) / 2 - 200px - 13px) !important;
+    margin-right: calc((100% - var(--container_)) / 2 - 200px - 28px) !important;
 }
-@media (min-width:1806px) {
+@media (min-width:1836px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 250px - 13px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 250px - 28px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 250px - 13px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 250px - 28px) !important;
     }
 }
-@media (min-width:1899px) {
+@media (min-width:1915px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 300px - 13px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 300px - 24px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 300px - 13px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 300px - 24px) !important;
     }
 }
-@media (min-width:2121px) {
+@media (min-width:2151px) {
     #ad_venstre {
-        margin-left: calc((100% - var(--container_)) / 2 - 400px - 13px) !important;
+        margin-left: calc((100% - var(--container_)) / 2 - 400px - 28px) !important;
     }
     #ad_hoyre {
-        margin-right: calc((100% - var(--container_)) / 2 - 400px - 13px) !important;
+        margin-right: calc((100% - var(--container_)) / 2 - 400px - 28px) !important;
     }
 }
 #land {
