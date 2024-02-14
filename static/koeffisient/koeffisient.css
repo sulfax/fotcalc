@@ -496,7 +496,7 @@ td .placeholder::placeholder {
     text-decoration: underline;
 }
 #progresjon {
-    width:calc(12.9rem - 24px);
+    width:calc(12.9rem - 23px);
     margin-top: 0px !important;
     margin-bottom: -3px !important;
 }

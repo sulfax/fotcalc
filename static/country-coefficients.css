@@ -53,15 +53,15 @@
 }
 
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
-@media (min-width:645px) {
+@media (min-width:629px) {
     .container__:not(.container__Mac) {
-        width: 612px;
+        width: 596px;
     }
 }
 
-@media (min-width:695px) {
+@media (min-width:679px) {
     .container__Mac {
-        width: 660px !important;
+        width: 644px !important;
     }    
 }
 /*Hvis oppdater: Oppdater også tilsvarende for Mac i .js*/
@@ -212,6 +212,8 @@ th, td {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
+		padding-left: 5.5px;
+		padding-right: 1.5px;
 }
 /* #sesong1, #sesong2, #sesong3, #sesong4 {
     border-right: 1px solid rgba(255, 0, 0, 0) !important;
