@@ -792,9 +792,11 @@ function sortFunction_tall_1_flere_desimal(a, b) {
 }
 function sortFunction_tall_1_flere_desimal1(a, b) {
 	for (i = 6; i >= 2; i--) {
-		if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
-		if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
-		if (parseFloat(a[i]) === parseFloat(b[i])) {
+		let sammenligningA = a[i];
+		let sammenligningB = b[i];
+		if (a[i] == '' || a[i] == '-' || a[i] == 0.0001) {sammenligningA = 0.000}
+		if (b[i] == '' || b[i] == '-' || b[i] == 0.0001) {sammenligningB = 0.000}
+		if (parseFloat(sammenligningA) === parseFloat(sammenligningB)) {
 			if (i == 2) {
 				if (a[0].toLowerCase() === b[0].toLowerCase()) {
 					return 0;
@@ -805,21 +807,23 @@ function sortFunction_tall_1_flere_desimal1(a, b) {
 			}
 		}
 		else {
-			return (parseFloat(a[i]) > parseFloat(b[i])) ? -1 : 1;
+			return (parseFloat(sammenligningA) > parseFloat(sammenligningB)) ? -1 : 1;
 		}
 	}
 }
 function sortFunction_tall_1_flere_desimal2(a, b) {
 	for (i = 6; i >= 2; i--) {
-		if (a[i] == '' || a[i] == '-') {a[i] = 0.000}
-		if (b[i] == '' || b[i] == '-') {b[i] = 0.000}
-		if (parseFloat(a[i]) === parseFloat(b[i])) {
+		let sammenligningA = a[i];
+		let sammenligningB = b[i];
+		if (a[i] == '' || a[i] == '-' || a[i] == 0.0001) {sammenligningA = 0.000}
+		if (b[i] == '' || b[i] == '-' || b[i] == 0.0001) {sammenligningB = 0.000}
+		if (parseFloat(sammenligningA) === parseFloat(sammenligningB)) {
 			if (i == 2) {
 				return 0;
 			}
 		}
 		else {
-			return (parseFloat(a[i]) < parseFloat(b[i])) ? -1 : 1;
+			return (parseFloat(sammenligningA) < parseFloat(sammenligningB)) ? -1 : 1;
 		}
 	}
 }
@@ -1643,7 +1647,7 @@ function sorter_klubb(column, order, tekst) {
     if (order == 'desc') {
       for (p = 0; p < klubber.length; p++) {
         if (p > 0) {
-          if (klubber[p-1][i] == klubber[p][i]) {
+          if (klubber[p-1][i] == klubber[p][i] || (klubber[p-1][i] == 0.0001 && klubber[p][i] == 0) || (klubber[p][i] == 0.0001 && klubber[p-1][i] == 0)) {
             klubber[p].splice(10,1,klubber[p-1][10])
           }
         }
@@ -1652,7 +1656,7 @@ function sorter_klubb(column, order, tekst) {
     else {
       for (p = klubber.length - 1; p >= 0; p--) {
         if (p < klubber.length - 1) {
-          if (klubber[p+1][i] == klubber[p][i]) {
+          if (klubber[p+1][i] == klubber[p][i] || (klubber[p+1][i] == 0.0001 && klubber[p][i] == 0) || (klubber[p][i] == 0.0001 && klubber[p+1][i] == 0)) {
             klubber[p].splice(10,1,klubber[p+1][10])
           }
         }
