@@ -57,7 +57,7 @@ const seededClubs = [
 ]
 
 const unseededClubs = [
-  ["Olympiakos", "GRE",,"Fradi"],
+  ["Olympiacos", "GRE",,"Fradi"],
   ["Ajax",       "NED",,"Glimt"],
   ["Real B.",    "ESP",,"Dinamo"],
   ["Sturm",      "AUT",,"Slovan"],
