@@ -6,31 +6,31 @@
     }
 }
 .reklame_nederst {
-    max-width: 1240px !important;
+    max-width: 1220px !important;
 }
 
-@media (max-width:1773px) {
+@media (max-width:1713px) {
     .reaklame_sidene {
         display: none;
     }
 }
 :root {
-    --container_: 1240px;
+    --container_: 1220px;
 }
 .reaklame_sidene {
     width: 200px !important;
 }
-@media (min-width:1836px) {
+@media (min-width:1806px) {
     .reaklame_sidene {
         width: 250px !important;
     }
 }
-@media (min-width:1915px) {
+@media (min-width:1895px) {
     .reaklame_sidene {
         width: 300px !important;
     }
 }
-@media (min-width:2151px) {
+@media (min-width:2111px) {
     .reaklame_sidene {
         width: 400px !important;
     }
@@ -49,7 +49,7 @@
     position: sticky;
     margin-right: calc((100% - var(--container_)) / 2 - 200px - 28px) !important;
 }
-@media (min-width:1836px) {
+@media (min-width:1806px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 250px - 28px) !important;
     }
@@ -57,7 +57,7 @@
         margin-right: calc((100% - var(--container_)) / 2 - 250px - 28px) !important;
     }
 }
-@media (min-width:1915px) {
+@media (min-width:1895px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 300px - 24px) !important;
     }
@@ -65,7 +65,7 @@
         margin-right: calc((100% - var(--container_)) / 2 - 300px - 24px) !important;
     }
 }
-@media (min-width:2151px) {
+@media (min-width:2111px) {
     #ad_venstre {
         margin-left: calc((100% - var(--container_)) / 2 - 400px - 28px) !important;
     }
@@ -83,9 +83,9 @@
     margin: auto;
 }
 
-@media (min-width:1274px) {
+@media (min-width:1254px) {
     .container_ {
-        width: 1240px;
+        width: 1210px;
     }
 }
 /* @media (min-width:1437px) {
@@ -239,7 +239,7 @@ th, td {
     text-align: right;
     min-width: 55px;
     padding-left: 3.55px !important;
-    padding-right: 3.55px !important;
+    padding-right: 0px !important;
 }
 #klubb {
     padding-left: 8px;
@@ -271,7 +271,7 @@ th {
     text-align: left;
 }
 #poeng {
-    min-width: 82px;
+    min-width: 72px;
 }
 .marign_venstre {
     padding-left: 3px;
@@ -303,6 +303,7 @@ th {
     text-align: right;
     min-width: 61px;
     margin: 0 auto;
+		padding-right: 0px !important;
 }
 .id_nr {
     max-width: 36px !important;
