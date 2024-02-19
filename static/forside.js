@@ -725,7 +725,7 @@ function byggTabell_test(data) {
     }
     var rad = `<tr>
                   ${nummer}
-                  <td class="klubbene"><nobr class="marign_venstre">${data[i][0]}</nobr></td>
+                  <td translate="no" class="klubbene"><nobr class="marign_venstre">${data[i][0]}</nobr></td>
                   <td id="tom_kolonne">${klubbnavn}</td>
                   <td class='premie_koeff penger'><span class="premiepenger_span"><a class="tabell_link" href="../prize-money-calculator" onclick="endre_klubbnavn(${i})"><nobr>${premiepenger}</nobr></a></span></td>
                   <td class='premie_koeff'><span class="ass_coeff_span"><a class="tabell_link" href="../coefficient-calculator" onclick="endre_klubbnavn(${i})">${ass_koeff}</a></span></td>

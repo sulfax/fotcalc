@@ -990,8 +990,8 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
       sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" class="utydelig_link">${sesong2}</a>`}
     else if (aar_etter_forste_periode == 7) {
       sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" class="utydelig_link">${sesong1}</a>`}
-    let marign_venstre = '<nobr class="marign_venstre">';
-    if (i == 0) {marign_venstre = '<nobr id="logo_navn" class="marign_venstre">'}
+    let marign_venstre = '<nobr translate="no" class="marign_venstre">';
+    if (i == 0) {marign_venstre = '<nobr translate="no" id="logo_navn" class="marign_venstre">'}
     var rad_test = `
                     <td class="id_nr veldig_utydelig ramme_hoyre">${nummer}</td>
                     ${rangering}
