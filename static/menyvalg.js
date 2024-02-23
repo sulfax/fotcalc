@@ -459,7 +459,7 @@ const totalt_antall_klubber = [
     [5, 5, 5],// SCO
     [0, 0],// RUS
     [5, 5, 4],// SRB
-    [5, 5],// UKR
+    [5, 5, 4],// UKR
     [5, 5, 5],// BEL
     [5, 5],// SUI
     [5, 4],// GRE
