@@ -972,7 +972,7 @@ function trykker_forside_deffinisjon() {
   sessionStorage.setItem('rekkefølge', 'desc')
   sessionStorage.setItem('kolonne2', 'prize_money_total')
   sessionStorage.setItem('rekkefølge2', 'desc')
-  sessionStorage.setItem('filter_land', JSON.stringify([]))
+  localStorage.setItem('filter_land', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
   sessionStorage.setItem('spoiler', 'synlig')

@@ -17,9 +17,9 @@ var din_klubbs_premi_koef_e = "your club's prize money";
 var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 let antall_MV_elem = 6;
 let filter_land = []
-let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 if (filter_land_før == '') {
-  sessionStorage.setItem('filter_land', JSON.stringify([]))
+  localStorage.setItem('filter_land', JSON.stringify([]))
   filter_land_før = [];
 }
 
@@ -41,7 +41,7 @@ let egentligRangering = [];
 
 oppdater_ved_refresh()
 function oppdater_ved_refresh() {
-  let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || []
+  let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || []
   ranking_array = []
   testTabell = document.getElementById('minTest')
   try {if (sessionStorage.getItem('dropdownmeny_valg_klubbkoeffisient').length > 10) {
@@ -549,7 +549,7 @@ function sorter(column, order, tekst, ranking_array) {
     }
   }
   else {
-    filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+    filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
     let land_over = filter_land_før.length
     if (land_over == 0) {land_over = landskoeffisienter.length}
     for (p = 0; p < ranking_array.length; p++) {
@@ -1327,7 +1327,7 @@ function generer_lands_knapper() {
   btn.className = "meny_element_2 ekstra_meny_element"
   btn.setAttribute("onClick", "resett()")
   document.getElementById("dropdown_elementer_2").appendChild(btn);
-  filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   for (i = 0; i < landskoeffisienter.length; i++) {
     document.getElementById(landskoeffisienter[i][0]).style.backgroundColor = '';
     document.getElementById(landskoeffisienter[i][0]).style.border = '';
@@ -1336,7 +1336,7 @@ function generer_lands_knapper() {
     document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
     document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
   }
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land_før))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
 }
 
 for (p = 0; p < filter_land_før.length; p++) {
@@ -1399,7 +1399,7 @@ function endreMenyTittel_2(innerHTML) {
   if (filter_land.length == 0) {
     document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">'
   }
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   oppdater_ved_refresh()
 }
 
@@ -1411,7 +1411,7 @@ function resett() {
     document.getElementById(filter_land[p]).style.border = '';
   }
   filter_land = []
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   oppdater_ved_refresh()
 }
 /* Dropdown meny slutt */
@@ -1441,7 +1441,7 @@ function endre_sort_kolonne() {
   }
   sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
-  sessionStorage.setItem('filter_land', JSON.stringify([]))
+  localStorage.setItem('filter_land', JSON.stringify([]))
   sessionStorage.setItem('spoiler', 'synlig')
 }
 
@@ -1660,9 +1660,9 @@ function regn_ut_NA_poeng() {
 
 function trykker_na_poeng(land) {
   if (((land.innerHTML).substring(68,71)) == 'NIR') {
-    sessionStorage.setItem('filter_land', JSON.stringify(["NIR"]))
+    localStorage.setItem('filter_land', JSON.stringify(["NIR"]))
   } else {
-    sessionStorage.setItem('filter_land', JSON.stringify([(land.innerHTML).substring(58,61)]))
+    localStorage.setItem('filter_land', JSON.stringify([(land.innerHTML).substring(58,61)]))
   }
   sessionStorage.setItem('dropdownmeny_valg_landskoeffisient', (document.getElementById("dropDownMeny").innerText).substring(0, (document.getElementById("dropDownMeny").innerText).length - 2))
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')

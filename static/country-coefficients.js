@@ -14,9 +14,9 @@ var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club's prize money";
 var din_klubbs_premi_koef_n = "din klubbs premiepenger";
 let filter_land = []
-let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 if (filter_land_før == '') {
-  sessionStorage.setItem('filter_land', JSON.stringify([]))
+  localStorage.setItem('filter_land', JSON.stringify([]))
   filter_land_før = [];
 }
 
@@ -1376,7 +1376,7 @@ function endre_sort_kolonne() {
   }
   sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
   sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
-  sessionStorage.setItem('filter_land', JSON.stringify([]))
+  localStorage.setItem('filter_land', JSON.stringify([]))
   sessionStorage.setItem('spoiler', 'synlig')
 }
 
@@ -1397,7 +1397,7 @@ function forside_ø_koeff(i, kolonne) {
   let str = (cell.innerHTML);
   land = (str.substring(str.indexOf('/UEFA/') + 6)).substring(0, 3)
   filter_land_før.push(land)
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land_før))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
   let aarstall = ((rows[0].cells[kolonne+2].innerText).slice(0,2) - 21)
   localStorage.setItem('sessong', aarstall)
 }
@@ -1586,7 +1586,7 @@ function sorter_klubb(column, order, tekst) {
     endre_kolonne_overskrift('sesong3_klubb', opp_ned_pil)
     endre_kolonne_overskrift('sesong4_klubb', opp_ned_pil)
   }
-  filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   let ranking_array_land_filter = []
   for (p = 0; p < klubber.length; p++) {
     if (filter_land_før.includes(klubber[p][1]) || filter_land_før == '') {
@@ -2155,7 +2155,7 @@ function generer_lands_knapper() {
   btn.className = "meny_element_2 ekstra_meny_element"
   btn.setAttribute("onClick", "resett()")
   document.getElementById("dropdown_elementer_2").appendChild(btn);
-  filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   for (i = 0; i < landskoeffisienter.length; i++) {
     document.getElementById(landskoeffisienter[i][0]).style.backgroundColor = '';
     document.getElementById(landskoeffisienter[i][0]).style.border = '';
@@ -2164,7 +2164,7 @@ function generer_lands_knapper() {
     document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
     document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
   }
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land_før))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
 }
 
 
@@ -2229,7 +2229,7 @@ function endreMenyTittel_2(innerHTML) {
   if (filter_land.length == 0) {
     document.getElementById("dropDownMeny_2").innerHTML = document.getElementById("dropDownMeny_2").innerHTML + '<img class="jordklode2" src="media/UEFA/GLOBE2.svg" alt="Globe">'
   }
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   bygg_klubb_tabell()
 }
 
@@ -2240,7 +2240,7 @@ function resett() {
     document.getElementById(filter_land[p]).style.border = '';
   }
   filter_land = []
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   bygg_klubb_tabell()
 }
 /* Dropdown meny slutt */

@@ -43,9 +43,9 @@ const penger = [
 
 let antall_MV_elem = 6;
 let filter_land = []
-let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 if (filter_land_før == '') {
-  sessionStorage.setItem('filter_land', JSON.stringify([]))
+  localStorage.setItem('filter_land', JSON.stringify([]))
   filter_land_før = [];
 }
 
@@ -62,7 +62,7 @@ if (aarstall == 'NaN' || (!aarstall && aarstall != 0)) {
 localStorage.setItem('sessong', aarstall);
 
 function endre_sessong(clicked_id) {
-  let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   if (clicked_id == 'sessong_kontroller_1') {
     aarstall -= 1;
   }
@@ -89,7 +89,7 @@ function endre_sessong(clicked_id) {
     document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
     document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
   }
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land_før))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land_før))
   if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
   }
@@ -439,7 +439,7 @@ function sorter_etter_sesong() {
         // }
       }
     }
-    let filter_land = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+    let filter_land = JSON.parse(localStorage.getItem('filter_land')) || [];
     if ((filter_land.includes(menyvalg_edit[i][1]) || filter_land == '') && containsAll) {
       var Ny = Object.assign([], menyvalg_edit[i]);
       menyvalg_edit[i] = [];
@@ -1090,7 +1090,7 @@ function sortFunction_tall_1_flere_desimal_nyligste(a, b) {
 
 
 function endreMenyTittel(innerHTML) {
-  let filter_land = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  let filter_land = JSON.parse(localStorage.getItem('filter_land')) || [];
   if (document.getElementById("dropDownMeny").innerHTML.includes('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">')) {
     document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML.replace('<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">','')
   }
@@ -1130,7 +1130,7 @@ function endreMenyTittel(innerHTML) {
   if (filter_land.length == 0) {
     document.getElementById("dropDownMeny").innerHTML = document.getElementById("dropDownMeny").innerHTML + '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe">'
   }
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   sorter_etter_sesong()
   if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
@@ -1140,13 +1140,13 @@ function endreMenyTittel(innerHTML) {
 
 function resett() {
   document.getElementById('dropDownMeny').innerHTML = '<img class="jordklode" src="media/UEFA/GLOBE2.svg" alt="Globe"><div class="opp_ned_pil">&#10095</div>'
-  let filter_land = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  let filter_land = JSON.parse(localStorage.getItem('filter_land')) || [];
   for (p = 0; p < filter_land.length; p++) {
     document.getElementById(filter_land[p]).style.backgroundColor = '';
     document.getElementById(filter_land[p]).style.border = '';
   }
   filter_land = []
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   sorter_etter_sesong()
   if (sessionStorage.getItem('spoiler') == 'skjult') {
     $('#tabell_overordnet td').hide()
@@ -1522,7 +1522,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
   let land_array = []
   let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
   let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
-  let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   for (r = 0; r < landskoeffisienter.length; r++) {
     if (landskoeffisienter[r][4] != 0 || (landskoeffisienter[r][2] != 0 && ((trykte_knapper == [] || trykte_knapper == '') && (filter_land_før == '' || filter_land_før == [] || filter_land_før.includes(landskoeffisienter[r][0]))))) {
       landskoeffisienter[r][4] = Math.floor((landskoeffisienter[r][2]) * 1000/landskoeffisienter[r][4]) / 1000
@@ -1605,7 +1605,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
 function bygg_tabell_2(land_array) {
   let trykte_knapper = JSON.parse(sessionStorage.getItem('trykte_knapper')) || [];
   let trykte_knapper_exclude = JSON.parse(sessionStorage.getItem('trykte_knapper_exclude')) || [];
-  let filter_land_før = JSON.parse(sessionStorage.getItem('filter_land')) || [];
+  let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
   table = document.getElementById('myTable_2')
   table.innerHTML = '';
   var helTabellHTML = '';
@@ -1699,7 +1699,7 @@ function endre_lands_filter(land) {
     land = (land.innerHTML.slice(58,61))
   }
   let filter_land = [land]
-  sessionStorage.setItem('filter_land', JSON.stringify(filter_land))
+  localStorage.setItem('filter_land', JSON.stringify(filter_land))
   for (r = 0; r < landskoeffisienter.length; r++) {
     document.getElementById(landskoeffisienter[r][0]).style.backgroundColor = '';
     document.getElementById(landskoeffisienter[r][0]).style.border = '';
@@ -1726,9 +1726,9 @@ function landsranking_endre_periode(klubb) {
       try {
         if (klubb.slice(72, 75)) {id = klubb.slice(72, 75)}
       } catch {}
-      sessionStorage.setItem('filter_land', JSON.stringify([id]))
+      localStorage.setItem('filter_land', JSON.stringify([id]))
     }
-  } else {sessionStorage.setItem('filter_land', JSON.stringify(['NIR']))}
+  } else {localStorage.setItem('filter_land', JSON.stringify(['NIR']))}
   sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
   sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
   sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
