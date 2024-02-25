@@ -1389,7 +1389,7 @@ function endre_sort_kolonne() {
     sessionStorage.setItem('rekkefølge', 'desc')
     sessionStorage.setItem('kolonne2', 'prize_money_total')
     sessionStorage.setItem('rekkefølge2', 'desc')
-    localStorage.setItem('filter_land', JSON.stringify([]))
+    sessionStorage.setItem('filter_land', JSON.stringify([]))
     sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
     sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
     sessionStorage.setItem('spoiler', 'synlig')
@@ -1398,7 +1398,7 @@ function endre_sort_kolonne() {
 
 function endre_ti_års_periode() {
     aarstall = parseInt(aarstall)
-    localStorage.setItem('filter_land', JSON.stringify([]))
+    sessionStorage.setItem('filter_land', JSON.stringify([]))
     sessionStorage.setItem('kolonne_ti_års', 'id_nr')
     sessionStorage.setItem('rekkefølge_ti_års', 'asc')
     localStorage.setItem('dropdownmeny_valg_ti_års_midlertidig', (2000+20 + aarstall) + '/' + (21 + aarstall))

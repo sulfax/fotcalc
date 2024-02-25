@@ -962,8 +962,8 @@ function tell_klubber_land() {
 }
 
 function endre_land(land) {
-    if (land == '') {land = localStorage.setItem('filter_land', JSON.stringify([]))}
-    else {localStorage.setItem('filter_land', JSON.stringify([land]))}
+    if (land == '') {land = sessionStorage.setItem('filter_land', JSON.stringify([]))}
+    else {sessionStorage.setItem('filter_land', JSON.stringify([land]))}
     sessionStorage.setItem('kolonne_landskoeffisient', 'poeng')
     sessionStorage.setItem('rekkefølge_landskoeffisient', 'asc')
     sessionStorage.setItem('kolonne_landskoeffisient2', 'id_nr_klubb')
@@ -1007,7 +1007,7 @@ function endre_sort_kolonne() {
     }
     sessionStorage.setItem('trykte_knapper', JSON.stringify([]))
     sessionStorage.setItem('trykte_knapper_exclude', JSON.stringify([]))
-    localStorage.setItem('filter_land', JSON.stringify([]))
+    sessionStorage.setItem('filter_land', JSON.stringify([]))
     sessionStorage.setItem('spoiler', 'synlig')
 }
 
