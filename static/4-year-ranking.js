@@ -971,7 +971,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
 
     let topp8nr = "";
     if (ranking_array[i][10][0] <=  12-MinstAntallUnikeUCL_Mestere[(aar_etter_forste_periode-3)/4] && ranking_array[i][10][0] >= 1) {
-      if (aar_etter_forste_periode == 3 && ["FC Bayern München","Paris Saint-Germain","Internazionale Milano","FC Porto","SL Benfica"].includes(klubbnavn)) {
+      if (aar_etter_forste_periode == 3 && ["FC Bayern München","Paris Saint-Germain","Internazionale Milano","FC Porto","FC Bayern München","SL Benfica"].includes(klubbnavn)) {
         ranking_array[i][0] += "<span class='topp8_nr topp8_nr_farge'>" + ranking_array[i][10][0] + "</span>";
       }
       else {
