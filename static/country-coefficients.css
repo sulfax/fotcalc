@@ -137,7 +137,7 @@
     display:flex;
     flex-wrap:wrap;
     height: fit-content;
-    background-color: white;
+    background-color: rgb(255, 211, 211);
     width:fit-content;
     margin-bottom: calc(-0.4% - 5px);
     border-top-left-radius: 0.5rem;
