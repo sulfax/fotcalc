@@ -35,7 +35,7 @@
     }
 }
 :root {
-    --container_: 849px;
+    --container_: 844px;
     --container_4_aar: 710px;
 }
 @media (max-width:1550px) {
