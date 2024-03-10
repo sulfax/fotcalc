@@ -358,9 +358,9 @@ th, td {
 }
 /*Skal stå "float:left;" og GJØR OM TIL KODE dersom land har internt fremtidig oppgjør og er garantert koeffisientpoeng.*/
 .flagg_hoyre {
-    float:right;
-		/* margin-left: 4px;
-		margin-right: -3px; */
+    float:left;
+		margin-left: 4px;
+		margin-right: -3px;
 }
 .grense_celle:not(#tom_kolonne) {
     padding-right: 3px !important;
