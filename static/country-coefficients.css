@@ -356,9 +356,11 @@ th, td {
 .marign_venstre {
     padding-left: 3px;
 }
-/*Skal stå "float:left;" dersom land har internt fremtidig oppgjør og er garantert koeffisientpoeng.*/
+/*Skal stå "float:left;" og GJØR OM TIL KODE dersom land har internt fremtidig oppgjør og er garantert koeffisientpoeng.*/
 .flagg_hoyre {
     float:right;
+		/* margin-left: 4px;
+		margin-right: -3px; */
 }
 .grense_celle:not(#tom_kolonne) {
     padding-right: 3px !important;
@@ -368,6 +370,7 @@ th, td {
 
 #internt_oppgjør_asterisk {
     padding-top: 8px;
+		font-size: 13px;
 }
 
 .høyrestill {

@@ -1310,36 +1310,73 @@ function generer_lands_knapper() {
       }
     }
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-    // if (['NOR'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.666}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.666}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.666}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.666}}
-    // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 0.8}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 0.8}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 0.8}}
-    // if (['POR','FRA'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 1.333}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 1.333}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 1.333}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 1.333}}
-    // if (['ENG'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2}}
-    // if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.285}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.285}}
-    // if (['ESP'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.5}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.5}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.5}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.5}}
+		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.625}
+    //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.625}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
+		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
+		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
+		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
+		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
+		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+		// else if (['POR'].includes(landskoeffisienter[i][0])) {
+		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.834}
+		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.834}
+		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.834}
+		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.834}}
+		// else if (['BEL','GRE'].includes(landskoeffisienter[i][0])) {
+		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
+		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.000}
+		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.000}
+		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.000}}
+    // else if (['ISR','CZE'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.250}
+    //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.250}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.250}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.250}}
+		// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
+    // if (['AUT','SCO','BEL','POR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 0.8}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 0.8}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 0.8}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 0.8}}
+    // else if (['NED'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 1.333}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 1.333}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 1.333}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 1.333}}
+    // else if (['FRA'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 1.714}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 1.714}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 1.714}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 1.714}}
+    // else if (['ITA','GER','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 2.285}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 2.285}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 2.285}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 2.285}}
+		// Sesongen etter.
+		// if (['TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 0.8}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 0.8}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 0.8}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 0.8}}
+    // else if (['NED'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 1.333}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 1.333}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 1.333}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 1.333}}
+    // else if (['FRA'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 1.714}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 1.714}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 1.714}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 1.714}}
+    // else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 2.285}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 2.285}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 2.285}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 2.285}}
     assos_ranking_array.push(landskoeffisienter[i][0])
     assos_ranking_array.push((koeff_sesong5 + koeff_sesong4 + koeff_sesong3 + koeff_sesong2).toFixed(3))
     assos_ranking_array.push(koeff_sesong2.toFixed(3))
@@ -1579,36 +1616,73 @@ function regn_ut_NA_poeng() {
     }
 
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-    // if (['NOR'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.666}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.666}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.666}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.666}}
-    // if (['UKR','SRB','SCO','AUT','NED'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 0.8}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 0.8}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 0.8}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 0.8}}
-    // if (['POR','FRA'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 1.333}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 1.333}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 1.333}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 1.333}}
-    // if (['ENG'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2}}
-    // if (['GER','ITA'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.285}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.285}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.285}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.285}}
-    // if (['ESP'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 = 2.5}
-    //   if (aar_etter_forste_periode == 4) {koeff_sesong3 = 2.5}
-    //   if (aar_etter_forste_periode == 5) {koeff_sesong4 = 2.5}
-    //   if (aar_etter_forste_periode == 6) {koeff_sesong5 = 2.5}}
+		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.625}
+    //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.625}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
+		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
+		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
+		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
+		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
+		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+		// else if (['POR'].includes(landskoeffisienter[i][0])) {
+		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.834}
+		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.834}
+		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.834}
+		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.834}}
+		// else if (['BEL','GRE'].includes(landskoeffisienter[i][0])) {
+		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
+		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.000}
+		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.000}
+		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.000}}
+    // else if (['ISR','CZE'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.250}
+    //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.250}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.250}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.250}}
+		// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
+    // if (['AUT','SCO','BEL','POR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 0.8}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 0.8}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 0.8}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 0.8}}
+    // else if (['NED'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 1.333}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 1.333}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 1.333}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 1.333}}
+    // else if (['FRA'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 1.714}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 1.714}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 1.714}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 1.714}}
+    // else if (['ITA','GER','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 4) {koeff_sesong2 = 2.285}
+    //   else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 2.285}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 2.285}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 2.285}}
+		// Sesongen etter.
+		// if (['TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 0.8}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 0.8}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 0.8}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 0.8}}
+    // else if (['NED'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 1.333}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 1.333}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 1.333}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 1.333}}
+    // else if (['FRA'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 1.714}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 1.714}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 1.714}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 1.714}}
+    // else if (['GER','ITA','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    //   if (aar_etter_forste_periode == 5) {koeff_sesong2 = 2.285}
+    //   else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 2.285}
+    //   else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 2.285}
+    //   else if (aar_etter_forste_periode == 8) {koeff_sesong5 = 2.285}}
     
     let denne_NA_poeng_og_assos = []
 
