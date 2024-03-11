@@ -233,7 +233,7 @@ const norsk_koeffisient = [
     'spoeng til ',
     'Rangering',
     'Den nederste raden beregnes ved å dele forbundspoeng-koeffisientpoengene på antallet klubber fra landet.',
-		'Hvis en kamp går til ekstraomganger, avgjøres kampresultatet etter 120 minutter, men før straffesparkkonkurranse.',
+		'Hvis en kamp går til ekstraomganger, avgjøres kampresultatet etter 120 minutter, men før straffesparkkonkurransen.',
     '*Kalkulatoren er basert på <a class="graa_hover_link" id="uefa_distribution_link" href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online" target="_blank">UEFAs koeffisient-rangeringssystem</a>.',
     'Sjekk ut <a class="graa_hover_link" id="klubb_link" href="prize-money-calculator">din klubbs premiepenger</a>.',
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign koeffisientpoeng med andre klubber</a>.</b>',
