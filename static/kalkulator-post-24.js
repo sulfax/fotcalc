@@ -1017,8 +1017,8 @@ function lagre_trykking_input_1() {
 	}
     localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_1);
     localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_1);
-		localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_5);
-    localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_5);
+		localStorage.setItem('Hallo_input_id_5_post_24', lagrede_verdier_input_id_5);
+    localStorage.setItem('Hallo_input_verdi_5_post_24', lagrede_verdier_input_5);
 };
 function lagre_trykking_input_2() {
     var lagrede_verdier_input_id_2 = [];
