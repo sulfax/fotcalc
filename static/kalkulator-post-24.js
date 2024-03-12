@@ -34,8 +34,8 @@ var Spilt_Q3_league_path_2122 = "";
 var UCL_utslått_lag_PO_2122 = UCL_utslåtte_lagene_PO_2122 / 7;
 var UECL_Slått_ut_PO_2122 = 750000;
 var UCL_deltaker_gruppespillet_2122 = 18600000;
-var UEL_deltaker_gruppespillet_2122 = 4310000;
-var UECL_deltaker_gruppespillet_2122 = 3160000;
+var UEL_deltaker_gruppespillet_2122 = 4460000;
+var UECL_deltaker_gruppespillet_2122 = 3270000;
 var UCL_spilt_åttendedelsfinale_2122 = 11000000;
 var UEL_spilt_åttendedelsfinale_2122 = 1200000;
 var UECL_spilt_åttendedelsfinale_2122 = 600000;
@@ -1003,6 +1003,8 @@ function lagre_trykking() {
 function lagre_trykking_input_1() {
     var lagrede_verdier_input_id_1 = [];
     var lagrede_verdier_input_1 = [];
+		var lagrede_verdier_input_id_5 = [];
+    var lagrede_verdier_input_5 = [];
     for (var f=0;f<3;f++) {
         lagrede_verdier_input_id_1.push('i' + (f + 1));
         var verdi = document.getElementById('i' + (f + 1)).value;
@@ -1015,6 +1017,8 @@ function lagre_trykking_input_1() {
 	}
     localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_1);
     localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_1);
+		localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_5);
+    localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_5);
 };
 function lagre_trykking_input_2() {
     var lagrede_verdier_input_id_2 = [];
