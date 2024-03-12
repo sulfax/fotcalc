@@ -654,7 +654,9 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 					if (turnering+1 == 1) {UCL_ikke_avrundet[3] = 0;}
 					if (turnering+1 == 2) {UEL_ikke_avrundet[3] = 0;}
 					if (turnering+1 == 3) {UECL_ikke_avrundet[3] = 0;}
-					utenfor_gyldig_input(clicked_id);
+					if (input_felt_verdi != "") {
+						utenfor_gyldig_input(clicked_id);
+					}
 					summer();
 					flytt_SCUP_sum_venstre(clicked_id)
 			}
@@ -1003,22 +1005,18 @@ function lagre_trykking() {
 function lagre_trykking_input_1() {
     var lagrede_verdier_input_id_1 = [];
     var lagrede_verdier_input_1 = [];
-		var lagrede_verdier_input_id_5 = [];
-    var lagrede_verdier_input_5 = [];
     for (var f=0;f<3;f++) {
         lagrede_verdier_input_id_1.push('i' + (f + 1));
         var verdi = document.getElementById('i' + (f + 1)).value;
         lagrede_verdier_input_1.push(verdi);
     }
 		for (var f=15;f<21;f++) {
-			lagrede_verdier_input_id_5.push('i' + (f + 1));
+			lagrede_verdier_input_id_1.push('i' + (f + 1));
 			var verdi = document.getElementById('i' + (f + 1)).value;
-			lagrede_verdier_input_5.push(verdi);
-	}
+			lagrede_verdier_input_1.push(verdi);
+		}
     localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_1);
     localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_1);
-		localStorage.setItem('Hallo_input_id_5_post_24', lagrede_verdier_input_id_5);
-    localStorage.setItem('Hallo_input_verdi_5_post_24', lagrede_verdier_input_5);
 };
 function lagre_trykking_input_2() {
     var lagrede_verdier_input_id_2 = [];
@@ -1175,6 +1173,7 @@ function oppdater_ved_refresh_1() {
         const motak_7 = localStorage.getItem('Hallo_input_verdi_3_post_24');
         const motak_8 = localStorage.getItem('Hallo_input_id_4_post_24');
         const motak_9 = localStorage.getItem('Hallo_input_verdi_4_post_24');
+				
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
     }
     else {
