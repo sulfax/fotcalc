@@ -441,6 +441,9 @@ function paa_av(clicked_id){
             summer();
         }
     }
+		forlat_input_felt_4("i13");
+		forlat_input_felt_4("i14");
+		forlat_input_felt_4("i15");
 };
 
 function flytt_SCUP_sum_hoyre(clicked_id) {
@@ -836,8 +839,11 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     // }
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
     var tabellplassering = (document.getElementById(clicked_id).value);
-    try {
-        document.getElementById(clicked_id + "_").innerText = "";
+		let aktuell_sum = input_summer[nummer_2][0];
+		try {
+			if (!document.getElementById("b" + nummer_2+5)) {
+				document.getElementById(clicked_id + "_").innerText = "";
+			}
     }
     catch {
         null;
@@ -857,17 +863,16 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     }
     if (document.getElementById(clicked_id).value != "") {
         if ((tabellplassering >= 1) && (tabellplassering <= 36) && tabellplassering % 1 == 0) {
-            let aktuell_sum = input_summer[nummer_2][0] * (37-tabellplassering);
-            document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            aktuell_sum = input_summer[nummer_2 + 3][0];
-            if (tabellplassering <= 24 && tabellplassering > 8) {
-                document.getElementById(clicked_id + "__").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            }
-						// let aktuell_sum = input_summer[nummer_2][0];
-						// if (tabellplassering <= 8) {
-						// 	aktuell_sum = aktuell_sum*2;
-            // }
+            // let aktuell_sum = input_summer[nummer_2][0] * (37-tabellplassering);
             // document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            // aktuell_sum = input_summer[nummer_2 + 3][0];
+            // if (tabellplassering <= 24 && tabellplassering > 8) {
+            //     document.getElementById(clicked_id + "__").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            // }
+						if (tabellplassering <= 8) {
+							aktuell_sum = aktuell_sum*2;
+            }
+						document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             flytt_SCUP_sum_hoyre(clicked_id)
         }
@@ -878,6 +883,10 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
         }
     }
     else {
+				let aktuell_sum = input_summer[nummer_2][0];
+				if (document.getElementById("b-" + (nummer_2+5))) {
+					document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+				}
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
         flytt_SCUP_sum_venstre(clicked_id)

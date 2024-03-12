@@ -180,7 +180,7 @@ const norsk_kalkulator = [
     'Ligaspill',
     'Ligaplassering',
     '<div class="tekst_margin_hoyre"><abbr data_title="Ti års koeffisient-rangering internt i ligaspillet (1-36). Følg lenke 1 for å finne ut.">Ti års koeff</abbr>: </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ti års koeffisient-rangering">1</abbr></a>',
-		'<div class="tekst_margin_hoyre"><abbr data_title="Club coefficient ranking internally in the league phase (1-36). Follow link 3 to figure out.">Five-year coeff</abbr> </div> <a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">3</abbr></a>',
+		'<div class="tekst_margin_hoyre"><abbr data_title="Club coefficient ranking internally in the league phase (1-36). Follow link 3 to figure out.">Five-year coeff</abbr></div><a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">3</abbr></a>',
     '<abbr data_title="Totalt antall uavgjorte kamper i turneringens ligaspill (0-144)">Uavgjort totalt</abbr>',
     '<abbr data_title="Antall seiere i ligaspillet">Seiere</abbr>',
     '<abbr data_title="Antall uavgjort i ligaspillet">Uavgjort</abbr>'
@@ -454,7 +454,7 @@ const english_kalkulator = [
     'League phase',
     'League placement',
     '<div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the league phase (1-36). Follow link 1 to figure out.">Ten-year coeff</abbr> </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten-year coefficient ranking">1</abbr></a>',
-		'<div class="tekst_margin_hoyre"><abbr data_title="Club coefficient ranking internally in the league phase (1-36). Follow link 3 to figure out.">Five-year coeff</abbr> </div> <a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">3</abbr></a>',
+		'<div class="tekst_margin_hoyre"><abbr data_title="Club coefficient ranking internally in the league phase (1-36). Follow link 3 to figure out.">Five-year coeff</abbr></div><a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">3</abbr></a>',
     `<abbr data_title="Total number of drawn games in the competition's league phase (0-144)">Total draws</abbr>`,
     '<abbr data_title="Amount of wins in the league phase">Wins</abbr>',
     '<abbr data_title="Amount of draws in the league phase">Draws</abbr>'
