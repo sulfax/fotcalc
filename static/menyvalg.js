@@ -453,8 +453,8 @@ const totalt_antall_klubber = [
     [7, 7, 7],// ITA
     [7, 7, 7],// GER
     [6, 7, 7],// FRA
-    [6, 5],// POR
-    [5, 6],// NED
+    [6, 5, 5],// POR
+    [5, 6 ,6],// NED
     [5, 5, 5],// AUT
     [5, 5, 5],// SCO
     [0, 0],// RUS
