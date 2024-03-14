@@ -996,24 +996,12 @@ function generer_lands_knapper() {
 		// 	else if (aarstall == 4) {koeff_sesong3 += 0.714}
 		// 	else if (aarstall == 5) {koeff_sesong4 += 0.714}
 		// 	else if (aarstall == 6) {koeff_sesong5 += 0.714}}
-		// else if (['POR'].includes(landskoeffisienter[i][0])) {
-		// 	if (aarstall == 2) {enkelt_sesong1 += 0.834}
-		// 	else if (aarstall == 3) {koeff_sesong2 += 0.834}
-		// 	else if (aarstall == 4) {koeff_sesong3 += 0.834}
-		// 	else if (aarstall == 5) {koeff_sesong4 += 0.834}
-		// 	else if (aarstall == 6) {koeff_sesong5 += 0.834}}
-		// else if (['BEL','GRE'].includes(landskoeffisienter[i][0])) {
+		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aarstall == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aarstall == 3) {koeff_sesong2 += 1.000}
 		// 	else if (aarstall == 4) {koeff_sesong3 += 1.000}
 		// 	else if (aarstall == 5) {koeff_sesong4 += 1.000}
 		// 	else if (aarstall == 6) {koeff_sesong5 += 1.000}}
-    // else if (['ISR','CZE'].includes(landskoeffisienter[i][0])) {
-    //   if (aarstall == 2) {enkelt_sesong1 += 1.250}
-    //   else if (aarstall == 3) {koeff_sesong2 += 1.250}
-    //   else if (aarstall == 4) {koeff_sesong3 += 1.250}
-    //   else if (aarstall == 5) {koeff_sesong4 += 1.250}
-    //   else if (aarstall == 6) {koeff_sesong5 += 1.250}}
 		// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
     // if (['AUT','SCO','BEL','POR'].includes(landskoeffisienter[i][0])) {
     //   if (aarstall == 3) {enkelt_sesong1 = 0.8}
@@ -1558,7 +1546,7 @@ function totalt_land(column, order, tekst, antall_klubber) {
 	// Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
   // if (aarstall == 2) {
   //   for (r = 0; r < landskoeffisienter.length; r++) {
-	// 		if (['ENG','ESP','ITA','GER','POR','BEL','GRE','CZE','ISR'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] += 5;}
+	// 		if (['ENG','ESP','ITA','GER','GRE'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] += 5;}
   //   }
   // }
 	// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.

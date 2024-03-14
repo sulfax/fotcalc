@@ -1265,24 +1265,12 @@ function generer_lands_knapper() {
 		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
 		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
 		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
-		// else if (['POR'].includes(landskoeffisienter[i][0])) {
-		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.834}
-		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.834}
-		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.834}
-		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.834}
-		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.834}}
-		// else if (['BEL','GRE'].includes(landskoeffisienter[i][0])) {
+		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
 		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.000}
 		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.000}
 		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.000}}
-		// else if (['ISR','CZE'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.250}
-    //   else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.250}
-    //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.250}
-    //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.250}
-    //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.250}}
 		// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
     // if (['AUT','SCO','BEL','POR'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 3) {enkelt_sesong1 = 0.8}
@@ -1622,24 +1610,12 @@ function regn_ut_NA_poeng() {
 		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
 		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
 		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
-		// else if (['POR'].includes(landskoeffisienter[i][0])) {
-		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.834}
-		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.834}
-		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.834}
-		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.834}
-		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.834}}
-		// else if (['BEL','GRE'].includes(landskoeffisienter[i][0])) {
+		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
 		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.000}
 		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.000}
 		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.000}}
-		// 	else if (['ISR','CZE'].includes(landskoeffisienter[i][0])) {
-    //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.250}
-    //   else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.250}
-    //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.250}
-    //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 1.250}
-    //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 1.250}}
 		// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
     // if (['AUT','SCO','BEL','POR'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 3) {enkelt_sesong1 = 0.8}
