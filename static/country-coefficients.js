@@ -375,18 +375,18 @@ function oppdater_ved_refresh() {
       }
     }
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+		// if (['ENG'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.625}
     //   else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.625}
     //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.625}
     //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
     //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
-		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
-		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.714}
-		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
-		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
-		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
-		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+		if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.714}
+			else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
@@ -1114,13 +1114,13 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     if (sesong5 == '-') {sesong5 = '<span class="bindestrek">-</span>'}
     let internt_oppgjør = "";
     // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-    // if (['ENG','ESP','ITA','GER','GRE'].includes(ranking_array[i][0]) && aar_etter_forste_periode >= internt_oppgjor_aar && aar_etter_forste_periode <= internt_oppgjor_aar+4) {
-    //   internt_oppgjør = "&nbsp*";
-    //   internt_oppgjør_bool = true;
-    //   if (aar_etter_forste_periode == internt_oppgjor_aar) {
-    //     ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
-    //   }
-    // }
+    if (['ITA'].includes(ranking_array[i][0]) && aar_etter_forste_periode >= internt_oppgjor_aar && aar_etter_forste_periode <= internt_oppgjor_aar+4) {
+      internt_oppgjør = "&nbsp*";
+      internt_oppgjør_bool = true;
+      if (aar_etter_forste_periode == internt_oppgjor_aar) {
+        ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
+      }
+    }
     
     let klubber_igjen = ""
     let tom_kolonne = `<td class='tom'>${""}</td>`
@@ -2102,18 +2102,18 @@ function generer_lands_knapper() {
       }
     }
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+		// if (['ENG'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.625}
     //   else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.625}
     //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.625}
     //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
     //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
-		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
-		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.714}
-		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
-		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
-		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
-		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+		if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.714}
+			else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}

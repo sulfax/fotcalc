@@ -984,18 +984,18 @@ function generer_lands_knapper() {
       }
     }
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+		// if (['ENG'].includes(landskoeffisienter[i][0])) {
     //   if (aarstall == 2) {enkelt_sesong1 += 0.625}
     //   else if (aarstall == 3) {koeff_sesong2 += 0.625}
     //   else if (aarstall == 4) {koeff_sesong3 += 0.625}
     //   else if (aarstall == 5) {koeff_sesong4 += 0.625}
     //   else if (aarstall == 6) {koeff_sesong5 += 0.625}}
-		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
-		// 	if (aarstall == 2) {enkelt_sesong1 += 0.714}
-		// 	else if (aarstall == 3) {koeff_sesong2 += 0.714}
-		// 	else if (aarstall == 4) {koeff_sesong3 += 0.714}
-		// 	else if (aarstall == 5) {koeff_sesong4 += 0.714}
-		// 	else if (aarstall == 6) {koeff_sesong5 += 0.714}}
+		if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aarstall == 2) {enkelt_sesong1 += 0.714}
+			else if (aarstall == 3) {koeff_sesong2 += 0.714}
+			else if (aarstall == 4) {koeff_sesong3 += 0.714}
+			else if (aarstall == 5) {koeff_sesong4 += 0.714}
+			else if (aarstall == 6) {koeff_sesong5 += 0.714}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aarstall == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aarstall == 3) {koeff_sesong2 += 1.000}
@@ -1544,11 +1544,11 @@ function totalt_land(column, order, tekst, antall_klubber) {
   }
 	let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 	// Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-  // if (aarstall == 2) {
-  //   for (r = 0; r < landskoeffisienter.length; r++) {
-	// 		if (['ENG','ESP','ITA','GER','GRE'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] += 5;}
-  //   }
-  // }
+  if (aarstall == 2) {
+    for (r = 0; r < landskoeffisienter.length; r++) {
+			if (['ITA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] += 5;}
+    }
+  }
 	// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
   // else if (aarstall == 3) {
   //   for (r = 0; r < landskoeffisienter.length; r++) {

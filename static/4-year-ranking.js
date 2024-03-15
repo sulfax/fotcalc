@@ -1310,16 +1310,16 @@ function generer_lands_knapper() {
       }
     }
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+		// if (['ENG'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.625}
     //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.625}
     //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
     //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
-		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
-		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
-		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
-		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
-		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+		if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
 		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.000}
@@ -1606,16 +1606,16 @@ function regn_ut_NA_poeng() {
     }
 
     //Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-		// if (['ENG','ESP'].includes(landskoeffisienter[i][0])) {
+		// if (['ENG'].includes(landskoeffisienter[i][0])) {
     //   if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.625}
     //   else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.625}
     //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
     //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
-		// else if (['ITA','GER'].includes(landskoeffisienter[i][0])) {
-		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
-		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
-		// 	else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
-		// 	else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+		if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
 		// 	else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 1.000}
