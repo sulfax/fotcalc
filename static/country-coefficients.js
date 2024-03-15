@@ -1230,7 +1230,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
   // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
   if (internt_oppgjør_bool) {
     if (aar_etter_forste_periode == internt_oppgjor_aar) {
-      document.getElementById("internt_oppgjør_asterisk").innerText = "*Includes guaranteed coefficient points from future internal match for this country. Consequently, the club count is reduced by one."
+      document.getElementById("internt_oppgjør_asterisk").innerText = "*Includes guaranteed coefficient points from future internal match for Italy. Consequently, the club count is reduced to 3/7."
     }
     else {
       document.getElementById("internt_oppgjør_asterisk").innerText = "*Includes guaranteed coefficient points from future internal match for this country."
