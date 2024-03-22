@@ -14,7 +14,7 @@ var antall_MV_elem = 6;
 var UCL_total_mengde_2122 = 2002000000;
 var UEL_total_mengde_2122 = 465000000; 
 var UECL_total_mengde_2122 = 235000000;
-var UCL_utslåtte_lagene_PO_2122 = 35000000;
+var UCL_utslåtte_lagene_PO_2122 = 30000000;
 // var UCL_deltagelsespenger_2122 = UCL_total_mengde_2122 * 0.25;
 // var UEL_deltagelsespenger_2122 = UEL_total_mengde_2122 * 0.25;
 // var UECL_deltagelsespenger_2122 = UECL_total_mengde_2122 * 0.40;
@@ -31,26 +31,27 @@ var UECL_Slått_ut_Q1_2122 = 150000;
 var UECL_Slått_ut_Q2_2122 = 350000;
 var UECL_Slått_ut_Q3_2122 = 550000;
 var Spilt_Q3_league_path_2122 = "";
-var UCL_utslått_lag_PO_2122 = UCL_utslåtte_lagene_PO_2122 / 7;
+// var UCL_utslått_lag_PO_2122 = UCL_utslåtte_lagene_PO_2122 / 7;
+var UCL_utslått_lag_PO_2122 = 4290000
 var UECL_Slått_ut_PO_2122 = 750000;
-var UCL_deltaker_gruppespillet_2122 = 18600000;
-var UEL_deltaker_gruppespillet_2122 = 4460000;
+var UCL_deltaker_gruppespillet_2122 = 18620000;
+var UEL_deltaker_gruppespillet_2122 = 4310000;
 var UECL_deltaker_gruppespillet_2122 = 3270000;
 var UCL_spilt_åttendedelsfinale_2122 = 11000000;
-var UEL_spilt_åttendedelsfinale_2122 = 1200000;
-var UECL_spilt_åttendedelsfinale_2122 = 600000;
+var UEL_spilt_åttendedelsfinale_2122 = 1750000;
+var UECL_spilt_åttendedelsfinale_2122 = 800000;
 var UCL_spilt_kvartfinale_2122 = 12500000;
-var UEL_spilt_kvartfinale_2122 = 1800000;
-var UECL_spilt_kvartfinale_2122 = 1000000;
+var UEL_spilt_kvartfinale_2122 = 2500000;
+var UECL_spilt_kvartfinale_2122 = 1300000;
 var UCL_spilt_semifinale_2122 = 15000000;
-var UEL_spilt_semifinale_2122 = 2800000;
-var UECL_spilt_semifinale_2122 = 2000000;
+var UEL_spilt_semifinale_2122 = 4200000;
+var UECL_spilt_semifinale_2122 = 2500000;
 var UCL_spilt_finale_2122 = 18500000;
-var UEL_spilt_finale_2122 = 4600000;
-var UECL_spilt_finale_2122 = 3000000;
+var UEL_spilt_finale_2122 = 7000000;
+var UECL_spilt_finale_2122 = 4000000;
 var UCL_vinner_2122 = 6500000;
-var UEL_vinner_2122 = 4000000;
-var UECL_vinner_2122 = 2000000;
+var UEL_vinner_2122 = 6000000;
+var UECL_vinner_2122 = 3000000;
 var Spilt_SCUP_2122 = Spilt_SCUP_total_2122 / 2;
 var Vunnet_SCUP_2122 = 1000000;
 
@@ -60,18 +61,18 @@ var UCL_ti_års_kr_2122 = 278000;
 var UEL_ti_års_kr_2122 = 132000;
 var UECL_ti_års_kr_2122 = 44500;
 var UCL_seier_2122 = 2100000;
-var UEL_seier_2122 = 630000;
+var UEL_seier_2122 = 450000;
 var UECL_seier_2122 = 500000;
 var UCL_uavgjort_2122 = 700000;
-var UEL_uavgjort_2122 = 210000;
+var UEL_uavgjort_2122 = 150000;
 var UECL_uavgjort_2122 = 166000;
 var påfyll_ingen_funksjon_2122 = 0;
-let UCL_sisteplass = 1000000;
-let UEL_sisteplass = 650000;
-let UECL_sisteplass = 550000;
+let UCL_sisteplass = 275000;
+let UEL_sisteplass = 75000;
+let UECL_sisteplass = 28000;
 let UCL_spilt_utslagsrunde_PO_2122 = 1000000;
-var UEL_spilt_utslagsrunde_PO_2122 = 500000;
-var UECL_spilt_utslagsrunde_PO_2122 = 300000;
+var UEL_spilt_utslagsrunde_PO_2122 = 300000;
+var UECL_spilt_utslagsrunde_PO_2122 = 200000;
 let UCL_fem_års_market_2122 = 1112000;
 let UEL_fem_års_market_2122 =  312000;
 let UECL_fem_års_market_2122 = 212000;
@@ -853,26 +854,26 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (document.getElementById('i15').value > 24 || document.getElementById('i15').value <= 8) {
-        document.getElementById('i15__').innerText = "";
-    }
-    if (document.getElementById('i14').value > 24 || document.getElementById('i14').value <= 8) {
-        document.getElementById('i14__').innerText = "";
-    }
-    if (document.getElementById('i13').value > 24 || document.getElementById('i13').value <= 8) {
+			document.getElementById('i15__').innerText = "";
+		}
+		if (document.getElementById('i14').value > 24 || document.getElementById('i14').value <= 8) {
+				document.getElementById('i14__').innerText = "";
+		}
+		if (document.getElementById('i13').value > 24 || document.getElementById('i13').value <= 8) {
         document.getElementById('i13__').innerText = "";
     }
     if (document.getElementById(clicked_id).value != "") {
         if ((tabellplassering >= 1) && (tabellplassering <= 36) && tabellplassering % 1 == 0) {
-            // let aktuell_sum = input_summer[nummer_2][0] * (37-tabellplassering);
-            // document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            // aktuell_sum = input_summer[nummer_2 + 3][0];
-            // if (tabellplassering <= 24 && tabellplassering > 8) {
-            //     document.getElementById(clicked_id + "__").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-            // }
-						if (tabellplassering <= 8) {
-							aktuell_sum = aktuell_sum*2;
-            }
-						document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            let aktuell_sum = input_summer[nummer_2][0] * (37-tabellplassering);
+						if (tabellplassering <= 16 && tabellplassering > 8) {
+              aktuell_sum += input_summer[3+nummer_2][0];
+            } else if (tabellplassering <= 8) {
+							aktuell_sum += input_summer[3+nummer_2][0]*2;
+						}
+						if (tabellplassering <= 24 && tabellplassering > 8) {
+							document.getElementById(clicked_id + "__").innerText = "€ " + input_summer[3+nummer_2][0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+						}
+            document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             summer();
             flytt_SCUP_sum_hoyre(clicked_id)
         }
@@ -883,10 +884,10 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
         }
     }
     else {
-				let aktuell_sum = input_summer[nummer_2][0];
-				if (document.getElementById("b-" + (nummer_2+5))) {
-					document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-				}
+				// let aktuell_sum = input_summer[nummer_2][0];
+				// if (document.getElementById("b-" + (nummer_2+5))) {
+				// 	document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+				// }
         document.getElementById(clicked_id).style.borderColor = "#ced4da";
         summer();
         flytt_SCUP_sum_venstre(clicked_id)
