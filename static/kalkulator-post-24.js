@@ -62,10 +62,10 @@ var UEL_ti_års_kr_2122 = 132000;
 var UECL_ti_års_kr_2122 = 44500;
 var UCL_seier_2122 = 2100000;
 var UEL_seier_2122 = 450000;
-var UECL_seier_2122 = 500000;
+var UECL_seier_2122 = 400000;
 var UCL_uavgjort_2122 = 700000;
 var UEL_uavgjort_2122 = 150000;
-var UECL_uavgjort_2122 = 166000;
+var UECL_uavgjort_2122 = 133000;
 var påfyll_ingen_funksjon_2122 = 0;
 let UCL_sisteplass = 275000;
 let UEL_sisteplass = 75000;
@@ -796,8 +796,8 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
             if (nummer_2 == 12) {
                 totalt_antall_kamper_med_vinner = (108 - document.getElementById(clicked_id).value);
             }
-            var antall_seiere = (document.getElementById("i" + (nummer_2 - 6)).value) || 0;
-            var aktuell_sum = ((antall_seiere/totalt_antall_kamper_med_vinner)*totale_ufordelte_ressurser);
+            var plassering = (document.getElementById("i" + (nummer_2 + 3)).value) || 37;
+            var aktuell_sum = (((37-plassering)/666)*totale_ufordelte_ressurser);
             let antall_seiere_er_desimal = (document.getElementById("i" + (nummer_2 - 6)).value % 1 == 0) || 0;
             if (antall_seiere_er_desimal && aktuell_sum >= 0) {
                 document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -895,6 +895,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_4()
     }
+		gjennomfør_1_gang_per_knapp("i" + (nummer_2-6));
 };
 function utenfor_gyldig_input(clicked_id) {
     document.getElementById(clicked_id).style.backgroundColor = 'red';
