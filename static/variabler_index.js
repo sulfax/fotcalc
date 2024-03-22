@@ -509,6 +509,7 @@ const english_koeffisient = [
     'The bottom row is calculated by dividing the association points by the number of clubs representing the country.',
 		'If a match has extra time, the match result is decided after 120 minutes, but before PSO.',
     "*The calculator is based on <a class='graa_hover_link' id='uefa_distribution_link' href='https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2023/24/Annex-D-Coefficient-Ranking-System-Online' target='_blank'>UEFA's coefficient ranking system</a>.",
+		"*The calculator is based on <a class='graa_hover_link' id='uefa_distribution_link' href='https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2024/25/Annex-D-Coefficient-Ranking-System-Online' target='_blank'>UEFA's coefficient ranking system</a>.",
     "Check out <a class='graa_hover_link' id='klubb_link' href='prize-money-calculator'>your club's prize money</a>.",
     '<b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare coefficient points with other clubs</a>.</b>',
     '<b>Take a look at the <a class="graa_hover_link" id="klubb_link" href="/country-coefficients">country coefficient ranking</a>.</b>'

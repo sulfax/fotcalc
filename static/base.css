@@ -335,7 +335,7 @@ a:hover {
 #koeff_reklame {
     font-weight: bold;
 }
-#kilde_koeff_id, #marketPool_id2, #covid_id {
+#kilde_koeff_id, #kilde_koeff_id_post_24, #marketPool_id2, #covid_id {
 	margin: 0px !important;
 	height: 19.5px
 }
@@ -401,7 +401,7 @@ a:hover {
     font-size: 14px;
     font-style: italic;
 }
-#kilde_koeff_id {
+#kilde_koeff_id, #kilde_koeff_id_post_24 {
 	color: rgba(52, 58, 64, 0.6);
 	font-size: 14px;
 }

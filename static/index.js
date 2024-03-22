@@ -548,6 +548,7 @@ const sprak_id_koeffisient = [
   'koeff_bidrag_beskrivelse',
 	'etter120_beskrivelse',
   'kilde_koeff_id',
+	'kilde_koeff_id_post_24',
   'koeff_reklame',
   'oversikt_reklame',
   'landskoeff_reklame'

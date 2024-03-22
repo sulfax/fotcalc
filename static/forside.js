@@ -700,7 +700,10 @@ function byggTabell_test(data) {
     if (data[i][10] == '0.000') {data[i][10] = `-` + `&nbsp`}
 
 
-    let klubb_koeff = (parseFloat(data[i][8]).toFixed(1));
+    let klubb_koeff = (parseFloat(data[i][8]));
+		if (klubb_koeff % 1 === 0) {
+			klubb_koeff = klubb_koeff.toFixed(1);
+		}
     if ((data[i][1] + '').includes("b18")) {
       if ((data[i][4] + '').includes("3") && aarstall <=2) {
         nummer = '<td class="ucl_gs_uel id_nr">' + data[i][11] + '</td>'
