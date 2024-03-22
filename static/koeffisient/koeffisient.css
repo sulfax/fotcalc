@@ -302,7 +302,7 @@ tbody {
     width: 12.5%;
 }
 .turnering_2_2 {
-    width: 11%;
+    width: 29% !important;
     padding:0px !important;
 }
 .turnering_2_3 {
@@ -454,6 +454,8 @@ td .placeholder::placeholder {
 }
 .table .resultat_celle_1 {
     border: 1px solid rgba(177, 177, 177, 0.3);
+		padding-left: 1px;
+		padding-right: 1px;
 }
 #tabell_data_ramme, #prelim_semifinale, #gruppespill, #q1_kamp1, #q2_kamp1, #q3_kamp1, #po_kamp1, #ligaspill_del, #gruppespill_del, #knock_po_kamp1, #åtten, #kvart, #semi, #finale {
     border-top: 1px solid rgba(177, 177, 177, 0.3);

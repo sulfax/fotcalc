@@ -15,7 +15,7 @@ let Seier_utslagsrunde_2122 = 2;
 let Uavgjort_utslagsrunde_2122 = 1;
 let Eliminert_Deltatt_2122 = 1;
 // let Åttendels_Deltatt_2122 = 5;
-let Gruppespill_UCL_2122 = 4;
+let Gruppespill_UCL_2122 = 6;
 let Gruppespill_UEL_minimum_2122 = 3;
 let Gruppespill_UECL_minimum_2122 = 2.5;
 let Eliminert_Q2_UECL_2122 = 1.5;
@@ -73,11 +73,11 @@ let deltakelse_eliminasjon_status = [];
 
 const UCL_assoskoeffisient_celler = ["b3_", "b6_", "b10_", "b13_", "b17_", "b20_", "b24_", "b27_", "b31_", "i1_", "i4_", "i7_", "b1_", "b2_", "b38_", "b40_", "b43_", "b46_", "b48_", "b51_", "b54_", "b57_", "b60_", "b63_", "b66_"];
 const UEL_assoskoeffisient_celler = ["b4_", "b7_", "b11_", "b14_", "b18_", "b21_", "b25_", "b28_", "i2_", "i5_", "i8_", "b34_", "b36_", "b39_", "b41_", "b44_", "b47_", "b49_", "b52_", "b55_", "b58_", "b61_", "b64_", "b67_"];
-const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_"/*, "b69_"*/, "b42_", "b45_"/*, "b70_"*/, "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
+const UECL_assoskoeffisient_celler = ["b5_", "b8_", "b12_", "b15_", "b19_", "b22_", "b26_", "b29_", "i3_", "i6_", "i9_", "b35_", "b37_", "b69_", "b42_", "b45_", "b70_", "b50_", "b53_", "b56_", "b59_", "b62_", "b65_", "b68_"];
 
 const UCL_klubbkoeffisient_celler = ["b31__", "i1__", "i4__", "i7__", "b38__", "b40__", "b43__", "b46__", "b48__", "b51__", "b54__", "b57__", "b60__", "b63__", "b66__"];
 const UEL_klubbkoeffisient_celler = ["b32__", "i2__", "i5__", "i8__", "b34__", "b36__", "b39__", "b41__", "b44__", "b47__", "b49__", "b52__", "b55__", "b58__", "b61__", "b64__", "b67__"];
-const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__"/*, "b69__"*/, "b42__", "b45__"/*, "b70__"*/, "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
+const UECL_klubbkoeffisient_celler = ["b9__", "b16__", "b23__", "b30__", "b33__", "i3__", "i6__", "i9__", "b35__", "b37__", "b69__", "b42__", "b45__", "b70__", "b50__", "b53__", "b56__", "b59__", "b62__", "b65__", "b68__"];
 
 const CWC_klubbkoeffisient_celler = ["i1___", "i4___", "b31___", "b38___", "b40___", "b43___", "b46___", "b48___", "b51___", "b54___", "b57___", "b60___", "b63___", "b66___"];
 
@@ -124,7 +124,7 @@ function deltakelse_eliminasjon_pre(clicked_id) {
 }
 
 function deltakelse_eliminasjon(clicked_id) {
-    if (clicked_id != "b69" && !clicked_id != "b70") {
+    // if (clicked_id != "b69" && !clicked_id != "b70") {
         var klasse = (document.getElementById(clicked_id).className);
         var knapp_status = 0;
         if (klasse == "btn btn-danger de0_UCL ele") {
@@ -206,10 +206,15 @@ function deltakelse_eliminasjon(clicked_id) {
             else {
                 var aktuell_sum = (knapp_summer[4][0]);
             }
-            document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
             if (clicked_id == "b31" || clicked_id == "b38" || clicked_id == "b46" || clicked_id == "b54" || clicked_id == "b63") {
-                document.getElementById(clicked_id + "___").innerText = 3;
+							if (clicked_id != "b31") {
+								document.getElementById(clicked_id + "_").innerText = 1.5;
+								document.getElementById(clicked_id + "__").innerText = 1.5;
+							} else {
+								document.getElementById(clicked_id + "_").innerText = 6;
+								document.getElementById(clicked_id + "__").innerText = 6;
+							}
+              document.getElementById(clicked_id + "___").innerText = 3;
             }
         }
         if (klasse == "btn btn-danger de1_UCL del") {
@@ -224,9 +229,14 @@ function deltakelse_eliminasjon(clicked_id) {
                 oppdater_trostepoeng();
             }
             else {
+							if (klasse == "btn btn-danger de0_UECL del") {
+								document.getElementById(clicked_id + "_").innerText = 0.5;
+                document.getElementById(clicked_id + "__").innerText = 0.5;
+							} else {
                 var aktuell_sum = (knapp_summer[4][0]);
                 document.getElementById(clicked_id + "_").innerText = aktuell_sum;
                 document.getElementById(clicked_id + "__").innerText = aktuell_sum;
+							}
             }
         }
         if (klasse == "btn btn-danger de1_UEL del" || klasse == "btn btn-danger de1_UECL del") {
@@ -260,7 +270,7 @@ function deltakelse_eliminasjon(clicked_id) {
             document.getElementById(clicked_id).innerText = "";
         }
         summer()
-    }
+    // }
 }
 
 
@@ -479,21 +489,25 @@ function oppdater_plassering(clicked_id, lagre_endring) {
     document.getElementById(clicked_id).style.color = "";
     document.getElementById(clicked_id).className = "form-control ikke_placeholder";
     if (input_felt_verdi >= 1 && input_felt_verdi <= 36 && document.getElementById(clicked_id).value != "" && input_felt_verdi % 1 == 0) {
-        if (input_felt_verdi <= 8) {
-            var aktuell_sum = input_summer[felt_nummer-1][0];
-            document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-        }
-        else if (input_felt_verdi <= 24) {
-            var aktuell_sum = input_summer[felt_nummer+2][0];
-            document.getElementById(clicked_id + "_").innerText = aktuell_sum;
-            document.getElementById(clicked_id + "__").innerText = aktuell_sum;
-        }
-        else {
-            document.getElementById(clicked_id + "_").innerText = "";
-            document.getElementById(clicked_id + "__").innerText = "";
-        }
-    }
+			if (input_felt_verdi <= 24) {
+				if (felt_nummer == 7 || felt_nummer == 8) {
+					document.getElementById(clicked_id + "_").innerText = (25-input_felt_verdi)*0.250;
+					document.getElementById(clicked_id + "__").innerText = (25-input_felt_verdi)*0.250;
+				}  
+				else if (felt_nummer == 9) {
+					if (input_felt_verdi <= 8) {
+						document.getElementById(clicked_id + "_").innerText = 16*0.125+(9-input_felt_verdi)*0.250;
+						document.getElementById(clicked_id + "__").innerText = 16*0.125+(9-input_felt_verdi)*0.250;
+					} else {
+						document.getElementById(clicked_id + "_").innerText = (25-input_felt_verdi)*0.125;
+						document.getElementById(clicked_id + "__").innerText = (25-input_felt_verdi)*0.125;
+					}
+				}
+			} else {
+				document.getElementById(clicked_id + "_").innerText = "";
+						document.getElementById(clicked_id + "__").innerText = "";
+			}
+		}
     else if ((input_felt_verdi > 36 || input_felt_verdi < 1 && input_felt_verdi != "") || (input_felt_verdi != "" && input_felt_verdi % 1 != 0)) {
         utenfor_gyldig_input(clicked_id);
     }
