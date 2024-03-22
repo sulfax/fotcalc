@@ -1870,17 +1870,25 @@ function regnUtKlubbKoeff(data, sesong) {
 					}
 				}
       }
-      for (let i = 0; i < knapper.length; i++) {
-        if (["b21","b24","b27","b30"].includes(knapper[i])) {
-          sum += 1.5;
-        }
-				if (["b22","b25","b28","b31"].includes(knapper[i])) {
-          sum += 1;
-        }
-				if (["b23","b26","b29","b32"].includes(knapper[i])) {
-          sum += 0.5;
-        }
-      }
+			if (sesong >= 3) {
+				for (let i = 0; i < knapper.length; i++) {
+					if (["b21","b24","b27","b30"].includes(knapper[i])) {
+						sum += 1.5;
+					}
+					if (["b22","b25","b28","b31"].includes(knapper[i])) {
+						sum += 1;
+					}
+					if (["b23","b26","b29","b32"].includes(knapper[i])) {
+						sum += 0.5;
+					}
+				}
+			} else {
+				for (let i = 0; i < knapper.length; i++) {
+					if (["b21","b24","b27","b30","b22","b25","b28","b31","b29","b32"].includes(knapper[i])) {
+						sum += 1;
+					}
+				}
+			}
       if (
         data[4] &&
         ((data[4].split(",").length - 1 >= 35 && sesong < 3) ||
@@ -2004,17 +2012,25 @@ function regnUtAssosKoeff(data, sesong) {
 					}
 				}
       }
-      for (let i = 0; i < knapper.length; i++) {
-        if (["b21","b24","b27","b30"].includes(knapper[i])) {
-          sum += 1.5;
-        }
-				if (["b22","b25","b28","b31"].includes(knapper[i])) {
-          sum += 1;
-        }
-				if (["b23","b26","b29","b32"].includes(knapper[i])) {
-          sum += 0.5;
-        }
-      }
+			if (sesong >= 3) {
+				for (let i = 0; i < knapper.length; i++) {
+					if (["b21","b24","b27","b30"].includes(knapper[i])) {
+						sum += 1.5;
+					}
+					if (["b22","b25","b28","b31"].includes(knapper[i])) {
+						sum += 1;
+					}
+					if (["b23","b26","b29","b32"].includes(knapper[i])) {
+						sum += 0.5;
+					}
+				}
+			} else {
+				for (let i = 0; i < knapper.length; i++) {
+					if (["b21","b24","b27","b30","b22","b25","b28","b31","b29","b32"].includes(knapper[i])) {
+						sum += 1;
+					}
+				}
+			}
     }
     return sum;
   }
