@@ -26,7 +26,7 @@ var Spilt_SCUP_total_2122 = 8000000;
 /*21/22 knapper*/
 
 var Hjemlig_seriemester_2122 = 260000;
-var Spilt_Pre_Q_eller_PO_2122 = 100000;
+var Spilt_Pre_Q_eller_PO_2122 = 175000;
 var UECL_Slått_ut_Q1_2122 = 150000;
 var UECL_Slått_ut_Q2_2122 = 350000;
 var UECL_Slått_ut_Q3_2122 = 550000;
