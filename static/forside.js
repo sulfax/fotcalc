@@ -694,11 +694,13 @@ function byggTabell_test(data) {
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `7.png 100w,
       media/klubblogo/` + data[i][9] + "/" + klubbnavn_url + `8.png 140w">` + klubbnavn
     let premiepenger = "€ " + data[i][6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    let ass_koeff = (parseFloat(data[i][7]).toFixed(1));
+    let ass_koeff = (parseFloat(data[i][7]));
+		if (ass_koeff % 1 === 0) {
+			ass_koeff = ass_koeff.toFixed(1);
+		}
 
     data[i][10] = data[i][10].toFixed(3) || 0;
     if (data[i][10] == '0.000') {data[i][10] = `-` + `&nbsp`}
-
 
     let klubb_koeff = (parseFloat(data[i][8]));
 		if (klubb_koeff % 1 === 0) {
