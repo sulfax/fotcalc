@@ -464,8 +464,8 @@ function sorter_etter_sesong() {
       let Ny4 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
       let Ny5 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
       let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
-      let Ny7 = [regnUtPremiepenger([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall, Ny1[0])].concat(Ny[7 + (aarstall*antall_MV_elem)].slice(0,4));
-      Ny7 = (Ny7[0] || 0) + (Ny7[1] || 0) + (Ny7[2] || 0) + (Ny7[3] || 0) + (Ny7[4] || 0);
+      let Ny7 = [regnUtPremiepenger([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall, Ny1[0])].concat(Ny[7 + (aarstall*antall_MV_elem)].slice(0,6));
+      Ny7 = (Ny7[0] || 0) + (Ny7[1] || 0) + (Ny7[2] || 0) + (Ny7[3] || 0) + (Ny7[4] || 0) + (Ny7[5] || 0) + (Ny7[6] || 0);
       let Ny8 = regnUtAssosKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny9 = regnUtKlubbKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny10 = Ny.slice(1,2)

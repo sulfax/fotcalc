@@ -151,10 +151,10 @@ var eksperimentell_profil_n = "Kalkuler fra bunnen";
 var din_klubbs_premi_koef_e = "your club's coefficient points";
 var din_klubbs_premi_koef_n = "din klubbs koeffisientpoeng";
 
-const UCL_inntjening_celler = ["b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_", "i13_", "i13__"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
-const UEL_inntjening_celler = ["uelQ1_", "uelQ2_", "b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__"];
-const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__"];
-const seriemester_inntjening_celler = ["b1_", "b36_", "b36_hoyre", "b37_", "b37_hoyre", "finalBalanceSum"];
+const UCL_inntjening_celler = ["b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_", "i13_", "i13__", "finalBalanceSum1"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
+const UEL_inntjening_celler = ["uelQ1_", "uelQ2_", "b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__", "finalBalanceSum2"];
+const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__", "finalBalanceSum3"];
+const seriemester_inntjening_celler = ["b1_", "b36_", "b36_hoyre", "b37_", "b37_hoyre"];
 const kvalikPengeCeller = ["b1_", "uelQ1_", "uelQ2_", "b3_", "b4_", "b5_", "b6_", "b7_", "b8_", "b9_", "b10_", "b11_", "b12_", "b13_", "b14_", "b15_", "b17_"];
 
 const UECL_fjerning_av_summer_ved_deltagelse = ["b1_", "b5_", "b8_", "b12_", "b17_"];
@@ -472,15 +472,27 @@ function regnUtResidalKlubb(aarstall) {
 		document.getElementById("residual").innerText = ""}
 
 	if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
-		document.getElementById("finalBalanceSum").innerText = "";
+		document.getElementById("finalBalanceSum1").innerText = "";
+		document.getElementById("finalBalanceSum2").innerText = "";
+		document.getElementById("finalBalanceSum3").innerText = "";
 	}
 	else {
 		for (let i = 0; i < menyvalg.length; i++) {
 			if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
-				if (menyvalg[i][7+(aarstall*antall_MV_elem)] && menyvalg[i][7+(aarstall*antall_MV_elem)].length == 1) {
-					document.getElementById("finalBalanceSum").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][0]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+				if (menyvalg[i][7+(aarstall*antall_MV_elem)]) {
+					if (menyvalg[i][7+(aarstall*antall_MV_elem)][0] || menyvalg[i][7+(aarstall*antall_MV_elem)][0]==0) {
+						document.getElementById("finalBalanceSum1").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][0]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					}
+					if (menyvalg[i][7+(aarstall*antall_MV_elem)][1] || menyvalg[i][7+(aarstall*antall_MV_elem)][1]==0) {
+						document.getElementById("finalBalanceSum2").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					}
+					if (menyvalg[i][7+(aarstall*antall_MV_elem)][2] || menyvalg[i][7+(aarstall*antall_MV_elem)][2]==0) {
+						document.getElementById("finalBalanceSum3").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					}
 				} else {
-					document.getElementById("finalBalanceSum").innerText = "";
+					document.getElementById("finalBalanceSum1").innerText = "";
+					document.getElementById("finalBalanceSum2").innerText = "";
+					document.getElementById("finalBalanceSum3").innerText = "";
 				}
 				break;
 			}
