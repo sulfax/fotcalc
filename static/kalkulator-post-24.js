@@ -482,12 +482,18 @@ function regnUtResidalKlubb(aarstall) {
 				if (menyvalg[i][7+(aarstall*antall_MV_elem)]) {
 					if (menyvalg[i][7+(aarstall*antall_MV_elem)][0] || menyvalg[i][7+(aarstall*antall_MV_elem)][0]==0) {
 						document.getElementById("finalBalanceSum1").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][0]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					} else {
+						document.getElementById("finalBalanceSum1").innerText = "";
 					}
 					if (menyvalg[i][7+(aarstall*antall_MV_elem)][1] || menyvalg[i][7+(aarstall*antall_MV_elem)][1]==0) {
 						document.getElementById("finalBalanceSum2").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					} else {
+						document.getElementById("finalBalanceSum2").innerText = "";
 					}
 					if (menyvalg[i][7+(aarstall*antall_MV_elem)][2] || menyvalg[i][7+(aarstall*antall_MV_elem)][2]==0) {
 						document.getElementById("finalBalanceSum3").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					} else {
+						document.getElementById("finalBalanceSum3").innerText = "";
 					}
 				} else {
 					document.getElementById("finalBalanceSum1").innerText = "";

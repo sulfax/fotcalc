@@ -431,12 +431,18 @@ function regnUtResidalKlubb(aarstall) {
 				if (menyvalg[i][7+(aarstall*antall_MV_elem)] && [4,5,6].includes(menyvalg[i][7+(aarstall*antall_MV_elem)].length)) {
 					if (menyvalg[i][7+(aarstall*antall_MV_elem)][3] || menyvalg[i][7+(aarstall*antall_MV_elem)][3]==0) {
 						document.getElementById("finalBalanceSum1").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][3]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					} else {
+						document.getElementById("finalBalanceSum1").innerText = "";
 					}
 					if (menyvalg[i][7+(aarstall*antall_MV_elem)][4] || menyvalg[i][7+(aarstall*antall_MV_elem)][4]==0) {
 						document.getElementById("finalBalanceSum2").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][4]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					} else {
+						document.getElementById("finalBalanceSum2").innerText = "";
 					}
 					if (menyvalg[i][7+(aarstall*antall_MV_elem)][5] || menyvalg[i][7+(aarstall*antall_MV_elem)][5]==0) {
 						document.getElementById("finalBalanceSum3").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][5]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+					} else {
+						document.getElementById("finalBalanceSum3").innerText = "";
 					}
 				} else {
 					document.getElementById("finalBalanceSum1").innerText = "";
