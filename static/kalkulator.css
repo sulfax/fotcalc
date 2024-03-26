@@ -211,7 +211,7 @@ tbody {
 .table .resultat_celle {
     text-align: center;
 }
-#total_inntjening, #residual, #finalBalanceSum {
+#total_inntjening, #residual, #finalBalanceSum1, #finalBalanceSum2, #finalBalanceSum3 {
     border-left: 0px !important;
     border-right: 0px !important;
 }
@@ -482,7 +482,7 @@ td .placeholder::placeholder {
 .Inntjening_pr_turnering, .Inntjening {
     font-weight: bold;
 }
-#finalBalanceSum {
+#finalBalanceSum, #finalBalanceSum1, #finalBalanceSum2, #finalBalanceSum3 {
 	font-weight: 400;
 }
 .Inntjening {
