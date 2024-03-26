@@ -480,6 +480,7 @@ const sprak_id_kalkulator = [
   'title_premiepenger',
   'overskrift_premiepenger',
   'beskrivelse_premiepenger',
+	'beskrivelse_premiepenger_post',
   'progresjon',
   'hjemlig_seriemester', 
   'spilt_preliminary', 
