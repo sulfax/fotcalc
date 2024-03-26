@@ -263,27 +263,30 @@ function oppdater_ved_refresh() {
       let kolonne1_lik5 = (ranking_array[p][9] == ranking_array[p-1][9] || (ranking_array[p][9] == "0.0" && ranking_array[p-1][9] == "0.000") || (ranking_array[p][9] == "0.000" && ranking_array[p-1][9] == "0.0"))
       let na_lik = ((ranking_array[p][3] == ranking_array[p-1][3]));
       let na_større = (Math.max(ranking_array[p][1], ranking_array[p][4]) == ranking_array[p][4]) && (Math.max(ranking_array[p-1][1], ranking_array[p-1][4]) == ranking_array[p-1][4]);
-			// Gjør om alt på linjen under til kode hvis lag med eksakt lik klubb-rangering, men fra ulikt rangerte land skal være ulikt rangert.
-      if (((poeng_lik/* && !na_større*/) || (na_lik && na_større)) && kolonne1_lik1 && kolonne1_lik2 && kolonne1_lik3 && kolonne1_lik4 && kolonne1_lik5) {
-				// Fjern if og else-if setningen her hvis lag med eksakt lik klubb-rangering, men fra ulikt rangerte land skal være ulikt rangert.
-				// Men ta vare på de to nesten like linjene som begynner med "ranking_array[p].splice(".
-				if ((poeng_lik && !na_større) || (na_lik && na_større)) {
-					if(egentligRangeringKlubb.includes(ranking_array[p-1][0])) {
-						egentligRangeringKlubb.push(ranking_array[p][0]);
-						egentligRangering.push(egentligRangering[egentligRangering.length-1]);
-					}
+			// Gjør om " && !na_større" til kommentar hvis lag med eksakt lik klubb-rangering, men fra ulikt rangerte land skal være likt rangert.
+      if (((poeng_lik && !na_større) || (na_lik && na_større)) && kolonne1_lik1 && kolonne1_lik2 && kolonne1_lik3 && kolonne1_lik4 && kolonne1_lik5) {
+				// Fjern if-setningen under, og gjør alt under her om til kode hvis lag med eksakt lik klubb-rangering, men fra ulikt rangerte land skal være likt rangert.
+				if (na_lik) {
 					ranking_array[p].splice(10,1,ranking_array[p-1][10])
 					ranking_array[p].splice(11,1,ranking_array[p-1][11])
 				}
-				else if (ranking_array[p][0] && ranking_array[p-1][0]){
-					if(egentligRangeringKlubb.includes(ranking_array[p-1][0])) {
-						egentligRangeringKlubb.push(ranking_array[p][0]);
-						egentligRangering.push(egentligRangering[egentligRangering.length-1]);
-					} else {
-						egentligRangeringKlubb.push(ranking_array[p][0]);
-						egentligRangering.push(ranking_array[p-1][11]);
-					}
-				}
+				// if ((poeng_lik && !na_større) || (na_lik && na_større)) {
+				// 	if(egentligRangeringKlubb.includes(ranking_array[p-1][0])) {
+				// 		egentligRangeringKlubb.push(ranking_array[p][0]);
+				// 		egentligRangering.push(egentligRangering[egentligRangering.length-1]);
+				// 	}
+				// 	ranking_array[p].splice(10,1,ranking_array[p-1][10])
+				// 	ranking_array[p].splice(11,1,ranking_array[p-1][11])
+				// }
+				// else if (ranking_array[p][0] && ranking_array[p-1][0]){
+				// 	if(egentligRangeringKlubb.includes(ranking_array[p-1][0])) {
+				// 		egentligRangeringKlubb.push(ranking_array[p][0]);
+				// 		egentligRangering.push(egentligRangering[egentligRangering.length-1]);
+				// 	} else {
+				// 		egentligRangeringKlubb.push(ranking_array[p][0]);
+				// 		egentligRangering.push(ranking_array[p-1][11]);
+				// 	}
+				// }
       }
     }
   }
@@ -744,10 +747,10 @@ function byggTabell_test(ranking_array, column, order) {
   }
   let spraak = localStorage.getItem("someVarKey");
   for (i = 0; i < ranking_array.length; i++) {
-		// Fjern if-setningen hvis lag med eksakt lik klubb-rangering, men fra ulikt rangerte land skal være ulikt rangert.
-		if (egentligRangeringKlubb.includes(ranking_array[i][0])) {
-			ranking_array[i][11] = egentligRangering[egentligRangeringKlubb.indexOf(ranking_array[i][0])]
-		}
+		// Gjør om til kode hvis lag med eksakt lik klubb-rangering, men fra ulikt rangerte land skal være likt rangert.
+		// if (egentligRangeringKlubb.includes(ranking_array[i][0])) {
+		// 	ranking_array[i][11] = egentligRangering[egentligRangeringKlubb.indexOf(ranking_array[i][0])]
+		// }
     let gaa = true;
     if (column == "klubb" || column == "poeng" || column == "sesong1" || column == "sesong2" || column == "sesong3" || column == "sesong4" || column == "sesong5") {
       if (ranking_array[i][1] == "" || ranking_array[i][1] == "0.0") {

@@ -60,6 +60,9 @@ var Vunnet_SCUP_2122 = 1000000;
 var UCL_ti_års_kr_2122 = 278000;
 var UEL_ti_års_kr_2122 = 132000;
 var UECL_ti_års_kr_2122 = 44500;
+var UCL_value_pillar = 853000000;
+var UEL_value_pillar = 198000000;
+var UECL_value_pillar = 57000000;
 var UCL_seier_2122 = 2100000;
 var UEL_seier_2122 = 450000;
 var UECL_seier_2122 = 400000;
@@ -139,9 +142,9 @@ const input_summer = [
     [UCL_spilt_utslagsrunde_PO_2122],
     [UEL_spilt_utslagsrunde_PO_2122],
     [UECL_spilt_utslagsrunde_PO_2122],
-		[UCL_fem_års_market_2122],
-    [UEL_fem_års_market_2122],
-    [UECL_fem_års_market_2122],
+		[UCL_value_pillar],
+    [UEL_value_pillar],
+    [UECL_value_pillar],
 ];
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
@@ -151,12 +154,14 @@ var din_klubbs_premi_koef_n = "din klubbs koeffisientpoeng";
 const UCL_inntjening_celler = ["b3_", "b6_", "b9_", "b13_", "b16_", "b21_", "b24_", "b27_", "b30_", "b33_", "i4_", "i7_", "i13_", "i13__"]; /*Ikke i1, i2, i3, i10, i11 og i12 fordi de verdiene hentes fra de "ikke avrundede" listene*/
 const UEL_inntjening_celler = ["uelQ1_", "uelQ2_", "b10_", "b14_", "b22_", "b25_", "b28_", "b31_", "b34_", "i5_", "i8_", "i14_", "i14__"];
 const UECL_inntjening_celler = ["b4_", "b5_", "b7_", "b8_", "b11_", "b12_", "b15_", "b17_", "b23_", "b26_", "b29_", "b32_", "b35_", "i6_", "i9_", "i15_", "i15__"];
-const seriemester_inntjening_celler = ["b1_", "b36_", "b36_hoyre", "b37_", "b37_hoyre"];
+const seriemester_inntjening_celler = ["b1_", "b36_", "b36_hoyre", "b37_", "b37_hoyre", "finalBalanceSum"];
+const kvalikPengeCeller = ["b1_", "uelQ1_", "uelQ2_", "b3_", "b4_", "b5_", "b6_", "b7_", "b8_", "b9_", "b10_", "b11_", "b12_", "b13_", "b14_", "b15_", "b17_"];
 
 const UECL_fjerning_av_summer_ved_deltagelse = ["b1_", "b5_", "b8_", "b12_", "b17_"];
 var UCL_ikke_avrundet = [0,0,0,0]
 var UEL_ikke_avrundet = [0,0,0,0]
 var UECL_ikke_avrundet = [0,0,0,0]
+var ikke_avrundet = [0];
 
 var ja_språk = "Yes";
 var nei_språk = "No";
@@ -187,7 +192,7 @@ oppdater_sessong(aarstall)
 
 
 oppdater_ved_refresh_1()
-function paa_av(clicked_id){
+function paa_av(clicked_id, lagre_endring){
     if (((clicked_id == "b6" && document.getElementById('b1')) || (clicked_id == "b-1" && document.getElementById('b-6'))) || clicked_id == "b13" || ((clicked_id == "CLPO" && document.getElementById('b1')) || (clicked_id == "b-1" && document.getElementById('CL-PO'))) || clicked_id == "b18") {
         if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
             for (i=0;i<menyvalg.length;i++) {
@@ -227,6 +232,7 @@ function paa_av(clicked_id){
         // }
     }
     if (clicked_id == "b20") {
+			document.getElementById("i23").classList.add("andelUECL");
         if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
             for (i=0;i<menyvalg.length;i++) {
                 if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
@@ -416,6 +422,7 @@ function paa_av(clicked_id){
                 UEL_ikke_avrundet[0] = 0;
             }
             if (nummer == -20) {
+								document.getElementById("i23").classList.remove("andelUECL");
                 UECL_ikke_avrundet[0] = 0;
             }
             if (clicked_id == 'b-36') {
@@ -442,10 +449,45 @@ function paa_av(clicked_id){
             summer();
         }
     }
-		forlat_input_felt_4("i13");
-		forlat_input_felt_4("i14");
-		forlat_input_felt_4("i15");
+		forlat_input_felt_4("i13", lagre_endring);
+		forlat_input_felt_4("i14", lagre_endring);
+		forlat_input_felt_4("i15", lagre_endring);
+		regnUtResidalKlubb(aarstall);
 };
+
+function regnUtResidalKlubb(aarstall) {
+	let residal = regnUtResidal(aarstall, "");
+	let okning = tilgjengeligIKvalik[aarstall]/residal;
+	let residalKlubb = 0;
+	for (let i = 0; i < kvalikPengeCeller.length; i++) {
+		let enkeltsum = ((document.getElementById(kvalikPengeCeller[i]).innerText).substr(2, (document.getElementById(kvalikPengeCeller[i]).innerText).length));
+		residalKlubb += parseFloat(enkeltsum.split(' ').join('')) || 0;
+	}
+	let aktuell_sum = okning*residalKlubb-residalKlubb;
+	if (aktuell_sum) {
+		ikke_avrundet[0] = aktuell_sum;
+		document.getElementById("residual").innerText = "€ " + (Math.round(aktuell_sum)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+	} else {
+		ikke_avrundet[0] = 0;
+		document.getElementById("residual").innerText = ""}
+
+	if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb")) {
+		document.getElementById("finalBalanceSum").innerText = "";
+	}
+	else {
+		for (let i = 0; i < menyvalg.length; i++) {
+			if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
+				if (menyvalg[i][7+(aarstall*antall_MV_elem)] && menyvalg[i][7+(aarstall*antall_MV_elem)].length == 1) {
+					document.getElementById("finalBalanceSum").innerText = "€ " + (menyvalg[i][7+(aarstall*antall_MV_elem)][0]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+				} else {
+					document.getElementById("finalBalanceSum").innerText = "";
+				}
+				break;
+			}
+		}
+	}
+	summer();
+}
 
 function flytt_SCUP_sum_hoyre(clicked_id) {
     let UEL_celle_00 = (document.getElementById(UEL_inntjening_celler[0]).innerText)
@@ -455,7 +497,7 @@ function flytt_SCUP_sum_hoyre(clicked_id) {
     let UEL_celle_21 = (document.getElementById('b19_').innerText)
     let UEL_celle_22 = (document.getElementById('i2_').innerText)
     let UEL_celle_23 = (document.getElementById('i11_').innerText)
-		let UEL_celle_24 = (document.getElementById('i17_').innerText)
+		let UEL_celle_24 = (document.getElementById('i25_').innerText)
     let UEL_celle_3 = (document.getElementById(UEL_inntjening_celler[4]).innerText)
     let UEL_celle_4 = (document.getElementById(UEL_inntjening_celler[5]).innerText)
     let UEL_celle_5 = (document.getElementById(UEL_inntjening_celler[6]).innerText)
@@ -484,7 +526,7 @@ function flytt_SCUP_sum_venstre(clicked_id) {
     let UEL_celle_21 = (document.getElementById('b19_').innerText)
     let UEL_celle_22 = (document.getElementById('i2_').innerText)
     let UEL_celle_23 = (document.getElementById('i11_').innerText)
-		let UEL_celle_24 = (document.getElementById('i17_').innerText)
+		let UEL_celle_24 = (document.getElementById('i25_').innerText)
     let UEL_celle_3 = (document.getElementById(UEL_inntjening_celler[2]).innerText)
     let UEL_celle_4 = (document.getElementById(UEL_inntjening_celler[3]).innerText)
     let UEL_celle_5 = (document.getElementById(UEL_inntjening_celler[4]).innerText)
@@ -552,55 +594,122 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
         UECL_antall_deltakere_2122
     ];
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
-		if (nummer_2 > 3) {
-			kombinertEuropeisk(clicked_id, lagre_endring)
-		} else {
-			var input_felt_verdi = document.getElementById(clicked_id).value;
-			document.getElementById(clicked_id + "_").innerText = "";
-			document.getElementById(clicked_id).style.borderColor = "";
-			document.getElementById(clicked_id).style.backgroundColor = "";
-			document.getElementById(clicked_id).style.color = "";
-			document.getElementById(clicked_id).className = "form-control ikke_placeholder";
-			if (document.getElementById(clicked_id).value != "") {
-					if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltakere[nummer_2 - 1] && input_felt_verdi % 1 == 0) {
-							var deltakere_i_turnering = antall_deltakere[nummer_2 - 1];
-							var aktuell_sum = ((deltakere_i_turnering + 1 - input_felt_verdi) * input_summer[nummer_2 - 1][aarstall-3]);
-							document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-							if (nummer_2 == 1) {
-									UCL_ikke_avrundet[1] = aktuell_sum;
-							}
-							if (nummer_2 == 2) {
-									UEL_ikke_avrundet[1] = aktuell_sum;
-							}
-							if (nummer_2 == 3) {
-									UECL_ikke_avrundet[1] = aktuell_sum;
-							}
-							summer();
-							rund_av_enkeltcelle(aktuell_sum, clicked_id);
-							flytt_SCUP_sum_hoyre(clicked_id)
-					}
-					else {
-							if (nummer_2 == 1) {UCL_ikke_avrundet[1] = 0;}
-							if (nummer_2 == 2) {UEL_ikke_avrundet[1] = 0;}
-							if (nummer_2 == 3) {UECL_ikke_avrundet[1] = 0;}
-							utenfor_gyldig_input(clicked_id);
-							summer();
-							flytt_SCUP_sum_venstre(clicked_id)
-					}
-			}
-			else {
-					if (nummer_2 == 1) {UCL_ikke_avrundet[1] = 0;}
-					if (nummer_2 == 2) {UEL_ikke_avrundet[1] = 0;}
-					if (nummer_2 == 3) {UECL_ikke_avrundet[1] = 0;}
-					document.getElementById(clicked_id).style.borderColor = "#ced4da";
-					summer();
-					flytt_SCUP_sum_venstre(clicked_id)
-			}
-			if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
-					lagre_trykking_input_1()
-			}
+		var input_felt_verdi = document.getElementById(clicked_id).value;
+		document.getElementById(clicked_id + "_").innerText = "";
+		document.getElementById(clicked_id).style.borderColor = "";
+		document.getElementById(clicked_id).style.backgroundColor = "";
+		document.getElementById(clicked_id).style.color = "";
+		document.getElementById(clicked_id).className = "form-control ikke_placeholder";
+		if (document.getElementById(clicked_id).value != "") {
+				if (input_felt_verdi >= 1 && input_felt_verdi <= antall_deltakere[nummer_2 - 1] && input_felt_verdi % 1 == 0) {
+						var deltakere_i_turnering = antall_deltakere[nummer_2 - 1];
+						let turnering2 = nummer_2;
+						if (nummer_2 == 3) {turnering2 = 2;}
+						let aktuell_sum = 0;
+						if (erProsentsverdi(document.getElementById("i"+(21+turnering2)).value)) {
+							aktuell_sum = ((deltakere_i_turnering+1 - input_felt_verdi)/666) * input_summer[18+nummer_2][aarstall-3] * (1-(parseFloat(document.getElementById("i"+(21+turnering2)).value)/100 || 1));
+							document.getElementById("i" + (nummer_2) + "_").innerText = "€ " + Math.round(aktuell_sum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+						} else {
+							document.getElementById("i" + (nummer_2) + "_").innerText = "";
+						}
+						if (nummer_2 == 1) {
+								UCL_ikke_avrundet[1] = aktuell_sum || 0;
+						}
+						if (nummer_2 == 2) {
+								UEL_ikke_avrundet[1] = aktuell_sum || 0;
+						}
+						if (nummer_2 == 3) {
+								UECL_ikke_avrundet[1] = aktuell_sum || 0;
+						}
+						summer();
+						// rund_av_enkeltcelle(aktuell_sum, clicked_id);
+						flytt_SCUP_sum_hoyre(clicked_id)
+				}
+				else {
+						if (nummer_2 == 1) {UCL_ikke_avrundet[1] = 0;}
+						if (nummer_2 == 2) {UEL_ikke_avrundet[1] = 0;}
+						if (nummer_2 == 3) {UECL_ikke_avrundet[1] = 0;}
+						utenfor_gyldig_input(clicked_id);
+						summer();
+						flytt_SCUP_sum_venstre(clicked_id)
+				}
+		}
+		else {
+				if (nummer_2 == 1) {UCL_ikke_avrundet[1] = 0;}
+				if (nummer_2 == 2) {UEL_ikke_avrundet[1] = 0;}
+				if (nummer_2 == 3) {UECL_ikke_avrundet[1] = 0;}
+				document.getElementById(clicked_id).style.borderColor = "#ced4da";
+				summer();
+				flytt_SCUP_sum_venstre(clicked_id)
+		}
+		if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
+				lagre_trykking_input_1()
 		}
 };
+
+function kombinertEuropeiskPoeng(clicked_id, lagre_endring) {
+	let input_felt_verdi = document.getElementById(clicked_id).value;
+	let input_felt_verdi2;
+	let kjorGjennom = false;
+	if (document.getElementById(clicked_id).style.backgroundColor == 'red' && (input_felt_verdi == "" || (input_felt_verdi % 1 == 0 && input_felt_verdi <= 36 && input_felt_verdi >= 1))) {
+		kjorGjennom = true;
+	}
+	let nummer = parseInt(clicked_id.substr(1, clicked_id.length));
+	if (nummer <= 18) {
+		input_felt_verdi2 = document.getElementById("i"+(nummer+3)).value;
+	} else {
+		input_felt_verdi2 = document.getElementById("i"+(nummer-3)).value;
+	}
+	if (input_felt_verdi % 1 == 0 && input_felt_verdi <= 36 && input_felt_verdi >= 1) {
+		if ((input_felt_verdi2 % 1 == 0 && input_felt_verdi2 <= 36 && input_felt_verdi2 >= 1) || input_felt_verdi2 == "") {
+			if ((document.getElementById("i17").value == "" && document.getElementById("i18").value == "" && document.getElementById("i20").value == "" && document.getElementById("i21").value == "") || (document.getElementById("i16").value == "" && document.getElementById("i18").value == "" && document.getElementById("i19").value == "" && document.getElementById("i21").value == "") || (document.getElementById("i16").value == "" && document.getElementById("i17").value == "" && document.getElementById("i19").value == "" && document.getElementById("i20").value == "")) {
+				document.getElementById("rangeringsPoeng").innerHTML = ((parseInt(input_felt_verdi)||36)+(parseInt(input_felt_verdi2)||36))/2;
+			}
+		}
+		document.getElementById(clicked_id).style.borderColor = "";
+		document.getElementById(clicked_id).style.backgroundColor = "";
+		document.getElementById(clicked_id).style.color = "";
+	}
+	else {
+		if (input_felt_verdi != "") {
+			utenfor_gyldig_input(clicked_id);
+			document.getElementById("rangeringsPoeng").innerHTML = "?";
+		} else {
+			if (input_felt_verdi == "" && input_felt_verdi2 == "") {
+				if ((nummer == 16 || nummer == 19) && (document.getElementById("i17").value == "" && document.getElementById("i18").value == "" && document.getElementById("i20").value == "" && document.getElementById("i21").value == "")) {
+					document.getElementById("rangeringsPoeng").innerHTML = "?";
+				}
+				else if ((nummer == 17 || nummer == 20) && (document.getElementById("i16").value == "" && document.getElementById("i18").value == "" && document.getElementById("i19").value == "" && document.getElementById("i21").value == "")) {
+					document.getElementById("rangeringsPoeng").innerHTML = "?";
+				}
+				else if ((nummer == 18 || nummer == 21) && (document.getElementById("i16").value == "" && document.getElementById("i17").value == "" && document.getElementById("i19").value == "" && document.getElementById("i20").value == "")) {
+					document.getElementById("rangeringsPoeng").innerHTML = "?";
+				}
+			}
+			document.getElementById(clicked_id).style.borderColor = "#ced4da";
+			document.getElementById(clicked_id).style.color = "";
+			document.getElementById(clicked_id).style.backgroundColor = "";
+			document.getElementById(clicked_id).className = "form-control";
+			if (input_felt_verdi2 % 1 == 0 && input_felt_verdi2 <= 36 && input_felt_verdi2 >= 1) {
+				if ((input_felt_verdi % 1 == 0 && input_felt_verdi <= 36 && input_felt_verdi >= 1) || input_felt_verdi == "") {
+					document.getElementById("rangeringsPoeng").innerHTML = ((parseInt(input_felt_verdi)||36)+(parseInt(input_felt_verdi2)||36))/2;
+				}
+			}
+		}
+	}
+	if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
+		if (kjorGjennom) {
+			kombinertEuropeiskPoeng("i16");
+			kombinertEuropeiskPoeng("i17");
+			kombinertEuropeiskPoeng("i18");
+			kombinertEuropeiskPoeng("i19");
+			kombinertEuropeiskPoeng("i20");
+			kombinertEuropeiskPoeng("i21");
+		}
+		lagre_trykking_input_1()
+	}
+}
+
 function kombinertEuropeisk(clicked_id, lagre_endring) {
 	const antall_deltakere = [
 			UCL_antall_deltakere_2122,
@@ -608,75 +717,88 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 			UECL_antall_deltakere_2122
 	];
 	var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
-	let turnering = nummer_2 - 16;
-	if (turnering > 2) {turnering-=3}
-	var input_felt_verdi = document.getElementById(clicked_id).value;
-	let input_felt_verdi2;
-	if (nummer_2 <= 18) {
-		input_felt_verdi2 = document.getElementById("i" + (nummer_2+3)).value;
-	} else {
-		input_felt_verdi2 = document.getElementById("i" + (nummer_2-3)).value;
-	}
-	let input_felt_verdiOK = input_felt_verdi;
-	let input_felt_verdi2OK = input_felt_verdi2;
-	if (!(input_felt_verdi >= 1 && input_felt_verdi <= antall_deltakere[turnering] && input_felt_verdi % 1 == 0)) {
-		input_felt_verdiOK = 36;
-	}
-	if (!(input_felt_verdi2 >= 1 && input_felt_verdi2 <= antall_deltakere[turnering] && input_felt_verdi2 % 1 == 0)) {
-		input_felt_verdi2OK = 36;
-	}
-	document.getElementById("i" + (16+turnering) + "_").innerText = "";
-	document.getElementById(clicked_id).style.borderColor = "";
-	document.getElementById(clicked_id).style.backgroundColor = "";
-	document.getElementById(clicked_id).style.color = "";
-	document.getElementById(clicked_id).className = "form-control ikke_placeholder";
-	if (input_felt_verdi != "" || input_felt_verdi2 != "") {
-			if (input_felt_verdi == "") {
-				document.getElementById(clicked_id).style.borderColor = "#ced4da";
+	let input_felt_verdi = document.getElementById(clicked_id).value;
+	if (nummer_2 != 22 && nummer_2 != 23) {
+		document.getElementById(clicked_id+"_").innerText = "";
+		if (input_felt_verdi % 1 == 0 && input_felt_verdi <= 36 && input_felt_verdi >= 1) {
+			let aktuell_sum;
+			if (nummer_2 == 24) {
+				if (erProsentsverdi(document.getElementById("i22").value)) {
+					aktuell_sum = ((37-input_felt_verdi)/666)*input_summer[nummer_2-5][0]*(parseFloat(document.getElementById("i22").value)/100);
+				} else {
+					aktuell_sum = 0
+				}
+				UCL_ikke_avrundet[3] = aktuell_sum;
+			} else {
+				if (erProsentsverdi(document.getElementById("i23").value)) {
+					aktuell_sum = ((37-input_felt_verdi)/666)*input_summer[nummer_2-5][0]*(parseFloat(document.getElementById("i23").value)/100);
+				} else {
+					aktuell_sum = 0;
+				}
+				if (nummer_2 == 25) {UEL_ikke_avrundet[3] = aktuell_sum;}
+				else {UECL_ikke_avrundet[3] = aktuell_sum;}
 			}
-			if ((input_felt_verdi >= 1 && input_felt_verdi <= antall_deltakere[turnering] && input_felt_verdi % 1 == 0) || (input_felt_verdi2 >= 1 && input_felt_verdi2 <= antall_deltakere[turnering] && input_felt_verdi2 % 1 == 0)) {
-					if (!(input_felt_verdi >= 1 && input_felt_verdi <= antall_deltakere[turnering] && input_felt_verdi % 1 == 0) && input_felt_verdi) {
-						utenfor_gyldig_input(clicked_id);
-					}
-					var deltakere_i_turnering = antall_deltakere[turnering];
-					var aktuell_sum = (((deltakere_i_turnering+1-(parseInt(input_felt_verdiOK))) + (deltakere_i_turnering+1-((parseInt(input_felt_verdi2OK)))))/2) * input_summer[19+turnering][aarstall-3];
-					document.getElementById("i" + (16+turnering) + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-					if (turnering+1 == 1) {
-							UCL_ikke_avrundet[3] = aktuell_sum;
-					}
-					if (turnering+1 == 2) {
-							UEL_ikke_avrundet[3] = aktuell_sum;
-					}
-					if (turnering+1 == 3) {
-							UECL_ikke_avrundet[3] = aktuell_sum;
-					}
-					summer();
-					rund_av_enkeltcelle(aktuell_sum, "i" + (16+turnering));
-					flytt_SCUP_sum_hoyre("i" + (16+turnering))
+			if (aktuell_sum) {
+				document.getElementById(clicked_id+"_").innerText = "€ " + Math.round(aktuell_sum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");;
 			}
-			else {
-					if (turnering+1 == 1) {UCL_ikke_avrundet[3] = 0;}
-					if (turnering+1 == 2) {UEL_ikke_avrundet[3] = 0;}
-					if (turnering+1 == 3) {UECL_ikke_avrundet[3] = 0;}
-					if (input_felt_verdi != "") {
-						utenfor_gyldig_input(clicked_id);
-					}
-					summer();
-					flytt_SCUP_sum_venstre(clicked_id)
-			}
-	}
-	else {
-			if (turnering+1 == 1) {UCL_ikke_avrundet[3] = 0;}
-			if (turnering+1 == 2) {UEL_ikke_avrundet[3] = 0;}
-			if (turnering+1 == 3) {UECL_ikke_avrundet[3] = 0;}
+			document.getElementById(clicked_id).style.borderColor = "";
+			document.getElementById(clicked_id).style.backgroundColor = "";
+			document.getElementById(clicked_id).style.color = "";
+		} else if (input_felt_verdi != "") {
+			utenfor_gyldig_input(clicked_id);
+		} else {
 			document.getElementById(clicked_id).style.borderColor = "#ced4da";
-			summer();
-			flytt_SCUP_sum_venstre(clicked_id)
+			document.getElementById(clicked_id).style.color = "";
+			document.getElementById(clicked_id).style.backgroundColor = "";
+			document.getElementById(clicked_id).className = "form-control";
+		}
+	} else {
+		if (!erProsentsverdi(input_felt_verdi) && input_felt_verdi != "") {
+			utenfor_gyldig_input(clicked_id);
+		} else if (input_felt_verdi == "") {
+			document.getElementById(clicked_id).style.borderColor = "#ced4da";
+			document.getElementById(clicked_id).style.color = "";
+			document.getElementById(clicked_id).style.backgroundColor = "";
+			document.getElementById(clicked_id).className = "form-control";
+		} else {
+			document.getElementById(clicked_id).style.borderColor = "";
+			document.getElementById(clicked_id).style.backgroundColor = "";
+			document.getElementById(clicked_id).style.color = "";
+		}
+    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
+			lagre_trykking_andel();
+			if (nummer_2 == 22) {
+				forlat_input_felt_1("i1", lagre_endring);
+			} else {
+				forlat_input_felt_1("i2", lagre_endring);
+				forlat_input_felt_1("i3", lagre_endring);
+			}
+		}
+		if (nummer_2 == 22) {
+			kombinertEuropeisk("i24", lagre_endring);
+		} else {
+			kombinertEuropeisk("i25", lagre_endring);
+			kombinertEuropeisk("i26", lagre_endring);
+		}
 	}
 	if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
-			lagre_trykking_input_1();
+		lagre_trykking_input_1()
 	}
+	summer();
 };
+
+function erProsentsverdi(str) {
+  // Først sjekker vi om strengen passerer regulært uttrykk for en gyldig prosentverdi
+  const prosentRegex = /^(\d{1,2}(\.\d+)?|100(\.0+)?)%$/;
+
+  if (!prosentRegex.test(str)) {
+    return false; // Strengen passerer ikke regulært uttrykk for en gyldig prosentverdi
+  }
+  // Deretter konverterer vi strengen til et tall og sjekker om det er innenfor det gyldige området
+  const prosentverdi = parseInt(str, 10);
+  return prosentverdi >= 0 && prosentverdi <= 100;
+}
+
 function forlat_input_felt_2(clicked_id, lagre_endring) {
     var nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     var nummer_2 = parseInt(clicked_id.substr(1, clicked_id.length));
@@ -800,12 +922,16 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
             var aktuell_sum = (((37-plassering)/666)*totale_ufordelte_ressurser);
             let antall_seiere_er_desimal = (document.getElementById("i" + (nummer_2 - 6)).value % 1 == 0) || 0;
             if (antall_seiere_er_desimal && aktuell_sum >= 0) {
-                document.getElementById(clicked_id + "_").innerText = "€ " + aktuell_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+								if (aktuell_sum) {
+									document.getElementById(clicked_id + "_").innerText = "€ " + (Math.round(aktuell_sum)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+								} else {
+									document.getElementById(clicked_id + "_").innerText = "";
+								}
                 if (nummer_2 == 10) {UCL_ikke_avrundet[2] = aktuell_sum;}
                 if (nummer_2 == 11) {UEL_ikke_avrundet[2] = aktuell_sum;}
                 if (nummer_2 == 12) {UECL_ikke_avrundet[2] = aktuell_sum;}
                 summer();
-                rund_av_enkeltcelle(aktuell_sum, clicked_id);
+                // rund_av_enkeltcelle(aktuell_sum, clicked_id);
                 flytt_SCUP_sum_hoyre(clicked_id)
             }
         }
@@ -895,7 +1021,7 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
     if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
         lagre_trykking_input_4()
     }
-		gjennomfør_1_gang_per_knapp("i" + (nummer_2-6));
+		gjennomfør_1_gang_per_knapp("i" + (nummer_2-6), lagre_endring);
 };
 function utenfor_gyldig_input(clicked_id) {
     document.getElementById(clicked_id).style.backgroundColor = 'red';
@@ -908,16 +1034,16 @@ function utenfor_gyldig_input(clicked_id) {
 };
 
 
-function gjennomfør_1_gang_per_knapp(clicked_id) {
-    forlat_input_felt_2(clicked_id);
+function gjennomfør_1_gang_per_knapp(clicked_id, lagre_endring) {
+    forlat_input_felt_2(clicked_id, lagre_endring);
     var id_nummer = parseInt(clicked_id.substr(1, clicked_id.length));
     if (id_nummer <= 6) {
-        forlat_input_felt_2("i" + (id_nummer + 3));
-        forlat_input_felt_3("i" + (id_nummer + 6));
+        forlat_input_felt_2("i" + (id_nummer + 3), lagre_endring);
+        forlat_input_felt_3("i" + (id_nummer + 6), lagre_endring);
     }
     if (id_nummer >= 7) {
-        forlat_input_felt_2("i" + (id_nummer - 3));
-        forlat_input_felt_3("i" + (id_nummer + 3));
+        forlat_input_felt_2("i" + (id_nummer - 3), lagre_endring);
+        forlat_input_felt_3("i" + (id_nummer + 3), lagre_endring);
     }
 }
 
@@ -949,7 +1075,7 @@ function summer() {
     var UCL_faktisk_total_sum = parseFloat(UCL_total_sum) + UCL_ikke_avrundet[0] + UCL_ikke_avrundet[1] + UCL_ikke_avrundet[2] + UCL_ikke_avrundet[3];
     var UEL_faktisk_total_sum = parseFloat(UEL_total_sum) + UEL_ikke_avrundet[0] + UEL_ikke_avrundet[1] + UEL_ikke_avrundet[2] + UEL_ikke_avrundet[3];
     var UECL_faktisk_total_sum = parseFloat(UECL_total_sum) + UECL_ikke_avrundet[0] + UECL_ikke_avrundet[1] + UECL_ikke_avrundet[2] + UECL_ikke_avrundet[3];
-    var total_sum = (UCL_faktisk_total_sum + UEL_faktisk_total_sum + UECL_faktisk_total_sum + seriemester_total_sum);
+    var total_sum = (UCL_faktisk_total_sum + UEL_faktisk_total_sum + UECL_faktisk_total_sum + seriemester_total_sum + ikke_avrundet[0]);
 
     var avrundet_UCL_total = Number((UCL_faktisk_total_sum).toFixed(0));
     document.getElementById("UCL_inntjening").innerHTML = "<nobr>€ " + (avrundet_UCL_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + '</nobr>';
@@ -1026,6 +1152,11 @@ function lagre_trykking_input_1() {
 			var verdi = document.getElementById('i' + (f + 1)).value;
 			lagrede_verdier_input_1.push(verdi);
 		}
+		for (var f=23;f<26;f++) {
+			lagrede_verdier_input_id_1.push('i' + (f + 1));
+			var verdi = document.getElementById('i' + (f + 1)).value;
+			lagrede_verdier_input_1.push(verdi);
+		}
     localStorage.setItem('Hallo_input_id_1_post_24', lagrede_verdier_input_id_1);
     localStorage.setItem('Hallo_input_verdi_1_post_24', lagrede_verdier_input_1);
 };
@@ -1063,16 +1194,25 @@ function lagre_trykking_input_4() {
     localStorage.setItem('Hallo_input_verdi_4_post_24', lagrede_verdier_input_4);
 };
 
+function lagre_trykking_andel() {
+	var lagrede_verdier_input_5 = [];
+	for (let z=22;z<=23;z++) {
+		var verdi = document.getElementById('i' + z).value;
+		lagrede_verdier_input_5.push(verdi);
+	}
+	localStorage.setItem('Hallo_input_verdi_5_post_24', lagrede_verdier_input_5);
+};
+
 function slett(slett_lagring) {
     for (var c=0;c<37;c++) {
         if (document.getElementById('b-' + (c + 1))) {
-            paa_av('b-' + (c + 1));
+            paa_av('b-' + (c + 1), slett_lagring);
         }
     }
     const fjerne_knapper = ['CL-PO', 'uel-Q1', 'uel-Q2'];
     for (let i=0;i<fjerne_knapper.length;i++) {
         if (document.getElementById(fjerne_knapper[i])) {
-            paa_av(fjerne_knapper[i]);
+            paa_av(fjerne_knapper[i], slett_lagring);
         }
     }
     for (var ce=0;ce<3;ce++) {
@@ -1081,7 +1221,15 @@ function slett(slett_lagring) {
     }
 		for (var ce=15;ce<21;ce++) {
 			document.getElementById('i' + (ce + 1)).value = "";
-			forlat_input_felt_1('i' + (ce + 1), slett_lagring);
+			kombinertEuropeiskPoeng('i' + (ce + 1), slett_lagring);
+		}
+		for (var ce=21;ce<23;ce++) {
+			document.getElementById('i' + (ce + 1)).value = "";
+			kombinertEuropeisk('i' + (ce + 1), slett_lagring);
+		}
+		for (var ce=23;ce<26;ce++) {
+			document.getElementById('i' + (ce + 1)).value = "";
+			kombinertEuropeisk('i' + (ce + 1), slett_lagring);
 		}
     for (var ce=3;ce<9;ce++) {
         document.getElementById('i' + (ce + 1)).value = "";
@@ -1105,7 +1253,6 @@ function slett(slett_lagring) {
         localStorage.setItem('Hallo_input_verdi_3_post_24', "");
         localStorage.setItem('Hallo_input_id_4_post_24', "");
         localStorage.setItem('Hallo_input_verdi_4_post_24', "");
-				localStorage.setItem('Hallo_input_id_5_post_24', "");
         localStorage.setItem('Hallo_input_verdi_5_post_24', "");
     }
 };
@@ -1175,7 +1322,7 @@ function oppdater_ved_refresh_1() {
         document.getElementById("dropDownMeny").innerHTML = Klubbnavn + "<div class='opp_ned_pil'>&#10094</div>";
     }
     if (Klubbnavn == eksperimentell_profil_e || Klubbnavn == eksperimentell_profil_n || Klubbnavn == null || Klubbnavn == "Choose club" || Klubbnavn == "Velg klubb") {
-        const motak = localStorage.getItem('Hallo_post_24');
+				const motak = localStorage.getItem('Hallo_post_24');
         const motak_2 = localStorage.getItem('Hallo_input_id_1_post_24');
         const motak_3 = localStorage.getItem('Hallo_input_verdi_1_post_24');
         const motak_4 = localStorage.getItem('Hallo_input_id_2_post_24');
@@ -1184,7 +1331,12 @@ function oppdater_ved_refresh_1() {
         const motak_7 = localStorage.getItem('Hallo_input_verdi_3_post_24');
         const motak_8 = localStorage.getItem('Hallo_input_id_4_post_24');
         const motak_9 = localStorage.getItem('Hallo_input_verdi_4_post_24');
-				
+				const motak_10 = localStorage.getItem('Hallo_input_verdi_5_post_24') || ",";
+				let input_verdi_10 = motak_10.split(',') || ["",""];
+				if (input_verdi_10.length < 2) {input_verdi_10 = ["",""]}
+				for (let i = 22; i <= 23; i++) {
+					document.getElementById("i"+i).value = input_verdi_10[i-22];
+				}
         oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,motak_7,motak_8,motak_9);
     }
     else {
@@ -1199,11 +1351,17 @@ function oppdater_ved_refresh_1() {
                 }
                 let turnering = 'ingen';
                 if (motak) {
-                    if (motak.includes("b18")) {turnering = 0;}
-                    else if (motak.includes("b19")) {turnering = 1;}
-                    else if (motak.includes("b20")) {turnering = 2;}
+                    if (motak.includes("b18")) {
+											document.getElementById("i22").value = andel_europeisk[aarstall-3][0]+"%";
+											turnering = 0;}
+                    else if (motak.includes("b19")) {
+											document.getElementById("i23").value = andel_europeisk[aarstall-3][1]+"%";
+											turnering = 1;}
+                    else if (motak.includes("b20")) {
+											document.getElementById("i23").value = andel_europeisk[aarstall-3][1]+"%";
+											turnering = 2;}
                 }
-                const motak_2 = "i1,i2,i3,i16,i17,i18,i19,i20,i21";
+                const motak_2 = "i1,i2,i3,i16,i17,i18,i19,i20,i21,i24,i25,i26";
                 const motak_3 = menyvalg[i][p+1];
                 const motak_4 = "i4,i5,i6,i7,i8,i9";
                 const motak_5 = menyvalg[i][p+2];
@@ -1236,14 +1394,18 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
             var input_id_1 = motak_2.split(',');
             var input_verdi_1 = motak_3.split(',');
             if (input_id_1 != 0) {
-                for (var r=0;r<input_id_1.length;r++) {
+                for (var r=0;r<3;r++) {
                     document.getElementById('i' + (r + 1)).value = input_verdi_1[r];
                     forlat_input_felt_1(input_id_1[r]);
                 }
-								for (var r=0;r<input_id_1.length;r++) {
+								for (var r=0;r<6;r++) {
                     document.getElementById('i' + (r+15+1)).value = input_verdi_1[r+3];
-                    forlat_input_felt_1(input_id_1[r+3]);
+                    kombinertEuropeiskPoeng(input_id_1[r+3]);
                 }
+								for (var r=0;r<3;r++) {
+									document.getElementById('i' + (r+23+1)).value = input_verdi_1[r+9];
+									kombinertEuropeisk(input_id_1[r+9]);
+							}
             }
         }
     }
@@ -1283,16 +1445,10 @@ function oppdater_ved_refresh_2(motak,motak_2,motak_3,motak_4,motak_5,motak_6,mo
                 }
                 finally {
 									try {
-										var input_id_5 = motak_10.split(',');
-										var input_verdi_5 = motak_11.split(',');
-										if (input_id_5 != 0) {
-												for (var r=0;r<input_id_5.length;r++) {
-														document.getElementById('i' + (r + 16)).value = input_verdi_5[r];
-														forlat_input_felt_1(input_id_5[r]);
-												}
+										for (let i=22;i<=23;i++) {
+											kombinertEuropeisk("i"+i);
 										}
-									}
-									finally {
+									} finally {
 										return;
 									}
                 }
@@ -1332,8 +1488,11 @@ function oppdater_sessong(aarstall) {
       if (aarstall == 1) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
       }
-      if (aarstall >= 2) {
+      if (aarstall == 2) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf');
+      }
+			if (aarstall >= 3) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/028b-1a7880138a24-7a993e2e33d1-1000/20240322_circular_2024_13_en.pdf');
       }
     if (document.getElementById('b-10')) {
         paa_av('b-10')

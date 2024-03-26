@@ -59,8 +59,11 @@ function language_standard(clicked_id) {
       if (aarstall == 1) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
       }
-      if (aarstall >= 2) {
+      if (aarstall == 2) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf');
+      }
+			if (aarstall >= 3) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/028b-1a7880138a24-7a993e2e33d1-1000/20240322_circular_2024_13_en.pdf');
       }
     }
     ja_språk = ja_nei[0][0];
@@ -116,6 +119,14 @@ function language_standard(clicked_id) {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 13)[0].placeholder = 'Plassering';
         }
+				if (aarstall>=3) {
+					for (x=0;x<6;x++) {
+						document.getElementsByName(x + 16)[0].placeholder = 'Rangering';
+					}
+					for (x=0;x<3;x++) {
+						document.getElementsByName(x + 24)[0].placeholder = 'Rangering';
+					}
+				}
       }
     }
     finally {
@@ -176,8 +187,11 @@ function language_standard(clicked_id) {
       if (aarstall == 1) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0277-158b0bea495a-ba6c18158cd3-1000/20220704_circular_2022_47_en.pdf');
       }
-      if (aarstall >= 2) {
+      if (aarstall == 2) {
         document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf');
+      }
+			if (aarstall >= 3) {
+        document.getElementById('uefa_distribution_link').setAttribute('href', 'https://editorial.uefa.com/resources/028b-1a7880138a24-7a993e2e33d1-1000/20240322_circular_2024_13_en.pdf');
       }
     }
     ja_språk = ja_nei[1][0];
@@ -225,7 +239,7 @@ function language_standard(clicked_id) {
       }
       else if (overskrift_finnes) {
         for (x=0;x<3;x++) {
-          document.getElementsByName(x + 1)[0].placeholder = 'Ranking';
+          document.getElementsByName(x + 1)[0].placeholder = 'Rank';
         }
         for (x=0;x<6;x++) {
           document.getElementsByName(x + 4)[0].placeholder = 'Amount';
@@ -233,6 +247,14 @@ function language_standard(clicked_id) {
         for (x=0;x<3;x++) {
           document.getElementsByName(x + 13)[0].placeholder = 'Placement';
         }
+				if (aarstall>=3) {
+					for (x=0;x<6;x++) {
+						document.getElementsByName(x + 16)[0].placeholder = 'Rank';
+					}
+					for (x=0;x<3;x++) {
+						document.getElementsByName(x + 24)[0].placeholder = 'Rank';
+					}
+				}
       }
     }
     finally {
@@ -444,7 +466,9 @@ const sprak_id_ti_års = [
   'title_ti_års',
   'overskrift_ti_års',
   'beskrivelse_ti_års',
+	'beskrivelse_ti_års_post',
   'decisive_oversett',
+	'decisive_oversett_post',
   'legend',
   'POENG_vs_NA',
   'Histiriske_poeng_legend',
@@ -469,6 +493,7 @@ const sprak_id_kalkulator = [
   'spilt_q3_lp',
   'spilt_playoff',
   'røk_ut_playoff',
+	'ufordelteKvalik',
   'gruppespill',
   'ti_års_koeff',
 	'market_pool_post',
@@ -486,15 +511,18 @@ const sprak_id_kalkulator = [
   'spilt_scup',
   'vunnet_scup',
   'inntjening_turnering',
+	'finalBalance',
+	'finalBalance_post24',
   'inntjening',
-	'covid_id',
   'marketPool_id2',
   'koeff_reklame',
   'oversikt_reklame',
   'ligaspill',
+	'andel',
   'tabellplassering_liga',
   'ti_års_koeff_ligaspill',
 	'fem_års_koeff_ligaspill',
+	'europeanPartRank',
   'uavgjort_hele_liga',
   'seiere_liga',
   'uavgjort_liga'
@@ -668,6 +696,15 @@ function language_koeffisient(clicked_id) {
       fargelegg_etter_reset()
       for (x=0;x<forside_antall_oversett;x++) {
         try {
+					if (aarstall <= 2) {
+						if (norsk_forside[x] == "Ligaspill") {
+							norsk_forside[x] = "Gruppespill";
+						}
+					} else if (aarstall >= 3) {
+						if (norsk_forside[x] == "Gruppespill") {
+							norsk_forside[x] = "Ligaspill";
+						}
+					}
           document.getElementById(sprak_id_forside[x]).innerHTML = norsk_forside[x];
         }
         catch {
@@ -688,6 +725,15 @@ function language_koeffisient(clicked_id) {
       fargelegg_etter_reset()
       for (x=0;x<forside_antall_oversett;x++) {
         try {
+					if (aarstall <= 2) {
+						if (english_forside[x] == "League phase") {
+							english_forside[x] = "Group stage";
+						}
+					} else if (aarstall >= 3) {
+						if (english_forside[x] == "Group stage") {
+							english_forside[x] = "League phase";
+						}
+					}
           document.getElementById(sprak_id_forside[x]).innerHTML = english_forside[x];
         }
         catch {
@@ -1033,11 +1079,9 @@ function filterFunction() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
-
   if (filter != input_tekst) {
     input_tekst = filter
     filter = convertString(filter);
-
     div = document.getElementById("dropdown_elementer");
     a = div.getElementsByTagName("button");
     for (i = 0; i < a.length; i++) {

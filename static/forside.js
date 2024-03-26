@@ -8,38 +8,38 @@
 
 let sortering_land = [];
 
-const penger = [
-  [260000,                        260000],
-  [100000,                        100000],
-  [5000000,                       5000000],
-  [150000,                        150000],
-  [350000,                        350000],
-  [550000,                        550000],
-  [750000,                        750000],
-  [[15640000, 3630000, 2940000], [18600000, 3630000, 2940000]],
-  [[2800000, 630000, 500000],    [2100000, 630000, 500000]],
-  [[930000, 210000, 166000],     [700000, 210000, 166000]],
-  [[1137000, 132000, 44500],     [278000, 132000, 44500]],
-  [[[,,500000], [1100000, 1050000, 300000], [650000, 625000]], [[1000000,1000000],[650000,500000],[550000,300000]]],
-  [9600000,   11000000],
-  [1200000,   1200000],
-  [600000,    600000],
-  [10600000,  12500000],
-  [1800000,   1800000],
-  [1000000,   1000000],
-  [12500000,  15000000],
-  [2800000,   2800000],
-  [2000000,   2000000],
-  [15500000,  18500000],
-  [4600000,   4600000],
-  [3000000,   3000000],
-  [4500000,   6500000],
-  [4000000,   4000000],
-  [2000000,   2000000],
-  [3500000,   4000000],
-  [1000000,   1000000],
-	[[],                           [1112000, 312000, 212000]],
-]
+// const penger = [
+//   [260000,                        260000],
+//   [100000,                        100000],
+//   [5000000,                       5000000],
+//   [150000,                        150000],
+//   [350000,                        350000],
+//   [550000,                        550000],
+//   [750000,                        750000],
+//   [[15640000, 3630000, 2940000], [18600000, 3630000, 2940000]],
+//   [[2800000, 630000, 500000],    [2100000, 630000, 500000]],
+//   [[930000, 210000, 166000],     [700000, 210000, 166000]],
+//   [[1137000, 132000, 44500],     [278000, 132000, 44500]],
+//   [[[,,500000], [1100000, 1050000, 300000], [650000, 625000]], [[1000000,1000000],[650000,500000],[550000,300000]]],
+//   [9600000,   11000000],
+//   [1200000,   1200000],
+//   [600000,    600000],
+//   [10600000,  12500000],
+//   [1800000,   1800000],
+//   [1000000,   1000000],
+//   [12500000,  15000000],
+//   [2800000,   2800000],
+//   [2000000,   2000000],
+//   [15500000,  18500000],
+//   [4600000,   4600000],
+//   [3000000,   3000000],
+//   [4500000,   6500000],
+//   [4000000,   4000000],
+//   [2000000,   2000000],
+//   [3500000,   4000000],
+//   [1000000,   1000000],
+// 	[[],                           [1112000, 312000, 212000]],
+// ]
 
 let antall_MV_elem = 6;
 let filter_land = []
@@ -85,6 +85,21 @@ function endre_sessong(clicked_id) {
   oppdater_sessong(aarstall)
   sorter_etter_sesong()
   generer_lands_knapper()
+	if (aarstall >= 3) {
+		if (document.getElementById("b18").innerText == "Group stage") {
+			document.getElementById("b18").innerText = "League phase";
+		}
+		else if (document.getElementById("b18").innerText == "Gruppespill") {
+			document.getElementById("b18").innerText = "Ligaspill";
+		}
+	} else if (aarstall <= 2) {
+		if (document.getElementById("b18").innerText == "League phase") {
+			document.getElementById("b18").innerText = "Group stage";
+		}
+		else if (document.getElementById("b18").innerText == "Ligaspill") {
+			document.getElementById("b18").innerText = "Gruppespill";
+		}
+	}
   for (i = 0; i < filter_land_før.length; i++) {
     document.getElementById(filter_land_før[i]).style.backgroundColor = 'rgb(196, 217, 255)';
     document.getElementById(filter_land_før[i]).style.border = '1px solid rgb(164, 164, 164)';
@@ -449,8 +464,8 @@ function sorter_etter_sesong() {
       let Ny4 = Ny.slice(4 + (aarstall*antall_MV_elem),5 + (aarstall*antall_MV_elem))
       let Ny5 = Ny.slice(5 + (aarstall*antall_MV_elem),6 + (aarstall*antall_MV_elem))
       let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
-      let Ny7 = [regnUtPremiepenger([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)].concat(Ny[7 + (aarstall*antall_MV_elem)].slice(0,3));
-      Ny7 = (Ny7[0] || 0) + (Ny7[1] || 0) + (Ny7[2] || 0) + (Ny7[3] || 0);
+      let Ny7 = [regnUtPremiepenger([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall, Ny1[0])].concat(Ny[7 + (aarstall*antall_MV_elem)].slice(0,4));
+      Ny7 = (Ny7[0] || 0) + (Ny7[1] || 0) + (Ny7[2] || 0) + (Ny7[3] || 0) + (Ny7[4] || 0);
       let Ny8 = regnUtAssosKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny9 = regnUtKlubbKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny10 = Ny.slice(1,2)
@@ -1242,7 +1257,6 @@ for (i = 0; i < knapplabel_turneringer.length; i++) {
 }
 
 
-
 const knapp_filter_id_dc = ['b1']
 const knapplabel_dc = ['Domestic champion']
 for (i = 0; i < knapplabel_dc.length; i++) {
@@ -1254,8 +1268,6 @@ for (i = 0; i < knapplabel_dc.length; i++) {
   document.getElementById("dropdown_elementer_DC").appendChild(btn);
 }
 
-
-
 const knapp_filter_id_ucl = ['b2', 'b3', 'b6', 'b9', 'CLPO', 'b16', 'b18', 'i13', 'b21', 'b24', 'b27', 'b30', 'b33']
 const knapplabel_ucl = ['Preliminary round', 'Q1', 'Q2', 'Q3', 'Play-off', 'Eliminated in play-off', 'Group stage', 'Knockout round play-off', 'Round of 16' , 'Quarter-final', 'Semi-final', 'Final', 'Champion']
 for (i = 0; i < knapplabel_ucl.length; i++) {
@@ -1266,7 +1278,6 @@ for (i = 0; i < knapplabel_ucl.length; i++) {
   btn.setAttribute("onClick", "adva_filtrer(this.id)");
   document.getElementById("dropdown_elementer_vanlige").appendChild(btn);
 }
-
 
 
 
@@ -1324,7 +1335,6 @@ for (p = 0; p < filter_land_før.length; p++) {
   }
 }
 
-
 fargelegg_etter_reset()
 function fargelegg_etter_reset() {
   for (p = 0; p < trykte_knapper.length; p++) {
@@ -1352,7 +1362,6 @@ else {
 sorter_etter_sesong()
 
 
-
 function reset(clicked_id) {
   for (p = 0; p < trykte_knapper.length; p++) {
     fjern_farge_knapp(trykte_knapper[p])
@@ -1373,7 +1382,6 @@ function reset(clicked_id) {
     $('#tabell_overordnet td').hide()
   }
 }
-
 
 function adva_filtrer(clicked_id) {
   if (trykte_knapper[0] || knapp_filter_turneringer.includes(clicked_id)) {
@@ -1453,7 +1461,6 @@ function adva_filtrer(clicked_id) {
     $('#tabell_overordnet td').hide()
   }
 }
-
 
 function fargelegg_knapp(clicked_id) {
   if(document.getElementById(clicked_id).classList.contains('CHA') || document.getElementById(clicked_id).classList.contains('ucl_knapp')) {
@@ -1850,10 +1857,7 @@ if (sessionStorage.getItem('spoiler') == 'synlig' || sessionStorage.getItem('spo
 // }
 
 
-function regnUtPremiepenger(data, sesong) {
-  if (sesong >= 3) {
-    return 0;
-  }
+function regnUtPremiepenger(data, sesong, klubbnavn) {
   let sum = 0;
   let knapper = "";
   knapper = data[0].split(",");
@@ -1888,17 +1892,23 @@ function regnUtPremiepenger(data, sesong) {
   if (knapper.includes('b16')) {
     sum += penger[2][cycle];
   }
+	// Ufordelte kvalik
+	let residal = regnUtResidal(aarstall, "");
+	let okning = tilgjengeligIKvalik[aarstall]/residal;
+	let residalKlubb = regnUtResidal(sesong,klubbnavn);
+	sum += okning*residalKlubb-residalKlubb;
+
   if (knapper.includes("b5")) {
-    return sum + penger[3][cycle];
+    return Math.round(sum + penger[3][cycle]);
   }
   else if (knapper.includes("b8")) {
-    return sum + penger[4][cycle];
+    return Math.round(sum + penger[4][cycle]);
   }
   else if (knapper.includes("b12")) {
-    return sum + penger[5][cycle];
+    return Math.round(sum + penger[5][cycle]);
   }
   else if (knapper.includes("b17")) {
-    return sum + penger[6][cycle];
+    return Math.round(sum + penger[6][cycle]);
   }
   for (i = 18; i <= 20; i++) {
     if (knapper.includes("b" + i)) {
@@ -1910,35 +1920,46 @@ function regnUtPremiepenger(data, sesong) {
       seiere = seiere.split(",")[0];
       sum += seiere * penger[8][cycle][i-18];
       sum += uavgjort * penger[9][cycle][i-18];
-      // 10-års koeffisientbonus og ufordelte ressurser
+			// 10-års koeffisientbonus, medieverdi, fem-års
       if (aarstall >= 3) {
-        if (i == 20) {
-          sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (108-finnTotaltUavgjort(aarstall,i-18,false))
-        }
-        else {
-          sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (144-finnTotaltUavgjort(aarstall,i-18,false))
-        }
         if (data[1] != ",,,,,,,,") {
-					// 10-års
-          sum += (37-(data[1].split(",")[i-18]||37)) * penger[10][cycle][i-18];
-					// TV-penger & five-års
+					// 10-års og...
+					// TV-penger & fem-års
 					if (data[1].split(",")[i-15] || data[1].split(",")[i-12]) {
-						sum += (37-(parseInt(data[1].split(",")[i-15]||36) + parseInt(data[1].split(",")[i-12]||36))/2) * penger[29][cycle][i-18];
+						if (i == 18) {
+							sum += ((37-(data[1].split(",")[i-18]||37))/666)*((100-andel_europeisk[sesong-3][0])/100)*penger[10][cycle][i-18];
+							sum += ((37-(parseInt(data[1].split(",")[i-9]||37)))/666)*(andel_europeisk[sesong-3][0]/100)*penger[10][cycle][i-18];
+						} else {
+							sum += ((37-(data[1].split(",")[i-18]||37))/666)*((100-andel_europeisk[sesong-3][1])/100)*penger[10][cycle][i-18];
+							sum += ((37-(parseInt(data[1].split(",")[i-9]||37)))/666)*(andel_europeisk[sesong-3][1]/100)*penger[10][cycle][i-18];
+						}
 					}
         }
       }
+			// 10-års koeffisientbonus og ufordelte ressurser
       else {
         sum += seiere * (finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]) / (96-finnTotaltUavgjort(aarstall,i-18,false))
         sum += (33-parseFloat(data[1].replaceAll(',',''))) * penger[10][cycle][i-18];
       }
+
       // Plassering og utslagsrunde-playoff
       if (data[3] && data[3] != ",," && sesong < 3) {
         sum += penger[11][cycle][i-18][data[3].replaceAll(',','')-1] || 0;
       }
       else if (data[3] && data[3] != ",,") {
-        sum += penger[11][cycle][i-18][0]*(37-data[3].replaceAll(',',''))
-        if (data[3].replaceAll(',','') > 8 && data[3].replaceAll(',','') <= 24) {
-          sum += penger[11][1][i-18][1]
+        sum += penger[11][cycle][i-18][2]*(37-(data[3].replaceAll(',','')||37))
+        if (data[3].replaceAll(',','') > 16 && data[3].replaceAll(',','') <= 24) {
+          sum += penger[11][cycle][i-18][1]
+        }
+				else if (data[3].replaceAll(',','') <= 16) {
+          sum += penger[11][cycle][i-18][0]
+        }
+
+				if (i == 20) {
+          sum += ((37-(data[3].replaceAll(',','')||37))/666)*(finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]);
+        }
+        else {
+					sum += ((37-(data[3].replaceAll(',','')||37))/666)*(finnTotaltUavgjort(aarstall,i-18,false) * penger[9][cycle][i-18]);
         }
       }
       break;
@@ -1947,7 +1968,11 @@ function regnUtPremiepenger(data, sesong) {
   // 16-dels osv
   for (i = 0; i < knapper.length; i++) {
     if (knapper[i].substring(1) >= 21 && knapper[i].substring(1) <= 37) {
-      sum += penger[12-21+parseInt(knapper[i].substring(1))][cycle];
+			if (parseInt(knapper[i].substring(1)) == 36 && sesong == 2) {
+				sum += penger[12-21+parseInt(knapper[i].substring(1))][1];
+			} else {
+				sum += penger[12-21+parseInt(knapper[i].substring(1))][cycle];
+			}
     }
   }
   return Math.round(sum);

@@ -173,7 +173,7 @@
         </div>
       </div>
       <div class="tabell_div">
-        <h2 class="ventemelding">Not ready yet. Give us a couple of days</h2>
+        <h2 class="ventemelding">Not ready yet. Give us a few more days</h2>
         <table class="table table-sm table-hover">
           <thead class="thead-light">
             <tr class="head_tr">
@@ -306,6 +306,24 @@
               <td class="tom_celle tydelig_ramme_hoyre tydelig_ramme_under"></td>
               <td class="resultat_celle_1 tydelig_ramme_hoyre tydelig_ramme_under" id="b17_"></td>
             </tr>
+						<tr class="Kvalifisering">
+              <th scope="row" id="ufordelteKvalik"><div class="tooltip-container">
+								<u>Undistributed amounts</u>
+								<span class="tooltip-content tolltip2">
+									Any residual amount between the overall amount available for the qualifying rounds
+									and the amount distributed to clubs according to the figures from the distribution plan will
+									be redistributed to clubs participating in the qualifying phase. Will increase if the overall amount available exceeds expectations.
+								</span>
+						</div></th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+              </td>
+              <td class="mellomrom"></td>
+              <td colspan="3" class="resultat_celle tydelig_ramme_under" id="residual"></td>
+            </tr>
             <tr class="Gruppespill">
               <th scope="row" id="ligaspill">League phase</th>
               <td class="mellomrom_2"></td>
@@ -315,44 +333,103 @@
                 <button id="b20" type="button" class="btn btn-danger" onclick="videre_fordeling(this.id)"></button>
               </td>
               <td class="mellomrom"></td>
-              <td class="resultat_celle_1" id="b18_"></td>
-              <td class="resultat_celle_1" id="b19_"></td>
-              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="b20_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b18_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="b19_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre tydelig_ramme_under" id="b20_"></td>
             </tr>
-            <tr class="Gruppespill">
-              <th scope="row" id="ti_års_koeff_ligaspill"><div class="tekst_margin_hoyre"><abbr data_title="Ten-year coefficient ranking internally in the league phase (1-36). Follow link 1 to figure out.">Ten-year coeff</abbr> </div> <a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten-year coefficient ranking">1</abbr></a></th>
+						<tr class="Gruppespill europeiskeDeler">
+              <th scope="row" id="andel"><div class="tooltip-container">
+								<u>European part %</u>
+								<span class="tooltip-content">
+										% of money from the "value pillar" that goes to the "European part" (market value rank and five-year rank). 75% is expected, but not confirmed. The rest is for the "non-European part" (ten-year rank).
+								</span>
+						</div></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Ranking" onblur="forlat_input_felt_1(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i2" name="2" placeholder="Ranking" onblur="forlat_input_felt_1(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i3" name="3" placeholder="Ranking" onblur="forlat_input_felt_1(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i22" name="22" placeholder="75%" onblur="kombinertEuropeisk(this.id)">
+								<input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i23" name="23" placeholder="75%" onblur="kombinertEuropeisk(this.id)">
+              </td>
+              <td class="mellomrom"></td>
+							<td colspan="3" class="tom_celle tydelig_ramme_hoyre"></td>
+            </tr>
+						<tr class="Gruppespill europeiskeDeler">
+              <th scope="row" id="market_pool_post">
+								<div class="tooltip-container">
+									<u>Market value rank</u>
+									<span class="tooltip-content">
+										In this ranking, the clubs occupy the
+										ranks guaranteed by their country ranking. For example, if the
+										country ranked number 1 in the media market value ranking has four
+										clubs in the competition, the clubs of that country will be ranked from 1
+										to 4 in the club market value ranking. The positions of these four clubs
+										from 1 to 4 will be based on their participation in the group phase of the
+										UEFA club competitions over the previous five seasons (3 points for a
+										season in UCL, 2 points for a season in UEL, 1 point for a season in UECL).
+										The same procedure will apply to all countries and their clubs down to position 36.
+									</span>
+							</div>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i16" name="16" placeholder="Rank" onblur="kombinertEuropeiskPoeng(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i17" name="17" placeholder="Rank" onblur="kombinertEuropeiskPoeng(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i18" name="18" placeholder="Rank" onblur="kombinertEuropeiskPoeng(this.id)">
+              </td>
+              <td class="mellomrom"></td>
+							<td colspan="3" class="tom_celle tydelig_ramme_hoyre"></td>
+            </tr>
+						<tr class="Gruppespill europeiskeDeler">
+              <th scope="row" id="fem_års_koeff_ligaspill"><div class="tekst_margin_hoyre"><abbr data_title="Club coefficient rank internally in the league phase (1-36). Follow link 1 to figure out.">Five-year rank</abbr></div><a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">1</abbr></a></th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i19" name="19" placeholder="Rank" onblur="kombinertEuropeiskPoeng(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i20" name="20" placeholder="Rank" onblur="kombinertEuropeiskPoeng(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i21" name="21" placeholder="Rank" onblur="kombinertEuropeiskPoeng(this.id)">
+              </td>
+							<td class="mellomrom"></td>
+							<td colspan="3" class="tom_celle tydelig_ramme_under tydelig_ramme_hoyre"></td>
+            </tr>
+						<tr class="Gruppespill europeiskeDeler">
+              <th scope="row" id="litenPlassCelle"><div class="tooltip-container" id="europeanPartRank">
+								<u>European part rank</u>
+								<span class="tooltip-content">
+									The European part rank (1-36) is determined by the <b>average
+									number of ranking points</b> totalled by the club in the market value ranking and the five-year ranking (the
+									less points, the higher the rank). For example, a club 4th in the
+									market value ranking and 6th in the five-year ranking would
+									have an average of five points in the cumulative ranking and will be
+									ranked accordingly. 
+								</span></div><br>(pts: <span id="rangeringsPoeng">?</span>)</th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+								<input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i24" name="24" placeholder="Rank" onblur="kombinertEuropeisk(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i25" name="25" placeholder="Rank" onblur="kombinertEuropeisk(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i26" name="26" placeholder="Rank" onblur="kombinertEuropeisk(this.id)">
+              </td>
+              <td class="mellomrom"></td>
+              <td class="resultat_celle_1" id="i24_"></td>
+              <td class="resultat_celle_1" id="i25_"></td>
+              <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i26_"></td>
+            </tr>
+						<tr class="Gruppespill europeiskeDeler">
+              <th scope="row" id="ti_års_koeff_ligaspill">
+								<div class="tekst_margin_hoyre"><div class="tooltip-container">
+									<u>Ten-year rank</u>
+									<span class="tooltip-content">
+										Ten-year coefficient rank internally in the
+										league phase (1-36). The money from this rank comes from the non-European part.
+										Follow link 2 to figure out.
+									</span>
+								</div></div><a class="graa_hover_link" href="10-year-ranking" onclick="endre_ti_års_periode()" target="_blank"><abbr data_title="Ten-year coefficient ranking">2</abbr></a>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i1" name="1" placeholder="Rank" onblur="forlat_input_felt_1(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i2" name="2" placeholder="Rank" onblur="forlat_input_felt_1(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i3" name="3" placeholder="Rank" onblur="forlat_input_felt_1(this.id)">
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1" id="i1_"></td>
               <td class="resultat_celle_1" id="i2_"></td>
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="i3_"></td>
-            </tr>
-            <tr class="Gruppespill">
-              <th scope="row" id="market_pool_post"><div class="tekst_margin_hoyre2"><abbr data_title="Ranking based on national market pool (1-36). The figure is unknown until April 2026.">Market pool ranking</abbr> </div> <a class="graa_hover_link" href="#" target="_blank"><abbr data_title="Market pool ranking">2</abbr></a></th>
-              <td class="mellomrom_2"></td>
-              <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i16" name="16" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i17" name="17" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i18" name="18" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
-              </td>
-              <td rowspan="2" class="mellomrom"></td>
-              <td rowspan="2" class="resultat_celle_1" id="i16_"></td>
-              <td rowspan="2" class="resultat_celle_1" id="i17_"></td>
-              <td rowspan="2" class="resultat_celle_1 tydelig_ramme_hoyre" id="i18_"></td>
-            </tr>
-						<tr class="Gruppespill">
-              <th scope="row" id="fem_års_koeff_ligaspill"><div class="tekst_margin_hoyre"><abbr data_title="Club coefficient ranking internally in the league phase (1-36). Follow link 3 to figure out.">Five-year coeff</abbr></div><a class="graa_hover_link" href="club-coefficients" onclick="endre_fem_års_periode()" target="_blank"><abbr data_title="Club coefficient ranking">3</abbr></a></th>
-              <td class="mellomrom_2"></td>
-              <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i19" name="19" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i20" name="20" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i21" name="21" placeholder="Ranking" onblur="kombinertEuropeisk(this.id)">
-              </td>
             </tr>
             <tr class="Gruppespill">
               <th scope="row" id="seiere_liga"><abbr data_title="Amount of wins in the league phase">Wins</abbr></th>
@@ -384,15 +461,15 @@
               <th scope="row" id="uavgjort_hele_liga"><abbr data_title="Total number of drawn games in the competition's league phase (0-144)">Total draws</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i10" name="10" placeholder="18" onblur="forlat_input_felt_3(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i11" name="11" placeholder="26" onblur="forlat_input_felt_3(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i12" name="12" placeholder="26" onblur="forlat_input_felt_3(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i10" name="10" placeholder="" onblur="forlat_input_felt_3(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i11" name="11" placeholder="" onblur="forlat_input_felt_3(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i12" name="12" placeholder="" onblur="forlat_input_felt_3(this.id)">
               </td>
               <td class="mellomrom"></td>
               <td colspan="3" class="tom_celle tydelig_ramme_under tydelig_ramme_hoyre"></td>
             </tr>
             <tr class="Gruppespill">
-              <th scope="row" id="ufordelte_ressurser"><abbr data_title="Redistributed amounts remaining from the matches ending in a draw">Undistributed amounts</abbr></th>
+              <th scope="row" id="ufordelte_ressurser"><abbr data_title="Redistributed amounts remaining from the matches ending in a draw in the league phase">Undistributed amounts</abbr></th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
                 <div class="knapp_erstatning"></div>
@@ -408,9 +485,9 @@
               <th scope="row" id="tabellplassering_liga">League placement</th>
               <td class="mellomrom_2"></td>
               <td colspan="3" class="knapp_celle">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i13" name="13" placeholder="Antall" onblur="forlat_input_felt_4(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i14" name="14" placeholder="Antall" onblur="forlat_input_felt_4(this.id)">
-                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i15" name="15" placeholder="Antall" onblur="forlat_input_felt_4(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i13" name="13" placeholder="Placement" onblur="forlat_input_felt_4(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i14" name="14" placeholder="Placement" onblur="forlat_input_felt_4(this.id)">
+                <input type="text" autocomplete="off" class="form-control ikke_placeholder" id="i15" name="15" placeholder="Placement" onblur="forlat_input_felt_4(this.id)">
               </td>
               <td class="mellomrom"></td>
               <td class="resultat_celle_1 tydelig_ramme_under" id="i13_"></td>
@@ -530,6 +607,19 @@
               <td class="resultat_celle_1" id="UEL_inntjening"></td>
               <td class="resultat_celle_1 tydelig_ramme_hoyre" id="UECL_inntjening"></td>
             </tr>
+						<tr class="Inntjening_pr_turnering">
+              <th scope="row" id="finalBalance_post24"><abbr data_title="Share of surplus in competition gross revenue">Final balance</abbr></th>
+              <td class="mellomrom_2"></td>
+              <td colspan="3" class="knapp_celle">
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+                <div class="knapp_erstatning"></div>
+              </td>
+              <td class="mellomrom"></td>
+              <td class="tydelig_ramme_under"></td>
+              <td class="resultat_celle_1 tydelig_ramme_under" id="finalBalanceSum"></td>
+              <td class="tydelig_ramme_under"></td>
+            </tr>
             <tr class="Inntjening">
               <th scope="row" id="inntjening">Total Income</th>
               <td class="mellomrom_2"></td>
@@ -547,7 +637,7 @@
         </table>
       </div>
       <br>
-			<p class="marketPool" id="marketPool_id2">The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/0283-1874e21d8957-30a439a30e08-1000/20230707_circular_2023_35_en.pdf" target="_blank">UEFA's distribution plan</a>.</p>
+			<p class="marketPool" id="marketPool_id2">The calculator is based on <a class="graa_hover_link" id="uefa_distribution_link" href="https://editorial.uefa.com/resources/028b-1a7880138a24-7a993e2e33d1-1000/20240322_circular_2024_13_en.pdf" target="_blank">UEFA's distribution plan</a>.</p>
       <br>
       <span class="marketPool" id="koeff_reklame">Check out <a class="graa_hover_link" id="klubb_link" href="coefficient-calculator">your club's coefficient points</a>.</span>
       <br>
