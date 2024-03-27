@@ -211,7 +211,7 @@ tbody {
 .table .resultat_celle {
     text-align: center;
 }
-#total_inntjening, #residual, #finalBalanceSum1, #finalBalanceSum2, #finalBalanceSum3 {
+#total_inntjening, #residual {
     border-left: 0px !important;
     border-right: 0px !important;
 }
