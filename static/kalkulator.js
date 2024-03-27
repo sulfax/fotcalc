@@ -800,8 +800,8 @@ function forlat_input_felt_4(clicked_id, lagre_endring) {
                     if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
                         for (i=0;i<menyvalg.length;i++) {
                             if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
-                                if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]) {
-                                    document.getElementById("mp2").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                                if (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1] != 0 && menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]) {
+                                    document.getElementById("mp2").innerText = "€ " + (menyvalg[i][7 + (localStorage.getItem('sessong')*antall_MV_elem)][1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                                 }
                                 else if (document.getElementById('i13').value == '3') {document.getElementById("mp2").innerText = "€ ?";}
                                 else {document.getElementById("mp2").innerText = "";}
