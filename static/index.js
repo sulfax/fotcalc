@@ -502,6 +502,7 @@ const sprak_id_kalkulator = [
   'uavgjort',
   'uavgjort_hele',
   'ufordelte_ressurser',
+	'ufordelte_ressurser_post24',
   'tabellplassering',
   'spilt_utslagsrunde_playoff',
   'spilt_åttendelsfinale',
