@@ -166,7 +166,7 @@ const norsk_kalkulator = [
     '<abbr data_title="Antall uavgjort i gruppespillet">Uavgjort</abbr>',
     '<abbr data_title="Totalt antall uavgjorte kamper i turneringens grupper (0-96)">Uavgjort totalt</abbr>',
     '<abbr data_title="Omfordelte penger som er til overs fra uavgjorte kamper i gruppespillet">Ufordelte ressurser</abbr>',
-		`<div class="tooltip-container"><u>Ufordelte ressurser</u><span class="tooltip-content">Omfordelte penger som gjenstår fra kampene som ender uavgjort i ligafasen. Disse pengene fordeles proporsjonalt basert på ligaplassering.</span></div>`,
+		`<div class="tooltip-container"><u>Ufordelte ressurser</u><span class="tooltip-content tolltip6">Omfordelte penger som gjenstår fra kampene som ender uavgjort i ligafasen. Disse pengene fordeles proporsjonalt basert på ligaplassering.</span></div>`,
     'Gruppeplassering',
     '<abbr data_title="Kvalifiserings-playoff til utslagsrundene">Utslagsrunde-playoff</abbr>',
     'Åttedelsfinale',

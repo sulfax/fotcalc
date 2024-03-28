@@ -55,6 +55,9 @@
 .tolltip5 {
 	bottom: -131px;
 }
+.tolltip6 {
+	bottom: -47px;
+}
 
 .tooltip-container:hover .tooltip-content {
 	visibility: visible;
