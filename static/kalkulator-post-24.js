@@ -950,6 +950,9 @@ function forlat_input_felt_3(clicked_id, lagre_endring) {
                 totalt_antall_kamper_med_vinner = (108 - document.getElementById(clicked_id).value);
             }
             var plassering = (document.getElementById("i" + (nummer_2 + 3)).value) || 37;
+						if (plassering % 1 != 0) {
+							plassering = 37;
+						}
             var aktuell_sum = (((37-plassering)/666)*totale_ufordelte_ressurser);
             let antall_seiere_er_desimal = (document.getElementById("i" + (nummer_2 - 6)).value % 1 == 0) || 0;
             if (antall_seiere_er_desimal && aktuell_sum >= 0) {
