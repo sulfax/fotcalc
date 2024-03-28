@@ -235,6 +235,8 @@ function paa_av(clicked_id, lagre_endring){
 			if (erProsentsverdi(document.getElementById("i23").value)) {
 				document.getElementById("i23").classList.add("andelUECL");
 				document.getElementById("i23").classList.add("andelUECL2");
+			} else {
+				document.getElementById("i23").classList.add("andelUECL");
 			}
         if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
             for (i=0;i<menyvalg.length;i++) {
