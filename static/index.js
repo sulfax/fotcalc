@@ -524,6 +524,7 @@ const sprak_id_kalkulator = [
   'ti_års_koeff_ligaspill',
 	'fem_års_koeff_ligaspill',
 	'europeanPartRank',
+	'pointsSpraak',
   'uavgjort_hele_liga',
   'seiere_liga',
   'uavgjort_liga'
