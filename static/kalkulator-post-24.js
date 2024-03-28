@@ -232,7 +232,10 @@ function paa_av(clicked_id, lagre_endring){
         // }
     }
     if (clicked_id == "b20") {
-			document.getElementById("i23").classList.add("andelUECL");
+			if (erProsentsverdi(document.getElementById("i23").value)) {
+				document.getElementById("i23").classList.add("andelUECL");
+				document.getElementById("i23").classList.add("andelUECL2");
+			}
         if ((localStorage.getItem('Klubbnavn') != eksperimentell_profil_e && localStorage.getItem('Klubbnavn') != eksperimentell_profil_n && localStorage.getItem('Klubbnavn') != null && localStorage.getItem('Klubbnavn') != "Choose club" && localStorage.getItem('Klubbnavn') != "Velg klubb")) {
             for (i=0;i<menyvalg.length;i++) {
                 if (menyvalg[i][0] == localStorage.getItem('Klubbnavn')) {
@@ -423,6 +426,7 @@ function paa_av(clicked_id, lagre_endring){
             }
             if (nummer == -20) {
 								document.getElementById("i23").classList.remove("andelUECL");
+								document.getElementById("i23").classList.remove("andelUECL2");
                 UECL_ikke_avrundet[0] = 0;
             }
             if (clicked_id == 'b-36') {
@@ -774,11 +778,20 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 		if (!erProsentsverdi(input_felt_verdi) && input_felt_verdi != "") {
 			utenfor_gyldig_input(clicked_id);
 		} else if (input_felt_verdi == "") {
+			document.getElementById(clicked_id).style.color = "";
+			document.getElementById(clicked_id).className = "form-control";
+			if (document.getElementById("b-20")) {
+				document.getElementById("i23").classList.add("andelUECL");
+				document.getElementById("i23").classList.remove("andelUECL2");
+			}
 			document.getElementById(clicked_id).style.borderColor = "#ced4da";
 			document.getElementById(clicked_id).style.color = "";
 			document.getElementById(clicked_id).style.backgroundColor = "";
-			document.getElementById(clicked_id).className = "form-control";
 		} else {
+			if (document.getElementById("b-20")) {
+				document.getElementById("i23").classList.add("andelUECL");
+				document.getElementById("i23").classList.add("andelUECL2");
+			}
 			document.getElementById(clicked_id).style.borderColor = "";
 			document.getElementById(clicked_id).style.backgroundColor = "";
 			document.getElementById(clicked_id).style.color = "";
