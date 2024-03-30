@@ -107,6 +107,12 @@
         width: 760px;
     }
 }
+@media (max-width:830px) {
+	.reklame_øverst {
+    width: 100% !important;
+    margin-left: 0% !important;
+	}
+}
 
 .knapp_celle {
     padding:1px !important;

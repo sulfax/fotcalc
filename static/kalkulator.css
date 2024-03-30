@@ -111,6 +111,12 @@
         width: 894px;
     }
 }
+@media (max-width:800px) {
+	.reklame_øverst {
+    width: 100% !important;
+    margin-left: 0% !important;
+	}
+}
 
 .sesong_valg {
     display:flex;

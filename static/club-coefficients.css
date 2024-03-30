@@ -127,6 +127,13 @@
     }
 }
 
+@media (max-width:910px) {
+	.reklame_øverst {
+		width: 96% !important;
+		margin-left: 2% !important;
+	}
+}
+
 
 #overskrift_klubbkoeffisient, #beskrivelse_klubbkoeffisient, #overskrift_fire_års, #beskrivelse_fire_års {
     margin-left: 15px !important;

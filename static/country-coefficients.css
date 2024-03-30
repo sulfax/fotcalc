@@ -77,6 +77,13 @@
     }    
 }
 
+@media (max-width:650px) {
+	.reklame_øverst {
+		width: 97% !important;
+		margin-left: 1.5% !important;
+	}
+}
+
 #overskrift_landskoeffisient, #beskrivelse_landskoeffisient {
     margin-left: 10px !important;
     margin-right: 10px !important;

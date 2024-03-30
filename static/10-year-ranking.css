@@ -88,6 +88,12 @@
         width: 1210px;
     }
 }
+@media (max-width:1290px) {
+	.reklame_øverst {
+		width: 96% !important;
+		margin-left: 2% !important;
+	}
+}
 /* @media (min-width:1437px) {
     .container_ {
         width: 1680px;
