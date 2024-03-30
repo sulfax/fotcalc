@@ -230,7 +230,6 @@ $('th').on('click', function(){
 })
 
 
-
 function sorter_etter_sesong() {
   menyvalg_edit = menyvalg.slice(0);
   const ucl_knapper = ['b2', 'b3', 'b6', 'b9', 'b13', 'CLPO', 'b16', 'b18'];
@@ -466,13 +465,12 @@ function sorter_etter_sesong() {
       let Ny6 = Ny.slice(6 + (aarstall*antall_MV_elem),7 + (aarstall*antall_MV_elem))
       let Ny7 = [regnUtPremiepenger([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall, Ny1[0])].concat(Ny[7 + (aarstall*antall_MV_elem)].slice(0,6));
       Ny7 = (Ny7[0] || 0) + (Ny7[1] || 0) + (Ny7[2] || 0) + (Ny7[3] || 0) + (Ny7[4] || 0) + (Ny7[5] || 0) + (Ny7[6] || 0);
-      let Ny8 = regnUtAssosKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
+			let Ny8 = regnUtAssosKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny9 = regnUtKlubbKoeff([Ny2[0], Ny3[0], Ny4[0], Ny5[0], Ny6[0]], aarstall)
       let Ny10 = Ny.slice(1,2)
       let Ny11 = ''
       Ny1.push(Ny2, Ny3, Ny4, Ny5, Ny6, Ny7, Ny8, Ny9, Ny10, Ny11)
-      menyvalg_edit[i] = Ny1
-      
+      menyvalg_edit[i] = Ny1;
       let antall_klubber_fra_land = 0
       if (aarstall >= 2) {
         for (p = 0; p < totalt_antall_klubber.length; p++) {
@@ -902,7 +900,6 @@ $(document).mouseup(e => {
     }
   }
 });
-
 
 
 generer_lands_knapper()
@@ -1776,7 +1773,6 @@ function endre_lands_filter(land) {
   document.getElementById('spoiler').innerHTML = '<div class="spoiler_pil">&#10095</div>'
 }
 
-
 function landsranking_endre_periode(klubb) {
   klubb = klubb.innerHTML;
   if (klubb) {
@@ -1914,15 +1910,19 @@ function regnUtPremiepenger(data, sesong, klubbnavn) {
     if (knapper.includes("b" + i)) {
       // Gruppespillsdeltagelse
       sum += penger[7][cycle][i-18];
-      // Seire/uavgjort i gruppespill
-      let seiere = data[2].replace(",", "").replace(",", "");
-      let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
-      seiere = seiere.split(",")[0];
-      sum += seiere * penger[8][cycle][i-18];
-      sum += uavgjort * penger[9][cycle][i-18];
+
+			// Seire/uavgjort i gruppespill
+			let seiere;
+			if (data[2]) {
+				seiere = data[2].replace(",", "").replace(",", "");
+				let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
+				seiere = seiere.split(",")[0];
+				sum += seiere * penger[8][cycle][i-18];
+				sum += uavgjort * penger[9][cycle][i-18];
+			}
 			// 10-års koeffisientbonus, medieverdi, fem-års
       if (aarstall >= 3) {
-        if (data[1] != ",,,,,,,,") {
+        if (data[1] && data[1] != ",,,,,,,,") {
 					// 10-års og...
 					// TV-penger & fem-års
 					if (data[1].split(",")[i-15] || data[1].split(",")[i-12]) {
@@ -1944,7 +1944,7 @@ function regnUtPremiepenger(data, sesong, klubbnavn) {
 
       // Plassering og utslagsrunde-playoff
       if (data[3] && data[3] != ",," && sesong < 3) {
-        sum += penger[11][cycle][i-18][data[3].replaceAll(',','')-1] || 0;
+				sum += penger[11][cycle][i-18][data[3].replaceAll(',','')-1] || 0;
       }
       else if (data[3] && data[3] != ",,") {
         sum += penger[11][cycle][i-18][2]*(37-(data[3].replaceAll(',','')||37))

@@ -46,7 +46,7 @@ const menyvalg = [
      ["B36 Tórshavn",               "FRO",,,,,,                                                                                                                                                       , "b4,b7,b11,b12",,,,",,,1,,3,,,3,,2,,,,1,,,1",                                                                                       [,,,] , "b4,b7,b11,b12",,,,",,,2,,3,,,3,,2,,,,1,,,1",                                   [,,,] , "b4",,,,,[,,,]],
      ["Bala Town FC",               "WAL",    "b4,b5",                    ",,",",,,,,",",,",              ",,,1,,1",                                                           [,,,]                   , "b4,b5",,,,",,,1,,3",                                                                                                               [,,,]],
      ["Balzan F.C.",                "MLT",,,,,,                                                                                                                                                       ,,,,,,                                                                                                                                     , "b4,b7,b8",,,,",,,3,,1,,,1,,2",                                                 [,,,]],
-/*R*/["Bayer 04 Leverkusen",        "GER",    "b19,b22,KO",               ",2,",   ",4,,,1,",  ",1,",     ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,1",                         [,9284000,,,15000]            , "b18,b22,b25,b28,KO","18,,","1,,,2,,","3,,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,3,,,,,3,,,3,,,,,2,,,3,,,,,,1,,,2",                     [9629000,7188000,,438000,215000] , "b19,b22,b25",",4,",",6,,,0,",",1,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,,3",                                                        [,,,]],
+/*R*/["Bayer 04 Leverkusen",        "GER",    "b19,b22,KO",               ",2,",   ",4,,,1,",  ",1,",     ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,1",                         [,9284000,,,15000]            , "b18,b22,b25,b28,KO","18,,","1,,,2,,","3,,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,3,,,,,3,,,3,,,,,2,,,3,,,,,,1,,,2",                     [9629000,7188000,,438000,215000] , "b19,b22,b25",",4,",",6,,,0,",",1,",",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,,3",                                                        [,,,], "b18",,,,,[,,,]],
      ["Beitar Jerusalem FC",        "ISR",,,,,,                                                                                                                                                       ,,,,,,                                                                                                                                     , "b7,b8",,,,",,,,,,,,2,,1",                                                      [,,,]],
 /*R*/["Beşiktaş JK",                "TUR",    "b1,b18",                   "24,,",  "0,,,0,,",  "4,,",     "",                                                                  [1368000,,,-321000]            ,,,,,,                                                                                                                                     , "b7,b11,b15,b20",",,6",",,1,,,1",",,3",",,,,,,,,3,,3,,,,3,,,3,,,,3,,,3",             [,,,]],
      ["Birkirkara FC",              "MLT",    "b4,b7,b8",                 ",,",",,,,,",",,",              ",,,3,,2,,,1,,3",                                                    [,,,]                   ,,,,,,                                                                                                                                     , "b4,b5",,,,",,,2,,1",                                                           [,,,]],
@@ -1813,13 +1813,14 @@ function regnUtKlubbKoeff(data, sesong) {
       return 2.5;
     }
     if (knapper.includes("b18") || knapper.includes("b19") || knapper.includes("b20")) {
-      let seiere = data[2].replace(",", "").replace(",", "");
-      let uavgjort = seiere
-        .substring(seiere.indexOf(",") + 1)
-        .replaceAll(",", "");
-      seiere = seiere.split(",")[0];
-      sum += parseInt(seiere * 2);
-      sum += parseInt(uavgjort);
+
+			if (data[2]) {
+				let seiere = data[2].replace(",", "").replace(",", "");
+				let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
+				seiere = seiere.split(",")[0];
+				sum += parseInt(seiere * 2);
+				sum += parseInt(uavgjort);
+			}
 
       // Plassering
       let poengPlasseringX = 0;
@@ -1965,74 +1966,77 @@ function regnUtAssosKoeff(data, sesong) {
       }
     }
     if (knapper.includes("b18") || knapper.includes("b19") || knapper.includes("b20")) {
-      let seiere = data[2].replace(",", "").replace(",", "");
-      let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
-      seiere = seiere.split(",")[0];
-      sum += parseInt(seiere * 2);
-      sum += parseInt(uavgjort);
-
-      // Plassering
-      let poengPlasseringX = 0;
-			let plassering = 36;
-      if (sesong >= 3 && data[3]) {
-        plassering = data[3].replaceAll(",","") || 36;
-      } else if (data[3]) {
-        if (data[3].replaceAll(",", "") == 1) {
-          poengPlasseringX = 2;
-        } else if (data[3].replaceAll(",", "") == 2) {
-          poengPlasseringX = 1;
-        }
-      }
-      // Gruppespill og plassering
-      if (knapper.includes("b18")) {
-				if (sesong < 3) {
-					sum += 4;
-					if (poengPlasseringX == 1 || poengPlasseringX == 2) {
+			try {
+				let seiere = data[2].replace(",", "").replace(",", "");
+				let uavgjort = seiere.substring(seiere.indexOf(",") + 1).replaceAll(",", "");
+				seiere = seiere.split(",")[0];
+				sum += parseInt(seiere * 2);
+				sum += parseInt(uavgjort);
+			} finally {
+				// Plassering
+				let poengPlasseringX = 0;
+				let plassering = 36;
+				if (sesong >= 3 && data[3]) {
+					plassering = data[3].replaceAll(",","") || 36;
+				} else if (data[3]) {
+					if (data[3].replaceAll(",", "") == 1) {
+						poengPlasseringX = 2;
+					} else if (data[3].replaceAll(",", "") == 2) {
+						poengPlasseringX = 1;
+					}
+				}
+				// Gruppespill og plassering
+				if (knapper.includes("b18")) {
+					if (sesong < 3) {
 						sum += 4;
+						if (poengPlasseringX == 1 || poengPlasseringX == 2) {
+							sum += 4;
+						}
+					} else {
+						sum += 6;
+						if (plassering <= 24) {
+							sum += (25-plassering)*0.250;
+						}
+					}
+				} else if (knapper.includes("b19")) {
+					if (sesong < 3) {
+						sum += 2 * poengPlasseringX;
+					} else {
+						if (plassering <= 24) {
+							sum += (25-plassering)*0.250;
+						}
+					}
+				} else if (knapper.includes("b20")) {
+					if (sesong < 3) {
+						sum += 1 * poengPlasseringX;
+					} else {
+						if (plassering <= 8) {
+							sum += 16*0.125+(9-plassering)*0.250;
+						} else if (plassering <= 24) {
+							sum += (25-plassering)*0.125;
+						}
+					}
+				}
+				if (sesong >= 3) {
+					for (let i = 0; i < knapper.length; i++) {
+						if (["b21","b24","b27","b30"].includes(knapper[i])) {
+							sum += 1.5;
+						}
+						if (["b22","b25","b28","b31"].includes(knapper[i])) {
+							sum += 1;
+						}
+						if (["b23","b26","b29","b32"].includes(knapper[i])) {
+							sum += 0.5;
+						}
 					}
 				} else {
-					sum += 6;
-					if (plassering <= 24) {
-						sum += (25-plassering)*0.250;
+					for (let i = 0; i < knapper.length; i++) {
+						if (["b21","b24","b27","b30","b22","b25","b28","b31","b29","b32"].includes(knapper[i])) {
+							sum += 1;
+						}
 					}
 				}
-      } else if (knapper.includes("b19")) {
-				if (sesong < 3) {
-					sum += 2 * poengPlasseringX;
-				} else {
-					if (plassering <= 24) {
-						sum += (25-plassering)*0.250;
-					}
-				}
-      } else if (knapper.includes("b20")) {
-				if (sesong < 3) {
-					sum += 1 * poengPlasseringX;
-				} else {
-					if (plassering <= 8) {
-						sum += 16*0.125+(9-plassering)*0.250;
-					} else if (plassering <= 24) {
-						sum += (25-plassering)*0.125;
-					}
-				}
-      }
-			if (sesong >= 3) {
-				for (let i = 0; i < knapper.length; i++) {
-					if (["b21","b24","b27","b30"].includes(knapper[i])) {
-						sum += 1.5;
-					}
-					if (["b22","b25","b28","b31"].includes(knapper[i])) {
-						sum += 1;
-					}
-					if (["b23","b26","b29","b32"].includes(knapper[i])) {
-						sum += 0.5;
-					}
-				}
-			} else {
-				for (let i = 0; i < knapper.length; i++) {
-					if (["b21","b24","b27","b30","b22","b25","b28","b31","b29","b32"].includes(knapper[i])) {
-						sum += 1;
-					}
-				}
+				return sum;
 			}
     }
     return sum;
