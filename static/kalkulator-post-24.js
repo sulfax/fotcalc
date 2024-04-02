@@ -631,7 +631,7 @@ function forlat_input_felt_1(clicked_id, lagre_endring) {
 						if (nummer_2 == 3) {turnering2 = 2;}
 						let aktuell_sum = 0;
 						if (erProsentsverdi(document.getElementById("i"+(21+turnering2)).value)) {
-							aktuell_sum = ((deltakere_i_turnering+1 - input_felt_verdi)/666) * input_summer[18+nummer_2][aarstall-3] * (1-(parseFloat(document.getElementById("i"+(21+turnering2)).value)/100 || 1));
+							aktuell_sum = ((deltakere_i_turnering+1 - input_felt_verdi)/666) * input_summer[18+nummer_2][aarstall-3] * (1-(parseFloat(document.getElementById("i"+(21+turnering2)).value)/100));
 							document.getElementById("i" + (nummer_2) + "_").innerText = "€ " + Math.round(aktuell_sum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 						} else {
 							document.getElementById("i" + (nummer_2) + "_").innerText = "";
@@ -762,7 +762,7 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 				if (nummer_2 == 25) {UEL_ikke_avrundet[3] = aktuell_sum;}
 				else {UECL_ikke_avrundet[3] = aktuell_sum;}
 			}
-			if (aktuell_sum) {
+			if (aktuell_sum || aktuell_sum == 0) {
 				document.getElementById(clicked_id+"_").innerText = "€ " + Math.round(aktuell_sum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");;
 			}
 			document.getElementById(clicked_id).style.borderColor = "";
@@ -777,7 +777,7 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 			document.getElementById(clicked_id).className = "form-control";
 		}
 	} else {
-		if (!erProsentsverdi(input_felt_verdi) && input_felt_verdi != "") {
+		if (!erProsentsverdi(input_felt_verdi) && input_felt_verdi != "" && !(input_felt_verdi >= 0 && input_felt_verdi <= 100)) {
 			utenfor_gyldig_input(clicked_id);
 		} else if (input_felt_verdi == "") {
 			document.getElementById(clicked_id).style.color = "";
@@ -790,6 +790,9 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 			document.getElementById(clicked_id).style.color = "";
 			document.getElementById(clicked_id).style.backgroundColor = "";
 		} else {
+			if (!erProsentsverdi(input_felt_verdi) && input_felt_verdi >= 0 && input_felt_verdi <= 100 && input_felt_verdi != "") {
+				document.getElementById(clicked_id).value = input_felt_verdi + "%";
+			}
 			if (document.getElementById("b-20")) {
 				document.getElementById("i23").classList.add("andelUECL");
 				document.getElementById("i23").classList.add("andelUECL2");
@@ -798,24 +801,19 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 			document.getElementById(clicked_id).style.backgroundColor = "";
 			document.getElementById(clicked_id).style.color = "";
 		}
-    if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
-			lagre_trykking_andel();
-			if (nummer_2 == 22) {
-				forlat_input_felt_1("i1", lagre_endring);
-			} else {
-				forlat_input_felt_1("i2", lagre_endring);
-				forlat_input_felt_1("i3", lagre_endring);
-			}
-		}
 		if (nummer_2 == 22) {
+			forlat_input_felt_1("i1", lagre_endring);
 			kombinertEuropeisk("i24", lagre_endring);
 		} else {
+			forlat_input_felt_1("i2", lagre_endring);
+			forlat_input_felt_1("i3", lagre_endring);
 			kombinertEuropeisk("i25", lagre_endring);
 			kombinertEuropeisk("i26", lagre_endring);
 		}
 	}
 	if ((localStorage.getItem('Klubbnavn') == eksperimentell_profil_e || localStorage.getItem('Klubbnavn') == eksperimentell_profil_n || localStorage.getItem('Klubbnavn') == null || localStorage.getItem('Klubbnavn') == "Choose club" || localStorage.getItem('Klubbnavn') == "Velg klubb") && lagre_endring != "nei") {
-		lagre_trykking_input_1()
+		lagre_trykking_input_1();
+		lagre_trykking_andel();
 	}
 	summer();
 };
@@ -1390,10 +1388,10 @@ function oppdater_ved_refresh_1() {
                     if (motak.includes("b18")) {
 											document.getElementById("i22").value = andel_europeisk[aarstall-3][0]+"%";
 											turnering = 0;}
-                    else if (motak.includes("b19")) {
+                    if (motak.includes("b19")) {
 											document.getElementById("i23").value = andel_europeisk[aarstall-3][1]+"%";
 											turnering = 1;}
-                    else if (motak.includes("b20")) {
+                    if (motak.includes("b20")) {
 											document.getElementById("i23").value = andel_europeisk[aarstall-3][1]+"%";
 											turnering = 2;}
                 }
