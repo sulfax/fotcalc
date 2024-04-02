@@ -746,9 +746,11 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 		document.getElementById(clicked_id+"_").innerText = "";
 		if (input_felt_verdi % 1 == 0 && input_felt_verdi <= 36 && input_felt_verdi >= 1) {
 			let aktuell_sum;
+			let sumVises = true;
 			if (nummer_2 == 24) {
 				if (erProsentsverdi(document.getElementById("i22").value)) {
 					aktuell_sum = ((37-input_felt_verdi)/666)*input_summer[nummer_2-5][0]*(parseFloat(document.getElementById("i22").value)/100);
+					sumVises = false;
 				} else {
 					aktuell_sum = 0
 				}
@@ -756,14 +758,15 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 			} else {
 				if (erProsentsverdi(document.getElementById("i23").value)) {
 					aktuell_sum = ((37-input_felt_verdi)/666)*input_summer[nummer_2-5][0]*(parseFloat(document.getElementById("i23").value)/100);
+					sumVises = false;
 				} else {
 					aktuell_sum = 0;
 				}
 				if (nummer_2 == 25) {UEL_ikke_avrundet[3] = aktuell_sum;}
 				else {UECL_ikke_avrundet[3] = aktuell_sum;}
 			}
-			if (aktuell_sum || aktuell_sum == 0) {
-				document.getElementById(clicked_id+"_").innerText = "€ " + Math.round(aktuell_sum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");;
+			if ((aktuell_sum || aktuell_sum == 0) && sumVises == false) {
+				document.getElementById(clicked_id+"_").innerText = "€ " + Math.round(aktuell_sum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 			}
 			document.getElementById(clicked_id).style.borderColor = "";
 			document.getElementById(clicked_id).style.backgroundColor = "";
