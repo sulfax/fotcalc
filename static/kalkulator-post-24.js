@@ -772,8 +772,14 @@ function kombinertEuropeisk(clicked_id, lagre_endring) {
 			document.getElementById(clicked_id).style.backgroundColor = "";
 			document.getElementById(clicked_id).style.color = "";
 		} else if (input_felt_verdi != "") {
+			if (nummer_2 == 24) {UCL_ikke_avrundet[3] = 0}
+			else if (nummer_2 == 25) {UEL_ikke_avrundet[3] = 0}
+			else {UECL_ikke_avrundet[3] = 0}
 			utenfor_gyldig_input(clicked_id);
 		} else {
+			if (nummer_2 == 24) {UCL_ikke_avrundet[3] = 0}
+			else if (nummer_2 == 25) {UEL_ikke_avrundet[3] = 0}
+			else {UECL_ikke_avrundet[3] = 0}
 			document.getElementById(clicked_id).style.borderColor = "#ced4da";
 			document.getElementById(clicked_id).style.color = "";
 			document.getElementById(clicked_id).style.backgroundColor = "";
