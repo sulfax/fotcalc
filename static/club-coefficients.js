@@ -1263,11 +1263,11 @@ function generer_lands_knapper() {
     //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
     //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
 		if (['ITA'].includes(landskoeffisienter[i][0])) {
-			if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.714}
-			else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
-			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
-			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
-			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+			if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.429}
+			else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.429}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.429}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.429}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.429}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
@@ -1608,11 +1608,11 @@ function regn_ut_NA_poeng() {
     //   else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.625}
     //   else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.625}}
 		if (['ITA'].includes(landskoeffisienter[i][0])) {
-			if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.714}
-			else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.714}
-			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.714}
-			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.714}
-			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.714}}
+			if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 0.429}
+			else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 0.429}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong3 += 0.429}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong4 += 0.429}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong5 += 0.429}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aar_etter_forste_periode == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aar_etter_forste_periode == 3) {koeff_sesong2 += 1.000}
