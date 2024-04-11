@@ -1347,7 +1347,7 @@ function generer_lands_knapper() {
       else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 3.428}
       else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 3.428}}
 		// Sesongen etter.
-		if (['TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
+		if (['CZE','TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 5) {koeff_sesong2 = 1.200}
       else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 1.200}
       else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 1.200}
@@ -1643,7 +1643,7 @@ function regn_ut_NA_poeng() {
       else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 3.428}
       else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 3.428}}
 		// Sesongen etter.
-		if (['TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
+		if (['CZE','TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 5) {koeff_sesong2 = 1.200}
       else if (aar_etter_forste_periode == 6) {koeff_sesong3 = 1.200}
       else if (aar_etter_forste_periode == 7) {koeff_sesong4 = 1.200}
