@@ -1141,23 +1141,17 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     else {
       klubber_igjen = `<td class='premie_koeff klubb gul'>${ranking_array[i][13]}</td>`
     }
-    if (aar_etter_forste_periode != 1 && aar_etter_forste_periode != -1 && sesong1 != "") {
-      sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`
-    }
-    if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode != 2) {
-      if (sesong1 != "") {sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`}
-      if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}}
-    if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode != 3) {
-      if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}
-      if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}}
-    if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode != 4) {
-      if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}
-      if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}}
-    if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode != 5) {
-      if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}
-      if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
-    if (aar_etter_forste_periode >= 5 && aar_etter_forste_periode != 6 && sesong5 != "") {
-      if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
+    if (aar_etter_forste_periode >= 0 && aar_etter_forste_periode <= 3) {
+      if (sesong1 != "") {sesong1 = `<a href="../" onClick="forside_ø_koeff(${i},${3})" class="utydelig_link">${sesong1}</a>`}}
+		if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode <= 4) {
+			if (sesong2 != "") {sesong2 = `<a href="../" onClick="forside_ø_koeff(${i},${4})" class="utydelig_link">${sesong2}</a>`}}
+		if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode <= 5) {
+			if (sesong3 != "") {sesong3 = `<a href="../" onClick="forside_ø_koeff(${i},${5})" class="utydelig_link">${sesong3}</a>`}}
+		if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode <= 6) {
+			if (sesong4 != "") {sesong4 = `<a href="../" onClick="forside_ø_koeff(${i},${6})" class="utydelig_link">${sesong4}</a>`}}
+		if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode <= 7) {
+			if (sesong5 != "") {sesong5 = `<a href="../" onClick="forside_ø_koeff(${i},${7})" class="utydelig_link">${sesong5}</a>`}}
+      
       var rad_test = `
                     <td class="id_nr_klubb ${ekstremt_utydelig} ramme_hoyre"><span class="midt">${nummer}</span></td>
                     <td class="id_nr_klubb rangeringEndring_ ${ekstremt_utydelig} ramme_hoyre ${ekstra_bredde2_}">${rangeringEndring_}</td>
@@ -1352,7 +1346,7 @@ $(document).mouseup(e => {
 let btnid = "";
 let valg_navn = document.getElementById('dropDownMeny').innerText.slice(0,-2);
 id = "dropDownMeny";
-for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
+for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 6; i++) {
   let btn = document.createElement("button");
   btn.innerHTML = (2000+20 + i) + '/' + (21 + i);
   if ((2000+20 + i) + '/' + (21 + i) == valg_navn) {
@@ -1363,7 +1357,7 @@ for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
   btn.setAttribute("onclick", "endreMenyTittel(innerHTML,"+id+","+btnid+")");
   document.getElementById("dropdown_elementer").appendChild(btn);
 }
-for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 5; i++) {
+for (i = 0; i < nyligste_poeng_rangering[0] - 20 + 6; i++) {
   let btn = document.createElement("button");
   btn.innerHTML = (2000+20 + i) + '/' + (21 + i);
   if ((2000+20 + i) + '/' + (21 + i) == valg_navn) {
@@ -1902,33 +1896,17 @@ function utplasser_klubb_tabell(klubber) {
     let sesong3 = klubber[i][4]
     let sesong4 = klubber[i][5]
     let sesong5 = klubber[i][6]
-    if (aar_etter_forste_periode == 0) {
-      sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong5}</a>`
-    }
-    if (aar_etter_forste_periode == 1) {
-      sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong5}</a>`
-      sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong4}</a>`}
-    if (aar_etter_forste_periode == 2) {
-      sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong5}</a>`
-      sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong4}</a>`
-      sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong3}</a>`}
-    if (aar_etter_forste_periode == 3) {
-      sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong5}</a>`
-      sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong4}</a>`
-      sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong3}</a>`
-      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong2}</a>`}
-    if (aar_etter_forste_periode == 4) {
-      sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong4}</a>`
-      sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong3}</a>`
-      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong2}</a>`
-      sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
-    if (aar_etter_forste_periode == 5) {
-      sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong3}</a>`
-      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong2}</a>`
-      sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
-    if (aar_etter_forste_periode == 6) {
-      sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong2}</a>`
-      sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
+    if (aar_etter_forste_periode >= 0 && aar_etter_forste_periode <= 3) {
+			sesong5 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${6})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong5}</a>`}
+		if (aar_etter_forste_periode >= 1 && aar_etter_forste_periode <= 4) {
+			sesong4 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${7})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong4}</a>`}
+		if (aar_etter_forste_periode >= 2 && aar_etter_forste_periode <= 5) {
+			sesong3 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${8})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong3}</a>`}
+		if (aar_etter_forste_periode >= 3 && aar_etter_forste_periode <= 6) {
+			sesong2 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${9})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong2}</a>`}
+		if (aar_etter_forste_periode >= 4 && aar_etter_forste_periode <= 7) {
+			sesong1 = `<a href="coefficient-calculator" onclick="endre_klubbnavn(${i},${10})" id="link_lands_klubb" class="utydelig_link_klubb">${sesong1}</a>`}
+
     var rad_test = `<tr>
                     <td class="id_nr_klubb veldig_utydelig ramme_hoyre">${klubber[i][10]}</td>
                     ${rangering}
