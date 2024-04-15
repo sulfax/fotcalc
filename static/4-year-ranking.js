@@ -76,7 +76,6 @@ function oppdater_ved_refresh() {
     }
   }
 
-
   let klubber_allerede_lagt_til = []
   let NA_poeng_og_assosiasjon = regn_ut_NA_poeng()
   if (aar_etter_forste_periode == 3) {
@@ -191,10 +190,10 @@ function oppdater_ved_refresh() {
             seierPoeng = 2;
           }
           else {
-            sesonger[l+1] = 0;
+            sesonger[l+1] = 3;
           }
-          sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[0] * seierPoeng);
-          sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)])).split(",")[3]);
+          sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "0").split(",")[0] * seierPoeng);
+          sesonger[l+1] += parseInt(((menyvalg[i][4 + ((aar_etter_forste_periode - 3+l) * antall_MV_elem)]) || "0").split(",")[3]) || 0;
           if (knapper_.includes("b21")) {
             sesonger[l+1] += 1
             if (aar_etter_forste_periode - 3+l < 3) {
