@@ -816,7 +816,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     plassering = plassering.split(",")
 
     if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
-      if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
+      if (knapper.includes('b18') && !knapper.includes('KO') && ((!plassering.includes("4") && !plassering.includes("3") && nåværende_sesong_periode_valg[0] < 24) || nåværende_sesong_periode_valg[0] >= 24)) {
         if (!gjennværende_land.includes(menyvalg[i][1])) {
           gjennværende_land.push(menyvalg[i][1])
         }
@@ -898,7 +898,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
           //   }
           // }
           if (nåværende_sesong_periode_valg[0]-16 != aar_etter_forste_periode) {
-            if (!knapper.includes('b5') && !knapper.includes('b8') && !knapper.includes('b12') && !knapper.includes('b17') && !knapper.includes('KO') && ((!plassering.includes("4") && (!plassering.includes("3") || !knapper.includes('b20')) && nåværende_sesong_periode_valg[0] < 24) || ((String(plassering).replaceAll(',', '')) <= 24 && nåværende_sesong_periode_valg[0] >= 24)) && knapper[0] != '' && (aar_etter_forste_periode + nåværende_sesong_periode_valg[0] != 22)) {
+            if (knapper.includes('b18') && !knapper.includes('KO') && ((!plassering.includes("4") && !plassering.includes("3") && nåværende_sesong_periode_valg[0] < 24) || nåværende_sesong_periode_valg[0] >= 24)) {
               klubbnavn_HTML_start = '<td class="klubbene fortsatt_med">';
             }
             if ((knapper).includes("b18")) {
@@ -936,6 +936,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
     if (klubbnavn_url.includes('/')) {
       klubbnavn_url = klubbnavn_url.replace('/','')
     }
+		
     if (i == ranking_array.length - 1) {
       if (klubbnavn_HTML_start == '<td class="klubbene fortsatt_med">') {
         klubbnavn_HTML_start = '<td class="klubbene fortsatt_med ramme_ikke_grønn">'
@@ -976,11 +977,13 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
       else {
         ranking_array[i][0] += "<span class='topp8_nr'>" + ranking_array[i][10][0] + "</span>";
       }
+			kortKlubbnavn_HTML_start = (klubbnavn_HTML_start.substring(klubbnavn_HTML_start.indexOf('class="') + 'class="'.length))
+			kortKlubbnavn_HTML_start = kortKlubbnavn_HTML_start.substring(0,kortKlubbnavn_HTML_start.indexOf('">'))
       if (klubbnavn_HTML_start == '<td class="klubbene">') {
         klubbnavn_HTML_start = `<td class="klubbene" id='toppåtte` + ranking_array[i][10][0] + "'>";
       }
       else {
-        klubbnavn_HTML_start = `<td class="klubbene" id='toppåtte` + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
+        klubbnavn_HTML_start = `<td class="` + kortKlubbnavn_HTML_start + `" id='toppåtte` + ranking_array[i][10][0] + "' " + klubbnavn_HTML_start.slice(4);
       }
     }
     if (aar_etter_forste_periode == 3) {
@@ -1024,7 +1027,7 @@ function byggTabell_test(ranking_array, column, order, uclMestere, uclMestereLan
                   rad_test_klasser = rad_test_klasser.slice(0, rad_test_klasser.length-2) + "overstiger_maks_2_grense " + rad_test_klasser.slice(rad_test_klasser.length-2);
                 }
                 helTabellHTML += rad_test_klasser += rad_test
-  }
+							}
   testTabell.innerHTML = helTabellHTML;
 
   topp8_høyde = [];

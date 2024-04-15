@@ -494,7 +494,7 @@ function sorter_etter_sesong() {
           if (menyvalg[p][0] == menyvalg_edit[i][0]) {
             let gruppespillsplassering = menyvalg[p][(antall_MV_elem * (aarstall+1))+(5-antall_MV_elem)]
             if (!gruppespillsplassering) {gruppespillsplassering = ","}
-            if (((gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') && aarstall <= 2) || (gruppespillsplassering.replaceAll(',','') > 24 && aarstall >= 3)) {
+            if (((gruppespillsplassering == '4,,' || gruppespillsplassering == ',4,' || gruppespillsplassering == ',,3' || gruppespillsplassering == ',,4') && aarstall <= 2)/* || (gruppespillsplassering.replaceAll(',','') > 24 && aarstall >= 3)*/) {
               menyvalg_edit[i][0] = menyvalg_edit[i][0] + '0/0'
               break
             }
