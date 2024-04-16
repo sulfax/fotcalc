@@ -1202,26 +1202,26 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
       }
       helTabellHTML += rad_test
       // Tilbakestill piler
-      if (denne_sesongen-22 == aar_etter_forste_periode) {
-        twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2], ranking_array[i][14]]);
-      }
-      else {
-        for(let p = 0; p < twitterDataTAB.length; p++) {
-          if(twitterDataTAB[p][0] == ranking_array[i][0]) {
-            twitterDataTAB[p].push(ranking_array[i][14]);
-          }
-        }
-      }
+      // if (denne_sesongen-22 == aar_etter_forste_periode) {
+      //   twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2], ranking_array[i][14]]);
+      // }
+      // else {
+      //   for(let p = 0; p < twitterDataTAB.length; p++) {
+      //     if(twitterDataTAB[p][0] == ranking_array[i][0]) {
+      //       twitterDataTAB[p].push(ranking_array[i][14]);
+      //     }
+      //   }
+      // }
   }
   // Tilbakestill piler
-  for (let i = 0; i < flaggEmoji.length; i++) {
-    for (let j = 0; j < twitterDataTAB.length; j++) {
-      if (flaggEmoji[i][0] == twitterDataTAB[j][0]) {
-        twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + ', ' + twitterDataTAB[j][2] + ', ' + twitterDataTAB[j][3] + ', ' + twitterDataTAB[j][4] + ', ' + twitterDataTAB[j][5] + ', ' + twitterDataTAB[j][6] + "],\n");
-      }
-    }
-  }
-  navigator.clipboard.writeText(twitterData);
+  // for (let i = 0; i < flaggEmoji.length; i++) {
+  //   for (let j = 0; j < twitterDataTAB.length; j++) {
+  //     if (flaggEmoji[i][0] == twitterDataTAB[j][0]) {
+  //       twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + ', ' + twitterDataTAB[j][2] + ', ' + twitterDataTAB[j][3] + ', ' + twitterDataTAB[j][4] + ', ' + twitterDataTAB[j][5] + ', ' + twitterDataTAB[j][6] + "],\n");
+  //     }
+  //   }
+  // }
+  // navigator.clipboard.writeText(twitterData);
   // Slutt tilbakestill piler
   testTabell.innerHTML = helTabellHTML;
 
