@@ -1122,7 +1122,10 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
       internt_oppgjør = "&nbsp*";
       internt_oppgjør_bool = true;
       if (aar_etter_forste_periode == internt_oppgjor_aar) {
-        ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
+				if (['ITA'].includes(ranking_array[i][0])) {
+					// ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
+					ranking_array[i][13] = 3 + "/" + (ranking_array[i][13]).split('/')[1];					
+				}
       }
     }
     
