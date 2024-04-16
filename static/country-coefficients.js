@@ -109,25 +109,25 @@ let flaggEmoji = [
 
 
 let forrigeUkeData = [
-	["ENG", 16.250, 1, 1, 1, 2, 3, 3],
-	["ESP", 14.437, 2, 3, 4, 4, 4, 5],
-	["ITA", 18.428, 3, 2, 2, 1, 1, 1],
-	["GER", 16.357, 4, 4, 3, 3, 2, 2],
-	["NED", 10.000, 6, 6, 6, 7, 7, 10],
-	["FRA", 14.750, 5, 5, 5, 5, 5, 4],
-	["POR", 10.666, 7, 7, 7, 8, 9, 9],
-	["BEL", 13.200, 8, 8, 8, 6, 6, 7],
+	["ENG", 16.750, 1, 1, 1, 2, 3, 3],
+	["ESP", 15.062, 2, 3, 4, 4, 4, 4],
+	["ITA", 18.857, 3, 2, 2, 1, 1, 1],
+	["GER", 16.785, 4, 4, 3, 3, 2, 2],
+	["NED", 10.000, 6, 6, 6, 7, 8, 10],
+	["FRA", 14.750, 5, 5, 5, 5, 5, 5],
+	["POR", 11.000, 7, 7, 7, 8, 9, 9],
+	["BEL", 13.600, 8, 8, 8, 6, 6, 6],
 	["TUR", 11.500, 9, 10, 9, 9, 10, 8],
-	["SCO", 6.400, 10, 14, 18, 17, 15, 16],
+	["SCO", 6.400, 11, 14, 18, 17, 15, 16],
 	["AUT", 4.800, 13, 12, 15, 19, 17, 21],
 	["SUI", 5.200, 12, 15, 13, 15, 20, 19],
-	["CZE", 13.250, 11, 9, 10, 10, 8, 6],
+	["CZE", 13.500, 10, 9, 10, 10, 7, 7],
 	["DEN", 8.500, 15, 16, 11, 13, 13, 13],
 	["NOR", 8.000, 14, 13, 14, 14, 14, 14],
 	["SRB", 1.400, 19, 19, 19, 31, 46, 46],
 	["UKR", 4.100, 18, 21, 23, 22, 25, 25],
 	["ISR", 8.750, 16, 11, 12, 11, 12, 12],
-	["GRE", 9.400, 17, 17, 16, 16, 11, 11],
+	["GRE", 9.800, 17, 17, 16, 16, 11, 11],
 	["POL", 6.875, 21, 18, 17, 12, 16, 15],
 	["CRO", 5.875, 20, 20, 20, 24, 18, 17],
 	["RUS", 4.333, 22, 22, 24, 27, 24, 24],
@@ -150,11 +150,11 @@ let forrigeUkeData = [
 	["LIE", 0.500, 40, 42, 38, 29, 52, 52],
 	["BIH", 2.250, 39, 37, 42, 41, 33, 33],
 	["ISL", 3.833, 41, 36, 32, 30, 27, 27],
-	["NIR", 1.125, 42, 44, 47, 49, 49, 49],
+	["NIR", 1.125, 42, 44, 47, 48, 49, 49],
 	["LUX", 2.250, 43, 47, 45, 44, 33, 33],
 	["LTU", 1.125, 44, 43, 43, 43, 49, 49],
 	["MLT", 1.500, 45, 41, 41, 42, 43, 43],
-	["GEO", 1.250, 46, 49, 50, 48, 48, 48],
+	["GEO", 1.250, 46, 49, 50, 49, 48, 48],
 	["ALB", 2.125, 47, 45, 46, 46, 36, 36],
 	["EST", 0.125, 48, 46, 44, 53, 55, 55],
 	["BLR", 1.750, 49, 53, 53, 47, 39, 39],
@@ -163,7 +163,8 @@ let forrigeUkeData = [
 	["WAL", 0.625, 52, 50, 51, 52, 51, 51],
 	["MNE", 1.333, 53, 51, 52, 50, 47, 47],
 	["GIB", 0.166, 54, 54, 54, 55, 54, 54],
-	["SMR", 0.333, 55, 55, 55, 54, 53, 53],	
+	["SMR", 0.333, 55, 55, 55, 54, 53, 53],
+		
 ]
 
 
@@ -1201,26 +1202,26 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
       }
       helTabellHTML += rad_test
       // Tilbakestill piler
-      // if (denne_sesongen-22 == aar_etter_forste_periode) {
-      //   twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2], ranking_array[i][14]]);
-      // }
-      // else {
-      //   for(let p = 0; p < twitterDataTAB.length; p++) {
-      //     if(twitterDataTAB[p][0] == ranking_array[i][0]) {
-      //       twitterDataTAB[p].push(ranking_array[i][14]);
-      //     }
-      //   }
-      // }
+      if (denne_sesongen-22 == aar_etter_forste_periode) {
+        twitterDataTAB.push([ranking_array[i][0], ranking_array[i][2], ranking_array[i][14]]);
+      }
+      else {
+        for(let p = 0; p < twitterDataTAB.length; p++) {
+          if(twitterDataTAB[p][0] == ranking_array[i][0]) {
+            twitterDataTAB[p].push(ranking_array[i][14]);
+          }
+        }
+      }
   }
   // Tilbakestill piler
-  // for (let i = 0; i < flaggEmoji.length; i++) {
-  //   for (let j = 0; j < twitterDataTAB.length; j++) {
-  //     if (flaggEmoji[i][0] == twitterDataTAB[j][0]) {
-  //       twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + ', ' + twitterDataTAB[j][2] + ', ' + twitterDataTAB[j][3] + ', ' + twitterDataTAB[j][4] + ', ' + twitterDataTAB[j][5] + ', ' + twitterDataTAB[j][6] + "],\n");
-  //     }
-  //   }
-  // }
-  // navigator.clipboard.writeText(twitterData);
+  for (let i = 0; i < flaggEmoji.length; i++) {
+    for (let j = 0; j < twitterDataTAB.length; j++) {
+      if (flaggEmoji[i][0] == twitterDataTAB[j][0]) {
+        twitterData += ('["' + twitterDataTAB[j][0] + '", ' + twitterDataTAB[j][1] + ', ' + twitterDataTAB[j][2] + ', ' + twitterDataTAB[j][3] + ', ' + twitterDataTAB[j][4] + ', ' + twitterDataTAB[j][5] + ', ' + twitterDataTAB[j][6] + "],\n");
+      }
+    }
+  }
+  navigator.clipboard.writeText(twitterData);
   // Slutt tilbakestill piler
   testTabell.innerHTML = helTabellHTML;
 
