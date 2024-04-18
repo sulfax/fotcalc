@@ -1007,12 +1007,12 @@ function generer_lands_knapper() {
     //   else if (aarstall == 4) {koeff_sesong3 += 0.625}
     //   else if (aarstall == 5) {koeff_sesong4 += 0.625}
     //   else if (aarstall == 6) {koeff_sesong5 += 0.625}}
-		if (['ITA'].includes(landskoeffisienter[i][0])) {
-			if (aarstall == 2) {enkelt_sesong1 += 0.429}
-			else if (aarstall == 3) {koeff_sesong2 += 0.429}
-			else if (aarstall == 4) {koeff_sesong3 += 0.429}
-			else if (aarstall == 5) {koeff_sesong4 += 0.429}
-			else if (aarstall == 6) {koeff_sesong5 += 0.429}}
+		// if (['ITA'].includes(landskoeffisienter[i][0])) {
+		// 	if (aarstall == 2) {enkelt_sesong1 += 0.429}
+		// 	else if (aarstall == 3) {koeff_sesong2 += 0.429}
+		// 	else if (aarstall == 4) {koeff_sesong3 += 0.429}
+		// 	else if (aarstall == 5) {koeff_sesong4 += 0.429}
+		// 	else if (aarstall == 6) {koeff_sesong5 += 0.429}}
 		// else if (['GRE'].includes(landskoeffisienter[i][0])) {
 		// 	if (aarstall == 2) {enkelt_sesong1 += 1.000}
 		// 	else if (aarstall == 3) {koeff_sesong2 += 1.000}
@@ -1559,13 +1559,13 @@ function totalt_land(column, order, tekst, antall_klubber) {
   }
 	let filter_land_før = JSON.parse(localStorage.getItem('filter_land')) || [];
 	// Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-  if (aarstall == 2) {
-    for (r = 0; r < landskoeffisienter.length; r++) {
-			if (['ITA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] += 3;}
-    }
-  }
+  // if (aarstall == 2) {
+  //   for (r = 0; r < landskoeffisienter.length; r++) {
+	// 		if (['ITA'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] += 3;}
+  //   }
+  // }
 	// Brukes når vi vet antallet UCL-klubber fra land, men hvilke klubber det er snakk om er ukjent.
-  else if (aarstall == 3) {
+  if (aarstall == 3) {
     for (r = 0; r < landskoeffisienter.length; r++) {
       if (['AUT','SCO','BEL','POR'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 6; if (filter_land_før.includes(landskoeffisienter[r][0]) || filter_land_før == "") {landskoeffisienter[r][4] = 5;}}
       else if (['NED'].includes(landskoeffisienter[r][0])) {landskoeffisienter[r][2] = 12; if (filter_land_før.includes(landskoeffisienter[r][0]) || filter_land_før == "") {landskoeffisienter[r][4] = 6;}}
