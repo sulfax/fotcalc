@@ -413,12 +413,18 @@ function oppdater_ved_refresh() {
       else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 2.571}
       else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 2.571}
       else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 2.571}}
-    else if (['ITA','GER','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    else if (['GER','ESP','ENG'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 3) {enkelt_sesong1 = 3.428}
       else if (aar_etter_forste_periode == 4) {koeff_sesong2 = 3.428}
       else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 3.428}
       else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 3.428}
       else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 3.428}}
+		else if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aar_etter_forste_periode == 3) {enkelt_sesong1 = 3.750}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong2 = 3.750}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 3.750}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 3.750}
+			else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 3.750}}
 		// Sesongen etter.
 		if (['CZE','TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 4) {enkelt_sesong1 = 1.200}
@@ -1118,16 +1124,16 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
     if (sesong5 == '-') {sesong5 = '<span class="bindestrek">-</span>'}
     let internt_oppgjør = "";
     // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
-    if (['ITA'].includes(ranking_array[i][0]) && aar_etter_forste_periode >= internt_oppgjor_aar && aar_etter_forste_periode <= internt_oppgjor_aar+4) {
-      internt_oppgjør = "&nbsp*";
-      internt_oppgjør_bool = true;
-      if (aar_etter_forste_periode == internt_oppgjor_aar) {
-				if (['ITA'].includes(ranking_array[i][0])) {
-					// ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
-					// ranking_array[i][13] = 3 + "/" + (ranking_array[i][13]).split('/')[1];					
-				}
-      }
-    }
+    // if (['ITA'].includes(ranking_array[i][0]) && aar_etter_forste_periode >= internt_oppgjor_aar && aar_etter_forste_periode <= internt_oppgjor_aar+4) {
+    //   internt_oppgjør = "&nbsp*";
+    //   internt_oppgjør_bool = true;
+    //   if (aar_etter_forste_periode == internt_oppgjor_aar) {
+		// 		if (['ITA'].includes(ranking_array[i][0])) {
+		// 			// ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
+		// 			// ranking_array[i][13] = 3 + "/" + (ranking_array[i][13]).split('/')[1];					
+		// 		}
+    //   }
+    // }
     
     let klubber_igjen = ""
     let tom_kolonne = `<td class='tom'>${""}</td>`
@@ -2124,12 +2130,18 @@ function generer_lands_knapper() {
       else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 2.571}
       else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 2.571}
       else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 2.571}}
-    else if (['ITA','GER','ESP','ENG'].includes(landskoeffisienter[i][0])) {
+    else if (['GER','ESP','ENG'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 3) {enkelt_sesong1 = 3.428}
       else if (aar_etter_forste_periode == 4) {koeff_sesong2 = 3.428}
       else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 3.428}
       else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 3.428}
       else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 3.428}}
+		else if (['ITA'].includes(landskoeffisienter[i][0])) {
+			if (aar_etter_forste_periode == 3) {enkelt_sesong1 = 3.750}
+			else if (aar_etter_forste_periode == 4) {koeff_sesong2 = 3.750}
+			else if (aar_etter_forste_periode == 5) {koeff_sesong3 = 3.750}
+			else if (aar_etter_forste_periode == 6) {koeff_sesong4 = 3.750}
+			else if (aar_etter_forste_periode == 7) {koeff_sesong5 = 3.750}}
 		// Sesongen etter.
 		if (['CZE','TUR','BEL','POR'].includes(landskoeffisienter[i][0])) {
       if (aar_etter_forste_periode == 4) {enkelt_sesong1 = 1.200}
