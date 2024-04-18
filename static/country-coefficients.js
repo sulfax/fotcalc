@@ -1124,7 +1124,7 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
       if (aar_etter_forste_periode == internt_oppgjor_aar) {
 				if (['ITA'].includes(ranking_array[i][0])) {
 					// ranking_array[i][13] = (ranking_array[i][13]).split('/')[0]-1 + "/" + (ranking_array[i][13]).split('/')[1];
-					ranking_array[i][13] = 3 + "/" + (ranking_array[i][13]).split('/')[1];					
+					// ranking_array[i][13] = 3 + "/" + (ranking_array[i][13]).split('/')[1];					
 				}
       }
     }
@@ -1230,12 +1230,12 @@ function byggTabell_test(ranking_array, aar_etter_forste_periode, column, order)
 
   // Brukes dersom land har internt oppgjør og er garantert koeffisientpoeng.
   if (internt_oppgjør_bool) {
-    if (aar_etter_forste_periode == internt_oppgjor_aar) {
-      document.getElementById("internt_oppgjør_asterisk").innerText = "*Includes guaranteed coefficient points from internal Italian quarter-final. Consequently, the club count is reduced to 3/7."
-    }
-    else {
+    // if (aar_etter_forste_periode == internt_oppgjor_aar) {
+    //   document.getElementById("internt_oppgjør_asterisk").innerText = "*Includes guaranteed coefficient points from internal Italian quarter-final. Consequently, the club count is reduced to 3/7."
+    // }
+    // else {
       document.getElementById("internt_oppgjør_asterisk").innerText = "*Includes guaranteed coefficient points from internal Italian quarter-final."
-    }
+    // }
   }
   else {
     document.getElementById("internt_oppgjør_asterisk").innerText = ""
