@@ -457,7 +457,7 @@ const sprak_id_fire_års = [
   'decisive_oversett',
   'legend_grønne_tall',
   'legend2',
-  'POENG_vs_NA',
+  // 'POENG_vs_NA',
   'premiepenger_reklame',
   'oversikt_reklame',
 ];

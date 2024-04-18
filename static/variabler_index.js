@@ -120,8 +120,8 @@ const norsk_fire_års = [
     'De åtte høyest rangerte klubbene på denne rangeringen kvalifiserer seg til FIFA Club World Cup. De fire UCL-vinnerne fra denne 4-årsperioden kvalifiserer seg også. Maksimalt to klubber per land kan kvalifisere seg, med mindre mer enn to av UCL-vinnerne representerer samme land.<br><br><span class="gjennomsiktighet">Rangeringen baseres på <a class="link_utydelig" href="coefficient-definition#club">klubb-koeffisientpoeng</a> (kun fra Champions League).<br>Se også <a class="link_utydelig" href="club-coefficients">5-års koeffisient-rangeringen.</span>',
     'Bestemmer deltakere i Klubb-VM ',
     'Klubber merket med tall til høyre for klubbnavnet sitt, er i posisjon til å kvalifisere seg. <span class="topp8_nr_farge">Grønne</span> tall indikerer at deltagelse er sikret.',
-    'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive nasjoner.',
-    'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
+    'Klubber med blå bakgrunnsfarge konkurrerer fortsatt. Klubber med grønn bakgrunnsfarge er fra aktive Champions League-nasjoner.',
+    // 'UEFA bruker det tallet som er størst av klubbens totale koeffisientpoeng (oppført under "Points" i tabellen), og 20% av landets koeffisientpoeng (oppført under "NA").',
     'Sjekk ut',
     '<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Sammenlign klubbers koeffisientpoeng</a>.</b></span>'
 ];
@@ -404,8 +404,8 @@ const english_fire_års = [
     'The eight highest ranked clubs on this UEFA ranking (European qualification pathway), qualifies for the FIFA Club World Cup. The four UCL winners from this 4-year period also qualifies. A cap of two clubs per country applies, except if more than two of the UCL winners represent the same national association.<br><br><span class="gjennomsiktighet">The ranking is based on <a class="link_utydelig" href="coefficient-definition#club">club coefficient points</a> (from Champions League only).<br>See also the <a class="link_utydelig" href="club-coefficients">5-year coefficient ranking</a>.</span>',
     'Determines spots for Club WC ',
     'Clubs with numbers to the right of their club names are in position to qualify. <span class="topp8_nr_farge">Green</span> numbers indicate that participation is guaranteed.',
-    'Clubs with a blue background color are still in competition. Clubs with a green background color are from active countries.',
-    `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
+    'Clubs with a blue background color are still in competition. Clubs with a green background color are from active Champions League countries.',
+    // `UEFA will use whichever number is higher between a club's total coefficient points (listed under "Points" in the table), or 20% of the national association's coefficient points (listed under "NA").`,
     'Check out',
     `<span class="marketPool" id="oversikt_reklame"><b><a class="graa_hover_link" id="klubb_link" href="https://www.fotcalc.com/" onclick="endre_sort_kolonne()">Compare clubs' coefficient points</a>.</b></span>`
 ];
