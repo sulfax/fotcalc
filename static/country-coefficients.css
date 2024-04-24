@@ -83,6 +83,11 @@
 		margin-left: 1.5% !important;
 	}
 }
+@media (max-width:1570px) {
+	#AnchorNav {
+		display:none !important;
+	}
+}
 
 #overskrift_landskoeffisient, #beskrivelse_landskoeffisient {
     margin-left: 10px !important;
