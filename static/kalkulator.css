@@ -17,31 +17,6 @@
   }
 }
 
-.tooltip-container {
-	position: relative;
-	display: inline-block;
-}
-
-.tooltip-content {
-	visibility: hidden;
-	width: 500px;
-	text-align: left;
-	background-color: #343a40;
-	color: rgb(240, 240, 240);
-	border-radius: 6px;
-	position: absolute;
-	z-index: 1;
-	transform: translateX(-50%);
-	left: 248px;
-	bottom: -68px;
-	cursor: default !important;
-	/* style tooltip */
-	border-radius: 3px;
-	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
-	font-size: 14px;
-	padding: 3px 5px;
-}
-
 .tolltip2 {
 	bottom: -110px;
 }
@@ -57,10 +32,6 @@
 }
 .tolltip6 {
 	bottom: -47px;
-}
-
-.tooltip-container:hover .tooltip-content {
-	visibility: visible;
 }
 
 @media (max-width:1428px) {

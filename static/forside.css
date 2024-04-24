@@ -163,7 +163,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
 }
-@media (min-width:900px) {
+@media (min-width:0px) {
     #ass_coeff, #bidrag, #prize_money, #club_coeff {
         text-align: right;
     }
@@ -223,9 +223,12 @@ th, td {
     margin-right: 5px;
 }
 .høyrestill {
-    float: right;
+    /* float: right; */
     margin-left: 4px;
 }
+/* #premiepenger_navn {
+	bottom: 7px !important;
+} */
 
 
 .premie_koeff {
@@ -580,4 +583,14 @@ th, td {
 .penger {
 	padding-left: 0px !important;
 	padding-right: 0px !important;
+}
+.tolltipContribution {
+	bottom: -27px;
+	width: 111px;
+	left: 55px;
+}
+.tolltipContributionNorsk {
+	bottom: -27px;
+	width: 95px;
+	left: 47px;
 }
