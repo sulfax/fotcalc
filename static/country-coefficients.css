@@ -83,7 +83,21 @@
 		margin-left: 1.5% !important;
 	}
 }
-@media (max-width:1570px) {
+@media (max-width:1560px) {
+	@media (min-width:1522px) {
+		#AnchorNav {
+			display:none !important;
+		}
+	}
+}
+@media (max-width:1360px) {
+	@media (min-width:1323px) {
+		#AnchorNav {
+			display:none !important;
+		}
+	}
+}
+@media (max-width:925px) {
 	#AnchorNav {
 		display:none !important;
 	}
