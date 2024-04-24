@@ -66,7 +66,25 @@
 .høyrestill {
     margin: 0px !important;
 }
-
+@media (max-width:1522px) {
+	@media (min-width:1461px) {
+		#AnchorNav {
+			display:none !important;
+		}
+	}
+}
+@media (max-width:1322px) {
+	@media (min-width:1264px) {
+		#AnchorNav {
+			display:none !important;
+		}
+	}
+}
+@media (max-width:868px) {
+	#AnchorNav {
+		display:none !important;
+	}
+}
 
 
 
@@ -593,4 +611,7 @@ th, td {
 	bottom: -27px;
 	width: 95px;
 	left: 47px;
+}
+#AnchorNav {
+	translate: calc(-32.8% - 1rem) 0;
 }

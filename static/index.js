@@ -1,3 +1,26 @@
+var $root = $('html, body');
+$('a[href^="#"]').click(function(event) {
+	var href = $.attr(this, 'href');
+	// Sjekk om lenken er bare "#" 
+	if (href === "#") {
+		// Gjeldende logikk for smooth scrolling
+		$root.animate({
+			scrollTop: $("#navbar").offset().top
+	}, 500, function () {
+			window.location.hash = "#";
+			history.replaceState('', document.title, window.location.pathname + window.location.search);
+	});
+	} else {
+			// Gjeldende logikk for smooth scrolling
+			$root.animate({
+					scrollTop: $(href).offset().top
+			}, 500, function () {
+					window.location.hash = href;
+			});
+	}
+	event.preventDefault();
+});
+
 var eksperimentell_profil_e = "Calculate from scratch";
 var eksperimentell_profil_n = "Kalkuler fra bunnen";
 
@@ -407,6 +430,8 @@ const sprak_id = [
 ];
 
 const sprak_id_forside = [
+	'anchorForsideKlubber',
+	'anchorForsideLand',
   'title',
   'overskrift_forside',
   'beskrivelse_forside',
@@ -429,6 +454,8 @@ const sprak_id_forside = [
 ];
 
 const sprak_id_landskoeffisient = [
+	'anchorCountryRangering',
+	'anchorCountryKlubber',
   'title',
   'overskrift_landskoeffisient',
   'beskrivelse_landskoeffisient',

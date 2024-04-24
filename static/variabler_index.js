@@ -71,6 +71,8 @@ const norsk = [
 ];
 
 const norsk_forside = [
+		'Klubber',
+		'Per land',
     'Din Klubbs Premiepenger & UEFA Koeffisientpoeng',
     'UEFA premiepenge- og koeffisient-oversikt',
     'UEFAs inntekstfordeling til alle klubber. Finn hver klubbs premiepenger og koeffisientpoeng i alle klubbturneringer.<br><br><span class="reklame_landskoeff">Sjekk også ut <a class="link_utydelig" href="/country-coefficients">landskoeffisient-rangeringen</a>.</span>',
@@ -93,6 +95,8 @@ const norsk_forside = [
 ];
 
 const norsk_landskoeffisient = [
+		'Landsrangering',
+		'Per klubb',
     'UEFA Landskoeffisient-Rangering',
     'Landskoeffisient-rangering',
     'UEFA-rangeringen av et land bestemmer hvor mange europaplasser de vil få og når i turneringene deres klubber vil starte sin deltagelse.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Landskoeffisienter</a> er også kjent som "forbunds-klubbkoeffisient".</span>',
@@ -355,6 +359,8 @@ const english = [
 ];
 
 const english_forside = [
+		'Clubs',
+		'Per country',
     `Your Club's Prize Money & UEFA Coefficient Points`,
     'UEFA income and coefficient overview',
     'UEFA Revenue distribution for all clubs. Find every clubs prize money and coefficient points across all competitions.<br><br><span class="reklame_landskoeff">Check out the <a class="link_utydelig" href="/country-coefficients">country coefficient ranking</a> too.</span>',
@@ -377,6 +383,8 @@ const english_forside = [
 ];
 
 const english_landskoeffisient = [
+		'Country ranking',
+		'Per club',
     'UEFA Country Coefficient Ranking',
     'Country coefficient ranking',
     'The UEFA ranking of a country decides how many European places they are going to get and how far into the competitions their clubs will enter.<br><br><span class="gjennomsiktighet"><a class="link_utydelig" href="coefficient-definition#association">Country coefficients</a> are also known as "association club coefficients".</span>',
