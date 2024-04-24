@@ -159,7 +159,11 @@ $('th').on('click', function(){
 			}
 		}
 		if (column == 'club_coeff') {
-			var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+			if (document.getElementById(column).innerText[0] == "C") {
+				var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
+			} else {
+				var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
+			}
 		}
 		if (column == 'prize_money_total') {
 			var tekst = '<span id="premiepenger_land_navn">' + document.getElementById(column).innerText + '</span>'
@@ -207,7 +211,11 @@ $('th').on('click', function(){
 			}
 			if (column == 'club_coeff') {
 				column = 'club_coeff_total'
-				tekst = '<span id="klubb_koeff_land_navn">' + document.getElementById(column).innerText + '</span>'
+				if (document.getElementById(column).innerText[0] == "C") {
+					tekst = '<span id="klubb_koeff_land_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
+				} else {
+					tekst = '<span id="klubb_koeff_land_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
+				}
 				sorter_land_total(column, order, tekst, menyvalg_edit)
 			}
 		}
@@ -557,13 +565,17 @@ function sorter_etter_sesong() {
   }
   if (column == 'bidrag') {
 		if (document.getElementById(column).innerText[0] == "C") {
-			tekst = '<span id="bidrag_navn">' + '<div class="tooltip-container"><u>Contribution</u><span class="tooltip-content tolltipContribution">More data <a class="linkContribution" href="/country-coefficients#clubs">here</a></span></div>' + '</span>'
+			var tekst = '<span id="bidrag_navn">' + '<div class="tooltip-container"><u>Contribution</u><span class="tooltip-content tolltipContribution">More data <a class="linkContribution" href="/country-coefficients#clubs">here</a></span></div>' + '</span>'
 		} else {
-			tekst = '<span id="bidrag_navn">' + '<div class="tooltip-container"><u>Bidrag</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/country-coefficients#clubs">her</a></span></div>' + '</span>'
+			var tekst = '<span id="bidrag_navn">' + '<div class="tooltip-container"><u>Bidrag</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/country-coefficients#clubs">her</a></span></div>' + '</span>'
 		}
   }
   if (column == 'club_coeff') {
-    var tekst = '<span id="klubb_koeff_navn">' + document.getElementById(column).innerText + '</span>'
+		if (document.getElementById(column).innerText[0] == "C") {
+			var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
+		} else {
+			var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
+		}
   }
   sorter(column, order, tekst, menyvalg_edit)
   column = sessionStorage.getItem('kolonne2') || 'prize_money_total'
@@ -837,7 +849,11 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
 			}
     }
     if (kolonne == 'club_coeff') {
-      document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + document.getElementById(kolonne).innerText + '</span>' + opp_ned_pil
+			if (document.getElementById(kolonne).innerText[0] == "C") {
+				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Contribution</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>' + opp_ned_pil
+			} else {
+				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Bidrag</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>' + opp_ned_pil
+			}
     }
   }
   if (document.getElementById(kolonne).innerHTML.replace(document.getElementById(kolonne).innerText, '') != opp_ned_pil_klubb) {
