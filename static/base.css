@@ -277,7 +277,8 @@ body{
     padding-bottom: .1%;
     padding-top: calc(0.7% + 5px);
     margin-left:-1.99%;
-    overflow-x:auto
+    overflow-x:auto;
+		overflow-y: hidden !important;
 }
 .tabell_div_2{
     width:104%;
