@@ -6,37 +6,6 @@
 	};
 })();
 
-function scrollToTop() {
-  var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-  if (currentScroll > 0) {
-    window.requestAnimationFrame(scrollToTop);
-    window.scrollTo(0, currentScroll - (currentScroll / 8));
-  }
-}
-
-var $root = $('html, body');
-$('a[href^="#"]').click(function(event) {
-	var href = $.attr(this, 'href');
-	// Sjekk om lenken er bare "#" 
-	if (href === "#") {
-		// Gjeldende logikk for smooth scrolling
-		$root.animate({
-			scrollTop: $("#navbar").offset().top
-	}, 500, function () {
-			window.location.hash = "#";
-			history.replaceState('', document.title, window.location.pathname + window.location.search);
-	});
-	} else {
-			// Gjeldende logikk for smooth scrolling
-			$root.animate({
-					scrollTop: $(href).offset().top
-			}, 500, function () {
-					window.location.hash = href;
-			});
-	}
-	event.preventDefault();
-});
-
 let opp_ned_pil = '<span><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
 let opp_ned_pil_margin = '<span class="margin"><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'
 let opp_ned_pil_midten = '<span><img src="media/opp_ned_pil.svg" alt="Sorting arrows"></span>'

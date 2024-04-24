@@ -608,17 +608,3 @@ a:hover {
 	position: relative;
 	display: inline-block;
 }
-#AnchorNav {
-	position: fixed;
-	rotate: 90deg;
-	top: 23rem;
-	display: block !important;
-	translate: calc(-36.6% - 1rem) 0;
-}
-.AnchorBtn {
-	background-color: white;
-	border-top-left-radius: .2rem;
-	border-top-right-radius: .2rem;
-	display: inline-block;
-	padding: .2rem .5rem;
-}
