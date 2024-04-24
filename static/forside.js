@@ -133,7 +133,7 @@ let opp_ned_pil = '<span class="høyrestill"><img src="media/opp_ned_pil.svg" al
 let opp_ned_pil_klubb = '<img src="media/opp_ned_pil.svg" alt="Sorting arrows">'
 
 $('th').on('click', function(){
-	if (!$(event.target).hasClass('tooltip-content')) {
+	if (!$(event.target).hasClass('tooltip-content') && !$(event.target).hasClass('linkContribution')) {
 		var column = $(this).data('column')
 		var order = $(this).data('order')
 		if (order == sessionStorage.getItem('rekkefølge') && order == 'desc') {
