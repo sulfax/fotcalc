@@ -622,3 +622,6 @@ a:hover {
 	display: inline-block;
 	padding: .2rem .5rem;
 }
+html {
+  scroll-behavior: smooth !important;
+}
