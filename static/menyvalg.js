@@ -455,7 +455,7 @@ const totalt_antall_klubber = [
     [8, 7, 7],// ENG
     [8, 7, 7],// ESP
     [7, 8, 7],// ITA
-    [7, 7, 7],// GER
+    [7, 8, 7],// GER
     [6, 7, 7],// FRA
     [6, 5, 5],// POR
     [5, 6 ,6],// NED
