@@ -64,7 +64,7 @@
     }
     #spoiler_abbr:hover::after,
     #spoiler_abbr:focus::after {
-        bottom: -19px !important;
+        bottom: -23px !important;
         left: -76px !important;
     }
     #NA_prosent:hover::after,
