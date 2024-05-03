@@ -615,7 +615,8 @@ th, td {
 .tolltipClubPoints {
 	bottom: -27px;
 	width: 111px;
-	left: 8px;
+	left: 100px;
+	float: right;
 }
 #AnchorNav {
 	translate: calc(-32.8% - 1rem) 0;
