@@ -80,7 +80,9 @@ body{
     background-size: contain;
     background-color: rgb(196, 217, 255);
     font-family: sans-serif;
-		overflow-x: hidden !important;
+}
+html, body {
+	overflow-x: hidden !important;
 }
 @media screen and (max-width:1200px){
     body{
