@@ -850,9 +850,9 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
     }
     if (kolonne == 'club_coeff') {
 			if (document.getElementById(kolonne).innerText[0] == "C") {
-				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Contribution</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>' + opp_ned_pil
+				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>' + opp_ned_pil
 			} else {
-				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Bidrag</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>' + opp_ned_pil
+				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>' + opp_ned_pil
 			}
     }
   }
