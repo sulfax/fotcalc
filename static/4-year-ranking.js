@@ -807,7 +807,6 @@ function sortFunction_tall_1_flere_desimal_original(a, b) {
 
   if (sum_a === '' || !sum_a && sum_a !== 0) {sum_a = "0.0"}
   if (sum_b === '' || !sum_b && sum_b !== 0) {sum_b = "0.0"}
-	// if (b[0] == "FC Krasnodar") {alert(a[0] + a[9][2] + " " + b[0] + b[9][2])}
   if (parseFloat(sum_a) === parseFloat(sum_b)) {
 		if (parseFloat(a[9][1]) === parseFloat(b[9][1])) {
 			if (parseFloat(a[9][2]) === parseFloat(b[9][2])) {
