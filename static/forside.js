@@ -160,9 +160,9 @@ $('th').on('click', function(){
 		}
 		if (column == 'club_coeff') {
 			if (document.getElementById(column).innerText[0] == "C") {
-				var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
+				var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data<br><a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
 			} else {
-				var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
+				var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipClubPointsNorsk">Mer data<br><a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
 			}
 		}
 		if (column == 'prize_money_total') {
@@ -212,9 +212,9 @@ $('th').on('click', function(){
 			if (column == 'club_coeff') {
 				column = 'club_coeff_total'
 				if (document.getElementById(column).innerText[0] == "C") {
-					tekst = '<span id="klubb_koeff_land_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
+					tekst = '<span id="klubb_koeff_land_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data<br><a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
 				} else {
-					tekst = '<span id="klubb_koeff_land_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
+					tekst = '<span id="klubb_koeff_land_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipClubPointsNorsk">Mer data<br><a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
 				}
 				sorter_land_total(column, order, tekst, menyvalg_edit)
 			}
@@ -572,9 +572,9 @@ function sorter_etter_sesong() {
   }
   if (column == 'club_coeff') {
 		if (document.getElementById(column).innerText[0] == "C") {
-			var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
+			var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data<br><a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>'
 		} else {
-			var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
+			var tekst = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipClubPointsNorsk">Mer data<br><a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>'
 		}
   }
   sorter(column, order, tekst, menyvalg_edit)
@@ -850,9 +850,9 @@ function endre_kolonne_overskrift(kolonne, opp_ned_pil) {
     }
     if (kolonne == 'club_coeff') {
 			if (document.getElementById(kolonne).innerText[0] == "C") {
-				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data <a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>' + opp_ned_pil
+				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Club points</u><span class="tooltip-content tolltipClubPoints">More data<br><a class="linkContribution" href="/club-coefficients">here</a></span></div>' + '</span>' + opp_ned_pil
 			} else {
-				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipContributionNorsk">Mer data <a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>' + opp_ned_pil
+				document.getElementById(kolonne).innerHTML = '<span id="klubb_koeff_navn">' + '<div class="tooltip-container"><u>Klubbpoeng</u><span class="tooltip-content tolltipClubPointsNorsk">Mer data<br><a class="linkContribution" href="/club-coefficients">her</a></span></div>' + '</span>' + opp_ned_pil
 			}
     }
   }

@@ -603,19 +603,24 @@ th, td {
 	padding-right: 0px !important;
 }
 .tolltipContribution {
-	bottom: -27px;
+	bottom: -26px;
 	width: 111px;
 	left: 55px;
 }
 .tolltipContributionNorsk {
-	bottom: -27px;
+	bottom: -26px;
 	width: 95px;
-	left: 35px;
+	left: 47px;
 }
 .tolltipClubPoints {
-	bottom: -27px;
-	width: 111px;
-	left: 8px;
+	bottom: -47px;
+	width: 78px;
+	left: 14px;
+}
+.tolltipClubPointsNorsk {
+	bottom: -47px;
+	width: 78px;
+	left: 38px;
 }
 #AnchorNav {
 	translate: calc(-32.8% - 1rem) 0;
