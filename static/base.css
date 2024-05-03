@@ -80,11 +80,12 @@ body{
     background-size: contain;
     background-color: rgb(196, 217, 255);
     font-family: sans-serif;
-		overflow-y: hidden !important;
+		/* overflow-y: hidden !important; */
+		overflow-x: hidden !important;
 }
-html, body {
+/* html, body {
 	overflow-x: hidden !important;
-}
+} */
 @media screen and (max-width:1200px){
     body{
         background-size: 206% !important;
