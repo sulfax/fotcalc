@@ -65,7 +65,7 @@
     #spoiler_abbr:hover::after,
     #spoiler_abbr:focus::after {
         bottom: -19px !important;
-        left: 7px !important;
+        left: -76px !important;
     }
     #NA_prosent:hover::after,
     #NA_prosent:focus::after {
@@ -278,7 +278,7 @@ body{
     padding-top: calc(0.7% + 5px);
     margin-left:-1.99%;
     overflow-x:auto;
-		overflow-y: hidden !important;
+		overflow-y:hidden !important;
 }
 .tabell_div_2{
     width:104%;
