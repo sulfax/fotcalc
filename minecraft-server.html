@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Johannes Kaste">
+    <title>Minecraft-server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            background-image: url('media/minecraft/bilde1.png'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px); /* Extra blur for the password box background */
+            width: 40%;
+            min-width: 300px;
+        }
+
+        .content {
+            display: none;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 1); /* Semi-transparent background for the main content */
+            padding: 20px;
+            border-radius: 8px;
+            width: 40%;
+            min-width: 300px;
+        }
+
+        #message {
+            display: hidden; /* Start skjult */
+            max-width: 100%;
+            background-color: #f8d7da; /* Lys rød bakgrunn for feilmeldinger */
+            color: #721c24; /* Mørk rød tekstfarge */
+            border: 1px solid #f5c6cb; /* Lysere rød kantfarge */
+            border-radius: 5px; /* Runde kanter */
+            padding: 10px; /* Paddings for innholdet */
+            margin-top: 10px; /* Margin for avstand til andre elementer */
+            opacity: 0; /* Start med null opasitet for animasjon */
+            transition: opacity 0.5s ease-in-out; /* Animasjonseffekt */
+        }
+
+        #message.show {
+            display: block; /* Vises når klassen 'show' legges til */
+            opacity: 1; /* Full opasitet når den vises */
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 93%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #copyIpButton {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #333;
+            padding: 0px;
+            transition: transform 0.3s ease, color 0.3s;
+        }
+
+        #copyIpButton:hover {
+            color: #4CAF50;
+            transform: scale(1.2);
+        }
+
+        #copyFeedback {
+            font-size: 0.9em;
+            color: #4CAF50;
+            margin-left: 10px;
+            animation: fadeOut 1.5s forwards;
+        }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Discord-knapp */
+    /* From Uiverse.io by DarthKarim */ 
+    .playstore-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #000;
+        border-radius: 9999px;
+        background-color: rgba(0, 0, 0, 1);
+        padding: 0.375rem 1rem; /* Redusert padding for mindre knapp */
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+        outline: 0;
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+
+    .playstore-button:hover {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .icon {
+        height: 1rem; /* Redusert størrelse på ikonet */
+        width: 1rem;  /* Redusert størrelse på ikonet */
+    }
+
+    .texts {
+        margin-left: 0.5rem; /* Redusert avstand mellom teksten og ikonet */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1;
+    }
+
+    .text-1 {
+        margin-bottom: 0.25rem;
+        font-size: 0.65rem; /* Redusert fontstørrelse */
+        line-height: 1rem;
+    }
+
+    .text-2 {
+        font-weight: 600;
+        font-size: 0.75rem; /* Redusert fontstørrelse */
+    }
+    /* Discord-knapp */
+</style>
+</head>
+<body>
+    <div class="overlay" id="passwordOverlay">
+        <div class="password-container">
+            <h2>Passordbeskyttelse</h2>
+            <p>Start serveren med ett knappetrykk og få IP-adressen 🌍.<br><br>
+            Vet du ikke passordet? Spør Andreas.</p>
+            <div id="errorMessage" class="message" style="display: none; color:red;">Feil passord</div>
+            <br>
+            <input type="password" id="passwordInput" placeholder="Skriv inn passord" />
+            <button id="submitPassword">Godkjenn</button>
+        </div>
+    </div>
+    
+    <div class="content" id="mainContent">
+        <h1>Minecraft-server</h1>
+        <p style="text-align: center;">
+            Server-IP: <span id="serverIp" style="font-weight: bold;">84.211.133.68</span>
+            <button id="copyIpButton" title="Kopier IP">
+                <span id="copyIcon">📋</span>
+            </button>
+        </p>
+        
+        <button id="wolButton">Start server</button>
+        <br><br>
+        <div id="message">Serveren starter nå og vil være tilgjengelig om kort tid. Hvis dette ikke fungerer, prøv igjen om noen minutter. Siste løsning blir å kontakte <a href="mailto:johanneskaste@gmail.com?subject=Feil med oppstart av Minecraft-server&body=Hei, broren til Andreas!%0D%0A%0D%0AJeg får ikke til å starte Minecraft-serveren. Har du mulighet til å fikse det? 😀">Johannes Kaste</a>.</div>
+        <br>
+        <!-- From Uiverse.io by DarthKarim --> 
+        <a href="https://discord.gg/9C2w7JwPcP" class="playstore-button">
+            <svg
+            viewBox="0 -28.5 256 256"
+            class="icon"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            >
+            <path
+                d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"
+            ></path>
+            </svg>
+            <span class="texts">
+            <span class="text-1">JOIN THE</span>
+            <span class="text-2">DISCORD</span>
+            </span>
+        </a>
+        <iframe id="wolIframe" style="display:none;" width="0" height="0"></iframe>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script type="text/javascript" src="static/minecraft-server.js"></script>
+</body>
+</html>
